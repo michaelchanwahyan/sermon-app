@@ -60,7 +60,7 @@ with open(sermon_tex_filepath, "a") as fp:
     p_curr = ''
     p_id = 0
     fp.write("{ \\scriptsize\n")
-    fp.write("\n\n\\begin{xltabular}{\\textwidth}{|l l|l r|}\n") # lllr: bk+v/ch, theme, date, youtube-code
+    fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
     fp.write("\\hline\n")
     for lineId in range(len(lines)):
         line = lines[lineId]
@@ -78,7 +78,7 @@ with open(sermon_tex_filepath, "a") as fp:
             vstr = c2v_dict.get(cc, ' ')
             sstr = c2s_dict.get(cc, ' ').replace('_','\_')
             tstr = c2t_dict.get(cc, ' ')
-            ystr = "link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+            ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
                      + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                      + tstr + " & " \
@@ -107,11 +107,38 @@ for lineId in range(len(lines)):
         if p_prev != p_curr:
             p_id += 1
             with open(sermon_tex_filepath, "a") as fp:
+                # ------------------------------------
+                # chapter toc
                 fp.write("\n\n\\chapter{"+p_curr+"}")
                 fp.write("\label{ch:preacher"+str(p_id)+"}\n")
                 fp.write("\\begin{multicols}{3}\n")
                 fp.write("\\minitoc\n")
                 fp.write("\\end{multicols}\n")
+                # END OF chapter toc
+                # ------------------------------------
+                # ------------------------------------
+                # chapter tabular-toc with sermon title
+                fp.write("{ \\scriptsize\n")
+                fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
+                fp.write("\\hline\n")
+                for lineId_ in range(len(lines)):
+                    line_ = lines[lineId_]
+                    cc_ = line_.split(",")[0]
+                    if os.path.isfile(f'../data/JNG/{cc}.txt') and p_curr == c2p_dict.get(cc_):
+                        bstr = c2b_dict.get(cc_, ' ')
+                        vstr = c2v_dict.get(cc_, ' ')
+                        sstr = c2s_dict.get(cc_, ' ').replace('_','\_')
+                        tstr = c2t_dict.get(cc_, ' ')
+                        ystr = "\\href{https://youtube.com/watch?v=" + cc_ +"}{\\texttt{ " + cc_.replace('_','\_') + "}}"
+                        fp.write(bstr + ' ' + vstr + " & " \
+                                 + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                                 + tstr + " & " \
+                                 + ystr \
+                                 + " \\\\\n")
+                fp.write("\\end{xltabular}\n")
+                fp.write("}\n")
+                # END OF chapter tabular-toc with sermon title
+                # ------------------------------------
             fp.close()
         with open(sermon_tex_filepath, "a") as fp:
             #fp.write("\n\n\\section{"+c2s_dict.get(cc).replace('_','\\_')+"}\n")
