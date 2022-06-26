@@ -10,6 +10,8 @@ def execute_commands(commands):
     return out, err
 import os.path
 import pickle as pkl
+import re
+#from re import compile as recompile
 print('done !')
 with open("code_dictionary.pkl", "rb") as fp:
     c2p_dict, bk2bkorder_dict, c2b_dict, c2ch_dict, c2v_dict, c2s_dict, c2t_dict = pkl.load(fp)
@@ -40,6 +42,24 @@ fp.close()
 #
 
 '''### print the latex document : sermon content'''
+def text_transform_cantonStyle2normalStyle(inputfilename):
+    with open(inputfilename, 'r') as infile_fp:
+        cantonText = infile_fp.read()
+    infile_fp.close()
+    cantonText = re.sub(r'哋', '地', cantonText)
+    cantonText = re.sub(r'嚟', '黎', cantonText)
+    cantonText = re.sub(r'嘅', '既', cantonText)
+    cantonText = re.sub(r'喺', '係', cantonText)
+    cantonText = re.sub(r'㗎', '架', cantonText)
+    cantonText = re.sub(r'咗', '左', cantonText)
+    cantonText = re.sub(r'嗰', '果', cantonText)
+    cantonText = re.sub(r'啲', 'D', cantonText)
+    cantonText = re.sub(r'嗱', '拿', cantonText)
+    cantonText = re.sub(r'嘢', '野', cantonText)
+    cantonText = re.sub(r'裏', '裡', cantonText)
+    cantonText = re.sub(r'産', '產', cantonText)
+    cantonText = re.sub(r'啱', '岩', cantonText)
+    return cantonText
 p_list = list(p2c_dict.keys())
 print(p_list)
 with open("../index_byp.csv", "r") as fp:
@@ -164,7 +184,11 @@ for lineId in range(len(lines)):
             fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{> > > NEXT SERMON > > >}\n")
             fp.write("\\newline\n\\newline\n")
         fp.close()
-        _ = os.system(f"cat ../data/JNG/{cc}.txt >> " + sermon_tex_filepath)
+        # _ = os.system(f"cat ../data/JNG/{cc}.txt >> " + sermon_tex_filepath)
+        with open(sermon_tex_filepath, "a") as fp:
+            the_sermon_text = text_transform_cantonStyle2normalStyle("../data/JNG/"+cc+".txt")
+            fp.write(the_sermon_text)
+        fp.close()
         with open(sermon_tex_filepath, "a") as fp:
             fp.write("\n\n\\newpage\n\n")
         fp.close()
