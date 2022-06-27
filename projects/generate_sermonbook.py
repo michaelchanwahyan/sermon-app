@@ -42,23 +42,44 @@ fp.close()
 #
 
 '''### print the latex document : sermon content'''
-def text_transform_cantonStyle2normalStyle(inputfilename):
-    with open(inputfilename, 'r') as infile_fp:
-        cantonText = infile_fp.read()
-    infile_fp.close()
+def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'哋', '地', cantonText)
     cantonText = re.sub(r'嚟', '黎', cantonText)
-    cantonText = re.sub(r'嘅', '既', cantonText)
+    cantonText = re.sub(r'嘅', 'ge', cantonText)
     cantonText = re.sub(r'喺', '係', cantonText)
     cantonText = re.sub(r'㗎', '架', cantonText)
-    cantonText = re.sub(r'咗', '左', cantonText)
-    cantonText = re.sub(r'嗰', '果', cantonText)
+    cantonText = re.sub(r'咗', 'jor', cantonText)
+    cantonText = re.sub(r'嗰', 'gwo', cantonText)
     cantonText = re.sub(r'啲', 'D', cantonText)
-    cantonText = re.sub(r'嗱', '拿', cantonText)
-    cantonText = re.sub(r'嘢', '野', cantonText)
+    cantonText = re.sub(r'嗱', 'la', cantonText)
+    cantonText = re.sub(r'嘢', 'ye', cantonText)
     cantonText = re.sub(r'裏', '裡', cantonText)
     cantonText = re.sub(r'産', '產', cantonText)
-    cantonText = re.sub(r'啱', '岩', cantonText)
+    cantonText = re.sub(r'啱', 'arm', cantonText)
+    cantonText = re.sub(r'唞', '抖', cantonText)
+    cantonText = re.sub(r'啓', '啟', cantonText)
+    cantonText = re.sub(r'攞', 'lor', cantonText)
+    cantonText = re.sub(r'啫', 'je', cantonText)
+    cantonText = re.sub(r'噃', 'bor', cantonText)
+    cantonText = re.sub(r'吖', '呀', cantonText)
+    cantonText = re.sub(r'噏', 'up', cantonText)
+    cantonText = re.sub(r'爲', '為', cantonText)
+    cantonText = re.sub(r'揾', '搵', cantonText)
+    cantonText = re.sub(r'揸', 'zar', cantonText)
+    cantonText = re.sub(r'揼', 'dump', cantonText)
+    cantonText = re.sub(r'圣', '聖', cantonText)
+    cantonText = re.sub(r'冚', 'cum', cantonText)
+    cantonText = re.sub(r'絶', '絕', cantonText)
+    cantonText = re.sub(r'衞', '衛', cantonText)
+    cantonText = re.sub(r'誔', '誕', cantonText)
+    cantonText = re.sub(r'歴', '歷', cantonText)
+    cantonText = re.sub(r'亜', '亞', cantonText)
+    cantonText = re.sub(r'様', '樣', cantonText)
+    cantonText = re.sub(r'祢', '你', cantonText)
+    cantonText = re.sub(r'窰', 'yiu', cantonText)
+    cantonText = re.sub(r'纪', '記', cantonText)
+    cantonText = re.sub(r'緃', '縱', cantonText)
+    cantonText = re.sub(r'约', '約', cantonText)
     return cantonText
 p_list = list(p2c_dict.keys())
 print(p_list)
@@ -96,7 +117,9 @@ with open(sermon_tex_filepath, "a") as fp:
                 fp.write("\\hline\n")
             bstr = c2b_dict.get(cc, ' ')
             vstr = c2v_dict.get(cc, ' ')
-            sstr = c2s_dict.get(cc, ' ').replace('_','\_')
+            sstr = text_transform_cantonStyle2normalStyle(
+                c2s_dict.get(cc, ' ').replace('_','\_')
+            )
             tstr = c2t_dict.get(cc, ' ')
             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
@@ -144,10 +167,12 @@ for lineId in range(len(lines)):
                 for lineId_ in range(len(lines)):
                     line_ = lines[lineId_]
                     cc_ = line_.split(",")[0]
-                    if os.path.isfile(f'../data/JNG/{cc}.txt') and p_curr == c2p_dict.get(cc_):
+                    if os.path.isfile(f'../data/JNG/{cc_}.txt') and p_curr == c2p_dict.get(cc_):
                         bstr = c2b_dict.get(cc_, ' ')
                         vstr = c2v_dict.get(cc_, ' ')
-                        sstr = c2s_dict.get(cc_, ' ').replace('_','\_')
+                        sstr = text_transform_cantonStyle2normalStyle(
+                            c2s_dict.get(cc_, ' ').replace('_','\_')
+                        )
                         tstr = c2t_dict.get(cc_, ' ')
                         ystr = "\\href{https://youtube.com/watch?v=" + cc_ +"}{\\texttt{ " + cc_.replace('_','\_') + "}}"
                         fp.write(bstr + ' ' + vstr + " & " \
@@ -171,7 +196,10 @@ for lineId in range(len(lines)):
             sectionNameStr += ' ' + ch if b is not None and ch is not None and v is None else ''
             fp.write("\n\n\\section{"+sectionNameStr+"}\n")
             fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
-            fp.write("\\textbf{"+c2s_dict.get(cc).replace('_','\_')+"}\n")
+            sstr = text_transform_cantonStyle2normalStyle(
+                c2s_dict.get(cc).replace('_','\_')
+            )
+            fp.write("\\textbf{"+sstr+"}\n")
             fp.write("\\newline\n\\newline\n")
             fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}}\n")
             fp.write("\\newline\n\\newline\n")
@@ -186,7 +214,10 @@ for lineId in range(len(lines)):
         fp.close()
         # _ = os.system(f"cat ../data/JNG/{cc}.txt >> " + sermon_tex_filepath)
         with open(sermon_tex_filepath, "a") as fp:
-            the_sermon_text = text_transform_cantonStyle2normalStyle("../data/JNG/"+cc+".txt")
+            with open("../data/JNG/"+cc+".txt", "r") as fp_:
+                the_sermon_text = fp_.read()
+            fp_.close()
+            the_sermon_text = text_transform_cantonStyle2normalStyle(the_sermon_text)
             fp.write(the_sermon_text)
         fp.close()
         with open(sermon_tex_filepath, "a") as fp:
