@@ -306,7 +306,7 @@ for lineId in range(len(lines)):
                 the_sermon_text = fp_.read()
             fp_.close()
             the_sermon_text = text_transform_cantonStyle2normalStyle(the_sermon_text)
-            fp.write(the_sermon_text)
+            fp.write(the_sermon_text.replace("\\n\\n","\\n"))
         fp.close()
         with open(sermon_tex_filepath, "a") as fp:
             fp.write("\n\n\\newpage\n\n")
