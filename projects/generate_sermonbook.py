@@ -171,14 +171,40 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     return cantonText
 p_list = list(p2c_dict.keys())
 print(p_list)
+def check_in_year_range(code, year_range=[2012,2018]):
+    # tstr = c2t_dict.get(code, ' ')
+    # # print(tstr)
+    in_range = False
+    for yr in range(year_range[0], year_range[1] + 1):
+        # if str(yr) in tstr:
+        if str(yr) in code:
+            in_range = True
+            break
+    return in_range
 with open("../index_byp.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
-sermon_tex_filepath = "../build/sermon.tex"
+# len(   [ line \
+#              for line in lines \
+#                  if check_in_year_range(
+#                      # c2t_dict.get(line.split(',')[0], ' '),
+#                      line,
+#                      [2012,2018]
+#                  )
+#         ] )
+# len(   [ line \
+#              for line in lines \
+#                  if check_in_year_range(
+#                      # c2t_dict.get(line.split(',')[0], ' '),
+#                      line,
+#                      [2021,2022]
+#                  )
+#         ] )
+sermon_tex_filepath = "../build/sermon2012-18.tex"
 # --------------------------------------
 # print the latex document : prefix
 # --------------------------------------
-_ = os.system("cat prefix > " + sermon_tex_filepath)
+_ = os.system("cat prefix | sed 's/講道逐字稿/講道逐字稿 2012-18' > " + sermon_tex_filepath)
 
 # --------------------------------------
 # index table partitioned by preachers
