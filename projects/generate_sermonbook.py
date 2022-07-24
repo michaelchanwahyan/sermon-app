@@ -200,6 +200,14 @@ fp.close()
 #                      [2021,2022]
 #                  )
 #         ] )
+lines = [ line \
+             for line in lines \
+                 if check_in_year_range(
+                     # c2t_dict.get(line.split(',')[0], ' '),
+                     line,
+                     [2012,2018]
+                 )
+        ]
 sermon_tex_filepath = "../build/sermon2012-18.tex"
 # --------------------------------------
 # print the latex document : prefix
