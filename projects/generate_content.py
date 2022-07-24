@@ -79,26 +79,11 @@ def from_file(inputWavFileName):
 '''### Run By Your Host System
 ls xxxxxxxxxxx/*.wav | wc -l'''
 fid_start = 0
-fid_end = 10
-for fid in range(fid_start,min(len(file_list), fid_end)):
-    print('fid = %d / %d' % (fid, len(file_list)))
-    from_file(target_code + '/' + file_list[fid])
-fid_start = 10
-fid_end = 100
-for fid in range(fid_start,min(len(file_list), fid_end)):
-    print('fid = %d / %d' % (fid, len(file_list)))
-    from_file(target_code + '/' + file_list[fid])
-fid_start = 100
-fid_end = 1000
-for fid in range(fid_start,min(len(file_list), fid_end)):
-    print('fid = %d / %d' % (fid, len(file_list)))
-    if os.path.exists(target_code + '/' + file_list[fid]):
-        from_file(target_code + '/' + file_list[fid])
-fid_start = 1000
 fid_end = 3000
 for fid in range(fid_start,min(len(file_list), fid_end)):
     print('fid = %d / %d' % (fid, len(file_list)))
-    if os.path.exists(target_code + '/' + file_list[fid]):
+    if os.path.exists(target_code + '/' + file_list[fid]) \
+        and not os.path.exists(target_code + '/' + file_list[fid][:-4]+'.txt'): \
         from_file(target_code + '/' + file_list[fid])
 
 
