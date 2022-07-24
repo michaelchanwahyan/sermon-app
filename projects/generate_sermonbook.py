@@ -204,7 +204,7 @@ sermon_tex_filepath = "../build/sermon2012-18.tex"
 # --------------------------------------
 # print the latex document : prefix
 # --------------------------------------
-_ = os.system("cat prefix | sed 's/講道逐字稿/講道逐字稿 2012-18' > " + sermon_tex_filepath)
+_ = os.system("cat prefix | sed 's/講道逐字稿/講道逐字稿 2012-18/' > " + sermon_tex_filepath)
 
 # --------------------------------------
 # index table partitioned by preachers
