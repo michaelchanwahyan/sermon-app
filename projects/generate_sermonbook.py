@@ -184,31 +184,39 @@ def check_in_year_range(code, year_range=[2012,2018]):
 with open("../index_byp.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
-# len(   [ line \
-#              for line in lines \
-#                  if check_in_year_range(
-#                      # c2t_dict.get(line.split(',')[0], ' '),
-#                      line,
-#                      [2012,2018]
-#                  )
-#         ] )
-# len(   [ line \
-#              for line in lines \
-#                  if check_in_year_range(
-#                      # c2t_dict.get(line.split(',')[0], ' '),
-#                      line,
-#                      [2021,2022]
-#                  )
-#         ] )
+print('all time sermon count:',
+    len( lines )
+     )
+print('2012-2018 sermon count:',
+    len(   [ line \
+                 for line in lines \
+                     if check_in_year_range(
+                         line,
+                         [2012,2018]
+                     )
+            ] )
+     )
+print('2019-2022 sermon count:',
+    len(   [ line \
+                 for line in lines \
+                     if check_in_year_range(
+                         line,
+                         [2019,2022]
+                     )
+            ] )
+     )
+
+'''## 2012-2018 Sermons'''
 lines = [ line \
              for line in lines \
                  if check_in_year_range(
-                     # c2t_dict.get(line.split(',')[0], ' '),
                      line,
                      [2012,2018]
                  )
         ]
+
 sermon_tex_filepath = "../build/sermon2012-18.tex"
+
 # --------------------------------------
 # print the latex document : prefix
 # --------------------------------------
@@ -350,4 +358,160 @@ for lineId in range(len(lines)):
 # print the latex document : postfix
 # --------------------------------------
 _ = os.system("cat ./postfix >> " + sermon_tex_filepath)
+
+
+
+'''## 2019-2022 Sermons'''
+lines = [ line \
+             for line in lines \
+                 if check_in_year_range(
+                     line,
+                     [2019,2022]
+                 )
+        ]
+
+sermon_tex_filepath = "../build/sermon2019-22.tex"
+
+# --------------------------------------
+# print the latex document : prefix
+# --------------------------------------
+_ = os.system("cat prefix | sed 's/講道逐字稿/講道逐字稿 2019-22/' > " + sermon_tex_filepath)
+
+# --------------------------------------
+# index table partitioned by preachers
+# --------------------------------------
+
+with open(sermon_tex_filepath, "a") as fp:
+    p_prev = ''
+    p_curr = ''
+    p_id = 0
+    fp.write("{ \\scriptsize\n")
+    fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
+    fp.write("\\hline\n")
+    for lineId in range(len(lines)):
+        line = lines[lineId]
+        cc = line.split(",")[0]
+        if os.path.isfile(f'../data/JNG/{cc}.txt'):
+            p_prev = p_curr
+            p_curr = c2p_dict.get(cc)
+            if p_prev != p_curr:
+                p_id += 1
+                fp.write("\\multicolumn{4}{c}{} \\\\\n")
+                fp.write("\\multicolumn{4}{c}{\\hyperref[ch:preacher"+str(p_id)+"]{"+p_curr+"}} \\\\\n") # <----------- this defines the column num
+                fp.write("\\multicolumn{4}{c}{} \\\\\n")
+                fp.write("\\hline\n")
+            bstr = c2b_dict.get(cc, ' ')
+            vstr = c2v_dict.get(cc, ' ')
+            sstr = text_transform_cantonStyle2normalStyle(
+                c2s_dict.get(cc, ' ').replace('_','\_')
+            )
+            tstr = c2t_dict.get(cc, ' ')
+            ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+            fp.write(bstr + ' ' + vstr + " & " \
+                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                     + tstr + " & " \
+                     + ystr \
+                     + " \\\\\n")
+    fp.write("\\end{xltabular}\n")
+    fp.write("}\n")
+fp.close()
+
+# --------------------------------------
+# Partitioned by preacher
+# --------------------------------------
+p_prev = ''
+p_curr = ''
+p_id = 0
+cc_prev = ''
+cc_next = ''
+for lineId in range(len(lines)):
+    line = lines[lineId]
+    cc = line.split(",")[0]
+    cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
+    cc_next = lines[(lineId+1)%len(lines)].split(",")[0]
+    if os.path.isfile(f'../data/JNG/{cc}.txt'):
+        p_prev = p_curr
+        p_curr = c2p_dict.get(cc)
+        if p_prev != p_curr:
+            p_id += 1
+            with open(sermon_tex_filepath, "a") as fp:
+                # ------------------------------------
+                # chapter toc
+                fp.write("\n\n\\chapter{"+p_curr+"}")
+                fp.write("\label{ch:preacher"+str(p_id)+"}\n")
+                fp.write("\\begin{multicols}{3}\n")
+                fp.write("\\minitoc\n")
+                fp.write("\\end{multicols}\n")
+                # END OF chapter toc
+                # ------------------------------------
+                # ------------------------------------
+                # chapter tabular-toc with sermon title
+                fp.write("{ \\scriptsize\n")
+                fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
+                fp.write("\\hline\n")
+                for lineId_ in range(len(lines)):
+                    line_ = lines[lineId_]
+                    cc_ = line_.split(",")[0]
+                    if os.path.isfile(f'../data/JNG/{cc_}.txt') and p_curr == c2p_dict.get(cc_):
+                        bstr = c2b_dict.get(cc_, ' ')
+                        vstr = c2v_dict.get(cc_, ' ')
+                        sstr = text_transform_cantonStyle2normalStyle(
+                            c2s_dict.get(cc_, ' ').replace('_','\_')
+                        )
+                        tstr = c2t_dict.get(cc_, ' ')
+                        ystr = "\\href{https://youtube.com/watch?v=" + cc_ +"}{\\texttt{ " + cc_.replace('_','\_') + "}}"
+                        fp.write(bstr + ' ' + vstr + " & " \
+                                 + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                                 + tstr + " & " \
+                                 + ystr \
+                                 + " \\\\\n")
+                fp.write("\\end{xltabular}\n")
+                fp.write("}\n")
+                # END OF chapter tabular-toc with sermon title
+                # ------------------------------------
+            fp.close()
+        with open(sermon_tex_filepath, "a") as fp:
+            #fp.write("\n\n\\section{"+c2s_dict.get(cc).replace('_','\\_')+"}\n")
+            sectionNameStr = ''
+            b = c2b_dict.get(cc)
+            sectionNameStr += b if b is not None else ''
+            v = c2v_dict.get(cc)
+            sectionNameStr += ' ' + v if b is not None and v is not None else ''
+            ch = c2ch_dict.get(cc)
+            sectionNameStr += ' ' + ch if b is not None and ch is not None and v is None else ''
+            fp.write("\n\n\\section{"+sectionNameStr+"}\n")
+            fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
+            sstr = text_transform_cantonStyle2normalStyle(
+                c2s_dict.get(cc).replace('_','\_')
+            )
+            fp.write("\\textbf{"+sstr+"}\n")
+            fp.write("\\newline\n\\newline\n")
+            fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}}\n")
+            fp.write("\\newline\n\\newline\n")
+            fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{< < < PREV SERMON < < <}\n")
+            fp.write("~~~\n")
+            fp.write("\\hyperlink{toc}{[返主目錄]}\n")
+            fp.write("~~~\n")
+            fp.write("\\hyperref[ch:preacher"+str(p_id)+"]{[返講員目錄]}\n")
+            fp.write("~~~\n")
+            fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{> > > NEXT SERMON > > >}\n")
+            fp.write("\\newline\n\\newline\n")
+        fp.close()
+        # _ = os.system(f"cat ../data/JNG/{cc}.txt >> " + sermon_tex_filepath)
+        with open(sermon_tex_filepath, "a") as fp:
+            with open("../data/JNG/"+cc+".txt", "r") as fp_:
+                the_sermon_text = fp_.read()
+            fp_.close()
+            the_sermon_text = text_transform_cantonStyle2normalStyle(the_sermon_text)
+            fp.write(the_sermon_text.replace("\\n\\n","\\n"))
+        fp.close()
+        with open(sermon_tex_filepath, "a") as fp:
+            fp.write("\n\n\\newpage\n\n")
+        fp.close()
+
+# --------------------------------------
+# print the latex document : postfix
+# --------------------------------------
+_ = os.system("cat ./postfix >> " + sermon_tex_filepath)
+
 
