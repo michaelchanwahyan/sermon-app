@@ -3,9 +3,15 @@ import os
 import time
 from datetime import datetime
 foldername = "JNG"
+no_code_cnt = 0
 while True:
     codes = [ filename[:-4] for filename in os.listdir("./") if filename[-4:]==".wav" ]
     print(datetime.now(), codes)
+    if not len(codes):
+        no_code_cnt += 1
+        if no_code_cnt > 20:
+            print(datetime.now(), cmdstr)
+            break
     for code in codes:
         if os.path.isfile(f"./{code}.sttready") \
             and not os.path.isfile(f"./{code}.concatready") \
