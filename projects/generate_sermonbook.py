@@ -324,7 +324,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                             tstr = c2t_dict.get(cc_, ' ')
                             ystr = "\\href{https://youtube.com/watch?v=" + cc_ +"}{\\texttt{ " + cc_.replace('_','\_') + "}}"
                             fp.write(bstr + ' ' + vstr + " & " \
-                                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                                     + "\\hyperref[sec:"+cc_.replace('-','_')+"]{"+sstr+"}" + " & " \
                                      + tstr + " & " \
                                      + ystr \
                                      + " \\\\\n")
