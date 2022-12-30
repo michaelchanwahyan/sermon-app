@@ -361,7 +361,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 )
                 fp.write("\\textbf{"+sstr+"}\n")
                 fp.write("\\newline\n\\newline\n")
-                fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}}\n")
+                fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ on " + c2t_dict.get(cc) + " \n")
                 fp.write("\\newline\n\\newline\n")
                 fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{< < < PREV SERMON < < <}\n")
                 fp.write("~~~\n")
