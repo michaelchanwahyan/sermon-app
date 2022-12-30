@@ -14,7 +14,7 @@ import re
 #from re import compile as recompile
 print('done !')
 with open("code_dictionary.pkl", "rb") as fp:
-    c2p_dict, bk2bkorder_dict, c2b_dict, c2ch_dict, c2v_dict, c2s_dict, c2t_dict = pkl.load(fp)
+    c2p_dict, bk2bkorder_dict, c2b_dict, c2ch_dict, c2v_dict, c2s_dict, c2t_dict, c2bvc_dict = pkl.load(fp)
 fp.close()
 with open("x2code_dictionary.pkl", "rb") as fp:
     p2c_dict, b2c_dict = pkl.load(fp)
@@ -172,6 +172,18 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'逹', '達', cantonText)
     cantonText = re.sub(r'堃', '坤', cantonText)
     cantonText = re.sub(r'讃', '讚', cantonText)
+    cantonText = re.sub(r'⾃', '自', cantonText)
+    cantonText = re.sub(r'频', '頻', cantonText)
+    cantonText = re.sub(r'记', '記', cantonText)
+    cantonText = re.sub(r'话', '話', cantonText)
+    cantonText = re.sub(r'竉', '寵', cantonText)
+    cantonText = re.sub(r'呑', '吞', cantonText)
+    cantonText = re.sub(r'傈', '僳', cantonText)
+    cantonText = re.sub(r'淸', '清', cantonText)
+    cantonText = re.sub(r'寛', '寬', cantonText)
+    cantonText = re.sub(r'唿', '弗', cantonText)
+    cantonText = re.sub(r'叁', '參', cantonText)
+    cantonText = re.sub(r'唓', '即係', cantonText)
     return cantonText
 p_list = list(p2c_dict.keys())
 print(p_list)
@@ -362,6 +374,32 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
             fp.close()
             # _ = os.system(f"cat ../data/JNG/{cc}.txt >> " + sermon_tex_filepath)
             with open(sermon_tex_filepath, "a") as fp:
+                # ----------------------
+                # add the scripture part if not None
+                bvc_curr = c2bvc_dict.get(cc)
+                if bvc_curr is not None:
+                    bvc_curr = bvc_curr.split("\n")
+                    # first row shall be book + verse info
+                    bvc_line = bvc_curr[0].strip() + "\n"
+                    fp.write(bvc_line)
+                    fp.write("\\newline\n")
+                    fp.write("\\begin{tabularx}{\\textwidth}{|lX|}\n")
+                    fp.write("\\hline\n\\hline\n")
+                    for bvc_line in bvc_curr[1:]:
+                        bvc_line = bvc_line.strip()
+                        if len(bvc_line) > 0:
+                            bvc_line += " \\\\\n"
+                            si = bvc_line.find(" ")
+                            if si == -1:
+                                bvc_line = "& " + bvc_line
+                            else:
+                                bvc_line = bvc_line[:si] +  " & " + bvc_line[si+1:]
+                            fp.write(bvc_line)
+                    fp.write("\\hline\n\\hline\n")
+                    fp.write("\\end{tabularx}\n")
+                    fp.write("\\newline\n\\newline\n")
+                # ----------------------
+                # add the sermon part
                 with open("../data/JNG/"+cc+".txt", "r") as fp_:
                     the_sermon_text = fp_.read()
                 fp_.close()
@@ -372,7 +410,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 for textline in textlines:
                     _textrow_cnt += 1
                     if _textrow_cnt % 40 == 1:
-                        fp.write("${^%d}$" % _textrow_cnt)
+                        fp.write("$^{%d}$" % _textrow_cnt)
                     fp.write(textline + "\n")
                     if _textrow_cnt % 40 == 0:
                         fp.write("\n")
