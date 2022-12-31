@@ -383,21 +383,28 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                     bvc_line = bvc_curr[0].strip() + "\n"
                     fp.write(bvc_line)
                     fp.write("\\newline\n")
-                    fp.write("\\begin{tabularx}{\\textwidth}{|lX|}\n")
+                    fp.write("\\begin{longtable}{cl}\n")
                     fp.write("\\hline\n\\hline\n")
+                    fp.write("章節 & 經文 \\\\\n")
+                    fp.write("\\hline\n")
                     for bvc_line in bvc_curr[1:]:
                         bvc_line = bvc_line.strip()
                         if len(bvc_line) > 0:
-                            bvc_line += " \\\\\n"
+                            if bvc_line != [ _.strip() for _ in bvc_curr if len(_.strip()) ][-1]:
+                                bvc_line += " \\\\ \\relax\n"
+                            else:
+                                bvc_line += " \\\\\n"
                             si = bvc_line.find(" ")
                             if si == -1:
-                                bvc_line = "& " + bvc_line
+                                bvc_line = "& " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line + " \\end{tabularx}"
                             else:
-                                bvc_line = bvc_line[:si] +  " & " + bvc_line[si+1:]
+                                bvc_line = bvc_line[:si].replace(".",":") +  " & " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line[si+1:]
+                                nli = bvc_line.find(" \\\\") # newline char index
+                                bvc_line = bvc_line[:nli] + " \\end{tabularx}" + bvc_line[nli:]
                             fp.write(bvc_line)
+                    fp.write("[1ex]\n")
                     fp.write("\\hline\n\\hline\n")
-                    fp.write("\\end{tabularx}\n")
-                    fp.write("\\newline\n\\newline\n")
+                    fp.write("\\end{longtable}\n")
                 # ----------------------
                 # add the sermon part
                 with open("../data/JNG/"+cc+".txt", "r") as fp_:
