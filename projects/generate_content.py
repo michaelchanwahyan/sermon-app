@@ -33,18 +33,22 @@ audio_regions = auditok.split(
     max_silence=0.3, # maximum duration of tolerated continuous silence within an event
     energy_threshold=40 # threshold of detection
 )
-for i, r in enumerate(audio_regions):
+with open(f"../auditok_data/JNG/auditok_log-{code}.txt", "w") as fp_auditok:
+    for i, r in enumerate(audio_regions):
 
-    # Regions returned by `split` have 'start' and 'end' metadata fields
-    print("Region {i}: {r.meta.start:.3f}s -- {r.meta.end:.3f}s".format(i=i, r=r))
+        # Regions returned by `split` have 'start' and 'end' metadata fields
+        results_str = "Region {i}: {r.meta.start:.3f}s -- {r.meta.end:.3f}s".format(i=i, r=r)
+        print(results_str)
+        fp_auditok.write(results_str + "\n")
 
-    # play detection
-    # r.play(progress_bar=True)
+        # play detection
+        # r.play(progress_bar=True)
 
-    # region's metadata can also be used with the `save` method
-    # (no need to explicitly specify region's object and `format` arguments)
-    filename = r.save(target_code+'/'+input_filename[:-4]+"_{meta.start:08.3f}-{meta.end:08.3f}.wav")
-    print("region saved as: {}".format(filename))
+        # region's metadata can also be used with the `save` method
+        # (no need to explicitly specify region's object and `format` arguments)
+        filename = r.save(target_code+'/'+input_filename[:-4]+"_{meta.start:08.3f}-{meta.end:08.3f}.wav")
+        print("region saved as: {}".format(filename))
+fp_auditok.close()
 file_list = [f for f in os.listdir(target_code) if input_filename[:-4].replace('./','')+'_' in f]
 file_list.sort()
 
