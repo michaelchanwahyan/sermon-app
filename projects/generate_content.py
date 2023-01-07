@@ -33,7 +33,7 @@ audio_regions = auditok.split(
     max_silence=0.3, # maximum duration of tolerated continuous silence within an event
     energy_threshold=40 # threshold of detection
 )
-with open(f"../auditok_data/JNG/auditok_log-{code}.txt", "w") as fp_auditok:
+with open(f"../auditok_data/JNG/auditok_log-{target_code}.txt", "w") as fp_auditok:
     for i, r in enumerate(audio_regions):
 
         # Regions returned by `split` have 'start' and 'end' metadata fields
