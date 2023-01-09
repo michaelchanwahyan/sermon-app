@@ -87,7 +87,7 @@ def from_file(inputWavFileName):
 '''### Run By Your Host System
 ls xxxxxxxxxxx/*.wav | wc -l'''
 fid_start = 0
-fid_end = 3000
+fid_end = 8000
 for fid in range(fid_start,min(len(file_list), fid_end)):
     print('fid = %d / %d' % (fid, len(file_list)))
     if os.path.exists(target_code + '/' + file_list[fid]) \
@@ -98,7 +98,7 @@ for fid in range(fid_start,min(len(file_list), fid_end)):
 with open(f'concat_{target_code}.py'.replace('./',''), 'w') as fp:
     fp.write('#!/bin/python3\n')
     fid_start = 0
-    fid_end = 1100
+    fid_end = 8000
     for fid in range(fid_start,min(len(file_list), fid_end)):
         if os.path.exists(target_code + '/' + file_list[fid]):
             fp.write(f'fp = open(\'{target_code}/{file_list[fid][:-3]}txt\')\n')
