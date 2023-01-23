@@ -256,7 +256,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # --------------------------------------
     # print the latex document : prefix
     # --------------------------------------
-    _ = os.system(f"cat prefix | sed 's/講道逐字稿/講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' > " + sermon_tex_filepath)
+    _ = os.system(f"cat prefix.tex | sed 's/講道逐字稿/講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' > " + sermon_tex_filepath)
 
     # --------------------------------------
     # index table partitioned by preachers
@@ -438,7 +438,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # --------------------------------------
     # print the latex document : postfix
     # --------------------------------------
-    _ = os.system("cat ./postfix >> " + sermon_tex_filepath)
+    _ = os.system("cat ./postfix.tex >> " + sermon_tex_filepath)
 
 '''## 2012-2018 Sermons'''
 sermon_tex_from_year(2012, 2018)
