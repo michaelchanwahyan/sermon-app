@@ -370,14 +370,14 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 )
                 fp.write("\\textbf{"+sstr+"}\n")
                 fp.write("\\newline\n\\newline\n")
-                fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ on " + c2t_dict.get(cc) + " \n")
+                fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + " \n")
                 fp.write("\\newline\n\\newline\n")
                 fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{< < < PREV SERMON < < <}\n")
-                fp.write("~~~\n")
+                fp.write("~\n")
                 fp.write("\\hyperlink{toc}{[返主目錄]}\n")
-                fp.write("~~~\n")
+                fp.write("~\n")
                 fp.write("\\hyperref[ch:preacher"+str(p_id)+"]{[返講員目錄]}\n")
-                fp.write("~~~\n")
+                fp.write("~\n")
                 fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{> > > NEXT SERMON > > >}\n")
                 fp.write("\\newline\n\\newline\n")
             fp.close()
@@ -435,6 +435,10 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 fp.write("\\newpage\n\n")
             fp.close()
 
+    # --------------------------------------
+    # print the latex document : afterword
+    # --------------------------------------
+    _ = os.system("cat ./afterword.tex >> " + sermon_tex_filepath)
     # --------------------------------------
     # print the latex document : postfix
     # --------------------------------------
