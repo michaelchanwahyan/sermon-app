@@ -354,6 +354,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                     fp.write("}\n")
                     # END OF chapter tabular-toc with sermon title
                     # ------------------------------------
+                    fp.write("\\newpage\n\n")
                 fp.close()
             with open(sermon_tex_filepath, "a") as fp:
                 #fp.write("\n\n\\section{"+c2s_dict.get(cc).replace('_','\\_')+"}\n")
@@ -431,8 +432,6 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                     fp.write(textline + "\n")
                     if _textrow_cnt % 40 == 0:
                         fp.write("\n")
-            fp.close()
-            with open(sermon_tex_filepath, "a") as fp:
                 fp.write("\\newpage\n\n")
             fp.close()
 
