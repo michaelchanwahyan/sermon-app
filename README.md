@@ -99,3 +99,7 @@ in /app/projects/, run the python script [generate_sermonbook.py](/projects/gene
 (LaTeX installation: see [their page](https://www.latex-project.org/get/))
 
 in /app/build/, run the build script [build.sh](/build/build.sh).  the core LaTeX software package required is XeLaTeX.
+
+## Editor
+contact person : Michael via michaelchan_wahyan@yahoo.com.hk
+
