@@ -256,7 +256,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # --------------------------------------
     # print the latex document : prefix
     # --------------------------------------
-    _ = os.system(f"cat prefix.tex | sed 's/講道逐字稿/講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' > " + sermon_tex_filepath)
+    _ = os.system(f"cat prefix.tex | sed 's/講道逐字稿/講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel: \href{https:\/\/www.youtube.com\/JohnsonNg}{JohnsonNg}/' > " + sermon_tex_filepath)
 
     # --------------------------------------
     # index table partitioned by preachers
