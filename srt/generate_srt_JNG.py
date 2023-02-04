@@ -8,6 +8,8 @@ class SRTGenerator():
         self.destSrtPathFileName = f"./JNG/{target_code}.srt"
         self.inputTrnscptPathFileName = f"../data/JNG/{target_code}.txt"
         self.inputAuditokPathFileName = f"../auditok_data/JNG/auditok_log-{target_code}.txt"
+        self.trnsLines = []
+        self.audiLines = []
 
     def __str__(self):
         return f"target code: {self.target_code}"
