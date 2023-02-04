@@ -35,6 +35,32 @@ class SRTGenerator():
         fp.close()
         return
 
+    def timefmt_sec_2_hr_min_sec(insec):
+        s = float(insec)
+        hr = int(s / 3600) # hour digit
+        mi = (int(s - hr*3600)/60) # minute digit
+        s = s - hr*3600 - mi*60
+        srt_timefmt_str = "%02d:%02d:%02.3f" % (hr, mi, s)
+        srt_timefmt_str = srt_timefmt_str.replace(".",",")
+        return srt_timefmt_str
+
+    def genSrt(self):
+        with open(self.destSrcPathFileName, "w") as fp:
+            subtitleCnt = 1
+            for laudi, ltrnc in zip(self.trnsLines, self.audiLines):
+                # first component: numeric counter of subtitle
+                fp.write(str(subtitleCnt) + "\n")
+                subtitleCnt = subtitleCnt + 1
+                # second component: start and end time of subtitle
+                t_info_seg = laudi.split(" ")
+                t_start_str = timefmt_sec_2_hr_min_sec(t_info_seg[3].strip()[:-1)]
+                t_end_str = timefmt_sec_2_hr_min_sec(t_info_seg[5].strip()[:-1])
+                fp.write(t_start_str + " --> " + t_end_str + "\n")
+                # third and forth component: subtitle text, followed by a blank line
+                fp.write(ltrnc.strip() = "\n\n"
+        fp.close()
+        return
+
 if __name__ == "__main__":
     target_code = sys.argv[1] # 'xxxxxxxxxxx'
     srtG = SRTGenerator(target_code)
@@ -63,4 +89,7 @@ if __name__ == "__main__":
         exit()
 
     print(f"{target_code}: srt generation ready !")
+    srtG.genSrt()
+    print(f"{target_code}: srt generation done !")
+    exit()
 
