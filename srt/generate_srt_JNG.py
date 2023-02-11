@@ -35,29 +35,49 @@ class SRTGenerator():
         fp.close()
         return
 
-    def timefmt_sec_2_hr_min_sec(insec):
+    def timefmt_sec_2_hr_min_sec(self, insec):
         s = float(insec)
         hr = int(s / 3600) # hour digit
-        mi = (int(s - hr*3600)/60) # minute digit
+        mi = int((s - hr*3600)/60) # minute digit
         s = s - hr*3600 - mi*60
         srt_timefmt_str = "%02d:%02d:%02.3f" % (hr, mi, s)
         srt_timefmt_str = srt_timefmt_str.replace(".",",")
         return srt_timefmt_str
 
     def genSrt(self):
-        with open(self.destSrcPathFileName, "w") as fp:
+        with open(self.destSrtPathFileName, "w") as fp:
             subtitleCnt = 1
-            for laudi, ltrnc in zip(self.trnsLines, self.audiLines):
+            for ltrns, laudi in zip(self.trnsLines, self.audiLines):
+                ''' sample: zzcvcdgkilA
+                <line no> <srt text file content>
+                |    1   |  1                                             | <1st component>
+                |    2   |  00:00:2,450 --> 00:00:8,200                   | <2nd component>
+                |    3   |  多謝你咁介紹我啫，嚇我都諗緊係邊個啦啦。      | <3rd component>
+                |    4   |                                                | <4th component>
+                |    5   |  2                                             |
+                |    6   |  00:00:8,500 --> 00:00:11,000                  |
+                |    7   |  我就唔敢當嚇，即係因為。                      |
+                |    8   |                                                |
+                |    9   |  3                                             |
+                |   10   |  00:00:11,000 --> 00:00:14,900                 |
+                |   11   |  誒，正常咧，一個快樂嘅人咧？應該1日咧？係笑。 |
+                |   12   |                                                |
+                |   13   |  4                                             |
+                |   14   |  00:00:15,100 --> 00:00:16,900                 |
+                |   15   |  誒256次。                                     |
+                '''
                 # first component: numeric counter of subtitle
                 fp.write(str(subtitleCnt) + "\n")
                 subtitleCnt = subtitleCnt + 1
                 # second component: start and end time of subtitle
                 t_info_seg = laudi.split(" ")
-                t_start_str = timefmt_sec_2_hr_min_sec(t_info_seg[3].strip()[:-1)]
-                t_end_str = timefmt_sec_2_hr_min_sec(t_info_seg[5].strip()[:-1])
+                print(t_info_seg)
+                t_start_str = self.timefmt_sec_2_hr_min_sec(t_info_seg[-1].strip()[:-1])
+                t_end_str = self.timefmt_sec_2_hr_min_sec(t_info_seg[-3].strip()[:-1])
+                print(t_start_str, t_end_str)
                 fp.write(t_start_str + " --> " + t_end_str + "\n")
                 # third and forth component: subtitle text, followed by a blank line
-                fp.write(ltrnc.strip() = "\n\n"
+                fp.write(ltrns.strip() + "\n\n")
         fp.close()
         return
 
@@ -83,7 +103,7 @@ if __name__ == "__main__":
     srtG.readAudi()
     print(f"transcription lines in {target_code}: {len(srtG.trnsLines)}")
     print(f"auditok time  lines in {target_code}: {len(srtG.audiLines)}")
-    if srtG.trnsLines.count() != srtG.audiLines.count():
+    if len(srtG.trnsLines) != len(srtG.audiLines):
         print(f"{target_code}: the two files do not have the same length !")
         print("exit !")
         exit()
