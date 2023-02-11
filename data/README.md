@@ -14,6 +14,7 @@ the foldername here indicates a shortform of the sermon voice source
 | STBC        | Shatin Baptism Church               | 沙田浸信會              | [youtube channel](https://www.youtube.com/@stbc1977)          |
 | YFCY        | Yan Fook Church Youth               | 播道會恩福堂青年團      | [youtube channel](https://www.youtube.com/c/YanfookYouth)     |
 | YOC         | Yau Oi Church                       | 中華宣道會友愛堂        | [youtube channel](https://www.youtube.com/@user-vg6iu5wh1g)   |
+| ACSMHK      |                                     | 宣道書局宣道傳意台      | [youtube channel](https://www.youtube.com/@acsmhk)            |
 
 the target source list shall integrate more when time goes by
 
