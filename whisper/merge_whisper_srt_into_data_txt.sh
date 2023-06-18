@@ -3,13 +3,15 @@ find . -name ".DS_Store" -exec rm -rf {} \;
 # =========================================================
 # merge the updates from sermon-srt_whisper branch
 # =========================================================
-#git merge sermon-srt_whisper --no-commit --no-ff
+git merge sermon-srt_whisper --no-commit --no-ff
 
 # =========================================================
 # undo the 'git-add' operations from merge process
 # =========================================================
 git reset ./JNG/*.srt
 git reset ./JNG/*.whisper.log
+git reset ../srt
+rm -rf ../srt
 
 # =========================================================
 # conversion from whisper srt file into ../data/JNG txt
