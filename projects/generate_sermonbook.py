@@ -242,6 +242,13 @@ print('2021-2022 sermon count:',
 def sermon_tex_from_year(yyyy_start, yyyy_end):
     # yyyy_start : starting year, e.g. 2012
     # yyyy_end.  : ending year, e.g. 2018
+    progressStepCnt = 0
+    # --------------------------------------
+    # read the index table and only take
+    # into account within desired year range
+    # --------------------------------------
+    progressStepCnt += 1
+    print(f"Step {progressStepCnt}: reading in full index file")
     with open('../index_byp.csv', 'r') as fp:
         lines = fp.readlines()
     fp.close()
@@ -256,23 +263,36 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # --------------------------------------
     # print the latex document : prefix
     # --------------------------------------
+    progressStepCnt += 1
+    print(f"Step {progressStepCnt}: printing out prefixing")
     _ = os.system(f"cat prefix.tex | sed 's/講道逐字稿/講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel: JohnsonNg/' > " + sermon_tex_filepath)
 
     # --------------------------------------
     # index table partitioned by preachers
     # --------------------------------------
-
+    progressStepCnt += 1
+    print(f"Step {progressStepCnt}: writing TOC which gathers up all preachers")
     with open(sermon_tex_filepath, "a") as fp:
         sermonCnt = 0
         p_prev = ''
         p_curr = ''
         p_id = 0
         fp.write("{ \\scriptsize\n")
+        # --------------------------------------
+        # start of partitioned-by-preachers table
+        # --------------------------------------
         fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
         fp.write("\\hline\n")
+        # --------------------------------------
+        # lines is the line content in index_byp
+        # --------------------------------------
         for lineId in range(len(lines)):
             line = lines[lineId]
             cc = line.split(",")[0]
+            # --------------------------------------
+            # only include this code cc if it is
+            # ready in the transcription folder
+            # --------------------------------------
             if os.path.isfile(f'../data/JNG/{cc}.txt'):
                 sermonCnt += 1
                 p_prev = p_curr
@@ -296,18 +316,26 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                          + ystr \
                          + " \\\\\n")
         fp.write("\\end{xltabular}\n")
+        # --------------------------------------
+        # end of partitioned-by-preachers table
+        # --------------------------------------
         fp.write("}\n")
         print('sermon count in current book: %d' % sermonCnt)
     fp.close()
 
     # --------------------------------------
-    # Partitioned by preacher
+    # per-preacher index and sermon content
     # --------------------------------------
+    progressStepCnt += 1
+    print(f"Step {progressStepCnt}: generate per-preacher TOC for each preacher section")
     p_prev = ''
     p_curr = ''
     p_id = 0
     cc_prev = ''
     cc_next = ''
+    # --------------------------------------
+    # lines is the line content in index_byp
+    # --------------------------------------
     for lineId in range(len(lines)):
         line = lines[lineId]
         cc = line.split(",")[0]
@@ -317,6 +345,8 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
             p_prev = p_curr
             p_curr = c2p_dict.get(cc)
             if p_prev != p_curr:
+                progressStepCnt += 1
+                print(f"Step {progressStepCnt}: a new preacher {p_curr} is reached !")
                 p_id += 1
                 with open(sermon_tex_filepath, "a") as fp:
                     # ------------------------------------
@@ -435,6 +465,8 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 fp.write("\\newpage\n\n")
             fp.close()
 
+    progressStepCnt += 1
+    print(f"Step {progressStepCnt}: generate afterward and postfix")
     # --------------------------------------
     # print the latex document : afterword
     # --------------------------------------
@@ -443,6 +475,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # print the latex document : postfix
     # --------------------------------------
     _ = os.system("cat ./postfix.tex >> " + sermon_tex_filepath)
+    print("done !")
 
 '''## 2012-2018 Sermons'''
 sermon_tex_from_year(2012, 2018)
