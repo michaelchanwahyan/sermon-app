@@ -193,6 +193,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'氷', '冰', cantonText)
     cantonText = re.sub(r'祎', '禕', cantonText)
     cantonText = re.sub(r'咔', 'ka ', cantonText)
+    cantonText = re.sub(r'&', ' and ', cantonText)
     return cantonText
 p_list = list(p2c_dict.keys())
 print(p_list)
