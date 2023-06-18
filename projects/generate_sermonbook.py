@@ -184,15 +184,6 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'唿', '弗', cantonText)
     cantonText = re.sub(r'叁', '參', cantonText)
     cantonText = re.sub(r'唓', '即係', cantonText)
-    cantonText = re.sub(r'嘣', '崩', cantonText)
-    cantonText = re.sub(r'廻', '迴', cantonText)
-    cantonText = re.sub(r'麽', '麼', cantonText)
-    cantonText = re.sub(r'猬', '蝟', cantonText)
-    cantonText = re.sub(r'綉', '繡', cantonText)
-    cantonText = re.sub(r'箓', '籙', cantonText)
-    cantonText = re.sub(r'氷', '冰', cantonText)
-    cantonText = re.sub(r'祎', '禕', cantonText)
-    cantonText = re.sub(r'咔', 'ka ', cantonText)
     return cantonText
 p_list = list(p2c_dict.keys())
 print(p_list)
@@ -379,12 +370,10 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                                      + tstr + " & " \
                                      + ystr \
                                      + " \\\\\n")
-                    fp.write("\\hline\n")
                     fp.write("\\end{xltabular}\n")
                     fp.write("}\n")
                     # END OF chapter tabular-toc with sermon title
                     # ------------------------------------
-                    fp.write("\\newpage\n\n")
                 fp.close()
             with open(sermon_tex_filepath, "a") as fp:
                 #fp.write("\n\n\\section{"+c2s_dict.get(cc).replace('_','\\_')+"}\n")
@@ -402,14 +391,14 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 )
                 fp.write("\\textbf{"+sstr+"}\n")
                 fp.write("\\newline\n\\newline\n")
-                fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + " \n")
+                fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ on " + c2t_dict.get(cc) + " \n")
                 fp.write("\\newline\n\\newline\n")
                 fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{< < < PREV SERMON < < <}\n")
-                fp.write("~\n")
+                fp.write("~~~\n")
                 fp.write("\\hyperlink{toc}{[返主目錄]}\n")
-                fp.write("~\n")
+                fp.write("~~~\n")
                 fp.write("\\hyperref[ch:preacher"+str(p_id)+"]{[返講員目錄]}\n")
-                fp.write("~\n")
+                fp.write("~~~\n")
                 fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{> > > NEXT SERMON > > >}\n")
                 fp.write("\\newline\n\\newline\n")
             fp.close()
@@ -426,15 +415,15 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                     fp.write("\\newline\n")
                     fp.write("\\begin{longtable}{cl}\n")
                     fp.write("\\hline\n\\hline\n")
-                    fp.write("章節 & 經文 (和合本修訂版)\\\\\n")
+                    fp.write("章節 & 經文 \\\\\n")
                     fp.write("\\hline\n")
                     for bvc_line in bvc_curr[1:]:
                         bvc_line = bvc_line.strip()
                         if len(bvc_line) > 0:
                             if bvc_line != [ _.strip() for _ in bvc_curr if len(_.strip()) ][-1]:
-                                bvc_line += " \\\\ \\\\ \\relax\n"
+                                bvc_line += " \\\\ \\relax\n"
                             else:
-                                bvc_line += " \\\\ \\\\\n"
+                                bvc_line += " \\\\\n"
                             si = bvc_line.find(" ")
                             if si == -1:
                                 bvc_line = "& " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line + " \\end{tabularx}"
@@ -462,6 +451,8 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                     fp.write(textline + "\n")
                     if _textrow_cnt % 40 == 0:
                         fp.write("\n")
+            fp.close()
+            with open(sermon_tex_filepath, "a") as fp:
                 fp.write("\\newpage\n\n")
             fp.close()
 
