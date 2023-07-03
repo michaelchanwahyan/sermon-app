@@ -10,7 +10,7 @@ the foldername here indicates a shortform of the sermon voice source
 | KFC         | Kong Fook Church                    | 播道會港福堂            | [youtube channel](https://www.youtube.com/@EFCCKongFokChurch) |
 | KMH         | Ko Ming Him                         | 高銘謙                  | [youtube channel](https://www.youtube.com/@lawrenceko5206)    |
 | FVC         | Fairview Church                     | 宣道會錦繡堂            | [youtbue channel](https://www.youtube.com/@fairviewchurch)    |
-| KongKow     | HongKong-Kowloon                    | 港九培靈研經會          | [site](https://www.hkbibleconference.org)                     |
+| HKBC        | Hong Kong Bible Conference          | 港九培靈研經會          | [site](https://www.hkbibleconference.org)                     |
 | STBC        | Shatin Baptism Church               | 沙田浸信會              | [youtube channel](https://www.youtube.com/@stbc1977)          |
 | YFCY        | Yan Fook Church Youth               | 播道會恩福堂青年團      | [youtube channel](https://www.youtube.com/c/YanfookYouth)     |
 | YOC         | Yau Oi Church                       | 中華宣道會友愛堂        | [youtube channel](https://www.youtube.com/@user-vg6iu5wh1g)   |
