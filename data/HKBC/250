@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>第三講  愛無底線</title>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="iufXVvh1Kn1DFmKCoyam9g6NypvnGctX64C4qwZBN-XyioMQkjBvCgpVGuTISNyyQs-G2pRIihqB04vEfxh6tQ==">
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-icons.css" rel="stylesheet">
+<link href="/css/all.css" rel="stylesheet">
+<link href="/js/slick/slick.css" rel="stylesheet">
+<link href="/js/slick/slick-theme.css" rel="stylesheet">
+<link href="/css/aos.css" rel="stylesheet">
+<link href="/css/cookie-consent.css" rel="stylesheet">
+<link href="/css/interface.css" rel="stylesheet">
+<link href="/css/plyr.css" rel="stylesheet">
+<link href="/js/lightgallery/css/lightgallery-bundle.min.css" rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.21.1/video-js.css" rel="stylesheet">
+<link href="/js/jquery-ui-1.13.2/jquery-ui.min.css" rel="stylesheet">
+<style>
+	.grayscale .page-header-title {
+		background-image: url(/images/color_bg/bg_011.png) !important;
+	}
+	</style>	<link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<script>
+	var color = document.cookie.match("(^|;|; )\s*" + "ColorMode" + "\s*=\s*([^;]+)")?.pop() || "normal";
+	if (color == "normal") {
+		document.body.classList.remove("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.remove("selected");
+		}
+	} else {
+		document.body.classList.add("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.add("selected");
+		}
+	}</script>
+
+
+<a href="#main" class="skip">跳至內容</a>
+<header class="sticky-top">
+	<div class="nav-tool nav-tool-top hidden-990px">
+		<div class="container justify-content-end">
+			<nav class="navbar navbar-expand navbar-light">
+				<div class="collapse navbar-collapse justify-content-end">
+										<ul class="navbar-nav">
+						<li class="nav-item nav-font-size fontSize">
+							<span class="defaultFont">
+								<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a> 
+							</span>
+							<span class="largerFont">
+								<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a> 
+							</span>
+							<span class="xLargerFont">
+								<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+							</span>
+						</li>
+						<li class="nav-item nav-search">
+							<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+						</li>
+						<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>						<li class="nav-item nav-btn-BW">
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn monochromeBtn" >黑白版</a>
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn chromaticBtn" style="display:none;">彩色版</a>
+						</li>
+												<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+												<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+						<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light navbar-menu">
+			<div class="container-fluid p-0">
+				<a class="navbar-brand" href="/site/index">
+					<!--<img src="/images/logo.jpg" alt="" class="w-100" />-->
+					<img src="/images/logo_whole.svg" alt="港九培靈研經會" class="logoImg">
+					<img src="/images/logo_chi.svg" alt="港九培靈研經會" class="scrollLogoImg">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+					<div class="nav-tool show-990px">
+						<div class="container justify-content-end">
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="flex-wrap collapse navbar-collapse justify-content-end">
+																		<ul class="navbar-nav">
+										<li class="nav-item nav-font-size">
+											<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a>
+											<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a>
+											<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+										</li>
+										<li class="nav-item nav-search">
+											<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+										</li>
+										<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>										<li class="nav-item nav-btn-BW"><a href="javascript:checkColorMode()" class="nav-link colorModeBtn">黑白版</a></li>
+									</ul>
+								</div>
+							</nav>
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="collapse navbar-collapse justify-content-end">
+									<ul class="navbar-nav">
+																				<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+																				<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+										<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<ul id="w0" class="navbar-nav nav"><li class="nav-item nav-item" data-id="1" data-type="2"><a class="nav-link" href="/content/schedule">聚會日程</a></li>
+<li class="nav-item nav-item" data-id="3" data-type="2"><a class="nav-link" href="/content/past-conferences">歷屆聚會</a></li>
+<li class="nav-item nav-item" data-id="5" data-type="1"><a class="nav-link" href="/content/our-story">培靈．歷史館</a></li>
+<li class="nav-item nav-item" data-id="6" data-type="3"><a class="nav-link" href="/content/about-us">關於我們</a></li></ul>				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<main id="main" name="main">
+	
+<!--<section class="page-header">
+		<div class="page-header-title" style="background-image: url(/images/color_bg/bg_002.png);">
+		<h1>歷屆聚會</h1>
+	</div>
+	<div class="page-header-img">
+		<div class="photocap">
+			<img src="https://file.hkbibleconference.org/upload/content/3/banner/歷屆聚會.jpg" alt="歷屆聚會" />
+		</div>
+	</div>
+	</section>
+
+<section class="path">
+	<div class="container">
+		<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			
+			<li class="breadcrumb-item" aria-current="page"><a href="/content/past-conferences">歷屆聚會</a></li>
+			<li class="breadcrumb-item" aria-current="page"><a href="/content/past-conferences">第88屆 2016 作成主的工</a></li>
+			<li class="breadcrumb-item" aria-current="page">講道會</li>
+			<li class="breadcrumb-item" aria-current="page">2016-08-04 愛無底線</li>
+			<li class="breadcrumb-item" aria-current="page">閱讀全文</li>
+			<li class="breadcrumb-item" aria-current="page">第三講  愛無底線</li>		  </ol>
+		</nav>
+	</div>
+</section>-->
+
+<div class="row w-100 m-0" style="overflow: hidden">
+	<div id="section-main" class="sermons-col-left bg-grey" style="width:100%">
+		<h1 class="color-1a8090 bg-white text-center pb-2 pt-3 h2">第88屆 講道會 第3講</h1>
+		<article class="article pt-0 p-lg-5 pt-lg-0">
+			<div class="article-meta">
+				<span>
+					<i class="fa fa-user"></i>
+					講員：					<a href="/speaker/view/44">麥漢勳牧師</a>
+				</span>
+				<span>
+					<i class="fa fa-calendar-alt"></i>
+					屆別:					<a href="/sermon/view?serial_no=88">第88屆</a>
+				</span>
+				<span data-toggle="tooltip" data-placement="top" title="性質">
+					<i class="fa fa-folder-open"></i>
+					<a href="/sermon/view?serial_no=88#session-master-58">講道會</a>
+				</span>
+			</div>
+			<!--<div class="article-tag">
+				<a href="#" class="badge">路加福音</a>
+				<a href="#" class="badge">講道會</a>
+				<a href="#" class="badge">56屆</a>
+				<a href="#" class="badge">麥希真牧師</a>
+			</div>-->
+			<div class="d-flex align-items-center mb-4">
+				<h2 class="article-title mb-0 h3">
+					第三講  愛無底線				</h2>
+									<a type="button" class="bookmark ms-3 " data-model="app\models\SessionMessage" data-model-id="250"></a>
+							</div>
+						<div class="article-content">
+				
+				<div class="h5 mb-4 d-md-flex justify-content-lg-between align-items-center">
+					<div><span>經文：</span> 約翰福音  <a class="article-citation" href="javascript:void(0)" data-book="43" data-start-chapter="13" data-start-verse="31" data-end-verse="35">13:31-35</a></div><div><a href="javascript:void(0)" class="btn btn-danger btn-show-scripture text-center my-2 ml-auto align-self-start" style="display:none;">顯示經文</a>
+				</div></div>				<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">一、引言</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">今天跟大家講述約翰福音13：31-35這段經文，可以說第二個基督門徒的icon。昨天我們談了第一個icon：放下自己；第二個是今天這一段經文我們所要領受的：愛無底線；其實是相當不容易的。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在我們剛才所誦讀的經文，亦是大家非常熟識的經文，耶穌對門徒的吩咐，第34節這樣說：「我賜給你們一條新命令，乃是叫你們彼此相愛；我怎樣愛你們，你們也要怎樣相愛。你們若有彼此相愛的心，眾人因此就認出你們是我的門徒了。」（34-35節）。昨天我們談過放下自己這一個基督門徒的icon，耶穌在那裡吩咐門徒要「彼此洗腳」，我們一般理解為要謙卑服事，基本上是沒錯的；但如果你認真地去研讀昨天所選讀的經文的話，耶穌所說的「彼此洗腳」放下自己是極為徹底的，祂把這個洗腳行動與祂自己捨命的行動連繫起來；基本上祂是幫助門徒去理解十字架的道理。我們會看到，耶穌基督在十字架這一個行動中把自己整個人完成的放下來，就如保羅所說的：「不以自己與上帝同等為強奪的；反倒虛己」（腓立比書2：6）。而這一個行動，並不是單單用以流露耶穌基督擁有多麼好的品格，或是多麼美的人格美德這麼簡單，而是祂要藉著這捨命的行動，來肯定祂所服事的人，從而賦予祂所服事的人一份從上帝而來的尊嚴，是因為祂看到祂所服事的弟兄或是對象，他們在上帝眼中的價值和重要；甚至到了後來，服事弟兄姊妹可以進到一個地步把自己放下來，而且是完全的把自己放下來。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">二、愛，是捨命</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">所以，當我們認真地思想「洗腳」這件事情的時候，就慢慢的把我們帶到今天的第二個icon：耶穌吩咐我們要彼此相愛，吩咐門徒彼此相愛，因為當你們彼此相愛的時候，別人才能辨認出你們就是我的門徒。嚴格來說，別人就因此辨認到你們所相信的基督，而你們所相信的基督的生命，就藉此呈現在你們當中，呈現在別人的眼前。所以，彼此相愛是非常的重要，亦是我們完全不感到陌生的。有沒有弟兄姊妹在教會中從沒有聽過關乎彼此相愛的講道嗎？有的請舉手。沒有人舉手，這樣說，我們可以散會了，因為我們都聽了很多了，也很熟識。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">然而，你試試以這麼一個方式來誦讀耶穌的吩咐：「我賜給你們一條新命令，乃是叫你們彼此相愛；你們若有彼此相愛的心，眾人因此就認出你們是我的門徒了」。有甚麼區別嗎？如果把中間那一句拿走，實踐這個吩咐就容易得多了，對不對？由我們自己來定義如何實行彼此相愛的話，就簡單容易得多了。但是耶穌加入了中間這一句，就變得很可怕，對不對？「我怎樣愛你們，你們也要怎樣相愛。」整段經文的含意就變得很不一樣了。所以，當我們說把耶穌吩咐我們要彼此相愛這個命令成為基督門徒的一個icon的話，這個「愛」是怎麼樣的愛？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我稱之為「沒有底線的愛」。換轉以另一種我們較為熟悉的語言來表達的話，就是耶穌基督吩咐我們要為弟兄捨命。在這裡並沒有出現過「捨命」這個字詞，但有一節經文是和「捨命」具有相同含義的，就是耶穌所說的：「我怎樣愛你們，你們也要怎樣相愛」這句話。難道這句說話不就是「捨命的愛」嗎？它沒有用上「捨命」這個字詞，但來得更貼身。耶穌說：我怎樣的愛你們，你們也要怎樣的相愛。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">使徒約翰對於「彼此相愛」這個吩咐有許多的體會。當他論及門徒之間要彼此相愛的時候，他是懷著「捨命」、「為弟兄捨命」這麼一個意念在他的講述背後。弟兄姊妹之間的愛，是一種效法基督捨命的愛；我們可從使徒約翰其他的記載作參考，也就是使徒約翰在其他地方提及「彼此相愛」這一個吩咐。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">約翰福音15：12-14</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">你們要彼此相愛，像我愛你們一樣；這就是我的命令。人為朋友捨命，人的愛心沒有比這個大的。你們若遵行我所吩咐的，就是我的朋友了。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在約翰的作品裡面，展現這個福音真理的記載裡面，約翰壹書同樣是一個很重要的作品。在約翰壹書裡有不少篇幅是談論到「彼此相愛」。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">約翰壹書4：7-9</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">親愛的弟兄啊，我們應當彼此相愛，因為愛是從上帝來的。凡有愛心的，都是由上帝而生，並且認識上帝。沒有愛心的，就不認識上帝，因為上帝就是愛。上帝差祂獨生子到世間來，使我們藉著祂得生，上帝愛我們的心在此就顯明了。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">所以在第11節，約翰這樣吩咐：</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">約翰壹書4：11-12</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">親愛的弟兄啊，上帝既是這樣愛我們，我們也當彼此相愛。從來沒有人見過上帝，我們若彼此相愛，上帝就住在我們裡面，愛祂的心在我們裡面得以完全了。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在約翰的福音及書信裡面，每一次他談論到「彼此相愛」的時候，都以耶穌的捨命作為背景。所以，我們剛才所讀的聖經，約翰福音第13：34-35節，假如我們把耶穌所說的那句話「我怎樣愛你們，你們也要怎樣相愛」抽掉，這個吩咐就變得容易得多了。但加了這一句話，那就成為一件幾近是不可能的任務，對不對？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們都很沮喪，在教會愈久，就愈發沮喪，我們會覺得，我們離開上帝這個吩咐愈來愈遠。好像是，但事實卻不是。接下來會跟大家慢慢說清楚。今天我們能夠坐在這裡，是因為有許多人為我們捨命，以致我們今天仍然能夠坐在這裡，只是我們不覺得他們為我們捨命。其實你也為許多人捨命，只是你不覺得，然而，事實上確是如此，以致有許多其他人今天能夠在基督裡。讓我們細心和留心耶穌基督的吩咐。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">三、愛，是禮物</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">A.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">讓人領受</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在這段經文中，彷彿是耶穌所留下的遺言一般。因為當時猶太就已經出去，預備出賣耶穌，而十字架的苦難亦愈來愈近，耶穌知道祂自己很快就要離開這群門徒，所以祂就留下一個吩咐，留下一份遺囑，一句遺言，非常簡單的遺言，但卻又是非常重要的一句說話：「我怎樣愛你們，你們也要怎樣相愛」。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">當我們感覺到這似乎是一件不可能的任務的時候，沒有底線的愛是不是真的有可能的呢？為弟兄捨命是不是可能的呢？在我們基督徒群體中，我們有否碰見這一種為弟兄捨命的愛？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們回歸到耶穌的吩咐裡面一個很重要的內容，在我們還未能夠去愛別人的時候，耶穌說：「我怎樣愛你們」。耶穌提醒祂的門徒，這一份捨命的愛，是一份他們已經領受了的禮物。沒有底線的愛並不是從我們自己而來，是從基督的十字架而來的。這一群門徒就跟我們一樣，先在耶穌基督裡面領受了耶穌基督在十字架上毫無保留的、為我們的緣故，甘心的把自己捨棄的那份捨命的愛。我們能夠明白愛，是因為我們先與這一位捨命的基督聯合起來；所以，耶穌對門徒的吩咐，首先是：我怎樣愛你們。你們首先領受這份愛，這是一份禮物，這是一個上帝注入我們生命裡的「基因」（DNA），是我們新生命的「基因」，我們的新生命是因為這份捨命的愛而誕生。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">基督為我們捨命，在約翰壹書是怎麼描述的呢？上帝「差祂的兒子為我們的罪作了挽回祭，這就是愛了」（4：10）。我感到作為基督徒有一種很特別的心靈歷程。作基督徒愈久，愈發覺得自己是一個罪人；愈是希望活出福音，愈發覺得自己距離福音很遠；愈是聽真理，愈發覺得自己距離真理很遠。以前認為保羅說他自己是「在罪人中是個罪魁」是一種謙卑的講法，但是當牧師久了就發覺，是非常對和認同的事情。我們是無法自救的一群人，當我們碰到人性黑暗的時候，我們會覺得自己在上帝面前，根本不配被祂拯救。但當我們每一次活在耶穌基督捨命的恩典這亮光之下時，年輕的時候，認罪悔改，認為自己已經認了罪，都可以了，還不錯。然而，信仰歷程卻是叫我們更加碰見自己生命裡的黑暗；而當牧師和傳道是一種高危的工作，就是你以為自己懂得講，就等於自己已經做了，而我們亦常以這種技倆來自欺。我說了，那就等於我做了，但大家都知道，事實並不如此。會眾呢？我聽了，那就等於我做了；所以，我們一起就這樣子在迷失當中。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">但當我們醒覺的時候，我們才發現，原來我們是一個被拯救的人，我們發現，原來我們真的需要基督的捨命，我們才能有希望。當我們感受到基督的捨命對我們的重要性的時候，當我們明白惟有基督的捨命才能把我們從黑暗和罪惡當中救拔出來的時候，當教會不斷地悔改的時候，當信徒不斷地悔改的時候，當領袖、牧者不斷地悔改的時候，我們才明白救恩是必須的，我們才明白福音的意義。我們才明白原來我們所領受的是沒有底線的愛，充充滿滿的有恩典、有真理，我們的身分在上帝面前被確定。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">上帝沒有因為我們的軟弱把我們割掉，也沒有因為我們的失敗而離棄我們；每一個星期的聖餐，那個餅和杯，所要表達的就是上帝不離不棄的把我們擁抱在祂的生命之中；為了我們的罪，不惜地讓祂的獨生子死在十字架上，而且持續地為我們這一群軟弱的人受苦；亦沒有因著我們所幹的那些不光彩的事，使祂被受連累而跟我們劃清界線；你是否覺察到，每一天你都是活在恩典之下？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們也有方法來迴避這一個亮光，就是跟別人比較。如果我是一個罪人呢，罪人當中我還是比較好的那一個。救恩叫我們認識罪的深淵，同時叫我們認識上帝對我們那沒有底線的愛是多麼的豐盛。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">正因為我們經歷了這一份愛，經歷耶穌基督為我們捨命，我們就知道，這就成為我們能夠為弟兄姊妹捨命的、在我們生命裡的一種生命能量。如果我們自己根本沒有經歷這一份愛的話，我們沒有擁有這一份愛的話，我們沒有因著這一份愛而誕生新的生命的話，耶穌對我們的要求就是緣木求魚。或者經文把這中間的一句（「我怎樣愛你們，你們也要怎樣相愛」。）抽出來的話，就容易得多了。那就可以各自表述，對不對？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">各自表述容易得多，但事實並不是這樣。耶穌說，我愛你們。我怎樣愛你們呢？我在十字架上把自己放下來，到了一個低無可低的地步，到了一條你根本無法看得到的底線。因此，你是先領受。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">所以，耶穌說：「我怎樣愛你們，你們也要怎樣相愛」，可以成為十分沉重的壓力，要為弟兄捨命可能是一種很大的壓力，或者是一件不可能的任務，但是你從另一角度來看，這亦是一個可能；是因為你已經擁有這一份愛，你經歷過這一份愛，就正如約翰所說的：凡有愛心的，都是由上帝而生，並且認識上帝。這是一個出路，或者應該這麼說，這是一個經已賦予給我們的恩典。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">B.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">主動捨棄</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">耶穌既然這麼說，「我怎樣愛你們，你們也要怎樣相愛」，那麼耶穌怎麼樣愛我們呢？在耶穌的十字架上，我們看到甚麼呢？有甚麼典範呢？這一份基督捨命的愛有甚麼內涵呢？是我們可以慢慢辨認出來的呢？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">耶穌基督這一份愛是一種主動的把自己捨棄的愛，把自己的生命捨棄，是主動的，不是被動的，不是基於我們的要求，不是基於我們的想望，我們根本沒有期望過上帝竟然會為我們做這麼的一件事，是天父上帝主動的差遣耶穌基督來到世間，而耶穌基督亦甘心順服的接受這個差遣，為的是要介入我們這個被死亡和罪惡、黑暗權勢所壓迫的生命。在約翰壹書有這麼記載：「不是我們愛上帝，乃是上帝愛我們，差祂的兒子為我們的罪作了挽回祭，這就是愛了」（4：10）。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">上帝就是如此，藉著耶穌基督主動的走進我們的人生。祂沒有徵詢我們，主動的闖入來。我在昨天曾經這麼說，沒有一個人是單單的靠著上一些課程而真真正正地認識耶穌，雖然認識耶穌或是傳福音的方式確是有不少課程，許多人也會參加許多課程，如：查經班，又或是一些福音課程。但人能夠與這一位永恆主相遇，絕對是上帝祂自己主動的進入。因為這一個主動的介入，叫我們的生命能夠認識上帝。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">為甚麼上帝要這麼主動呢？我個人覺得，上帝在創造了人之後，祂要分享生命，上帝的生命就是一個充滿愛的生命，所以，祂要與人立約。這種立約的關係，其實是一種生命的連繫，而生命的連繫，就只有死亡才能把它割開；這個是上帝的特質。當死亡把人和上帝割開的時候，上帝在痛，而我們的上帝是一位一直受苦的上帝，惟有充滿愛的人才會感到痛。當你付出愛的時候，你就是把自己放在一個可以被拒絕的位置，你把自己放在一個會受傷的位置，你把自己放在一個會遭人離棄的位置，而我們的上帝就是把祂自己放在這樣的位置上，所以，祂痛，並且一直都為著祂所創造的生命而受苦。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">但是上帝要挽回，上帝要拯救，是因為這一份生命之約，因為這一份不能分割的連繫，祂就進入我們當中，主動地走進我們的世界，告訴我們一件事：祂不喜歡死亡，不喜歡罪惡，祂寧可自己擁抱苦難，都要把死亡和黑暗的權勢擊退，為的是要把我們從這個死亡的權勢當中救拔出來。上帝所用的力度是非常之大，因為永恆生命之道，創造的主，為甚麼要道成肉身？為甚麼要住在我們中間？為甚麼住在我們中間仍然要走上十字架這麼一個最可怕、最羞辱的刑具上結束自己的生命？這就是愛。因此，當耶穌說：「我怎樣愛你們」的時候，這種愛一點也不輕鬆。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">然而，我們會慢慢地發覺，雖然耶穌為了這一份愛付出鉅大，但是祂看到生命的遠象，祂看到這個愛是會結出更多子粒來，並且能夠把人帶回到永恆上帝生命之約的當中。在這個約裡面，人能經歷上帝那份不離不棄的慈愛。你和我，如果信主年日已久，有沒有發覺上帝並沒有離棄我們呢？這並不是因為我們給祂很多東西，也不是因為我們為祂帶來很多榮耀，或是給祂很多的滿足，其實我們所付上的很少，相反是上帝主動的付出，主動的捨己。因此，耶穌說：我怎樣愛你們，就正如約翰壹書所說的：「不是我們愛上帝，乃是上帝愛我們，差祂兒子（主動的）為我們的罪作了挽回祭」（4：10）。我們對這一份愛有沒有非常深刻的體驗呢？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">因此，當我們彼此相愛的時候，我們在教會這一個基督徒群體當中，你會看到這麼一個耶穌基督愛的「基因」（DNA）的呈現，你和我是有這麼一個基因在我們的生命之中。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我對於幫助我成長的弟兄姊妹是深懷感激的，我覺得他們根本沒有欠我甚麼東西，他們放在我身上的用心、時間和一切所付出的，除了是因為愛之外，我看不到有甚麼理由。我信主不久就參與了一個事奉，但是我不太懂得怎麼樣去事奉，因為我是初信主，信仰的根基亦很淺薄。當時有一位導師，每一個周六，他陪伴著我一同禱告，把聖經真理教導給我，鼓勵我要把自己委身給耶穌。一整年的時間，每一個周六，這位導師就是這樣的幫助我，成為我的屬靈導師。一年之後，我就去了修讀神學，17歲就進到神學院。過了幾年，我回到自己的母會事奉，我當了這位導師的牧師。有一次在走廊上跟他相遇。因為我對長輩是深懷感激，雖然說他是長輩，但是他的年紀也不是很大。我就以昔日我還是團友時對他的稱呼來稱呼他，他是我的導師，所以我就以他是我的導師這一種很親切但又很尊敬的稱呼來稱呼他。他就說，不要再這樣叫我了，你是牧師啊，你很長進，我就不行了。我就跟他說：如果我今天能夠事奉上帝，你，是我能夠事奉上帝的最大理由，因為你把你的愛和你所有的一切都放到我裡面。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">他沒有欠我，每一個周六，是因為基督愛的緣故，因為他希望這一位年輕人能夠成為一個堅實的基督徒，他把我放在他的心上，守望、培養、著緊，這一切的付出，是捨命，是捨棄自己，是毫無保留的主動的把自己捨棄。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">C.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">呈現福音</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">耶穌基督要求我們效法祂這種付出，彼此相愛，為甚麼？因為這種彼此相愛是福音的呈現。捨命的愛，沒有底線的愛，是甘願的付出，是福音的呈現。在它裡面包含了甚麼？包含了委身和承擔，也包含了會受苦，亦包含了許多的眼淚，同樣包含了許多的信任和期許。因為這樣的緣故，福音被呈現。還記得第一天我們談到一粒麥子這個信息時，十字架是「愛惜」和「捨棄」之間的抉擇，當我們見到我們的弟兄姊妹，他們捨棄，沒有愛惜他們自己所有的，這就是十字架的選擇，是生命的付出，是福音的呈現。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">牧養我成長的、我母會的牧師使我十分感動。他是一個謙厚君子，為人非常低調。而他的事奉亦十分簡單，就是非常勞苦地服事弟兄姊妹，任勞任怨，以致我們一班弟兄常常開玩笑地說，牧師的唾液也是神聖的，因為他是自己貼郵票，自己把信寄出去。但牧師為主的緣故，有許多捨棄。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">他在上海一間非常出名的大學畢業，信主以後，他立志跟從耶穌，在他那個年代奉獻自己當傳道，甚至放棄了他岳丈給他承繼家族生意的機會，甚至給家人拒絕和離棄，但是他仍然是堅定地跟從耶穌基督，最後他帶領他整個家族的人信耶穌，成為一群忠心跟從主的弟兄姊妹。在他身上，你可以看到「愛惜」和「捨棄」之間的抉擇，亦是基督耶穌福音的呈現。他和師母帶領了許多人信耶穌，他們沒有甚麼很偉大的道理，但他們卻指引我們，向著這一位真實的耶穌基督及永恆的上帝。透過他謙卑的服事，我們見證了上帝的生命在他們的生命當中給呈現出來。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">這種沒有底線的愛是一份禮物，我們先領受，應該這麼說，我們要先領受，才能活出來，不只是付出，是活出來。如果這份捨命的愛並不是我們生命的一部分的話，我們付不出來。耶穌吩咐祂的門徒，我怎樣愛你們，你們也要怎樣相愛。祂相信我們可以付出，因為我們能夠活出來，因為祂已經把這生命放在我們裡面了，而且祂自己本身是一個非常清晰的示範，祂走到我們的中間，主動的捨棄，把自己交付出來，完全毫無保留地把自己交付出來，為要成就關乎生命的事在我們人生當中，帶領我們與這一位永恆的上帝結連，所以祂吩咐我們要彼此相愛，因為藉著這個彼此相愛才能把福音再度呈現出來。如果我們說我們要去傳福音的話，教會就必須讓人看到這一種捨命的愛在教會當中。否則，別人來到我們的教會、來到我們的團契或來到我們的小組，別人就看不到我們所說的耶穌基督是如何地被呈現出來，這樣，我們就是反福音，愈說得多，愈使人拒絕。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">實踐主的道是教會一個很重要的福音行動，耶穌說，祂把這麼一個非常重要的任務交給我們，讓人認識這一位永恆上帝的任務，就在你們愛的踐行當中，實現出來。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">四、結束</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">結束的時候與大家分享一個很觸動我的故事，我也不知道這個故事是真還是假，但無論如何，它是一個很有深度啟發的故事，我也寧願它是真的。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">你有沒有試過領受一份遺產？有些弟兄姊妹笑得很甜蜜，想到遺產已經覺得甜蜜。或許你沒有試過領受遺產，但你有沒有可能可以領受一份遺產呢？在座當中有不少是跟我一樣，都是上了年紀的人，我們都沒甚麼機會領受遺產，但是在座當中也有很多年輕的，你們的爸爸媽媽或許有遺產留給你。剛才我說，耶穌基督吩咐門徒要彼此相愛好像是遺言一般，而這個故事亦同樣是關乎遺囑。故事發生在台灣。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">有一律師，他到了台灣的南投縣的鄉郊生活一段時間，認識了當地的一位神父，湯神父。湯神父是一位年老慈祥的神父。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">有一天，一位年輕的神父來找這一位律師，這位年輕的神父是湯神父的助手。他找這位律師，因為湯神父有事想找你幫忙，請你幫他立一份遺囑。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">他見到湯神父之後，他知道湯神父因為認識自己，而這位律師亦是一位天主教徒，所以神父才找他幫忙，而最重要的是，神父希望這位律師能提供免費服務，因為神父沒有錢，然而，這位律師亦義不容辭，很樂意幫助神父。神父仍然有清醒的腦袋，但是身體就真的有點虛弱，所以他們就開始撰寫遺囑。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">遺囑不只是交代財富的分配，有甚麼心願都可以寫下來，老神父就把一些工作寫下，交付給接任的張神父。當中有一個工作是幫助一位失業且情緒不穩定的教友找一份工作。另一個工作是幫助一位有酗酒習慣的教友戒酒。另外是有一個年輕人到了台中工作，但卻加入了幫派，老神父希望張神父能夠幫助這位年輕人，不要誤入歧途。這樣寫下來，洋洋灑灑的有七個工作，是要交給張神父來繼承的，要他完成這七件事。而最後一句，就是：我的財產，全部都會送給這一位接任的張神父。雖然有七個任務，但仍然可以繼承所有財產。然而，拿得財產之前需要完成那七個任務，因為這是遺囑的一部分。這位律師替湯神父完成立遺囑後就離開。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">幾天之後，湯神父就離世，律師就成為遺囑的執行人，與張神父去處理湯神父的遺產。經過點算之後，發現湯神父的遺產只有二百元新台幣。剛才我問過陳弟兄，兌換為港幣有多少錢，是港幣五十塊錢。還有些衣服，當然少不了有許多書，就全交給張神父。當時這位律師和張神父都覺得，湯神父好像是有點糊塗，竟為了這麼少的遺產而勞師動眾的立一份遺囑。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">之後，這位律師每一年都會收到一份由張神父撰寫的報告，交代那七件任務的進展。因為遺囑除了所有財產之外，還有七個工作交給他的。張神父亦是一位認真的神父，於是就努力去做，並且每一年向律師交一份報告，而每一年都有些進展。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">四年之後，七件工作全都完成，於是就不再有報告，因為整份遺囑已經執行完畢，七個工作亦完成，之前的二百元新台幣亦已經放入口袋，以後不需要再送報告過來了，這個案子就此結束。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">許多年過去了，這位律師處理一宗過億元新台幣的遺產案時，就翻查一些舊記錄，就在翻查時無意中翻出湯神父這個案子，他就很好奇。時隔差不多二十年，他突然忽發奇想，不如再到南投縣，探望張神父，看看他的情況，亦可以舊地重遊。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">當他和張神父見面時，張神父已經人到中年，他們坐下來聊天的時候，他發現原來張神父也十分忙碌的。短短的聊天的時間裡，不斷的有人前來找張神父幫忙。他和村民都非常熟稔，有些人來找他幫忙解決問題，有些人則找他作諮詢，更有些村婦強迫神父收下一些番薯。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">律師就決定問張神父一個問題，對於湯神父的遺囑，他心裡總有一個疑問，他問張神父，那位湯神父明明知道自己的遺產只有二百元新台幣，他立下這一份遺囑到底有甚麼意思呢？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">張神父說他初時也以為湯神父老來糊塗了。可是幾年以後，他終於懂了。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">他說他當時才從美國念完碩士、受訓完畢回來台灣的一位神父，他畢業於美國的明星大學，碩士學位是生物化學，總以為自己會被派到大學去輔導大學生，或者是到大學裡教書，沒有想到被派到南投縣山間的鄉下跟隨湯神父，自己的內心真的感到有點鬱鬱不得志，也不理解為甚麼會是這樣。這裡的教友村民根本不理解他的所學的生物化學是到底怎麼樣的一回事。他完全是無用武之地。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">但當他接受了湯神父的遺產的時候，裡面包括了那七個個案，當他認真地開始接觸那些村民，來繼承湯神父的遺志，來幫助這些有困難的村民。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">有一天早上，完了彌撒，他說，我突然間被一份很巨大的平安充滿內心，而他想起當我跟這些村民生一起生活，並且彼此建立了愛的關係之後，彼此的付出，彼此在愛中結連起來的時候，這一份愛讓我的內心充滿了一份難以言表的平安和喜樂。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">原來湯神父的遺產，並不是二百元新台幣，而是他所領受的那份心靈裡的平安、滿足和喜樂。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">弟兄姊妹，耶穌留下一句遺言，你們要彼此相愛，我怎樣愛你們，你們也要怎樣相愛。你們若有彼此相愛的心，眾人因此就認出你們是我的門徒了。這並不是一種壓力，這是一個恩典的祝福；惟有在愛裡面，我們才能感受到及認識到神聖的臨在，當我們感受到神聖的臨在時，我們的生命就能與這一位緊抓住不放（咬住不放手）、不離不棄地愛世人的上帝結連起來，這就是上帝的愛，但願我們都能經歷這一份愛，並且在我們中間活出這一份愛，成為福音的見證。</span></span></span></span></p>
+				
+				<br>
+				<p class="h5">
+					<span>講員：</span> 麥漢勳牧師
+					<br>
+					<span>傳譯：</span> 陳發達先生
+					<br>
+					<span>速記：</span> 鄭譚佩雲姊妹
+				</p>			</div>
+			<div class="article-navigation d-flex justify-content-between mt-5">
+								<a href="/session-message/view/249" data-bs-toggle="tooltip" data-bs-placement="right" title="第88屆 講道會 第二講  放下自己" aria-label="上一篇文章：第88屆 講道會 第二講  放下自己"  rel="prev">
+					<i class="fas fa-chevron-left" aria-hidden="true"></i>
+					<span aria-hidden="true">上一篇</span>		
+				</a>
+												<a href="/session-message/view/251" data-bs-toggle="tooltip" data-bs-placement="left" title="第88屆 講道會 第四講  別有懷抱" aria-label="下一篇文章：第88屆 講道會 第四講  別有懷抱" rel="next">
+					<span aria-hidden="true">下一篇</span>	
+					<i class="fas fa-chevron-right" aria-hidden="true"></i>
+				</a>
+							</div>
+			<br>
+			<hr>
+			<br>
+						<p>
+				<span class="h5">版權聲明</span><br>
+				大會現場速記只供信徒溫習用，全文未經講者過目，版權屬港九培靈硏經會。			</p>
+					</article>
+	</div>
+	
+	<div id="section-scripture" class="sermons-col-right" style="width:0%;position:relative;">
+		<section class="article-citation-magnifier h-100">
+			<a href="javascript:void(0);" class="btn btn-close btn-close-scripture d-flex ms-auto" title="隱藏經文"></a>
+			<div class="magnifier-content">
+			</div>
+		</section>
+				<div id="loadingSpinner" class="spinner-overlay">
+			<div class="spinner-container">
+				<span class="loading-spinner"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+</main>
+
+
+<footer>
+	<section class="sitemap">
+				<div class="fix-tools-footer">
+			<div class="container">
+				<div class="d-flex align-items-center">
+										<a href="/site/member" data-bs-placement="left" data-bs-toggle="tooltip" title="登入"><img src="/images/icon_login.svg" alt=""/></a>
+										<a href="https://www.hkbibleconference.org/offering/index" style="background-color: #6aa84f; color: #ffffff;">奉獻方式</a><a href="https://www.hkbibleconference.org/content/view/daily-hope" style="background-color: #a61c00; color: #ffffff;">牧言點滴</a>				</div>
+			</div>
+		</div>
+				<div class="container">
+			<div class="row">
+				<div class="col-6 col-md-4 col-lg-2">
+										<strong><a href="javascript:void(0);">我的資料</a></strong>
+					<ul>
+						<li><a href="/site/member">登入／註冊</a></li>
+					</ul>
+									</div>
+				
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/schedule" data-id="1" data-type="2" style="display: block; margin-bottom: 20px;">聚會日程</a></strong>
+					<strong><a class="nav-item" href="/content/past-conferences" data-id="3" data-type="2" style="display: block; margin-bottom: 20px;">歷屆聚會</a></strong>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/our-story" data-id="5" data-type="1">培靈．歷史館</a></strong>
+					<ul>
+						<li><a href="/content/media-collection">歷屆媒體集</a></li>
+						<li><a href="/content/article-collection">歷屆文集</a></li>
+						<li><a href="/content/past-data">歷屆資料回顧</a></li>
+					</ul>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/about-us" data-id="6" data-type="3">關於我們</a></strong>
+					<ul>
+						<li><a href="/offering/index">奉獻方式</a></li>
+						<li><a href="/content/about-us#contact">聯絡我們</a></li>
+					</ul>
+				</div>			</div>
+		</div>
+	</section>
+	<section class="footer-middle">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-7 col-lg-5 text-center text-md-start pt-2 pb-3 pb-md-2">
+					<form id="subscribe-form" action="/site/subscribe" method="post">
+<input type="hidden" name="_csrf" value="iufXVvh1Kn1DFmKCoyam9g6NypvnGctX64C4qwZBN-XyioMQkjBvCgpVGuTISNyyQs-G2pRIihqB04vEfxh6tQ==">						<div class="input-group align-items-center flex-nowrap pe-4">
+							<span class="color-white text-nowrap me-3">訂閱我們</span>
+							<div class="form-group field-subscribeform-email required">
+<input type="text" id="subscribeform-email" class="form-control rounded-0" name="SubscribeForm[email]" style="max-width:280px;" placeholder="請輸入你的電郵..." aria-label="請輸入你的電郵..." aria-required="true"><div class="invalid-feedback"></div>
+</div>							<button type="submit" id="btnSubscribe" class="btn btn-gray rounded-0 mb-auto" name="subscribe-button" title="訂閱" aria-label="訂閱"><i class="fa fa-arrow-right"></i></button>						</div>
+					</form>				</div>
+				<div class="col-12 col-md-5 col-lg-7 text-start text-md-end pt-0 pt-md-2 pb-2 sns d-flex align-items-center justify-content-md-end">
+					<span class="related-logos d-inline-block me-1">
+						<img src="/images/WARS_Gold-2022-2023.svg" alt="2022-2023無障礙網頁金獎" width="90"/>
+					</span>
+										<a href="https://www.facebook.com/hkbibleconference/" target="_blank" title="Facebook" aria-label="Facebook">
+						<img src="/images/icon_fb.png" alt="Facebook">
+					</a>
+										<a href="https://www.instagram.com/hkbibleconference/" target="_blank" title="Instagram" aria-label="Instagram">
+						<img src="/images/icon_ig.png" alt="Instagram">
+					</a>
+										<a href="https://www.youtube.com/c/HongKongBibleConference" target="_blank" title="Youtube" aria-label="Youtube">
+						<img src="/images/icon_yt.png" alt="Youtube">
+					</a>
+									</div>
+			</div>
+		</div>
+	</section>
+	<section class="copyright py-2">
+		<div class="container">
+			<div class="footer-btm-page mb-2">
+				<span>&copy; 2023 港九培靈研經會 版權所有</span>
+				<a class="nav-item" href="/footer-content/copy-right" data-id="1" data-type="1">版權及知識產權</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-privacy-policy" data-id="2" data-type="2">私隱政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-linking-policy" data-id="3" data-type="2">連結政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-disclaimer" data-id="4" data-type="2">免責聲明</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-terms-of-use" data-id="5" data-type="2">使用條款</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-accessibility" data-id="6" data-type="2">無障礙網頁</a>			</div>
+		</div>
+	</section>
+</footer>
+<!-- Back to top button -->
+<a href="#" id="button" title="回頁頂"><i class="fas fa-chevron-up"></i></a>
+
+<!--Cookie Consent-->
+<div class="cookie-container">
+	<div class="container-wrapper">
+		<div class="close-btn cookie-btn-close"><a href="javascript:void(0)" title="關閉" aria-label="關閉">X</a></div>
+		<p>當你瀏覽此網站時，一些Cookie (曲奇) 檔案將會儲存於你電腦的硬碟內。這些曲奇檔案只為瀏覽此網站之用。在此情況下，曲奇檔案將不會收集你的任何個人資料。你可選擇不接受曲奇檔案，但你若不接受曲奇檔案的話，你可能無法使用本網站某些功能。 <a class="td-underline" href="/bibleConference/footer-content/copy-right#statement-privacy-policy">了解更多</a></p>
+		<button class="cookie-btn">接受</button>
+		<button class="cookie-btn cookie-btn-disable">不接受</button>
+	</div>
+</div>
+
+<div class="modal" id="searchbox" tabindex="-1" aria-labelledby="網站工具:搜尋表格">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="siteSearchForm" action="/site/search" method="GET">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="搜尋關鍵字" aria-label="搜尋關鍵字" aria-describedby="請輸入搜尋關鍵字" name="keyword">
+						<button class="btn btn-outline-secondary" type="submit" id="button-addon2">搜尋</button>
+						<div class="invalid-feedback msg-keyword">請輸入欲搜尋的關鍵字</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script src="/assets/fd094f65/jquery.js"></script>
+<script src="/assets/fb2ec025/yii.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/scrolldown.js"></script>
+<script src="/js/all.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/changefontsize.js"></script>
+<script src="/js/changeColorMode.js"></script>
+<script src="/js/lightbox/index.bundle.min.js"></script>
+<script src="/js/plyr.js"></script>
+<script src="/js/cookieDisable.js"></script>
+<script src="/js/platform.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-video.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-zoom.min.js"></script>
+<script src="/js/jquery.color.2.1.2.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
+<script src="/js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+<script src="/assets/fb2ec025/yii.validation.js"></script>
+<script src="/assets/fb2ec025/yii.activeForm.js"></script>
+<script>
+	
+
+		//AOS.init();
+
+		AOS.init({
+			duration: 800, // values from 0 to 3000, with step 50ms
+			startEvent: "load",
+			once: false,
+		});
+		
+
+		var myModal = document.getElementById("searchbox")
+		var myInput = document.getElementById("myInput")
+
+		myModal.addEventListener("shown.bs.modal", function () {
+			myInput.focus()
+		})
+		
+
+		$(document).ready(function(){
+			$(".slick1").slick({
+				dots: true
+			});
+		});
+		
+
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll("[data-bs-toggle=\"tooltip\"]"));
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+			return new bootstrap.Tooltip(tooltipTriggerEl);
+		});
+
+		var btn = $("#button");
+
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > 300) {
+				btn.addClass("show");
+			} else {
+				btn.removeClass("show");
+			}
+		});
+
+		btn.on("click", function(e) {
+			e.preventDefault();
+			$("html, body").animate({scrollTop:0}, "300");
+		});
+		
+
+		const player = new Plyr(".audioPlayer");
+		
+
+		$(function () {
+			$("[data-toggle=\"tooltip\"]").tooltip();
+		})
+		
+
+		var totalImages = 0;
+		// $(".photo-gallery img").length;
+		$(function(){
+			$(".photo-gallery a").imagesLoaded( function() {
+				// images have loaded
+				var msnry = new Masonry(".photo-gallery");
+				msnry.layout();
+			});
+			// $(".photo-gallery img").each(function(){
+			// 	$(this).load(function(){
+			// 		totalImages++;
+			// 		if (totalImages >= $(".photo-gallery img").length) {
+			// 		}
+			// 	});
+			// })
+			// var msnry = new Masonry(".photo-gallery");
+			// msnry.layout();
+		});
+		$("a.eapps-link").css("display","none");
+		
+		$("table.tb-responsive thead tr th").each(function(index,element){
+			index += 1;
+			$("tr td:nth-child(" + index + ")").attr("data-title", $(this).text());
+		});
+		</script>
+<script>jQuery(function ($) {
+
+	var xhr;
+	var blurXhr;
+	
+	$(window).bind("load resize", function() {
+		var isMobile = $(window).width() < 992;
+		var isHideScripture = !$("#section-scripture").hasClass("active");
+		$(".sermons-col-left").css("width", getSectionMainWidth(isMobile, isHideScripture));
+		$(".sermons-col-left").css("height", getSectionMainHeight(isMobile, isHideScripture));
+		$(".sermons-col-right").css("width", getSectionScriptureWidth(isMobile, isHideScripture));
+		$(".sermons-col-right").css("height", getSectionScriptureHeight(isMobile, isHideScripture));
+
+		if(isMobile) {
+			if($(".btn-show-notes").css("display") == "none" && $(".btn-show-scripture").css("display") == "none") {
+				showButtonByClassName("btn-show-notes");
+			}
+		}
+	});
+	
+	function loadScripture(element){
+		var scriptureData = getScriptureData(element);
+		var isMobile = $(window).width() < 992;
+		
+		showLoadingSpinner();
+		if (!$("#section-scripture").hasClass("active")){
+			$("#section-scripture").addClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, false),
+				height: getSectionMainHeight(isMobile, false),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, false),
+				height: getSectionScriptureHeight(isMobile, false),
+			});
+			if(isMobile) {
+				if($(".article-citation-magnifier").length && !$(".article-citation-magnifier").hasClass("h-100")){
+					$(".article-citation-magnifier").addClass("h-100");
+				}
+			}
+			$("#section-scripture .btn-close-scripture").attr("tabindex", "0");
+			$(".btn-show-scripture").hide();
+			if(isMobile){
+				showButtonByClassName("btn-show-notes");
+			}else {
+				// hideButtonByClassName("btn-show-notes");
+			}
+		}
+		else{
+			$("#section-scripture .article-citation-magnifier").animate({scrollTop: 0});
+		}
+		
+		if (xhr){
+			xhr.abort();
+		}
+		$("#section-scripture").data(scriptureData);
+		xhr = $.ajax("/site/get-scripture", {
+			dataType: "json",
+			data: scriptureData,
+			success: function(data){
+				if (data !== false){
+					var scriptureContainer = $("#section-scripture .magnifier-content");
+					if (scriptureContainer){
+						var scriptureHtml = getScriptureHtml(data);
+						if (scriptureHtml){
+							scriptureContainer.html(scriptureHtml);
+						}
+					}
+				}
+			}
+		}).always(function(){
+			xhr = null;
+			hideLoadingSpinner();
+		});
+	}
+	
+	function closeScripture(){
+		var isMobile = $(window).width() < 992;
+		if ($("#section-scripture").hasClass("active")){
+			$("#section-scripture .magnifier-content").html("");
+			$("#section-scripture").removeClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, true),
+				height: getSectionMainHeight(isMobile, true),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, true),
+				height: getSectionScriptureHeight(isMobile, true),
+			});
+			$("#section-scripture .btn-close-scripture").attr("tabindex", "-1");
+			$(".btn-show-scripture").show();
+			showButtonByClassName("btn-show-notes");
+		}
+		$("#section-scripture").data(getScriptureData());
+		hideLoadingSpinner();
+	}
+	
+	function getScriptureData(element){
+		var scriptureData = {};
+		scriptureData["book"] = element && element.data("book") ?
+			element.data("book") :
+			null;
+		scriptureData["start-chapter"] = element && element.data("start-chapter") ?
+			element.data("start-chapter") :
+			null;
+		scriptureData["end-chapter"] = element && element.data("end-chapter") ?
+			element.data("end-chapter") :
+			null;
+		scriptureData["start-verse"] = element && element.data("start-verse") ?
+			element.data("start-verse") :
+			null;
+		scriptureData["end-verse"] = element && element.data("end-verse") ?
+			element.data("end-verse") :
+			null;
+		return scriptureData;
+	}
+	
+	function getScriptureHtml(data){
+		var bookTemplate = "<h3 class=\"article-title mb-0 text-center\" data-book=\"{{book}}\">{{content}}</h3>";
+		var chapterTemplate = "<h4 class=\"mb-3\" data-chapter=\"{{chapter}}\">{{content}}</h4>";
+		var verseTemplate = "<p><sup class=\"text-danger me-2\">{{verse}}</sup>{{content}}</p>";
+		
+		var scriptureHtml = "";
+		if (data.books){
+			$.each(data.books, function(bookId, book){
+				//for each book
+				if (bookId && book && book.title){
+					scriptureHtml += bookTemplate.replace("{{book}}", bookId).replace("{{content}}", book.title);
+					if (book.chapters){
+						$.each(book.chapters, function(chapterId, chapter){
+							if (chapterId && chapter && chapter.title){
+								scriptureHtml += chapterTemplate.replace("{{chapter}}", chapterId).replace("{{content}}", chapter.title);
+								if (chapter.verses){
+									$.each(chapter.verses, function(verseId, verse){
+										if (verseId && verse){
+											scriptureHtml += verseTemplate.replace("{{verse}}", verseId).replace("{{content}}", verse);
+										}
+									});
+								}
+							}
+						});
+					}
+				}
+			});
+		}
+		return scriptureHtml;
+	}
+	
+	function showLoadingSpinner(){
+		$("#loadingSpinner").stop().fadeIn(300);
+	}
+	
+	function hideLoadingSpinner(){
+		$("#loadingSpinner").stop().fadeOut(300);
+	}
+	
+	function getSectionMainWidth(isMobile = false, isFull = true){
+		return isMobile ?
+			"100%" :
+			(isFull ?
+				"100%" :
+				"65%");
+	}
+	
+	function getSectionMainHeight(isMobile = false, isFull = true){
+		return (isMobile ?
+			(window.innerHeight - $("header").outerHeight() - 5) * (isFull ? 0.9 : 0.45) :
+			window.innerHeight - $("header").outerHeight()
+		) + "px";
+	}
+	
+	function getSectionScriptureWidth(isMobile = false, isHide = true){
+		return isMobile ?
+			"100%" :
+			(isHide ?
+				"0%" :
+				"35%");
+	}
+	
+	function getSectionScriptureHeight(isMobile = false, isHide = true){
+		return (isMobile ?
+			(window.innerHeight - $("header").outerHeight() - 5) * (isHide ? 0.0 : 0.45) :
+			window.innerHeight - $("header").outerHeight()
+		) + "px";
+	}
+
+	function hideButtonByClassName(className){
+		if($("."+className).length) {
+			$("."+className).hide(300);
+		}
+	}
+
+	function showButtonByClassName(className){
+		if($("."+className).length) {
+			$("."+className).show(300);
+		}
+	}
+
+	function showIframe(hideButton = true){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			$("#section-scripture").addClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, false),
+				height: getSectionMainHeight(isMobile, false),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, false),
+				height: getSectionScriptureHeight(isMobile, false),
+			});
+			if(hideButton) {
+				$("#section-scripture .btn-close-scripture").attr("tabindex", "0");
+				$(".btn-show-scripture").hide();
+			}
+		}
+		else{
+			$("#section-scripture .article-citation-magnifier").animate({scrollTop: 0});
+		}
+	}
+
+	function animateScripture(object = {height:0, padding:0, marginBottom: 0}, duration = 300) {
+		if($(".article-citation-magnifier").length) {
+			$(".article-citation-magnifier").stop().animate(object, {duration:duration});
+		}
+	}
+
+	function showNotes(){
+		if($(".article-myNotes").length > 0) {
+			$(".article-myNotes").addClass("h-100", 300);
+		}
+	}
+	
+	$("a.article-citation").click(function(){
+		if ($("#section-scripture").hasClass("active") && JSON.stringify(getScriptureData($("#section-scripture"))) == JSON.stringify(getScriptureData($(this)))){
+			closeScripture();
+		}
+		else{
+			loadScripture($(this));
+		}
+	});
+	
+	// $(".btn-show-scripture").click(function(){
+	// 	if (!$("#section-scripture").hasClass("active")){
+	// 		$("a.article-citation").first().click();
+	// 	}
+	// });
+	
+	// $("#section-scripture .btn-close-scripture").click(function(){
+	// 	if ($("#section-scripture").hasClass("active")){
+	// 		closeScripture();
+	// 	}
+	// });
+
+	$(".btn-show-scripture").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			animateScripture({padding:10, marginBottom:5}, 300);
+			if(!$(".article-citation-magnifier").hasClass("h-100")){
+				$(".article-citation-magnifier").addClass("h-100");
+			}
+			$("a.article-citation").first().click();
+		}else {
+			if($(".article-myNotes").length > 0 && $(".article-myNotes").hasClass("h-100")) {
+				let newHeight = $("#section-scripture").height() * 0.5 - 2.5;
+				loadScripture($("a.article-citation"));
+				animateScripture({height:newHeight, padding:10, marginBottom: 5}, 300);
+				if($(".article-myNotes").length > 0) {
+					$(".article-myNotes").removeClass("h-100", 300);
+				}
+				hideButtonByClassName("btn-show-scripture");
+			} 
+			if(isMobile) {
+				animateScripture({height:"100%", padding:10, marginBottom: 5}, 300);
+				showButtonByClassName("btn-show-notes");
+			}
+		}
+	});
+
+	$("#section-scripture .btn-close-scripture").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if($(".article-citation-magnifier").hasClass("h-100")) {
+			if ($("#section-scripture").hasClass("active")){
+				closeScripture();
+			}
+		}else {
+			if($(".article-myNotes").length > 0) {
+				if(isMobile){
+					$(".article-myNotes").removeClass("h-100");
+				}else {
+					$(".article-myNotes").addClass("h-100", 300);
+				}
+			}
+			if(isMobile){
+				closeScripture();
+			}else {
+				animateScripture();
+			}
+			showButtonByClassName("btn-show-scripture");
+		}
+	});
+
+	$("#section-scripture .btn-close-notes").click(function(){
+		if($(".article-citation-magnifier").height() == 0) {
+			if ($("#section-scripture").hasClass("active")){
+				closeScripture();
+			}
+		}
+		if(!$(".article-citation-magnifier").hasClass("h-100")) {
+			$(".article-citation-magnifier").addClass("h-100",300);
+			showButtonByClassName("btn-show-notes");
+		}
+	})
+
+	$(".btn-show-notes").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			if($(".article-myNotes").length > 0) {
+				$(".article-citation-magnifier").removeClass("h-100");
+				animateScripture();
+				$(".article-myNotes").addClass("h-100", 300);
+			}
+			$("#section-scripture .btn-close-notes").attr("tabindex", "0");
+			hideButtonByClassName("btn-show-notes");
+			showIframe(false);
+		}else {
+			if($(".article-citation-magnifier").hasClass("h-100")) {
+				$(".article-citation-magnifier").removeClass("h-100");
+			}
+			let newHeight = $("#section-scripture").height() * 0.5 - 2.5;
+			animateScripture({height:newHeight, padding:10, marginBottom: 5}, 300);
+			hideButtonByClassName("btn-show-notes");
+			if($(".article-myNotes").length && $(".article-myNotes").hasClass("h-100")){
+				$(".article-myNotes").removeClass("h-100");
+			}
+			if(isMobile){
+				animateScripture();
+				if($(".article-myNotes").length && !$(".article-myNotes").hasClass("h-100")){
+					$(".article-myNotes").addClass("h-100");
+				}
+				showButtonByClassName("btn-show-scripture");
+			}
+		}
+	})
+	
+	var backgroundColor = $("a.article-citation").css("background-color");
+	var fontColor = $("a.article-citation").css("color");
+	if ($("a.article-citation").length > 0){
+		$(".btn-show-scripture").show();
+		
+		$("a.article-citation").first()
+			.click()
+			.animate({
+				"background-color": "#c90000",
+				"color": "#FFFFFF",
+			}, 300)
+			.delay(100)
+			.animate({
+				"background-color": backgroundColor,
+				"color": fontColor,
+			}, 300);
+	}else if("") {
+		animateScripture();
+		showNotes();
+		setTimeout(showIframe, 300);
+	}
+
+	// save audio process
+	function ajaxCallSaveAudioProgress(time, model_id, model_name, title, duration){
+		if(model_id && model_name && title && Number.isInteger(time)) {
+			$.ajax({
+				method:"POST",
+				url:"/history/save-file-video-progress",
+				data: {
+					time,
+					url: "https://www.hkbibleconference.org/session-message/view/250",
+					model_id,
+					model_name,
+					title,
+					duration,
+				},
+				success:function(result){
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}
+	}
+
+	$(function(){
+		let audioElement = $("audio");
+		let old_time = null;
+		let title = "第三講  愛無底線";
+		if(audioElement.length) {
+			if(audioElement[0].dataset.currenttime) {
+				audioElement[0].currentTime = audioElement[0].dataset.currenttime;
+				old_time = audioElement[0].dataset.currenttime;
+			}
+			let model_id = audioElement[0].dataset.modelId;
+			let model_name = audioElement[0].dataset.model;
+			$(audioElement).off().on("timeupdate", function(event){
+				let now_time = parseInt(this.currentTime);
+				if(old_time === null || now_time - old_time >= 2 || now_time - old_time < 0) {
+					old_time = now_time;
+					ajaxCallSaveAudioProgress(now_time, model_id, model_name, title, parseInt(this.duration));
+				}
+			})
+		}
+	})
+	$("#myNotes").blur(function(){
+		if(blurXhr){
+			blurXhr.abort();
+		}
+		blurXhr = $.ajax("/notes/save-notes", {
+			dataType: "json",
+			method: "POST",
+			data: {
+				content: $("#myNotes").val(),
+				session_message_id: "250",
+			},
+			success: function(data){
+				if(data.error) {
+					alert(data.message);
+				}
+			},
+			error: function(error){
+				alert(error);
+			}
+		}).always(function(){
+			blurXhr = null;
+		});
+	});
+	
+jQuery('#subscribe-form').yiiActiveForm([{"id":"subscribeform-email","name":"email","container":".field-subscribeform-email","input":"#subscribeform-email","error":".invalid-feedback","enableAjaxValidation":true,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"請輸入電郵"});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"請輸入正確的電郵","enableIDN":false,"skipOnEmpty":1});yii.validation.string(value, messages, {"message":"電郵 必須為字串。","max":500,"tooLong":"電郵 只能包含最多 500 個字符。","skipOnEmpty":1});}}], {"errorSummary":".alert.alert-danger","errorCssClass":"is-invalid","successCssClass":"is-valid","validationStateOn":"input"});
+
+	$("#siteSearchForm").on("submit", function() {
+		var value = $(this).find("input[name=\"keyword\"]").val();
+		if (!value){
+			$(this).find(".msg-keyword").show();
+			return false;
+		}
+
+		return true;
+	});
+
+	$("#siteSearchForm input[name=\"keyword\"]").on("keyup", function (e) {
+		if ($("#siteSearchForm input[name=\"keyword\"]").val()){
+			$("#siteSearchForm .msg-keyword").hide();
+		}
+	});
+	
+	<!--Add to bookmark button-->
+	$(".bookmark").off().click(function() {
+		$(this).toggleClass("added");
+		let target = $(this)[0];
+		let targetModel = $(this)[0].dataset.model.replace(/\\/g, "\\\\");
+		let targetModelId = $(this)[0].dataset.modelId;
+		let otherElements = $(".bookmark[data-model-id=\""+ targetModelId +"\"][data-model=\""+ targetModel +"\"]");
+		if(otherElements.length) {
+			$(otherElements).each(function(index, element){
+				if(element != target) {
+					$(element).toggleClass("added");
+				}
+			})
+		}
+
+		if("") {
+			let addOrRemove = $(this).hasClass("added") ? "add" : "remove";
+			let model = $(this)[0].dataset.model;
+			let modelId = $(this)[0].dataset.modelId;
+			// console.log($(this)[0].dataset);
+			$.ajax({
+				method:"POST",
+				url:"/bookmark/add-or-remove-bookmark",
+				data: {
+					addOrRemove,
+					model,
+					modelId,
+				},
+				success:function(result){
+					console.log(result);
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}else{
+			let secondLayerId = null;
+			// console.log(1);
+			if(targetModel && targetModel.includes("SpeakerWording")){
+				let modal = $(this).parents(".modal");
+				if(modal.length){
+					secondLayerId = $(modal).attr("id");
+				}
+			}
+			let url = "https://www.hkbibleconference.org/site/member";
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			if(secondLayerId){
+				if(url.includes("?")){
+					url = urlParams.size ? (url + "&secondLayerId=" + secondLayerId) : (url + "secondLayerId=" + secondLayerId);
+				}else {
+					url =  url + "?secondLayerId=" + secondLayerId;
+				}
+			}
+			location.href = url;
+		}
+	});
+
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	if(urlParams.has("firstLayerId")){
+		let firstLayerId = urlParams.get("firstLayerId");
+		if($("#"+firstLayerId).length){
+			let btn = $("#"+firstLayerId);
+			$(btn)[0].scrollIntoView();
+			let relatedModalId = $(btn)[0].dataset.bsTarget;
+			new bootstrap.Modal(relatedModalId).show("#"+firstLayerId);
+		}
+		if(urlParams.has("secondLayerId")){
+			let secondLayerId = urlParams.get("secondLayerId");
+			setTimeout(function(){
+				new bootstrap.Modal("#" + secondLayerId).show();
+			},500);
+		}
+	}else if(urlParams.has("secondLayerId")){
+		let secondLayerId = urlParams.get("secondLayerId");
+		new bootstrap.Modal("#" + secondLayerId).show();
+	}
+	
+
+		$("a[download='']").each(function(){
+			$(this).click(function(){
+				downloadResource($(this).attr("href"));
+				return false;
+			});
+		});
+		
+		function forceDownload(blob, filename) {
+			var a = document.createElement("a");
+			a.download = filename;
+			a.href = blob;
+			document.body.appendChild(a);
+			a.click();
+			a.remove();
+		}
+
+		function downloadResource(url, filename) {
+			if (!filename) filename = url.split("\\").pop().split("/").pop();
+			console.log(location.origin);
+			fetch(url + "?_t=" + Date.now(), {
+				headers: new Headers({
+					"Origin": location.origin
+				}),
+				method: "GET",
+				mode: "cors"
+			})
+			.then(response => response.blob())
+			.then(blob => {
+				let blobUrl = window.URL.createObjectURL(blob);
+				forceDownload(blobUrl, filename);
+			})
+			.catch(e => console.error(e));
+		}
+		
+});</script></body>
+</html>

@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>第二講  約櫃流浪記</title>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="PEShUmrbdP8fLY-p5BY2hSkBgF3bE7Ro1FYloDxBw9Z7adsdPohArVNC9fDSJWHmRlmtP5NG7D_lFxH3aQCtmA==">
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-icons.css" rel="stylesheet">
+<link href="/css/all.css" rel="stylesheet">
+<link href="/js/slick/slick.css" rel="stylesheet">
+<link href="/js/slick/slick-theme.css" rel="stylesheet">
+<link href="/css/aos.css" rel="stylesheet">
+<link href="/css/cookie-consent.css" rel="stylesheet">
+<link href="/css/interface.css" rel="stylesheet">
+<link href="/css/plyr.css" rel="stylesheet">
+<link href="/js/lightgallery/css/lightgallery-bundle.min.css" rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.21.1/video-js.css" rel="stylesheet">
+<link href="/js/jquery-ui-1.13.2/jquery-ui.min.css" rel="stylesheet">
+<style>
+	.grayscale .page-header-title {
+		background-image: url(/images/color_bg/bg_011.png) !important;
+	}
+	</style>	<link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<script>
+	var color = document.cookie.match("(^|;|; )\s*" + "ColorMode" + "\s*=\s*([^;]+)")?.pop() || "normal";
+	if (color == "normal") {
+		document.body.classList.remove("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.remove("selected");
+		}
+	} else {
+		document.body.classList.add("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.add("selected");
+		}
+	}</script>
+
+
+<a href="#main" class="skip">跳至內容</a>
+<header class="sticky-top">
+	<div class="nav-tool nav-tool-top hidden-990px">
+		<div class="container justify-content-end">
+			<nav class="navbar navbar-expand navbar-light">
+				<div class="collapse navbar-collapse justify-content-end">
+										<ul class="navbar-nav">
+						<li class="nav-item nav-font-size fontSize">
+							<span class="defaultFont">
+								<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a> 
+							</span>
+							<span class="largerFont">
+								<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a> 
+							</span>
+							<span class="xLargerFont">
+								<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+							</span>
+						</li>
+						<li class="nav-item nav-search">
+							<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+						</li>
+						<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>						<li class="nav-item nav-btn-BW">
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn monochromeBtn" >黑白版</a>
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn chromaticBtn" style="display:none;">彩色版</a>
+						</li>
+												<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+												<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+						<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light navbar-menu">
+			<div class="container-fluid p-0">
+				<a class="navbar-brand" href="/site/index">
+					<!--<img src="/images/logo.jpg" alt="" class="w-100" />-->
+					<img src="/images/logo_whole.svg" alt="港九培靈研經會" class="logoImg">
+					<img src="/images/logo_chi.svg" alt="港九培靈研經會" class="scrollLogoImg">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+					<div class="nav-tool show-990px">
+						<div class="container justify-content-end">
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="flex-wrap collapse navbar-collapse justify-content-end">
+																		<ul class="navbar-nav">
+										<li class="nav-item nav-font-size">
+											<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a>
+											<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a>
+											<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+										</li>
+										<li class="nav-item nav-search">
+											<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+										</li>
+										<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>										<li class="nav-item nav-btn-BW"><a href="javascript:checkColorMode()" class="nav-link colorModeBtn">黑白版</a></li>
+									</ul>
+								</div>
+							</nav>
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="collapse navbar-collapse justify-content-end">
+									<ul class="navbar-nav">
+																				<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+																				<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+										<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<ul id="w0" class="navbar-nav nav"><li class="nav-item nav-item" data-id="1" data-type="2"><a class="nav-link" href="/content/schedule">聚會日程</a></li>
+<li class="nav-item nav-item" data-id="3" data-type="2"><a class="nav-link" href="/content/past-conferences">歷屆聚會</a></li>
+<li class="nav-item nav-item" data-id="5" data-type="1"><a class="nav-link" href="/content/our-story">培靈．歷史館</a></li>
+<li class="nav-item nav-item" data-id="6" data-type="3"><a class="nav-link" href="/content/about-us">關於我們</a></li></ul>				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<main id="main" name="main">
+	
+<!--<section class="page-header">
+		<div class="page-header-title" style="background-image: url(/images/color_bg/bg_002.png);">
+		<h1>歷屆聚會</h1>
+	</div>
+	<div class="page-header-img">
+		<div class="photocap">
+			<img src="https://file.hkbibleconference.org/upload/content/3/banner/歷屆聚會.jpg" alt="歷屆聚會" />
+		</div>
+	</div>
+	</section>
+
+<section class="path">
+	<div class="container">
+		<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			
+			<li class="breadcrumb-item" aria-current="page"><a href="/content/past-conferences">歷屆聚會</a></li>
+			<li class="breadcrumb-item" aria-current="page"><a href="/content/past-conferences">第83屆 2011 在衪豈有難成的事</a></li>
+			<li class="breadcrumb-item" aria-current="page">研經會</li>
+			<li class="breadcrumb-item" aria-current="page">2011-08-02 約櫃流浪記</li>
+			<li class="breadcrumb-item" aria-current="page">閱讀全文</li>
+			<li class="breadcrumb-item" aria-current="page">第二講  約櫃流浪記</li>		  </ol>
+		</nav>
+	</div>
+</section>-->
+
+<div class="row w-100 m-0" style="overflow: hidden">
+	<div id="section-main" class="sermons-col-left bg-grey" style="width:100%">
+		<h1 class="color-1a8090 bg-white text-center pb-2 pt-3 h2">第83屆 研經會 第2講</h1>
+		<article class="article pt-0 p-lg-5 pt-lg-0">
+			<div class="article-meta">
+				<span>
+					<i class="fa fa-user"></i>
+					講員：					<a href="/speaker/view/33">蔡麗貞博士</a>
+				</span>
+				<span>
+					<i class="fa fa-calendar-alt"></i>
+					屆別:					<a href="/sermon/view?serial_no=83">第83屆</a>
+				</span>
+				<span data-toggle="tooltip" data-placement="top" title="性質">
+					<i class="fa fa-folder-open"></i>
+					<a href="/sermon/view?serial_no=83#session-master-41">研經會</a>
+				</span>
+			</div>
+			<!--<div class="article-tag">
+				<a href="#" class="badge">路加福音</a>
+				<a href="#" class="badge">講道會</a>
+				<a href="#" class="badge">56屆</a>
+				<a href="#" class="badge">麥希真牧師</a>
+			</div>-->
+			<div class="d-flex align-items-center mb-4">
+				<h2 class="article-title mb-0 h3">
+					第二講  約櫃流浪記				</h2>
+									<a type="button" class="bookmark ms-3 " data-model="app\models\SessionMessage" data-model-id="804"></a>
+							</div>
+						<div class="article-content">
+				
+				<div class="h5 mb-4 d-md-flex justify-content-lg-between align-items-center">
+					<div><span>經文：</span> 撒母耳記上  <a class="article-citation" href="javascript:void(0)" data-book="9" data-start-chapter="4" data-start-verse="19" data-end-verse="22">4:19-22</a></div><div><a href="javascript:void(0)" class="btn btn-danger btn-show-scripture text-center my-2 ml-auto align-self-start" style="display:none;">顯示經文</a>
+				</div></div>				<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">約櫃是撒母耳記上</span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">4</span></span></span></span>&nbsp; <span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">-</span></span></span></span>&nbsp; <span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">7<span style="letter-spacing:-.05pt">章的</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">主題，被稱為「約櫃</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">故事」。「約櫃」一詞在舊約出現六十一次，而撒上 </span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">4</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">章至</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">7</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">章占了二、三十次；第四章敘述約櫃被擄；第五章敘述約櫃在非利士城邑搬遷移動；第六章敘述約</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">櫃回歸以色列地。</span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.9pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">約櫃是一個鍍金長方型木盒，長四呎，寬二呎，高二呎；四腳有四個金環，用兩根包金的木杆穿過，</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.55pt">方便摃抬。上面有純金做的施恩座，長闊跟木盒相</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">同，兩頭安置兩個純金的基路伯天使，天使面對面覆</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">蓋著施恩座。裡頭放了神的約版十誡的碑文，以<span style="letter-spacing:-.1pt">及亞倫發芽的杖，及放嗎哪的金罐。</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.35pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.55pt">約櫃表徵著神在人間的居所，要與人在那裡相</span></span></span></span></span></strong><strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">會，是神幫助人的象徵</span></span></span></span></span></strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">。當以色列人在曠野飄流拔營前進時有約櫃同在，摩西就說：願耶和華興起，叫禰的仇敵四散。當約櫃停止前進時，摩西就說：耶和華啊，求禰回到以色列千萬人中。曠野飄流完畢，祭司藉著約櫃執行神的命令，透過烏陵與土明在必要時如揀選掃羅王，或選最佳的軍事攻擊時刻時，引導人做決定。約櫃可以說是個神秘的物件，是上帝在歷史中作為的見證，見證這一位神曾經施行奇事，且與以色列人親近。約櫃不是一件冰冷的紀念品，也沒有特殊</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.05pt">的法力，當人將約櫃視為能力與運氣的來源時，先知</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.55pt">就會糾正他們。總而言之，<strong>約櫃是神與人同在的象</strong></span></span></span></span></span><strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">徵</span></span></span></span></span></strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">，但約櫃不能限制神的所在與臨在。</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.2pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<h1 align="left" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:14pt"><span style="font-family:&quot;Adobe 繁黑體 Std B&quot;,sans-serif"><span style="font-weight:normal"><strong><span style="font-size:12.0pt"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.15pt">約櫃被擄</span></span></span></span></strong></span></span></span></h1>
+
+<p align="left" class="MsoBodyText" style="margin-top:12.0pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">撒上四章提及以色列人在亞弗戰場失利，長老以為神的能力附在約櫃中，以為約櫃就是上帝，或軍隊的守護神。但在亞弗戰場的兩場戰役中，第一次以色列人敗在非利士人面前，於是他們抬出約櫃，以為有守護致勝的力量，沒想到一抬出約櫃以後，第二場戰役更是慘敗，狠狠地打擊了以色列人的信仰。反觀非利士人雖未認識耶和華，卻認識耶和華的權能。</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.2pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">撒</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.15pt">上</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">4</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">：</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">7</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.15pt">-</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">9</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.05pt">記載非利士人就懼怕起來說：「有神</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">到了他們營中；又說：我們有禍了！向來不曾有這樣的事。我們有禍了！誰能救我們脫離這些大能之神的手呢？從前在曠野用各樣災殃擊打埃及人的，就是這些神。」非利士人是多神主義的，他們說這些神（複數），以色列人的神是大有能力的，表現出對以色列歷史和信仰的解說，這些未受割禮的外邦人，也辨識到以色列人生活中神奇的能力。巧妙的是，聖經于此利用了外邦人的口宣告耶和華的權能，敵人的危機意</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">識勝過以色列人的迷思。</span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.45pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.05pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">出埃及記的故事反叫非利士人剛強壯膽，連勝兩仗；本來滿有自信的以色列人，和驚惶失措的非利士人好像互換結局一樣。講述故事的人並無作出神學的</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.05pt">解釋或質疑，只以諷刺的手法，暴露以色列人陳舊的</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">信仰。約櫃被擄不代表上帝出走，相反，神仍臨在於約櫃中，以色列人的失敗根本就是上帝的旨意。這裡引申一個更嚴重的神學危機，且看祭司以利的表現，他似乎不甚在意兒子的安危，他全副心思單放在約櫃上。因為這是他生命和信仰投注的所在。</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.9pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.05pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:1.0pt">以利聽到約櫃被擄，立時折斷頸項而死</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:1.0pt">(撒上 </span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">4<span style="letter-spacing:.05pt">:</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">18)，結局簡單而具悲劇的震撼效果；約櫃被擄，以</span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.05pt">色列人蒙羞，甚至耶和華也蒙羞，以利這位神人卻由童子撒母耳來宣佈他的結局。以利媳婦的死更具悲劇性，公公和丈夫死時，她卻誕下生命，並為兒子起名為「以迦博」，意思是「榮耀離開以色列了」；國破家亡帶來了撕裂之痛，此處聖經將約櫃被擄的神學解</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">釋，放在這無名的婦人口中。</span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.6pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.5pt">撒上四章戲劇性地架空了以色列人所依賴的能</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">力，顯明上帝拒絕被利用。抬約櫃上戰場也不保證得勝，非利士人將約櫃留在神廟也不保證神的祝福。戰爭中取決勝利的，是聯盟或戰隊精良、戰術精確；古時人們認為勝敗取決於所相信的神祇，而基督徒則相信勝敗完全取決於上帝。約櫃象徵神的同在，但若將約櫃等同上帝的本身，就等於以符號取代實體，亦等同偶像崇拜。通常神會按我們的生活規律、經驗、習慣等工具，成就正常的因果效應，這與外邦人一樣，但神亦可以完全不利用這些成就祂的工作，這是我們與外邦人不一樣的地方。神是獨一的創造主，在經驗</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.5pt">中作主的不是規律，而是定規律的神、獨行奇事的</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.3pt">神！</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.6pt">上帝行事總是日新又新，常教人驚喜。<strong>神的同</strong></span></span></span></span></span><strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.05pt">在不代表成功、勝利、順利，亦可帶來拆毀、潔淨、審判等負面情景</span></span></span></span></span></strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.05pt">。基督徒無論在甚麼景況，神都與他們同在，永遠不缺席，並與人同工以成就祂旨意中美善的事。重點甚至不在逆境中有神的美意、或神能使逆境變成祝福。基督徒亦想有完美結局，但更重要的是相信在任何景況中，神與我們同在，這亦是羅馬書 </span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.2pt">8:</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.2pt">28「萬事都互相効力，叫愛神的人得益處」的正確</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">解釋。</span></span></span></span></span></span></span></p>
+
+<h1 align="left" style="margin-top:8.5pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:14pt"><span style="font-family:&quot;Adobe 繁黑體 Std B&quot;,sans-serif"><span style="font-weight:normal"><strong><span style="font-size:12.0pt"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.25pt">大袞廟中 </span></span></span></span></strong><strong><span style="font-size:12.0pt"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="position:relative"><span style="top:-1.0pt"><span style="letter-spacing:.45pt">-- </span></span></span></span></span></span></strong><strong><span style="font-size:12.0pt"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">神透過約櫃大顯神威</span></span></span></span></strong></span></span></span></h1>
+
+<p align="left" class="MsoBodyText" style="margin-top:12.0pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.5pt">撒上第五章更具戲劇性，神在非利士人神廟中</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">與大袞展開鬥法。大袞，非利士人的國神，是掌管五穀豐收的農業神。非利士人將神的約櫃放在大袞旁，</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">作為炫耀的勝利品</span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">(撒上5:2) 。非利士不明白大袞只<span style="letter-spacing:-.1pt">是雕刻的偶像，有眼不能看，有耳不能聽，有手不能動。第二天大袞五體投地傾倒於地，第三日更是頭和兩手砍斷只剩殘體。這明顯斷乎不可能出於意外，讓人清楚地知道是神的介入。（撒上</span><span style="letter-spacing:-.1pt">5:3-5）</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.65pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.05pt">雖然榮耀離開以色列，但神仍然大有能力。</span></span></span></span></span><strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.3pt">約櫃</span></span></span></span></span></strong><strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.05pt">雖然被擄，但神並未被困住</span></span></span></span></span></strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.05pt">，耶和華現在重整旗鼓，使非利士人顫憟不安。非利士強權，擁有先進的技術和武器，在軍事極具優勢。那位住在可憐以色列農民中的耶和華，現在卻重重擊打敵人，讓他們生痔瘡，</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">這「手」與大袞的手成強烈對比。</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">(撒上5</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">:6</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">)非利士人</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.05pt">感到神的手的重量，他們的祭司說：「要歸榮耀給以</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.6pt">色列的神，或者他向你們和你們的神，並你們的田</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">地，把手放輕些。」</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">(撒上6</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">:5</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">)他們領教了神的能力，</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.05pt">不敢再從軍事或宗教層面角力，只想趕快擺脫這燙手山竽、解決這計時炸彈。於是，約櫃被運到迦特，再運到以革倫，幾乎將重點城巿都圍繞一遍，驚嚇程度形同核廢料。耶和華如今以雷霆萬鈞之力，登上約櫃</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">的寶座，約櫃自由了，開始上路。</span></span></span></span></span></span></span></p>
+
+<h1 align="left" style="margin-top:9.9pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:14pt"><span style="font-family:&quot;Adobe 繁黑體 Std B&quot;,sans-serif"><span style="font-weight:normal"><strong><span style="font-size:12.0pt"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.15pt">約櫃返家</span></span></span></span></strong></span></span></span></h1>
+
+<p align="left" class="MsoBodyText" style="margin-top:12.0pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">非利士人為了擺脫約櫃及其可怕的力量，尋求超<span style="letter-spacing:.05pt">自然能力的引導，要將約櫃引回家。按古代的禮節，崇拜者不能空手朝見上帝，要帶禮物，望神接受贖罪</span><span style="letter-spacing:.1pt">禮，讓他們的痔瘡得痊癒。</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">(撒上6</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">:3</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.1pt">)於是他們讓母牛</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.05pt">帶著禮物，拖著牛車直行大道直抵伯示麥，證明神大能的引導勝過母牛思念小牛的本能，亦證明神掌控這一切。整段故事中上帝並未有說話，<strong>祂以驚人的沉默積極行動，並以不可捉摸的方法顯威</strong>。伯示麥原文是太陽之家，原為崇拜太陽的異教之地，而今約櫃光臨</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">小村莊，引起騷動。</span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.45pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.05pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">伯示麥人因偷窺約櫃而被擊殺這段插曲，顯出神是聖潔不容侵犯的。神的榮耀不打盹、不睡覺，也不容人靠近，無論是非利士人或伯示麥人，或不敬畏神的以色列人都一樣，約櫃就像不定時炸彈隨時引爆。這個從示羅抬來的約櫃在亞弗戰場被擄，流亡七個月</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.5pt">如今送到基列耶琳，成為約櫃暫時居所，一住二十</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.3pt">年。</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.05pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.05pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.5pt">神學的省思，以色列人和非利士人在本質上並</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">無二致。從宗教行為上說，以色列人比非利士人看來更不敬虔。即使約櫃被擄，他們亦從沒有表現焦急，後來約櫃自動被送回來，他們只派祭司去料理，就當是盡了義務，並沒有對約櫃重視。此外，以對超自然界的認識來說，非利士人比以色列人的表現更好；他們能領悟自己的勝利出自上帝的旨意，並說要把榮耀歸給以色列的神。所以，非利士人堪稱『頭腦清晰的神學家』，反觀以色列人只會利用上帝，當達不到利用目的時就換一個偶像來拜。但上帝卻千方百計回到以色列人社區，要住在其中；上帝的帳幕要安置在人間某處，這是出於神的愛，這種頑強執迷的愛使人降</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.3pt">服。</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.35pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<h1 align="left" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:14pt"><span style="font-family:&quot;Adobe 繁黑體 Std B&quot;,sans-serif"><span style="font-weight:normal"><strong><span style="font-size:12.0pt"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.05pt">約櫃被擄對比耶穌受難</span></span></span></span></strong></span></span></span></h1>
+
+<p align="left" class="MsoBodyText" style="margin-top:12.05pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">舊約著名學者布格曼《以家國為家</span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20">&nbsp; ---<span style="letter-spacing:.05pt">&nbsp; 上帝榮耀</span><span style="letter-spacing:.55pt">的旅程》一書，是撒母耳記上</span><span style="letter-spacing:.55pt">4至6章約櫃被擄故事</span><span style="letter-spacing:.05pt">的詮釋，將約櫃被擄對比耶穌受難。原本以色列人望借著抬出約櫃，複製出埃及事件，一舉打敗外邦人，沒想到外邦人反更受激勵，結果以色列人大敗，這是出埃及事件的逆向演出。但故事並未到此結束，類似出埃及的故事發生了，約櫃帶給非利士人鼠疫，類似當年出埃及的十災，促使非利士人將約櫃速速送回。過程中顯示全能的神單方面主動行事，而故事以祭司</span><span style="letter-spacing:.6pt">非尼哈的妻子臨終的話貫穿全域：「榮耀離開以色</span>列」。</span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:12.05pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">布格曼將此事與耶穌受死的事相比較，令人看到一出三天逆轉局勢的故事。以色列人抬出約櫃就像耶穌入耶路撒冷時，受盡民眾歡迎的熱鬧場面，約櫃被擄比擬耶穌受難；而大袞折頭斷手，就仿如耶穌得勝陰間的權勢；約櫃的歸回就像耶穌復活。我們就像無知的以色列人，約櫃被擄使你我的期望破滅了，叫我們認清自己的無能與無知，轉而投靠上帝。藉著上帝的榮耀在外邦彰顯，給我們帶來盼望，約櫃榮耀的歸回，教我們謙卑而不自滿，因為這全是神的作為。</span></span></span></span></span></span></span></span></p>
+
+<h1 align="left" style="margin-top:9.7pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:14pt"><span style="font-family:&quot;Adobe 繁黑體 Std B&quot;,sans-serif"><span style="font-weight:normal"><strong><span style="font-size:12.0pt"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.05pt">悲喜交織的三日：靠恩典渡過</span></span></span></span></strong></span></span></span></h1>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">一般人在週五時都期待週末休息及玩樂。週五晚預備渡假，週六暫時逃避辦公室責任，是一周中最輕鬆的一天。周日收拾心情、充分休息，為未來一周的壓力準備。耶穌受難的那一天是祂被釘受苦的日子，那天門徒慌忙逃跑：接著被釘死並被安放在墳墓中，但三天后復活，並有天使向門徒報喜訊；約櫃被擄之時是以色列人戰敗蒙羞，示羅全城都哭號之日，第二日約櫃令大袞倒下，令非利士人議論紛紛，到第三日大袞的頭手折斷，約櫃得到釋放，是耶和華得勝的日子，整個過程有神在主導。</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.45pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.05pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.55pt">總而言之，約櫃被擄顯出上帝似是脆弱無能的</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">神，但同時亦是滿有權能的神。到底那天在大袞廟中發生了什麼事？那天耶穌的墳墓中又發生什麼事？對於門徒來說，那三天是悲傷與歡樂交織的三日，當耶</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.05pt">穌死後他們問：耶穌真的死了嗎？在以馬忤斯路上，</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">門徒原本憂傷失望，眼睛迷糊，信心遲鈍；但經過耶穌復活的調校後，他們的歸程成了歡欣興奮之途。在一來一回之際，門徒心境變化卻有天壤之別。</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.1pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">三十五前年復活節前夕，正值家父去世，生離死別，晴天霹靂；四年後母親亦在復活節前夕病危。我忐忑不安，那三天對自己來說，彷佛是人生中最漫長的三日。那年復活節母親信主後，平安地送到台中老家，每逢想起個中艱辛，不免感恩落淚。受難節，念及耶穌陪伴走過人生的幽谷；復活節，領人進入大有盼望的寬闊之地；都是感恩莫名的日子。</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.2pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.5pt">你到底把自己的處境定位在週五、六還是周日</span></span></span></span></span></strong><strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">呢？</span></span></span></span></span></strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">看你我信心的關注焦點於在哪裡。</span></span></span></span></span></span></span></span></p>
+
+<p align="left" class="MsoBodyText" style="margin-top:.25pt; margin-right:.7pt; margin-bottom:.0001pt; margin-left:0cm; text-align:left; margin:0cm">&nbsp;</p>
+
+<p align="left" class="MsoBodyText" style="margin-right:.7pt; text-align:left; margin:0cm"><span style="font-size:11pt"><span style="line-height:70%"><span style="font-family:&quot;思源黑體 香港 Medium&quot;,sans-serif"><strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.5pt">請禱告：</span></span></span></span></span></strong><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.5pt">「天父，有時我們像不長進的以色列</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">人，常利用上帝，不能利用時便換個神來拜；像耶穌</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.5pt">的兩門徒眼睛迷糊，信心遲鈍了。禰是偉大、不可</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">測、不受限制、超越的神，禰獨行奇事，讓我們甘心</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:.5pt">俯伏敬拜，一生跟禰。求禰恩待，處在黑暗的禮拜</span></span></span></span></span><span style="font-size:12.0pt"><span style="line-height:70%"><span style="font-family:&quot;微軟正黑體&quot;,sans-serif"><span style="color:#231f20"><span style="letter-spacing:-.1pt">五，看不到前路，越是黑暗時越是需要信心，越需依靠禰渡過每一天。求禰幫助我們珍惜黑暗的日子，因為禰已得勝了。週六是人生邁向榮耀得勝終點的必經過程。禰從不缺席，並在人生每個階段與我們同在，我們為此感恩，求禰悅納我們的敬拜。以上禱告奉主名求。阿們。」</span></span></span></span></span></span></span></span></p>
+				
+				<br>
+				<p class="h5">
+					<span>講員：</span> 蔡麗貞博士
+				</p>			</div>
+			<div class="article-navigation d-flex justify-content-between mt-5">
+								<a href="/session-message/view/796" data-bs-toggle="tooltip" data-bs-placement="right" title="第83屆 研經會 第一講  如何教養下一代？ -- 信仰的傳承" aria-label="上一篇文章：第83屆 研經會 第一講  如何教養下一代？ -- 信仰的傳承"  rel="prev">
+					<i class="fas fa-chevron-left" aria-hidden="true"></i>
+					<span aria-hidden="true">上一篇</span>		
+				</a>
+												<a href="/session-message/view/797" data-bs-toggle="tooltip" data-bs-placement="left" title="第83屆 研經會 第三講  約櫃再度顯威 --上帝很危險！" aria-label="下一篇文章：第83屆 研經會 第三講  約櫃再度顯威 --上帝很危險！" rel="next">
+					<span aria-hidden="true">下一篇</span>	
+					<i class="fas fa-chevron-right" aria-hidden="true"></i>
+				</a>
+							</div>
+			<br>
+			<hr>
+			<br>
+						<p>
+				<span class="h5">版權聲明</span><br>
+				大會現場速記只供信徒溫習用，全文未經講者過目，版權屬港九培靈硏經會。			</p>
+					</article>
+	</div>
+	
+	<div id="section-scripture" class="sermons-col-right" style="width:0%;position:relative;">
+		<section class="article-citation-magnifier h-100">
+			<a href="javascript:void(0);" class="btn btn-close btn-close-scripture d-flex ms-auto" title="隱藏經文"></a>
+			<div class="magnifier-content">
+			</div>
+		</section>
+				<div id="loadingSpinner" class="spinner-overlay">
+			<div class="spinner-container">
+				<span class="loading-spinner"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+</main>
+
+
+<footer>
+	<section class="sitemap">
+				<div class="fix-tools-footer">
+			<div class="container">
+				<div class="d-flex align-items-center">
+										<a href="/site/member" data-bs-placement="left" data-bs-toggle="tooltip" title="登入"><img src="/images/icon_login.svg" alt=""/></a>
+										<a href="https://www.hkbibleconference.org/offering/index" style="background-color: #6aa84f; color: #ffffff;">奉獻方式</a><a href="https://www.hkbibleconference.org/content/view/daily-hope" style="background-color: #a61c00; color: #ffffff;">牧言點滴</a>				</div>
+			</div>
+		</div>
+				<div class="container">
+			<div class="row">
+				<div class="col-6 col-md-4 col-lg-2">
+										<strong><a href="javascript:void(0);">我的資料</a></strong>
+					<ul>
+						<li><a href="/site/member">登入／註冊</a></li>
+					</ul>
+									</div>
+				
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/schedule" data-id="1" data-type="2" style="display: block; margin-bottom: 20px;">聚會日程</a></strong>
+					<strong><a class="nav-item" href="/content/past-conferences" data-id="3" data-type="2" style="display: block; margin-bottom: 20px;">歷屆聚會</a></strong>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/our-story" data-id="5" data-type="1">培靈．歷史館</a></strong>
+					<ul>
+						<li><a href="/content/media-collection">歷屆媒體集</a></li>
+						<li><a href="/content/article-collection">歷屆文集</a></li>
+						<li><a href="/content/past-data">歷屆資料回顧</a></li>
+					</ul>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/about-us" data-id="6" data-type="3">關於我們</a></strong>
+					<ul>
+						<li><a href="/offering/index">奉獻方式</a></li>
+						<li><a href="/content/about-us#contact">聯絡我們</a></li>
+					</ul>
+				</div>			</div>
+		</div>
+	</section>
+	<section class="footer-middle">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-7 col-lg-5 text-center text-md-start pt-2 pb-3 pb-md-2">
+					<form id="subscribe-form" action="/site/subscribe" method="post">
+<input type="hidden" name="_csrf" value="PEShUmrbdP8fLY-p5BY2hSkBgF3bE7Ro1FYloDxBw9Z7adsdPohArVNC9fDSJWHmRlmtP5NG7D_lFxH3aQCtmA==">						<div class="input-group align-items-center flex-nowrap pe-4">
+							<span class="color-white text-nowrap me-3">訂閱我們</span>
+							<div class="form-group field-subscribeform-email required">
+<input type="text" id="subscribeform-email" class="form-control rounded-0" name="SubscribeForm[email]" style="max-width:280px;" placeholder="請輸入你的電郵..." aria-label="請輸入你的電郵..." aria-required="true"><div class="invalid-feedback"></div>
+</div>							<button type="submit" id="btnSubscribe" class="btn btn-gray rounded-0 mb-auto" name="subscribe-button" title="訂閱" aria-label="訂閱"><i class="fa fa-arrow-right"></i></button>						</div>
+					</form>				</div>
+				<div class="col-12 col-md-5 col-lg-7 text-start text-md-end pt-0 pt-md-2 pb-2 sns d-flex align-items-center justify-content-md-end">
+					<span class="related-logos d-inline-block me-1">
+						<img src="/images/WARS_Gold-2022-2023.svg" alt="2022-2023無障礙網頁金獎" width="90"/>
+					</span>
+										<a href="https://www.facebook.com/hkbibleconference/" target="_blank" title="Facebook" aria-label="Facebook">
+						<img src="/images/icon_fb.png" alt="Facebook">
+					</a>
+										<a href="https://www.instagram.com/hkbibleconference/" target="_blank" title="Instagram" aria-label="Instagram">
+						<img src="/images/icon_ig.png" alt="Instagram">
+					</a>
+										<a href="https://www.youtube.com/c/HongKongBibleConference" target="_blank" title="Youtube" aria-label="Youtube">
+						<img src="/images/icon_yt.png" alt="Youtube">
+					</a>
+									</div>
+			</div>
+		</div>
+	</section>
+	<section class="copyright py-2">
+		<div class="container">
+			<div class="footer-btm-page mb-2">
+				<span>&copy; 2023 港九培靈研經會 版權所有</span>
+				<a class="nav-item" href="/footer-content/copy-right" data-id="1" data-type="1">版權及知識產權</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-privacy-policy" data-id="2" data-type="2">私隱政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-linking-policy" data-id="3" data-type="2">連結政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-disclaimer" data-id="4" data-type="2">免責聲明</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-terms-of-use" data-id="5" data-type="2">使用條款</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-accessibility" data-id="6" data-type="2">無障礙網頁</a>			</div>
+		</div>
+	</section>
+</footer>
+<!-- Back to top button -->
+<a href="#" id="button" title="回頁頂"><i class="fas fa-chevron-up"></i></a>
+
+<!--Cookie Consent-->
+<div class="cookie-container">
+	<div class="container-wrapper">
+		<div class="close-btn cookie-btn-close"><a href="javascript:void(0)" title="關閉" aria-label="關閉">X</a></div>
+		<p>當你瀏覽此網站時，一些Cookie (曲奇) 檔案將會儲存於你電腦的硬碟內。這些曲奇檔案只為瀏覽此網站之用。在此情況下，曲奇檔案將不會收集你的任何個人資料。你可選擇不接受曲奇檔案，但你若不接受曲奇檔案的話，你可能無法使用本網站某些功能。 <a class="td-underline" href="/bibleConference/footer-content/copy-right#statement-privacy-policy">了解更多</a></p>
+		<button class="cookie-btn">接受</button>
+		<button class="cookie-btn cookie-btn-disable">不接受</button>
+	</div>
+</div>
+
+<div class="modal" id="searchbox" tabindex="-1" aria-labelledby="網站工具:搜尋表格">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="siteSearchForm" action="/site/search" method="GET">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="搜尋關鍵字" aria-label="搜尋關鍵字" aria-describedby="請輸入搜尋關鍵字" name="keyword">
+						<button class="btn btn-outline-secondary" type="submit" id="button-addon2">搜尋</button>
+						<div class="invalid-feedback msg-keyword">請輸入欲搜尋的關鍵字</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script src="/assets/fd094f65/jquery.js"></script>
+<script src="/assets/fb2ec025/yii.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/scrolldown.js"></script>
+<script src="/js/all.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/changefontsize.js"></script>
+<script src="/js/changeColorMode.js"></script>
+<script src="/js/lightbox/index.bundle.min.js"></script>
+<script src="/js/plyr.js"></script>
+<script src="/js/cookieDisable.js"></script>
+<script src="/js/platform.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-video.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-zoom.min.js"></script>
+<script src="/js/jquery.color.2.1.2.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
+<script src="/js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+<script src="/assets/fb2ec025/yii.validation.js"></script>
+<script src="/assets/fb2ec025/yii.activeForm.js"></script>
+<script>
+	
+
+		//AOS.init();
+
+		AOS.init({
+			duration: 800, // values from 0 to 3000, with step 50ms
+			startEvent: "load",
+			once: false,
+		});
+		
+
+		var myModal = document.getElementById("searchbox")
+		var myInput = document.getElementById("myInput")
+
+		myModal.addEventListener("shown.bs.modal", function () {
+			myInput.focus()
+		})
+		
+
+		$(document).ready(function(){
+			$(".slick1").slick({
+				dots: true
+			});
+		});
+		
+
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll("[data-bs-toggle=\"tooltip\"]"));
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+			return new bootstrap.Tooltip(tooltipTriggerEl);
+		});
+
+		var btn = $("#button");
+
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > 300) {
+				btn.addClass("show");
+			} else {
+				btn.removeClass("show");
+			}
+		});
+
+		btn.on("click", function(e) {
+			e.preventDefault();
+			$("html, body").animate({scrollTop:0}, "300");
+		});
+		
+
+		const player = new Plyr(".audioPlayer");
+		
+
+		$(function () {
+			$("[data-toggle=\"tooltip\"]").tooltip();
+		})
+		
+
+		var totalImages = 0;
+		// $(".photo-gallery img").length;
+		$(function(){
+			$(".photo-gallery a").imagesLoaded( function() {
+				// images have loaded
+				var msnry = new Masonry(".photo-gallery");
+				msnry.layout();
+			});
+			// $(".photo-gallery img").each(function(){
+			// 	$(this).load(function(){
+			// 		totalImages++;
+			// 		if (totalImages >= $(".photo-gallery img").length) {
+			// 		}
+			// 	});
+			// })
+			// var msnry = new Masonry(".photo-gallery");
+			// msnry.layout();
+		});
+		$("a.eapps-link").css("display","none");
+		
+		$("table.tb-responsive thead tr th").each(function(index,element){
+			index += 1;
+			$("tr td:nth-child(" + index + ")").attr("data-title", $(this).text());
+		});
+		</script>
+<script>jQuery(function ($) {
+
+	var xhr;
+	var blurXhr;
+	
+	$(window).bind("load resize", function() {
+		var isMobile = $(window).width() < 992;
+		var isHideScripture = !$("#section-scripture").hasClass("active");
+		$(".sermons-col-left").css("width", getSectionMainWidth(isMobile, isHideScripture));
+		$(".sermons-col-left").css("height", getSectionMainHeight(isMobile, isHideScripture));
+		$(".sermons-col-right").css("width", getSectionScriptureWidth(isMobile, isHideScripture));
+		$(".sermons-col-right").css("height", getSectionScriptureHeight(isMobile, isHideScripture));
+
+		if(isMobile) {
+			if($(".btn-show-notes").css("display") == "none" && $(".btn-show-scripture").css("display") == "none") {
+				showButtonByClassName("btn-show-notes");
+			}
+		}
+	});
+	
+	function loadScripture(element){
+		var scriptureData = getScriptureData(element);
+		var isMobile = $(window).width() < 992;
+		
+		showLoadingSpinner();
+		if (!$("#section-scripture").hasClass("active")){
+			$("#section-scripture").addClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, false),
+				height: getSectionMainHeight(isMobile, false),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, false),
+				height: getSectionScriptureHeight(isMobile, false),
+			});
+			if(isMobile) {
+				if($(".article-citation-magnifier").length && !$(".article-citation-magnifier").hasClass("h-100")){
+					$(".article-citation-magnifier").addClass("h-100");
+				}
+			}
+			$("#section-scripture .btn-close-scripture").attr("tabindex", "0");
+			$(".btn-show-scripture").hide();
+			if(isMobile){
+				showButtonByClassName("btn-show-notes");
+			}else {
+				// hideButtonByClassName("btn-show-notes");
+			}
+		}
+		else{
+			$("#section-scripture .article-citation-magnifier").animate({scrollTop: 0});
+		}
+		
+		if (xhr){
+			xhr.abort();
+		}
+		$("#section-scripture").data(scriptureData);
+		xhr = $.ajax("/site/get-scripture", {
+			dataType: "json",
+			data: scriptureData,
+			success: function(data){
+				if (data !== false){
+					var scriptureContainer = $("#section-scripture .magnifier-content");
+					if (scriptureContainer){
+						var scriptureHtml = getScriptureHtml(data);
+						if (scriptureHtml){
+							scriptureContainer.html(scriptureHtml);
+						}
+					}
+				}
+			}
+		}).always(function(){
+			xhr = null;
+			hideLoadingSpinner();
+		});
+	}
+	
+	function closeScripture(){
+		var isMobile = $(window).width() < 992;
+		if ($("#section-scripture").hasClass("active")){
+			$("#section-scripture .magnifier-content").html("");
+			$("#section-scripture").removeClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, true),
+				height: getSectionMainHeight(isMobile, true),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, true),
+				height: getSectionScriptureHeight(isMobile, true),
+			});
+			$("#section-scripture .btn-close-scripture").attr("tabindex", "-1");
+			$(".btn-show-scripture").show();
+			showButtonByClassName("btn-show-notes");
+		}
+		$("#section-scripture").data(getScriptureData());
+		hideLoadingSpinner();
+	}
+	
+	function getScriptureData(element){
+		var scriptureData = {};
+		scriptureData["book"] = element && element.data("book") ?
+			element.data("book") :
+			null;
+		scriptureData["start-chapter"] = element && element.data("start-chapter") ?
+			element.data("start-chapter") :
+			null;
+		scriptureData["end-chapter"] = element && element.data("end-chapter") ?
+			element.data("end-chapter") :
+			null;
+		scriptureData["start-verse"] = element && element.data("start-verse") ?
+			element.data("start-verse") :
+			null;
+		scriptureData["end-verse"] = element && element.data("end-verse") ?
+			element.data("end-verse") :
+			null;
+		return scriptureData;
+	}
+	
+	function getScriptureHtml(data){
+		var bookTemplate = "<h3 class=\"article-title mb-0 text-center\" data-book=\"{{book}}\">{{content}}</h3>";
+		var chapterTemplate = "<h4 class=\"mb-3\" data-chapter=\"{{chapter}}\">{{content}}</h4>";
+		var verseTemplate = "<p><sup class=\"text-danger me-2\">{{verse}}</sup>{{content}}</p>";
+		
+		var scriptureHtml = "";
+		if (data.books){
+			$.each(data.books, function(bookId, book){
+				//for each book
+				if (bookId && book && book.title){
+					scriptureHtml += bookTemplate.replace("{{book}}", bookId).replace("{{content}}", book.title);
+					if (book.chapters){
+						$.each(book.chapters, function(chapterId, chapter){
+							if (chapterId && chapter && chapter.title){
+								scriptureHtml += chapterTemplate.replace("{{chapter}}", chapterId).replace("{{content}}", chapter.title);
+								if (chapter.verses){
+									$.each(chapter.verses, function(verseId, verse){
+										if (verseId && verse){
+											scriptureHtml += verseTemplate.replace("{{verse}}", verseId).replace("{{content}}", verse);
+										}
+									});
+								}
+							}
+						});
+					}
+				}
+			});
+		}
+		return scriptureHtml;
+	}
+	
+	function showLoadingSpinner(){
+		$("#loadingSpinner").stop().fadeIn(300);
+	}
+	
+	function hideLoadingSpinner(){
+		$("#loadingSpinner").stop().fadeOut(300);
+	}
+	
+	function getSectionMainWidth(isMobile = false, isFull = true){
+		return isMobile ?
+			"100%" :
+			(isFull ?
+				"100%" :
+				"65%");
+	}
+	
+	function getSectionMainHeight(isMobile = false, isFull = true){
+		return (isMobile ?
+			(window.innerHeight - $("header").outerHeight() - 5) * (isFull ? 0.9 : 0.45) :
+			window.innerHeight - $("header").outerHeight()
+		) + "px";
+	}
+	
+	function getSectionScriptureWidth(isMobile = false, isHide = true){
+		return isMobile ?
+			"100%" :
+			(isHide ?
+				"0%" :
+				"35%");
+	}
+	
+	function getSectionScriptureHeight(isMobile = false, isHide = true){
+		return (isMobile ?
+			(window.innerHeight - $("header").outerHeight() - 5) * (isHide ? 0.0 : 0.45) :
+			window.innerHeight - $("header").outerHeight()
+		) + "px";
+	}
+
+	function hideButtonByClassName(className){
+		if($("."+className).length) {
+			$("."+className).hide(300);
+		}
+	}
+
+	function showButtonByClassName(className){
+		if($("."+className).length) {
+			$("."+className).show(300);
+		}
+	}
+
+	function showIframe(hideButton = true){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			$("#section-scripture").addClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, false),
+				height: getSectionMainHeight(isMobile, false),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, false),
+				height: getSectionScriptureHeight(isMobile, false),
+			});
+			if(hideButton) {
+				$("#section-scripture .btn-close-scripture").attr("tabindex", "0");
+				$(".btn-show-scripture").hide();
+			}
+		}
+		else{
+			$("#section-scripture .article-citation-magnifier").animate({scrollTop: 0});
+		}
+	}
+
+	function animateScripture(object = {height:0, padding:0, marginBottom: 0}, duration = 300) {
+		if($(".article-citation-magnifier").length) {
+			$(".article-citation-magnifier").stop().animate(object, {duration:duration});
+		}
+	}
+
+	function showNotes(){
+		if($(".article-myNotes").length > 0) {
+			$(".article-myNotes").addClass("h-100", 300);
+		}
+	}
+	
+	$("a.article-citation").click(function(){
+		if ($("#section-scripture").hasClass("active") && JSON.stringify(getScriptureData($("#section-scripture"))) == JSON.stringify(getScriptureData($(this)))){
+			closeScripture();
+		}
+		else{
+			loadScripture($(this));
+		}
+	});
+	
+	// $(".btn-show-scripture").click(function(){
+	// 	if (!$("#section-scripture").hasClass("active")){
+	// 		$("a.article-citation").first().click();
+	// 	}
+	// });
+	
+	// $("#section-scripture .btn-close-scripture").click(function(){
+	// 	if ($("#section-scripture").hasClass("active")){
+	// 		closeScripture();
+	// 	}
+	// });
+
+	$(".btn-show-scripture").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			animateScripture({padding:10, marginBottom:5}, 300);
+			if(!$(".article-citation-magnifier").hasClass("h-100")){
+				$(".article-citation-magnifier").addClass("h-100");
+			}
+			$("a.article-citation").first().click();
+		}else {
+			if($(".article-myNotes").length > 0 && $(".article-myNotes").hasClass("h-100")) {
+				let newHeight = $("#section-scripture").height() * 0.5 - 2.5;
+				loadScripture($("a.article-citation"));
+				animateScripture({height:newHeight, padding:10, marginBottom: 5}, 300);
+				if($(".article-myNotes").length > 0) {
+					$(".article-myNotes").removeClass("h-100", 300);
+				}
+				hideButtonByClassName("btn-show-scripture");
+			} 
+			if(isMobile) {
+				animateScripture({height:"100%", padding:10, marginBottom: 5}, 300);
+				showButtonByClassName("btn-show-notes");
+			}
+		}
+	});
+
+	$("#section-scripture .btn-close-scripture").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if($(".article-citation-magnifier").hasClass("h-100")) {
+			if ($("#section-scripture").hasClass("active")){
+				closeScripture();
+			}
+		}else {
+			if($(".article-myNotes").length > 0) {
+				if(isMobile){
+					$(".article-myNotes").removeClass("h-100");
+				}else {
+					$(".article-myNotes").addClass("h-100", 300);
+				}
+			}
+			if(isMobile){
+				closeScripture();
+			}else {
+				animateScripture();
+			}
+			showButtonByClassName("btn-show-scripture");
+		}
+	});
+
+	$("#section-scripture .btn-close-notes").click(function(){
+		if($(".article-citation-magnifier").height() == 0) {
+			if ($("#section-scripture").hasClass("active")){
+				closeScripture();
+			}
+		}
+		if(!$(".article-citation-magnifier").hasClass("h-100")) {
+			$(".article-citation-magnifier").addClass("h-100",300);
+			showButtonByClassName("btn-show-notes");
+		}
+	})
+
+	$(".btn-show-notes").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			if($(".article-myNotes").length > 0) {
+				$(".article-citation-magnifier").removeClass("h-100");
+				animateScripture();
+				$(".article-myNotes").addClass("h-100", 300);
+			}
+			$("#section-scripture .btn-close-notes").attr("tabindex", "0");
+			hideButtonByClassName("btn-show-notes");
+			showIframe(false);
+		}else {
+			if($(".article-citation-magnifier").hasClass("h-100")) {
+				$(".article-citation-magnifier").removeClass("h-100");
+			}
+			let newHeight = $("#section-scripture").height() * 0.5 - 2.5;
+			animateScripture({height:newHeight, padding:10, marginBottom: 5}, 300);
+			hideButtonByClassName("btn-show-notes");
+			if($(".article-myNotes").length && $(".article-myNotes").hasClass("h-100")){
+				$(".article-myNotes").removeClass("h-100");
+			}
+			if(isMobile){
+				animateScripture();
+				if($(".article-myNotes").length && !$(".article-myNotes").hasClass("h-100")){
+					$(".article-myNotes").addClass("h-100");
+				}
+				showButtonByClassName("btn-show-scripture");
+			}
+		}
+	})
+	
+	var backgroundColor = $("a.article-citation").css("background-color");
+	var fontColor = $("a.article-citation").css("color");
+	if ($("a.article-citation").length > 0){
+		$(".btn-show-scripture").show();
+		
+		$("a.article-citation").first()
+			.click()
+			.animate({
+				"background-color": "#c90000",
+				"color": "#FFFFFF",
+			}, 300)
+			.delay(100)
+			.animate({
+				"background-color": backgroundColor,
+				"color": fontColor,
+			}, 300);
+	}else if("") {
+		animateScripture();
+		showNotes();
+		setTimeout(showIframe, 300);
+	}
+
+	// save audio process
+	function ajaxCallSaveAudioProgress(time, model_id, model_name, title, duration){
+		if(model_id && model_name && title && Number.isInteger(time)) {
+			$.ajax({
+				method:"POST",
+				url:"/history/save-file-video-progress",
+				data: {
+					time,
+					url: "https://www.hkbibleconference.org/session-message/view/804",
+					model_id,
+					model_name,
+					title,
+					duration,
+				},
+				success:function(result){
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}
+	}
+
+	$(function(){
+		let audioElement = $("audio");
+		let old_time = null;
+		let title = "第二講  約櫃流浪記";
+		if(audioElement.length) {
+			if(audioElement[0].dataset.currenttime) {
+				audioElement[0].currentTime = audioElement[0].dataset.currenttime;
+				old_time = audioElement[0].dataset.currenttime;
+			}
+			let model_id = audioElement[0].dataset.modelId;
+			let model_name = audioElement[0].dataset.model;
+			$(audioElement).off().on("timeupdate", function(event){
+				let now_time = parseInt(this.currentTime);
+				if(old_time === null || now_time - old_time >= 2 || now_time - old_time < 0) {
+					old_time = now_time;
+					ajaxCallSaveAudioProgress(now_time, model_id, model_name, title, parseInt(this.duration));
+				}
+			})
+		}
+	})
+	$("#myNotes").blur(function(){
+		if(blurXhr){
+			blurXhr.abort();
+		}
+		blurXhr = $.ajax("/notes/save-notes", {
+			dataType: "json",
+			method: "POST",
+			data: {
+				content: $("#myNotes").val(),
+				session_message_id: "804",
+			},
+			success: function(data){
+				if(data.error) {
+					alert(data.message);
+				}
+			},
+			error: function(error){
+				alert(error);
+			}
+		}).always(function(){
+			blurXhr = null;
+		});
+	});
+	
+jQuery('#subscribe-form').yiiActiveForm([{"id":"subscribeform-email","name":"email","container":".field-subscribeform-email","input":"#subscribeform-email","error":".invalid-feedback","enableAjaxValidation":true,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"請輸入電郵"});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"請輸入正確的電郵","enableIDN":false,"skipOnEmpty":1});yii.validation.string(value, messages, {"message":"電郵 必須為字串。","max":500,"tooLong":"電郵 只能包含最多 500 個字符。","skipOnEmpty":1});}}], {"errorSummary":".alert.alert-danger","errorCssClass":"is-invalid","successCssClass":"is-valid","validationStateOn":"input"});
+
+	$("#siteSearchForm").on("submit", function() {
+		var value = $(this).find("input[name=\"keyword\"]").val();
+		if (!value){
+			$(this).find(".msg-keyword").show();
+			return false;
+		}
+
+		return true;
+	});
+
+	$("#siteSearchForm input[name=\"keyword\"]").on("keyup", function (e) {
+		if ($("#siteSearchForm input[name=\"keyword\"]").val()){
+			$("#siteSearchForm .msg-keyword").hide();
+		}
+	});
+	
+	<!--Add to bookmark button-->
+	$(".bookmark").off().click(function() {
+		$(this).toggleClass("added");
+		let target = $(this)[0];
+		let targetModel = $(this)[0].dataset.model.replace(/\\/g, "\\\\");
+		let targetModelId = $(this)[0].dataset.modelId;
+		let otherElements = $(".bookmark[data-model-id=\""+ targetModelId +"\"][data-model=\""+ targetModel +"\"]");
+		if(otherElements.length) {
+			$(otherElements).each(function(index, element){
+				if(element != target) {
+					$(element).toggleClass("added");
+				}
+			})
+		}
+
+		if("") {
+			let addOrRemove = $(this).hasClass("added") ? "add" : "remove";
+			let model = $(this)[0].dataset.model;
+			let modelId = $(this)[0].dataset.modelId;
+			// console.log($(this)[0].dataset);
+			$.ajax({
+				method:"POST",
+				url:"/bookmark/add-or-remove-bookmark",
+				data: {
+					addOrRemove,
+					model,
+					modelId,
+				},
+				success:function(result){
+					console.log(result);
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}else{
+			let secondLayerId = null;
+			// console.log(1);
+			if(targetModel && targetModel.includes("SpeakerWording")){
+				let modal = $(this).parents(".modal");
+				if(modal.length){
+					secondLayerId = $(modal).attr("id");
+				}
+			}
+			let url = "https://www.hkbibleconference.org/site/member";
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			if(secondLayerId){
+				if(url.includes("?")){
+					url = urlParams.size ? (url + "&secondLayerId=" + secondLayerId) : (url + "secondLayerId=" + secondLayerId);
+				}else {
+					url =  url + "?secondLayerId=" + secondLayerId;
+				}
+			}
+			location.href = url;
+		}
+	});
+
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	if(urlParams.has("firstLayerId")){
+		let firstLayerId = urlParams.get("firstLayerId");
+		if($("#"+firstLayerId).length){
+			let btn = $("#"+firstLayerId);
+			$(btn)[0].scrollIntoView();
+			let relatedModalId = $(btn)[0].dataset.bsTarget;
+			new bootstrap.Modal(relatedModalId).show("#"+firstLayerId);
+		}
+		if(urlParams.has("secondLayerId")){
+			let secondLayerId = urlParams.get("secondLayerId");
+			setTimeout(function(){
+				new bootstrap.Modal("#" + secondLayerId).show();
+			},500);
+		}
+	}else if(urlParams.has("secondLayerId")){
+		let secondLayerId = urlParams.get("secondLayerId");
+		new bootstrap.Modal("#" + secondLayerId).show();
+	}
+	
+
+		$("a[download='']").each(function(){
+			$(this).click(function(){
+				downloadResource($(this).attr("href"));
+				return false;
+			});
+		});
+		
+		function forceDownload(blob, filename) {
+			var a = document.createElement("a");
+			a.download = filename;
+			a.href = blob;
+			document.body.appendChild(a);
+			a.click();
+			a.remove();
+		}
+
+		function downloadResource(url, filename) {
+			if (!filename) filename = url.split("\\").pop().split("/").pop();
+			console.log(location.origin);
+			fetch(url + "?_t=" + Date.now(), {
+				headers: new Headers({
+					"Origin": location.origin
+				}),
+				method: "GET",
+				mode: "cors"
+			})
+			.then(response => response.blob())
+			.then(blob => {
+				let blobUrl = window.URL.createObjectURL(blob);
+				forceDownload(blobUrl, filename);
+			})
+			.catch(e => console.error(e));
+		}
+		
+});</script></body>
+</html>

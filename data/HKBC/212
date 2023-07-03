@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>第一講  回顧與前瞻</title>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="nc6Hfu1dAMPH62YtRdXDmgEtnghHQcpm0rUPuzHAfIXfrapNlAQxr4GeX2QPjavJVkqzOgQTuwe7hErXbrc-tg==">
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-icons.css" rel="stylesheet">
+<link href="/css/all.css" rel="stylesheet">
+<link href="/js/slick/slick.css" rel="stylesheet">
+<link href="/js/slick/slick-theme.css" rel="stylesheet">
+<link href="/css/aos.css" rel="stylesheet">
+<link href="/css/cookie-consent.css" rel="stylesheet">
+<link href="/css/interface.css" rel="stylesheet">
+<link href="/css/plyr.css" rel="stylesheet">
+<link href="/js/lightgallery/css/lightgallery-bundle.min.css" rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.21.1/video-js.css" rel="stylesheet">
+<link href="/js/jquery-ui-1.13.2/jquery-ui.min.css" rel="stylesheet">
+<style>
+	.grayscale .page-header-title {
+		background-image: url(/images/color_bg/bg_011.png) !important;
+	}
+	</style>	<link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<script>
+	var color = document.cookie.match("(^|;|; )\s*" + "ColorMode" + "\s*=\s*([^;]+)")?.pop() || "normal";
+	if (color == "normal") {
+		document.body.classList.remove("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.remove("selected");
+		}
+	} else {
+		document.body.classList.add("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.add("selected");
+		}
+	}</script>
+
+
+<a href="#main" class="skip">跳至內容</a>
+<header class="sticky-top">
+	<div class="nav-tool nav-tool-top hidden-990px">
+		<div class="container justify-content-end">
+			<nav class="navbar navbar-expand navbar-light">
+				<div class="collapse navbar-collapse justify-content-end">
+										<ul class="navbar-nav">
+						<li class="nav-item nav-font-size fontSize">
+							<span class="defaultFont">
+								<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a> 
+							</span>
+							<span class="largerFont">
+								<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a> 
+							</span>
+							<span class="xLargerFont">
+								<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+							</span>
+						</li>
+						<li class="nav-item nav-search">
+							<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+						</li>
+						<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>						<li class="nav-item nav-btn-BW">
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn monochromeBtn" >黑白版</a>
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn chromaticBtn" style="display:none;">彩色版</a>
+						</li>
+												<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+												<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+						<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light navbar-menu">
+			<div class="container-fluid p-0">
+				<a class="navbar-brand" href="/site/index">
+					<!--<img src="/images/logo.jpg" alt="" class="w-100" />-->
+					<img src="/images/logo_whole.svg" alt="港九培靈研經會" class="logoImg">
+					<img src="/images/logo_chi.svg" alt="港九培靈研經會" class="scrollLogoImg">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+					<div class="nav-tool show-990px">
+						<div class="container justify-content-end">
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="flex-wrap collapse navbar-collapse justify-content-end">
+																		<ul class="navbar-nav">
+										<li class="nav-item nav-font-size">
+											<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a>
+											<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a>
+											<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+										</li>
+										<li class="nav-item nav-search">
+											<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+										</li>
+										<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>										<li class="nav-item nav-btn-BW"><a href="javascript:checkColorMode()" class="nav-link colorModeBtn">黑白版</a></li>
+									</ul>
+								</div>
+							</nav>
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="collapse navbar-collapse justify-content-end">
+									<ul class="navbar-nav">
+																				<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+																				<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+										<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<ul id="w0" class="navbar-nav nav"><li class="nav-item nav-item" data-id="1" data-type="2"><a class="nav-link" href="/content/schedule">聚會日程</a></li>
+<li class="nav-item nav-item" data-id="3" data-type="2"><a class="nav-link" href="/content/past-conferences">歷屆聚會</a></li>
+<li class="nav-item nav-item" data-id="5" data-type="1"><a class="nav-link" href="/content/our-story">培靈．歷史館</a></li>
+<li class="nav-item nav-item" data-id="6" data-type="3"><a class="nav-link" href="/content/about-us">關於我們</a></li></ul>				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<main id="main" name="main">
+	
+<!--<section class="page-header">
+		<div class="page-header-title" style="background-image: url(/images/color_bg/bg_002.png);">
+		<h1>歷屆聚會</h1>
+	</div>
+	<div class="page-header-img">
+		<div class="photocap">
+			<img src="https://file.hkbibleconference.org/upload/content/3/banner/歷屆聚會.jpg" alt="歷屆聚會" />
+		</div>
+	</div>
+	</section>
+
+<section class="path">
+	<div class="container">
+		<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			
+			<li class="breadcrumb-item" aria-current="page"><a href="/content/past-conferences">歷屆聚會</a></li>
+			<li class="breadcrumb-item" aria-current="page"><a href="/content/past-conferences">第87屆 2015 更新與轉化</a></li>
+			<li class="breadcrumb-item" aria-current="page">研經會</li>
+			<li class="breadcrumb-item" aria-current="page">2015-08-01 回顧與前瞻</li>
+			<li class="breadcrumb-item" aria-current="page">閱讀全文</li>
+			<li class="breadcrumb-item" aria-current="page">第一講  回顧與前瞻</li>		  </ol>
+		</nav>
+	</div>
+</section>-->
+
+<div class="row w-100 m-0" style="overflow: hidden">
+	<div id="section-main" class="sermons-col-left bg-grey" style="width:100%">
+		<h1 class="color-1a8090 bg-white text-center pb-2 pt-3 h2">第87屆 研經會 第1講</h1>
+		<article class="article pt-0 p-lg-5 pt-lg-0">
+			<div class="article-meta">
+				<span>
+					<i class="fa fa-user"></i>
+					講員：					<a href="/speaker/view/40">萊特牧師</a>
+				</span>
+				<span>
+					<i class="fa fa-calendar-alt"></i>
+					屆別:					<a href="/sermon/view?serial_no=87">第87屆</a>
+				</span>
+				<span data-toggle="tooltip" data-placement="top" title="性質">
+					<i class="fa fa-folder-open"></i>
+					<a href="/sermon/view?serial_no=87#session-master-54">研經會</a>
+				</span>
+			</div>
+			<!--<div class="article-tag">
+				<a href="#" class="badge">路加福音</a>
+				<a href="#" class="badge">講道會</a>
+				<a href="#" class="badge">56屆</a>
+				<a href="#" class="badge">麥希真牧師</a>
+			</div>-->
+			<div class="d-flex align-items-center mb-4">
+				<h2 class="article-title mb-0 h3">
+					第一講  回顧與前瞻				</h2>
+									<a type="button" class="bookmark ms-3 " data-model="app\models\SessionMessage" data-model-id="212"></a>
+							</div>
+						<div class="article-content">
+				
+				<div class="h5 mb-4 d-md-flex justify-content-lg-between align-items-center">
+					<div><span>經文：</span> 申命記  <a class="article-citation" href="javascript:void(0)" data-book="5" data-start-chapter="1" data-start-verse="1" data-end-verse="36">1:1-36</a></div><div><a href="javascript:void(0)" class="btn btn-danger btn-show-scripture text-center my-2 ml-auto align-self-start" style="display:none;">顯示經文</a>
+				</div></div>				<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">一、引言</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">相信大家都已經知道，在接下來的這個星期裡，我會與大家研讀〈申命記〉，這卷書卷，可說是舊約聖經、律法書及五經中的高潮，也是後來的歷史書及先知書的基礎。這部書卷，充滿了上帝對祂百姓的應許，但同時也記載了上帝給予祂子民的挑戰：挑戰我們這一群屬上帝的人去信任我們的上帝、要尊愛祂、要順服祂，並且向祂盡忠；不論四周的環境如何轉變，我們都要如此。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">大家都知道，我今早的講題是：回顧與前瞻，主要的內容是第1至第3章。我不知道大家旅遊時會否有此習慣，就是喜歡把旅途的見聞拍下照片，並與人分享；而這三章聖經可說是摩西帶領以色列民出埃及進入上帝應許之地前的相集，渴望以色列民回望過去，讓他們重溫旅程中曾發生過的事，從而激發他們前行。因此，這三章經文，既是回顧，亦是前瞻。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">二、上帝同在踏邊界（On the Boundary with God）申命記1：1-5</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">這幾節經文的描述，百姓好像是站在邊界上面對著上帝，而這正是整卷書的背景。第1節寫道：「以下所記的是摩西......所說的話」，而第2及3節則是：「摩西照耶和華所吩咐的話」。這樣的開場，與先知書相似，就是與〈耶利米書〉的開場一樣（參〈耶利米書〉1：1-4）。雖說這裡是摩西的說話，但這些其實都是主藉著摩西要說的說話；而這些話雖是幾千年前向以色列百姓說的話，但亦是向今日的上帝子民所說的話。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">第5節記載摩西向百姓講解律法，就是把上帝向他所說的話講解給百姓知道。所有上帝所頒佈給百姓的律例典章全都講解給百姓知道。而這件事是在何時何地發生的呢？透過第1至5節，我們找到答案。就是在「邊界」上發生。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">A.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">地理上的「邊界」</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">首先是地理上的邊界。經文說是在約旦河東（v5），也就是說，百姓仍在約旦河東，未進入應許之地，仍舊身處曠野。上帝所應許的地業，仍然在他們前面、在約旦河的另一邊。這雖是應許之地，但卻又是充滿危機的地方，因為那裡是迦南人的地方，有著迦南人的文化及他們的神袛。因此，這裡的挑戰是，在一個滿是膜拜偶像之地，上帝的子民能否持守忠於上帝呢？無疑，在地理上而言，這實在是一道邊界，但同時，這亦是一道歷史上的「邊界」。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">B. </span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">歷史上的「邊界」</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">摩西是在何時向百姓講解的呢？第3節：「出埃及第四十年十一月初一日」，也就是離開埃及已經40年。但留心看看第2節，經文指出，離開埃及後從何烈山出發只需11天的路程就可到達他們現處的加低斯巴尼亞。11天的路程竟然要以40年才行完？這真是超奇的延誤！竟然是一整個世代的人的時間！為甚麼會如此？就是因百姓的罪，他們的失敗，也就是他們在加低斯巴尼亞所發生的事：百姓離棄上帝，悖逆上帝；結果就要付上一整代人40年的時間。因此，這裡不單是地理及歷史上的「邊界」，同時是靈性上的「邊界」。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">C. </span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">靈性上的「邊界」</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">對以色列百姓而言，如今他們來到了這靈性上的「邊界」，當中的挑戰是：他們是否會選擇順服上帝？他們是否願意信任上帝，聽命於祂，跟祂指示向前行？是否願意不學效他們先輩，選擇聽命於上帝？這正是接下來我們要講解的，也是整卷〈申命記〉所要講說的重點。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">D.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">小結</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">這五節經文，就是百姓在邊界上面對上帝，需要作出抉擇。上帝一直在前行（On the Move），祂一直有目標、有目的地向前進發，上帝有祂自己的「議程」（Agenda），上帝要求祂的百姓和應祂，與祂同行，離開百姓他們自己的過去，進入上帝應許的未來。而〈申命記〉就是這一本陪伴以色列民往前行的上帝恩言。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">三、上帝應許要回想（Reminder of God&#39;s Promises）申命記1：8-11</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">進入經文的第二段落：提醒我們，回望上帝的應許。第8節提及列祖亞伯拉罕、以撒、雅各，上帝向列祖起誓應許，這當然教我們回到〈創世記〉。上帝向亞伯拉罕作出3項主要的應許：</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">1.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">要成為大國，子孫眾多；</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">2.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">亞伯拉罕的國和子孫要蒙福，與上帝有著立約的關係；及</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">3.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">賜給亞伯拉罕應許之地。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">而這3個應許，其中兩個已然應驗。第10節：「耶和華使你們像天上的星那樣多」，上帝向亞伯拉罕所作的子孫繁多的應許就已經應驗。而另外，上帝在何烈山與以色列百姓立約，賜福這種人與上帝之間的關係，因而摩西在第11節祈禱說：「（耶和華）照祂所應許你們的話賜福與你們」。所以，3項應許中，有兩個已然應驗了，尚有一個等待應驗：就是進入應許之地，也就是第8節所說的：「如今我將這地擺在你們面前；你們要進去得這地」，上帝已把那應許之地放在百姓面前，而百姓此時此刻就是站在這「邊界」、這臨界點上，看見已然和未然的應許。</span></span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">他們靠著上帝的應許，走過40年漫長的路；而他們之所以能夠前行，亦都是本著上帝的應許。其實，對於上帝的子民來說，情形常是這樣，而今日，我們都是同樣面對著類似的處境。不管我們所面對的處境如何，上帝按照祂的應許和信實，帶領著我們走到現在；而祂仍會按著祂的信實，帶領我們進入未來。其實我們所走的每一步，都是按著上帝的應許而行，因為「直到如今，耶和華仍幫助我們」。既是這樣，上帝仍會引帶我們走前路。因此，在〈申命記〉的起頭，我們就要記著這一真理。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">因此，摩西鼓勵以色列民，既要回顧，也要前瞻，定睛在昔日已然應驗的應許之餘，也要前瞻未然的應許。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">然而，上帝賜給亞伯拉罕的應許不止這3項。因為這3項裡仍有一個基礎，這第4項的基礎是：〈創世記〉12：3「地上的萬族都要因你得福」，而這亦是上帝宏大的圖畫（計劃），不單單止看顧亞伯拉罕一個人、一個家族、一個由亞伯拉罕而衍生的民族&mdash;&mdash;以色列民，而是看顧地上的萬國；這是上帝的願景！也是上帝宏大的願景和熱情。我們甚至可以說，這就是上帝所要作的事、祂的要務。因此上帝與祂的子民同行過的路，其實最終是要造福萬國，這亦是上帝要以色列民成為大國的原因，也是如今我們作為上帝子民存在世上的原因：造福萬國。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">回歸到經文。以色列民需要與上帝同行，踏出下一步，因為這正是上帝的美意。以色列民要跨過約旦河進入應許之地並得地為業，這不單單是應驗應許為了以色列民本身，更重要的是要使萬國得福。因此，以色列民需要為著上帝救贖萬國這一偉大的計劃而前進。因此，以色列民在此刻的抉擇：順服上帝，還是悖逆上帝，可以說是對上帝對萬國的計劃起著促進或妨礙的作用。因此，我們需要認真和審慎，並且我們需要〈申命記〉這一卷書，因為上帝的百姓必須順服上帝，而這一真理是極為重要。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">上帝的子民順服上帝，不單單是使以色列民得著應許和救贖，而更重要的是成就上帝救贖萬國的旨意，並且體驗成為成就上帝對亞伯拉罕應許的媒介。因此，我們需要帶著這一點亮光，並以此來審視我們自己每一步順服上帝心意而行的每一小步：體驗上帝的應許，體驗上帝所要成就的大事。就好比人類登月時太空人所講過的一句話：「人的一小步，是人類的一大步」（One small step for man one giant leap for mankind）。你個人順服上帝的一小步，是和上帝救贖整個世界有關連的，而我們需要以此目光來看待我們的人生，並察看我們在上帝這宏大的計劃裡面可以擔當的角色。所以我們來到此「邊界」，我們面對上帝，想起祂的應許，但現在卻要面對更艱難的部分，也就是接著下來的一點：回顧昔日的失敗。</span></span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">四、昔日失敗毋忘記（Reminder of Past Failures）申命記1：19-46</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">申命記1：19-46是記載了摩西講述以色列民過去的失敗。首先由以色列民派12探子窺探迦南地回來的事件說起。這件事情在〈民數記〉第13及14章有詳細的記述。他們進入了迦南，然後回來匯報。其中兩個探子：約書亞和迦勒向百姓說，起來，我們去得那城為業。但其餘的10個探子卻說不可能的，因那地的人很強壯、城很堅固，而且那些人像巨人一樣。結果百姓就不願上去，因為他們的膽量全都消化了；也正因如此，帶來38年在曠野漂流的日子。我們不禁要問：為甚麼這事會發生的呢？是甚麼元素造就了以色列民的失敗？而摩西昔日提醒百姓的訓誨，今日又如何向我們發出提醒呢？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">從第26及27節，摩西因著百姓的失敗而作出的分析中，最少有3個元素，導致他們失敗。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">A.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">經常埋怨（26及27節）</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">摩西指出，以色列民不願上去、違背上帝的命令，甚至發怨言說因為上帝恨他們。以色列民擅於發怨言，一出埃及地就開始發怨言，到了何烈山又發怨言，甚至上帝在何烈山向摩西頒賜十誡，以色列民卻在山腳悖逆上帝。若非摩西向上帝祈求，則上帝差點將全部以色列民消滅。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">現在百姓來到加低斯巴尼亞，快可進入應許之地，更是他們得著這應許之地的黃金機會之際，他們卻不願上去，他們甚至指控上帝，以最荒謬的說法指控上帝，說上帝憎恨他們（第27節）。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">上帝帶領以色列民出埃及、使他們不再成為埃及人的奴隸，當上帝聽見以色列民的哀哭求告，看見他們受苦受害，於是上帝差遣摩西去拯救他們出埃及。上帝憑著祂自己的大愛和能力拯救以色列民，向他們展現上帝的憐憫，把上帝的恩典和慈愛傾倒給以色列民，成為他們的拯救者和救贖主，但百姓卻說：「上帝恨我們」！這真是荒謬！然而，你又有否如此？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">你曾否因諸事不順而像以色列民般，說「上帝恨我」？甚至說「上帝是我的敵人」？在舊約〈路得記〉中，拿俄米都是如此。如果你想想，拿俄米認為上帝恨她，又似乎是不無道理的。她遭受飢荒捱餓、失去丈夫和兩個兒子，最終成為無兒無女的寡婦，她認為上帝跟自己作對，使自己的生命困苦，因而像以色列民一樣，向上帝發怨言；即使上帝根本就沒有忘記她！我們都知道〈路得記〉接下來是怎樣發展。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">當摩西責備以色列民時，他們向上帝發怨言，甚至說上帝恨他們，其實是以色列民悖逆上帝，拒絕進入應許之地。</span></span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">B.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">恐懼（28節）</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">第二個失敗的元素就是第28節中所記載的：恐懼。百姓說是他們的探子令到他們膽戰心驚。因為那地的人又高又大，城又廣大又堅固，高得頂天，這當然是誇張其事，但正因如此，他們便害怕起來。他們甚至感到自卑，抬不起頭來，感到自己真的很渺小。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我記起當我年少時，約莫是12或13歲時，學校就要求我們參加英式欖球活動。當年的我不像如今的高大，是個矮小的男生，到了球場，看見所有人都比自己高大。當時我們的教練為了鼓勵我們，我還記得他怎樣說，他說：「愈巨大的跌倒時（他們）愈痛」（The bigger they are, the harder they fall.）但我卻心想：「愈巨大的壓下來時（我）愈傷」（The bigger they are, the harder they hurt.）。我們要跟他們硬碰的，所以心裡就愈益害怕。因此試想想那些以色列民。他們認為自己細小，迦南人巨大，這樣想法的話，他們自然會很害怕。因此他們就背叛上帝，拒絕遵行上帝所吩咐的，只因為他們害怕。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">恐懼其實真的會影響人，基督徒也不例外，也影響我們每一個人。無論是在我們的工作、家庭或是周遭的環境，我們都會感到自己很渺小，因而整個基督教會及群體都因此受到影響。而我自己作為一個西方人，我們西方教會的信徒，現在都很害怕在現今世俗混亂的社會中站出來，因為我們需要面對別人的嘲笑，這已是微不足道，因為我們甚至要面對因著基督徒的立場而失去工作。而因著恐懼，我們變得退縮。但這恐懼，卻令以色列民錯失進入應許之地的黃金機會，並且要花掉一整代人的時間來重新上路。可以說，因為一刻的恐懼，卻浪費了38年的歲月。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">因此摩西提醒以色列民：不要害怕。他向新一代人說：不要害怕，以致你不跟隨上帝前進的腳步；因為上一代人懼怕，所以他們浪費了他們一整代人的生命。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">C.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">不信（30-33節）</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">除了發怨言（26及27節）和恐懼（第28節）之外，第三個元素是第30-33節的不信。30及31節是上帝提醒以色列民，昔日祂曾為他們作了甚麼事。上帝說你們已看到上帝在埃及為你們所成就的事，用祂大能的膀臂救你們脫離埃及，令到埃及帝國動搖，甚至敗壞。以前你們是埃及人的奴隸，法老這個很有權威的王帝，但他的下場你們有目共睹，上帝如何帶領你們出埃及。之後，你們亦親身經歷，上帝在曠野路上如何撫養你們，好像父親撫養孩子一般。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們在座當中，為人父母的都會知道，當孩子感到害怕時，只要父母立時把孩子擁抱入懷的話，孩子頓時感到安心。摩西是向百姓說，你們都看見過上帝如何把你們擁抱入懷的，你們都知道上帝向你們所作過的大事。這正如上帝在〈以賽亞書〉所說的：「自從你出母腹，我已經抱著你」。相信我們在座的，都或多或少的經歷過上帝如何把我們擁抱入懷。但請看看第32節摩西的話：「你們在這事上卻不信耶和華」。其實這是很嚴厲的說話。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">看過這一切、見證過上帝救人出埃及的大能、經驗過上帝在曠野對人無微不致的供應和照顧，但你仍然不願意把你的將來交託給上帝手裡、仍然不願意相信上帝在日後仍會照顧你和保護你，所以你軟弱，敗給焦慮、敗倒在驚慌之中，甚至是拒絕相信。還記得主耶穌吩咐我們，要信靠我們的天父嗎？因為天父知道我們的需要，天上的父能夠養育我們；而我們亦知道，過去天父是如何養育我們，所以不要憂慮，信靠天父。這是主耶穌的信息，亦是摩西的信息。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">因此我們從這些負面的東西開始，也就是摩西在〈申命記〉第1章提到以色列民的失敗，而這3種致命的毒素：發怨言、恐懼和不信，而今天早上，可能你亦受其中一樣或是三樣一齊的影響。我並不知道你今日在上帝面前的光境，但假若其中一樣真的影響著你的話，請記起保羅如何勸勉提摩太：上帝賜給我們的，不是恐懼的靈，而無論那些恐懼或怨言是從哪裡來，它們都一定不會是從上帝而來，因為上帝所賜給我們的，乃是仁愛、剛強和謹守的心。因此，我們對上帝，思想上要正確；而對上帝在我們生命當中的作為，也要同樣有正確的想法。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">四、昔日勝利當重溫（Reminder of Past Victories）申命記2：24-3：11</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">A.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">上帝是萬國萬族萬民的上帝</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">請不要再讓過去的失敗，妨礙我們領受上帝在未來所賜給我們的應許。因此，摩西提醒以色列民，回想上帝的應許；同時，摩西提醒以色列民面對自己過去的失敗，現在我們進到較為正面的事上，就是重溫昔日的勝利（第2及3章）。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">摩西他不僅是一位先知，他同時是一位好牧者。他深知道不要一味說負面的事，指出以色列民的失敗。當然百姓需要被提醒，記起從前的過失，但他們都需要正面的鼓勵，也就是重溫上帝曾成就過的大事和勝利，這亦是第2及第3章所記述的。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在第2章裡，可以說是上帝在萬國裡是至高無上掌權者。我們現在不夠時間讀第2章，但請你回家細讀。經文指出，上帝向以色列民說，你們將會行經以東地，但你們卻不可奪他們的地，因為我，以色列民的上帝把這地賜給以東。然後你們又會行經摩押和亞珥，但你們卻不可奪他們的地，因為這些地是他們的，是我耶和華賜給他們的。而在這章裡，我們看到一次又一次，上帝說是祂把不同的民安置在那裡，這說明了上帝不僅帶領以色列民，上帝亦掌管著其他各民、各族，甚至有些我們都不知道他們究竟是甚麼人。到底意思何在呢？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">上帝不單單只是以色列民的上帝，祂亦不單單只是一個地域性的、民族性的一個神祗，彷彿是滿天神佛中的其中一位。上帝是萬國、萬族、萬民的、獨一無二又至高無上的上帝，而全地都是屬於耶和華。這亦正是在出埃及時，上帝也是這樣向法老介紹祂自己。因此，無論上帝如何移動這些民眾，上帝都是在祂統管的地上移動他們，因為全地都是屬於耶和華上帝，整個地球都是屬於祂。</span></span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">因此，無論上帝引領或帶領你到哪裡，祂都會與你同在，因你是屬於上帝的。要知道，全地、全宇宙，萬國、萬民的歷史裡，上帝都參與在其中。是上帝的同在和能力帶領你進入未來。因此摩西呼籲以色列民放心進入應許之地，因為上帝已經在那裡等候祂的百姓。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">上帝在你的未來和在你的過去，祂的同在始終如一；祂能在迦南和以色列民同在，正如祂在埃及與以色列民同在。因此上帝能在應許之地，正如祂能在曠野之地與人同在。因此，不管你身處何方，上帝都在那裡，因為祂是至高無上的一位。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我並不知道這一切會怎麼影響著你。很多人在跟隨上帝進入未來時會面對很多轉變，好像是轉換工作、改變新的關係，又或是進到新的地方居住。我們都需要時常提醒自己，無論在哪裡，上帝都會在那裡。我們是進入到上帝已經在那裡的將來，進到上帝已掌權的那裡。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">B.</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">上帝是一勝再勝的上帝</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在第2章，不單止提出上帝對萬國、萬族擁有主權，摩西且提醒百姓，上帝一次又一次的勝利。摩西提醒百姓上帝兩次的勝利：亞摩利王西宏，和巴珊王噩。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">過去上帝把這兩個王打敗。其實這兩個王可以讓以色列民簡簡單單的過路便可，根本無必要與以色列民爭戰，甚至以色列民可以向這兩個王買飲買食。但這兩個王，卻執意抗拒以色列民、抗拒以色列民的上帝，因而自招滅亡。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">西宏和噩已經成為以色列民口中的美談，在〈詩篇〉第136篇也提及這兩次勝利。而摩西提起上帝打敗這兩王的事，是要說明這並不是幸運或巧合，而是上帝一直行事的方式都是如此：祂將會是一次又一次的勝利，只要以色列民願意信靠上帝，順服上帝，與上帝同行就是了。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">而這亦是摩西在第3章向約書亞的勸勉。3：21-22：「你親眼看見了耶和華你上帝向這二王所行的；耶和華也必向你所要去的各國照樣行。」，約書亞可以從回顧過去的勝利而得著勉勵，我們也一樣。我們在這裡接受鼓勵，與上帝同行進入未來。我們向前行，這不單止是為免重蹈覆轍，而是因為我們確知，上帝昔日勝利，將來也必勝利。摩西在第1至第3章如此鼓勵百姓：不要再沉溺在自己的恐懼當中，而是挺起胸膛，懷著信心的與上帝同行，因上帝是那位昔日行奇事，將來也必行奇事的上帝。</span></span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">五、結論</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在結論時候，我想提出，摩西在三章聖經裡有一句片語是重複使用兩次的。首先在1：6「你們在這山上的日子夠了」的「日子夠了」（Long enough）。另一處是在2：3「你們繞行這山的日子夠了」。你看到了嗎？以色列民在那裡停滯下來，首先是在何烈山，然後是在加低斯巴尼亞，以色列民停滯不前，似乎是無法擺脫似的，但上帝卻向百姓說，起來，往前行！不知這對我們來說有甚麼意義？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我不知道你的人生，你與上帝同行這事上會不會像以色列民般，停滯不前？會否因為負面的思想而讓你停滯不前，因而變得憤世嫉俗，萬事都看來不順眼，缺乏信心？上帝不希望你仍停留在那裡。又或者你停滯不前，是因你不敢相信上帝的應許，明知上帝是要你怎麼行，但你卻偏偏選擇停下來？上帝問：「還要等多久呢？」</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">又或者你停滯不前，是因你受制於一種不討上帝喜悅的關係裡面？其實你自己也知道，除非跟這些不討上帝喜悅的關係割離，否則你根本不可能向前行！</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">又或者是面對一種你明知是不正當的處事手法，又或是不對的事裡面，你明明知道這些是不對的，卻彷彿跳不出來。其實你知道，若非真心悔改，脫離這些罪行，你根本就沒法與上帝同行！</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">今天早上，上帝可能對你說：「你的日子夠了！請你起來，往前行！」你有上帝的應許，你能夠進到上帝的恩典裡，你能夠信靠上帝所賜給你的將來，與上帝往前行；這就是〈申命記〉的起始點，並且成為我們的動力，帶領我們這一個星期，繼續聆聽摩西向百姓宣講的真道。信靠上帝的應許，與上帝同行。</span></span></span></span></p>
+				
+				<br>
+				<p class="h5">
+					<span>講員：</span> 萊特牧師
+					<br>
+					<span>傳譯：</span> 陳恩明牧師
+					<br>
+					<span>速記：</span> 譚佩雲姊妹
+				</p>			</div>
+			<div class="article-navigation d-flex justify-content-between mt-5">
+								<a href="/session-message/view/204" data-bs-toggle="tooltip" data-bs-placement="right" title="第86屆 奮興會 第十講  總要滿足，主必供應" aria-label="上一篇文章：第86屆 奮興會 第十講  總要滿足，主必供應"  rel="prev">
+					<i class="fas fa-chevron-left" aria-hidden="true"></i>
+					<span aria-hidden="true">上一篇</span>		
+				</a>
+												<a href="/session-message/view/213" data-bs-toggle="tooltip" data-bs-placement="left" title="第87屆 研經會 第二講  認識主你的神，再無別神" aria-label="下一篇文章：第87屆 研經會 第二講  認識主你的神，再無別神" rel="next">
+					<span aria-hidden="true">下一篇</span>	
+					<i class="fas fa-chevron-right" aria-hidden="true"></i>
+				</a>
+							</div>
+			<br>
+			<hr>
+			<br>
+						<p>
+				<span class="h5">版權聲明</span><br>
+				大會現場速記只供信徒溫習用，全文未經講者過目，版權屬港九培靈硏經會。			</p>
+					</article>
+	</div>
+	
+	<div id="section-scripture" class="sermons-col-right" style="width:0%;position:relative;">
+		<section class="article-citation-magnifier h-100">
+			<a href="javascript:void(0);" class="btn btn-close btn-close-scripture d-flex ms-auto" title="隱藏經文"></a>
+			<div class="magnifier-content">
+			</div>
+		</section>
+				<div id="loadingSpinner" class="spinner-overlay">
+			<div class="spinner-container">
+				<span class="loading-spinner"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+</main>
+
+
+<footer>
+	<section class="sitemap">
+				<div class="fix-tools-footer">
+			<div class="container">
+				<div class="d-flex align-items-center">
+										<a href="/site/member" data-bs-placement="left" data-bs-toggle="tooltip" title="登入"><img src="/images/icon_login.svg" alt=""/></a>
+										<a href="https://www.hkbibleconference.org/offering/index" style="background-color: #6aa84f; color: #ffffff;">奉獻方式</a><a href="https://www.hkbibleconference.org/content/view/daily-hope" style="background-color: #a61c00; color: #ffffff;">牧言點滴</a>				</div>
+			</div>
+		</div>
+				<div class="container">
+			<div class="row">
+				<div class="col-6 col-md-4 col-lg-2">
+										<strong><a href="javascript:void(0);">我的資料</a></strong>
+					<ul>
+						<li><a href="/site/member">登入／註冊</a></li>
+					</ul>
+									</div>
+				
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/schedule" data-id="1" data-type="2" style="display: block; margin-bottom: 20px;">聚會日程</a></strong>
+					<strong><a class="nav-item" href="/content/past-conferences" data-id="3" data-type="2" style="display: block; margin-bottom: 20px;">歷屆聚會</a></strong>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/our-story" data-id="5" data-type="1">培靈．歷史館</a></strong>
+					<ul>
+						<li><a href="/content/media-collection">歷屆媒體集</a></li>
+						<li><a href="/content/article-collection">歷屆文集</a></li>
+						<li><a href="/content/past-data">歷屆資料回顧</a></li>
+					</ul>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/about-us" data-id="6" data-type="3">關於我們</a></strong>
+					<ul>
+						<li><a href="/offering/index">奉獻方式</a></li>
+						<li><a href="/content/about-us#contact">聯絡我們</a></li>
+					</ul>
+				</div>			</div>
+		</div>
+	</section>
+	<section class="footer-middle">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-7 col-lg-5 text-center text-md-start pt-2 pb-3 pb-md-2">
+					<form id="subscribe-form" action="/site/subscribe" method="post">
+<input type="hidden" name="_csrf" value="nc6Hfu1dAMPH62YtRdXDmgEtnghHQcpm0rUPuzHAfIXfrapNlAQxr4GeX2QPjavJVkqzOgQTuwe7hErXbrc-tg==">						<div class="input-group align-items-center flex-nowrap pe-4">
+							<span class="color-white text-nowrap me-3">訂閱我們</span>
+							<div class="form-group field-subscribeform-email required">
+<input type="text" id="subscribeform-email" class="form-control rounded-0" name="SubscribeForm[email]" style="max-width:280px;" placeholder="請輸入你的電郵..." aria-label="請輸入你的電郵..." aria-required="true"><div class="invalid-feedback"></div>
+</div>							<button type="submit" id="btnSubscribe" class="btn btn-gray rounded-0 mb-auto" name="subscribe-button" title="訂閱" aria-label="訂閱"><i class="fa fa-arrow-right"></i></button>						</div>
+					</form>				</div>
+				<div class="col-12 col-md-5 col-lg-7 text-start text-md-end pt-0 pt-md-2 pb-2 sns d-flex align-items-center justify-content-md-end">
+					<span class="related-logos d-inline-block me-1">
+						<img src="/images/WARS_Gold-2022-2023.svg" alt="2022-2023無障礙網頁金獎" width="90"/>
+					</span>
+										<a href="https://www.facebook.com/hkbibleconference/" target="_blank" title="Facebook" aria-label="Facebook">
+						<img src="/images/icon_fb.png" alt="Facebook">
+					</a>
+										<a href="https://www.instagram.com/hkbibleconference/" target="_blank" title="Instagram" aria-label="Instagram">
+						<img src="/images/icon_ig.png" alt="Instagram">
+					</a>
+										<a href="https://www.youtube.com/c/HongKongBibleConference" target="_blank" title="Youtube" aria-label="Youtube">
+						<img src="/images/icon_yt.png" alt="Youtube">
+					</a>
+									</div>
+			</div>
+		</div>
+	</section>
+	<section class="copyright py-2">
+		<div class="container">
+			<div class="footer-btm-page mb-2">
+				<span>&copy; 2023 港九培靈研經會 版權所有</span>
+				<a class="nav-item" href="/footer-content/copy-right" data-id="1" data-type="1">版權及知識產權</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-privacy-policy" data-id="2" data-type="2">私隱政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-linking-policy" data-id="3" data-type="2">連結政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-disclaimer" data-id="4" data-type="2">免責聲明</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-terms-of-use" data-id="5" data-type="2">使用條款</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-accessibility" data-id="6" data-type="2">無障礙網頁</a>			</div>
+		</div>
+	</section>
+</footer>
+<!-- Back to top button -->
+<a href="#" id="button" title="回頁頂"><i class="fas fa-chevron-up"></i></a>
+
+<!--Cookie Consent-->
+<div class="cookie-container">
+	<div class="container-wrapper">
+		<div class="close-btn cookie-btn-close"><a href="javascript:void(0)" title="關閉" aria-label="關閉">X</a></div>
+		<p>當你瀏覽此網站時，一些Cookie (曲奇) 檔案將會儲存於你電腦的硬碟內。這些曲奇檔案只為瀏覽此網站之用。在此情況下，曲奇檔案將不會收集你的任何個人資料。你可選擇不接受曲奇檔案，但你若不接受曲奇檔案的話，你可能無法使用本網站某些功能。 <a class="td-underline" href="/bibleConference/footer-content/copy-right#statement-privacy-policy">了解更多</a></p>
+		<button class="cookie-btn">接受</button>
+		<button class="cookie-btn cookie-btn-disable">不接受</button>
+	</div>
+</div>
+
+<div class="modal" id="searchbox" tabindex="-1" aria-labelledby="網站工具:搜尋表格">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="siteSearchForm" action="/site/search" method="GET">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="搜尋關鍵字" aria-label="搜尋關鍵字" aria-describedby="請輸入搜尋關鍵字" name="keyword">
+						<button class="btn btn-outline-secondary" type="submit" id="button-addon2">搜尋</button>
+						<div class="invalid-feedback msg-keyword">請輸入欲搜尋的關鍵字</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script src="/assets/fd094f65/jquery.js"></script>
+<script src="/assets/fb2ec025/yii.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/scrolldown.js"></script>
+<script src="/js/all.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/changefontsize.js"></script>
+<script src="/js/changeColorMode.js"></script>
+<script src="/js/lightbox/index.bundle.min.js"></script>
+<script src="/js/plyr.js"></script>
+<script src="/js/cookieDisable.js"></script>
+<script src="/js/platform.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-video.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-zoom.min.js"></script>
+<script src="/js/jquery.color.2.1.2.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
+<script src="/js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+<script src="/assets/fb2ec025/yii.validation.js"></script>
+<script src="/assets/fb2ec025/yii.activeForm.js"></script>
+<script>
+	
+
+		//AOS.init();
+
+		AOS.init({
+			duration: 800, // values from 0 to 3000, with step 50ms
+			startEvent: "load",
+			once: false,
+		});
+		
+
+		var myModal = document.getElementById("searchbox")
+		var myInput = document.getElementById("myInput")
+
+		myModal.addEventListener("shown.bs.modal", function () {
+			myInput.focus()
+		})
+		
+
+		$(document).ready(function(){
+			$(".slick1").slick({
+				dots: true
+			});
+		});
+		
+
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll("[data-bs-toggle=\"tooltip\"]"));
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+			return new bootstrap.Tooltip(tooltipTriggerEl);
+		});
+
+		var btn = $("#button");
+
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > 300) {
+				btn.addClass("show");
+			} else {
+				btn.removeClass("show");
+			}
+		});
+
+		btn.on("click", function(e) {
+			e.preventDefault();
+			$("html, body").animate({scrollTop:0}, "300");
+		});
+		
+
+		const player = new Plyr(".audioPlayer");
+		
+
+		$(function () {
+			$("[data-toggle=\"tooltip\"]").tooltip();
+		})
+		
+
+		var totalImages = 0;
+		// $(".photo-gallery img").length;
+		$(function(){
+			$(".photo-gallery a").imagesLoaded( function() {
+				// images have loaded
+				var msnry = new Masonry(".photo-gallery");
+				msnry.layout();
+			});
+			// $(".photo-gallery img").each(function(){
+			// 	$(this).load(function(){
+			// 		totalImages++;
+			// 		if (totalImages >= $(".photo-gallery img").length) {
+			// 		}
+			// 	});
+			// })
+			// var msnry = new Masonry(".photo-gallery");
+			// msnry.layout();
+		});
+		$("a.eapps-link").css("display","none");
+		
+		$("table.tb-responsive thead tr th").each(function(index,element){
+			index += 1;
+			$("tr td:nth-child(" + index + ")").attr("data-title", $(this).text());
+		});
+		</script>
+<script>jQuery(function ($) {
+
+	var xhr;
+	var blurXhr;
+	
+	$(window).bind("load resize", function() {
+		var isMobile = $(window).width() < 992;
+		var isHideScripture = !$("#section-scripture").hasClass("active");
+		$(".sermons-col-left").css("width", getSectionMainWidth(isMobile, isHideScripture));
+		$(".sermons-col-left").css("height", getSectionMainHeight(isMobile, isHideScripture));
+		$(".sermons-col-right").css("width", getSectionScriptureWidth(isMobile, isHideScripture));
+		$(".sermons-col-right").css("height", getSectionScriptureHeight(isMobile, isHideScripture));
+
+		if(isMobile) {
+			if($(".btn-show-notes").css("display") == "none" && $(".btn-show-scripture").css("display") == "none") {
+				showButtonByClassName("btn-show-notes");
+			}
+		}
+	});
+	
+	function loadScripture(element){
+		var scriptureData = getScriptureData(element);
+		var isMobile = $(window).width() < 992;
+		
+		showLoadingSpinner();
+		if (!$("#section-scripture").hasClass("active")){
+			$("#section-scripture").addClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, false),
+				height: getSectionMainHeight(isMobile, false),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, false),
+				height: getSectionScriptureHeight(isMobile, false),
+			});
+			if(isMobile) {
+				if($(".article-citation-magnifier").length && !$(".article-citation-magnifier").hasClass("h-100")){
+					$(".article-citation-magnifier").addClass("h-100");
+				}
+			}
+			$("#section-scripture .btn-close-scripture").attr("tabindex", "0");
+			$(".btn-show-scripture").hide();
+			if(isMobile){
+				showButtonByClassName("btn-show-notes");
+			}else {
+				// hideButtonByClassName("btn-show-notes");
+			}
+		}
+		else{
+			$("#section-scripture .article-citation-magnifier").animate({scrollTop: 0});
+		}
+		
+		if (xhr){
+			xhr.abort();
+		}
+		$("#section-scripture").data(scriptureData);
+		xhr = $.ajax("/site/get-scripture", {
+			dataType: "json",
+			data: scriptureData,
+			success: function(data){
+				if (data !== false){
+					var scriptureContainer = $("#section-scripture .magnifier-content");
+					if (scriptureContainer){
+						var scriptureHtml = getScriptureHtml(data);
+						if (scriptureHtml){
+							scriptureContainer.html(scriptureHtml);
+						}
+					}
+				}
+			}
+		}).always(function(){
+			xhr = null;
+			hideLoadingSpinner();
+		});
+	}
+	
+	function closeScripture(){
+		var isMobile = $(window).width() < 992;
+		if ($("#section-scripture").hasClass("active")){
+			$("#section-scripture .magnifier-content").html("");
+			$("#section-scripture").removeClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, true),
+				height: getSectionMainHeight(isMobile, true),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, true),
+				height: getSectionScriptureHeight(isMobile, true),
+			});
+			$("#section-scripture .btn-close-scripture").attr("tabindex", "-1");
+			$(".btn-show-scripture").show();
+			showButtonByClassName("btn-show-notes");
+		}
+		$("#section-scripture").data(getScriptureData());
+		hideLoadingSpinner();
+	}
+	
+	function getScriptureData(element){
+		var scriptureData = {};
+		scriptureData["book"] = element && element.data("book") ?
+			element.data("book") :
+			null;
+		scriptureData["start-chapter"] = element && element.data("start-chapter") ?
+			element.data("start-chapter") :
+			null;
+		scriptureData["end-chapter"] = element && element.data("end-chapter") ?
+			element.data("end-chapter") :
+			null;
+		scriptureData["start-verse"] = element && element.data("start-verse") ?
+			element.data("start-verse") :
+			null;
+		scriptureData["end-verse"] = element && element.data("end-verse") ?
+			element.data("end-verse") :
+			null;
+		return scriptureData;
+	}
+	
+	function getScriptureHtml(data){
+		var bookTemplate = "<h3 class=\"article-title mb-0 text-center\" data-book=\"{{book}}\">{{content}}</h3>";
+		var chapterTemplate = "<h4 class=\"mb-3\" data-chapter=\"{{chapter}}\">{{content}}</h4>";
+		var verseTemplate = "<p><sup class=\"text-danger me-2\">{{verse}}</sup>{{content}}</p>";
+		
+		var scriptureHtml = "";
+		if (data.books){
+			$.each(data.books, function(bookId, book){
+				//for each book
+				if (bookId && book && book.title){
+					scriptureHtml += bookTemplate.replace("{{book}}", bookId).replace("{{content}}", book.title);
+					if (book.chapters){
+						$.each(book.chapters, function(chapterId, chapter){
+							if (chapterId && chapter && chapter.title){
+								scriptureHtml += chapterTemplate.replace("{{chapter}}", chapterId).replace("{{content}}", chapter.title);
+								if (chapter.verses){
+									$.each(chapter.verses, function(verseId, verse){
+										if (verseId && verse){
+											scriptureHtml += verseTemplate.replace("{{verse}}", verseId).replace("{{content}}", verse);
+										}
+									});
+								}
+							}
+						});
+					}
+				}
+			});
+		}
+		return scriptureHtml;
+	}
+	
+	function showLoadingSpinner(){
+		$("#loadingSpinner").stop().fadeIn(300);
+	}
+	
+	function hideLoadingSpinner(){
+		$("#loadingSpinner").stop().fadeOut(300);
+	}
+	
+	function getSectionMainWidth(isMobile = false, isFull = true){
+		return isMobile ?
+			"100%" :
+			(isFull ?
+				"100%" :
+				"65%");
+	}
+	
+	function getSectionMainHeight(isMobile = false, isFull = true){
+		return (isMobile ?
+			(window.innerHeight - $("header").outerHeight() - 5) * (isFull ? 0.9 : 0.45) :
+			window.innerHeight - $("header").outerHeight()
+		) + "px";
+	}
+	
+	function getSectionScriptureWidth(isMobile = false, isHide = true){
+		return isMobile ?
+			"100%" :
+			(isHide ?
+				"0%" :
+				"35%");
+	}
+	
+	function getSectionScriptureHeight(isMobile = false, isHide = true){
+		return (isMobile ?
+			(window.innerHeight - $("header").outerHeight() - 5) * (isHide ? 0.0 : 0.45) :
+			window.innerHeight - $("header").outerHeight()
+		) + "px";
+	}
+
+	function hideButtonByClassName(className){
+		if($("."+className).length) {
+			$("."+className).hide(300);
+		}
+	}
+
+	function showButtonByClassName(className){
+		if($("."+className).length) {
+			$("."+className).show(300);
+		}
+	}
+
+	function showIframe(hideButton = true){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			$("#section-scripture").addClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, false),
+				height: getSectionMainHeight(isMobile, false),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, false),
+				height: getSectionScriptureHeight(isMobile, false),
+			});
+			if(hideButton) {
+				$("#section-scripture .btn-close-scripture").attr("tabindex", "0");
+				$(".btn-show-scripture").hide();
+			}
+		}
+		else{
+			$("#section-scripture .article-citation-magnifier").animate({scrollTop: 0});
+		}
+	}
+
+	function animateScripture(object = {height:0, padding:0, marginBottom: 0}, duration = 300) {
+		if($(".article-citation-magnifier").length) {
+			$(".article-citation-magnifier").stop().animate(object, {duration:duration});
+		}
+	}
+
+	function showNotes(){
+		if($(".article-myNotes").length > 0) {
+			$(".article-myNotes").addClass("h-100", 300);
+		}
+	}
+	
+	$("a.article-citation").click(function(){
+		if ($("#section-scripture").hasClass("active") && JSON.stringify(getScriptureData($("#section-scripture"))) == JSON.stringify(getScriptureData($(this)))){
+			closeScripture();
+		}
+		else{
+			loadScripture($(this));
+		}
+	});
+	
+	// $(".btn-show-scripture").click(function(){
+	// 	if (!$("#section-scripture").hasClass("active")){
+	// 		$("a.article-citation").first().click();
+	// 	}
+	// });
+	
+	// $("#section-scripture .btn-close-scripture").click(function(){
+	// 	if ($("#section-scripture").hasClass("active")){
+	// 		closeScripture();
+	// 	}
+	// });
+
+	$(".btn-show-scripture").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			animateScripture({padding:10, marginBottom:5}, 300);
+			if(!$(".article-citation-magnifier").hasClass("h-100")){
+				$(".article-citation-magnifier").addClass("h-100");
+			}
+			$("a.article-citation").first().click();
+		}else {
+			if($(".article-myNotes").length > 0 && $(".article-myNotes").hasClass("h-100")) {
+				let newHeight = $("#section-scripture").height() * 0.5 - 2.5;
+				loadScripture($("a.article-citation"));
+				animateScripture({height:newHeight, padding:10, marginBottom: 5}, 300);
+				if($(".article-myNotes").length > 0) {
+					$(".article-myNotes").removeClass("h-100", 300);
+				}
+				hideButtonByClassName("btn-show-scripture");
+			} 
+			if(isMobile) {
+				animateScripture({height:"100%", padding:10, marginBottom: 5}, 300);
+				showButtonByClassName("btn-show-notes");
+			}
+		}
+	});
+
+	$("#section-scripture .btn-close-scripture").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if($(".article-citation-magnifier").hasClass("h-100")) {
+			if ($("#section-scripture").hasClass("active")){
+				closeScripture();
+			}
+		}else {
+			if($(".article-myNotes").length > 0) {
+				if(isMobile){
+					$(".article-myNotes").removeClass("h-100");
+				}else {
+					$(".article-myNotes").addClass("h-100", 300);
+				}
+			}
+			if(isMobile){
+				closeScripture();
+			}else {
+				animateScripture();
+			}
+			showButtonByClassName("btn-show-scripture");
+		}
+	});
+
+	$("#section-scripture .btn-close-notes").click(function(){
+		if($(".article-citation-magnifier").height() == 0) {
+			if ($("#section-scripture").hasClass("active")){
+				closeScripture();
+			}
+		}
+		if(!$(".article-citation-magnifier").hasClass("h-100")) {
+			$(".article-citation-magnifier").addClass("h-100",300);
+			showButtonByClassName("btn-show-notes");
+		}
+	})
+
+	$(".btn-show-notes").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			if($(".article-myNotes").length > 0) {
+				$(".article-citation-magnifier").removeClass("h-100");
+				animateScripture();
+				$(".article-myNotes").addClass("h-100", 300);
+			}
+			$("#section-scripture .btn-close-notes").attr("tabindex", "0");
+			hideButtonByClassName("btn-show-notes");
+			showIframe(false);
+		}else {
+			if($(".article-citation-magnifier").hasClass("h-100")) {
+				$(".article-citation-magnifier").removeClass("h-100");
+			}
+			let newHeight = $("#section-scripture").height() * 0.5 - 2.5;
+			animateScripture({height:newHeight, padding:10, marginBottom: 5}, 300);
+			hideButtonByClassName("btn-show-notes");
+			if($(".article-myNotes").length && $(".article-myNotes").hasClass("h-100")){
+				$(".article-myNotes").removeClass("h-100");
+			}
+			if(isMobile){
+				animateScripture();
+				if($(".article-myNotes").length && !$(".article-myNotes").hasClass("h-100")){
+					$(".article-myNotes").addClass("h-100");
+				}
+				showButtonByClassName("btn-show-scripture");
+			}
+		}
+	})
+	
+	var backgroundColor = $("a.article-citation").css("background-color");
+	var fontColor = $("a.article-citation").css("color");
+	if ($("a.article-citation").length > 0){
+		$(".btn-show-scripture").show();
+		
+		$("a.article-citation").first()
+			.click()
+			.animate({
+				"background-color": "#c90000",
+				"color": "#FFFFFF",
+			}, 300)
+			.delay(100)
+			.animate({
+				"background-color": backgroundColor,
+				"color": fontColor,
+			}, 300);
+	}else if("") {
+		animateScripture();
+		showNotes();
+		setTimeout(showIframe, 300);
+	}
+
+	// save audio process
+	function ajaxCallSaveAudioProgress(time, model_id, model_name, title, duration){
+		if(model_id && model_name && title && Number.isInteger(time)) {
+			$.ajax({
+				method:"POST",
+				url:"/history/save-file-video-progress",
+				data: {
+					time,
+					url: "https://www.hkbibleconference.org/session-message/view/212",
+					model_id,
+					model_name,
+					title,
+					duration,
+				},
+				success:function(result){
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}
+	}
+
+	$(function(){
+		let audioElement = $("audio");
+		let old_time = null;
+		let title = "第一講  回顧與前瞻";
+		if(audioElement.length) {
+			if(audioElement[0].dataset.currenttime) {
+				audioElement[0].currentTime = audioElement[0].dataset.currenttime;
+				old_time = audioElement[0].dataset.currenttime;
+			}
+			let model_id = audioElement[0].dataset.modelId;
+			let model_name = audioElement[0].dataset.model;
+			$(audioElement).off().on("timeupdate", function(event){
+				let now_time = parseInt(this.currentTime);
+				if(old_time === null || now_time - old_time >= 2 || now_time - old_time < 0) {
+					old_time = now_time;
+					ajaxCallSaveAudioProgress(now_time, model_id, model_name, title, parseInt(this.duration));
+				}
+			})
+		}
+	})
+	$("#myNotes").blur(function(){
+		if(blurXhr){
+			blurXhr.abort();
+		}
+		blurXhr = $.ajax("/notes/save-notes", {
+			dataType: "json",
+			method: "POST",
+			data: {
+				content: $("#myNotes").val(),
+				session_message_id: "212",
+			},
+			success: function(data){
+				if(data.error) {
+					alert(data.message);
+				}
+			},
+			error: function(error){
+				alert(error);
+			}
+		}).always(function(){
+			blurXhr = null;
+		});
+	});
+	
+jQuery('#subscribe-form').yiiActiveForm([{"id":"subscribeform-email","name":"email","container":".field-subscribeform-email","input":"#subscribeform-email","error":".invalid-feedback","enableAjaxValidation":true,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"請輸入電郵"});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"請輸入正確的電郵","enableIDN":false,"skipOnEmpty":1});yii.validation.string(value, messages, {"message":"電郵 必須為字串。","max":500,"tooLong":"電郵 只能包含最多 500 個字符。","skipOnEmpty":1});}}], {"errorSummary":".alert.alert-danger","errorCssClass":"is-invalid","successCssClass":"is-valid","validationStateOn":"input"});
+
+	$("#siteSearchForm").on("submit", function() {
+		var value = $(this).find("input[name=\"keyword\"]").val();
+		if (!value){
+			$(this).find(".msg-keyword").show();
+			return false;
+		}
+
+		return true;
+	});
+
+	$("#siteSearchForm input[name=\"keyword\"]").on("keyup", function (e) {
+		if ($("#siteSearchForm input[name=\"keyword\"]").val()){
+			$("#siteSearchForm .msg-keyword").hide();
+		}
+	});
+	
+	<!--Add to bookmark button-->
+	$(".bookmark").off().click(function() {
+		$(this).toggleClass("added");
+		let target = $(this)[0];
+		let targetModel = $(this)[0].dataset.model.replace(/\\/g, "\\\\");
+		let targetModelId = $(this)[0].dataset.modelId;
+		let otherElements = $(".bookmark[data-model-id=\""+ targetModelId +"\"][data-model=\""+ targetModel +"\"]");
+		if(otherElements.length) {
+			$(otherElements).each(function(index, element){
+				if(element != target) {
+					$(element).toggleClass("added");
+				}
+			})
+		}
+
+		if("") {
+			let addOrRemove = $(this).hasClass("added") ? "add" : "remove";
+			let model = $(this)[0].dataset.model;
+			let modelId = $(this)[0].dataset.modelId;
+			// console.log($(this)[0].dataset);
+			$.ajax({
+				method:"POST",
+				url:"/bookmark/add-or-remove-bookmark",
+				data: {
+					addOrRemove,
+					model,
+					modelId,
+				},
+				success:function(result){
+					console.log(result);
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}else{
+			let secondLayerId = null;
+			// console.log(1);
+			if(targetModel && targetModel.includes("SpeakerWording")){
+				let modal = $(this).parents(".modal");
+				if(modal.length){
+					secondLayerId = $(modal).attr("id");
+				}
+			}
+			let url = "https://www.hkbibleconference.org/site/member";
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			if(secondLayerId){
+				if(url.includes("?")){
+					url = urlParams.size ? (url + "&secondLayerId=" + secondLayerId) : (url + "secondLayerId=" + secondLayerId);
+				}else {
+					url =  url + "?secondLayerId=" + secondLayerId;
+				}
+			}
+			location.href = url;
+		}
+	});
+
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	if(urlParams.has("firstLayerId")){
+		let firstLayerId = urlParams.get("firstLayerId");
+		if($("#"+firstLayerId).length){
+			let btn = $("#"+firstLayerId);
+			$(btn)[0].scrollIntoView();
+			let relatedModalId = $(btn)[0].dataset.bsTarget;
+			new bootstrap.Modal(relatedModalId).show("#"+firstLayerId);
+		}
+		if(urlParams.has("secondLayerId")){
+			let secondLayerId = urlParams.get("secondLayerId");
+			setTimeout(function(){
+				new bootstrap.Modal("#" + secondLayerId).show();
+			},500);
+		}
+	}else if(urlParams.has("secondLayerId")){
+		let secondLayerId = urlParams.get("secondLayerId");
+		new bootstrap.Modal("#" + secondLayerId).show();
+	}
+	
+
+		$("a[download='']").each(function(){
+			$(this).click(function(){
+				downloadResource($(this).attr("href"));
+				return false;
+			});
+		});
+		
+		function forceDownload(blob, filename) {
+			var a = document.createElement("a");
+			a.download = filename;
+			a.href = blob;
+			document.body.appendChild(a);
+			a.click();
+			a.remove();
+		}
+
+		function downloadResource(url, filename) {
+			if (!filename) filename = url.split("\\").pop().split("/").pop();
+			console.log(location.origin);
+			fetch(url + "?_t=" + Date.now(), {
+				headers: new Headers({
+					"Origin": location.origin
+				}),
+				method: "GET",
+				mode: "cors"
+			})
+			.then(response => response.blob())
+			.then(blob => {
+				let blobUrl = window.URL.createObjectURL(blob);
+				forceDownload(blobUrl, filename);
+			})
+			.catch(e => console.error(e));
+		}
+		
+});</script></body>
+</html>

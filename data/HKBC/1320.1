@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>港九培靈研經會</title>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="NrLk3wKJ2AyV-slW9iFzk0cl2kmu7aTDnjeQJiDjJeZsxYGNN-GIXfafnR6VeDj9N0CRIunY77bndPtebtodpA==">
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-icons.css" rel="stylesheet">
+<link href="/css/all.css" rel="stylesheet">
+<link href="/js/slick/slick.css" rel="stylesheet">
+<link href="/js/slick/slick-theme.css" rel="stylesheet">
+<link href="/css/aos.css" rel="stylesheet">
+<link href="/css/cookie-consent.css" rel="stylesheet">
+<link href="/css/interface.css" rel="stylesheet">
+<link href="/css/plyr.css" rel="stylesheet">
+<link href="/js/lightgallery/css/lightgallery-bundle.min.css" rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.21.1/video-js.css" rel="stylesheet">
+<link href="/js/jquery-ui-1.13.2/jquery-ui.min.css" rel="stylesheet">	<link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<script>
+	var color = document.cookie.match("(^|;|; )\s*" + "ColorMode" + "\s*=\s*([^;]+)")?.pop() || "normal";
+	if (color == "normal") {
+		document.body.classList.remove("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.remove("selected");
+		}
+	} else {
+		document.body.classList.add("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.add("selected");
+		}
+	}</script>
+
+
+<a href="#main" class="skip">跳至內容</a>
+<header class="sticky-top">
+	<div class="nav-tool nav-tool-top hidden-990px">
+		<div class="container justify-content-end">
+			<nav class="navbar navbar-expand navbar-light">
+				<div class="collapse navbar-collapse justify-content-end">
+										<ul class="navbar-nav">
+						<li class="nav-item nav-font-size fontSize">
+							<span class="defaultFont">
+								<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a> 
+							</span>
+							<span class="largerFont">
+								<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a> 
+							</span>
+							<span class="xLargerFont">
+								<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+							</span>
+						</li>
+						<li class="nav-item nav-search">
+							<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+						</li>
+						<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>						<li class="nav-item nav-btn-BW">
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn monochromeBtn" >黑白版</a>
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn chromaticBtn" style="display:none;">彩色版</a>
+						</li>
+												<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+												<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+						<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light navbar-menu">
+			<div class="container-fluid p-0">
+				<a class="navbar-brand" href="/site/index">
+					<!--<img src="/images/logo.jpg" alt="" class="w-100" />-->
+					<img src="/images/logo_whole.svg" alt="港九培靈研經會" class="logoImg">
+					<img src="/images/logo_chi.svg" alt="港九培靈研經會" class="scrollLogoImg">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+					<div class="nav-tool show-990px">
+						<div class="container justify-content-end">
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="flex-wrap collapse navbar-collapse justify-content-end">
+																		<ul class="navbar-nav">
+										<li class="nav-item nav-font-size">
+											<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a>
+											<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a>
+											<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+										</li>
+										<li class="nav-item nav-search">
+											<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+										</li>
+										<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>										<li class="nav-item nav-btn-BW"><a href="javascript:checkColorMode()" class="nav-link colorModeBtn">黑白版</a></li>
+									</ul>
+								</div>
+							</nav>
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="collapse navbar-collapse justify-content-end">
+									<ul class="navbar-nav">
+																				<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+																				<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+										<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<ul id="w0" class="navbar-nav nav"><li class="nav-item nav-item" data-id="1" data-type="2"><a class="nav-link" href="/content/schedule">聚會日程</a></li>
+<li class="nav-item nav-item" data-id="3" data-type="2"><a class="nav-link" href="/content/past-conferences">歷屆聚會</a></li>
+<li class="nav-item nav-item" data-id="5" data-type="1"><a class="nav-link" href="/content/our-story">培靈．歷史館</a></li>
+<li class="nav-item nav-item" data-id="6" data-type="3"><a class="nav-link" href="/content/about-us">關於我們</a></li></ul>				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<main id="main" name="main">
+	<section>
+	<h1 style="height: 0px; padding: 0px; margin: 0px; font-size: 0;">港九培靈研經會</h1>
+	<div class="index-banner">
+		
+		<div class="photocap photomix">
+			<a href="https://hkbibleconference.org/content/schedule" title="第95屆 - 福音、成聖、異象">
+				<img src="https://file.hkbibleconference.org/upload/banner/21/banner_desktop_tc/Desktop-background-95th-1920x630.jpg" class="d-block hidden-768px" alt="第95屆 - 福音、成聖、異象">
+				<img src="https://file.hkbibleconference.org/upload/banner/21/banner_mobile_tc/MOB-background-95th-1540x800.jpg" class="d-block show-768px" alt="第95屆 - 福音、成聖、異象">
+				<div data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-delay="400">
+					<img src="https://file.hkbibleconference.org/upload/banner/21/middle_layer_image_desktop_tc/Desktop-middle-95th-1920x630.png" class="d-block hidden-768px" alt="第95屆 - 福音、成聖、異象">
+					<img src="https://file.hkbibleconference.org/upload/banner/21/middle_layer_image_mobile_tc/MOB-middle-95th-800x800.png" class="d-block show-768px" alt="第95屆 - 福音、成聖、異象">
+				</div>
+				<div data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-delay="1100" class="position-absolute">
+					<img src="https://file.hkbibleconference.org/upload/banner/21/foreground_image_desktop_tc/Desktop-fortground-95th_1320x630.png" class="d-block hidden-768px" alt="第95屆 - 福音、成聖、異象">
+					<img src="https://file.hkbibleconference.org/upload/banner/21/foreground_image_mobile_tc/MOB-fortground-95th-800x800.png" class="d-block show-768px" alt="第95屆 - 福音、成聖、異象">
+				</div>
+			</a>
+		</div>
+		<div class="photocap photomix">
+			<a href="https://hkbibleconference.org/site/member" title="會員登記">
+				<img src="https://file.hkbibleconference.org/upload/banner/22/banner_desktop_tc/membership_promotion_bg.jpg" class="d-block hidden-768px" alt="會員登記">
+				<img src="https://file.hkbibleconference.org/upload/banner/22/banner_mobile_tc/membership_promotion_m_bg.jpg" class="d-block show-768px" alt="會員登記">
+				<div data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-delay="400">
+					<img src="https://file.hkbibleconference.org/upload/banner/22/middle_layer_image_desktop_tc/membership_promotion_mid_tc.png" class="d-block hidden-768px" alt="會員登記">
+					<img src="https://file.hkbibleconference.org/upload/banner/22/middle_layer_image_mobile_tc/membership_promotion_mid_m_tc.png" class="d-block show-768px" alt="會員登記">
+				</div>
+				<div data-aos="fade-down" data-aos-anchor-placement="top-bottom" data-aos-delay="1100" class="position-absolute">
+					<img src="https://file.hkbibleconference.org/upload/banner/22/foreground_image_desktop_tc/membership_promotion_top_tc.png" class="d-block hidden-768px" alt="會員登記">
+					<img src="https://file.hkbibleconference.org/upload/banner/22/foreground_image_mobile_tc/membership_promotion_top_m_tc.png" class="d-block show-768px" alt="會員登記">
+				</div>
+			</a>
+		</div>	</div>
+</section>
+<section class="mt-3 pt-2 pt-md-4 pb-3">
+	<div class="lightgallery shortcut overlapTextSec gridBox gridBox-1col gridBox-md-3col ms-0 me-0" data-aos="fade-right" data-aos-anchor-placement="top-bottom">
+		<div class="grid-md-2row grid-2col order-last fb-order-md-normal">
+			<div class="h-100 fb-column">
+				<div class="h-100 fb-column">
+					<div id="fbContent2" class="fb-like-box" data-href="https://www.facebook.com/hkbibleconference/" data-width="500" data-height="718" data-colorscheme="light" data-show-faces="false" data-header="false" data-stream="true" data-show-border="false" data-adapt-container-width="true"></div>
+				</div>
+			</div>
+		</div>
+				<div class="insideGrid grid-md-2col">
+			<div class="grid-md-2col reminder-box">
+				<div class="title header-line color-reminder contrast-text-black">溫馨提示</div>
+				<div class="contrast-text-black">建議使用<span style="color: #2773D9">WiFi觀看</span>，減少數據用量</div>
+			</div>
+				<div>
+						<div class="bookmarkWrapper">
+			<a href="https://hkbc.hflip.co/issue202302.html" class="lightgallery-item" data-download-url="false" data-iframe="true" data-iframe-title="2023年第2期培靈會訊">
+							<div class="photocap">
+					<img src="https://file.hkbibleconference.org/upload/home_shortcut/19/cover_tc/HKBC_newsletter-202202-3.png" alt="2023年第2期培靈會訊" title="2023年第2期培靈會訊" />
+				</div>
+				<div class="event_title text-center">
+					2023年第2期培靈會訊				</div>
+			</a>
+			<!-- Add to Bookmark -->
+			<!--  -->
+			</div>
+					</div>
+				<div>
+						<div class="bookmarkWrapper">
+			<a href="/home-shortcut/view/shop">
+							<div class="photocap">
+					<img src="https://file.hkbibleconference.org/upload/home_shortcut/9/cover_tc/shortcutbanner_product_tc.png" alt="歡迎選購培靈產品" title="歡迎選購培靈產品" />
+				</div>
+				<div class="event_title text-center">
+					歡迎選購培靈產品				</div>
+			</a>
+			<!-- Add to Bookmark -->
+			<!--  -->
+			</div>
+					</div>
+				</div>
+				<div>
+						<div class="h-100">
+								<div class="bookmarkWrapper">
+				<a id="app_models_HomeShortcut_11_a" href="" data-custom-start="0" data-video='{"source": [{"src":"https://file.hkbibleconference.org/upload/promotion_material/134/file/HKBC_General_Intro_1080p1.mp4", "type":"video/mp4"}], "attributes": {"preload": false, "playsinline": true, "controls": true, "id": "app_models_HomeShortcut_11"}}' data-poster="https://file.hkbibleconference.org/upload/home_shortcut/11/cover_tc/HKBC_Intro_Video_cover_TC.jpg" class="lightgallery-item" data-download-url="false" >
+									<div class="photocap">
+						<img src="https://file.hkbibleconference.org/upload/home_shortcut/11/cover_tc/HKBC_Intro_Video_cover_TC.jpg" alt="認識培靈會" title="認識培靈會" />
+						<div class="photo-icon-video"></div>
+					</div>
+					<div class="event_title text-center">
+						認識培靈會					</div>
+				</a>
+				<!-- Add to Bookmark -->
+				<!--  -->
+				</div>
+			</div>
+					</div>
+				<div>
+						<div class="bookmarkWrapper">
+			<a href="/sermon/view?serial_no=95" target="_self">
+							<div class="photocap">
+					<img src="https://file.hkbibleconference.org/upload/home_shortcut/26/cover_tc/Homepage-95-Ban.jpg" alt="福音、成聖、異象" title="福音、成聖、異象" />
+				</div>
+				<div class="event_title text-center">
+					福音、成聖、異象				</div>
+			</a>
+			<!-- Add to Bookmark -->
+			<!--  -->
+			</div>
+					</div>
+			</div>
+</section>
+
+</main>
+
+
+<footer>
+	<section class="sitemap">
+				<div class="container">
+			<div class="row">
+				<div class="col-6 col-md-4 col-lg-2">
+										<strong><a href="javascript:void(0);">我的資料</a></strong>
+					<ul>
+						<li><a href="/site/member">登入／註冊</a></li>
+					</ul>
+									</div>
+				
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/schedule" data-id="1" data-type="2" style="display: block; margin-bottom: 20px;">聚會日程</a></strong>
+					<strong><a class="nav-item" href="/content/past-conferences" data-id="3" data-type="2" style="display: block; margin-bottom: 20px;">歷屆聚會</a></strong>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/our-story" data-id="5" data-type="1">培靈．歷史館</a></strong>
+					<ul>
+						<li><a href="/content/media-collection">歷屆媒體集</a></li>
+						<li><a href="/content/article-collection">歷屆文集</a></li>
+						<li><a href="/content/past-data">歷屆資料回顧</a></li>
+					</ul>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/about-us" data-id="6" data-type="3">關於我們</a></strong>
+					<ul>
+						<li><a href="/offering/index">奉獻方式</a></li>
+						<li><a href="/content/about-us#contact">聯絡我們</a></li>
+					</ul>
+				</div>			</div>
+		</div>
+	</section>
+	<section class="footer-middle">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-7 col-lg-5 text-center text-md-start pt-2 pb-3 pb-md-2">
+					<form id="subscribe-form" action="/site/subscribe" method="post">
+<input type="hidden" name="_csrf" value="NrLk3wKJ2AyV-slW9iFzk0cl2kmu7aTDnjeQJiDjJeZsxYGNN-GIXfafnR6VeDj9N0CRIunY77bndPtebtodpA==">						<div class="input-group align-items-center flex-nowrap pe-4">
+							<span class="color-white text-nowrap me-3">訂閱我們</span>
+							<div class="form-group field-subscribeform-email required">
+<input type="text" id="subscribeform-email" class="form-control rounded-0" name="SubscribeForm[email]" style="max-width:280px;" placeholder="請輸入你的電郵..." aria-label="請輸入你的電郵..." aria-required="true"><div class="invalid-feedback"></div>
+</div>							<button type="submit" id="btnSubscribe" class="btn btn-gray rounded-0 mb-auto" name="subscribe-button" title="訂閱" aria-label="訂閱"><i class="fa fa-arrow-right"></i></button>						</div>
+					</form>				</div>
+				<div class="col-12 col-md-5 col-lg-7 text-start text-md-end pt-0 pt-md-2 pb-2 sns d-flex align-items-center justify-content-md-end">
+					<span class="related-logos d-inline-block me-1">
+						<img src="/images/WARS_Gold-2022-2023.svg" alt="2022-2023無障礙網頁金獎" width="90"/>
+					</span>
+										<a href="https://www.facebook.com/hkbibleconference/" target="_blank" title="Facebook" aria-label="Facebook">
+						<img src="/images/icon_fb.png" alt="Facebook">
+					</a>
+										<a href="https://www.instagram.com/hkbibleconference/" target="_blank" title="Instagram" aria-label="Instagram">
+						<img src="/images/icon_ig.png" alt="Instagram">
+					</a>
+										<a href="https://www.youtube.com/c/HongKongBibleConference" target="_blank" title="Youtube" aria-label="Youtube">
+						<img src="/images/icon_yt.png" alt="Youtube">
+					</a>
+									</div>
+			</div>
+		</div>
+	</section>
+	<section class="copyright py-2">
+		<div class="container">
+			<div class="footer-btm-page mb-2">
+				<span>&copy; 2023 港九培靈研經會 版權所有</span>
+				<a class="nav-item" href="/footer-content/copy-right" data-id="1" data-type="1">版權及知識產權</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-privacy-policy" data-id="2" data-type="2">私隱政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-linking-policy" data-id="3" data-type="2">連結政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-disclaimer" data-id="4" data-type="2">免責聲明</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-terms-of-use" data-id="5" data-type="2">使用條款</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-accessibility" data-id="6" data-type="2">無障礙網頁</a>			</div>
+		</div>
+	</section>
+</footer>
+<div class="fix-tools">
+		<a href="/site/member" data-bs-placement="left" data-bs-toggle="tooltip" title="登入"><img src="/images/icon_login.svg" alt="" /></a>
+		<a href="https://www.hkbibleconference.org/offering/index" style="background-color: #6aa84f; color: #ffffff;">奉獻方式</a><a href="https://www.hkbibleconference.org/content/view/daily-hope" style="background-color: #a61c00; color: #ffffff;">牧言點滴</a></div>
+<!-- Back to top button -->
+<a href="#" id="button" title="回頁頂"><i class="fas fa-chevron-up"></i></a>
+
+<!--Cookie Consent-->
+<div class="cookie-container">
+	<div class="container-wrapper">
+		<div class="close-btn cookie-btn-close"><a href="javascript:void(0)" title="關閉" aria-label="關閉">X</a></div>
+		<p>當你瀏覽此網站時，一些Cookie (曲奇) 檔案將會儲存於你電腦的硬碟內。這些曲奇檔案只為瀏覽此網站之用。在此情況下，曲奇檔案將不會收集你的任何個人資料。你可選擇不接受曲奇檔案，但你若不接受曲奇檔案的話，你可能無法使用本網站某些功能。 <a class="td-underline" href="/bibleConference/footer-content/copy-right#statement-privacy-policy">了解更多</a></p>
+		<button class="cookie-btn">接受</button>
+		<button class="cookie-btn cookie-btn-disable">不接受</button>
+	</div>
+</div>
+
+<div class="modal" id="searchbox" tabindex="-1" aria-labelledby="網站工具:搜尋表格">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="siteSearchForm" action="/site/search" method="GET">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="搜尋關鍵字" aria-label="搜尋關鍵字" aria-describedby="請輸入搜尋關鍵字" name="keyword">
+						<button class="btn btn-outline-secondary" type="submit" id="button-addon2">搜尋</button>
+						<div class="invalid-feedback msg-keyword">請輸入欲搜尋的關鍵字</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script src="/assets/fd094f65/jquery.js"></script>
+<script src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&amp;version=v14.0" async="async" defer="defer" crossorigin="anonymous"></script>
+<script src="/assets/fb2ec025/yii.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/scrolldown.js"></script>
+<script src="/js/all.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/changefontsize.js"></script>
+<script src="/js/changeColorMode.js"></script>
+<script src="/js/lightbox/index.bundle.min.js"></script>
+<script src="/js/plyr.js"></script>
+<script src="/js/cookieDisable.js"></script>
+<script src="/js/platform.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-video.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-zoom.min.js"></script>
+<script src="/js/jquery.color.2.1.2.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
+<script src="/js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+<script src="/assets/fb2ec025/yii.validation.js"></script>
+<script src="/assets/fb2ec025/yii.activeForm.js"></script>
+<script>
+		//AOS.init();
+
+		AOS.init({
+			duration: 800, // values from 0 to 3000, with step 50ms
+			startEvent: "load",
+			once: false,
+		});
+		
+
+		var myModal = document.getElementById("searchbox")
+		var myInput = document.getElementById("myInput")
+
+		myModal.addEventListener("shown.bs.modal", function () {
+			myInput.focus()
+		})
+		
+
+		$(document).ready(function(){
+			$(".slick1").slick({
+				dots: true
+			});
+		});
+		
+
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll("[data-bs-toggle=\"tooltip\"]"));
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+			return new bootstrap.Tooltip(tooltipTriggerEl);
+		});
+
+		var btn = $("#button");
+
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > 300) {
+				btn.addClass("show");
+			} else {
+				btn.removeClass("show");
+			}
+		});
+
+		btn.on("click", function(e) {
+			e.preventDefault();
+			$("html, body").animate({scrollTop:0}, "300");
+		});
+		
+
+		const player = new Plyr(".audioPlayer");
+		
+
+		$(function () {
+			$("[data-toggle=\"tooltip\"]").tooltip();
+		})
+		
+
+		var totalImages = 0;
+		// $(".photo-gallery img").length;
+		$(function(){
+			$(".photo-gallery a").imagesLoaded( function() {
+				// images have loaded
+				var msnry = new Masonry(".photo-gallery");
+				msnry.layout();
+			});
+			// $(".photo-gallery img").each(function(){
+			// 	$(this).load(function(){
+			// 		totalImages++;
+			// 		if (totalImages >= $(".photo-gallery img").length) {
+			// 		}
+			// 	});
+			// })
+			// var msnry = new Masonry(".photo-gallery");
+			// msnry.layout();
+		});
+		$("a.eapps-link").css("display","none");
+		
+		$("table.tb-responsive thead tr th").each(function(index,element){
+			index += 1;
+			$("tr td:nth-child(" + index + ")").attr("data-title", $(this).text());
+		});
+		</script>
+<script>jQuery(function ($) {
+
+	var lg = document.querySelector(".lightgallery");
+	lg.addEventListener("lgBeforeOpen", function(event) {
+		$(".modal").modal("hide");
+	});
+	lg.addEventListener("lgBeforeSlide", function(event) {
+		var slideConfig = lgPlugin.galleryItems[event.detail.index];
+		if (slideConfig.video || slideConfig.iframe){
+			// console.log(lgPlugin);
+			$("#lg-actual-size-" + lgPlugin.lgId).hide();
+		}
+		else{
+			$("#lg-actual-size-" + lgPlugin.lgId).show();
+		}
+	});
+
+	function ajaxCallSaveVideoProgress(time, model_id, model_name, title, duration){
+		if(model_id && model_name && Number.isInteger(time) && "") {
+			$.ajax({
+				method:"POST",
+				url:"/history/save-file-video-progress",
+				data: {
+					time,
+					url: "https://www.hkbibleconference.org/site/index",
+					model_id,
+					model_name,
+					title,
+					duration,
+				},
+				success:function(result){
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}
+	}
+
+	function saveVideoProgress(event, instanceNamePlugin){
+		setTimeout(function(){
+			let galleryItems = instanceNamePlugin.galleryItems;
+			if(galleryItems.length && galleryItems[event.detail.index]) {
+				let value = galleryItems[event.detail.index];
+				if(value.video) {
+					// Html5 video
+					let id = JSON.parse(value.video).attributes.id;
+					let temp_array = id.split("_");
+					let model_id = temp_array.pop();
+					let title = value.subHtml;
+					let model_name = ""+temp_array.join("\\");
+					let video = $("#"+id).find("video");
+					let old_time = null;
+					if(video.length) {
+						if(value.customStart) {
+							video[0].currentTime = parseInt(value.customStart);
+						}
+						$(video).off().on("timeupdate", function(event){
+							let now_time = parseInt(this.currentTime);
+							if(old_time === null || now_time - old_time >= 2 || now_time - old_time < 0) {
+								old_time = now_time;
+								value.customStart = now_time;
+								ajaxCallSaveVideoProgress(now_time, model_id, model_name, title, parseInt(this.duration));
+							}
+						})
+					}
+				}else if(value.__slideVideoInfo && Object.keys(value.__slideVideoInfo)[0] == "youtube"){
+					//youtube video
+					let id = value.customProp;
+					let temp_array = id.split("_");
+					let model_id = temp_array.pop();
+					let title = value.subHtml;
+					let model_name = ""+temp_array.join("\\");
+					let iframeID = "lg-youtube"+event.detail.index;
+					
+					//must be get original JS element, not Jquery element object
+					let iframeElement = document.querySelector("#"+iframeID);
+					if(iframeElement) {
+						// Youtube API no have "timeupdate" event.
+						// https://stackoverflow.com/questions/65511523/how-to-listen-to-time-change-events-with-the-youtube-iframe-player-api
+						
+						function onYouTubeIframeAPIReady() {
+							var youtube_player = new YT.Player(iframeElement, {
+								events: {
+									"onReady":function(event){
+										if(value.customStart){
+											event.target.seekTo(parseInt(value.customStart));
+											youtube_duration = event.target.getDuration();
+										}
+									}
+								}
+							});
+
+							// This is the source "window" that will emit the events.
+							var iframeWindow = youtube_player.getIframe().contentWindow;
+							
+							// So we can compare against new updates.
+							var lastTimeUpdate = 0;
+
+							function getYoutubeCurrentTime(event) {
+								// Check that the event was sent from the YouTube IFrame.
+								if (event.source === iframeWindow) {
+									var data = JSON.parse(event.data);
+							
+									// The "infoDelivery" event is used by YT to transmit any
+									// kind of information change in the player,
+									// such as the current time or a playback quality change.
+									if (
+									data.event === "infoDelivery" &&
+									data.info &&
+									data.info.currentTime
+									) {
+										// currentTime is emitted very frequently,
+										// but we only care about whole second changes.
+										var time = Math.floor(data.info.currentTime);
+							
+										if (time - lastTimeUpdate >= 2) {
+											lastTimeUpdate = time;
+											value.customStart = time;
+											// console.log(time); // update the dom, emit an event, whatever.
+											ajaxCallSaveVideoProgress(time, model_id, model_name, title, youtube_duration);
+										}
+									}
+								}
+							}
+							
+							// Listen to events triggered by postMessage.
+							window.addEventListener("message", getYoutubeCurrentTime);
+							lg.addEventListener("lgBeforeSlide", function(event){
+								window.removeEventListener("message", getYoutubeCurrentTime);
+							});
+						}
+
+						onYouTubeIframeAPIReady();
+					}
+				}else if(value.__slideVideoInfo && Object.keys(value.__slideVideoInfo)[0] == "vimeo") {
+					let id = value.customProp;
+					let temp_array = id.split("_");
+					let model_id = temp_array.pop();
+					let title = value.subHtml;
+					let model_name = ""+temp_array.join("\\");
+					let iframeID = "lg-vimeo"+event.detail.index;
+					let iframeElement = $("#"+iframeID);
+					if(iframeElement.length) {
+						let vimeo_player = new Vimeo.Player(iframeElement);
+						if(value.customStart) {
+							vimeo_player.setCurrentTime(parseInt(value.customStart));
+						}
+						let old_time = null;
+						vimeo_player.on("timeupdate", async function(event){
+							let now_time = null;
+							let duration = null;
+							await vimeo_player.getCurrentTime().then(function(seconds){
+								now_time = parseInt(seconds);
+							});
+							await vimeo_player.getDuration().then(function(seconds){
+								duration = parseInt(seconds);
+							});
+							if(old_time === null || now_time - old_time >= 2 || now_time - old_time < 0) {
+								old_time = now_time;
+								value.customStart = now_time;
+								ajaxCallSaveVideoProgress(now_time, model_id, model_name, title, duration);
+							}
+						});
+					}
+				}
+			}
+		}, event.detail.delay);
+	}
+	lg.addEventListener("lgSlideItemLoad", function(event){saveVideoProgress(event, lgPlugin)});
+	var lgPlugin = lightGallery(lg, {
+		selector: ".lightgallery-item",
+		plugins: [lgVideo, lgZoom],
+		// download: false,
+		mobileSettings: {
+			showCloseIcon: true,
+		},
+		videojs: true,
+		autoplayVideoOnSlide:true,
+		resetScrollPosition:false,
+		addClass: "vjs-big-play-centered",
+		preload:0,
+		extraProps:["customProp", "customStart", "model", "modelId", "relatedBtnid"],
+		youTubePlayerParams:{
+			enablejsapi:1,
+			origin: "http://localhost",
+		}
+	});
+	
+	if(""){
+		lgPlugin.openGallery();
+	}
+
+	let lgchangeModelArray = [];
+	lg.addEventListener("lgBeforeSlide", function(event){
+		if(lgPlugin.galleryItems && lgPlugin.galleryItems[event.detail.index]) {
+			let item = lgPlugin.galleryItems[event.detail.index];
+			let typeArray = ["app\\models\\SpeakerWording","app\\models\\Hymn","app\\models\\SessionMessage","app\\models\\SessionVideo"];
+			let button = document.createElement("a");
+			button.type = "button";
+			button.className = "bookmark";
+			button.style = "width:50px;height:47px;float:right;border-radius:0";
+			button.onclick = function(){
+				$(this).toggleClass("added");
+				if("") {
+					let addOrRemove = $(this).hasClass("added") ? "add" : "remove";
+					$.ajax({
+						method:"POST",
+						url:"/bookmark/add-or-remove-bookmark",
+						data: {
+							addOrRemove,
+							model:item.model,
+							modelId:item.modelId,
+						},
+						success:function(result){
+							// console.log(result);
+							if(!result.error){
+								lgchangeModelArray.push({
+									model:item.model,
+									modelId:item.modelId
+								});
+							}
+						},
+						error:function(result){
+							console.log("error");
+							console.log(result);
+						}
+					});
+				}else{
+					let hash = (item.model).replaceAll("\\","_") + "_" + item.modelId + "_a";
+					let url = "https://www.hkbibleconference.org/site/member";
+					url += "?hash=" + hash;
+					if(item.relatedBtnid){
+						url += "&firstLayerId=" + item.relatedBtnid;
+					}
+					location.href = url;
+				}
+			};
+			let toolbar = lgPlugin.$toolbar.selector;
+			if(item.model && item.modelId && typeArray.includes(item.model)){
+				if(""){
+					$.ajax({
+						method:"POST",
+						url:"/bookmark/get-gallery-bookmark-class",
+						data: {
+							modelName:item.model, 
+							modelId: item.modelId,
+						},
+						async:false, 
+						success:function(result){
+							// console.log(result);
+							if(!result.error && result.class) {
+								button.classList.add(result.class);
+							}
+						},
+						error:function(result){
+							console.log("error");
+							console.log(result);
+						}
+					});
+				}
+				if($(toolbar).find(".bookmark").length == 0) {
+					button.dataset.model = item.model;
+					button.dataset.modelId = item.modelId;
+					$(toolbar).append(button);
+				}else {
+					$(toolbar).find(".bookmark").remove();
+					button.dataset.model = item.model;
+					button.dataset.modelId = item.modelId;
+					$(toolbar).append(button);
+				}
+			}else {
+				if($(toolbar).find(".bookmark")) {
+					$(toolbar).find(".bookmark").remove();
+				}
+			}
+		}
+	});
+	lg.addEventListener("lgBeforeClose", function(event){
+		while(lgchangeModelArray.length) {
+			let arrayItem = lgchangeModelArray.shift();
+			let model = arrayItem.model.replace(/\\/g, "\\\\");
+			let element = $(event.target).find(".bookmark[data-model-id=\""+ arrayItem.modelId +"\"][data-model=\""+ model +"\"]");
+			if(element.length) {
+				$(element).toggleClass("added");
+			}
+		}
+		let toolbar = lgPlugin.$toolbar.selector;
+		if($(toolbar).find(".bookmark")) {
+			$(toolbar).find(".bookmark").remove();
+		}
+	});
+
+
+	$(function(){
+		if(location.hash) {
+			if($(".lightgallery").find(location.hash).length) {
+				$("html").stop().animate( {
+					"scrollTop": $(location.hash).offset().top-40,
+				}, {
+					"done":function(){
+						if(location.hash && lgPlugin && lgPlugin.items.length) {
+							let index = [...lgPlugin.items].findIndex(function(item, index){
+								let compareId = "#"+item.id;
+								return compareId == this.toString();
+							}, location.hash);
+							
+							if(Number.isInteger(index) && index >= 0) {
+								lgPlugin.openGallery(index);
+							}
+						}
+					}
+				});
+			}
+		}
+	
+	})
+	
+jQuery('#subscribe-form').yiiActiveForm([{"id":"subscribeform-email","name":"email","container":".field-subscribeform-email","input":"#subscribeform-email","error":".invalid-feedback","enableAjaxValidation":true,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"請輸入電郵"});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"請輸入正確的電郵","enableIDN":false,"skipOnEmpty":1});yii.validation.string(value, messages, {"message":"電郵 必須為字串。","max":500,"tooLong":"電郵 只能包含最多 500 個字符。","skipOnEmpty":1});}}], {"errorSummary":".alert.alert-danger","errorCssClass":"is-invalid","successCssClass":"is-valid","validationStateOn":"input"});
+
+	$("#siteSearchForm").on("submit", function() {
+		var value = $(this).find("input[name=\"keyword\"]").val();
+		if (!value){
+			$(this).find(".msg-keyword").show();
+			return false;
+		}
+
+		return true;
+	});
+
+	$("#siteSearchForm input[name=\"keyword\"]").on("keyup", function (e) {
+		if ($("#siteSearchForm input[name=\"keyword\"]").val()){
+			$("#siteSearchForm .msg-keyword").hide();
+		}
+	});
+	
+	<!--Add to bookmark button-->
+	$(".bookmark").off().click(function() {
+		$(this).toggleClass("added");
+		let target = $(this)[0];
+		let targetModel = $(this)[0].dataset.model.replace(/\\/g, "\\\\");
+		let targetModelId = $(this)[0].dataset.modelId;
+		let otherElements = $(".bookmark[data-model-id=\""+ targetModelId +"\"][data-model=\""+ targetModel +"\"]");
+		if(otherElements.length) {
+			$(otherElements).each(function(index, element){
+				if(element != target) {
+					$(element).toggleClass("added");
+				}
+			})
+		}
+
+		if("") {
+			let addOrRemove = $(this).hasClass("added") ? "add" : "remove";
+			let model = $(this)[0].dataset.model;
+			let modelId = $(this)[0].dataset.modelId;
+			// console.log($(this)[0].dataset);
+			$.ajax({
+				method:"POST",
+				url:"/bookmark/add-or-remove-bookmark",
+				data: {
+					addOrRemove,
+					model,
+					modelId,
+				},
+				success:function(result){
+					console.log(result);
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}else{
+			let secondLayerId = null;
+			// console.log(1);
+			if(targetModel && targetModel.includes("SpeakerWording")){
+				let modal = $(this).parents(".modal");
+				if(modal.length){
+					secondLayerId = $(modal).attr("id");
+				}
+			}
+			let url = "https://www.hkbibleconference.org/site/member";
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			if(secondLayerId){
+				if(url.includes("?")){
+					url = urlParams.size ? (url + "&secondLayerId=" + secondLayerId) : (url + "secondLayerId=" + secondLayerId);
+				}else {
+					url =  url + "?secondLayerId=" + secondLayerId;
+				}
+			}
+			location.href = url;
+		}
+	});
+
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	if(urlParams.has("firstLayerId")){
+		let firstLayerId = urlParams.get("firstLayerId");
+		if($("#"+firstLayerId).length){
+			let btn = $("#"+firstLayerId);
+			$(btn)[0].scrollIntoView();
+			let relatedModalId = $(btn)[0].dataset.bsTarget;
+			new bootstrap.Modal(relatedModalId).show("#"+firstLayerId);
+		}
+		if(urlParams.has("secondLayerId")){
+			let secondLayerId = urlParams.get("secondLayerId");
+			setTimeout(function(){
+				new bootstrap.Modal("#" + secondLayerId).show();
+			},500);
+		}
+	}else if(urlParams.has("secondLayerId")){
+		let secondLayerId = urlParams.get("secondLayerId");
+		new bootstrap.Modal("#" + secondLayerId).show();
+	}
+	
+
+		$("a[download='']").each(function(){
+			$(this).click(function(){
+				downloadResource($(this).attr("href"));
+				return false;
+			});
+		});
+		
+		function forceDownload(blob, filename) {
+			var a = document.createElement("a");
+			a.download = filename;
+			a.href = blob;
+			document.body.appendChild(a);
+			a.click();
+			a.remove();
+		}
+
+		function downloadResource(url, filename) {
+			if (!filename) filename = url.split("\\").pop().split("/").pop();
+			console.log(location.origin);
+			fetch(url + "?_t=" + Date.now(), {
+				headers: new Headers({
+					"Origin": location.origin
+				}),
+				method: "GET",
+				mode: "cors"
+			})
+			.then(response => response.blob())
+			.then(blob => {
+				let blobUrl = window.URL.createObjectURL(blob);
+				forceDownload(blobUrl, filename);
+			})
+			.catch(e => console.error(e));
+		}
+		
+});</script>
+<script>jQuery(window).on('load', function () {
+
+		let fbResized = false;
+		window.mobileCheck = function() {
+			let check = false;
+			(function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))) check = true;})(navigator.userAgent||navigator.vendor||window.opera);
+			return check;
+		};
+		
+		$(window).on("resize", function(){
+			if (!fbResized || !window.mobileCheck()){
+				setTimeout(function() {
+					var container_width = (Number($(".fb-column").width()) - Number($(".fb-column").css("padding-left").replace("px", ""))).toFixed(0);
+					var container_height = (Number($(".shortcut .photocap img:first-child").height())).toFixed(0);
+					container_height = container_height * 2 + 30 + 160;
+					if (container_width > 500) container_width = 500;	//acceptable range: 180-500px
+					if (container_height < 370) container_height = 370;
+					$(".fb-column").html("<div id=\"fbContent2\" class=\"fb-like-box\" " +
+					"data-href=\"https://www.facebook.com/hkbibleconference/\"" +
+					" data-width=\"" + container_width +   
+					"\" data-height=\"" + container_height + 
+					"\" data-colorscheme=\"light\" data-show-faces=\"false\" data-header=\"false\" data-stream=\"true\" data-show-border=\"false\" data-adapt-container-width=\"true\"></div>");
+					FB.XFBML.parse( );
+				}, 100);
+			}
+		}).resize();
+		
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, "script", "facebook-jssdk"));
+});</script></body>
+</html>

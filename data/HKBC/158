@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>第七講   誰的公理?</title>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="UY0sklDhd6lm3l4CkpiWgEgbpZwTRDEd0OcgHpZkoxYEy3v3GqlB2F-BAUTx1eHmLn7W9VQIY0-UkxQnwBXaUg==">
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-icons.css" rel="stylesheet">
+<link href="/css/all.css" rel="stylesheet">
+<link href="/js/slick/slick.css" rel="stylesheet">
+<link href="/js/slick/slick-theme.css" rel="stylesheet">
+<link href="/css/aos.css" rel="stylesheet">
+<link href="/css/cookie-consent.css" rel="stylesheet">
+<link href="/css/interface.css" rel="stylesheet">
+<link href="/css/plyr.css" rel="stylesheet">
+<link href="/js/lightgallery/css/lightgallery-bundle.min.css" rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.21.1/video-js.css" rel="stylesheet">
+<link href="/js/jquery-ui-1.13.2/jquery-ui.min.css" rel="stylesheet">
+<style>
+	.grayscale .page-header-title {
+		background-image: url(/images/color_bg/bg_011.png) !important;
+	}
+	</style>	<link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<script>
+	var color = document.cookie.match("(^|;|; )\s*" + "ColorMode" + "\s*=\s*([^;]+)")?.pop() || "normal";
+	if (color == "normal") {
+		document.body.classList.remove("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.remove("selected");
+		}
+	} else {
+		document.body.classList.add("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.add("selected");
+		}
+	}</script>
+
+
+<a href="#main" class="skip">跳至內容</a>
+<header class="sticky-top">
+	<div class="nav-tool nav-tool-top hidden-990px">
+		<div class="container justify-content-end">
+			<nav class="navbar navbar-expand navbar-light">
+				<div class="collapse navbar-collapse justify-content-end">
+										<ul class="navbar-nav">
+						<li class="nav-item nav-font-size fontSize">
+							<span class="defaultFont">
+								<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a> 
+							</span>
+							<span class="largerFont">
+								<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a> 
+							</span>
+							<span class="xLargerFont">
+								<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+							</span>
+						</li>
+						<li class="nav-item nav-search">
+							<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+						</li>
+						<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>						<li class="nav-item nav-btn-BW">
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn monochromeBtn" >黑白版</a>
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn chromaticBtn" style="display:none;">彩色版</a>
+						</li>
+												<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+												<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+						<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light navbar-menu">
+			<div class="container-fluid p-0">
+				<a class="navbar-brand" href="/site/index">
+					<!--<img src="/images/logo.jpg" alt="" class="w-100" />-->
+					<img src="/images/logo_whole.svg" alt="港九培靈研經會" class="logoImg">
+					<img src="/images/logo_chi.svg" alt="港九培靈研經會" class="scrollLogoImg">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+					<div class="nav-tool show-990px">
+						<div class="container justify-content-end">
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="flex-wrap collapse navbar-collapse justify-content-end">
+																		<ul class="navbar-nav">
+										<li class="nav-item nav-font-size">
+											<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a>
+											<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a>
+											<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+										</li>
+										<li class="nav-item nav-search">
+											<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+										</li>
+										<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>										<li class="nav-item nav-btn-BW"><a href="javascript:checkColorMode()" class="nav-link colorModeBtn">黑白版</a></li>
+									</ul>
+								</div>
+							</nav>
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="collapse navbar-collapse justify-content-end">
+									<ul class="navbar-nav">
+																				<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+																				<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+										<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<ul id="w0" class="navbar-nav nav"><li class="nav-item nav-item" data-id="1" data-type="2"><a class="nav-link" href="/content/schedule">聚會日程</a></li>
+<li class="nav-item nav-item" data-id="3" data-type="2"><a class="nav-link" href="/content/past-conferences">歷屆聚會</a></li>
+<li class="nav-item nav-item" data-id="5" data-type="1"><a class="nav-link" href="/content/our-story">培靈．歷史館</a></li>
+<li class="nav-item nav-item" data-id="6" data-type="3"><a class="nav-link" href="/content/about-us">關於我們</a></li></ul>				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<main id="main" name="main">
+	
+<!--<section class="page-header">
+		<div class="page-header-title" style="background-image: url(/images/color_bg/bg_002.png);">
+		<h1>歷屆聚會</h1>
+	</div>
+	<div class="page-header-img">
+		<div class="photocap">
+			<img src="https://file.hkbibleconference.org/upload/content/3/banner/歷屆聚會.jpg" alt="歷屆聚會" />
+		</div>
+	</div>
+	</section>
+
+<section class="path">
+	<div class="container">
+		<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			
+			<li class="breadcrumb-item" aria-current="page"><a href="/content/past-conferences">歷屆聚會</a></li>
+			<li class="breadcrumb-item" aria-current="page"><a href="/content/past-conferences">第90屆 2018 榮耀的人生</a></li>
+			<li class="breadcrumb-item" aria-current="page">講道會</li>
+			<li class="breadcrumb-item" aria-current="page">2018-08-08 誰的公理?</li>
+			<li class="breadcrumb-item" aria-current="page">閱讀全文</li>
+			<li class="breadcrumb-item" aria-current="page">第七講   誰的公理?</li>		  </ol>
+		</nav>
+	</div>
+</section>-->
+
+<div class="row w-100 m-0" style="overflow: hidden">
+	<div id="section-main" class="sermons-col-left bg-grey" style="width:100%">
+		<h1 class="color-1a8090 bg-white text-center pb-2 pt-3 h2">第90屆 講道會 第7講</h1>
+		<article class="article pt-0 p-lg-5 pt-lg-0">
+			<div class="article-meta">
+				<span>
+					<i class="fa fa-user"></i>
+					講員：					<a href="/speaker/view/6">鮑維均牧師</a>
+				</span>
+				<span>
+					<i class="fa fa-calendar-alt"></i>
+					屆別:					<a href="/sermon/view?serial_no=90">第90屆</a>
+				</span>
+				<span data-toggle="tooltip" data-placement="top" title="性質">
+					<i class="fa fa-folder-open"></i>
+					<a href="/sermon/view?serial_no=90#session-master-32">講道會</a>
+				</span>
+			</div>
+			<!--<div class="article-tag">
+				<a href="#" class="badge">路加福音</a>
+				<a href="#" class="badge">講道會</a>
+				<a href="#" class="badge">56屆</a>
+				<a href="#" class="badge">麥希真牧師</a>
+			</div>-->
+			<div class="d-flex align-items-center mb-4">
+				<h2 class="article-title mb-0 h3">
+					第七講   誰的公理?				</h2>
+									<a type="button" class="bookmark ms-3 " data-model="app\models\SessionMessage" data-model-id="158"></a>
+							</div>
+						<div class="article-content">
+				
+				<div class="h5 mb-4 d-md-flex justify-content-lg-between align-items-center">
+					<div><span>經文：</span> 撒母耳記下  <a class="article-citation" href="javascript:void(0)" data-book="10" data-start-chapter="12" data-start-verse="1" data-end-verse="15">12:1-15</a></div><div><a href="javascript:void(0)" class="btn btn-danger btn-show-scripture text-center my-2 ml-auto align-self-start" style="display:none;">顯示經文</a>
+				</div></div>				<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">引言</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">今天我們再來看大衛的生平。這是另外一段黯淡的歷史。我們看了這麽多段經文以後，我們會知道，黯淡歷史對我們來說是個提醒，也是個鼓勵。聖經再次强調，大衛是一個英雄人物，不在於他天生有良好的本性，而在於他在掙扎的時候能夠親近上帝。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">今天我們同樣會討論三個問題。這是大家熟悉的故事：拔示巴事件。在打仗的時候，大衛自己不出征，但派人出去前線。有一天，當他睡覺睡醒後，他四周觀看。忽然他看到一位貌美的婦人在自己屋子裡沐浴，他就想得到這個婦人。於是，他就差人接她來。在過程中間，婦人懷了孕。那她的丈夫該怎樣處理呢？丈夫在外面打仗，大衛就召他回來；大衛希望他和妻子同房，以後孩子出世的事就不會引起任何人的懷疑。誰知道這位丈夫對神有忠心，他說，在打聖戰的時候，我不想別的事情。大衛就有第二個計劃───他派人出去，吩咐軍隊把這個丈夫放在戰線的最前線，希望有人把他殺死；他死了，就不會有人過問孩子的事。第11章就大約這樣結束。這件事差點這樣完全辦妥了，只是耶和華在礙手礙腳（廣東話：阻頭阻勢），讓大衛的計劃不能成功。然後，第12章是大衛和耶和華的對話。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在這裡，我們第一個要問的問題是：大衛錯在哪裡？聖經描述大衛最根本的罪是甚麼罪？這段經文對我們也有提醒；那麼我們犯罪的最根本的是甚麼罪？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">第二個問題：大衛在哪個人生階段犯下這個罪？那麼，如果聖經給我們同樣提醒，我們到這個階段，會否也這樣犯罪？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">第三個問題，大衛最終得罪了誰？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在以下討論，我會用三個不同字來回答三個問題。在這三個字裡，其中有些字不是很顯眼的字。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">一、大衛錯在哪裡？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們先嘗試回答第一個問題。大衛犯了甚麽罪？在別的地方，大衛的罪不是很明顯。例如在約櫃事件，我們花了很多時間看上下文才明白發生甚麼事情。但這裡，即使你不熟悉聖經，當我們讀完第11章，按照常理我們也知道他錯在哪裡。這裡大衛最少犯了兩個大罪：姦淫和殺人。在今天的社會裡，這些都是很嚴重的罪，因為這裡的姦淫不是婚外情那麽簡單───這件事有很多背後黑暗的運作，再加上這裡的殺人是借刀殺人，所以這是大罪。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在今天讀的第12章，拿單來提醒大衛。大衛應該機警───先知出現，大衛應該知道不對勁。可惜，在那一刻，他不機警。拿單用了比喻，大衛不能立刻明白這個比喻的意思。但特別的地方是，那個比喻的故事內容確實有點奇怪。如果我要作一個比喻來責備大衛的話，我不會用這個比喻。我也許會說：「有一個人，他大權大勢，沒想到他欺負良家婦女，還把她的家人滅口。」這個比喻就跟大衛的所作所為相近得多。當然，既然劇情相似，大衛可能就不會上當。但這個比喻確實不太像大衛的事情。拿單對大衛說的比喻是：城裡有一個富戶和窮人。有一天，有人進入城，這位富戶要招待這位客人。富戶不用自己的羊來招待客人，就用窮人的唯一的那隻羊來請客。這個富戶確實不對，但這個故事好像提出了不同的罪名。為甚麼先知拿單要用這樣的說話來形容大衛的罪呢？這個故事沒有提過姦淫、沒有提過殺人，反而說了有錢人和窮人的分別，和其他看來是瑣碎的事情。如果用我們一個字來回答大衛錯在哪裡，我們用甚麽字？我們試來看看這個字。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們看看經文。在第11章，這個字不是最明顯，但12章一直出現這個希伯來文的字。我們先看第11章一個最不顯眼的字：「大衛差人去，將婦人接來。」（11:4）這有甚麼特別呢？就是大衛找一個人把她送過來吧。這裡的原文是「取走」、「拿取」的意思。大衛把這個婦人拿取過來。這是最不顯眼的罪。然後我們來看看第12章。這個字在12章不停出現。為了配合上文下理，中文聖經以不同字來翻譯這個字，但原文仍然是Take（拿取）這個字。拿單的比喻裡沒有提到殺人放火姦淫的事情，但用Take這個字。這有甚麽大不了？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">「有一客人來到這富戶家裡；富戶捨不得從自己的牛群羊群中Take（拿取）一隻預備給客人吃，卻Take（拿取）了那窮人的羊羔。」（12:4）換句話說，比喻和犯罪事件的接觸點不是殺人和姦淫，而是Take（拿取）。表面來看，這是最不顯眼的罪。當你和人競選───議員也好，班長也好，總之是競選&mdash;&mdash;你要找醜聞傷害對方，你當然會找殺人、放火、姦淫之類的事情；你不會說，五年前他拿了我一支圓珠筆。Take（拿取）看來好像不是一個大罪，但這個就是上文的接觸點。你可能說，你想多了，一個字可能是意外地出現吧。我們來看看比喻之後耶和華怎樣責備大衛。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">「你為甚麼藐視耶和華的命令，行祂眼中看為惡的事呢？你借亞捫人的刀殺害赫人烏利亞，又娶了他的妻為妻。」（12:9）在這裡，雖然中文「娶」和「取」這兩個字剛好發音相同，但原文是Take（拿去）這個字。因此，這裡不是大衛跟拔示巴結婚，而是大衛拿取了人家妻子。這裡的Take（拿取）跟這個拿人家的羊羔的是同一個字。「你既藐視我娶了赫人烏利亞的妻為妻&hellip;&hellip;」（12:10）這裡的「娶」有時Take（拿取）這個字。神說，你老是拿人家的東西，我也要懲罰你，拿走你的東西。「耶和華如此說：我必從你家中興起禍患攻擊你；我必在你眼前把【拿】你的妃嬪賜給別人。」（12:11）這裡的「把」字的原文就是Take（拿取）這個字。因此，第12章的連貫性就在Take（拿取）這個不顯眼的字。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">在拿單的比喻裡，拿走窮人的羊是那個有錢人。大衛拿了別人的太太；所以，神懲罰大衛，便拿走大衛的東西。然而，拿東西有甚麽大不了？拿東西的動機是甚麼？為甚麼大衛喜歡去拿？第12章謎底就揭曉。第8節這樣說，神說，我甚麼都給你，「你若還以為不足&hellip;&hellip;」這是甚麼罪？這是貪心的罪、貪婪的罪。我們很難解釋貪心的罪有甚麽大不了。正如剛剛說到、競選或是選班長或教會選執事的例子，誰殺人放火一定不能當選，但貪有甚麽大不了？如果你喜歡別人的手機，你就不能當班長？貪有甚麽大不了？這很難解釋。但是如果我們思想十誡的話，十誡最後一條是關於貪戀別人的東西：「不可貪戀別人的房屋；也不可貪戀人的妻子、僕婢、牛驢，並他一切所有的。」（出20:17）。這第十條誡命很重要。它有幾個重要性：第一，這條誡命是唯一一條在法庭裡不能向你定罪的誡命。你殺人會坐牢；你姦淫會給人責備；偷東西也會坐牢，向人家做假見證也是不行的，這些都是在法庭上可以定罪的。舊約聖經裡有好幾個例子，他們做了這些事情以後便受到神的懲罰；就算神不懲罰，人間也有懲罰。但偏偏貪心是沒有懲罰的，因為不能入罪，因為這是心裡的罪。你垂涎別人的手機，這是不能入你罪；除非你乘著人家聽講道時拿了人家的手機、然後放在自己的袋裡，那對方就可以控告你，因為這是偷竊。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">為甚麼這條不能被入罪的「罪」要放在十誡裡？因為貪婪是十誡裡第6、7、8、9條誡命的根源。你貪戀別人的妻子就會犯姦淫；你貪戀別人的房產就可以作假見證，因為亞哈王也試過這樣。他貪戀鄰居的葡萄園，他要收為自己所擁有。但鄰居怎樣都不願意出售，最後亞哈就設下布局、作假見證，說他咒詛上帝；鄰居被害，亞哈就得到了別人的田地。貪戀帶來第6、7、8、9條誡命的罪。所以，第十條誡命的重要性不於能不能把你入罪，而是它解釋了第6-9條誡命的問題。但是它不單解釋了第6、7、8、9條誡命，而且把第6、7、8、9條誡命的倫理變為敬拜的問題。原來你犯姦淫，不只是犯姦淫的錯，而是代表你貪心。貪心錯在哪裡？保羅說，貪戀等於拜偶像。貪代表了你愛那些東西多過上帝，所以你才會去貪。因此，你貪戀別人的田地以致你作假見證，這是因為你沒有敬拜上帝。所以，第十條誡命不單能解釋第6、7、8、9條誡命，而是把第6、7、8、9條誡命從倫理變成敬拜。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">第十條誡命還有一個重要性，就是說清楚了究竟十誡是對哪些人講的。我們以為十誡是跟社會的敗類、犯人所講的。但十誡的應用原來是對以色列核心領袖所說的。誰犯姦淫罪？大衛王。誰犯殺人罪？大衛王。誰作假見證？亞哈王。誰有資格貪別人田地？如果你是王，你可以拿走人家的手機（這只是假設而已）；但即使你沒有甚麼權勢，你還是可以偷走人家的手機。但別人的大樓你怎樣拿？大樓是偷不來的。你偷了屋契，大樓還是不屬於你的，因為屋契是可以追查得到的。但是有權勢的人就有辦法拿到手。亞哈王有辦法去貪戀別人的田地。在舊約，唯一一段清楚引用第十誡的經文，說貪戀田地、房屋等等的，就是彌迦書2:2，「你們貪戀房屋、田地」等等。誰是「你們」？就是猶太人領袖。因為在上掌權的才有資格和本事去犯這些罪。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">難怪拿單用這個有錢人迫害窮人的比喻去責備大衛。這是權勢的問題，是誤用權力的問題。用今天的術語，大衛犯的不是倫理的罪，而是公義的罪。公義和倫理怎樣區分？其中一個區別是：倫理通常指向敗類、邊緣人，要他們不要偷、不要打破人家玻璃（門窗）、不要說髒話等。這些是倫理課題，是對一些社會上不受尊重的人，我們要他們小心一點，不要破壞社會。公義的課題就不同。公義的課題是對有名望的人說的，是對我們牧師說的，對社會群體有地位的人說的。如果你心裡沾沾自喜，這是因為你沒有地位。但你可能是一個國家的國王，或小組的組長。公義的課題是對有權勢的人說的。為甚麼？有權勢的人不會「犯法」，因為當時是國王立法的。國王立法，所以他不會犯法，因此倫理的課題是不適用的。但是他心中污穢的時候，他就會貪、誤用權力。就如富戶拿了窮人的羊，即使窮人有錢也不能打贏這次官司。這是公義的問題。公義的根源是大衛貪婪、敬拜偶像，沒有敬拜上帝。大衛錯在哪裡？當你看Take（拿取）這個字的時候你就知道。他有權勢去拿取別人的東西。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">二、大衛在哪個人生階段犯罪？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">這就來到第二個問題。大衛在哪個人生階段犯這個罪？我們在哪個人生階段最容易犯這個罪？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">宋朝開始有一句話：晚節不保。廣東話也有類似的俗語，意思是我們人生到了最結尾階段而失敗了。但另一句很少人說：中歲失節。這不是說晚年失敗，而是人生最高峰得意的時候失敗。大衛是甚麼時候犯錯呢？我們試看看第二個字。第二個字也是一個不顯眼的字；它是一個動詞，這個動詞立刻讓你看到權力分配的問題，你一看到就知道誰大誰小的問題。這個字就是「差遣」的「差」（Send），或者是中文「打發」這個字。同樣，這個字在原文是一個字，然後在中文聖經裡有不同的翻譯。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們看看「差」這個字。這個字在第11章裡不停出現，讓你看到誰是「話事人」。「列王出戰的時候，大衛又差派約押&hellip;&hellip;」（11:1）大衛當了國王，就有資格這樣差派人出去幹活；「大衛就差人打聽那婦人是誰&hellip;&hellip;」（11:3）他掌權，所以他可以吩咐人做事；「大衛差人去，將婦人接來&hellip;&hellip;」（11:4）；「差人到約押那裡，說：『你打發赫人烏利亞到我這裡來』&hellip;&hellip;」（11:6）。所以，在姦淫和殺人這兩件事上，經文都用「差」這個字。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們可以繼續讀下去；「差」這個字在第11章出現了12次。有權勢的人（in control）才有資格差派人去辦事。大衛在人生最有權柄的時候犯了這個罪，就是他有能力指派人、差使人辦事的時候犯了這個罪。他以為一切受他控制，他卻不能控制自己的心。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">第12章完全沒有再說大衛差任何人做任何事情了；這一次不輪到大衛來差人了。「耶和華差遣拿單去見大衛&hellip;&hellip;」（12:1）。在第12章裡，「差」這個字不止出現了一次，但是「差」這個字都用在耶和華的身上。在第12章裡，耶和華要弄清楚這個問題：誰是掌控的（in control）？如果「打發」這個字能夠斷定權力的大小或是上下高低的話，神要清楚的向大衛說，「你不是掌權者，神才是掌權者」。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">當我們到達人生最高峰的時候，我們就覺得一切都由我們掌控。你也可能說這樣的話：「我到了某個年紀，我終於可以掌控一切了，我不需要看別人的臉色。」王不需要看約押怎樣批評他；國王就是國王。將軍也可能鄙視他，但大衛可以不用理，因為他是最大的。他不需要理會別人怎樣看他，他想要甚麼就要甚麼。他要這個婦人，就要這個婦人。不想做的他也可以不做───打仗他可以不打，因為他已經坐穩王位了。我們人生到了差不多的階段時也會說類似的話：是時候了，我到了這個年紀，可以不理會別人怎樣看。我想要、想做的，就會去做。我不想做的，以後不再做，因為我掌控一切。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">大衛就是在一個這樣有權勢的環境之下犯了這個罪。他忘了誰是上帝。他怎麼有資格去拿取別人的東西呢？因為他在王位上，一切在他控制底下。神說，你弄錯了。所以神要大衛道歉。跟誰道歉？如果罪的根源是殺死烏利亞，大衛的第一步應該是跟他的家人道歉。如果罪在姦淫，他應該跟他現在妻子拔示巴道歉。第12章怎樣說呢？第13節，大衛對拿單說：「我得罪耶和華了。」因為這個不是說倫理的事情，而是在談論貪婪和敬拜偶像的問題。如果現在權力分配出現問題，現在該談論的就是公義的課題。技術性來說，大衛沒有犯法，他不會坐牢的，因為他是立法的人。但是他得罪了耶和華。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們人生是不是在最得意的時候也有這樣的欲望，覺得一切在我的掌控裡面？我們之前說過中年危機的問題，也強調在不同的社會裡，中年危機也發生在不同歲數中。我們說過，新加坡可能是小學四年級就有中年危機，因為四年級的考試斷定你一生能否做大事，至少人間是這樣看的。我們也說，在香港，小孩在幼稚園階段就有中年危機，因為入讀了哪一間小學就斷定你將來會怎麼樣，起碼人間是這樣看。中年危機的確是一個危機。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">2011</span><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">年，史丹福大學做了研究，研究到底中年危機發生甚麽事情。很奇怪，人在最能掌控生命的時候，往往是最容易跌倒的時候，因為你以為你能控制所有事物了。好像大衛一樣：部下、婦人、士兵全都受他所控制，其實他最不能控制的就是他自己。他終於明白自己不是主。這種恐懼使他犯更多的罪，因為他想證明自己能控制一切。我們最大試探的時候，不是我們做人渣的時候，不是我們犯法的時候，而是我們得勢的時候。不論甚麽年紀，我們最受試探的是在我們掌控一切的時候；我們可能也會犯了公義的罪。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">公義的罪不單單針對有權勢的人。公義還有第二個特色：犯公義罪的人，自己不覺得犯了罪；但被影響到的，就非常覺得這是罪。我想起，當我覺得沒有公義的時候都是我吃虧的時候，但我不能發現甚麼時候我讓別人吃虧，也記不起我犯公義的罪的情況。因為公義的罪是很不明顯的。公義的罪對掌權者尤其不明顯；當你是組長、團契帶領人或在家裡當一家之主，在任何範疇下，「話事人」永遠不會覺得自己是錯的，但別人可能看得很清楚。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">神在這裡挑戰我們有沒有誤用我們權柄。我們的資源、我們的影響力會給別人傷害。這個是最不溫馨的課題。沒有人聽這個會聽到流淚，因為我們看不到自己甚麼時候犯過這樣的錯。我們看到社會太多不公義的事情，但都是對方錯。我們自己有沒有參與？大衛在自己最掌控一切的時候看不到自己的盲點。拿單要用這個比喻才能揭露這個盲點。這個比喻正正是有錢人和窮人的對比。我們今天真的要在社會裡為公義發聲。但我們也要想想，在自己的範圍裡，我們有沒有好像大衛這樣貪，有沒有好像大衛掌控一切；縱然這不是溫馨的課題，但這是敬拜偶像的罪。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">三、大衛得罪了誰？</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">現在來到第三個問題。大衛得罪了誰？耶和華。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">為甚麼說大衛得罪了耶和華？因為大衛差點完事了。第11章整章差點完全沒提到耶和華的名，這在撒母耳記裡是少有的。大衛差點就搞定整件事情了；大衛見招拆招，所有的善後事情都處理好了，沒有人知道事情真相，知道的人也不敢講出來。第11章完全沒有提到耶和華，直到最後一節：「但大衛所行的這事，耶和華甚不喜悅。」而第12章不停地提到耶和華。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">為甚麼這裡要這樣強調罪的問題？因為在聖經裡，犯罪不是犯法這麼簡單。犯法不需要跟人道歉。上次你駕車被檢控（抄牌）的時候，你有沒有跟警察或法官道歉？你可能說「有」；如果你有，你可能是希望警察不給你寫罰單。你不會在交了罰款後還誠心獻上道歉。這是因為我們今天看罪是一種與人無關（Impersonal）的、犯了法律的事情。我們看殺人、姦淫、撒謊、作假見證、偷東西全都是律例或犯法的事情。但如果這些律例的根源是貪婪的話，你所作的事是直接得罪耶和華。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們來看第12章。耶和華對大衛這樣說：「你在暗中行這事，我要在以色列眾人面前揭露出來。」（12:12）甚麼叫「暗中」所做的事？大衛不是單單不給人知道，而且以為上帝也不知道。你以為你能完全掩蓋事情，但是你忘記了上帝是在場的。第11章如果沒有最後一節，大衛就一帆風順。但這裡偏偏有最後的那一節：神非常不喜悅。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們再來看第12章，這樣你才明白第14節在講甚麼。「你行這事，叫耶和華的仇敵大得褻瀆的機會。」為甚麼呢？因為神子民的王犯罪的時候，他當神不存在，外邦人便會說，「你看，神不存在。神根本不存在，祂是假的。」所以犯這暗中的罪是一個褻瀆的罪名。你明白，大衛在這裡的Take（拿取）是一個貪婪，是敬拜偶像的罪；而敬拜偶像，是一個褻瀆神的罪。我們今天犯的是哪一類的罪？不要以為你犯罪時完全掩蓋起來就沒人看見。這段經文的最後還有一句：神看到便甚不喜悅。你不要以為你掌控大局。神才是掌權的那一位。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">那麼我們應該怎樣認罪呢？不是單單向神列舉就算了。這是交罰款式的認罪方法；你以為交罰款就可以了。真正的認罪悔改是權力分佈的重整，不是向上帝給一些掩口費。我們要明白神是王，這才是悔改的動作───把我們的王權交出來，承認上帝才是掌權的那位。我們任何一位掌權者都要知道，我們上面還有一位掌權者。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">大衛怎麼樣認罪？我們看看詩篇第51篇。我覺得大衛故事精彩的地方，不是因為他不犯罪而精彩，而是犯罪後懂得認罪。詩篇第51篇認罪的第一個步驟出現在第1-9節。神啊，我真的不行，求祢用祢豐盛的慈愛塗抹我過犯。第5節，我在母親的腹中我已經犯罪，從來未曾試過擁有清潔的心。神啊，我一無所有。認罪的第一個步驟是承認自己無能。你交罰款不需要這樣；你可以穿西裝交罰款，說，「這點錢算甚麼，喝茶也不夠埋單，多罰幾次我不怕。我漂亮的車子喜歡泊在哪裡就泊在那裡。」人間的認罪是交罰款，不需要權力重整。大衛不是：耶和華，我得罪了你，我完全無能。不是現在無能，而是從母腹的時候已經犯罪。我一無所有。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">第二個步驟：將你的自尊（Ego）獻給上帝。我們來看第16-17節：「你本不喜愛祭物，若喜愛，我就獻上；燔祭，你也不喜悅。神所要的祭就是憂傷的靈。」神不要我們交罰款；神要的是要我們把我們的自尊、自我獻給上帝，因為悔改是權力重分的動作。我們要在有權勢的時候自認為無權。我們要把一些窮苦百姓、無能的人、邊緣人物，變成我們的鄰舍，我們的同伴。這才是悔改，因為我們跟他們是沒有分別的，我們跟殺人犯沒有分別，我們跟一個最貧窮的人沒有分別，我們跟一個最沒學識的人沒有分別，我們跟一個最被世人所藐視的人沒有分別。我們唯有把自己憂傷的靈獻給上帝。這樣可以改變世界。這不是溫馨的信息，但這是我們需要聆聽的信息。罪的處理不單是個人倫理的問題，而是公義的彰顯。這不是某個階層的人才需要聆聽，是我們每個人都需要聆聽的說話。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">有一個在非洲肯亞教書的教授名叫Mark Shaw。他寫了一本書，他研究20世紀多個復興運動：究竟它們的源頭是怎樣的，結尾是怎樣的。他研究韓國、中國、非洲幾個國家、美國和印度等等多次的復興。他說，復興有幾個步驟：第一個是認罪，把自己的自尊交給上帝。如果認罪夠透徹的時候，若你明白自己是一無所有的罪人，若你明白自己與邊緣人物一樣都是不配得的人的時候，你接下來會有下一步：影響社會。我們會顧念經濟、身體、權力等等方面的邊緣人物。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">他提到兩個字，一個中文容易翻譯，但另一個就難些翻譯的。容易翻譯的叫Revival（復興）。我們知道甚麼叫復興：我們認罪悔改，教會帶來復興。我們在香港和別處看到不少；神自己用不同方法復興祂的群體。第二個字比較難翻譯的是Awakening（覺醒）。美國曾經有一兩次大的覺醒運動（The Great Awakening）。這兩個字有甚麼分別？Awakening和Revival有甚麼分別？根據這位學者Mark Shaw的研究，他說，當神復興我們的心，我們看看這個影響力能否傳到社會那裡。如果能去到社會那裡，這就叫覺醒（Awakening）；但如果只是環繞在教會裡面，這就是復興（Revival）。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">今天神呼召我們不只在教會圈子內復興。神要我們用不同方法走進人群。其中一個最重要的方法是宣教，因為宣教影響一個人怎樣看社會和看文化等等。哪樣香港的社會關懷不是由宣教士先開始的？香港的孤兒院，醫院等等都是從宣教開始的。沒錯，中國傳統也受到影響，但大規模的覺醒都在香港這個地方開始。這是宣教帶來的覺醒，影響了社會。今天我們停在哪裡？是不是停在交罰款式的復興？「神啊，我知道我今次錯了」，我來到法庭，我交罰款，我出去，一切已經搞定。但當你解決罰款的問題，你有沒有解決權力分配的問題，有沒有認自己為僕、上帝為主，沒有把憂傷的靈獻給上帝？如果想要神的靈帶來復興或覺醒的時候，我們的認罪就會不同───不再是交罰款式的認罪，而是把我自己的生命、自己的心和自尊、自我獻呈給上帝，以致我成為社會邊緣人物的一份子。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">大衛還未作王的時候不需要學習這個功課。但當他作王的時候，神就要他學習這個功課。這個把自己憂傷的靈獻上的功課───不再拿取、不再貪婪、敬拜獨一的上帝。我們願意這樣做嗎？讓神帶來香港教會的復興，也有覺醒的運動，以致我們的復興在社會裡也能被觸摸得到，以致我們能進入人群裡，傳一個卑微者的福音。我們願不願意這麼做？我們一起低頭禱告。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">結束禱告</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">我們在神面前先做第一個禱告。在你聽道的時候，如果神顯出你日光之下還沒有人看到的罪的時候，你記住第11章還有最後的那一節：耶和華能看見。你要交託，你要獻呈，你要解決那件事情。你要向神說：我得罪耶和華了。你在神面前自己來禱告。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">第二個禱告我們要做的是，在這幾天裡面，我們可能已經認罪，你覺得自己已經交完罰款不需要再來聆聽了。但是，在權力分配的問題上，你有沒有把自己的權力放下？你看到不公義的時候，有沒有為這些事情禱告？更重要的是，你有沒有察覺得到自己行不公義的事情嗎？自己去貪、自己去取、自己去以自己為王，取了人家的羊自己也沒有發現？如果神提醒我們，我們就在神面前禱告。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">如果弟兄姊妹在第一個禱告中把自己的罪呈現在神面前，別人看不到，神卻喜悅，神願意與你親近。神願意你自己在祂面前說：我得罪耶和華了！有這樣的弟兄姊妹，我請你站起來，在神面前禱告。可能是許多年前的事，可能是一個罪疚感你今天要擺上的，可能是一件你記不起但神今天向你顯露的事情。你向神承認，以致人不再褻瀆耶和華的名。有這樣的弟兄姊妹請你站立。這是你跟神所立的約，神早已看到，但這一次你跟神說，神啊，我也看到了。你願意這樣做的話，請你站立，我們一起禱告。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">第二個呼召，在公義的問題上，神對你有甚麼提醒？這不是一個溫馨的課題，也不是一個容易察覺得到的問題。如果你願意為公義而付出的話，首先你要檢察自己生命裡有沒有不公義的動作。你也要為社會上受冤屈者禱告。不論是在哪一方面，你願意在公義的立場上向神立志，把復興的信息帶出教會，是榮耀上帝的，見證上帝公義的下一步。你願意這樣做的請你站立，我們一起禱告。</span></span></span></span></p>
+
+<p style="margin:0cm 0cm 0.0001pt">&nbsp;</p>
+
+<p style="margin:0cm 0cm 0.0001pt"><span style="font-size:12pt"><span style="layout-grid-mode:char"><span style="font-family:Calibri,&quot;sans-serif&quot;"><span style="font-family:&quot;微軟正黑體&quot;,&quot;sans-serif&quot;">親愛的天父，我們獻上感謝和讚美。在這幾天的信息裡面，祢多次責備我們，你以不同的方法提醒我們。我為著今天站立的弟兄姊妹獻上感謝，為祢顯出我們隱然未現的罪獻上感謝；當我們以為沒有人看到的時候，耶和華大大不喜悅。但是我們願意這樣禱告：我們得罪耶和華了！讓我們的認罪成為憂傷的靈的獻祭，接納我們這種權力分配，認自己為僕，上帝是我們的主人。我們也為弟兄姊妹為著公義的課題委身而禱告，因為我們願意順服上帝自己的權柄。在世界不同地方弟兄姊妹站立的時候，讓祢帶來的不單是復興，也是帶來大覺醒運動，讓我們的福音影響我們的群體，讓我們能夠把聖靈的能力彰顯到萬國。為神的話語獻上感謝和讚美。禱告奉主名求，阿們！</span></span></span></span></p>
+				
+				<br>
+				<p class="h5">
+					<span>講員：</span> 鮑維均牧師
+					<br>
+					<span>傳譯：</span> 周志豪牧師
+					<br>
+					<span>速記：</span> 鄭譚佩雲姊妹
+				</p>			</div>
+			<div class="article-navigation d-flex justify-content-between mt-5">
+								<a href="/session-message/view/157" data-bs-toggle="tooltip" data-bs-placement="right" title="第90屆 講道會 第六講  誰建誰家？" aria-label="上一篇文章：第90屆 講道會 第六講  誰建誰家？"  rel="prev">
+					<i class="fas fa-chevron-left" aria-hidden="true"></i>
+					<span aria-hidden="true">上一篇</span>		
+				</a>
+												<a href="/session-message/view/159" data-bs-toggle="tooltip" data-bs-placement="left" title="第90屆 講道會  第八講  自命清高？" aria-label="下一篇文章：第90屆 講道會  第八講  自命清高？" rel="next">
+					<span aria-hidden="true">下一篇</span>	
+					<i class="fas fa-chevron-right" aria-hidden="true"></i>
+				</a>
+							</div>
+			<br>
+			<hr>
+			<br>
+						<p>
+				<span class="h5">版權聲明</span><br>
+				大會現場速記只供信徒溫習用，全文未經講者過目，版權屬港九培靈硏經會。			</p>
+					</article>
+	</div>
+	
+	<div id="section-scripture" class="sermons-col-right" style="width:0%;position:relative;">
+		<section class="article-citation-magnifier h-100">
+			<a href="javascript:void(0);" class="btn btn-close btn-close-scripture d-flex ms-auto" title="隱藏經文"></a>
+			<div class="magnifier-content">
+			</div>
+		</section>
+				<div id="loadingSpinner" class="spinner-overlay">
+			<div class="spinner-container">
+				<span class="loading-spinner"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+</main>
+
+
+<footer>
+	<section class="sitemap">
+				<div class="fix-tools-footer">
+			<div class="container">
+				<div class="d-flex align-items-center">
+										<a href="/site/member" data-bs-placement="left" data-bs-toggle="tooltip" title="登入"><img src="/images/icon_login.svg" alt=""/></a>
+										<a href="https://www.hkbibleconference.org/offering/index" style="background-color: #6aa84f; color: #ffffff;">奉獻方式</a><a href="https://www.hkbibleconference.org/content/view/daily-hope" style="background-color: #a61c00; color: #ffffff;">牧言點滴</a>				</div>
+			</div>
+		</div>
+				<div class="container">
+			<div class="row">
+				<div class="col-6 col-md-4 col-lg-2">
+										<strong><a href="javascript:void(0);">我的資料</a></strong>
+					<ul>
+						<li><a href="/site/member">登入／註冊</a></li>
+					</ul>
+									</div>
+				
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/schedule" data-id="1" data-type="2" style="display: block; margin-bottom: 20px;">聚會日程</a></strong>
+					<strong><a class="nav-item" href="/content/past-conferences" data-id="3" data-type="2" style="display: block; margin-bottom: 20px;">歷屆聚會</a></strong>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/our-story" data-id="5" data-type="1">培靈．歷史館</a></strong>
+					<ul>
+						<li><a href="/content/media-collection">歷屆媒體集</a></li>
+						<li><a href="/content/article-collection">歷屆文集</a></li>
+						<li><a href="/content/past-data">歷屆資料回顧</a></li>
+					</ul>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/about-us" data-id="6" data-type="3">關於我們</a></strong>
+					<ul>
+						<li><a href="/offering/index">奉獻方式</a></li>
+						<li><a href="/content/about-us#contact">聯絡我們</a></li>
+					</ul>
+				</div>			</div>
+		</div>
+	</section>
+	<section class="footer-middle">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-7 col-lg-5 text-center text-md-start pt-2 pb-3 pb-md-2">
+					<form id="subscribe-form" action="/site/subscribe" method="post">
+<input type="hidden" name="_csrf" value="UY0sklDhd6lm3l4CkpiWgEgbpZwTRDEd0OcgHpZkoxYEy3v3GqlB2F-BAUTx1eHmLn7W9VQIY0-UkxQnwBXaUg==">						<div class="input-group align-items-center flex-nowrap pe-4">
+							<span class="color-white text-nowrap me-3">訂閱我們</span>
+							<div class="form-group field-subscribeform-email required">
+<input type="text" id="subscribeform-email" class="form-control rounded-0" name="SubscribeForm[email]" style="max-width:280px;" placeholder="請輸入你的電郵..." aria-label="請輸入你的電郵..." aria-required="true"><div class="invalid-feedback"></div>
+</div>							<button type="submit" id="btnSubscribe" class="btn btn-gray rounded-0 mb-auto" name="subscribe-button" title="訂閱" aria-label="訂閱"><i class="fa fa-arrow-right"></i></button>						</div>
+					</form>				</div>
+				<div class="col-12 col-md-5 col-lg-7 text-start text-md-end pt-0 pt-md-2 pb-2 sns d-flex align-items-center justify-content-md-end">
+					<span class="related-logos d-inline-block me-1">
+						<img src="/images/WARS_Gold-2022-2023.svg" alt="2022-2023無障礙網頁金獎" width="90"/>
+					</span>
+										<a href="https://www.facebook.com/hkbibleconference/" target="_blank" title="Facebook" aria-label="Facebook">
+						<img src="/images/icon_fb.png" alt="Facebook">
+					</a>
+										<a href="https://www.instagram.com/hkbibleconference/" target="_blank" title="Instagram" aria-label="Instagram">
+						<img src="/images/icon_ig.png" alt="Instagram">
+					</a>
+										<a href="https://www.youtube.com/c/HongKongBibleConference" target="_blank" title="Youtube" aria-label="Youtube">
+						<img src="/images/icon_yt.png" alt="Youtube">
+					</a>
+									</div>
+			</div>
+		</div>
+	</section>
+	<section class="copyright py-2">
+		<div class="container">
+			<div class="footer-btm-page mb-2">
+				<span>&copy; 2023 港九培靈研經會 版權所有</span>
+				<a class="nav-item" href="/footer-content/copy-right" data-id="1" data-type="1">版權及知識產權</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-privacy-policy" data-id="2" data-type="2">私隱政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-linking-policy" data-id="3" data-type="2">連結政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-disclaimer" data-id="4" data-type="2">免責聲明</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-terms-of-use" data-id="5" data-type="2">使用條款</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-accessibility" data-id="6" data-type="2">無障礙網頁</a>			</div>
+		</div>
+	</section>
+</footer>
+<!-- Back to top button -->
+<a href="#" id="button" title="回頁頂"><i class="fas fa-chevron-up"></i></a>
+
+<!--Cookie Consent-->
+<div class="cookie-container">
+	<div class="container-wrapper">
+		<div class="close-btn cookie-btn-close"><a href="javascript:void(0)" title="關閉" aria-label="關閉">X</a></div>
+		<p>當你瀏覽此網站時，一些Cookie (曲奇) 檔案將會儲存於你電腦的硬碟內。這些曲奇檔案只為瀏覽此網站之用。在此情況下，曲奇檔案將不會收集你的任何個人資料。你可選擇不接受曲奇檔案，但你若不接受曲奇檔案的話，你可能無法使用本網站某些功能。 <a class="td-underline" href="/bibleConference/footer-content/copy-right#statement-privacy-policy">了解更多</a></p>
+		<button class="cookie-btn">接受</button>
+		<button class="cookie-btn cookie-btn-disable">不接受</button>
+	</div>
+</div>
+
+<div class="modal" id="searchbox" tabindex="-1" aria-labelledby="網站工具:搜尋表格">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="siteSearchForm" action="/site/search" method="GET">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="搜尋關鍵字" aria-label="搜尋關鍵字" aria-describedby="請輸入搜尋關鍵字" name="keyword">
+						<button class="btn btn-outline-secondary" type="submit" id="button-addon2">搜尋</button>
+						<div class="invalid-feedback msg-keyword">請輸入欲搜尋的關鍵字</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script src="/assets/fd094f65/jquery.js"></script>
+<script src="/assets/fb2ec025/yii.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/scrolldown.js"></script>
+<script src="/js/all.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/changefontsize.js"></script>
+<script src="/js/changeColorMode.js"></script>
+<script src="/js/lightbox/index.bundle.min.js"></script>
+<script src="/js/plyr.js"></script>
+<script src="/js/cookieDisable.js"></script>
+<script src="/js/platform.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-video.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-zoom.min.js"></script>
+<script src="/js/jquery.color.2.1.2.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
+<script src="/js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+<script src="/assets/fb2ec025/yii.validation.js"></script>
+<script src="/assets/fb2ec025/yii.activeForm.js"></script>
+<script>
+	
+
+		//AOS.init();
+
+		AOS.init({
+			duration: 800, // values from 0 to 3000, with step 50ms
+			startEvent: "load",
+			once: false,
+		});
+		
+
+		var myModal = document.getElementById("searchbox")
+		var myInput = document.getElementById("myInput")
+
+		myModal.addEventListener("shown.bs.modal", function () {
+			myInput.focus()
+		})
+		
+
+		$(document).ready(function(){
+			$(".slick1").slick({
+				dots: true
+			});
+		});
+		
+
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll("[data-bs-toggle=\"tooltip\"]"));
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+			return new bootstrap.Tooltip(tooltipTriggerEl);
+		});
+
+		var btn = $("#button");
+
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > 300) {
+				btn.addClass("show");
+			} else {
+				btn.removeClass("show");
+			}
+		});
+
+		btn.on("click", function(e) {
+			e.preventDefault();
+			$("html, body").animate({scrollTop:0}, "300");
+		});
+		
+
+		const player = new Plyr(".audioPlayer");
+		
+
+		$(function () {
+			$("[data-toggle=\"tooltip\"]").tooltip();
+		})
+		
+
+		var totalImages = 0;
+		// $(".photo-gallery img").length;
+		$(function(){
+			$(".photo-gallery a").imagesLoaded( function() {
+				// images have loaded
+				var msnry = new Masonry(".photo-gallery");
+				msnry.layout();
+			});
+			// $(".photo-gallery img").each(function(){
+			// 	$(this).load(function(){
+			// 		totalImages++;
+			// 		if (totalImages >= $(".photo-gallery img").length) {
+			// 		}
+			// 	});
+			// })
+			// var msnry = new Masonry(".photo-gallery");
+			// msnry.layout();
+		});
+		$("a.eapps-link").css("display","none");
+		
+		$("table.tb-responsive thead tr th").each(function(index,element){
+			index += 1;
+			$("tr td:nth-child(" + index + ")").attr("data-title", $(this).text());
+		});
+		</script>
+<script>jQuery(function ($) {
+
+	var xhr;
+	var blurXhr;
+	
+	$(window).bind("load resize", function() {
+		var isMobile = $(window).width() < 992;
+		var isHideScripture = !$("#section-scripture").hasClass("active");
+		$(".sermons-col-left").css("width", getSectionMainWidth(isMobile, isHideScripture));
+		$(".sermons-col-left").css("height", getSectionMainHeight(isMobile, isHideScripture));
+		$(".sermons-col-right").css("width", getSectionScriptureWidth(isMobile, isHideScripture));
+		$(".sermons-col-right").css("height", getSectionScriptureHeight(isMobile, isHideScripture));
+
+		if(isMobile) {
+			if($(".btn-show-notes").css("display") == "none" && $(".btn-show-scripture").css("display") == "none") {
+				showButtonByClassName("btn-show-notes");
+			}
+		}
+	});
+	
+	function loadScripture(element){
+		var scriptureData = getScriptureData(element);
+		var isMobile = $(window).width() < 992;
+		
+		showLoadingSpinner();
+		if (!$("#section-scripture").hasClass("active")){
+			$("#section-scripture").addClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, false),
+				height: getSectionMainHeight(isMobile, false),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, false),
+				height: getSectionScriptureHeight(isMobile, false),
+			});
+			if(isMobile) {
+				if($(".article-citation-magnifier").length && !$(".article-citation-magnifier").hasClass("h-100")){
+					$(".article-citation-magnifier").addClass("h-100");
+				}
+			}
+			$("#section-scripture .btn-close-scripture").attr("tabindex", "0");
+			$(".btn-show-scripture").hide();
+			if(isMobile){
+				showButtonByClassName("btn-show-notes");
+			}else {
+				// hideButtonByClassName("btn-show-notes");
+			}
+		}
+		else{
+			$("#section-scripture .article-citation-magnifier").animate({scrollTop: 0});
+		}
+		
+		if (xhr){
+			xhr.abort();
+		}
+		$("#section-scripture").data(scriptureData);
+		xhr = $.ajax("/site/get-scripture", {
+			dataType: "json",
+			data: scriptureData,
+			success: function(data){
+				if (data !== false){
+					var scriptureContainer = $("#section-scripture .magnifier-content");
+					if (scriptureContainer){
+						var scriptureHtml = getScriptureHtml(data);
+						if (scriptureHtml){
+							scriptureContainer.html(scriptureHtml);
+						}
+					}
+				}
+			}
+		}).always(function(){
+			xhr = null;
+			hideLoadingSpinner();
+		});
+	}
+	
+	function closeScripture(){
+		var isMobile = $(window).width() < 992;
+		if ($("#section-scripture").hasClass("active")){
+			$("#section-scripture .magnifier-content").html("");
+			$("#section-scripture").removeClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, true),
+				height: getSectionMainHeight(isMobile, true),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, true),
+				height: getSectionScriptureHeight(isMobile, true),
+			});
+			$("#section-scripture .btn-close-scripture").attr("tabindex", "-1");
+			$(".btn-show-scripture").show();
+			showButtonByClassName("btn-show-notes");
+		}
+		$("#section-scripture").data(getScriptureData());
+		hideLoadingSpinner();
+	}
+	
+	function getScriptureData(element){
+		var scriptureData = {};
+		scriptureData["book"] = element && element.data("book") ?
+			element.data("book") :
+			null;
+		scriptureData["start-chapter"] = element && element.data("start-chapter") ?
+			element.data("start-chapter") :
+			null;
+		scriptureData["end-chapter"] = element && element.data("end-chapter") ?
+			element.data("end-chapter") :
+			null;
+		scriptureData["start-verse"] = element && element.data("start-verse") ?
+			element.data("start-verse") :
+			null;
+		scriptureData["end-verse"] = element && element.data("end-verse") ?
+			element.data("end-verse") :
+			null;
+		return scriptureData;
+	}
+	
+	function getScriptureHtml(data){
+		var bookTemplate = "<h3 class=\"article-title mb-0 text-center\" data-book=\"{{book}}\">{{content}}</h3>";
+		var chapterTemplate = "<h4 class=\"mb-3\" data-chapter=\"{{chapter}}\">{{content}}</h4>";
+		var verseTemplate = "<p><sup class=\"text-danger me-2\">{{verse}}</sup>{{content}}</p>";
+		
+		var scriptureHtml = "";
+		if (data.books){
+			$.each(data.books, function(bookId, book){
+				//for each book
+				if (bookId && book && book.title){
+					scriptureHtml += bookTemplate.replace("{{book}}", bookId).replace("{{content}}", book.title);
+					if (book.chapters){
+						$.each(book.chapters, function(chapterId, chapter){
+							if (chapterId && chapter && chapter.title){
+								scriptureHtml += chapterTemplate.replace("{{chapter}}", chapterId).replace("{{content}}", chapter.title);
+								if (chapter.verses){
+									$.each(chapter.verses, function(verseId, verse){
+										if (verseId && verse){
+											scriptureHtml += verseTemplate.replace("{{verse}}", verseId).replace("{{content}}", verse);
+										}
+									});
+								}
+							}
+						});
+					}
+				}
+			});
+		}
+		return scriptureHtml;
+	}
+	
+	function showLoadingSpinner(){
+		$("#loadingSpinner").stop().fadeIn(300);
+	}
+	
+	function hideLoadingSpinner(){
+		$("#loadingSpinner").stop().fadeOut(300);
+	}
+	
+	function getSectionMainWidth(isMobile = false, isFull = true){
+		return isMobile ?
+			"100%" :
+			(isFull ?
+				"100%" :
+				"65%");
+	}
+	
+	function getSectionMainHeight(isMobile = false, isFull = true){
+		return (isMobile ?
+			(window.innerHeight - $("header").outerHeight() - 5) * (isFull ? 0.9 : 0.45) :
+			window.innerHeight - $("header").outerHeight()
+		) + "px";
+	}
+	
+	function getSectionScriptureWidth(isMobile = false, isHide = true){
+		return isMobile ?
+			"100%" :
+			(isHide ?
+				"0%" :
+				"35%");
+	}
+	
+	function getSectionScriptureHeight(isMobile = false, isHide = true){
+		return (isMobile ?
+			(window.innerHeight - $("header").outerHeight() - 5) * (isHide ? 0.0 : 0.45) :
+			window.innerHeight - $("header").outerHeight()
+		) + "px";
+	}
+
+	function hideButtonByClassName(className){
+		if($("."+className).length) {
+			$("."+className).hide(300);
+		}
+	}
+
+	function showButtonByClassName(className){
+		if($("."+className).length) {
+			$("."+className).show(300);
+		}
+	}
+
+	function showIframe(hideButton = true){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			$("#section-scripture").addClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, false),
+				height: getSectionMainHeight(isMobile, false),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, false),
+				height: getSectionScriptureHeight(isMobile, false),
+			});
+			if(hideButton) {
+				$("#section-scripture .btn-close-scripture").attr("tabindex", "0");
+				$(".btn-show-scripture").hide();
+			}
+		}
+		else{
+			$("#section-scripture .article-citation-magnifier").animate({scrollTop: 0});
+		}
+	}
+
+	function animateScripture(object = {height:0, padding:0, marginBottom: 0}, duration = 300) {
+		if($(".article-citation-magnifier").length) {
+			$(".article-citation-magnifier").stop().animate(object, {duration:duration});
+		}
+	}
+
+	function showNotes(){
+		if($(".article-myNotes").length > 0) {
+			$(".article-myNotes").addClass("h-100", 300);
+		}
+	}
+	
+	$("a.article-citation").click(function(){
+		if ($("#section-scripture").hasClass("active") && JSON.stringify(getScriptureData($("#section-scripture"))) == JSON.stringify(getScriptureData($(this)))){
+			closeScripture();
+		}
+		else{
+			loadScripture($(this));
+		}
+	});
+	
+	// $(".btn-show-scripture").click(function(){
+	// 	if (!$("#section-scripture").hasClass("active")){
+	// 		$("a.article-citation").first().click();
+	// 	}
+	// });
+	
+	// $("#section-scripture .btn-close-scripture").click(function(){
+	// 	if ($("#section-scripture").hasClass("active")){
+	// 		closeScripture();
+	// 	}
+	// });
+
+	$(".btn-show-scripture").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			animateScripture({padding:10, marginBottom:5}, 300);
+			if(!$(".article-citation-magnifier").hasClass("h-100")){
+				$(".article-citation-magnifier").addClass("h-100");
+			}
+			$("a.article-citation").first().click();
+		}else {
+			if($(".article-myNotes").length > 0 && $(".article-myNotes").hasClass("h-100")) {
+				let newHeight = $("#section-scripture").height() * 0.5 - 2.5;
+				loadScripture($("a.article-citation"));
+				animateScripture({height:newHeight, padding:10, marginBottom: 5}, 300);
+				if($(".article-myNotes").length > 0) {
+					$(".article-myNotes").removeClass("h-100", 300);
+				}
+				hideButtonByClassName("btn-show-scripture");
+			} 
+			if(isMobile) {
+				animateScripture({height:"100%", padding:10, marginBottom: 5}, 300);
+				showButtonByClassName("btn-show-notes");
+			}
+		}
+	});
+
+	$("#section-scripture .btn-close-scripture").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if($(".article-citation-magnifier").hasClass("h-100")) {
+			if ($("#section-scripture").hasClass("active")){
+				closeScripture();
+			}
+		}else {
+			if($(".article-myNotes").length > 0) {
+				if(isMobile){
+					$(".article-myNotes").removeClass("h-100");
+				}else {
+					$(".article-myNotes").addClass("h-100", 300);
+				}
+			}
+			if(isMobile){
+				closeScripture();
+			}else {
+				animateScripture();
+			}
+			showButtonByClassName("btn-show-scripture");
+		}
+	});
+
+	$("#section-scripture .btn-close-notes").click(function(){
+		if($(".article-citation-magnifier").height() == 0) {
+			if ($("#section-scripture").hasClass("active")){
+				closeScripture();
+			}
+		}
+		if(!$(".article-citation-magnifier").hasClass("h-100")) {
+			$(".article-citation-magnifier").addClass("h-100",300);
+			showButtonByClassName("btn-show-notes");
+		}
+	})
+
+	$(".btn-show-notes").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			if($(".article-myNotes").length > 0) {
+				$(".article-citation-magnifier").removeClass("h-100");
+				animateScripture();
+				$(".article-myNotes").addClass("h-100", 300);
+			}
+			$("#section-scripture .btn-close-notes").attr("tabindex", "0");
+			hideButtonByClassName("btn-show-notes");
+			showIframe(false);
+		}else {
+			if($(".article-citation-magnifier").hasClass("h-100")) {
+				$(".article-citation-magnifier").removeClass("h-100");
+			}
+			let newHeight = $("#section-scripture").height() * 0.5 - 2.5;
+			animateScripture({height:newHeight, padding:10, marginBottom: 5}, 300);
+			hideButtonByClassName("btn-show-notes");
+			if($(".article-myNotes").length && $(".article-myNotes").hasClass("h-100")){
+				$(".article-myNotes").removeClass("h-100");
+			}
+			if(isMobile){
+				animateScripture();
+				if($(".article-myNotes").length && !$(".article-myNotes").hasClass("h-100")){
+					$(".article-myNotes").addClass("h-100");
+				}
+				showButtonByClassName("btn-show-scripture");
+			}
+		}
+	})
+	
+	var backgroundColor = $("a.article-citation").css("background-color");
+	var fontColor = $("a.article-citation").css("color");
+	if ($("a.article-citation").length > 0){
+		$(".btn-show-scripture").show();
+		
+		$("a.article-citation").first()
+			.click()
+			.animate({
+				"background-color": "#c90000",
+				"color": "#FFFFFF",
+			}, 300)
+			.delay(100)
+			.animate({
+				"background-color": backgroundColor,
+				"color": fontColor,
+			}, 300);
+	}else if("") {
+		animateScripture();
+		showNotes();
+		setTimeout(showIframe, 300);
+	}
+
+	// save audio process
+	function ajaxCallSaveAudioProgress(time, model_id, model_name, title, duration){
+		if(model_id && model_name && title && Number.isInteger(time)) {
+			$.ajax({
+				method:"POST",
+				url:"/history/save-file-video-progress",
+				data: {
+					time,
+					url: "https://www.hkbibleconference.org/session-message/view/158",
+					model_id,
+					model_name,
+					title,
+					duration,
+				},
+				success:function(result){
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}
+	}
+
+	$(function(){
+		let audioElement = $("audio");
+		let old_time = null;
+		let title = "第七講   誰的公理?";
+		if(audioElement.length) {
+			if(audioElement[0].dataset.currenttime) {
+				audioElement[0].currentTime = audioElement[0].dataset.currenttime;
+				old_time = audioElement[0].dataset.currenttime;
+			}
+			let model_id = audioElement[0].dataset.modelId;
+			let model_name = audioElement[0].dataset.model;
+			$(audioElement).off().on("timeupdate", function(event){
+				let now_time = parseInt(this.currentTime);
+				if(old_time === null || now_time - old_time >= 2 || now_time - old_time < 0) {
+					old_time = now_time;
+					ajaxCallSaveAudioProgress(now_time, model_id, model_name, title, parseInt(this.duration));
+				}
+			})
+		}
+	})
+	$("#myNotes").blur(function(){
+		if(blurXhr){
+			blurXhr.abort();
+		}
+		blurXhr = $.ajax("/notes/save-notes", {
+			dataType: "json",
+			method: "POST",
+			data: {
+				content: $("#myNotes").val(),
+				session_message_id: "158",
+			},
+			success: function(data){
+				if(data.error) {
+					alert(data.message);
+				}
+			},
+			error: function(error){
+				alert(error);
+			}
+		}).always(function(){
+			blurXhr = null;
+		});
+	});
+	
+jQuery('#subscribe-form').yiiActiveForm([{"id":"subscribeform-email","name":"email","container":".field-subscribeform-email","input":"#subscribeform-email","error":".invalid-feedback","enableAjaxValidation":true,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"請輸入電郵"});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"請輸入正確的電郵","enableIDN":false,"skipOnEmpty":1});yii.validation.string(value, messages, {"message":"電郵 必須為字串。","max":500,"tooLong":"電郵 只能包含最多 500 個字符。","skipOnEmpty":1});}}], {"errorSummary":".alert.alert-danger","errorCssClass":"is-invalid","successCssClass":"is-valid","validationStateOn":"input"});
+
+	$("#siteSearchForm").on("submit", function() {
+		var value = $(this).find("input[name=\"keyword\"]").val();
+		if (!value){
+			$(this).find(".msg-keyword").show();
+			return false;
+		}
+
+		return true;
+	});
+
+	$("#siteSearchForm input[name=\"keyword\"]").on("keyup", function (e) {
+		if ($("#siteSearchForm input[name=\"keyword\"]").val()){
+			$("#siteSearchForm .msg-keyword").hide();
+		}
+	});
+	
+	<!--Add to bookmark button-->
+	$(".bookmark").off().click(function() {
+		$(this).toggleClass("added");
+		let target = $(this)[0];
+		let targetModel = $(this)[0].dataset.model.replace(/\\/g, "\\\\");
+		let targetModelId = $(this)[0].dataset.modelId;
+		let otherElements = $(".bookmark[data-model-id=\""+ targetModelId +"\"][data-model=\""+ targetModel +"\"]");
+		if(otherElements.length) {
+			$(otherElements).each(function(index, element){
+				if(element != target) {
+					$(element).toggleClass("added");
+				}
+			})
+		}
+
+		if("") {
+			let addOrRemove = $(this).hasClass("added") ? "add" : "remove";
+			let model = $(this)[0].dataset.model;
+			let modelId = $(this)[0].dataset.modelId;
+			// console.log($(this)[0].dataset);
+			$.ajax({
+				method:"POST",
+				url:"/bookmark/add-or-remove-bookmark",
+				data: {
+					addOrRemove,
+					model,
+					modelId,
+				},
+				success:function(result){
+					console.log(result);
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}else{
+			let secondLayerId = null;
+			// console.log(1);
+			if(targetModel && targetModel.includes("SpeakerWording")){
+				let modal = $(this).parents(".modal");
+				if(modal.length){
+					secondLayerId = $(modal).attr("id");
+				}
+			}
+			let url = "https://www.hkbibleconference.org/site/member";
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			if(secondLayerId){
+				if(url.includes("?")){
+					url = urlParams.size ? (url + "&secondLayerId=" + secondLayerId) : (url + "secondLayerId=" + secondLayerId);
+				}else {
+					url =  url + "?secondLayerId=" + secondLayerId;
+				}
+			}
+			location.href = url;
+		}
+	});
+
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	if(urlParams.has("firstLayerId")){
+		let firstLayerId = urlParams.get("firstLayerId");
+		if($("#"+firstLayerId).length){
+			let btn = $("#"+firstLayerId);
+			$(btn)[0].scrollIntoView();
+			let relatedModalId = $(btn)[0].dataset.bsTarget;
+			new bootstrap.Modal(relatedModalId).show("#"+firstLayerId);
+		}
+		if(urlParams.has("secondLayerId")){
+			let secondLayerId = urlParams.get("secondLayerId");
+			setTimeout(function(){
+				new bootstrap.Modal("#" + secondLayerId).show();
+			},500);
+		}
+	}else if(urlParams.has("secondLayerId")){
+		let secondLayerId = urlParams.get("secondLayerId");
+		new bootstrap.Modal("#" + secondLayerId).show();
+	}
+	
+
+		$("a[download='']").each(function(){
+			$(this).click(function(){
+				downloadResource($(this).attr("href"));
+				return false;
+			});
+		});
+		
+		function forceDownload(blob, filename) {
+			var a = document.createElement("a");
+			a.download = filename;
+			a.href = blob;
+			document.body.appendChild(a);
+			a.click();
+			a.remove();
+		}
+
+		function downloadResource(url, filename) {
+			if (!filename) filename = url.split("\\").pop().split("/").pop();
+			console.log(location.origin);
+			fetch(url + "?_t=" + Date.now(), {
+				headers: new Headers({
+					"Origin": location.origin
+				}),
+				method: "GET",
+				mode: "cors"
+			})
+			.then(response => response.blob())
+			.then(blob => {
+				let blobUrl = window.URL.createObjectURL(blob);
+				forceDownload(blobUrl, filename);
+			})
+			.catch(e => console.error(e));
+		}
+		
+});</script></body>
+</html>
