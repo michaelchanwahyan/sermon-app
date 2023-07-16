@@ -9,17 +9,17 @@
 \pagenumbering{gobble}
 
 
-\newfontfamily\leftfont[Path=fonts/fell_french_canon/, Ligatures=TeX, ItalicFont=IMFeFCit29C.otf, BoldFont=AveriaLibre-Bold.ttf]{IMFeFCrm29C.otf}
-\newfontfamily\leftcitationfont[Path=fonts/frankruehl/]{FrankRuehlCLM-Medium.ttf}
-\newfontfamily\centerfont[Path=fonts/garamond/, Ligatures=TeX, ItalicFont=EBGaramond-SemiBoldItalic.ttf]{EBGaramond-SemiBold.ttf}
-\newfontfamily\rightfont[Path=fonts/averia/, Ligatures=TeX, ItalicFont=AveriaLibre-RegularItalic.ttf, BoldFont=AveriaLibre-Bold.ttf, BoldItalicFont=AveriaLibre-BoldItalic.ttf]{AveriaLibre-Light.ttf}
-\newfontfamily\rightcitationfont[Path=fonts/rashi/]{Mekorot-Rashi.ttf}
+\newfontfamily\leftfont[Path=../fonts/fell_french_canon/, Ligatures=TeX, ItalicFont=IMFeFCit29C.otf, BoldFont=AveriaLibre-Bold.ttf]{IMFeFCrm29C.otf}
+\newfontfamily\leftcitationfont[Path=../fonts/frankruehl/]{FrankRuehlCLM-Medium.ttf}
+\newfontfamily\centerfont[Path=../fonts/garamond/, Ligatures=TeX, ItalicFont=EBGaramond-SemiBoldItalic.ttf]{EBGaramond-SemiBold.ttf}
+\newfontfamily\rightfont[Path=../fonts/averia/, Ligatures=TeX, ItalicFont=AveriaLibre-RegularItalic.ttf, BoldFont=AveriaLibre-Bold.ttf, BoldItalicFont=AveriaLibre-BoldItalic.ttf]{AveriaLibre-Light.ttf}
+\newfontfamily\rightcitationfont[Path=../fonts/rashi/]{Mekorot-Rashi.ttf}
 \definecolor{hcolor}{HTML}{D3230C}
 \definecolor{rcolor}{HTML}{D36F0C}
 \newcommand{\chfont}[1]{\centerfont{\huge\textcolor{hcolor}{#1}}}
 \newcommand{\leftcitation}[1]{\leftcitationfont{\Large\textcolor{hcolor}{#1}}}
 \newcommand{\rightcitation}[1]{\rightcitationfont{\normalsize\textcolor{rcolor}{#1}}}
-\newfontfamily\flowerfont[Path=fonts/fell_flowers/]{IMFeFlow2.otf}
+\newfontfamily\flowerfont[Path=../fonts/fell_flowers/]{IMFeFlow2.otf}
 
 \begin{sloppypar}
 
@@ -45,8 +45,8 @@
 
 \fontsize{11}{13}\centerfont 
 \begin{tikzpicture}
-    \node (0,0) [xshift=-0.10cm, yshift=-1.0cm, opacity=0.10]{\includegraphics[width=0.30\textwidth]{./ot_frontcover.png}} ;
-    \node (0,0) [xshift=+0.20cm, yshift=+2.0cm, opacity=0.10]{\includegraphics[width=0.20\textwidth]{./christ_on_cross.png}} ;
+    \node (0,0) [xshift=-0.10cm, yshift=-1.0cm, opacity=0.10]{\includegraphics[width=0.30\textwidth]{../ot_frontcover.png}} ;
+    \node (0,0) [xshift=+0.20cm, yshift=+2.0cm, opacity=0.10]{\includegraphics[width=0.20\textwidth]{../christ_on_cross.png}} ;
 \end{tikzpicture}
 \Large 
 
