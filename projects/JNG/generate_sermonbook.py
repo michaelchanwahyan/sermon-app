@@ -260,7 +260,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                          [yyyy_start,yyyy_end]
                      )
             ]
-    sermon_tex_filepath = f"../../build/JNG/sermon{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
+    sermon_tex_filepath = f"../../build/JNG/sermon_JNG_{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
     # --------------------------------------
     # print the latex document : prefix
     # --------------------------------------
