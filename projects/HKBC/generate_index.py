@@ -114,7 +114,7 @@ def sermonBibleVersesCoverageRetrieval(pathfilename):
     with open(pathfilename, "r") as fp:
         lines = fp.readlines()
     fp.close()
-    c_v_line = ''
+    c_v_line = '' # the line with chapter and verse
     for line in lines:
         if "article-citation" in line \
         and "data-book" in line \
@@ -175,6 +175,11 @@ def sermonBibleVersesCoverageRetrieval(pathfilename):
                 else:
                     break
     return b, c_start, v_start, c_end, v_end
+# testitem = sermonBkgndInfoRetrieval(f"{hkbc_path}{1203}")
+# print(testitem.speaker)
+# print(estitem.titleStr)
+# print(testitem.confNum)
+# print(testitem.lectNum)
 handles = []
 for filename in filelist:
     if int(filename) % 100 == 0:
