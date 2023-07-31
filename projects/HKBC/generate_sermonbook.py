@@ -208,6 +208,7 @@ def cleanse_special_char(inputText):
         .replace('僞', '偽') \
         .replace('\ue226', '祐') \
         .replace('隣', '鄰') \
+        .replace('\u200b', '') \
         .replace('\u3000', '~') \
         .replace('\ue233', '身') \
         .replace('\ue313', '涉') \
@@ -392,7 +393,7 @@ book_list_engsymbol = ['',
     '1Ti','2Ti','Tit','Phm','Heb',
     'Jas','1Pe','2Pe','1Jn','2Jn',
     '3Jn','Jud','Rev']
-sermon_tex_filepath = '../../build/HKBC/hkbc_sermon.tex'
+sermon_tex_filepath = '../../build/HKBC/sermon_HKBC.tex'
 # --------------------------------------
 # print the latex document : prefix
 # --------------------------------------
