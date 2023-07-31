@@ -423,7 +423,7 @@ with open(sermon_tex_filepath, "a") as fp:
         line_content = line.split(',')
         conf_no = line_content[2].strip()
         lect_no = line_content[3].strip()
-        title_str = line_content[4].strip()
+        title_str = cleanse_special_char(line_content[4].strip())
         bv = line_content[6].strip()+line_content[7].strip() # might be empty string
         preacher = line_content[1].strip()
         code = line_content[0].strip()
