@@ -1,18 +1,32 @@
 # sermon-app
-## _A Collection of Christian Sermons From Voice To Text_
+## _A Collection of Christian Sermons From Different Sources_
 
-sermon-app is a collection of christian sermons (typically cantonese) generated from their raw recording using speech-to-text technology
+sermon-app is a collection of christian sermons (typically cantonese) in text or audio format.
+texts from audio sources are generated from raw recording using speech-to-text engine, like azure or [whisper](https://github.com/openai/whisper) (whisper indeed performs a lot better than azure)
 
-this work requires the following essential elements
+### Immediately available sermon books
+the outcome of this repo compiled from generate LaTeX source are listed below
+| book series                           | file path in this repo   | link |
+|---------------------------------------|--------------------------|------|
+| JohnsonNg Youtube Channel             | ./sermon_JNG_2012-18.pdf | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2012-18.pdf?raw=true) |
+|                                       | ./sermon_JNG_2019-20.pdf | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2019-20.pdf?raw=true) |
+|                                       | ./sermon_JNG_2021-22.pdf | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2021-22.pdf?raw=true) |
+| 港九培靈會 Hong Kong Bible Conference | ./sermon_HKBC.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC.pdf?raw=true)
+
+### Steps to compile the books from scratch _(painful !)_
+#### Pre-requisites
+This work containerizes a lot of python packages into one docker image named "[datalab](https://github.com/michaelchanwahyan/datalab)".
+
+You need to play with the following essential elements
 
 - Python3 (already in [datalab](https://github.com/michaelchanwahyan/datalab))
 - Jupyter (already in [datalab](https://github.com/michaelchanwahyan/datalab))
-- Docker (user shall install it on host, see Usage-1)
-- LaTeX (user shall install it on host, see Usage-6)
+- Docker (you shall install it on your host, see Usage-1)
+- LaTeX (you shall install it on your host, see Usage-6)
 
-users shall be familiar with their basics in order to play around this repo on their own
+If you are unfamiliar to these basics, please go to [Immediately available sermon books](###Immediately-available-sermon-books) section.
 
-## Features
+#### Features
 
 - automation-ready: new sermons could be found from destinated youtube channel
 - compilation with sorting according preacher, book, etc.
@@ -72,34 +86,41 @@ Upon successful execution, opening localhost:9999 from system browser shall brin
 
 #### a) the index file (a toc-like csv file)
 
-in /app/projects/, run the notebook file [generate_index.ipynb](/projects/generate_index.ipynb) using the launched jupyterlab.
+The code files for JohnsonNg Youtube Channel's sermon content are put under /app/projects/JNG/, so that in /app/projects/JNG, run the notebook file [generate_index.ipynb](/projects/JNG/generate_index.ipynb) using the launched jupyterlab.
 
 ![Alt text](/photos/index_by_preacher.png "table of content")
 
-please be reminded that the scripts may involve human-machine interaction so that you are not running [generate_index.ipynb](/projects/generate_index.ipynb) blindly.  do take attention to the inline comment in the source file.
+please be reminded that the scripts may involve human-machine interaction so that you are not running [generate_index.ipynb](/projects/JNG/generate_index.ipynb) blindly.
+Do take attention to the inline comment in the source file.
 
 #### b) download the sermon audio according to index file
 
-inline description in [generate_index.ipynb](/projects/generate_index.ipynb) describe the use of youtube-dl to extraction raw audio from youtube.
+inline description in [generate_index.ipynb](/projects/JNG/generate_index.ipynb) describe the use of youtube-dl to extraction raw audio from youtube.
 
 ### 4. Convert from audio to text (speech-to-text part, by container)
 
-in /app/projects/, the core script is to run the notebook file [generate_content.ipynb](/projects/generate_content.ipynb) (or the [python counterpart](/projects/generate_content.py))
+in /app/projects/JNG, the core script is to run the notebook file [generate_content.ipynb](/projects/JNG/generate_content.ipynb) (or the [python counterpart](/projects/JNG/generate_content.py))
 
 azure speech service is required and the azure subscription info is omitted in this repo
 
-a pair of ```cv_runby_*.py``` files can be found in the same directory. they serve as cocurrent python script to run the speech2text (by [cv_runby_container.py](/projects/cv_run_container.py)) and text concatenation (by [cv_runby_host.py](/projects/cv_run_host.py)) in an on-the-fly manner
+a pair of ```cv_runby_*.py``` files can be found in the same directory. they serve as cocurrent python script to run the speech2text (by [cv_runby_container.py](/projects/JNG/cv_run_container.py)) and text concatenation (by [cv_runby_host.py](/projects/JNG/cv_run_host.py)) in an on-the-fly manner
 
 ### 5. Compile the sermon texts into a single book source (by host/container)
 
-in /app/projects/, run the python script [generate_sermonbook.py](/projects/generate_sermonbook.py) to generate the LaTeX source file under build/ folder
+in /app/projects/JNG, run the python script [generate_sermonbook.py](/projects/JNG/generate_sermonbook.py) to generate the LaTeX source file under build/ folder
 
 ### 6. Compile the sermon texts into a single book pdf (by host, where LaTeX is required)
 
 (LaTeX installation: see [their page](https://www.latex-project.org/get/))
 
-in /app/build/, run the build script [build.sh](/build/build.sh).  the core LaTeX software package required is XeLaTeX.
+in /app/build/, run the build script [build.sh](/build/build.sh) with input argument detailed below:
+```bash
+./build.sh JNG # this is to compile JohnsonNg Youtube Channel sermon content
+./build.sh HKBC # this is to compile Hong Kong Bible Conference sermon content
+```
+the core LaTeX software package required is XeLaTeX.
 
 ## Editor
 contact person : Michael via michaelchan_wahyan@yahoo.com.hk
+
 
