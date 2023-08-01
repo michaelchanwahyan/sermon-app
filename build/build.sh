@@ -21,9 +21,15 @@ if [ "$1" == "JNG" ] ; then
     cd ..
 elif [ "$1" == "HKBC" ] ; then
     cd $1
-    xelatex sermon_$1.tex
-    xelatex sermon_$1.tex
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../
+    xelatex sermon_$1_1928-2007.tex
+    xelatex sermon_$1_1928-2007.tex
+    rm -f sermon_$1_1928-2007.mtc*
+    mv sermon_$1_1928-2007.pdf ../../
+    cd ..
+    cd $1
+    xelatex sermon_$1_2008-2022.tex
+    xelatex sermon_$1_2008-2022.tex
+    rm -f sermon_$1_2008-2022.mtc*
+    mv sermon_$1_2008-2022.pdf ../../
     cd ..
 fi
