@@ -88,6 +88,7 @@ for fname in filelist:
                         .replace('，', ',') \
                         .replace('；', ';') \
                         .replace(' ', '') \
+                        .replace('"', '') \
                         .strip()
                     # cv_text description rules:
                     #     if multiple number of books are included
