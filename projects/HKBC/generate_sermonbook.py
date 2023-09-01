@@ -474,7 +474,7 @@ def sermon_tex_from_generation(confno_start, confno_end):
         # handle whether current entry belongs to conf no of interest
         if int(cn_curr) < confno_start or int(cn_curr) > confno_end:
             continue
-        if os.path.isfile(f'../../data/HKBC/{s_curr}'):
+        if os.path.isfile(f'{hkbc_path}{s_curr}'):
             # --------------------------------------
             # print out lecture title and misc. info
             # --------------------------------------
