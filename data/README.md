@@ -1,6 +1,6 @@
 this folder hosts the transcription results
 
-the foldername here indicates a shortform of the sermon voice source
+the foldername here indicates a shortform of the sermon textual or audio source
 
 | folder name | description                                 | chinese description        | link                                                                               |
 | ----------- | ------------------------------------------- | -------------------------- | ---------------------------------------------------------------------------------- |
