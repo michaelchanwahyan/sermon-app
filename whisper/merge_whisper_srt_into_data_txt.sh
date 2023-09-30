@@ -11,8 +11,8 @@ git merge sermon-srt_whisper --no-commit --no-ff
 # =========================================================
 git reset ./JNG/*.srt
 git reset ./JNG/*.whisper.log
-git reset ../srt
-rm -rf ../srt
+#git reset ../srt
+#rm -rf ../srt
 
 # =========================================================
 # conversion from whisper srt file into ../data/JNG txt
