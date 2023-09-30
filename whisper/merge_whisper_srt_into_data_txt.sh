@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~/SOURCE/sermon-app/whisper
 find . -name ".DS_Store" -exec rm -rf {} \;
 # =========================================================
 # merge the updates from sermon-srt_whisper branch
