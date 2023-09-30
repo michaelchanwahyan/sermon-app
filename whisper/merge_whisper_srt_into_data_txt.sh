@@ -1,4 +1,5 @@
 #!/bin/bash
+cd ~/SOURCE/sermon-app/whisper
 find . -name ".DS_Store" -exec rm -rf {} \;
 # =========================================================
 # merge the updates from sermon-srt_whisper branch
@@ -10,8 +11,8 @@ git merge sermon-srt_whisper --no-commit --no-ff
 # =========================================================
 git reset ./JNG/*.srt
 git reset ./JNG/*.whisper.log
-git reset ../srt
-rm -rf ../srt
+#git reset ../srt
+#rm -rf ../srt
 
 # =========================================================
 # conversion from whisper srt file into ../data/JNG txt
