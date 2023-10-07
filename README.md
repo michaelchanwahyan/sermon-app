@@ -98,13 +98,19 @@ Do take attention to the inline comment in the source file.
 
 inline description in [generate_index.ipynb](/projects/JNG/generate_index.ipynb) describe the use of youtube-dl to extraction raw audio from youtube.
 
-### 4. Convert from audio to text (speech-to-text part, by container)
+### 4. Convert from audio to text (speech-to-text part ~~, by container~~)
 
-in /app/projects/JNG, the core script is to run the notebook file [generate_content.ipynb](/projects/JNG/generate_content.ipynb) (or the [python counterpart](/projects/JNG/generate_content.py))
+~~in /app/projects/JNG, the core script is to run the notebook file [generate_content.ipynb](/projects/JNG/generate_content.ipynb) (or the [python counterpart](/projects/JNG/generate_content.py))~~
 
-azure speech service is required and the azure subscription info is omitted in this repo
+~~azure speech service is required and the azure subscription info is omitted in this repo~~
 
-a pair of ```cv_runby_*.py``` files can be found in the same directory. they serve as cocurrent python script to run the speech2text (by [cv_runby_container.py](/projects/JNG/cv_run_container.py)) and text concatenation (by [cv_runby_host.py](/projects/JNG/cv_run_host.py)) in an on-the-fly manner
+~~a pair of ```cv_runby_*.py``` files can be found in the same directory. they serve as cocurrent python script to run the speech2text (by [cv_runby_container.py](/projects/JNG/cv_run_container.py)) and text concatenation (by [cv_runby_host.py](/projects/JNG/cv_run_host.py)) in an on-the-fly manner~~
+
+as from 2023 [OpenAI/whisper model](https://github.com/openai/whisper) became available, speech-to-text could become more effective.
+
+also thanks to [ggerganov/whisper.cpp](https://github.com/ggerganov/whisper.cpp) who contributes on cpp porting for Apple Silicon integration, whisper runs very fast now.
+
+currently whisper model size used is medium.  ggerganov's [ggml-medium.bin](https://huggingface.co/ggerganov/whisper.cpp/blob/main/ggml-medium.bin) model file together with other sizes could be found from [ggerganov's HaggingFace page](https://huggingface.co/ggerganov/whisper.cpp/tree/main).
 
 ### 5. Compile the sermon texts into a single book source (by host/container)
 
