@@ -19,7 +19,7 @@ fp.close()
 with open("x2code_dictionary.pkl", "rb") as fp:
     p2c_dict, b2c_dict = pkl.load(fp)
 fp.close()
-# sermon book for YFCY shall be arranged in chronicle order
+# sermon book for YFCX shall be arranged in chronicle order
 
 '''### print the latex document : sermon content'''
 def text_transform_cantonStyle2normalStyle(cantonText):
@@ -291,7 +291,7 @@ with open("./index_byt.csv", "r") as fp:
 fp.close()
 print('sermon count:', len(lines))
 rgx = recompile(r'(?<=\d)[_](?=\d)')
-def yfcy_sermon_title_processing(cc):
+def yfcx_sermon_title_processing(cc):
     sstr = c2s_dict.get(cc, ' ')
     sstr = re.sub(r'[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]', '', sstr) # remove date from title
     sstr = rgx.sub(':', sstr) # adjust bible verse , use ':' to replace '_'
@@ -314,13 +314,13 @@ with open('./index_byt.csv', 'r') as fp:
     lines = fp.readlines()
 fp.close()
 
-sermon_tex_filepath = f"../../build/YFCY/sermon_YFCY.tex"
+sermon_tex_filepath = f"../../build/YFCX/sermon_YFCX.tex"
 # --------------------------------------
 # print the latex document : prefix
 # --------------------------------------
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: printing out prefixing")
-_ = os.system(f"cat ../prefix.tex | sed 's/Youtube Channel:/Youtube Channel: 恩福青少部 Yan Fook Church Youth/' > " + sermon_tex_filepath)
+_ = os.system(f"cat ../prefix.tex | sed 's/Youtube Channel:/Youtube Channel: 播道會恩福堂 Yan Fook Church/' > " + sermon_tex_filepath)
 
 # --------------------------------------
 # index table partitioned by preachers
@@ -348,7 +348,7 @@ with open(sermon_tex_filepath, "a") as fp:
         # only include this code cc if it is
         # ready in the transcription folder
         # --------------------------------------
-        if os.path.isfile(f'../../data/YFCY/{cc}.txt'):
+        if os.path.isfile(f'../../data/YFCX/{cc}.txt'):
             sermonCnt += 1
             # p_prev = p_curr
             # p_curr = c2p_dict.get(cc)
@@ -362,7 +362,7 @@ with open(sermon_tex_filepath, "a") as fp:
             bstr = c2b_dict.get(cc, ' ')
             vstr = c2v_dict.get(cc, ' ')
             sstr = c2s_dict.get(cc, ' ')
-            sstr = yfcy_sermon_title_processing(cc)
+            sstr = yfcx_sermon_title_processing(cc)
             tstr = c2t_dict.get(cc, ' ')
             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
@@ -396,7 +396,7 @@ for lineId in range(len(lines)):
     cc = line.split(",")[0]
     cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
     cc_next = lines[(lineId+1)%len(lines)].split(",")[0]
-    if os.path.isfile(f'../../data/YFCY/{cc}.txt'):
+    if os.path.isfile(f'../../data/YFCX/{cc}.txt'):
         # p_prev = p_curr
         # p_curr = c2p_dict.get(cc)
         # if p_prev != p_curr:
@@ -452,7 +452,7 @@ for lineId in range(len(lines)):
             sectionNameStr += ' ' + ch if b is not None and ch is not None and v is None else ''
             fp.write("\n\n\\section{"+sectionNameStr+"}\n")
             fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
-            sstr = yfcy_sermon_title_processing(cc)
+            sstr = yfcx_sermon_title_processing(cc)
             fp.write("\\textbf{"+sstr+"}\n")
             fp.write("\\newline\n\\newline\n")
             fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + " \n")
@@ -501,7 +501,7 @@ for lineId in range(len(lines)):
                 fp.write("\\end{longtable}\n")
             # ----------------------
             # add the sermon part
-            with open("../../data/YFCY/"+cc+".txt", "r") as fp_:
+            with open("../../data/YFCX/"+cc+".txt", "r") as fp_:
                 the_sermon_text = fp_.read()
             fp_.close()
             the_sermon_text = text_transform_cantonStyle2normalStyle(the_sermon_text)
