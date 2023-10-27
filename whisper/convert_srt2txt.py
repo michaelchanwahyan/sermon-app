@@ -26,9 +26,13 @@ print(f"total .whisper.log file count in {sermon_group_path_str}: {len(whisperlo
 
 for srtfilename in srtfilelist:
     pathfilename = "./" + sermon_group_path_str + "/" + srtfilename
-    with open (pathfilename, 'r', encoding='utf-8') as fp:
-        lines = fp.readlines()
-    fp.close()
+    try:
+        with open (pathfilename, 'r', encoding='utf-8') as fp:
+            lines = fp.readlines()
+        fp.close()
+    except:
+        fp.close()
+        print(f"exception caught at file {pathfilename}")
     dest_pathfilename = "../data/" + sermon_group_path_str + "/" + srtfilename[:-3] + "txt"
     with open (dest_pathfilename, 'w', encoding='utf-8') as fp:
         for line_ in lines[2::4]:

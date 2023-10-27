@@ -555,7 +555,13 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 the_sermon_text = the_sermon_text.replace("\\n\\n","\\n")
                 textlines = the_sermon_text.split("\n")
                 _textrow_cnt = 0
+                textline_prev = ''
                 for textline in textlines:
+                    if textline == textline_prev and '廣東話' in textline:
+                        textline_prev = textline
+                        continue
+                    else:
+                        textline_prev = textline
                     _textrow_cnt += 1
                     if _textrow_cnt % 40 == 1:
                         fp.write("$^{%d}$" % _textrow_cnt)
