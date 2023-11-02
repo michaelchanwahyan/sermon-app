@@ -39,7 +39,7 @@ elif [ "$1" == "DSCCC" ] ; then
     rm -f sermon_$1.mtc*
     mv sermon_$1.pdf ../../
     cd ..
-elif [ "$1" == "YFCY" ] ; then
+elif [ "$1" == "YFCX" ] ; then
     cd $1
     xelatex sermon_$1.tex
     xelatex sermon_$1.tex
