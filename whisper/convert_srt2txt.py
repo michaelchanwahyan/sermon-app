@@ -24,8 +24,12 @@ whisperlogfilelist.sort()
 print(f"total .srt file count in {sermon_group_path_str}: {len(srtfilelist)}")
 print(f"total .whisper.log file count in {sermon_group_path_str}: {len(whisperlogfilelist)}")
 
+cnt = 0
 for srtfilename in srtfilelist:
     pathfilename = "./" + sermon_group_path_str + "/" + srtfilename
+    cnt += 1
+    if cnt % 100 == 0:
+        print('progress: %d -> %s' % (cnt, pathfilename))
     try:
         with open (pathfilename, 'r', encoding='utf-8') as fp:
             lines = fp.readlines()
