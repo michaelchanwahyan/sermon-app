@@ -535,7 +535,7 @@ for lineId in range(len(lines)):
             _textrow_cnt = 0
             textline_prev = ''
             for textline in textlines:
-                if textline == textline_prev and '廣東話' in textline:
+                if textline == textline_prev:
                     textline_prev = textline
                     continue
                 else:

@@ -582,7 +582,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 _textrow_cnt = 0
                 textline_prev = ''
                 for textline in textlines:
-                    if textline == textline_prev and '廣東話' in textline:
+                    if textline == textline_prev:
                         textline_prev = textline
                         continue
                     else:
