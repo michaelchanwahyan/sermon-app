@@ -11,7 +11,7 @@ def execute_commands(commands):
 import os.path
 import pickle as pkl
 import re
-from re import compile as recompile
+#from re import compile as recompile
 print('done !')
 with open("code_dictionary.pkl", "rb") as fp:
     c2p_dict, bk2bkorder_dict, c2b_dict, c2ch_dict, c2v_dict, c2s_dict, c2t_dict, c2bvc_dict = pkl.load(fp)
@@ -315,11 +315,11 @@ with open("./index_byt.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
 print('sermon count:', len(lines))
-rgx = recompile(r'(?<=\d)[_](?=\d)')
+rgx_bv = re.compile(r'(?<=\d)[_](?=\d)')
 def yfcx_sermon_title_processing(cc):
     sstr = c2s_dict.get(cc, ' ')
     sstr = re.sub(r'[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]', '', sstr) # remove date from title
-    sstr = rgx.sub(':', sstr) # adjust bible verse , use ':' to replace '_'
+    sstr = rgx_bv.sub(':', sstr) # adjust bible verse , use ':' to replace '_'
     sstr = sstr[:-13] # remove trailing youtube code
     sstr = sstr.replace('網上直播', '')
     sstr = text_transform_cantonStyle2normalStyle(
