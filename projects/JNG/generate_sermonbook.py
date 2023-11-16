@@ -132,6 +132,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'嗰', 'gwo ', cantonText)
     cantonText = re.sub(r'嗱', 'la ', cantonText)
     cantonText = re.sub(r'嘅', 'ge ', cantonText)
+    cantonText = re.sub(r'嘘', '虛', cantonText)
     cantonText = re.sub(r'嘚', 'dik ', cantonText)
     cantonText = re.sub(r'嘞', '啦', cantonText)
     cantonText = re.sub(r'嘢', 'ye ', cantonText)
@@ -437,6 +438,15 @@ print('2021-2022 sermon count:',
                      )
             ] )
      )
+print('2023-2024 sermon count:',
+    len(   [ line \
+                 for line in lines \
+                     if check_in_year_range(
+                         line.split(',')[-1],
+                         [2023,2024]
+                     )
+            ] )
+     )
 def sermon_tex_from_year(yyyy_start, yyyy_end):
     # yyyy_start : starting year, e.g. 2012
     # yyyy_end.  : ending year, e.g. 2018
@@ -694,5 +704,8 @@ sermon_tex_from_year(2019,2020)
 
 '''## 2021-2022 Sermons'''
 sermon_tex_from_year(2021,2022)
+
+'''## 2023-2024 Sermons'''
+sermon_tex_from_year(2023,2024)
 
 
