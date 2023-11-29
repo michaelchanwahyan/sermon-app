@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+
+
 from subprocess import Popen, PIPE
 def execute_commands(commands):
     p = Popen(commands, shell=True, stdout=PIPE, stderr=PIPE)
@@ -8,17 +10,25 @@ def execute_commands(commands):
     print()
     print(err)
     return out, err
+
+
 import os.path
 import pickle as pkl
 import re
 #from re import compile as recompile
 print('done !')
+
+
 with open("code_dictionary.pkl", "rb") as fp:
     c2p_dict, bk2bkorder_dict, c2b_dict, c2ch_dict, c2v_dict, c2s_dict, c2t_dict, c2bvc_dict = pkl.load(fp)
 fp.close()
+
+
 with open("x2code_dictionary.pkl", "rb") as fp:
     p2c_dict, b2c_dict = pkl.load(fp)
 fp.close()
+
+
 # # generate
 # preacher 1
 #  --------------------------------
@@ -40,11 +50,21 @@ fp.close()
 # |
 #  --------------------------------
 #
+
+
 # compile regular expression rgx to cater math symbol '^'
+
+
 rgx = re.compile(r'([A-Za-z0-9=]+)\^([A-Za-z0-9\-]+)')
+
+
 print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^-2\')" :', rgx.sub(r'$\1^\2$', 'E=MC^-2'))
 
+
+
 '''### print the latex document : sermon content'''
+
+
 def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = rgx.sub(r'$\1^\2$', cantonText)
     cantonText = re.sub(r'&', ' and ', cantonText)
@@ -408,8 +428,12 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'풀', '阿門', cantonText)
     cantonText = re.sub(r'�', '', cantonText)
     return cantonText
+
+
 p_list = list(p2c_dict.keys())
 print(p_list)
+
+
 def check_in_year_range(code, year_range=[2012,2018]):
     # tstr = c2t_dict.get(code, ' ')
     # # print(tstr)
@@ -420,12 +444,18 @@ def check_in_year_range(code, year_range=[2012,2018]):
             in_range = True
             break
     return in_range
+
+
 with open("./index_byp.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
+
+
 print('all time sermon count:',
     len( lines )
      )
+
+
 print('2012-2018 sermon count:',
     len(   [ line \
                  for line in lines \
@@ -435,6 +465,8 @@ print('2012-2018 sermon count:',
                      )
             ] )
      )
+
+
 print('2019-2020 sermon count:',
     len(   [ line \
                  for line in lines \
@@ -444,6 +476,8 @@ print('2019-2020 sermon count:',
                      )
             ] )
      )
+
+
 print('2021-2022 sermon count:',
     len(   [ line \
                  for line in lines \
@@ -453,6 +487,8 @@ print('2021-2022 sermon count:',
                      )
             ] )
      )
+
+
 print('2023-2024 sermon count:',
     len(   [ line \
                  for line in lines \
@@ -462,6 +498,8 @@ print('2023-2024 sermon count:',
                      )
             ] )
      )
+
+
 def sermon_tex_from_year(yyyy_start, yyyy_end):
     # yyyy_start : starting year, e.g. 2012
     # yyyy_end.  : ending year, e.g. 2018
@@ -711,16 +749,38 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     _ = os.system("cat ../postfix.tex >> " + sermon_tex_filepath)
     print("done !")
 
+
+
 '''## 2012-2018 Sermons'''
+
+
 sermon_tex_from_year(2012, 2018)
 
+
+
 '''## 2019-2020 Sermons'''
+
+
 sermon_tex_from_year(2019,2020)
 
+
+
 '''## 2021-2022 Sermons'''
+
+
 sermon_tex_from_year(2021,2022)
 
+
+
 '''## 2023-2024 Sermons'''
+
+
 sermon_tex_from_year(2023,2024)
+
+
+
+
+
+
 
 

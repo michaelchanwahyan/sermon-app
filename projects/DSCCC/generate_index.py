@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+
+
 from subprocess import Popen, PIPE
 def execute_commands(commands):
     p = Popen(commands, shell=True, stdout=PIPE, stderr=PIPE)
@@ -8,6 +10,8 @@ def execute_commands(commands):
     print()
     print(err)
     return out, err
+
+
 from datetime import datetime, timedelta
 import time
 import json
@@ -23,14 +27,28 @@ import re
 from re import compile as recompile
 
 print('done !')
+
+
 # obtain the whole source of DSCCC
 import os
 dsccc_path = '../../data/DSCCC/'
 filelist = sorted(os.listdir(dsccc_path))
 
 
+
+
+
+
+
+
 # the initial of different kind of preacher
 preacherTitle_list = ['博士','牧師','傳道','老師','先生','教授','弟兄','社長','長老','醫生']
+
+
+
+
+
+
 
 
 # cannot use datetime as the key
@@ -93,6 +111,8 @@ for fname in filelist:
     rid2dtptcv_dict[record_id] = [dt, title, p, cv_text]
     # print(rid2dtptcv_dict[record_id])
     record_id += 1
+
+
 df = pd.DataFrame(
     [rid2dtptcv_dict.get(rid) for rid in range(len(rid2dtptcv_dict.keys()))],
     columns = [
@@ -102,9 +122,17 @@ df = pd.DataFrame(
         'coverage'
     ]
 )
+
+
 print(df)
+
+
 print(f"total number of sermons count: {len(rid2dtptcv_dict.keys())}")
+
+
 df = df.sort_values(['date', 'title'])
+
+
 for index, row in df.iterrows():
     print(
         row['date'],
@@ -114,6 +142,18 @@ for index, row in df.iterrows():
     )
 
 
+
+
+
+
+
+
 df.to_csv('./index_byd.csv', index=False)
+
+
+
+
+
+
 
 

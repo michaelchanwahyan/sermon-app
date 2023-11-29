@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+
+
 from subprocess import Popen, PIPE
 def execute_commands(commands):
     p = Popen(commands, shell=True, stdout=PIPE, stderr=PIPE)
@@ -8,19 +10,33 @@ def execute_commands(commands):
     print()
     print(err)
     return out, err
+
+
 import os
 import re
+
+
 with open("./index_byc.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
+
+
 print('all time sermon count:',
     len( lines )
      )
 
 
+
+
+
+
+
+
 def cleanse_p_tag_span_tag(inputText):
     txt2 = re.sub(r'<.+?>', '', inputText)
     return txt2
+
+
 def cleanse_special_char(inputText):
     txt2 = inputText \
         .replace('&nbsp;', '') \
@@ -279,6 +295,8 @@ def cleanse_special_char(inputText):
         .replace('駡', '罵') \
         .strip()
     return txt2
+
+
 def sermonBibleVersesCoverageRetrieval(pathfilename):
     with open(pathfilename, "r") as fp:
         lines = fp.readlines()
@@ -344,7 +362,11 @@ def sermonBibleVersesCoverageRetrieval(pathfilename):
                 else:
                     break
     return b, c_start, v_start, c_end, v_end
+
+
 # sermonBibleVersesCoverageRetrieval("../../data/HKBC/1312")
+
+
 with open("./index_byc.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
@@ -355,6 +377,8 @@ for lineId in range(len(lines)):
     s_curr = line_contents[0]
     if os.path.isfile(f'../../data/HKBC/{s_curr}'):
         sermonBibleVersesCoverageRetrieval(f'../../data/HKBC/{s_curr}')
+
+
 def sermonContentRetrieval(pathfilename):
     with open(pathfilename, "r") as fp:
         lines = fp.readlines()
@@ -369,6 +393,12 @@ def sermonContentRetrieval(pathfilename):
     return sermon_text
 
 
+
+
+
+
+
+
 # progressStepCnt = 0
 # --------------------------------------
 # read the index table and only take
@@ -379,7 +409,11 @@ print("reading in full index file")
 with open("./index_byc.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
+
+
 bible_srcpath = '../../data/bible_src/cuv2/'
+
+
 book_list_engsymbol = ['',
     'Gen','Exo','Lev','Num','Deu',
     'Jos','Jug','Rut','1Sa','2Sa','1Ki','2Ki',
@@ -394,6 +428,8 @@ book_list_engsymbol = ['',
     '1Ti','2Ti','Tit','Phm','Heb',
     'Jas','1Pe','2Pe','1Jn','2Jn',
     '3Jn','Jud','Rev']
+
+
 def sermon_tex_from_generation(confno_start, confno_end):
     progressStepCnt = 0
     sermon_tex_filepath = f'../../build/HKBC/sermon_HKBC_{1928+confno_start-1}-{1928+confno_end-1}.tex'
@@ -611,12 +647,24 @@ def sermon_tex_from_generation(confno_start, confno_end):
     _ = os.system("cat ../postfix.tex >> " + sermon_tex_filepath)
     print("done !")
 
+
+
 '''## The 1st to 80th HKBC'''
+
+
 confno_start = 1
 confno_end = 80
 sermon_tex_from_generation(confno_start, confno_end)
+
+
 confno_start = 81
 confno_end = 95
 sermon_tex_from_generation(confno_start, confno_end)
+
+
+
+
+
+
 
 

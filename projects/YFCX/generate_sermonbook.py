@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+
+
 from subprocess import Popen, PIPE
 def execute_commands(commands):
     p = Popen(commands, shell=True, stdout=PIPE, stderr=PIPE)
@@ -8,23 +10,41 @@ def execute_commands(commands):
     print()
     print(err)
     return out, err
+
+
 import os.path
 import pickle as pkl
 import re
 #from re import compile as recompile
 print('done !')
+
+
 with open("code_dictionary.pkl", "rb") as fp:
     c2p_dict, bk2bkorder_dict, c2b_dict, c2ch_dict, c2v_dict, c2s_dict, c2t_dict, c2bvc_dict = pkl.load(fp)
 fp.close()
+
+
 with open("x2code_dictionary.pkl", "rb") as fp:
     p2c_dict, b2c_dict = pkl.load(fp)
 fp.close()
+
+
 # sermon book for YFCX shall be arranged in chronicle order
+
+
 # compile regular expression rgx to cater math symbol '^'
+
+
 rgx = re.compile(r'([A-Za-z0-9=]+)\^([A-Za-z0-9\-]+)')
+
+
 print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^2\')" :', rgx.sub(r'$\1^\2$', 'E=MC^-2'))
 
+
+
 '''### print the latex document : sermon content'''
+
+
 def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = rgx.sub(r'$\1^\2$', cantonText)
     cantonText = re.sub(r'&', ' and ', cantonText)
@@ -388,8 +408,12 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'풀', '阿門', cantonText)
     cantonText = re.sub(r'�', '', cantonText)
     return cantonText
+
+
 p_list = list(p2c_dict.keys())
 print(sorted(p_list))
+
+
 def check_in_year_range(code, year_range=[2012,2018]):
     # tstr = c2t_dict.get(code, ' ')
     # # print(tstr)
@@ -400,11 +424,19 @@ def check_in_year_range(code, year_range=[2012,2018]):
             in_range = True
             break
     return in_range
+
+
 with open("./index_byt.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
+
+
 print('sermon count:', len(lines))
+
+
 rgx_bv = re.compile(r'(?<=\d)[_](?=\d)')
+
+
 def yfcx_sermon_title_processing(cc):
     sstr = c2s_dict.get(cc, ' ')
     sstr = re.sub(r'[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]', '', sstr) # remove date from title
@@ -416,6 +448,8 @@ def yfcx_sermon_title_processing(cc):
     )
     sstr = sstr.strip()
     return sstr
+
+
 # sermon tex generation
 progressStepCnt = 0
 # --------------------------------------
@@ -654,5 +688,11 @@ _ = os.system("cat ../afterword.tex >> " + sermon_tex_filepath)
 # --------------------------------------
 _ = os.system("cat ../postfix.tex >> " + sermon_tex_filepath)
 print("done !")
+
+
+
+
+
+
 
 

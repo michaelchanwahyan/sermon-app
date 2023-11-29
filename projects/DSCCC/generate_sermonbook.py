@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+
+
 from subprocess import Popen, PIPE
 def execute_commands(commands):
     p = Popen(commands, shell=True, stdout=PIPE, stderr=PIPE)
@@ -8,6 +10,8 @@ def execute_commands(commands):
     print()
     print(err)
     return out, err
+
+
 from datetime import datetime, timedelta
 import time
 import json
@@ -25,17 +29,25 @@ import re
 from re import compile as recompile
 
 print('done !')
+
+
 # with open("./index_byd.csv", "r") as fp:
 #     lines = fp.readlines()
 # fp.close()
 df = pd.read_csv("./index_byd.csv")
+
+
 print(f"total entry count: {df['date'].count()}")
+
+
 def is_float(string):
     try:
         float(string)
         return True
     except ValueError:
         return False
+
+
 def cleanse_special_char(inputText):
     txt2 = inputText \
         .replace("#", "\\#") \
@@ -679,6 +691,8 @@ def cleanse_special_char(inputText):
         .replace('｣', '」') \
         .strip()
     return txt2
+
+
 # the bible books
 book_list = [
     '創世記','出埃及記','利未記','民數記','申命記',
@@ -694,7 +708,11 @@ book_list = [
     '提摩太前書','提摩太後書','提多書','腓利門書','希伯來書',
     '雅各書','彼得前書','彼得後書','約翰一書','約翰二書',
     '約翰三書','猶大書','啟示錄']
+
+
 bible_srcpath = '../../data/bible_src/cuv2/'
+
+
 book_list_engsymbol = [
     'Gen','Exo','Lev','Num','Deu',
     'Jos','Jug','Rut','1Sa','2Sa','1Ki','2Ki',
@@ -710,7 +728,11 @@ book_list_engsymbol = [
     'Jas','1Pe','2Pe','1Jn','2Jn',
     '3Jn','Jud','Rev']
 
+
+
 '''## Start of sermon tex generation'''
+
+
 # def sermon_tex_generation():
 progressStepCnt = 0
 sermon_tex_filepath = '../../build/DSCCC/sermon_DSCCC.tex'
@@ -780,6 +802,8 @@ fp.close()
 # --------------------------------------
 # END OF index table
 # --------------------------------------
+
+
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: generate main content")
 dsccc_path = '../../data/DSCCC/'
@@ -1071,6 +1095,8 @@ for index, row in df.iterrows():
     else:
         print(f"{dsccc_sermon_pathfilename} is not found !")
         continue
+
+
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: generate afterward and postfix")
 # --------------------------------------
@@ -1082,5 +1108,11 @@ _ = os.system("cat ../afterword.tex >> " + sermon_tex_filepath)
 # --------------------------------------
 _ = os.system("cat ../postfix.tex >> " + sermon_tex_filepath)
 print("done !")
+
+
+
+
+
+
 
 
