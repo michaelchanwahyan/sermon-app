@@ -741,7 +741,7 @@ sermon_tex_filepath = '../../build/DSCCC/sermon_DSCCC.tex'
 # --------------------------------------
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: printing out prefixing")
-_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/崇基神學院 崇拜講章/' | sed 's/Youtube Channel:/Chaplaincy, Div. Scl. of CCC/' > " + sermon_tex_filepath)
+_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/香港中文大學崇基神學院~~校牧主日崇拜講章/' | sed 's/Youtube Channel:/Chaplaincy, Divinity School of Chung Chi College, CUHK/' > " + sermon_tex_filepath)
 
 # --------------------------------------
 # index table
