@@ -127,6 +127,7 @@ def cleanse_special_char(inputText):
         .replace('⑤', '(5)') \
         .replace('⑥', '(6)') \
         .replace('⑦', '(7)') \
+        .replace('╱', '/') \
         .replace('⻆', '角') \
         .replace('⾃', '自') \
         .replace('〇', '零') \
@@ -155,6 +156,7 @@ def cleanse_special_char(inputText):
         .replace('义', '義') \
         .replace('乸', '痴') \
         .replace('亅', '"') \
+        .replace('争', '爭') \
         .replace('亘', '亙') \
         .replace('亜', '亞') \
         .replace('亠', '一') \
@@ -162,6 +164,7 @@ def cleanse_special_char(inputText):
         .replace('亿', '億') \
         .replace('仅', '僅') \
         .replace('们', '們') \
+        .replace('仭', '仞') \
         .replace('仼', '任') \
         .replace('会', '會') \
         .replace('伦', '倫') \
@@ -180,6 +183,7 @@ def cleanse_special_char(inputText):
         .replace('凖', '準') \
         .replace('凤', '風') \
         .replace('処', '處') \
+        .replace('凴', '憑') \
         .replace('刋', '刊') \
         .replace('刘', '劉') \
         .replace('刧', '劫') \
@@ -262,6 +266,8 @@ def cleanse_special_char(inputText):
         .replace('嚟', '黎') \
         .replace('嚿', '舊') \
         .replace('囘', '回') \
+        .replace('囯', '國') \
+        .replace('国', '國') \
         .replace('圣', '聖') \
         .replace('坂', '板') \
         .replace('坚', '堅') \
@@ -286,11 +292,13 @@ def cleanse_special_char(inputText):
         .replace('属', '屬') \
         .replace('岀', '出') \
         .replace('峯', '峰') \
+        .replace('嵗', '歲') \
         .replace('巣', '巢') \
         .replace('帋', '紙') \
         .replace('带', '帶') \
         .replace('帮', '幫') \
         .replace('帺', '旗') \
+        .replace('幷', '並') \
         .replace('庙', '廟') \
         .replace('废', '廢') \
         .replace('廸', 'dik ') \
@@ -350,6 +358,7 @@ def cleanse_special_char(inputText):
         .replace('敍', '敘') \
         .replace('敎', '教') \
         .replace('无', '無') \
+        .replace('旣', '既') \
         .replace('时', '時') \
         .replace('昩', '昧') \
         .replace('昻', '昂') \
@@ -361,7 +370,10 @@ def cleanse_special_char(inputText):
         .replace('曓', '畢') \
         .replace('曱甴', '小強') \
         .replace('曺', '嘈') \
+        .replace('朌', '盼') \
         .replace('术', '術') \
+        .replace('朶', '朵') \
+        .replace('机', '機') \
         .replace('来', '來') \
         .replace('枱', '台') \
         .replace('栅', '柵') \
@@ -373,6 +385,7 @@ def cleanse_special_char(inputText):
         .replace('槪', '概') \
         .replace('横', '橫') \
         .replace('櫈', '凳') \
+        .replace('欅', '櫸') \
         .replace('歩', '步') \
         .replace('歳', '歲') \
         .replace('歴', '歷') \
@@ -405,6 +418,7 @@ def cleanse_special_char(inputText):
         .replace('瀞', '靜') \
         .replace('灯', '燈') \
         .replace('焔', '焰') \
+        .replace('煅', '鍛') \
         .replace('煊', '宣') \
         .replace('煑', '煮') \
         .replace('燶', 'lone ') \
@@ -421,6 +435,7 @@ def cleanse_special_char(inputText):
         .replace('玮', '瑋') \
         .replace('珏', '玉') \
         .replace('産', '產') \
+        .replace('电', '電') \
         .replace('畀', '比') \
         .replace('畧', '略') \
         .replace('疗', '療') \
@@ -432,13 +447,17 @@ def cleanse_special_char(inputText):
         .replace('瘮', '慘') \
         .replace('瘾', '癮') \
         .replace('癎', '癇') \
+        .replace('盗', '盜') \
         .replace('眞', '真') \
         .replace('着', '著') \
         .replace('睺', 'hau ') \
         .replace('瞓', '訓') \
+        .replace('瞔', '睛') \
         .replace('码', '碼') \
         .replace('硏', '研') \
+        .replace('磒', '隕') \
         .replace('磫', '蹤') \
+        .replace('礳', '磨') \
         .replace('礴', 'bok') \
         .replace('礼', '禮') \
         .replace('祎', '禕') \
@@ -450,6 +469,7 @@ def cleanse_special_char(inputText):
         .replace('稣', '穌') \
         .replace('稳', '穩') \
         .replace('穏', '穩') \
+        .replace('窂', '牢') \
         .replace('窍', '竊') \
         .replace('窑', 'yiu') \
         .replace('窦', '竇') \
@@ -472,12 +492,15 @@ def cleanse_special_char(inputText):
         .replace('綫', '線') \
         .replace('緃', '縱') \
         .replace('緍', '婚') \
+        .replace('縂', '總') \
+        .replace('繋', '繫') \
         .replace('纎', '纖') \
         .replace('纒', '纏') \
         .replace('约', '約') \
         .replace('级', '級') \
         .replace('纪', '記') \
         .replace('纳', '納') \
+        .replace('纸', '紙') \
         .replace('纹', '紋') \
         .replace('细', '細') \
         .replace('终', '終') \
@@ -485,9 +508,11 @@ def cleanse_special_char(inputText):
         .replace('给', '給') \
         .replace('统', '統') \
         .replace('维', '維') \
+        .replace('缼', '缺') \
         .replace('罗', '羅') \
         .replace('羣', '群') \
         .replace('耻', '恥') \
+        .replace('联', '聯') \
         .replace('聴', '聽') \
         .replace('聼', '聽') \
         .replace('肠', '腸') \
@@ -507,8 +532,10 @@ def cleanse_special_char(inputText):
         .replace('药', '藥') \
         .replace('莱', '萊') \
         .replace('菓', 'gwo ') \
+        .replace('著', '著') \
         .replace('葱', '蔥') \
         .replace('藴', '蘊') \
+        .replace('蘯', '蕩') \
         .replace('虚', '虛') \
         .replace('虽', '雖') \
         .replace('蚁', '蟻') \
@@ -522,6 +549,7 @@ def cleanse_special_char(inputText):
         .replace('袮', '你') \
         .replace('裇', 'seuk ') \
         .replace('裏', '裡') \
+        .replace('覊', '羈') \
         .replace('见', '見') \
         .replace('誉', '譽') \
         .replace('誔', '誕') \
@@ -541,6 +569,7 @@ def cleanse_special_char(inputText):
         .replace('请', '請') \
         .replace('课', '課') \
         .replace('谢', '謝') \
+        .replace('谱', '譜') \
         .replace('貎', '貌') \
         .replace('败', '敗') \
         .replace('费', '費') \
@@ -551,6 +580,7 @@ def cleanse_special_char(inputText):
         .replace('踪', '蹤') \
         .replace('踭', 'zoung ') \
         .replace('躭', '耽') \
+        .replace('躱', '躲') \
         .replace('軚', 'tie ') \
         .replace('輭', '軟') \
         .replace('辅', '輔') \
@@ -589,6 +619,7 @@ def cleanse_special_char(inputText):
         .replace('閲', '閱') \
         .replace('闻', '聞') \
         .replace('阳', '陽') \
+        .replace('陥', '陷') \
         .replace('険', '險') \
         .replace('随', '隨') \
         .replace('隐', '隱') \
@@ -599,11 +630,13 @@ def cleanse_special_char(inputText):
         .replace('靑', '青') \
         .replace('靱', '韌') \
         .replace('顔', '顏') \
+        .replace('顕', '顯') \
         .replace('顶', '頂') \
         .replace('顺', '順') \
         .replace('顿', '頓') \
         .replace('领', '領') \
         .replace('频', '頻') \
+        .replace('颗', '顆') \
         .replace('餸', 'sung ') \
         .replace('饭', '飯') \
         .replace('饿', '餓') \
@@ -612,6 +645,7 @@ def cleanse_special_char(inputText):
         .replace('験', '驗') \
         .replace('髗', '髏') \
         .replace('髪', '髮') \
+        .replace('鬬', '鬥') \
         .replace('鯭', 'mank') \
         .replace('鰂', '魚則') \
         .replace('鰐', '鱷') \
@@ -620,6 +654,7 @@ def cleanse_special_char(inputText):
         .replace('鷄', '雞') \
         .replace('鹷', '齡') \
         .replace('麪', '麵') \
+        .replace('麫', '麵') \
         .replace('麽', '麼') \
         .replace('黒', '黑') \
         .replace('스', 'x') \
