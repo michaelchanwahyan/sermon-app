@@ -992,7 +992,7 @@ for index, row in df.iterrows():
                     h1_reached = False
                     header2_curr = header1
                     if not header2_exists:
-                        ch_desired = c2ch_dict.get(c)
+                        ch_desired = cn2 #c2ch_dict.get(c)
                         for bktxtline in bktxtlines:
                             if not h1_reached:
                                 h1_reached = header1 in bktxtline[:len(header1)]
