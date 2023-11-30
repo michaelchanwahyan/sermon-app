@@ -26,10 +26,10 @@ jobs:
     - name: Lint with pylint
       run: |
         pip install pylint
-        pylint /projects/DSCCC/generate_sermonbook.py
-        pylint /projects/HKBC/generate_sermonbook.py
-        pylint /projects/JNG/generate_sermonbook.py
-        pylint /projects/YFCX/generate_sermonbook.py
+        pylint ./projects/DSCCC/generate_sermonbook.py
+        pylint ./projects/HKBC/generate_sermonbook.py
+        pylint ./projects/JNG/generate_sermonbook.py
+        pylint ./projects/YFCX/generate_sermonbook.py
         ...
 
     - name: Lint with black
