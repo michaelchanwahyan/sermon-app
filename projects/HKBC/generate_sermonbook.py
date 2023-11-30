@@ -38,262 +38,262 @@ def cleanse_p_tag_span_tag(inputText):
 
 
 def cleanse_special_char(inputText):
-    txt2 = inputText \
-        .replace('&nbsp;', '') \
-        .replace('&quot;', '\'') \
-        .replace('&#39;', '\'') \
-        .replace('&ldquo;', '``') \
-        .replace('&rdquo;', '"') \
-        .replace('&lsquo;', '`') \
-        .replace('&rsquo;', '\'') \
-        .replace('&hellip;', '...') \
-        .replace('&Omicron;', '零') \
-        .replace('&mdash;', '─') \
-        .replace('&ndash;', '─') \
-        .replace('\\tab', ' ') \
-        .replace('\\cs16', '') \
-        .replace(' &divide;', '$\\div$') \
-        .replace(' X ', '$\\times$') \
-        .replace('&eacute;', '\\\'e') \
-        .replace('ἵ', 'ι') \
-        .replace('&nu;', 'ν') \
-        .replace('&alpha;', 'α') \
-        .replace('&beta;', 'β') \
-        .replace('&gamma;', 'γ') \
-        .replace('&delta;', 'δ') \
-        .replace('&epsilon;', 'ε') \
-        .replace('&sigma;', 'σ') \
-        .replace('&iota;', 'ι') \
-        .replace('&sigmaf;', 'ς') \
-        .replace('-&gt', '$\rightarrow$') \
-        .replace('שְׁאוֹל&lrm;', '\sblgoodhebrew{שְׁאוֹל}') \
-        .replace('&middot;', '$\\,\\cdot\\,$') \
-        .replace('哋', '地') \
-        .replace('嚟', '黎') \
-        .replace('嘅', 'ge ') \
-        .replace('喺', '係') \
-        .replace('㗎', '架') \
-        .replace('咗', 'jor ') \
-        .replace('嗰', 'gwo ') \
-        .replace('啲', 'D ') \
-        .replace('嗱', 'la ') \
-        .replace('嘢', 'ye ') \
-        .replace('裏', '裡') \
-        .replace('産', '產') \
-        .replace('啱', 'arm ') \
-        .replace('唞', '抖') \
-        .replace('啓', '啟') \
-        .replace('攞', 'lor ') \
-        .replace('啫', 'je ') \
-        .replace('噃', 'bor ') \
-        .replace('吖', '呀') \
-        .replace('噏', 'up ') \
-        .replace('爲', '為') \
-        .replace('揾', '搵') \
-        .replace('揸', 'zar ') \
-        .replace('揼', 'dump ') \
-        .replace('圣', '聖') \
-        .replace('冚', 'cum ') \
-        .replace('絶', '絕') \
-        .replace('衞', '衛') \
-        .replace('誔', '誕') \
-        .replace('歴', '歷') \
-        .replace('亜', '亞') \
-        .replace('様', '樣') \
-        .replace('祢', '你') \
-        .replace('窰', 'yiu ') \
-        .replace('纪', '記') \
-        .replace('緃', '縱') \
-        .replace('约', '約') \
-        .replace('櫈', '凳') \
-        .replace('枱', '台') \
-        .replace('喐', 'yuk ') \
-        .replace('氹', 'tum ') \
-        .replace('着', '著') \
-        .replace('孭', 'meh ') \
-        .replace('瞓', '訓') \
-        .replace('嫲', '麻') \
-        .replace('嘥', 'sai ') \
-        .replace('嘭', 'bang ') \
-        .replace('軚', 'tie ') \
-        .replace('揦', 'la ') \
-        .replace('恒', '恆') \
-        .replace('滙', '匯') \
-        .replace('啩', '掛') \
-        .replace('肶', '脾') \
-        .replace('糭', '粽') \
-        .replace('糉', '粽') \
-        .replace('邨', '村') \
-        .replace('冧', 'lum ') \
-        .replace('㖭', '添') \
-        .replace('攰', 'gui ') \
-        .replace('埗', 'Po ') \
-        .replace('燶', 'lone ') \
-        .replace('峯', '峰') \
-        .replace('餸', 'sung ') \
-        .replace('忟', 'mung ') \
-        .replace('両', '兩') \
-        .replace('掹', 'mung ') \
-        .replace('吔', 'ye ') \
-        .replace('綫', '線') \
-        .replace('乸', '痴') \
-        .replace('菓', 'gwo ') \
-        .replace('嘞', '啦') \
-        .replace('吡', '悲') \
-        .replace('劏', 'tong ') \
-        .replace('喼', 'gip ') \
-        .replace('睺', 'hau ') \
-        .replace('脷', '利') \
-        .replace('濶', '闊') \
-        .replace('紥', 'zhak ') \
-        .replace('踎', 'mau ') \
-        .replace('鈎', '勾') \
-        .replace('廸', 'dik ') \
-        .replace('噔', '等') \
-        .replace('梘', 'gang ') \
-        .replace('厠', '廁') \
-        .replace('糍', 'chi ') \
-        .replace('搲', '掘') \
-        .replace('㷫', 'hing ') \
-        .replace('㷫', 'hing ') \
-        .replace('丶', '. ') \
-        .replace('晩', '晚') \
-        .replace('㷛', '煲') \
-        .replace('眞', '真') \
-        .replace('等', '等') \
-        .replace('丿', '. ') \
-        .replace('銹', '鏽') \
-        .replace('曱甴', '小強') \
-        .replace('鎅', 'gai ') \
-        .replace('踭', 'zoung ') \
-        .replace('牀', '床') \
-        .replace('唥', 'lang ') \
-        .replace('曺', '嘈') \
-        .replace('㩒', '禁') \
-        .replace('抺', '抹') \
-        .replace('敍', '敘') \
-        .replace('叙', '敘') \
-        .replace('腭', 'ngok ') \
-        .replace('衆', '眾') \
-        .replace('哣', '逗') \
-        .replace('刧', '劫') \
-        .replace('鱲', 'Lap ') \
-        .replace('儍', 'sor ') \
-        .replace('丨', '. ') \
-        .replace('錬', '鏈') \
-        .replace('畀', '比') \
-        .replace('喆', '. ') \
-        .replace('裇', 'seuk ') \
-        .replace('镕', 'yeun ') \
-        .replace('効', '效') \
-        .replace('酦', '. ') \
-        .replace('劵', '券') \
-        .replace('粧', '裝') \
-        .replace('卽', '即') \
-        .replace('㬹', 'zoung ') \
-        .replace('啰', 'lor ') \
-        .replace('栢', '柏') \
-        .replace('鰂', '魚則') \
-        .replace('逹', '達') \
-        .replace('堃', '坤') \
-        .replace('讃', '讚') \
-        .replace('⾃', '自') \
-        .replace('频', '頻') \
-        .replace('记', '記') \
-        .replace('话', '話') \
-        .replace('竉', '寵') \
-        .replace('呑', '吞') \
-        .replace('傈', '僳') \
-        .replace('淸', '清') \
-        .replace('寛', '寬') \
-        .replace('唿', '弗') \
-        .replace('叁', '參') \
-        .replace('唓', '即係') \
-        .replace('嘣', '崩') \
-        .replace('廻', '迴') \
-        .replace('麽', '麼') \
-        .replace('猬', '蝟') \
-        .replace('綉', '繡') \
-        .replace('箓', '籙') \
-        .replace('氷', '冰') \
-        .replace('祎', '禕') \
-        .replace('咔', 'ka ') \
-        .replace('&', ' and ') \
-        .replace('羣', '群') \
-        .replace('鍳', '鑒') \
-        .replace('僞', '偽') \
-        .replace('\ue226', '祐') \
-        .replace('隣', '鄰') \
-        .replace('\u200b', '') \
-        .replace('\u3000', '~') \
-        .replace('\ue233', '身') \
-        .replace('\ue313', '涉') \
-        .replace('\ue314', '麃') \
-        .replace('\ue2de', '鬮') \
-        .replace('\ue2df', '鬥') \
-        .replace('\ue096', '芒') \
-        .replace('\ue0e1', '載') \
-        .replace('\ue05e', '瑟') \
-        .replace('\ue05e', '繫') \
-        .replace('\ue052', '的') \
-        .replace('\ue05e', '配') \
-        .replace('\ue010', '憂') \
-        .replace('\ue0f5', '付') \
-        .replace('\ue17a', '使') \
-        .replace('\ue031', '步') \
-        .replace('\ue315', '犁') \
-        .replace('\ue339', '草') \
-        .replace('\ue14c', '冤') \
-        .replace('释', '釋') \
-        .replace('义', '義') \
-        .replace('请', '請') \
-        .replace('没', '沒') \
-        .replace('赋', '賦') \
-        .replace('诗', '詩') \
-        .replace('稣', '穌') \
-        .replace('细', '細') \
-        .replace('随', '隨') \
-        .replace('细', '細') \
-        .replace('终', '終') \
-        .replace('残', '殘') \
-        .replace('结', '結') \
-        .replace('给', '給') \
-        .replace('内', '內') \
-        .replace('统', '統') \
-        .replace('强', '強') \
-        .replace('课', '課') \
-        .replace('别', '別') \
-        .replace('专', '專') \
-        .replace('却', '卻') \
-        .replace('\ue1f5', '') \
-        .replace('\ue1f5', '') \
-        .replace('\ue045', '實') \
-        .replace('\ue00e', '洶') \
-        .replace('窑', 'yiu') \
-        .replace('躭', '耽') \
-        .replace('\ue097', '呔') \
-        .replace('亘', '亙') \
-        .replace('‐', '-') \
-        .replace('犠', '犧') \
-        .replace('怱', '匆') \
-        .replace('｣', '」') \
-        .replace('｢', '「') \
-        .replace('﹑', '、') \
-        .replace('寃', '冤') \
-        .replace('閙', '鬧') \
-        .replace('虚', '虛') \
-        .replace('温', '溫') \
-        .replace('凖', '準') \
-        .replace('墻', '牆') \
-        .replace('侓', '律') \
-        .replace('﹣', '-') \
-        .replace('踪', '蹤') \
-        .replace('鐧', '簡') \
-        .replace('袮', '你') \
-        .replace('涶', '唾') \
-        .replace('説', '說') \
-        .replace('駡', '罵') \
-        .strip()
+    txt2 = inputText
+    txt2 = txt2.replace('&nbsp;', '')
+    txt2 = txt2.replace('&quot;', '\'')
+    txt2 = txt2.replace('&#39;', '\'')
+    txt2 = txt2.replace('&ldquo;', '``')
+    txt2 = txt2.replace('&rdquo;', '"')
+    txt2 = txt2.replace('&lsquo;', '`')
+    txt2 = txt2.replace('&rsquo;', '\'')
+    txt2 = txt2.replace('&hellip;', '...')
+    txt2 = txt2.replace('&Omicron;', '零')
+    txt2 = txt2.replace('&mdash;', '─')
+    txt2 = txt2.replace('&ndash;', '─')
+    txt2 = txt2.replace('\\tab', ' ')
+    txt2 = txt2.replace('\\cs16', '')
+    txt2 = txt2.replace(' &divide;', '$\\div$')
+    txt2 = txt2.replace(' X ', '$\\times$')
+    txt2 = txt2.replace('&eacute;', '\\\'e')
+    txt2 = txt2.replace('ἵ', 'ι')
+    txt2 = txt2.replace('&nu;', 'ν')
+    txt2 = txt2.replace('&alpha;', 'α')
+    txt2 = txt2.replace('&beta;', 'β')
+    txt2 = txt2.replace('&gamma;', 'γ')
+    txt2 = txt2.replace('&delta;', 'δ')
+    txt2 = txt2.replace('&epsilon;', 'ε')
+    txt2 = txt2.replace('&sigma;', 'σ')
+    txt2 = txt2.replace('&iota;', 'ι')
+    txt2 = txt2.replace('&sigmaf;', 'ς')
+    txt2 = txt2.replace('-&gt', '$\rightarrow$')
+    txt2 = txt2.replace('שְׁאוֹל&lrm;', '\sblgoodhebrew{שְׁאוֹל}')
+    txt2 = txt2.replace('&middot;', '$\\,\\cdot\\,$')
+    txt2 = txt2.replace('哋', '地')
+    txt2 = txt2.replace('嚟', '黎')
+    txt2 = txt2.replace('嘅', 'ge ')
+    txt2 = txt2.replace('喺', '係')
+    txt2 = txt2.replace('㗎', '架')
+    txt2 = txt2.replace('咗', 'jor ')
+    txt2 = txt2.replace('嗰', 'gwo ')
+    txt2 = txt2.replace('啲', 'D ')
+    txt2 = txt2.replace('嗱', 'la ')
+    txt2 = txt2.replace('嘢', 'ye ')
+    txt2 = txt2.replace('裏', '裡')
+    txt2 = txt2.replace('産', '產')
+    txt2 = txt2.replace('啱', 'arm ')
+    txt2 = txt2.replace('唞', '抖')
+    txt2 = txt2.replace('啓', '啟')
+    txt2 = txt2.replace('攞', 'lor ')
+    txt2 = txt2.replace('啫', 'je ')
+    txt2 = txt2.replace('噃', 'bor ')
+    txt2 = txt2.replace('吖', '呀')
+    txt2 = txt2.replace('噏', 'up ')
+    txt2 = txt2.replace('爲', '為')
+    txt2 = txt2.replace('揾', '搵')
+    txt2 = txt2.replace('揸', 'zar ')
+    txt2 = txt2.replace('揼', 'dump ')
+    txt2 = txt2.replace('圣', '聖')
+    txt2 = txt2.replace('冚', 'cum ')
+    txt2 = txt2.replace('絶', '絕')
+    txt2 = txt2.replace('衞', '衛')
+    txt2 = txt2.replace('誔', '誕')
+    txt2 = txt2.replace('歴', '歷')
+    txt2 = txt2.replace('亜', '亞')
+    txt2 = txt2.replace('様', '樣')
+    txt2 = txt2.replace('祢', '你')
+    txt2 = txt2.replace('窰', 'yiu ')
+    txt2 = txt2.replace('纪', '記')
+    txt2 = txt2.replace('緃', '縱')
+    txt2 = txt2.replace('约', '約')
+    txt2 = txt2.replace('櫈', '凳')
+    txt2 = txt2.replace('枱', '台')
+    txt2 = txt2.replace('喐', 'yuk ')
+    txt2 = txt2.replace('氹', 'tum ')
+    txt2 = txt2.replace('着', '著')
+    txt2 = txt2.replace('孭', 'meh ')
+    txt2 = txt2.replace('瞓', '訓')
+    txt2 = txt2.replace('嫲', '麻')
+    txt2 = txt2.replace('嘥', 'sai ')
+    txt2 = txt2.replace('嘭', 'bang ')
+    txt2 = txt2.replace('軚', 'tie ')
+    txt2 = txt2.replace('揦', 'la ')
+    txt2 = txt2.replace('恒', '恆')
+    txt2 = txt2.replace('滙', '匯')
+    txt2 = txt2.replace('啩', '掛')
+    txt2 = txt2.replace('肶', '脾')
+    txt2 = txt2.replace('糭', '粽')
+    txt2 = txt2.replace('糉', '粽')
+    txt2 = txt2.replace('邨', '村')
+    txt2 = txt2.replace('冧', 'lum ')
+    txt2 = txt2.replace('㖭', '添')
+    txt2 = txt2.replace('攰', 'gui ')
+    txt2 = txt2.replace('埗', 'Po ')
+    txt2 = txt2.replace('燶', 'lone ')
+    txt2 = txt2.replace('峯', '峰')
+    txt2 = txt2.replace('餸', 'sung ')
+    txt2 = txt2.replace('忟', 'mung ')
+    txt2 = txt2.replace('両', '兩')
+    txt2 = txt2.replace('掹', 'mung ')
+    txt2 = txt2.replace('吔', 'ye ')
+    txt2 = txt2.replace('綫', '線')
+    txt2 = txt2.replace('乸', '痴')
+    txt2 = txt2.replace('菓', 'gwo ')
+    txt2 = txt2.replace('嘞', '啦')
+    txt2 = txt2.replace('吡', '悲')
+    txt2 = txt2.replace('劏', 'tong ')
+    txt2 = txt2.replace('喼', 'gip ')
+    txt2 = txt2.replace('睺', 'hau ')
+    txt2 = txt2.replace('脷', '利')
+    txt2 = txt2.replace('濶', '闊')
+    txt2 = txt2.replace('紥', 'zhak ')
+    txt2 = txt2.replace('踎', 'mau ')
+    txt2 = txt2.replace('鈎', '勾')
+    txt2 = txt2.replace('廸', 'dik ')
+    txt2 = txt2.replace('噔', '等')
+    txt2 = txt2.replace('梘', 'gang ')
+    txt2 = txt2.replace('厠', '廁')
+    txt2 = txt2.replace('糍', 'chi ')
+    txt2 = txt2.replace('搲', '掘')
+    txt2 = txt2.replace('㷫', 'hing ')
+    txt2 = txt2.replace('㷫', 'hing ')
+    txt2 = txt2.replace('丶', '. ')
+    txt2 = txt2.replace('晩', '晚')
+    txt2 = txt2.replace('㷛', '煲')
+    txt2 = txt2.replace('眞', '真')
+    txt2 = txt2.replace('等', '等')
+    txt2 = txt2.replace('丿', '. ')
+    txt2 = txt2.replace('銹', '鏽')
+    txt2 = txt2.replace('曱甴', '小強')
+    txt2 = txt2.replace('鎅', 'gai ')
+    txt2 = txt2.replace('踭', 'zoung ')
+    txt2 = txt2.replace('牀', '床')
+    txt2 = txt2.replace('唥', 'lang ')
+    txt2 = txt2.replace('曺', '嘈')
+    txt2 = txt2.replace('㩒', '禁')
+    txt2 = txt2.replace('抺', '抹')
+    txt2 = txt2.replace('敍', '敘')
+    txt2 = txt2.replace('叙', '敘')
+    txt2 = txt2.replace('腭', 'ngok ')
+    txt2 = txt2.replace('衆', '眾')
+    txt2 = txt2.replace('哣', '逗')
+    txt2 = txt2.replace('刧', '劫')
+    txt2 = txt2.replace('鱲', 'Lap ')
+    txt2 = txt2.replace('儍', 'sor ')
+    txt2 = txt2.replace('丨', '. ')
+    txt2 = txt2.replace('錬', '鏈')
+    txt2 = txt2.replace('畀', '比')
+    txt2 = txt2.replace('喆', '. ')
+    txt2 = txt2.replace('裇', 'seuk ')
+    txt2 = txt2.replace('镕', 'yeun ')
+    txt2 = txt2.replace('効', '效')
+    txt2 = txt2.replace('酦', '. ')
+    txt2 = txt2.replace('劵', '券')
+    txt2 = txt2.replace('粧', '裝')
+    txt2 = txt2.replace('卽', '即')
+    txt2 = txt2.replace('㬹', 'zoung ')
+    txt2 = txt2.replace('啰', 'lor ')
+    txt2 = txt2.replace('栢', '柏')
+    txt2 = txt2.replace('鰂', '魚則')
+    txt2 = txt2.replace('逹', '達')
+    txt2 = txt2.replace('堃', '坤')
+    txt2 = txt2.replace('讃', '讚')
+    txt2 = txt2.replace('⾃', '自')
+    txt2 = txt2.replace('频', '頻')
+    txt2 = txt2.replace('记', '記')
+    txt2 = txt2.replace('话', '話')
+    txt2 = txt2.replace('竉', '寵')
+    txt2 = txt2.replace('呑', '吞')
+    txt2 = txt2.replace('傈', '僳')
+    txt2 = txt2.replace('淸', '清')
+    txt2 = txt2.replace('寛', '寬')
+    txt2 = txt2.replace('唿', '弗')
+    txt2 = txt2.replace('叁', '參')
+    txt2 = txt2.replace('唓', '即係')
+    txt2 = txt2.replace('嘣', '崩')
+    txt2 = txt2.replace('廻', '迴')
+    txt2 = txt2.replace('麽', '麼')
+    txt2 = txt2.replace('猬', '蝟')
+    txt2 = txt2.replace('綉', '繡')
+    txt2 = txt2.replace('箓', '籙')
+    txt2 = txt2.replace('氷', '冰')
+    txt2 = txt2.replace('祎', '禕')
+    txt2 = txt2.replace('咔', 'ka ')
+    txt2 = txt2.replace('&', ' and ')
+    txt2 = txt2.replace('羣', '群')
+    txt2 = txt2.replace('鍳', '鑒')
+    txt2 = txt2.replace('僞', '偽')
+    txt2 = txt2.replace('\ue226', '祐')
+    txt2 = txt2.replace('隣', '鄰')
+    txt2 = txt2.replace('\u200b', '')
+    txt2 = txt2.replace('\u3000', '~')
+    txt2 = txt2.replace('\ue233', '身')
+    txt2 = txt2.replace('\ue313', '涉')
+    txt2 = txt2.replace('\ue314', '麃')
+    txt2 = txt2.replace('\ue2de', '鬮')
+    txt2 = txt2.replace('\ue2df', '鬥')
+    txt2 = txt2.replace('\ue096', '芒')
+    txt2 = txt2.replace('\ue0e1', '載')
+    txt2 = txt2.replace('\ue05e', '瑟')
+    txt2 = txt2.replace('\ue05e', '繫')
+    txt2 = txt2.replace('\ue052', '的')
+    txt2 = txt2.replace('\ue05e', '配')
+    txt2 = txt2.replace('\ue010', '憂')
+    txt2 = txt2.replace('\ue0f5', '付')
+    txt2 = txt2.replace('\ue17a', '使')
+    txt2 = txt2.replace('\ue031', '步')
+    txt2 = txt2.replace('\ue315', '犁')
+    txt2 = txt2.replace('\ue339', '草')
+    txt2 = txt2.replace('\ue14c', '冤')
+    txt2 = txt2.replace('释', '釋')
+    txt2 = txt2.replace('义', '義')
+    txt2 = txt2.replace('请', '請')
+    txt2 = txt2.replace('没', '沒')
+    txt2 = txt2.replace('赋', '賦')
+    txt2 = txt2.replace('诗', '詩')
+    txt2 = txt2.replace('稣', '穌')
+    txt2 = txt2.replace('细', '細')
+    txt2 = txt2.replace('随', '隨')
+    txt2 = txt2.replace('细', '細')
+    txt2 = txt2.replace('终', '終')
+    txt2 = txt2.replace('残', '殘')
+    txt2 = txt2.replace('结', '結')
+    txt2 = txt2.replace('给', '給')
+    txt2 = txt2.replace('内', '內')
+    txt2 = txt2.replace('统', '統')
+    txt2 = txt2.replace('强', '強')
+    txt2 = txt2.replace('课', '課')
+    txt2 = txt2.replace('别', '別')
+    txt2 = txt2.replace('专', '專')
+    txt2 = txt2.replace('却', '卻')
+    txt2 = txt2.replace('\ue1f5', '')
+    txt2 = txt2.replace('\ue1f5', '')
+    txt2 = txt2.replace('\ue045', '實')
+    txt2 = txt2.replace('\ue00e', '洶')
+    txt2 = txt2.replace('窑', 'yiu')
+    txt2 = txt2.replace('躭', '耽')
+    txt2 = txt2.replace('\ue097', '呔')
+    txt2 = txt2.replace('亘', '亙')
+    txt2 = txt2.replace('‐', '-')
+    txt2 = txt2.replace('犠', '犧')
+    txt2 = txt2.replace('怱', '匆')
+    txt2 = txt2.replace('｣', '」')
+    txt2 = txt2.replace('｢', '「')
+    txt2 = txt2.replace('﹑', '、')
+    txt2 = txt2.replace('寃', '冤')
+    txt2 = txt2.replace('閙', '鬧')
+    txt2 = txt2.replace('虚', '虛')
+    txt2 = txt2.replace('温', '溫')
+    txt2 = txt2.replace('凖', '準')
+    txt2 = txt2.replace('墻', '牆')
+    txt2 = txt2.replace('侓', '律')
+    txt2 = txt2.replace('﹣', '-')
+    txt2 = txt2.replace('踪', '蹤')
+    txt2 = txt2.replace('鐧', '簡')
+    txt2 = txt2.replace('袮', '你')
+    txt2 = txt2.replace('涶', '唾')
+    txt2 = txt2.replace('説', '說')
+    txt2 = txt2.replace('駡', '罵')
+    txt2 = txt2.strip()
     return txt2
 
 
