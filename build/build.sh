@@ -47,9 +47,9 @@ elif [ "$1" == "DSCCC" ] ; then
     cd ..
 elif [ "$1" == "YFCX" ] ; then
     cd $1
-    xelatex sermon_$1.tex
-    xelatex sermon_$1.tex
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../
+    xelatex sermon_$1_2020-latest.tex
+    xelatex sermon_$1_2020-latest.tex
+    rm -f sermon_$1_2020-latest.mtc*
+    mv sermon_$1_2020-latest.pdf ../../
     cd ..
 fi

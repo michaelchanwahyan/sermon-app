@@ -468,7 +468,7 @@ with open('./index_byt.csv', 'r') as fp:
     lines = fp.readlines()
 fp.close()
 
-sermon_tex_filepath = f"../../build/YFCX/sermon_YFCX.tex"
+sermon_tex_filepath = f"../../build/YFCX/sermon_YFCX_2020-present.tex"
 # --------------------------------------
 # print the latex document : prefix
 # --------------------------------------
