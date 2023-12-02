@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+
+
 from subprocess import Popen, PIPE
 def execute_commands(commands):
     p = Popen(commands, shell=True, stdout=PIPE, stderr=PIPE)
@@ -8,6 +10,8 @@ def execute_commands(commands):
     print()
     print(err)
     return out, err
+
+
 from datetime import datetime, timedelta
 import time
 import json
@@ -23,10 +27,14 @@ import re
 from re import compile as recompile
 
 print('done !')
+
+
 # obtain the whole source of HKBC
 import os
 hkbc_path = '../../data/HKBC/'
 filelist = os.listdir(hkbc_path)
+
+
 for filename in filelist:
     if not filename.isdigit():
         print(f"{filename} is unable to be converted to integer !")
@@ -35,8 +43,16 @@ filelist = [ filename for filename in filelist if filename.isdigit() ]
 print("done !")
 
 
+
+
+
+
+
+
 # the initial of different kind of preacher
 preacherTitle_list = ['博士','牧師','傳道','老師','先生','教授','弟兄','社長','長老','醫生']
+
+
 # the bible books
 book_list = [
     '創世記','出埃及記','利未記','民數記','申命記',
@@ -54,7 +70,15 @@ book_list = [
     '約翰三書','猶大書','啟示錄']
 
 
+
+
+
+
+
+
 from html.parser import HTMLParser
+
+
 class MyHTMLParser(HTMLParser):
     sermonNum = 0
     titleStr = '' # the title
@@ -103,6 +127,8 @@ class MyHTMLParser(HTMLParser):
             # print(self.speaker)
             self.speakerFound = False
         return
+
+
 def sermonBkgndInfoRetrieval(pathfilename):
     with open(pathfilename, "r") as fp:
         htmltext = fp.read()
@@ -110,6 +136,8 @@ def sermonBkgndInfoRetrieval(pathfilename):
     parser = MyHTMLParser()
     parser.feed(htmltext)
     return parser
+
+
 def sermonBibleVersesCoverageRetrieval(pathfilename):
     with open(pathfilename, "r") as fp:
         lines = fp.readlines()
@@ -175,11 +203,15 @@ def sermonBibleVersesCoverageRetrieval(pathfilename):
                 else:
                     break
     return b, c_start, v_start, c_end, v_end
+
+
 # testitem = sermonBkgndInfoRetrieval(f"{hkbc_path}{1203}")
 # print(testitem.speaker)
 # print(estitem.titleStr)
 # print(testitem.confNum)
 # print(testitem.lectNum)
+
+
 handles = []
 for filename in filelist:
     if int(filename) % 100 == 0:
@@ -192,11 +224,15 @@ for filename in filelist:
             sermonBibleVersesCoverageRetrieval(f"{hkbc_path}{filename}")
         )
     )
+
+
 def remove_preacher_title(preacher_with_title, title_list):
     for title in title_list:
         if title in preacher_with_title:
             x = preacher_with_title.find(title)
             return preacher_with_title[:x]
+
+
 df = pd.DataFrame(
     columns = [
         'code',
@@ -263,10 +299,20 @@ for h in handles:
          )
         ]
     )
+
+
 print(df)
+
+
 df['conference no.'] = pd.to_numeric(df['conference no.'], errors='coerce')
+
+
 df['lecture no.'] = pd.to_numeric(df['lecture no.'], errors='coerce')
+
+
 df = df.sort_values(['conference no.', 'preacher', 'lecture no.'])
+
+
 for index, row in df.iterrows():
     print(
         row['code'],
@@ -280,6 +326,18 @@ for index, row in df.iterrows():
     )
 
 
+
+
+
+
+
+
 df.to_csv('./index_byc.csv', index=False)
+
+
+
+
+
+
 
 

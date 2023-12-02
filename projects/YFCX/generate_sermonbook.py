@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+
+
 from subprocess import Popen, PIPE
 def execute_commands(commands):
     p = Popen(commands, shell=True, stdout=PIPE, stderr=PIPE)
@@ -8,26 +10,45 @@ def execute_commands(commands):
     print()
     print(err)
     return out, err
+
+
 import os.path
 import pickle as pkl
 import re
 #from re import compile as recompile
 print('done !')
+
+
 with open("code_dictionary.pkl", "rb") as fp:
     c2p_dict, bk2bkorder_dict, c2b_dict, c2ch_dict, c2v_dict, c2s_dict, c2t_dict, c2bvc_dict = pkl.load(fp)
 fp.close()
+
+
 with open("x2code_dictionary.pkl", "rb") as fp:
     p2c_dict, b2c_dict = pkl.load(fp)
 fp.close()
+
+
 # sermon book for YFCX shall be arranged in chronicle order
+
+
 # compile regular expression rgx to cater math symbol '^'
+
+
 rgx = re.compile(r'([A-Za-z0-9=]+)\^([A-Za-z0-9\-]+)')
+
+
 print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^2\')" :', rgx.sub(r'$\1^\2$', 'E=MC^-2'))
 
+
+
 '''### print the latex document : sermon content'''
+
+
 def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = rgx.sub(r'$\1^\2$', cantonText)
     cantonText = re.sub(r'&', ' and ', cantonText)
+    cantonText = re.sub(r'⋯', '...', cantonText)
     cantonText = re.sub(r'⾃', '自', cantonText)
     cantonText = re.sub(r'㖭', '添', cantonText)
     cantonText = re.sub(r'㗎', '架', cantonText)
@@ -48,10 +69,13 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'亘', '亙', cantonText)
     cantonText = re.sub(r'亜', '亞', cantonText)
     cantonText = re.sub(r'亵', '褻', cantonText)
+    cantonText = re.sub(r'亿', '億', cantonText)
     cantonText = re.sub(r'仅', '僅', cantonText)
     cantonText = re.sub(r'们', '們', cantonText)
     cantonText = re.sub(r'会', '會', cantonText)
+    cantonText = re.sub(r'伦', '倫', cantonText)
     cantonText = re.sub(r'侓', '律', cantonText)
+    cantonText = re.sub(r'侣', '侶', cantonText)
     cantonText = re.sub(r'傈', '僳', cantonText)
     cantonText = re.sub(r'僞', '偽', cantonText)
     cantonText = re.sub(r'儍', 'sor ', cantonText)
@@ -79,7 +103,9 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'历', '歷', cantonText)
     cantonText = re.sub(r'厠', '廁', cantonText)
     cantonText = re.sub(r'叁', '參', cantonText)
+    cantonText = re.sub(r'叄', '參', cantonText)
     cantonText = re.sub(r'叙', '敘', cantonText)
+    cantonText = re.sub(r'叹', '嘆', cantonText)
     cantonText = re.sub(r'吓', 'o下', cantonText)
     cantonText = re.sub(r'吔', 'ye ', cantonText)
     cantonText = re.sub(r'吖', '呀', cantonText)
@@ -89,6 +115,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'呕', '', cantonText)
     cantonText = re.sub(r'咔', 'ka ', cantonText)
     cantonText = re.sub(r'咗', 'jor ', cantonText)
+    cantonText = re.sub(r'咣', '剛', cantonText)
     cantonText = re.sub(r'咤', 'tak', cantonText)
     cantonText = re.sub(r'哋', '地', cantonText)
     cantonText = re.sub(r'响', '響', cantonText)
@@ -128,6 +155,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'嚿', '舊', cantonText)
     cantonText = re.sub(r'圣', '聖', cantonText)
     cantonText = re.sub(r'坂', '板', cantonText)
+    cantonText = re.sub(r'坚', '堅', cantonText)
     cantonText = re.sub(r'垫', '墊', cantonText)
     cantonText = re.sub(r'埗', 'Po ', cantonText)
     cantonText = re.sub(r'堃', '坤', cantonText)
@@ -222,6 +250,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'滥', '濫', cantonText)
     cantonText = re.sub(r'濶', '闊', cantonText)
     cantonText = re.sub(r'瀞', '靜', cantonText)
+    cantonText = re.sub(r'灯', '燈', cantonText)
     cantonText = re.sub(r'焔', '焰', cantonText)
     cantonText = re.sub(r'燶', 'lone ', cantonText)
     cantonText = re.sub(r'爲', '為', cantonText)
@@ -235,6 +264,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'産', '產', cantonText)
     cantonText = re.sub(r'畀', '比', cantonText)
     cantonText = re.sub(r'疗', '療', cantonText)
+    cantonText = re.sub(r'疮', '瘡', cantonText)
     cantonText = re.sub(r'痪', '瘓', cantonText)
     cantonText = re.sub(r'瘆', '慘', cantonText)
     cantonText = re.sub(r'瘪', '癟', cantonText)
@@ -245,6 +275,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'着', '著', cantonText)
     cantonText = re.sub(r'睺', 'hau ', cantonText)
     cantonText = re.sub(r'瞓', '訓', cantonText)
+    cantonText = re.sub(r'码', '碼', cantonText)
     cantonText = re.sub(r'礼', '禮', cantonText)
     cantonText = re.sub(r'祎', '禕', cantonText)
     cantonText = re.sub(r'祢', '你', cantonText)
@@ -256,6 +287,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'稳', '穩', cantonText)
     cantonText = re.sub(r'窍', '竊', cantonText)
     cantonText = re.sub(r'窑', 'yiu', cantonText)
+    cantonText = re.sub(r'窦', '竇', cantonText)
     cantonText = re.sub(r'窰', 'yiu ', cantonText)
     cantonText = re.sub(r'竉', '寵', cantonText)
     cantonText = re.sub(r'竪', '豎', cantonText)
@@ -295,6 +327,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'荣', '榮', cantonText)
     cantonText = re.sub(r'荧', '螢', cantonText)
     cantonText = re.sub(r'药', '藥', cantonText)
+    cantonText = re.sub(r'莱', '萊', cantonText)
     cantonText = re.sub(r'菓', 'gwo ', cantonText)
     cantonText = re.sub(r'虚', '虛', cantonText)
     cantonText = re.sub(r'虽', '雖', cantonText)
@@ -355,8 +388,10 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'険', '險', cantonText)
     cantonText = re.sub(r'随', '隨', cantonText)
     cantonText = re.sub(r'隣', '鄰', cantonText)
+    cantonText = re.sub(r'雑', '雜', cantonText)
     cantonText = re.sub(r'雳', '靂', cantonText)
     cantonText = re.sub(r'顔', '顏', cantonText)
+    cantonText = re.sub(r'领', '領', cantonText)
     cantonText = re.sub(r'频', '頻', cantonText)
     cantonText = re.sub(r'餸', 'sung ', cantonText)
     cantonText = re.sub(r'饭', '飯', cantonText)
@@ -373,8 +408,12 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'풀', '阿門', cantonText)
     cantonText = re.sub(r'�', '', cantonText)
     return cantonText
+
+
 p_list = list(p2c_dict.keys())
 print(sorted(p_list))
+
+
 def check_in_year_range(code, year_range=[2012,2018]):
     # tstr = c2t_dict.get(code, ' ')
     # # print(tstr)
@@ -385,11 +424,19 @@ def check_in_year_range(code, year_range=[2012,2018]):
             in_range = True
             break
     return in_range
+
+
 with open("./index_byt.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
+
+
 print('sermon count:', len(lines))
+
+
 rgx_bv = re.compile(r'(?<=\d)[_](?=\d)')
+
+
 def yfcx_sermon_title_processing(cc):
     sstr = c2s_dict.get(cc, ' ')
     sstr = re.sub(r'[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]', '', sstr) # remove date from title
@@ -401,6 +448,8 @@ def yfcx_sermon_title_processing(cc):
     )
     sstr = sstr.strip()
     return sstr
+
+
 # sermon tex generation
 progressStepCnt = 0
 # --------------------------------------
@@ -639,5 +688,11 @@ _ = os.system("cat ../afterword.tex >> " + sermon_tex_filepath)
 # --------------------------------------
 _ = os.system("cat ../postfix.tex >> " + sermon_tex_filepath)
 print("done !")
+
+
+
+
+
+
 
 

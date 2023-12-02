@@ -13,13 +13,15 @@ def execute_commands(commands):
     print()
     print(err)
     return out, err
+
+
 """
     js = json.loads(f.read())
     cells = js['cells']
 
 outpath = path.replace(".ipynb",".py")
 with open(outpath, "w", encoding="utf-8") as f:
-    f.write('#!/usr/local/bin/python3\n')
+    f.write('#!/usr/local/bin/python3\n\n\n')
     f.write(injection)
     for cell in cells:
         source = "".join(cell['source'])
@@ -38,7 +40,7 @@ with open(outpath, "w", encoding="utf-8") as f:
             # avoid inline matplotlib enablling by commenting out
             source = "#" + source
 
-        f.write(source+"\n") if cell['cell_type'] == "code" else f.write("\n'''"+source+"'''\n")
+        f.write(source+"\n\n\n") if cell['cell_type'] == "code" else f.write("\n'''"+source+"'''\n\n\n")
 
 with open(outpath, "r", encoding="utf-8") as f:
     pass

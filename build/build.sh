@@ -19,6 +19,12 @@ if [ "$1" == "JNG" ] ; then
     rm -f sermon_$1_2021-22.mtc*
     mv sermon_$1_2021-22.pdf ../../
     cd ..
+    cd $1
+    xelatex sermon_$1_2023-24.tex
+    xelatex sermon_$1_2023-24.tex
+    rm -f sermon_$1_2023-24.mtc*
+    mv sermon_$1_2023-24.pdf ../../
+    cd ..
 elif [ "$1" == "HKBC" ] ; then
     cd $1
     xelatex sermon_$1_1928-2007.tex

@@ -16,6 +16,7 @@ the foldername here indicates a shortform of the sermon textual or audio source
 | YFC         | Yan Fook Church                             | 播道會恩福堂               | [youtube channel](https://www.youtube.com/yanfookchurch)                           |
 | YOC         | Yau Oi Church                               | 中華宣道會友愛堂           | [youtube channel](https://www.youtube.com/@user-vg6iu5wh1g)                        |
 | ACSMHK      |                                             | 宣道書局宣道傳意台         | [youtube channel](https://www.youtube.com/@acsmhk)                                 |
+| WWBS        | Worldwide Bible Society                     | 環球聖經公會               | [youtube channel](https://youtube.com/@WorldwideBibleSociety)                   |
 | DSCCC       | Divinity School of Chung Chi College, CUHK  | 香港中文大學崇基學院神學院 | [chaplaincy site](https://www.ccc.cuhk.edu.hk/tc/content.php?wid=739)        |
 |             |                                             |                            | [vinemedia site](https://www.vinemedia.org/category/course/bible-teaching/sunday-service-1/) |
 

@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+
+
 from subprocess import Popen, PIPE
 def execute_commands(commands):
     p = Popen(commands, shell=True, stdout=PIPE, stderr=PIPE)
@@ -8,23 +10,41 @@ def execute_commands(commands):
     print()
     print(err)
     return out, err
+
+
 import sys
 import os
 import auditok
 import azure.cognitiveservices.speech as speechsdk
 # you need pip3 install azure-cognitiveservices-speech
 
+
+
 '''### Run By Your Host System
 ffmpeg -i ~/One*/TPPHC/SERMON/Johnson_Ng_mydownload/*-xxxxxxxxxxx.mp3 ~/SOURCE/sermon-app/projects/xxxxxxxxxxx.wav'''
+
+
 target_code = sys.argv[1] # 'xxxxxxxxxxx'
+
+
 print(f'\n\n\nls ../../data/JNG/ | grep -- {target_code}\n\n\n')
+
+
 if os.path.isfile("../../data/JNG/" + target_code + ".txt"):
     print(f"file ../../data/JNG/{target_code}.txt already exist !")
     print("exit !")
     exit()
+
+
 input_filename = f'{target_code}.wav'
+
+
 print(input_filename)
+
+
 _ = os.system('mkdir -p -- '+target_code)
+
+
 # split returns a generator of AudioRegion objects
 audio_regions = auditok.split(
     input_filename,
@@ -49,13 +69,21 @@ with open(f"../../auditok_data/JNG/auditok_log-{target_code}.txt", "w") as fp_au
         filename = r.save(target_code+'/'+input_filename[:-4]+"_{meta.start:08.3f}-{meta.end:08.3f}.wav")
         print("region saved as: {}".format(filename))
 fp_auditok.close()
+
+
 file_list = [f for f in os.listdir(target_code) if input_filename[:-4].replace('./','')+'_' in f]
 file_list.sort()
+
+
+
+
 
 with open('azs', 'r') as fpazs:
     azs = fpazs.read()
 fpazs.close()
 azs = azs.strip()
+
+
 def from_file(inputWavFileName):
     speech_config = speechsdk.SpeechConfig(
             subscription=azs,
@@ -84,8 +112,12 @@ def from_file(inputWavFileName):
     print(outTextFileName)
     print()
 
+
+
 '''### Run By Your Host System
 ls xxxxxxxxxxx/*.wav | wc -l'''
+
+
 fid_start = 0
 fid_end = 8000
 for fid in range(fid_start,min(len(file_list), fid_end)):
@@ -93,6 +125,12 @@ for fid in range(fid_start,min(len(file_list), fid_end)):
     if os.path.exists(target_code + '/' + file_list[fid]) \
         and not os.path.exists(target_code + '/' + file_list[fid][:-4]+'.txt'): \
         from_file(target_code + '/' + file_list[fid])
+
+
+
+
+
+
 
 
 with open(f'concat_{target_code}.py'.replace('./',''), 'w') as fp:
@@ -106,5 +144,11 @@ with open(f'concat_{target_code}.py'.replace('./',''), 'w') as fp:
             fp.write('fp.close()\n')
             fp.write('print(line)\n')
 fp.close()
+
+
 print(f'\n\nRun By Your Host System\n\npython3 concat_{target_code}.py > ../../data/JNG/{target_code}.txt\n\n'.replace('./',''))
+
+
+
+
 
