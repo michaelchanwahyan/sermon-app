@@ -474,18 +474,27 @@ sermon_tex_filepath = f"../../build/YFCX/sermon_YFCX.tex"
 # --------------------------------------
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: printing out prefixing")
-_ = os.system(f"cat ../prefix.tex | sed 's/Youtube Channel:/Youtube Channel: 播道會恩福堂 Yan Fook Church/' > " + sermon_tex_filepath)
+_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/粵語講道逐字稿 2020-present/' | sed 's/Youtube Channel:/Youtube Channel: 播道會恩福堂 Yan Fook Church/' > " + sermon_tex_filepath)
 
+
+
+'''## generate index table in chronicle order'''
+
+
+progressStepCnt += 1
+print(f"Step {progressStepCnt}: generate index in chronicle order")
+with open("./index_byt.csv", "r") as fp:
+    lines = fp.readlines()
+fp.close()
 # --------------------------------------
-# index table partitioned by preachers
+# index table sorted by chronicle order
 # --------------------------------------
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: writing TOC in chronicle order")
 with open(sermon_tex_filepath, "a") as fp:
     sermonCnt = 0
-    # p_prev = ''
-    # p_curr = ''
-    # p_id = 0
+    fp.write("\\section{目錄\\small{(順時)}}\n")
+    fp.write("\\label{sec:index_chronicle}\n")
     fp.write("{ \\scriptsize\n")
     # --------------------------------------
     # start of TOC table
@@ -504,14 +513,6 @@ with open(sermon_tex_filepath, "a") as fp:
         # --------------------------------------
         if os.path.isfile(f'../../data/YFCX/{cc}.txt'):
             sermonCnt += 1
-            # p_prev = p_curr
-            # p_curr = c2p_dict.get(cc)
-            # if p_prev != p_curr:
-            #     p_id += 1
-            #     fp.write("\\multicolumn{4}{c}{} \\\\\n")
-            #     fp.write("\\multicolumn{4}{c}{\\hyperref[ch:preacher"+str(p_id)+"]{"+p_curr+"}} \\\\\n") # <----------- this defines the column num
-            #     fp.write("\\multicolumn{4}{c}{} \\\\\n")
-            #     fp.write("\\hline\n")
             pstr = c2p_dict.get(cc, ' ')
             bstr = c2b_dict.get(cc, ' ')
             vstr = c2v_dict.get(cc, ' ')
@@ -526,20 +527,81 @@ with open(sermon_tex_filepath, "a") as fp:
                      + " \\\\\n")
     fp.write("\\end{xltabular}\n")
     # --------------------------------------
-    # end of partitioned-by-preachers table
+    # end of table sorted by chronicle order
     # --------------------------------------
     fp.write("}\n")
     print('sermon count in current book: %d' % sermonCnt)
+    fp.write("\\newpage\n\n")
 fp.close()
 
+
+
+'''## generate index in scriptual order'''
+
+
+progressStepCnt += 1
+print(f"Step {progressStepCnt}: generate index in scriptual order")
+with open("./index_byb.csv", "r") as fp:
+    lines = fp.readlines()
+fp.close()
 # --------------------------------------
-# per-preacher index and sermon content
+# index table sorted by scriptual order
 # --------------------------------------
 progressStepCnt += 1
-print(f"Step {progressStepCnt}: generate per-preacher TOC for each preacher section")
-# p_prev = ''
-# p_curr = ''
-# p_id = 0
+print(f"Step {progressStepCnt}: writing TOC in scriptual order")
+with open(sermon_tex_filepath, "a") as fp:
+    sermonCnt = 0
+    fp.write("\\section{目錄\\small{(順卷)}}\n")
+    fp.write("\\label{sec:index_scriptual}\n")
+    fp.write("{ \\scriptsize\n")
+    # --------------------------------------
+    # start of TOC table
+    # --------------------------------------
+    fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
+    fp.write("\\hline\n")
+    # --------------------------------------
+    # lines is the line content in index_byb
+    # --------------------------------------
+    for lineId in range(len(lines)):
+        line = lines[lineId]
+        cc = line.split(",")[0]
+        # --------------------------------------
+        # only include this code cc if it is
+        # ready in the transcription folder
+        # --------------------------------------
+        if os.path.isfile(f'../../data/YFCX/{cc}.txt'):
+            sermonCnt += 1
+            pstr = c2p_dict.get(cc, ' ')
+            bstr = c2b_dict.get(cc, ' ')
+            vstr = c2v_dict.get(cc, ' ')
+            sstr = c2s_dict.get(cc, ' ')
+            sstr = yfcx_sermon_title_processing(cc)
+            tstr = c2t_dict.get(cc, ' ')
+            ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+            fp.write(bstr + ' ' + vstr + " & " \
+                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                     + tstr + " & " \
+                     + ystr \
+                     + " \\\\\n")
+    fp.write("\\end{xltabular}\n")
+    # --------------------------------------
+    # end of table sorted by scriptual order
+    # --------------------------------------
+    fp.write("}\n")
+    print('sermon count in current book: %d' % sermonCnt)
+    fp.write("\\newpage\n\n")
+fp.close()
+
+
+
+'''## generate main content'''
+
+
+with open("./index_byt.csv", "r") as fp:
+    lines = fp.readlines()
+fp.close()
+progressStepCnt += 1
+print(f"Step {progressStepCnt}: generate main content")
 cc_prev = ''
 cc_next = ''
 # --------------------------------------
@@ -551,50 +613,6 @@ for lineId in range(len(lines)):
     cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
     cc_next = lines[(lineId+1)%len(lines)].split(",")[0]
     if os.path.isfile(f'../../data/YFCX/{cc}.txt'):
-        # p_prev = p_curr
-        # p_curr = c2p_dict.get(cc)
-        # if p_prev != p_curr:
-        #     progressStepCnt += 1
-        #     print(f"Step {progressStepCnt}: a new preacher {p_curr} is reached !")
-        #     p_id += 1
-        #     with open(sermon_tex_filepath, "a") as fp:
-        #         # ------------------------------------
-        #         # chapter toc
-        #         fp.write("\n\n\\chapter{"+p_curr+"}")
-        #         fp.write("\label{ch:preacher"+str(p_id)+"}\n")
-        #         fp.write("\\begin{multicols}{3}\n")
-        #         fp.write("\\minitoc\n")
-        #         fp.write("\\end{multicols}\n")
-        #         # END OF chapter toc
-        #         # ------------------------------------
-        #         # ------------------------------------
-        #         # chapter tabular-toc with sermon title
-        #         fp.write("{ \\scriptsize\n")
-        #         fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
-        #         fp.write("\\hline\n")
-        #         for lineId_ in range(len(lines)):
-        #             line_ = lines[lineId_]
-        #             cc_ = line_.split(",")[0]
-        #             if os.path.isfile(f'../../data/JNG/{cc_}.txt') and p_curr == c2p_dict.get(cc_):
-        #                 bstr = c2b_dict.get(cc_, ' ')
-        #                 vstr = c2v_dict.get(cc_, ' ')
-        #                 sstr = text_transform_cantonStyle2normalStyle(
-        #                     c2s_dict.get(cc_, ' ').replace('_','\_').replace('&','\&')
-        #                 )
-        #                 tstr = c2t_dict.get(cc_, ' ')
-        #                 ystr = "\\href{https://youtube.com/watch?v=" + cc_ +"}{\\texttt{ " + cc_.replace('_','\_') + "}}"
-        #                 fp.write(bstr + ' ' + vstr + " & " \
-        #                          + "\\hyperref[sec:"+cc_.replace('-','_')+"]{"+sstr+"}" + " & " \
-        #                          + tstr + " & " \
-        #                          + ystr \
-        #                          + " \\\\\n")
-        #         fp.write("\\hline\n")
-        #         fp.write("\\end{xltabular}\n")
-        #         fp.write("}\n")
-        #         # END OF chapter tabular-toc with sermon title
-        #         # ------------------------------------
-        #         fp.write("\\newpage\n\n")
-        #     fp.close()
         with open(sermon_tex_filepath, "a") as fp:
             #fp.write("\n\n\\section{"+c2s_dict.get(cc).replace('_','\\_')+"}\n")
             sectionNameStr = ''
@@ -611,16 +629,15 @@ for lineId in range(len(lines)):
             fp.write("\\newline\n\\newline\n")
             fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + " \n")
             fp.write("\\newline\n\\newline\n")
-            fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{< < < PREV SERMON < < <}\n")
+            fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{\\small{< < < PREV SERMON < < <}}\n")
             fp.write("~\n")
-            fp.write("\\hyperlink{toc}{[返主目錄]}\n")
+            fp.write("\\hyperref[sec:index_chronicle]{\\small{[返順時目]}}\n")
             fp.write("~\n")
-            # fp.write("\\hyperref[ch:preacher"+str(p_id)+"]{[返講員目錄]}\n")
-            # fp.write("~\n")
-            fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{> > > NEXT SERMON > > >}\n")
+            fp.write("\\hyperref[sec:index_scriptual]{\\small{[返順卷目]}}\n")
+            fp.write("~\n")
+            fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{\\small{> > > NEXT SERMON > > >}}\n")
             fp.write("\\newline\n\\newline\n")
         fp.close()
-        # _ = os.system(f"cat ../data/JNG/{cc}.txt >> " + sermon_tex_filepath)
         with open(sermon_tex_filepath, "a") as fp:
             # ----------------------
             # add the scripture part if not None
