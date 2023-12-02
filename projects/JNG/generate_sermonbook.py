@@ -95,6 +95,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'会', '會', cantonText)
     cantonText = re.sub(r'伦', '倫', cantonText)
     cantonText = re.sub(r'侓', '律', cantonText)
+    cantonText = re.sub(r'価', '價', cantonText)
     cantonText = re.sub(r'侣', '侶', cantonText)
     cantonText = re.sub(r'傈', '僳', cantonText)
     cantonText = re.sub(r'僞', '偽', cantonText)
@@ -131,6 +132,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'吖', '呀', cantonText)
     cantonText = re.sub(r'吗', '嗎', cantonText)
     cantonText = re.sub(r'吡', '悲', cantonText)
+    cantonText = re.sub(r'吿', '告', cantonText)
     cantonText = re.sub(r'呑', '吞', cantonText)
     cantonText = re.sub(r'呕', '', cantonText)
     cantonText = re.sub(r'咔', 'ka ', cantonText)
@@ -240,6 +242,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'曱甴', '小強', cantonText)
     cantonText = re.sub(r'曺', '嘈', cantonText)
     cantonText = re.sub(r'术', '術', cantonText)
+    cantonText = re.sub(r'枫', '楓', cantonText)
     cantonText = re.sub(r'枱', '台', cantonText)
     cantonText = re.sub(r'栅', '柵', cantonText)
     cantonText = re.sub(r'栢', '柏', cantonText)
@@ -247,6 +250,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'梘', 'gang ', cantonText)
     cantonText = re.sub(r'榄', '欖', cantonText)
     cantonText = re.sub(r'様', '樣', cantonText)
+    cantonText = re.sub(r'槛', '檻', cantonText)
     cantonText = re.sub(r'横', '橫', cantonText)
     cantonText = re.sub(r'櫈', '凳', cantonText)
     cantonText = re.sub(r'歴', '歷', cantonText)
@@ -260,6 +264,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'泼', '潑', cantonText)
     cantonText = re.sub(r'济', '濟', cantonText)
     cantonText = re.sub(r'涟', '漣', cantonText)
+    cantonText = re.sub(r'润', '潤', cantonText)
     cantonText = re.sub(r'涨', '漲', cantonText)
     cantonText = re.sub(r'涶', '唾', cantonText)
     cantonText = re.sub(r'淸', '清', cantonText)
@@ -356,6 +361,7 @@ def text_transform_cantonStyle2normalStyle(cantonText):
     cantonText = re.sub(r'蝇', '蠅', cantonText)
     cantonText = re.sub(r'蟎', '蜢', cantonText)
     cantonText = re.sub(r'衆', '眾', cantonText)
+    cantonText = re.sub(r'衔', '銜', cantonText)
     cantonText = re.sub(r'衞', '衛', cantonText)
     cantonText = re.sub(r'袮', '你', cantonText)
     cantonText = re.sub(r'裇', 'seuk ', cantonText)
@@ -526,7 +532,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # --------------------------------------
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: printing out prefixing")
-    _ = os.system(f"cat ../prefix.tex | sed 's/講道逐字稿/講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel: JohnsonNg/' > " + sermon_tex_filepath)
+    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel: JohnsonNg/' > " + sermon_tex_filepath)
 
     # --------------------------------------
     # index table partitioned by preachers
