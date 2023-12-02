@@ -33,10 +33,10 @@ elif [ "$1" == "HKBC" ] ; then
     mv sermon_$1_1928-2007.pdf ../../
     cd ..
     cd $1
-    xelatex sermon_$1_2008-2022.tex
-    xelatex sermon_$1_2008-2022.tex
-    rm -f sermon_$1_2008-2022.mtc*
-    mv sermon_$1_2008-2022.pdf ../../
+    xelatex sermon_$1_2008-latest.tex
+    xelatex sermon_$1_2008-latest.tex
+    rm -f sermon_$1_2008-latest.mtc*
+    mv sermon_$1_2008-latest.pdf ../../
     cd ..
 elif [ "$1" == "DSCCC" ] ; then
     cd $1

@@ -432,13 +432,18 @@ book_list_engsymbol = ['',
 
 def sermon_tex_from_generation(confno_start, confno_end):
     progressStepCnt = 0
-    sermon_tex_filepath = f'../../build/HKBC/sermon_HKBC_{1928+confno_start-1}-{1928+confno_end-1}.tex'
+    str_year_start = str(1928+confno_start-1)
+    if 1928+confno_end-1 < 2008:
+        str_year_end = str(1928+confno_end-1)
+    else:
+        str_year_end = 'latest'
+    sermon_tex_filepath = f'../../build/HKBC/sermon_HKBC_{str_year_start}-{str_year_end}.tex'
     # --------------------------------------
     # print the latex document : prefix
     # --------------------------------------
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: printing out prefixing")
-    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/港九培靈研經會 講道/' | sed 's/Youtube Channel:/Hong Kong Bible Conference {1928+confno_start-1}-{1928+confno_end-1}/' > " + sermon_tex_filepath)
+    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/港九培靈研經會講章/' | sed 's/Youtube Channel:/Hong Kong Bible Conference {str_year_start}-{str_year_end}/' > " + sermon_tex_filepath)
 
     # --------------------------------------
     # index table

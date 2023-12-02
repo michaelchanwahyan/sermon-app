@@ -6,13 +6,16 @@ texts from audio sources are generated from raw recording using speech-to-text e
 
 ### Immediately available sermon books
 the outcome of this repo compiled from generate LaTeX source are listed below
-| book series                           | file path in this repo      | link |
-|---------------------------------------|-----------------------------|------|
-| JohnsonNg Youtube Channel             | ./sermon_JNG_2012-18.pdf    | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2012-18.pdf?raw=true) |
-|                                       | ./sermon_JNG_2019-20.pdf    | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2019-20.pdf?raw=true) |
-|                                       | ./sermon_JNG_2021-22.pdf    | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2021-22.pdf?raw=true) |
-| 港九培靈會 Hong Kong Bible Conference | ./sermon_HKBC_1928-2007.pdf | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_1928-2007.pdf?raw=true)
-|                                       | ./sermon_HKBC_2008-2022.pdf | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_2008-2022.pdf?raw=true)
+| sermon book series                                       | file path in this repo                | link                                                                                                         |
+|----------------------------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| JohnsonNg Youtube Channel                                | ./sermon_JNG_2012-18.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2012-18.pdf?raw=true)          |
+|                                                          | ./sermon_JNG_2019-20.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2019-20.pdf?raw=true)          |
+|                                                          | ./sermon_JNG_2021-22.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2021-22.pdf?raw=true)          |
+|                                                          | ./sermon_JNG_2023-24.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2021-22.pdf?raw=true)          |
+| 港九培靈研經會講章 Hong Kong Bible Conference            | ./sermon_HKBC_1928-2007.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_1928-2007.pdf?raw=true)       |
+|                                                          | ./sermon_HKBC_2008-latest.pdf         | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_2008-2022.pdf?raw=true)       |
+| 崇基神學院 崇拜講章 Div. Schl of Chung Chi College       | ./sermon_DSCCC_2009-latest.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_DSCCC.pdf?raw=true)                |
+| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth            | ./sermon_YFCX2020-latest.pdf          | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_YFCX.pdf?raw=true)                 |
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
