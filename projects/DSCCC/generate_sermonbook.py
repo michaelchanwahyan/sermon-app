@@ -735,13 +735,13 @@ book_list_engsymbol = [
 
 # def sermon_tex_generation():
 progressStepCnt = 0
-sermon_tex_filepath = '../../build/DSCCC/sermon_DSCCC.tex'
+sermon_tex_filepath = '../../build/DSCCC/sermon_DSCCC_2009-latest.tex'
 # --------------------------------------
 # print the latex document : prefix
 # --------------------------------------
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: printing out prefixing")
-_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/香港中文大學崇基神學院~~校牧主日崇拜講章/' | sed 's/Youtube Channel:/Chaplaincy, Divinity School of Chung Chi College, CUHK/' > " + sermon_tex_filepath)
+_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/香港中文大學崇基神學院~~校牧主日崇拜講章~~2009-latest/' | sed 's/Youtube Channel:/Chaplaincy, Divinity School of Chung Chi College, CUHK/' > " + sermon_tex_filepath)
 
 # --------------------------------------
 # index table
@@ -749,6 +749,9 @@ _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/香港中文大
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: writing TOC")
 
+# year integer for comparison
+y_prev = -1
+y_curr = -1
 # year-month integer for comparison
 ym_prev = -1
 ym_curr = -1
@@ -760,9 +763,10 @@ with open(sermon_tex_filepath, "a") as fp:
     # lllr: |Date | Preacher | Title | Coverage |
     #        0.15   0.15    0.3        0.4
     fp.write("\\hline\n")
-    fp.write("日期 & 講員 & 經課 & 講題 \\\\\n")
+    fp.write("日期 & 講員 & 經課 & 講題 \\\\ \\hline \\hline\n")
     for index, row in df.iterrows():
         dt = row['date']
+        y_curr = int(dt / 10000) # obtain current sermon's year integer
         ym_curr = int(dt / 100) # obtain current sermon's year-month integer
         sermondt = str(dt)
         titlestr = row['title']
@@ -776,9 +780,13 @@ with open(sermon_tex_filepath, "a") as fp:
         # preparation for current item
         # ---------------------------------------------
         toc_tex_str = ""
-        # if year-month is changed, add double hline for spacing
+        # if year is progressed, add a hline
+        if y_prev != y_curr:
+            toc_tex_str += "\\hline "
+            y_prev = y_curr
+        # if year-month is progressed, add a hline
         if ym_prev != ym_curr:
-            toc_tex_str += "\\hline\n\\hline\n"
+            toc_tex_str += "\\hline\n"
             ym_prev = ym_curr
         dt_ = ''
         dt_ += sermondt[0:4] + '年'
