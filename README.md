@@ -17,6 +17,14 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 崇基神學院 崇拜講章 Div. Schl of Chung Chi College       | ./sermon_DSCCC_2009-latest.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_DSCCC_2009-latest.pdf?raw=true)    |
 | 播道會恩福堂 崇拜講章 Yan Fook Church & Youth            | ./sermon_YFCX_2020-latest.pdf         | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_YFCX_2020-latest.pdf?raw=true)     |
 
+### Statistics Overview on this project
+sermon source | text transcript proportion | portion in recent development
+----|----|----
+DSCCC | 12.9% | 1.0%
+HKBC | 29.4% | 0.1%
+JNG | 50.2% | 92.0%
+YFCX | 7.5% | 6.9%
+
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
 This work containerizes a lot of python packages into one docker image named "[datalab](https://github.com/michaelchanwahyan/datalab)".
