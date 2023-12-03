@@ -99,7 +99,7 @@ Do take attention to the inline comment in the source file.
 
 #### b) download the sermon audio according to index file
 
-inline description in [generate_index.ipynb](/projects/JNG/generate_index.ipynb) describe the use of youtube-dl to extraction raw audio from youtube.
+inline description in [generate_index.ipynb](/projects/JNG/generate_index.ipynb) describe the use of yt-dlp to extraction raw audio from youtube.
 
 ### 4. Convert from audio to text (speech-to-text part ~~, by container~~)
 
