@@ -5,7 +5,7 @@ the foldername here indicates a shortform of the sermon textual or audio source
 | folder name | description                                 | chinese description        | link                                                                                         |
 | ----------- | ------------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------- |
 | JNG         | Channel of Johnson Ng                       | Johnson Ng 我愛聽主道      | [youtube channel](https://www.youtube.com/JohnsonNg)                                         |
-| CGST        | Chinese Graduate School of Theology         | 中國神學研究院             | [youtube channel](https://www.youtube.com/cgstedu)                                           |
+| CGST        | China Graduate School of Theology           | 中國神學研究院             | [youtube channel](https://www.youtube.com/cgstedu)                                           |
 | CBI         | Chinese Bible Institute                     | 漢語聖經協會               | [youtube channel](https://www.youtube.com/CBIsupport)                                        |
 | KFC         | Kong Fook Church                            | 播道會港福堂               | [youtube channel](https://www.youtube.com/@EFCCKongFokChurch)                                |
 | KMH         | Ko Ming Him                                 | 高銘謙                     | [youtube channel](https://www.youtube.com/@lawrenceko5206)                                   |
