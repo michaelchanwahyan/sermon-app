@@ -735,13 +735,13 @@ book_list_engsymbol = [
 
 # def sermon_tex_generation():
 progressStepCnt = 0
-sermon_tex_filepath = '../../build/DSCCC/sermon_DSCCC_2009-latest.tex'
+sermon_tex_filepath = '../../build/DSCCC/sermon_DSCCC_2009-present.tex'
 # --------------------------------------
 # print the latex document : prefix
 # --------------------------------------
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: printing out prefixing")
-_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/香港中文大學崇基神學院~~校牧主日崇拜講章~~2009-latest/' | sed 's/Youtube Channel:/Chaplaincy, Divinity School of Chung Chi College, CUHK/' > " + sermon_tex_filepath)
+_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/香港中文大學崇基神學院~~校牧主日崇拜講章~~2009-present/' | sed 's/Youtube Channel:/Chaplaincy, Divinity School of Chung Chi College, CUHK/' > " + sermon_tex_filepath)
 
 # --------------------------------------
 # index table
