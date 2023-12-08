@@ -33,23 +33,23 @@ elif [ "$1" == "HKBC" ] ; then
     mv sermon_$1_1928-2007.pdf ../../
     cd ..
     cd $1
-    xelatex sermon_$1_2008-latest.tex
-    xelatex sermon_$1_2008-latest.tex
-    rm -f sermon_$1_2008-latest.mtc*
-    mv sermon_$1_2008-latest.pdf ../../
+    xelatex sermon_$1_2008-present.tex
+    xelatex sermon_$1_2008-present.tex
+    rm -f sermon_$1_2008-present.mtc*
+    mv sermon_$1_2008-present.pdf ../../
     cd ..
 elif [ "$1" == "DSCCC" ] ; then
     cd $1
-    xelatex sermon_$1_2009-latest.tex
-    xelatex sermon_$1_2009-latest.tex
-    rm -f sermon_$1_2009-latest.mtc*
-    mv sermon_$1_2009-latest.pdf ../../
+    xelatex sermon_$1_2009-present.tex
+    xelatex sermon_$1_2009-present.tex
+    rm -f sermon_$1_2009-present.mtc*
+    mv sermon_$1_2009-present.pdf ../../
     cd ..
 elif [ "$1" == "YFCX" ] ; then
     cd $1
-    xelatex sermon_$1_2020-latest.tex
-    xelatex sermon_$1_2020-latest.tex
-    rm -f sermon_$1_2020-latest.mtc*
-    mv sermon_$1_2020-latest.pdf ../../
+    xelatex sermon_$1_2020-present.tex
+    xelatex sermon_$1_2020-present.tex
+    rm -f sermon_$1_2020-present.mtc*
+    mv sermon_$1_2020-present.pdf ../../
     cd ..
 fi
