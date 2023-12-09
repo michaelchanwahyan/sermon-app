@@ -1,6 +1,9 @@
 #!/bin/bash
 echo build sermon project $1
 if   [ "$1" == "genall" ] ; then
+    cd ../whisper
+    python3 convert_srt2txt.py JNG
+    python3 convert_srt2txt.py YFCX
     cd ../projects
     cd ./JNG
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
