@@ -44,11 +44,18 @@ rep_list = [ _.split(", '", 1) for _ in rep_list ]
 rep_list = [ [_[0], _[1][:-1]] for _ in rep_list ]
 
 
+# compile regular expression rgx to cater math symbol '^'
+rgx = re.compile(r'([A-Za-z0-9=+\-]+)\^([A-Za-z0-9=+\-]+)')
+print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^-2\')" :', rgx.sub(r'$\1^\2$', 'E=MC^-2'))
+
+
 def cleanse_special_char(inputText):
     txt2 = inputText
+    txt2 = txt2.replace('$','\$') # preserve this here since its higher priority than in html arguments
+    txt2 = rgx.sub(r'$\1^\2$', txt2)
     for rep_ in rep_list:
         txt2 = txt2.replace(rep_[0], rep_[1])
-    txt2 = txt2.replace('&', ' and ') # preserve this here since is lower priority than in html arguments
+    txt2 = txt2.replace('&', ' and ') # preserve this here since its lower priority than in html arguments
     txt2 = txt2.strip()
     return txt2
 

@@ -52,12 +52,20 @@ rep_list = [ _.split(", '", 1) for _ in rep_list ]
 rep_list = [ [_[0], _[1][:-1]] for _ in rep_list ]
 
 
-def text_transform_cantonStyle2normalStyle(cantonText):
-    cantonText = rgx.sub(r'$\1^\2$', cantonText)
+# compile regular expression rgx to cater math symbol '^'
+rgx = re.compile(r'([A-Za-z0-9=+\-]+)\^([A-Za-z0-9=+\-]+)')
+print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^-2\')" :', rgx.sub(r'$\1^\2$', 'E=MC^-2'))
+
+
+def cleanse_special_char(inputText):
+    txt2 = inputText
+    txt2 = txt2.replace('$','\$') # preserve this here since its higher priority than in html arguments
+    txt2 = rgx.sub(r'$\1^\2$', txt2)
     for rep_ in rep_list:
-        cantonText = cantonText.replace(rep_[0], rep_[1])
-    cantonText = cantonText.replace('&', ' and ') # preserve this here since is lower priority than in html arguments
-    return cantonText
+        txt2 = txt2.replace(rep_[0], rep_[1])
+    txt2 = txt2.replace('&', ' and ') # preserve this here since its lower priority than in html arguments
+    txt2 = txt2.strip()
+    return txt2
 
 
 p_list = list(p2c_dict.keys())
@@ -93,7 +101,7 @@ def yfcx_sermon_title_processing(cc):
     sstr = rgx_bv.sub(':', sstr) # adjust bible verse , use ':' to replace '_'
     sstr = sstr[:-13] # remove trailing youtube code
     sstr = sstr.replace('網上直播', '')
-    sstr = text_transform_cantonStyle2normalStyle(
+    sstr = cleanse_special_char(
         sstr.replace('_','\_').replace('&','\&')
     )
     sstr = sstr.strip()
@@ -319,7 +327,7 @@ for lineId in range(len(lines)):
             with open("../../data/YFCX/"+cc+".txt", "r") as fp_:
                 the_sermon_text = fp_.read()
             fp_.close()
-            the_sermon_text = text_transform_cantonStyle2normalStyle(the_sermon_text)
+            the_sermon_text = cleanse_special_char(the_sermon_text)
             the_sermon_text = the_sermon_text.replace("\\n\\n","\\n")
             textlines = the_sermon_text.split("\n")
             _textrow_cnt = 0

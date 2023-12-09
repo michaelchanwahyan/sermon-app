@@ -52,13 +52,10 @@ fp.close()
 #
 
 
-# compile regular expression rgx to cater math symbol '^'
 
 
-rgx = re.compile(r'([A-Za-z0-9=]+)\^([A-Za-z0-9\-]+)')
 
 
-print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^-2\')" :', rgx.sub(r'$\1^\2$', 'E=MC^-2'))
 
 
 
@@ -72,15 +69,20 @@ rep_list = [ _.split(", '", 1) for _ in rep_list ]
 rep_list = [ [_[0], _[1][:-1]] for _ in rep_list ]
 
 
-# rep_list
+# compile regular expression rgx to cater math symbol '^'
+rgx = re.compile(r'([A-Za-z0-9=+\-]+)\^([A-Za-z0-9=+\-]+)')
+print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^-2\')" :', rgx.sub(r'$\1^\2$', 'E=MC^-2'))
 
 
-def text_transform_cantonStyle2normalStyle(cantonText):
-    cantonText = rgx.sub(r'$\1^\2$', cantonText)
+def cleanse_special_char(inputText):
+    txt2 = inputText
+    txt2 = txt2.replace('$','\$') # preserve this here since its higher priority than in html arguments
+    txt2 = rgx.sub(r'$\1^\2$', txt2)
     for rep_ in rep_list:
-        cantonText = cantonText.replace(rep_[0], rep_[1])
-    cantonText = cantonText.replace('&', ' and ') # preserve this here since is lower priority than in html arguments
-    return cantonText
+        txt2 = txt2.replace(rep_[0], rep_[1])
+    txt2 = txt2.replace('&', ' and ') # preserve this here since its lower priority than in html arguments
+    txt2 = txt2.strip()
+    return txt2
 
 
 p_list = list(p2c_dict.keys())
@@ -219,7 +221,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                     fp.write("\\hline\n")
                 bstr = c2b_dict.get(cc, ' ')
                 vstr = c2v_dict.get(cc, ' ')
-                sstr = text_transform_cantonStyle2normalStyle(
+                sstr = cleanse_special_char(
                     c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
                 )
                 tstr = c2t_dict.get(cc, ' ')
@@ -283,7 +285,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                         if os.path.isfile(f'../../data/JNG/{cc_}.txt') and p_curr == c2p_dict.get(cc_):
                             bstr = c2b_dict.get(cc_, ' ')
                             vstr = c2v_dict.get(cc_, ' ')
-                            sstr = text_transform_cantonStyle2normalStyle(
+                            sstr = cleanse_special_char(
                                 c2s_dict.get(cc_, ' ').replace('_','\_').replace('&','\&')
                             )
                             tstr = c2t_dict.get(cc_, ' ')
@@ -311,7 +313,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 sectionNameStr += ' ' + ch if b is not None and ch is not None and v is None else ''
                 fp.write("\n\n\\section{"+sectionNameStr+"}\n")
                 fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
-                sstr = text_transform_cantonStyle2normalStyle(
+                sstr = cleanse_special_char(
                     c2s_dict.get(cc).replace('_','\_').replace('&','\&')
                 )
                 fp.write("\\textbf{"+sstr+"}\n")
@@ -365,7 +367,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 with open("../../data/JNG/"+cc+".txt", "r") as fp_:
                     the_sermon_text = fp_.read()
                 fp_.close()
-                the_sermon_text = text_transform_cantonStyle2normalStyle(the_sermon_text)
+                the_sermon_text = cleanse_special_char(the_sermon_text)
                 the_sermon_text = the_sermon_text.replace("\\n\\n","\\n")
                 textlines = the_sermon_text.split("\n")
                 _textrow_cnt = 0
