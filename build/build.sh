@@ -1,6 +1,30 @@
 #!/bin/bash
 echo build sermon project $1
-if [ "$1" == "JNG" ] ; then
+if   [ "$1" == "genall" ] ; then
+    cd ../projects
+    cd ./JNG
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
+    cd ./HKBC
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
+    cd ./DSCCC
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
+    cd ./YFCX
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
+    cd ../build
+elif [ "$1" == "buildall" ] ; then
+    ./build.sh JNG
+    ./build.sh HKBC
+    ./build.sh DSCCC
+    ./build.sh YFCX
+elif [ "$1" == "JNG" ] ; then
     cd $1
     xelatex sermon_$1_2012-18.tex
     xelatex sermon_$1_2012-18.tex
