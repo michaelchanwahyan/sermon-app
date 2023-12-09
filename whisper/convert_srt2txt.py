@@ -30,11 +30,13 @@ for srtfilename in srtfilelist:
     cnt += 1
     if cnt % 100 == 0:
         print('progress: %d -> %s' % (cnt, pathfilename))
+    lines = []
     try:
         with open (pathfilename, 'r', encoding='utf-8') as fp:
             lines = fp.readlines()
         fp.close()
     except:
+        lines = []
         fp.close()
         print(f"exception caught at file {pathfilename}")
     dest_pathfilename = "../data/" + sermon_group_path_str + "/" + srtfilename[:-3] + "txt"
