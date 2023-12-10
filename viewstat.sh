@@ -43,7 +43,7 @@ echo activeness on WWBC    : $CHNG_CNT_WWBC    / $CHNG_CNT_TOTAL \( $(printf "%.
 echo activeness on YFCX    : $CHNG_CNT_YFCX    / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_YFCX    / CHNG_CNT_TOTAL))e-2)% \)
 
 echo
-echo sermon source \| text transcript proportion \| portion in recent development
+echo sermon source \| transcript in portion \| recent development in portion
 echo ----\|----\|----
 echo CBI     \| $(printf "%.1f" $((10**4 * FN_CBI   / FN_TOTAL))e-2)% \| $(printf "%.1f" $((10**4 * CHNG_CNT_CBI   / CHNG_CNT_TOTAL))e-2)%
 echo CGST    \| $(printf "%.1f" $((10**4 * FN_CGST  / FN_TOTAL))e-2)% \| $(printf "%.1f" $((10**4 * CHNG_CNT_CGST  / CHNG_CNT_TOTAL))e-2)%
