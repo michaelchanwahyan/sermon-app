@@ -13,21 +13,21 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 |                                                          | ./sermon_JNG_2021-22.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2021-22.pdf?raw=true)          |
 |                                                          | ./sermon_JNG_2023-24.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2021-22.pdf?raw=true)          |
 | 港九培靈研經會講章 Hong Kong Bible Conference            | ./sermon_HKBC_1928-2007.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_1928-2007.pdf?raw=true)       |
-|                                                          | ./sermon_HKBC_2008-latest.pdf         | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_2008-latest.pddf?raw=true)    |
-| 崇基神學院 崇拜講章 Div. Schl of Chung Chi College       | ./sermon_DSCCC_2009-latest.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_DSCCC_2009-latest.pdf?raw=true)    |
-| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth            | ./sermon_YFCX_2020-latest.pdf         | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_YFCX_2020-latest.pdf?raw=true)     |
+|                                                          | ./sermon_HKBC_2008-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_2008-present.pddf?raw=true)   |
+| 崇基神學院 崇拜講章 Div. Schl of Chung Chi College       | ./sermon_DSCCC_2009-present.pdf       | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_DSCCC_2009-present.pdf?raw=true)   |
+| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth            | ./sermon_YFCX_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_YFCX_2020-present.pdf?raw=true)    |
 
 ### Statistics Overview on this project
-sermon source | text transcript proportion | portion in recent development
+sermon source | transcript in portion | recent development in portion
 ----|----|----
-CBI | 0.0% | 0.1%
+CBI | 0.0% | 0.2%
 CGST | 0.0% | 0.0%
-DSCCC | 12.9% | 0.8%
+DSCCC | 11.6% | 0.6%
 FVC | 0.0% | 0.0%
-HKBC | 29.4% | 0.1%
-JNG | 50.2% | 92.2%
+HKBC | 26.3% | 0.1%
+JNG | 47.6% | 86.0%
 WWBC | 0.0% | 0.0%
-YFCX | 7.5% | 6.9%
+YFCX | 14.5% | 13.4%
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
