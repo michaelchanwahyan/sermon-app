@@ -29,7 +29,7 @@ with open("x2code_dictionary.pkl", "rb") as fp:
 fp.close()
 
 
-# sermon book for YFCX shall be arranged in chronicle order
+# sermon book for YFCX shall be arranged in chronic order
 
 
 # compile regular expression rgx to cater math symbol '^'
@@ -130,23 +130,23 @@ _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/粵語講道逐
 
 
 
-'''## generate index table in chronicle order'''
+'''## generate index table in chronic order'''
 
 
 progressStepCnt += 1
-print(f"Step {progressStepCnt}: generate index in chronicle order")
+print(f"Step {progressStepCnt}: generate index in chronic order")
 with open("./index_byt.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
 # --------------------------------------
-# index table sorted by chronicle order
+# index table sorted by chronic order
 # --------------------------------------
 progressStepCnt += 1
-print(f"Step {progressStepCnt}: writing TOC in chronicle order")
+print(f"Step {progressStepCnt}: writing TOC in chronic order")
 with open(sermon_tex_filepath, "a") as fp:
     sermonCnt = 0
     fp.write("\\section{目錄\\small{(順時)}}\n")
-    fp.write("\\label{sec:index_chronicle}\n")
+    fp.write("\\label{sec:index_chronic}\n")
     fp.write("{ \\scriptsize\n")
     # --------------------------------------
     # start of TOC table
@@ -179,7 +179,7 @@ with open(sermon_tex_filepath, "a") as fp:
                      + " \\\\\n")
     fp.write("\\end{xltabular}\n")
     # --------------------------------------
-    # end of table sorted by chronicle order
+    # end of table sorted by chronic order
     # --------------------------------------
     fp.write("}\n")
     print('sermon count in current book: %d' % sermonCnt)
@@ -283,7 +283,7 @@ for lineId in range(len(lines)):
             fp.write("\\newline\n\\newline\n")
             fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{\\small{< < < PREV SERMON < < <}}\n")
             fp.write("~\n")
-            fp.write("\\hyperref[sec:index_chronicle]{\\small{[返順時目]}}\n")
+            fp.write("\\hyperref[sec:index_chronic]{\\small{[返順時目]}}\n")
             fp.write("~\n")
             fp.write("\\hyperref[sec:index_scriptual]{\\small{[返順卷目]}}\n")
             fp.write("~\n")
