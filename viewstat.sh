@@ -43,13 +43,13 @@ echo activeness on WWBS    : $CHNG_CNT_WWBS    / $CHNG_CNT_TOTAL \( $(printf "%.
 echo activeness on YFCX    : $CHNG_CNT_YFCX    / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_YFCX    / CHNG_CNT_TOTAL))e-2)% \)
 
 echo
-echo sermon source \| transcript in portion \| recent development in portion
+echo sermon source \| transcript total count \| recent development activity
 echo ----\|----\|----
-echo CBI     \| $(printf "%.1f" $((10**4 * FN_CBI   / FN_TOTAL))e-2)% \| $(printf "%.1f" $((10**4 * CHNG_CNT_CBI   / CHNG_CNT_TOTAL))e-2)%
-echo CGST    \| $(printf "%.1f" $((10**4 * FN_CGST  / FN_TOTAL))e-2)% \| $(printf "%.1f" $((10**4 * CHNG_CNT_CGST  / CHNG_CNT_TOTAL))e-2)%
-echo DSCCC   \| $(printf "%.1f" $((10**4 * FN_DSCCC / FN_TOTAL))e-2)% \| $(printf "%.1f" $((10**4 * CHNG_CNT_DSCCC / CHNG_CNT_TOTAL))e-2)%
-echo FVC     \| $(printf "%.1f" $((10**4 * FN_FVC   / FN_TOTAL))e-2)% \| $(printf "%.1f" $((10**4 * CHNG_CNT_FVC   / CHNG_CNT_TOTAL))e-2)%
-echo HKBC    \| $(printf "%.1f" $((10**4 * FN_HKBC  / FN_TOTAL))e-2)% \| $(printf "%.1f" $((10**4 * CHNG_CNT_HKBC  / CHNG_CNT_TOTAL))e-2)%
-echo JNG     \| $(printf "%.1f" $((10**4 * FN_JNG   / FN_TOTAL))e-2)% \| $(printf "%.1f" $((10**4 * CHNG_CNT_JNG   / CHNG_CNT_TOTAL))e-2)%
-echo WWBS    \| $(printf "%.1f" $((10**4 * FN_WWBS  / FN_TOTAL))e-2)% \| $(printf "%.1f" $((10**4 * CHNG_CNT_WWBS  / CHNG_CNT_TOTAL))e-2)%
-echo YFCX    \| $(printf "%.1f" $((10**4 * FN_YFCX  / FN_TOTAL))e-2)% \| $(printf "%.1f" $((10**4 * CHNG_CNT_YFCX  / CHNG_CNT_TOTAL))e-2)%
+echo CBI     \| $(printf "%d / %d ~ %.1f" $FN_CBI     $FN_TOTAL $((10**4 * FN_CBI   / FN_TOTAL))e-2)% \| $(printf "%d / %d ~ %.1f" $CHNG_CNT_CBI     $CHNG_CNT_TOTAL $((10**4 * CHNG_CNT_CBI   / CHNG_CNT_TOTAL))e-2)%
+echo CGST    \| $(printf "%d / %d ~ %.1f" $FN_CGST    $FN_TOTAL $((10**4 * FN_CGST  / FN_TOTAL))e-2)% \| $(printf "%d / %d ~ %.1f" $CHNG_CNT_CGST    $CHNG_CNT_TOTAL $((10**4 * CHNG_CNT_CGST  / CHNG_CNT_TOTAL))e-2)%
+echo DSCCC   \| $(printf "%d / %d ~ %.1f" $FN_DSCCC   $FN_TOTAL $((10**4 * FN_DSCCC / FN_TOTAL))e-2)% \| $(printf "%d / %d ~ %.1f" $CHNG_CNT_DSCCC   $CHNG_CNT_TOTAL $((10**4 * CHNG_CNT_DSCCC / CHNG_CNT_TOTAL))e-2)%
+echo FVC     \| $(printf "%d / %d ~ %.1f" $FN_FVC     $FN_TOTAL $((10**4 * FN_FVC   / FN_TOTAL))e-2)% \| $(printf "%d / %d ~ %.1f" $CHNG_CNT_FVC     $CHNG_CNT_TOTAL $((10**4 * CHNG_CNT_FVC   / CHNG_CNT_TOTAL))e-2)%
+echo HKBC    \| $(printf "%d / %d ~ %.1f" $FN_HKBC    $FN_TOTAL $((10**4 * FN_HKBC  / FN_TOTAL))e-2)% \| $(printf "%d / %d ~ %.1f" $CHNG_CNT_HKBC    $CHNG_CNT_TOTAL $((10**4 * CHNG_CNT_HKBC  / CHNG_CNT_TOTAL))e-2)%
+echo JNG     \| $(printf "%d / %d ~ %.1f" $FN_JNG     $FN_TOTAL $((10**4 * FN_JNG   / FN_TOTAL))e-2)% \| $(printf "%d / %d ~ %.1f" $CHNG_CNT_JNG     $CHNG_CNT_TOTAL $((10**4 * CHNG_CNT_JNG   / CHNG_CNT_TOTAL))e-2)%
+echo WWBS    \| $(printf "%d / %d ~ %.1f" $FN_WWBS    $FN_TOTAL $((10**4 * FN_WWBS  / FN_TOTAL))e-2)% \| $(printf "%d / %d ~ %.1f" $CHNG_CNT_WWBS    $CHNG_CNT_TOTAL $((10**4 * CHNG_CNT_WWBS  / CHNG_CNT_TOTAL))e-2)%
+echo YFCX    \| $(printf "%d / %d ~ %.1f" $FN_YFCX    $FN_TOTAL $((10**4 * FN_YFCX  / FN_TOTAL))e-2)% \| $(printf "%d / %d ~ %.1f" $CHNG_CNT_YFCX    $CHNG_CNT_TOTAL $((10**4 * CHNG_CNT_YFCX  / CHNG_CNT_TOTAL))e-2)%
