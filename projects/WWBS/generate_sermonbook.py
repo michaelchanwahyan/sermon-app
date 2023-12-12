@@ -140,7 +140,7 @@ with open(sermon_tex_filepath, "a") as fp:
     fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
     fp.write("\\hline\n")
     # --------------------------------------
-    # lines is the line content in index_byt
+    # lines is the line content in index_byn
     # --------------------------------------
     for lineId in range(len(lines)):
         line = lines[lineId]
@@ -184,7 +184,7 @@ print(f"Step {progressStepCnt}: generate main content")
 cc_prev = ''
 cc_next = ''
 # --------------------------------------
-# lines is the line content in index_byt
+# lines is the line content in index_byn
 # --------------------------------------
 for lineId in range(len(lines)):
     line = lines[lineId]
