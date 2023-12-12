@@ -5,7 +5,7 @@ the foldername here indicates a shortform of the sermon textual or audio source
 | folder name | description                                 | chinese description        | link                                                                                         |
 | ----------- | ------------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------- |
 | ACSMHK      |                                             | 宣道書局宣道傳意台         | [youtube channel](https://www.youtube.com/@acsmhk)                                           |
-| CBI         | Chinese Bible Institute                     | 漢語聖經協會               | [youtube channel](https://www.youtube.com/CBIsupport)                                        |
+| CBI         | Chinese Bible International                 | 漢語聖經協會               | [youtube channel](https://www.youtube.com/CBIsupport)                                        |
 | CGST        | China Graduate School of Theology           | 中國神學研究院             | [youtube channel](https://www.youtube.com/cgstedu)                                           |
 | DSCCC       | Divinity School of Chung Chi College, CUHK  | 香港中文大學崇基學院神學院 | [chaplaincy site](https://www.ccc.cuhk.edu.hk/tc/content.php?wid=739)                        |
 |             |                                             |                            | [vinemedia site](https://www.vinemedia.org/category/course/bible-teaching/sunday-service-1/) |

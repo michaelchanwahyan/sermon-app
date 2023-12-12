@@ -112,7 +112,7 @@ sermon_tex_filepath = f"../../build/CBI/sermon_CBI.tex"
 # --------------------------------------
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: printing out prefixing")
-_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/漢語經協 粵語講道逐字稿/' | sed 's/Youtube Channel:/Youtube Channel: Chinese Bible Institute/' > " + sermon_tex_filepath)
+_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/漢語聖經協會 粵語講道逐字稿/' | sed 's/Youtube Channel:/Youtube Channel: Chinese Bible International/' > " + sermon_tex_filepath)
 
 
 
