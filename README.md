@@ -26,7 +26,7 @@ DSCCC | 11.6% | 0.6%
 FVC | 0.0% | 0.0%
 HKBC | 26.3% | 0.1%
 JNG | 47.6% | 86.0%
-WWBC | 0.0% | 0.0%
+WWBS | 0.0% | 0.0%
 YFCX | 14.5% | 13.4%
 
 ### Steps to compile the books from scratch _(painful !)_
