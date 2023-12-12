@@ -18,16 +18,16 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 播道會恩福堂 崇拜講章 Yan Fook Church & Youth            | ./sermon_YFCX_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_YFCX_2020-present.pdf?raw=true)    |
 
 ### Statistics Overview on this project
-sermon source | transcript in portion | recent development in portion
+sermon source | transcript total count | recent development activity
 ----|----|----
-CBI | 0.2% | 0.3%
-CGST | 0.0% | 0.0%
-DSCCC | 11.5% | 0.6%
-FVC | 0.0% | 0.0%
-HKBC | 26.1% | 0.1%
-JNG | 47.3% | 85.7%
-WWBS | 0.3% | 0.4%
-YFCX | 14.6% | 13.6%
+CBI | 11 / 5868 ~ 0.2% | 68 / 19736 ~ 0.3%
+CGST | 0 / 5868 ~ 0.0% | 9 / 19736 ~ 0.0%
+DSCCC | 673 / 5868 ~ 11.5% | 109 / 19736 ~ 0.6%
+FVC | 0 / 5868 ~ 0.0% | 5 / 19736 ~ 0.0%
+HKBC | 1531 / 5868 ~ 26.1% | 22 / 19736 ~ 0.1%
+JNG | 2776 / 5868 ~ 47.3% | 16921 / 19736 ~ 85.7%
+WWBS | 19 / 5868 ~ 0.3% | 78 / 19736 ~ 0.4%
+YFCX | 858 / 5868 ~ 14.6% | 2684 / 19736 ~ 13.6%
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
