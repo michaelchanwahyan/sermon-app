@@ -173,7 +173,7 @@ with open(sermon_tex_filepath, "a") as fp:
             tstr = c2t_dict.get(cc, ' ')
             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
-                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+cleanse_special_char(sstr)+"}" + " & " \
                      + tstr + " & " \
                      + ystr \
                      + " \\\\\n")
