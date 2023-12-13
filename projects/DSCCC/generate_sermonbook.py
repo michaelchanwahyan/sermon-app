@@ -233,7 +233,7 @@ for index, row in df.iterrows():
             # --------------------------------------
             # print out sermon headers
             # --------------------------------------
-            fp.write("\n\n\\newpage\n\n\\section{" + titlestr + "}\n")
+            fp.write("\n\n\\newpage\n\n\\section{" + cleanse_special_char(titlestr) + "}\n")
             fp.write("\\label{sec:" + str(index_curr) + "}\n")
             fp.write("\\textbf{" + cleanse_special_char(sermon_lines[0]) + "}\n")
             fp.write("\\newline\n\\newline\n")

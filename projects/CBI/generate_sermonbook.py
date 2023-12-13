@@ -204,7 +204,7 @@ for lineId in range(len(lines)):
             fp.write("\n\n\\section{"+sectionNameStr+"}\n")
             fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
             sstr = c2s_dict.get(cc)
-            fp.write("\\textbf{"+sstr+"}\n")
+            fp.write("\\textbf{"+cleanse_special_char(sstr)+"}\n")
             fp.write("\\newline\n\\newline\n")
             fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + " \n")
             fp.write("\\newline\n\\newline\n")
