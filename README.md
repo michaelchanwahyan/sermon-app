@@ -20,14 +20,14 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 ### Statistics Overview on this project
 sermon source | transcript total count | recent development activity
 ----|----|----
-CBI | 0.2% ( 11 / 5868) | 0.3% ( 68 / 19736)
-CGST | 0.0% ( 0 / 5868) | 0.0% ( 9 / 19736)
-DSCCC | 11.5% ( 673 / 5868) | 0.6% ( 109 / 19736)
-FVC | 0.0% ( 0 / 5868) | 0.0% ( 5 / 19736)
-HKBC | 26.1% ( 1531 / 5868) | 0.1% ( 22 / 19736)
-JNG | 47.3% ( 2776 / 5868) | 85.7% ( 16921 / 19736)
-WWBS | 0.3% ( 19 / 5868) | 0.4% ( 78 / 19736)
-YFCX | 14.6% ( 858 / 5868) | 13.6% ( 2684 / 19736)
+CBI | 0.2% ( 11 / 5952) | 0.4% ( 71 / 19697)
+CGST | 1.4% ( 84 / 5952) | 1.4% ( 274 / 19697)
+DSCCC | 11.3% ( 673 / 5952) | 0.6% ( 110 / 19697)
+FVC | 0.0% ( 0 / 5952) | 0.0% ( 5 / 19697)
+HKBC | 25.7% ( 1531 / 5952) | 0.1% ( 24 / 19697)
+JNG | 46.6% ( 2776 / 5952) | 85.7% ( 16876 / 19697)
+WWBS | 0.3% ( 19 / 5952) | 0.4% ( 81 / 19697)
+YFCX | 14.4% ( 858 / 5952) | 13.6% ( 2687 / 19697)
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
