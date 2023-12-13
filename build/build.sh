@@ -3,11 +3,16 @@ echo build sermon project $1
 if   [ "$1" == "genall" ] ; then
     cd ../whisper
     python3 convert_srt2txt.py CBI
+    python3 convert_srt2txt.py CGST
     python3 convert_srt2txt.py JNG
     python3 convert_srt2txt.py WWBS
     python3 convert_srt2txt.py YFCX
     cd ../projects
     cd ./CBI
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
+    cd ./CGST
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
     cd ..
@@ -34,12 +39,20 @@ if   [ "$1" == "genall" ] ; then
     cd ../build
 elif [ "$1" == "buildall" ] ; then
     ./build.sh CBI
+    ./build.sh CGST
     ./build.sh DSCCC
     ./build.sh HKBC
     ./build.sh JNG
     ./build.sh WWBS
     ./build.sh YFCX
 elif [ "$1" == "CBI" ] ; then
+    cd $1
+    xelatex sermon_$1.tex
+    xelatex sermon_$1.tex
+    rm -f sermon_$1.mtc*
+    mv sermon_$1.pdf ../../
+    cd ..
+elif [ "$1" == "CGST" ] ; then
     cd $1
     xelatex sermon_$1.tex
     xelatex sermon_$1.tex
