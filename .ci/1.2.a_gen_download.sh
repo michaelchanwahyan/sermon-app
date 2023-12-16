@@ -2,7 +2,7 @@
 set +x
 pushd ../projects
   echo wget youtube videos / streams files to each project
-  for PROJECT_NAME in CBI CGST JNG WWBS YFCX
+  for PROJECT_NAME in ACSMHK CBI CGST FVC JNG WWBS YFCX
   do
     pushd ./$PROJECT_NAME
       if [ -f videos ]
