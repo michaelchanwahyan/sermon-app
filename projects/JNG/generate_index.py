@@ -231,26 +231,30 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
 
 
 
-'''### Run By Your Host System if new audio files are included
+'''### Run By Your Host System if new audio files are included'''
+
+
+'''
 cd ~/One*/TPPHC/SERMON/JNG/
 
-ls -logtD '%b %d %Y' *.mp3 > ~/SOURCE/sermon-app/projects/JNG/lslogt.txt
-
-vim ~/SOURCE/sermon-app/projects/JNG/lslogt.txt
-
-apply %s/\[\([A-Za-z0-9_]*\)\]/-\1/g'''
+ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/JNG/lslogt.txt
+'''
 
 
 # from full catalog file obtain required info
-rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w)
-rdd1 = rdd.map(lambda w: (w[38:-16], w[-15:-4], w[25:38])) \
+rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w) \
+    .map(lambda w: w if w[-16] != '-' else w[:-16]+' ['+w[-15:-4]+'].mp3')
+# due to historical reason, JNG sermon file name contains 2 format:
+# <name>-ytcode.mp3 and <name> [ytcode].mp3
+
+rdd1 = rdd.map(lambda w: (w[38:-4], w[-16:-5], w[25:38])) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
-# rdd1.take(3)
+rdd1.take(10)
 
 
 # w0 = ['生命比生活更重要 (出埃及記13_21-22) - 余德淳博士']

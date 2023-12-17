@@ -237,25 +237,26 @@ def retrieve_yfcy_date(inname):
 
 
 
-'''### Run By Your Host System if new audio files are included
+'''### Run By Your Host System if new audio files are included'''
+
+
+'''
 cd ~/One*/TPPHC/SERMON/FVC/
 
-ls -logtD '%b %d %Y' *.mp3 > ~/SOURCE/sermon-app/projects/FVC/lslogt.txt
-
-vim ~/SOURCE/sermon-app/projects/FVC/ls.txt # remove the trailing '.mp3' on each row'''
+ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/FVC/lslogt.txt
+'''
 
 
 # from full catalog file obtain required info
 rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w)
-rdd1 = rdd.map(lambda w: w.replace('｜', '|').replace('︱', '|'))\
-    .map(lambda w: (w, w[:-14], w[-12:-1])) \
-    .map(lambda w: (w[0], cleanse_punctuation(w[1], ' '), w[2])) \
-    .map(lambda w: ([ _.strip() for _ in w[1].split('|') ], w[2], w[0], retrieve_yfcy_date(w[0]))) \
-    # .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
+rdd1 = rdd.map(lambda w: (w[38:-4], w[-16:-5], w[25:38])) \
+    .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
+    .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
+    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
-# rdd1.take(40)
+rdd1.take(10)
 
 
 # w0 = ['生命比生活更重要 (出埃及記13_21-22) - 余德淳博士']

@@ -232,22 +232,24 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
 
 
 
-'''### Run By Your Host System if new audio files are included
+'''### Run By Your Host System if new audio files are included'''
+
+
+'''
 cd ~/One*/TPPHC/SERMON/WWBS/
 
-ls -logtD '%b %d %Y' *.mp3 > ~/SOURCE/sermon-app/projects/WWBS/lslogt.txt
-
-vim ~/SOURCE/sermon-app/projects/WWBS/lslogt.txt # remove the trailing '.mp3' on each row'''
+ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/WWBS/lslogt.txt
+'''
 
 
 rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w)
-rdd1 = rdd.map(lambda w: (w[38:-13].strip(), w[-12:-1], w[25:38])) \
+rdd1 = rdd.map(lambda w: (w[38:-4].strip(), w[-16:-5], w[25:38])) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
     .map(lambda w: (w[0].strip().split(' '), w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
-rdd1.take(40)
+rdd1.take(10)
 
 
 # data engineering work 1: one-to-many detection

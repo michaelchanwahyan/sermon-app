@@ -237,12 +237,13 @@ def retrieve_yfcy_date(inname):
 
 
 
-'''### Run By Your Host System if new audio files are included
+'''### Run By Your Host System if new audio files are included'''
+
+
+'''
 cd ~/One*/TPPHC/SERMON/ACSMHK/
-
-ls -logtD '%b %d %Y' *.mp3 > ~/SOURCE/sermon-app/projects/ACSMHK/lslogt.txt
-
-vim ~/SOURCE/sermon-app/projects/ACSMHK/lslogt.txt'''
+ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/ACSMHK/lslogt.txt
+'''
 
 
 # from full catalog file obtain required info

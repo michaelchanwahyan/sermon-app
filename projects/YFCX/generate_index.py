@@ -47,12 +47,12 @@ _ = os.system("rm -f streams.yfcy")
 _ = os.system("wget -O streams.yfcy https://www.youtube.com/YanfookYouth/streams")
 _ = os.system("rm -f streams.yfc")
 _ = os.system("wget -O streams.yfc https://www.youtube.com/yanfookchurch/streams")
-_ = os.system("cat streams.yfcy streams.yfc > streams")
+_ = os.system("cat streams.yfcy streams.yfc > videos")
 _ = os.system("rm -f streams.*")
 
 
 # read in the html source of the webpage
-with open("streams", "r") as fp:
+with open("videos", "r") as fp:
     vtext = fp.read()
 fp.close()
 
@@ -241,25 +241,27 @@ def retrieve_yfcy_date(inname):
 
 
 
-'''### Run By Your Host System if new audio files are included
+'''### Run By Your Host System if new audio files are included'''
+
+
+'''
 cd ~/One*/TPPHC/SERMON/YFCX/
 
 ls *.mp3 > ~/SOURCE/sermon-app/projects/YFCX/ls.txt
-
-vim ~/SOURCE/sermon-app/projects/YFCX/ls.txt # remove the trailing '.mp3' on each row'''
+'''
 
 
 # from full catalog file obtain required info
 rdd = sc.textFile('ls.txt')
 rdd1 = rdd.map(lambda w: w.replace('｜', '｜').replace('︱', '｜').replace('|','｜'))\
-    .map(lambda w: (w, w[:-14], w[-12:-1])) \
+    .map(lambda w: (w, w[:-17].strip(), w[-16:-5])) \
     .map(lambda w: (w[0], cleanse_punctuation(w[1], '｜'), w[2])) \
     .map(lambda w: ([ _.strip() for _ in w[1].split('｜') ], w[2], w[0], retrieve_yfcy_date(w[0]))) \
     # .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
-rdd1.take(4)
+rdd1.take(10)
 
 
 # w0 = ['生命比生活更重要 (出埃及記13_21-22) - 余德淳博士']
