@@ -244,7 +244,7 @@ ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/CGST/lslogt.txt
 
 # from full catalog file obtain required info
 rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w)
-rdd1 = rdd.map(lambda w: (w[38:-4].strip(), w[-16:-5], w[25:38])) \
+rdd1 = rdd.map(lambda w: (w[38:-18].strip(), w[-16:-5], w[25:38])) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
     .map(lambda w: (w[0].strip().split(' '), w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
 
