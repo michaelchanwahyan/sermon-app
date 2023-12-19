@@ -23,7 +23,7 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = FVC
       then
-          wget https://www.youtube.com/@cgstedu/videos
+          wget https://www.youtube.com/@fairviewchurch/videos
       fi
       if test $PROJECT_NAME = JNG
       then

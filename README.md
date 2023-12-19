@@ -7,31 +7,33 @@ texts from audio sources are generated from raw recording using speech-to-text e
 ### Immediately available sermon books
 the outcome of this repo compiled from generate LaTeX source are listed below
 | sermon book series                                       | file path in this repo                | link                                                                                                         |
-|----------------------------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| JohnsonNg Youtube Channel                                | ./sermon_JNG_2012-18.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2012-18.pdf?raw=true)          |
-|                                                          | ./sermon_JNG_2019-20.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2019-20.pdf?raw=true)          |
-|                                                          | ./sermon_JNG_2021-22.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2021-22.pdf?raw=true)          |
-|                                                          | ./sermon_JNG_2023-24.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2023-24.pdf?raw=true)          |
-| 港九培靈研經會講章 Hong Kong Bible Conference            | ./sermon_HKBC_1928-2007.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_1928-2007.pdf?raw=true)       |
-|                                                          | ./sermon_HKBC_2008-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_2008-present.pddf?raw=true)   |
-| 崇基神學院 崇拜講章 Div. Schl of Chung Chi College       | ./sermon_DSCCC_2009-present.pdf       | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_DSCCC_2009-present.pdf?raw=true)   |
-| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth            | ./sermon_YFCX_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_YFCX_2020-present.pdf?raw=true)    |
-| 漢語聖經協會 講道講章 Chinese Bible International        | ./sermon_CBI.pdf                      | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_CBI.pdf?raw=true)                  |
-| 環球聖經公會 講道講章 Worldwide Bible Society            | ./sermon_WWBS.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_WWBS.pdf?raw=true)                 |
-| 中國神學研究院 道講章 China Graduate School of Theology  | ./sermon_CGST.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_CGST.pdf?raw=true)                 |
+|------------------------------------------------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| 宣道傳意 講道講章 Alliance Communications Ministry                           | ./sermon_ACSMHK.pdf                   | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_ACSMHK.pdf?raw=true)               |
+| 漢語聖經協會 講道講章 Chinese Bible International                            | ./sermon_CBI.pdf                      | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_CBI.pdf?raw=true)                  |
+| 中國神學研究院 道講章 China Graduate School of Theology                      | ./sermon_CGST.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_CGST.pdf?raw=true)                 |
+| 崇基神學院 崇拜講章 Div. Schl of Chung Chi College                           | ./sermon_DSCCC_2009-present.pdf       | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_DSCCC_2009-present.pdf?raw=true)   |
+| 宣道會錦繡堂 崇拜講章 Christian Missionary Alliance Fairview Church          | ./sermon_FVC_2017-present.pdf         | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_FVC_2017-present.pdf?raw=true)     |
+| 港九培靈研經會講章 Hong Kong Bible Conference                                | ./sermon_HKBC_1928-2007.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_1928-2007.pdf?raw=true)       |
+|                                                                              | ./sermon_HKBC_2008-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_2008-present.pddf?raw=true)   |
+| JohnsonNg Youtube Channel                                                    | ./sermon_JNG_2012-18.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2012-18.pdf?raw=true)          |
+|                                                                              | ./sermon_JNG_2019-20.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2019-20.pdf?raw=true)          |
+|                                                                              | ./sermon_JNG_2021-22.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2021-22.pdf?raw=true)          |
+|                                                                              | ./sermon_JNG_2023-24.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2023-24.pdf?raw=true)          |
+| 環球聖經公會 講道講章 Worldwide Bible Society                                | ./sermon_WWBS.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_WWBS.pdf?raw=true)                 |
+| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth                                | ./sermon_YFCX_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_YFCX_2020-present.pdf?raw=true)    |
 
 ### Statistics Overview on this project
 sermon source | transcript total count | recent development activity
 ----|----|----
-ACSMHK | 4.9% ( 316 / 6427) | 4.6% ( 1013 / 21785)
-CBI | 0.2% ( 11 / 6427) | 0.4% ( 91 / 21785)
-CGST | 3.3% ( 215 / 6427) | 3.2% ( 700 / 21785)
-DSCCC | 10.5% ( 673 / 6427) | 0.5% ( 117 / 21785)
-FVC | 0.0% ( 0 / 6427) | 0.1% ( 16 / 21785)
-HKBC | 23.8% ( 1531 / 6427) | 0.1% ( 26 / 21785)
-JNG | 43.4% ( 2787 / 6427) | 77.8% ( 16952 / 21785)
-WWBS | 0.3% ( 19 / 6427) | 0.5% ( 100 / 21785)
-YFCX | 13.6% ( 875 / 6427) | 12.7% ( 2770 / 21785)
+ACSMHK | 7.4% ( 487 / 6598) | 7.1% ( 1581 / 22281)
+CBI | 0.2% ( 11 / 6598) | 0.4% ( 95 / 22281)
+CGST | 3.2% ( 215 / 6598) | 3.2% ( 707 / 22281)
+DSCCC | 10.2% ( 673 / 6598) | 0.5% ( 121 / 22281)
+FVC | 0.0% ( 0 / 6598) | 0.1% ( 25 / 22281)
+HKBC | 23.2% ( 1531 / 6598) | 0.1% ( 26 / 22281)
+JNG | 42.2% ( 2787 / 6598) | 75.6% ( 16837 / 22281)
+WWBS | 0.3% ( 19 / 6598) | 0.5% ( 108 / 22281)
+YFCX | 13.3% ( 875 / 6598) | 12.5% ( 2781 / 22281)
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites

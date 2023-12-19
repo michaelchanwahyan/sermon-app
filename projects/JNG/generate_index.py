@@ -247,7 +247,7 @@ rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w) \
 # due to historical reason, JNG sermon file name contains 2 format:
 # <name>-ytcode.mp3 and <name> [ytcode].mp3
 
-rdd1 = rdd.map(lambda w: (w[38:-4], w[-16:-5], w[25:38])) \
+rdd1 = rdd.map(lambda w: (w[38:-18].strip(), w[-16:-5], w[25:38])) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))

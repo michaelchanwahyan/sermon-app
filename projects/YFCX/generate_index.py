@@ -254,7 +254,7 @@ ls *.mp3 > ~/SOURCE/sermon-app/projects/YFCX/ls.txt
 # from full catalog file obtain required info
 rdd = sc.textFile('ls.txt')
 rdd1 = rdd.map(lambda w: w.replace('｜', '｜').replace('︱', '｜').replace('|','｜'))\
-    .map(lambda w: (w, w[:-17].strip(), w[-16:-5])) \
+    .map(lambda w: (w[:-4], w[:-18].strip(), w[-16:-5])) \
     .map(lambda w: (w[0], cleanse_punctuation(w[1], '｜'), w[2])) \
     .map(lambda w: ([ _.strip() for _ in w[1].split('｜') ], w[2], w[0], retrieve_yfcy_date(w[0]))) \
     # .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
