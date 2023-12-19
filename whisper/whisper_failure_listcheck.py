@@ -15,6 +15,7 @@ def execute_commands(commands):
 from datetime import datetime, timedelta
 import time
 import json
+import os
 import os.path
 import logging
 import argparse
@@ -92,7 +93,7 @@ def whisper_failure_check(insrtdir):
     # final results
     # for _ in RDD6_sorted[:10]:
     #     print(_)
-    rdd7 = rdd6.filter(lambda w: float(w[1])/float(w[0][0][1]) > 0.05) \
+    rdd7 = rdd6.filter(lambda w: float(w[1])/float(w[0][0][1]) > 0.05 or w[1] > 20) \
         .filter(lambda w: len(w[0][1])) \
         .map(lambda w: (w[0][0], w[0][1], w[1]))
     RDD7 = rdd7.collect()
@@ -105,6 +106,7 @@ def whisper_failure_check(insrtdir):
 for PROJ_NAME in ['./ACSMHK/', './CBI/', './CGST/', './JNG/', './WWBS/', './YFCX/']:
     for fn in whisper_failure_check(PROJ_NAME):
         print(fn)
+_ = os.system('wc -l */*.srt | sort -r')
 
 
 
