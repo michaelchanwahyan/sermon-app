@@ -55,7 +55,7 @@ fp.close()
 
 
 '''### Run By Your Host System if new audio files are included
-cd ~/One*/TPPHC/SERMON/FVC/
+cd ~/TPPHC/SERMON/FVC/
 
 ls *.mp3 > ~/SOURCE/sermon-app/projects/FVC/exlist.txt
 
@@ -120,7 +120,7 @@ cd ~/SOURCE/sermon-app/projects
 bash download.sh
 
 ### move the downloaded mp3 back to my audio storage directory
-mv \*.mp3 ~/One*/TPPHC/SERMON/FVC/'''
+mv \*.mp3 ~/TPPHC/SERMON/FVC/'''
 
 
 
@@ -241,7 +241,7 @@ def retrieve_yfcy_date(inname):
 
 
 '''
-cd ~/One*/TPPHC/SERMON/FVC/
+cd ~/TPPHC/SERMON/FVC/
 
 ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/FVC/lslogt.txt
 '''

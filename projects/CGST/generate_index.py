@@ -55,7 +55,7 @@ fp.close()
 
 
 '''### Run By Your Host System if new audio files are included
-cd ~/One*/TPPHC/SERMON/CGST/
+cd ~/TPPHC/SERMON/CGST/
 
 ls *.mp3 > ~/SOURCE/sermon-app/projects/CGST/exlist.txt
 
@@ -120,7 +120,7 @@ cd ~/SOURCE/sermon-app/projects
 bash download.sh
 
 ### move the downloaded mp3 back to my audio storage directory
-mv \*.mp3 ~/One*/TPPHC/SERMON/CGST/'''
+mv \*.mp3 ~/TPPHC/SERMON/CGST/'''
 
 
 
@@ -236,7 +236,7 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
 
 
 '''
-cd ~/One*/TPPHC/SERMON/CGST/
+cd ~/TPPHC/SERMON/CGST/
 
 ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/CGST/lslogt.txt
 '''
