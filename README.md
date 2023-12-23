@@ -6,21 +6,21 @@ texts from audio sources are generated from raw recording using speech-to-text e
 
 ### Immediately available sermon books
 the outcome of this repo compiled from generate LaTeX source are listed below
-| sermon book series                                       | file path in this repo                | link                                                                                                         |
-|------------------------------------------------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| 宣道傳意 講道講章 Alliance Communications Ministry                           | ./sermon_ACSMHK.pdf                   | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_ACSMHK.pdf?raw=true)               |
-| 漢語聖經協會 講道講章 Chinese Bible International                            | ./sermon_CBI.pdf                      | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_CBI.pdf?raw=true)                  |
-| 中國神學研究院 道講章 China Graduate School of Theology                      | ./sermon_CGST.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_CGST.pdf?raw=true)                 |
-| 崇基神學院 崇拜講章 Div. Schl of Chung Chi College                           | ./sermon_DSCCC_2009-present.pdf       | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_DSCCC_2009-present.pdf?raw=true)   |
-| 宣道會錦繡堂 崇拜講章 Christian Missionary Alliance Fairview Church          | ./sermon_FVC_2017-present.pdf         | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_FVC_2017-present.pdf?raw=true)     |
-| 港九培靈研經會講章 Hong Kong Bible Conference                                | ./sermon_HKBC_1928-2007.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_1928-2007.pdf?raw=true)       |
-|                                                                              | ./sermon_HKBC_2008-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_HKBC_2008-present.pddf?raw=true)   |
-| JohnsonNg Youtube Channel                                                    | ./sermon_JNG_2012-18.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2012-18.pdf?raw=true)          |
-|                                                                              | ./sermon_JNG_2019-20.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2019-20.pdf?raw=true)          |
-|                                                                              | ./sermon_JNG_2021-22.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2021-22.pdf?raw=true)          |
-|                                                                              | ./sermon_JNG_2023-24.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_JNG_2023-24.pdf?raw=true)          |
-| 環球聖經公會 講道講章 Worldwide Bible Society                                | ./sermon_WWBS.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_WWBS.pdf?raw=true)                 |
-| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth                                | ./sermon_YFCX_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/blob/master/sermon_YFCX_2020-present.pdf?raw=true)    |
+| sermon book series                                                           | file path in this repo                    | link                                                                                                             |
+|------------------------------------------------------------------------------|-------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| 宣道傳意 講道講章 Alliance Communications Ministry                           | ./pdf/sermon_ACSMHK.pdf                   | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_ACSMHK.pdf)                         |
+| 漢語聖經協會 講道講章 Chinese Bible International                            | ./pdf/sermon_CBI.pdf                      | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_CBI.pdf)                            |
+| 中國神學研究院 道講章 China Graduate School of Theology                      | ./pdf/sermon_CGST.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_CGST.pdf)                           |
+| 崇基神學院 崇拜講章 Div. Schl of Chung Chi College                           | ./pdf/sermon_DSCCC_2009-present.pdf       | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_DSCCC_2009-present.pdf)             |
+| 宣道會錦繡堂 崇拜講章 Christian Missionary Alliance Fairview Church          | ./pdf/sermon_FVC_2017-present.pdf         | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_FVC_2017-present.pdf)               |
+| 港九培靈研經會講章 Hong Kong Bible Conference                                | ./pdf/sermon_HKBC_1928-2007.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_HKBC_1928-2007.pdf)                 |
+|                                                                              | ./pdf/sermon_HKBC_2008-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_HKBC_2008-present.pdf)              |
+| JohnsonNg Youtube Channel                                                    | ./pdf/sermon_JNG_2012-18.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_JNG_2012-18.pdf)                    |
+|                                                                              | ./pdf/sermon_JNG_2019-20.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_JNG_2019-20.pdf)                    |
+|                                                                              | ./pdf/sermon_JNG_2021-22.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_JNG_2021-22.pdf)                    |
+|                                                                              | ./pdf/sermon_JNG_2023-24.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_JNG_2023-24.pdf)                    |
+| 環球聖經公會 講道講章 Worldwide Bible Society                                | ./pdf/sermon_WWBS.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_WWBS.pdf)                           |
+| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth                                | ./pdf/sermon_YFCX_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_YFCX_2020-present.pdf)              |
 
 ### Statistics Overview on this project
 sermon source | transcript total count | recent development activity
