@@ -21,7 +21,7 @@ import azure.cognitiveservices.speech as speechsdk
 
 
 '''### Run By Your Host System
-ffmpeg -i ~/One*/TPPHC/SERMON/Johnson_Ng_mydownload/*-xxxxxxxxxxx.mp3 ~/SOURCE/sermon-app/projects/xxxxxxxxxxx.wav'''
+ffmpeg -i ~/TPPHC/SERMON/JNG/*-xxxxxxxxxxx.mp3 ~/SOURCE/sermon-app/projects/xxxxxxxxxxx.wav'''
 
 
 target_code = sys.argv[1] # 'xxxxxxxxxxx'

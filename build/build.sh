@@ -28,6 +28,7 @@ if   [ "$1" == "" ] ; then
     echo "               -  CBI                                               "
     echo "               -  CGST                                              "
     echo "               -  DSCCC                                             "
+    echo "               -  FVC                                               "
     echo "               -  HKBC                                              "
     echo "               -  JNG                                               "
     echo "               -  WWBS                                              "
@@ -53,6 +54,10 @@ if   [ "$1" == "" ] ; then
     echo "     DSCCC    Compile DSCCC sermon book.                            "
     echo "              DSCCC := Divinity School of Chung Chi College, CUHK   "
     echo "              香港中文大學崇基學院神學院                            "
+    echo "                                                                    "
+    echo "     FVC      Compile FVC sermon book.                              "
+    echo "              FVC := Fairview Church                                "
+    echo "              宣道會錦繡堂                                          "
     echo "                                                                    "
     echo "     HKBC     Compile HKBC sermon book.                             "
     echo "              HKBC := Hong Kong Bible Conference                    "
@@ -82,6 +87,7 @@ if   [ "$1" == "genall" ] ; then
     python3 convert_srt2txt.py ACSMHK
     python3 convert_srt2txt.py CBI
     python3 convert_srt2txt.py CGST
+    python3 convert_srt2txt.py FVC
     python3 convert_srt2txt.py JNG
     python3 convert_srt2txt.py WWBS
     python3 convert_srt2txt.py YFCX
@@ -99,6 +105,10 @@ if   [ "$1" == "genall" ] ; then
     python3 generate_sermonbook.py
     cd ..
     cd ./DSCCC
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
+    cd ./FVC
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
     cd ..
@@ -125,6 +135,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh CBI
     ./build.sh CGST
     ./build.sh DSCCC
+    ./build.sh FVC
     ./build.sh HKBC
     ./build.sh JNG
     ./build.sh WWBS
@@ -134,6 +145,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh CBI     once
     ./build.sh CGST    once
     ./build.sh DSCCC   once
+    ./build.sh FVC     once
     ./build.sh HKBC    once
     ./build.sh JNG     once
     ./build.sh WWBS    once
@@ -146,7 +158,7 @@ elif [ "$1" == "ACSMHK" ] ; then
     xelatex sermon_$1.tex
     fi
     rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../
+    mv sermon_$1.pdf ../../pdf/
     cd ..
 elif [ "$1" == "CBI" ] ; then
     cd $1
@@ -155,7 +167,7 @@ elif [ "$1" == "CBI" ] ; then
     xelatex sermon_$1.tex
     fi
     rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../
+    mv sermon_$1.pdf ../../pdf/
     cd ..
 elif [ "$1" == "CGST" ] ; then
     cd $1
@@ -164,7 +176,7 @@ elif [ "$1" == "CGST" ] ; then
     xelatex sermon_$1.tex
     fi
     rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../
+    mv sermon_$1.pdf ../../pdf/
     cd ..
 elif [ "$1" == "DSCCC" ] ; then
     cd $1
@@ -173,7 +185,16 @@ elif [ "$1" == "DSCCC" ] ; then
     xelatex sermon_$1_2009-present.tex
     fi
     rm -f sermon_$1_2009-present.mtc*
-    mv sermon_$1_2009-present.pdf ../../
+    mv sermon_$1_2009-present.pdf ../../pdf/
+    cd ..
+elif [ "$1" == "FVC" ] ; then
+    cd $1
+    xelatex sermon_$1_2017-present.tex
+    if [ "$2" != "once" ] ; then
+    xelatex sermon_$1_2017-present.tex
+    fi
+    rm -f sermon_$1_2017-present.mtc*
+    mv sermon_$1_2017-present.pdf ../../pdf/
     cd ..
 elif [ "$1" == "HKBC" ] ; then
     cd $1
@@ -182,7 +203,7 @@ elif [ "$1" == "HKBC" ] ; then
     xelatex sermon_$1_1928-2007.tex
     fi
     rm -f sermon_$1_1928-2007.mtc*
-    mv sermon_$1_1928-2007.pdf ../../
+    mv sermon_$1_1928-2007.pdf ../../pdf/
     cd ..
     cd $1
     xelatex sermon_$1_2008-present.tex
@@ -190,7 +211,7 @@ elif [ "$1" == "HKBC" ] ; then
     xelatex sermon_$1_2008-present.tex
     fi
     rm -f sermon_$1_2008-present.mtc*
-    mv sermon_$1_2008-present.pdf ../../
+    mv sermon_$1_2008-present.pdf ../../pdf/
     cd ..
 elif [ "$1" == "JNG" ] ; then
     cd $1
@@ -199,7 +220,7 @@ elif [ "$1" == "JNG" ] ; then
     xelatex sermon_$1_2012-18.tex
     fi
     rm -f sermon_$1_2012-18.mtc*
-    mv sermon_$1_2012-18.pdf ../../
+    mv sermon_$1_2012-18.pdf ../../pdf/
     cd ..
     cd $1
     xelatex sermon_$1_2019-20.tex
@@ -207,7 +228,7 @@ elif [ "$1" == "JNG" ] ; then
     xelatex sermon_$1_2019-20.tex
     fi
     rm -f sermon_$1_2019-20.mtc*
-    mv sermon_$1_2019-20.pdf ../../
+    mv sermon_$1_2019-20.pdf ../../pdf/
     cd ..
     cd $1
     xelatex sermon_$1_2021-22.tex
@@ -215,7 +236,7 @@ elif [ "$1" == "JNG" ] ; then
     xelatex sermon_$1_2021-22.tex
     fi
     rm -f sermon_$1_2021-22.mtc*
-    mv sermon_$1_2021-22.pdf ../../
+    mv sermon_$1_2021-22.pdf ../../pdf/
     cd ..
     cd $1
     xelatex sermon_$1_2023-24.tex
@@ -223,7 +244,7 @@ elif [ "$1" == "JNG" ] ; then
     xelatex sermon_$1_2023-24.tex
     fi
     rm -f sermon_$1_2023-24.mtc*
-    mv sermon_$1_2023-24.pdf ../../
+    mv sermon_$1_2023-24.pdf ../../pdf/
     cd ..
 elif [ "$1" == "WWBS" ] ; then
     cd $1
@@ -232,7 +253,7 @@ elif [ "$1" == "WWBS" ] ; then
     xelatex sermon_$1.tex
     fi
     rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../
+    mv sermon_$1.pdf ../../pdf/
     cd ..
 elif [ "$1" == "YFCX" ] ; then
     cd $1
@@ -241,6 +262,6 @@ elif [ "$1" == "YFCX" ] ; then
     xelatex sermon_$1_2020-present.tex
     fi
     rm -f sermon_$1_2020-present.mtc*
-    mv sermon_$1_2020-present.pdf ../../
+    mv sermon_$1_2020-present.pdf ../../pdf/
     cd ..
 fi

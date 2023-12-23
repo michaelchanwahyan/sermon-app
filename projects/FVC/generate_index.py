@@ -55,7 +55,7 @@ fp.close()
 
 
 '''### Run By Your Host System if new audio files are included
-cd ~/One*/TPPHC/SERMON/FVC/
+cd ~/TPPHC/SERMON/FVC/
 
 ls *.mp3 > ~/SOURCE/sermon-app/projects/FVC/exlist.txt
 
@@ -120,7 +120,7 @@ cd ~/SOURCE/sermon-app/projects
 bash download.sh
 
 ### move the downloaded mp3 back to my audio storage directory
-mv \*.mp3 ~/One*/TPPHC/SERMON/FVC/'''
+mv \*.mp3 ~/TPPHC/SERMON/FVC/'''
 
 
 
@@ -130,7 +130,7 @@ mv \*.mp3 ~/One*/TPPHC/SERMON/FVC/'''
 
 
 # the initial of different kind of preacher
-preacherTitle_list = ['博士','牧師','傳道','老師','先生','教授','弟兄','社長', '神學生', '師母']
+preacherTitle_list = ['博士','牧師','傳道','老師','先生','教授','弟兄','社長', '神學生', '師母', '姑娘']
 
 
 # the bible books
@@ -241,7 +241,7 @@ def retrieve_yfcy_date(inname):
 
 
 '''
-cd ~/One*/TPPHC/SERMON/FVC/
+cd ~/TPPHC/SERMON/FVC/
 
 ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/FVC/lslogt.txt
 '''
@@ -249,10 +249,18 @@ ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/FVC/lslogt.txt
 
 # from full catalog file obtain required info
 rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w)
+
+# FVC specific
+rdd = rdd \
+    .map(lambda w: re.sub(r'([0-9])：([0-9])', r'\1_\2', w)) \
+    .map(lambda w: w.replace('講員', ' 講員')) \
+    .map(lambda w: re.sub(r'(20[1-9][0-9])([01][0-9])([0-3][0-9])', r'\1-\2-\3 ', w))
+# END OF FVC specific
+
 rdd1 = rdd.map(lambda w: (w[38:-18].strip(), w[-16:-5], w[25:38])) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
-    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
+    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], '-'.join(w[0][0:3])))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
@@ -292,6 +300,7 @@ rdd2 = rdd1.map(
                               and i != j \
                               and not '傳道書' in j \
                               and not '傳道人' in j \
+                              and not '傳道者' in j \
                               and not '先知的' in j \
                               and not '堅持'   in j ],
                list(set([i for i in book_list for j in w[0] if i in j])),

@@ -15,6 +15,7 @@ def execute_commands(commands):
 from datetime import datetime, timedelta
 import time
 import json
+import os
 import os.path
 import logging
 import argparse
@@ -55,8 +56,8 @@ def readfile(infname):
     return lines
 
 
-def whisper_failure_check(inlogdir):
-    file_list = os.listdir(inlogdir)
+def whisper_failure_check(insrtdir):
+    file_list = os.listdir(insrtdir)
     # get file list
     pathfname_list = []
     for fname in file_list:
@@ -64,13 +65,13 @@ def whisper_failure_check(inlogdir):
         if not fname[-4:] == '.srt':
             continue
         else:
-            pathfname = inlogdir + fname
+            pathfname = insrtdir + fname
             pathfname_list.append(pathfname)
     # prepare RDD
     rdd = sc.parallelize(pathfname_list)
     # read in the files
     rdd1 = rdd.map(lambda w: (w, readfile(w)))
-    rdd2 = rdd1.map(lambda w: (w[0], [ _[32:].strip() for _ in w[1]]))
+    rdd2 = rdd1.map(lambda w: (w[0], [ _.strip() for _ in w[1]]))
     # use pathfilename and its lineCnt as the key of each phrase transcription
     rdd3 = rdd2.map(lambda w: [ ((w[0], len(w[1])), _) for _ in w[1] ])
     # parallelize them
@@ -92,7 +93,7 @@ def whisper_failure_check(inlogdir):
     # final results
     # for _ in RDD6_sorted[:10]:
     #     print(_)
-    rdd7 = rdd6.filter(lambda w: float(w[1])/float(w[0][0][1]) > 0.10) \
+    rdd7 = rdd6.filter(lambda w: float(w[1])/float(w[0][0][1]) > 0.05 or w[1] > 20) \
         .filter(lambda w: len(w[0][1])) \
         .map(lambda w: (w[0][0], w[0][1], w[1]))
     RDD7 = rdd7.collect()
@@ -102,12 +103,10 @@ def whisper_failure_check(inlogdir):
     return RDD7u
 
 
-for fn in whisper_failure_check('./JNG/'):
-    print(fn)
-
-
-for fn in whisper_failure_check('./YFCX/'):
-    print(fn)
+for PROJ_NAME in ['./ACSMHK/', './CBI/', './CGST/', './JNG/', './WWBS/', './YFCX/']:
+    for fn in whisper_failure_check(PROJ_NAME):
+        print(fn)
+_ = os.system('wc -l */*.srt | sort -r')
 
 
 
