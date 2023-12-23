@@ -7,7 +7,7 @@ pushd ../projects
   do
     pushd ./$PROJECT_NAME
       ORI_DIR=$(pwd)
-      pushd ~/One*/TPPHC/SERMON/$PROJECT_NAME
+      pushd ~/TPPHC/SERMON/$PROJECT_NAME
         ls -logtD '%b %d  %Y' *.mp3 > $ORI_DIR/lslogt.txt
       popd # back to ./app/projects/$PROJECT_NAME
     popd # back to ./app/projects
@@ -17,7 +17,7 @@ pushd ../projects
   do
     pushd ./$PROJECT_NAME
       ORI_DIR=$(pwd)
-      pushd ~/One*/TPPHC/SERMON/$PROJECT_NAME
+      pushd ~/TPPHC/SERMON/$PROJECT_NAME
         ls *.mp3 > $ORI_DIR/ls.txt
       popd # back to ./app/projects/$PROJECT_NAME
     popd # back to ./app/projects
