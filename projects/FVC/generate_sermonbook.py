@@ -167,10 +167,13 @@ with open(sermon_tex_filepath, "a") as fp:
             vstr = c2v_dict.get(cc, ' ')
             sstr = c2s_dict.get(cc, ' ')
             sstr = yfcx_sermon_title_processing(cc)
+            sstr = cleanse_special_char(
+                c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
+            )
             tstr = c2t_dict.get(cc, ' ')
             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
-                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+cleanse_special_char(sstr)+"}" + " & " \
+                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                      + tstr + " & " \
                      + ystr \
                      + " \\\\\n")
@@ -225,10 +228,13 @@ with open(sermon_tex_filepath, "a") as fp:
             vstr = c2v_dict.get(cc, ' ')
             sstr = c2s_dict.get(cc, ' ')
             sstr = yfcx_sermon_title_processing(cc)
+            sstr = cleanse_special_char(
+                c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
+            )
             tstr = c2t_dict.get(cc, ' ')
             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
-                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+cleanse_special_char(sstr)+"}" + " & " \
+                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                      + tstr + " & " \
                      + ystr \
                      + " \\\\\n")
@@ -274,7 +280,10 @@ for lineId in range(len(lines)):
             fp.write("\n\n\\section{"+sectionNameStr+"}\n")
             fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
             sstr = yfcx_sermon_title_processing(cc)
-            fp.write("\\textbf{"+cleanse_special_char(sstr)+"}\n")
+            sstr = cleanse_special_char(
+                c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
+            )
+            fp.write("\\textbf{"+sstr+"}\n")
             fp.write("\\newline\n\\newline\n")
             fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + " \n")
             fp.write("\\newline\n\\newline\n")
