@@ -85,6 +85,11 @@ def cleanse_special_char(inputText):
     return txt2
 
 
+with open('../rep_whisper_trailing.txt', 'r') as fp:
+    whisper_trailing_rep_list = [ cleanse_special_char(_.strip()) for _ in fp.readlines() ]
+fp.close()
+
+
 p_list = list(p2c_dict.keys())
 print(p_list)
 
@@ -264,6 +269,8 @@ for lineId in range(len(lines)):
             for textline in textlines:
                 if textline == textline_prev:
                     textline_prev = textline
+                    continue
+                elif textline.strip() in whisper_trailing_rep_list:
                     continue
                 else:
                     textline_prev = textline
