@@ -267,8 +267,6 @@ for lineId in range(len(lines)):
             _textrow_cnt = 0
             textline_prev = ''
             for textline in textlines:
-                if '字幕' in textline:
-                    print(textline)
                 if textline == textline_prev:
                     textline_prev = textline
                     continue
