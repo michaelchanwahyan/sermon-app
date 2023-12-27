@@ -267,10 +267,27 @@ for lineId in range(len(lines)):
             _textrow_cnt = 0
             textline_prev = ''
             for textline in textlines:
+                # ----------------------------------------------------------------------
+                # check if whisper_trailing_rep_list any 2 match
+                iterator = iter(whisper_trailing_rep_list)
+                matchCnt = 0
+                # Use the next function to retrieve the elements of the iterator
+                try:
+                    while True:
+                        ele = next(iterator)
+                        if ele in textline:
+                            matchCnt += 1
+                except StopIteration:
+                    pass
+                whisper_trailing_pattern_match = matchCnt >= 2
+                # END OF check if whisper_trailing_rep_list any 2 match
+                # ----------------------------------------------------------------------
                 if textline == textline_prev:
                     textline_prev = textline
                     continue
-                elif textline.strip() in whisper_trailing_rep_list:
+                elif re.sub(r'[()]', '', textline.strip()) in whisper_trailing_rep_list:
+                    continue
+                elif whisper_trailing_pattern_match:
                     continue
                 else:
                     textline_prev = textline
