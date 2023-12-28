@@ -134,8 +134,7 @@ with open("./index_byc.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
 
-for lineId in range(len(lines)):
-    line = lines[lineId]
+for lineId, line in enumerate(lines):
     line_contents = line.split(",")
     s_curr = line_contents[0]
     if os.path.isfile(f'../../data/HKBC/{s_curr}'):
@@ -263,10 +262,11 @@ def sermon_tex_from_generation(confno_start, confno_end):
     # --------------------------------------
     # lines is the line content in index_byc
     # --------------------------------------
-    for lineId in range(1,len(lines)):
+    for lineId, line in enumerate(lines):
+        if lineId == 0:
+            continue
         if (lineId+1) % 100 == 0:
             print(f"{lineId+1} of {len(lines)}")
-        line = lines[lineId]
         line_contents = line.split(",")
         s_curr = line_contents[0]
         s_prev = lines[(lineId-1)%len(lines)].split(",")[0]

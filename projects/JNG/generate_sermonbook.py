@@ -207,8 +207,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
         # --------------------------------------
         # lines is the line content in index_byp
         # --------------------------------------
-        for lineId in range(len(lines)):
-            line = lines[lineId]
+        for lineId, line in enumerate(lines):
             cc = line.split(",")[0]
             # --------------------------------------
             # only include this code cc if it is
@@ -257,8 +256,9 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # --------------------------------------
     # lines is the line content in index_byp
     # --------------------------------------
-    for lineId in range(len(lines)):
-        line = lines[lineId]
+    for lineId, line in enumerate(lines):
+        if (lineId+1) % 100 == 0:
+            print(f"{lineId+1} of {len(lines)}")
         cc = line.split(",")[0]
         cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
         cc_next = lines[(lineId+1)%len(lines)].split(",")[0]
@@ -284,8 +284,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                     fp.write("{ \\scriptsize\n")
                     fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
                     fp.write("\\hline\n")
-                    for lineId_ in range(len(lines)):
-                        line_ = lines[lineId_]
+                    for lineId_, line_ in enumerate(lines):
                         cc_ = line_.split(",")[0]
                         if os.path.isfile(f'../../data/JNG/{cc_}.txt') and p_curr == c2p_dict.get(cc_):
                             bstr = c2b_dict.get(cc_, ' ')

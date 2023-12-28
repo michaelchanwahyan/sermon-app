@@ -278,8 +278,7 @@ for index, row in df.iterrows():
                             chisymbol_list.append(chisymbol)
                             engsymbol_list.append(engsymbol)
                             bkFound = True
-                    for char_idx in range(len(bv)):
-                        char_curr = bv[char_idx]
+                    for char_idx, char_curr in enumerate(bv):
                         if char_curr not in '0123456789:-,':
                             continue
                         else:
@@ -295,8 +294,7 @@ for index, row in df.iterrows():
                                 engsymbol_list.append(engsymbol)
                                 bkFound = True
                         cv_curr = ''
-                        for char_idx in range(len(bv_seg)):
-                            char_curr = bv_seg[char_idx]
+                        for char_idx, char_curr in enumerate(bv_seg):
                             if char_curr not in '0123456789:-,':
                                 continue
                             elif char_curr == ';':

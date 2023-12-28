@@ -147,8 +147,7 @@ with open(sermon_tex_filepath, "a") as fp:
     # --------------------------------------
     # lines is the line content in index_byn
     # --------------------------------------
-    for lineId in range(len(lines)):
-        line = lines[lineId]
+    for lineId, line in enumerate(lines):
         cc = line.split(",")[0]
         # --------------------------------------
         # only include this code cc if it is
@@ -193,8 +192,9 @@ cc_next = ''
 # --------------------------------------
 # lines is the line content in index_byn
 # --------------------------------------
-for lineId in range(len(lines)):
-    line = lines[lineId]
+for lineId, line in enumerate(lines):
+    if (lineId+1) % 100 == 0:
+        print(f"{lineId+1} of {len(lines)}")
     cc = line.split(",")[0]
     cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
     cc_next = lines[(lineId+1)%len(lines)].split(",")[0]
