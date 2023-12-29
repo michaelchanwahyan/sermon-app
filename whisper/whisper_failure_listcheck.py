@@ -56,7 +56,7 @@ def readfile(infname):
     return lines
 
 
-def whisper_failure_check(insrtdir):
+def whisper_failure_check_1(insrtdir):
     file_list = os.listdir(insrtdir)
     # get file list
     pathfname_list = []
@@ -103,10 +103,56 @@ def whisper_failure_check(insrtdir):
     return RDD7u
 
 
-for PROJ_NAME in ['./ACSMHK/', './CBI/', './CGST/', './JNG/', './WWBS/', './YFCX/']:
-    for fn in whisper_failure_check(PROJ_NAME):
+for PROJ_NAME in ['./ACSMHK/', './CBI/', './CGST/', './FVC/', './JNG/', './WWBS/', './YFCX/']:
+    for fn in whisper_failure_check_1(PROJ_NAME):
         print(fn)
-_ = os.system('wc -l */*.srt | sort -r')
+
+
+# _ = os.system('wc -l */*.srt | sort -r')
+
+
+def whisper_failure_check_2(insrtdir):
+    fn_return = []
+    file_list = os.listdir(insrtdir)
+    # get file list
+    pathfname_list = []
+    for fname in file_list:
+        #if not fname[-4:] == '.whisper.log':
+        if not fname[-4:] == '.srt':
+            continue
+        else:
+            pathfname = insrtdir + fname
+            pathfname_list.append(pathfname)
+    for pathfname in pathfname_list:
+        # print('----    %s    ----' % pathfname)
+        with open(pathfname, 'r') as fp:
+            lines_curr = [ _.strip() for _ in fp.readlines() ]
+        fp.close()
+        lines_curr = lines_curr[2::4]
+        trail_curr = lines_curr[-20:]
+        text_tmp = ' '.join(trail_curr)
+        if '阿門' not in text_tmp \
+            and '阿們' not in text_tmp \
+            and '祈禱' not in text_tmp \
+            and '禱告' not in text_tmp \
+            and '但願' not in text_tmp \
+            and '願神' not in text_tmp \
+            and '求主' not in text_tmp \
+            and '幫助' not in text_tmp \
+            and '最後' not in text_tmp \
+            and '最後' not in text_tmp \
+            and '保守' not in text_tmp \
+            and '我們' not in text_tmp \
+            and '停在這' not in text_tmp \
+            and '奉耶穌' not in text_tmp:
+            #print(pathfname)
+            fn_return.append(pathfname)
+    return fn_return
+
+
+for PROJ_NAME in ['./ACSMHK/', './CBI/', './CGST/', './FVC/', './JNG/', './WWBS/', './YFCX/']:
+    for fn in whisper_failure_check_2(PROJ_NAME):
+        print(fn)
 
 
 
