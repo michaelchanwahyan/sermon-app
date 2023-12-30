@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>第九講  走完路程</title>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="w3RLTfLQMmfttwMlEcvnm-uJdJ4twYdaeu10omT64DemQ3wUuJZDMLXSUxRLnKTJ3_g7pxit7Rc0hkaXIaCaZA==">
+
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/bootstrap-icons.css" rel="stylesheet">
+<link href="/css/all.css" rel="stylesheet">
+<link href="/js/slick/slick.css" rel="stylesheet">
+<link href="/js/slick/slick-theme.css" rel="stylesheet">
+<link href="/css/aos.css" rel="stylesheet">
+<link href="/css/cookie-consent.css" rel="stylesheet">
+<link href="/css/interface.css" rel="stylesheet">
+<link href="/css/plyr.css" rel="stylesheet">
+<link href="/js/lightgallery/css/lightgallery-bundle.min.css" rel="stylesheet">
+<link href="https://vjs.zencdn.net/7.21.1/video-js.css" rel="stylesheet">
+<link href="/js/jquery-ui-1.13.2/jquery-ui.min.css" rel="stylesheet">
+<style>
+	.grayscale .page-header-title {
+		background-image: url(/images/color_bg/bg_011.png) !important;
+	}
+	</style>	<link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+</head>
+<body>
+<script>
+	var color = document.cookie.match("(^|;|; )\s*" + "ColorMode" + "\s*=\s*([^;]+)")?.pop() || "normal";
+	if (color == "normal") {
+		document.body.classList.remove("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.remove("selected");
+		}
+	} else {
+		document.body.classList.add("grayscale");
+		var colorBtns = document.getElementsByClassName("colorModeBtn");
+		for(var i = 0; i < colorBtns.length; i++)
+		{
+			colorBtns[i].classList.add("selected");
+		}
+	}</script>
+
+
+<a href="#main" class="skip">跳至內容</a>
+<header class="sticky-top">
+	<div class="nav-tool nav-tool-top hidden-990px">
+		<div class="container justify-content-end">
+			<nav class="navbar navbar-expand navbar-light">
+				<div class="collapse navbar-collapse justify-content-end">
+										<ul class="navbar-nav">
+						<li class="nav-item nav-font-size fontSize">
+							<span class="defaultFont">
+								<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a> 
+							</span>
+							<span class="largerFont">
+								<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a> 
+							</span>
+							<span class="xLargerFont">
+								<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+							</span>
+						</li>
+						<li class="nav-item nav-search">
+							<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+						</li>
+						<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>						<li class="nav-item nav-btn-BW">
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn monochromeBtn" >黑白版</a>
+							<a href="javascript:checkColorMode()" class="nav-link colorModeBtn chromaticBtn" style="display:none;">彩色版</a>
+						</li>
+												<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+												<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+						<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light navbar-menu">
+			<div class="container-fluid p-0">
+				<a class="navbar-brand" href="/site/index">
+					<!--<img src="/images/logo.jpg" alt="" class="w-100" />-->
+					<img src="/images/logo_whole.svg" alt="港九培靈研經會" class="logoImg">
+					<img src="/images/logo_chi.svg" alt="港九培靈研經會" class="scrollLogoImg">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+					<div class="nav-tool show-990px">
+						<div class="container justify-content-end">
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="flex-wrap collapse navbar-collapse justify-content-end">
+																		<ul class="navbar-nav">
+										<li class="nav-item nav-font-size">
+											<a href="javascript:normalFont()" class="nav-link d-inline-flex nav-font-size-s" alt= "最小字體大小" aria-label="最小字體大小">A</a>
+											<a href="javascript:largerFont()" class="nav-link d-inline-flex nav-font-size-m" alt= "預設字體大小" aria-label="預設字體大小">A</a>
+											<a href="javascript:biggestFont()" class="nav-link d-inline-flex nav-font-size-l" alt= "最大字體大小" aria-label="最大字體大小">A</a>
+										</li>
+										<li class="nav-item nav-search">
+											<a href="javascript:void(0);" class="nav-link" data-bs-toggle="modal" data-bs-target="#searchbox"><img src="/images/icon_search.svg" /></a>
+										</li>
+										<li class="nav-item nav-lang-en"><a href="/site/language/en-US" class="nav-link">ENG</a></li><li class="nav-item nav-lang-sc"><a href="/site/language/zh-CN" class="nav-link">简</a></li>										<li class="nav-item nav-btn-BW"><a href="javascript:checkColorMode()" class="nav-link colorModeBtn">黑白版</a></li>
+									</ul>
+								</div>
+							</nav>
+							<nav class="navbar navbar-expand navbar-light">
+								<div class="collapse navbar-collapse justify-content-end">
+									<ul class="navbar-nav">
+																				<li class="nav-item nav-login"><a href="/site/member" class="nav-link"><img src="/images/icon_login.svg" alt="登入／註冊"/> <span>登入／註冊</span></a></li>
+																				<!--<li class="nav-item nav-cart"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_cart.svg" alt=""/></a><div class="incart">1</div></li>
+										<li class="nav-item nav-wish"><a href="javascript:void(0);" class="nav-link"><img src="/images/icon_wish.svg" alt=""/></a></li>-->
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+					<ul id="w0" class="navbar-nav nav"><li class="nav-item nav-item" data-id="26" data-type="3"><a class="nav-link" href="/content/monthlyrevison">每月重溫</a></li>
+<li class="nav-item nav-item" data-id="1" data-type="2"><a class="nav-link" href="/content/schedule">聚會日程</a></li>
+<li class="nav-item nav-item" data-id="3" data-type="2"><a class="nav-link" href="/content/past-conferences">歷屆聚會</a></li>
+<li class="nav-item nav-item" data-id="25" data-type="3"><a class="nav-link" href="/content/shop">培靈產品</a></li>
+<li class="nav-item nav-item" data-id="5" data-type="1"><a class="nav-link" href="/content/our-story">培靈．歷史館</a></li>
+<li class="nav-item nav-item" data-id="6" data-type="3"><a class="nav-link" href="/content/about-us">關於我們</a></li></ul>				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<main id="main" name="main">
+	
+<!--<section class="page-header">
+		<div class="page-header-title" style="background-image: url(/images/color_bg/bg_009.png);">
+		<h1>第95屆聚會日程及回顧</h1>
+	</div>
+	<div class="page-header-img">
+		<div class="photocap">
+			<img src="/images/default_01.jpg" alt="第95屆聚會日程及回顧" />
+		</div>
+	</div>
+	</section>
+
+<section class="path">
+	<div class="container">
+		<nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+		  <ol class="breadcrumb">
+			
+			<li class="breadcrumb-item" aria-current="page"><a href="/content/schedule">聚會日程</a></li>
+			<li class="breadcrumb-item" aria-current="page"><a href="/content/schedule">第95屆 2023 福音、成聖、異象</a></li>
+			<li class="breadcrumb-item" aria-current="page">奮興會</li>
+			<li class="breadcrumb-item" aria-current="page">2023-08-09 走完路程</li>
+			<li class="breadcrumb-item" aria-current="page">閱讀全文</li>
+			<li class="breadcrumb-item" aria-current="page">第九講  走完路程</li>		  </ol>
+		</nav>
+	</div>
+</section>-->
+
+<div class="row w-100 m-0" style="overflow: hidden">
+	<div id="section-main" class="sermons-col-left bg-grey" style="width:100%">
+		<h1 class="color-1a8090 bg-white text-center pb-2 pt-3 h2">第95屆 奮興會 第9講</h1>
+		<article class="article pt-0 p-lg-5 pt-lg-0">
+			<div class="article-meta">
+				<span>
+					<i class="fa fa-user"></i>
+					講員：					<a href="/speaker/view/43">馮浩鎏醫生</a>
+				</span>
+				<span>
+					<i class="fa fa-calendar-alt"></i>
+					屆別:					<a href="/sermon/view?serial_no=95">第95屆</a>
+				</span>
+				<span data-toggle="tooltip" data-placement="top" title="性質">
+					<i class="fa fa-folder-open"></i>
+					<a href="/sermon/view?serial_no=95#session-master-178">奮興會</a>
+				</span>
+			</div>
+			<!--<div class="article-tag">
+				<a href="#" class="badge">路加福音</a>
+				<a href="#" class="badge">講道會</a>
+				<a href="#" class="badge">56屆</a>
+				<a href="#" class="badge">麥希真牧師</a>
+			</div>-->
+			<div class="d-flex align-items-center mb-4">
+				<h2 class="article-title mb-0 h3">
+					第九講  走完路程				</h2>
+									<a type="button" class="bookmark ms-3 " data-model="app\models\SessionMessage" data-model-id="1578"></a>
+							</div>
+						<div class="article-content">
+				
+				<div class="h5 mb-4 d-md-flex justify-content-lg-between align-items-center">
+					<div><span>經文：</span> 使徒行傳  <a class="article-citation" href="javascript:void(0)" data-book="44" data-start-chapter="20" data-start-verse="17" data-end-verse="38">20:17-38</a></div><div><a href="javascript:void(0)" class="btn btn-danger btn-show-scripture text-center my-2 ml-auto align-self-start" style="display:none;">顯示經文</a>
+				</div></div>				<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 經過八日，我們研讀使徒行傳從第一章已讀到十八章，今晚研讀廿章，明天將研讀使徒行傳最後兩章。今晚的題目是「走完路程」，所鼓勵你們明天也出席，能跑到終點。今晚從使徒行傳廿章及廿六章來看，神如何透過保羅的人生，來成就神在他身上的計劃。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 有一次，我到美國開一個福音的會議，經過海關的官員的查問讓我反思「我的身份是什麼」。我是在香港出生、澳洲讀書、信主，又到了紐西蘭作醫生，再回來香港行醫，又到英國深造，讀神學，又到巴基斯坦醫療宣教好幾年。很多香港人可能面臨身份危機，到底你是什麼身份。當時保羅面對不同人的質詢時，都問及他的身份。面對官府和有權有勢的人，保羅勇敢的見證。在廿六章，當他面對很有權勢的亞基帕王，當時保羅已被審了很多次，那些人都查不出他有什麼罪，但他被軟禁了很久一段時間，終於他們決定讓亞基帕王來審訊他。當時保羅被審，他的身份是什麼呢？他表明自己是「作執事、作見證」（廿六16）。「我故此沒有違背那從天上來的異象」（廿19）是我們這十天的主題，出處就在這裡。保羅「對著尊貴、卑賤、老幼作見證」（廿六22）</p>
+
+<p style="text-align: justify;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; 第一， 作執事（廿六16）</strong></p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 「僕人」和「作見證」這兩字是什麼意思呢？「執事」本身的翻譯也是「僕人」的意思。前幾天也講過，也就是路加福音一章所說的「傳道的人」（路一1）的意思。耶穌說你要作僕人，作執事，是何意思呢？在中國的文化，等同於是作「基督的欽差大臣」。這是很尊貴的，是皇帝派你作的欽差大臣。欽差大臣來到，當他拿著令牌時，大家都要下跪，因為他是代表皇帝來講話，他本身沒有這樣的權柄，他的權柄來自差他來的那位。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 保羅有膽量這樣講，是因為他代表天上的王向人講話，他的權柄是來自神的，帶著基督的權柄去說話。「僕人」有另一個意思，欽差大臣不能增加或減少，你只能傳遞上帝要你做的事。也不能增加你自己的信息，也不能刪減。保羅說：「我是神的執事、僕人，我要宣講神所要講的話。」你也有這個身份，是神的僕人。這是第一個身份。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; <strong>第二， 你要做見證人（廿六16）</strong></p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 何為「見證人」呢？保羅是高深哲學學問的人，但他所分享的不是哲學理論，他所講的也不是神學理論，他講他與基督相遇，基督如何改變他的生命，他見證的是基督是主。所以，留意廿六章兩次他講到「基督是主」：「主啊，你是誰？」（15節上）；主說「我是你逼迫的耶穌」(15節下）。保羅是一個滿有熱心的人，但主竟然說：「你逼迫我」。所以，大發熱心，不代表你做神的事。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 如果你認定基督的身份，你就知道自己的身份；如果知道基督是我生命的主的話，我們就知道我們的身份是什麼。大家都喜歡《奇異恩典》，這首詩歌已唱了250年了，每個年代都有很多人喜歡這首歌，也譯成不同語言，部分歌詞如下：</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 奇異恩典，何等甘甜，我罪已得赦免；前我失喪，今被尋回，瞎眼今得看見。<br />
+&nbsp; &nbsp; &nbsp; &nbsp; 如此恩典，使我敬畏，使我心得安慰；初信之時，即蒙恩惠，真是何等寶貴！</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 是誰能寫出這麼好的詩歌？是約翰．牛頓（John Newton）。他的為人是怎樣的呢？他最初是買賣奴隸的，他無惡不作，作盡壞事。看他的背景，你可能會很驚訝這樣的人會寫出這樣的詩歌？！有一次他坐船遇上風暴，他看見有幾個水手在甲板被風浪捲走，他筋疲力盡，知道自己的生命很危險了。突然間，他記起自己小時候聽過聖經的教導：「看哪，神的羔羊，除去世人罪孽的」，「主耶穌為我的罪釘在十字架上，我怎可能活在罪中，忽略這麼大的恩典！」他就禱告說：「主啊，你拯救我，我承認我的罪，你是我的救主。」在風浪平靜之後，他在神面前悔改，整個生命改變。過了幾年，他成了牧師，他在1779年寫了這首歌。一個販賣奴隸、無惡不作的人寫出這樣的詩歌。因為生命改變，因為他認定基督的身份，所以他知道自己的身份。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 今天神也鼓勵我們，我們都是「基督的僕人」，你是神的欽差大臣，你拿著基督給你的權柄，不要害怕。第二我們是「基督的見證人」，就如同約翰．牛頓一樣經歷神，生命改變了。我們再回到廿章，保羅在亞基帕王面前見證自己的身份。在廿章，我用五張照片來代表他的一生：</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; <strong>一、 團體照</strong></p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 當時保羅準備去耶路撒冷前叫一班以弗所的長老一起來分享、鼓勵他們：「自從我到亞細亞的日子以來，在你們中間始終為人如何，服事主，凡事謙卑，眼中流淚，又因猶太人的謀害，經歷試煉。你們也知道」（徒廿18﹣20上）留意「你們是知道的」，當他與以弗所長老見面時，有三次講到「你們知道」：第一次是18節，第二次是在20節：「你們也知道，凡與你們有益的，我沒有一樣避諱不說的」；第三次是在34節：「我這兩隻手常供給我和同人的需用，這是你們自己知道的。」保羅三次講到「你們知道的。」保羅說的是：你們知道我的苦難、眼淚、也知道我的試煉。雖然保羅是領袖，但他說你們知道我的為人是怎樣。原來我們走服侍之路時，我們是需要同路人的，人知道我的困難、眼淚、試煉，難處，我是沒有隱藏的。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 最近我有機會與國內弟兄姊妹唱一首詩歌，這些大部分是年青人，大約有二、三百位年青人，他們唱的是《同路人》：</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 只因為我們都是同路人，才會有同樣的經歷；<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 只因為我們都是同路人，才會有同樣的追求。<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 同甘苦 共患難，只有同路人最親<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 同流淚 同喜樂，只有同路人最真誠<br />
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 美好的盼望，永恆的國度，永遠屬於我們</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 我很喜歡「我們」，「我們」很重要。保羅這種開放坦誠的生命，讓眾人知道他內心的世界是怎樣的。真正的教會生活，是要有真正的坦誠，一起面對難處、困難，甚至黑暗的時候，讓我們成為同路人。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; <strong>二、 傳道者</strong></p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 「你們也知道，凡與你們有益的，我沒有一樣避諱不說的」（廿20），「因為神的旨意，我並沒有一樣避諱不傳給你們的。」（27節）新譯本譯為「毫無保留」，就是保羅所說的「沒有偷工減料」的意思。當時初期教會面對的壓力，不能奉基督的名講道，若講的話，就要坐監，就像彼得、約翰。如果不想坐監就講少一點，但保羅堅持，若這是聖經真理，我就照樣講。保羅不會避開不講，這就是傳遞福音的意思。「我照神為你們所賜我的職分作了教會的執事，要把神的道理傳得全備」（西一25），何為「全備」？就是「沒有空格」的意思，保羅所說的，就是將所有的空格填滿，要完完全全地宣講出來的意思。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 在2010年洛桑福音會議中，出了一份文件講了很重要的一句話：「如果我們忽略了世界，就對神的話語不忠，如果我們忽略了神的話語，就沒有任何信息給這個世界。」你可能不是傳道人，但你是帶著神話語的人，是神話語的傳遞者，所以我們要用忠心回應這個世界的挑戰。基督徒要在所有的領域中，能以聖經原則來回應。這就是傳揚全備的福音。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 另外，不單要全備，而且還要全面地服侍，何為「全面」？「或在眾人面前，或在各人家裏，我都教導你們」（20節下），「家裏」指的是幾個人，「眾人」指的是可能有幾千人。保羅要講的就是無論是人多、人少，都要忠心傳講，不需要自憐，你作見證人，作僕人，並不退縮，毫無保留。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 不但是全備、全面，還要全心全意，不怕被拒絕。為何這樣說呢？保羅說：「對猶太人和希臘人證明當向神悔改，信靠我主耶穌基督。」（廿21）「當向神悔改」何為「當」？就是「必須」的意思。在路加福音中路加講：耶穌必須受苦。你們眾人與耶穌一樣，必須受苦，這裡也講「你們必須悔改」。沒得轉彎的，這是很強硬的字眼。我們今天傳福音都儘量避免用強硬的字眼，要講得讓人聽得舒服一點、容易接納一些的，不容易聽的最好不要講。但留意當時保羅對亞基帕王說「當悔改」！不論你是否喜歡聽，神要讓我們悔改。在我們的文化中，我們遇到困難，我們很怕得罪人，覺得不要講得那麼硬，儘量將它軟化一些。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 教會二千年歷史中，逼迫從來沒有毀滅教會，但淡化的福音信息，卻叫教會有名無實。就如歐洲教會、英國教會，現在都只剩下殼，他們怕再一次認真地講福音。「當悔改」，不怕得罪人，我們沒有跟從聖經的角度。舊約講：「在我面前為這國站在破口防堵，使我不滅絕這國，卻找不著一個。」（結廿二30）神要找一個人站在破口，卻找不到一個。今天神尋找什麼工人呢？是找能夠堵住破口的工人。要付上代價，你可能被人拒絕，人們不喜歡你。但保羅站在官員面前，直接告訴他們「你們當悔改」！</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; <strong>三、 毅行者</strong></p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 「我卻不以性命為念，也不看為寶貴，只要行完我的路程，成就我從主耶穌所領受的職事，證明神恩惠的福音。」（24節）「行完我的路程」也可譯成「跑完我的路程」。我給保羅第三張照片是「毅行者」，因為他要跑到終點。香港每年都有馬拉松，也有毅行者的活動，香港毅行者的活動很辛苦，要跑山路，人很容易有中途放棄。保羅說，他要跑到終點為止。他說有聖靈在他心中工作：聖靈催逼去作、聖靈警惕我。一個是「催逼」，一個是「警惕」都是聖靈在我們生命中的工作。保羅敏銳聖靈的指引，要走完這條道路。那些人說你不要去耶路撒冷，但神要他去他就去。過程中一定要洞察神的帶領，在神面前要有屬靈的洞察力。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 要洞察聖靈的指引，不是三分鐘的熱度。保羅說，我要走完神要我走的路。腓立比書說：「我只一件事」（腓三13上）。有時我們想為神做好多事情，但保羅說，他只有一件事──努力面前（腓三13下）。有學者就研究發現聖經所有的人物中，有90％的人因為各種的原因是沒有跑到終點的。今天神藉保羅的生命鼓勵我們能夠跑到終點，這背後有怎樣的動力呢？是連於基督的愛、經歷基督的愛，因為深信基督的愛才能跑下去。戴德生：「我若有千磅英金，中國可以全數支取；我若有千條性命，絕對不留下一條不給中國。」但很多時候我沒有引用全段這封寫給他妹妹的信，下面還有一段：「這樣的救主，我們為衪所作的，會嫌太多嗎？若得宇宙全獻予主，主愛如此聖善奇妙，當得我命、我靈、我所有。」戴德生這裡所寫的：「因為基督的愛，當得到我的命，我的靈，我的所有。」</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 我們能跑到終點的動力，是因為經歷基督的大愛。因為基督的愛保羅能夠忘記背後。「忘記背後」是要忘記兩件事：1. 忘記你的成績表、你的成就。2. 你也要忘記你失敗的地方。因為神完全接納我們，基督的愛完全接納我們。所以，在基督的愛中，我們要忘記我們的成就，忘記我們的失敗，在基督的愛中成長。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 在聖經中多次講到跑步的觀念。但希伯來書有另一個比喻：「當放下各樣的重擔，脫去容易纏累我們的罪，存心忍耐，奔那擺在我們前頭的路程」（來十二1），這裡講的是若有罪綁住你，就無法跑完。聖經鼓勵我們，要面對我們的罪，不然，我們無法跑到終點。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; <strong>四、 牧羊人</strong></p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 「你們就當為自己謹慎，也為全群謹慎，牧養神的教會」（28節）看這節經文時，對於要「為羊群謹慎」你可能明白 ，但他為何說：「要為自己謹慎」呢？答案就在下面經文：「我未曾貪圖一個人的金、銀、衣服。我這兩隻手常供給我和同人的需用，這是你們自己知道的。我凡事給你們作榜樣，」（33﹣35節）這裡所強調的是動機。緊張羊群沒有錯，你更要緊張自己的動機。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 在蘇格蘭有一位叫羅伯特、麥清，他很年輕去世。他曾講過：「神的子民最大的需要，是神的聖潔」。保羅說他的動機是怎樣，他沒有貪圖他人的金、銀、衣服，或者你也沒有貪圖這些。「為自己謹慎」對我有提醒，我可能不會貪戀別人的錢，但我可能貪戀別人的欣賞、肯定和稱讚。所以保羅說，你要留意自己的動機。現在市面有很多講領袖的書，有一句哲學的話：「你要作眾人的僕人」，非基督徒也同樣這樣講，因為你當有這樣的樣式時，別人就讓你作領袖。馬來西亞循理會的牧師講了一句話是很有意思：「你作僕人，別人就會要你作領袖，這是不合乎聖經的。神讓我們作僕人服侍別人，就此劃上句號。」所以，你作僕人，不是等著別人讓你作領袖，這是錯誤的動機。你作僕人就是作僕人，不是等別人抬高你，你要為自己謹慎，為自己的動機謹慎。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; <strong>五、 禱告的手</strong></p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 「我把你們交託神和他恩惠的道」（32節）何為「交託」？就是存錢的意思。你相信那間銀行，才會將錢存進去。保羅如同向銀行「存錢」一樣，他將教會都放在神的裏面，保羅知道他自己很快會離開他們，他不能解決所有教會的問題，這是沒有可能的，他知道最終不是他來管教會，他學會了：「神哪，我管不好，但你會掌管教會，我繼續為教會禱告，讓神來保管」。這在聖經中不是第一次的例子，這是新約的例子，在舊約也有例子，就是撒母耳的例子，撒母耳說：「至於我，斷不停止為你們禱告」（撒上十二23）經文之前有提到立王的事，是否撒母耳想退位所以立王呢？不是。而是百姓要求撒母耳立王，就像鄰國一樣，百姓要讓撒母耳退到一邊。我們可以想像當時撒母耳的心情，但他卻回應：「至於我，斷不停止為你們禱告」。沒有苦毒，沒有怨言，只有祝福。他的反應卻是為他們禱告。這種天國的心懷，是我需要學習的。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 我想鼓勵大家，只有一件事 ── 你要跑到終點，不要晚節不保。神的子民最大的需要就是有神的聖潔。所以保羅在臨死之前，說：「那美好的仗我已經打過了，當跑的路我已經跑盡了，所信的道我已經守住了。從此以後，有公義的冠冕為我存留。」（提後四7）我今晚的祈禱弟兄姊妹，你們每個人在主裏，都能跑到終點。</p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; <strong>我們一起禱告：</strong></p>
+
+<p style="text-align: justify;">&nbsp; &nbsp; &nbsp; &nbsp; 主，我們謝謝祢，保羅的生命照片讓我們看到，他一生不以性命為念，也不看為寶貴，只要行完神給他的路程，我禱告眾弟兄姊妹能跑完神給我們的路程，跑到終點，沒有怨恨，沒有苦毒，只有祝福。求主幫助我們、憐憫我們，奉耶穌基督的名求，阿們！</p>
+				
+				<br>
+				<p class="h5">
+					<span>講員：</span> 馮浩鎏醫生
+					<br>
+					<span>傳譯：</span> 周志豪牧師
+					<br>
+					<span>速記：</span> 林海虹傳道
+				</p>			</div>
+			<div class="article-navigation d-flex justify-content-between mt-5">
+								<a href="/session-message/view/1577" data-bs-toggle="tooltip" data-bs-placement="right" title="第95屆 奮興會 第八講  為主冒險" aria-label="上一篇文章：第95屆 奮興會 第八講  為主冒險"  rel="prev">
+					<i class="fas fa-chevron-left" aria-hidden="true"></i>
+					<span aria-hidden="true">上一篇</span>		
+				</a>
+												<a href="/session-message/view/1579" data-bs-toggle="tooltip" data-bs-placement="left" title="第95屆 奮興會 第十講  暴風之上" aria-label="下一篇文章：第95屆 奮興會 第十講  暴風之上" rel="next">
+					<span aria-hidden="true">下一篇</span>	
+					<i class="fas fa-chevron-right" aria-hidden="true"></i>
+				</a>
+							</div>
+			<br>
+			<hr>
+			<br>
+						<p>
+				<span class="h5">版權聲明</span><br>
+				大會現場速記只供信徒溫習用，全文未經講者過目，版權屬港九培靈硏經會。			</p>
+					</article>
+	</div>
+	
+	<div id="section-scripture" class="sermons-col-right" style="width:0%;position:relative;">
+		<section class="article-citation-magnifier h-100">
+			<a href="javascript:void(0);" class="btn btn-close btn-close-scripture d-flex ms-auto" title="隱藏經文"></a>
+			<div class="magnifier-content">
+			</div>
+		</section>
+				<div id="loadingSpinner" class="spinner-overlay">
+			<div class="spinner-container">
+				<span class="loading-spinner"></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+</main>
+
+
+<footer>
+	<section class="sitemap">
+				<div class="fix-tools-footer">
+			<div class="container">
+				<div class="d-flex align-items-center">
+										<a href="/site/member" data-bs-placement="left" data-bs-toggle="tooltip" title="登入"><img src="/images/icon_login.svg" alt=""/></a>
+										<a href="https://www.hkbibleconference.org/offering/index" style="background-color: #6aa84f; color: #ffffff;">奉獻方式</a><a href="https://www.hkbibleconference.org/content/view/daily-hope" style="background-color: #ebb100; color: #ffffff;">牧言點滴</a>				</div>
+			</div>
+		</div>
+				<div class="container">
+			<div class="row">
+				<div class="col-6 col-md-4 col-lg-2">
+										<strong><a href="javascript:void(0);">我的資料</a></strong>
+					<ul>
+						<li><a href="/site/member">登入／註冊</a></li>
+					</ul>
+									</div>
+				
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/monthlyrevison" data-id="26" data-type="3" style="display: block; margin-bottom: 20px;">每月重溫</a></strong>
+					<strong><a class="nav-item" href="/content/schedule" data-id="1" data-type="2" style="display: block; margin-bottom: 20px;">聚會日程</a></strong>
+					<strong><a class="nav-item" href="/content/past-conferences" data-id="3" data-type="2" style="display: block; margin-bottom: 20px;">歷屆聚會</a></strong>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/shop" data-id="25" data-type="3" style="display: block; margin-bottom: 20px;">培靈產品</a></strong>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/our-story" data-id="5" data-type="1">培靈．歷史館</a></strong>
+					<ul>
+						<li><a href="/content/media-collection">歷屆媒體集</a></li>
+						<li><a href="/content/article-collection">歷屆文集</a></li>
+						<li><a href="/content/past-data">歷屆資料回顧</a></li>
+					</ul>
+				</div>
+				<div class="col-6 col-md-4 col-lg-2">
+					<strong><a class="nav-item" href="/content/about-us" data-id="6" data-type="3">關於我們</a></strong>
+					<ul>
+						<li><a href="/offering/index">奉獻方式</a></li>
+						<li><a href="/content/about-us#contact">聯絡我們</a></li>
+					</ul>
+				</div>			</div>
+		</div>
+	</section>
+	<section class="footer-middle">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-md-7 col-lg-5 text-center text-md-start pt-2 pb-3 pb-md-2">
+					<form id="subscribe-form" action="/site/subscribe" method="post">
+<input type="hidden" name="_csrf" value="w3RLTfLQMmfttwMlEcvnm-uJdJ4twYdaeu10omT64DemQ3wUuJZDMLXSUxRLnKTJ3_g7pxit7Rc0hkaXIaCaZA==">						<div class="input-group align-items-center flex-nowrap pe-4">
+							<span class="color-white text-nowrap me-3">訂閱我們</span>
+							<div class="form-group field-subscribeform-email required">
+<input type="text" id="subscribeform-email" class="form-control rounded-0" name="SubscribeForm[email]" style="max-width:280px;" placeholder="請輸入你的電郵..." aria-label="請輸入你的電郵..." aria-required="true"><div class="invalid-feedback"></div>
+</div>							<button type="submit" id="btnSubscribe" class="btn btn-gray rounded-0 mb-auto" name="subscribe-button" title="訂閱" aria-label="訂閱"><i class="fa fa-arrow-right"></i></button>						</div>
+					</form>				</div>
+				<div class="col-12 col-md-5 col-lg-7 text-start text-md-end pt-0 pt-md-2 pb-2 sns d-flex align-items-center justify-content-md-end">
+					<span class="related-logos d-inline-block me-1">
+						<img src="/images/WARS_Gold-2022-2023.svg" alt="2022-2023無障礙網頁金獎" width="90"/>
+					</span>
+										<a href="https://www.facebook.com/hkbibleconference/" target="_blank" title="Facebook" aria-label="Facebook">
+						<img src="/images/icon_fb.png" alt="Facebook">
+					</a>
+										<a href="https://www.instagram.com/hkbibleconference/" target="_blank" title="Instagram" aria-label="Instagram">
+						<img src="/images/icon_ig.png" alt="Instagram">
+					</a>
+										<a href="https://www.youtube.com/c/HongKongBibleConference" target="_blank" title="Youtube" aria-label="Youtube">
+						<img src="/images/icon_yt.png" alt="Youtube">
+					</a>
+									</div>
+			</div>
+		</div>
+	</section>
+	<section class="copyright py-2">
+		<div class="container">
+			<div class="footer-btm-page mb-2">
+				<span>&copy; 2023 港九培靈研經會 版權所有</span>
+				<a class="nav-item" href="/footer-content/copy-right" data-id="1" data-type="1">版權及知識產權</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-privacy-policy" data-id="2" data-type="2">私隱政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-linking-policy" data-id="3" data-type="2">連結政策</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-disclaimer" data-id="4" data-type="2">免責聲明</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-terms-of-use" data-id="5" data-type="2">使用條款</a><a class="nav-item" href="https://www.hkbibleconference.org/footer-content/copy-right#statement-accessibility" data-id="6" data-type="2">無障礙網頁</a>			</div>
+		</div>
+	</section>
+</footer>
+<!-- Back to top button -->
+<a href="#" id="button" title="回頁頂"><i class="fas fa-chevron-up"></i></a>
+
+<!--Cookie Consent-->
+<div class="cookie-container">
+	<div class="container-wrapper">
+		<div class="close-btn cookie-btn-close"><a href="javascript:void(0)" title="關閉" aria-label="關閉">X</a></div>
+		<p>當你瀏覽此網站時，一些Cookie (曲奇) 檔案將會儲存於你電腦的硬碟內。這些曲奇檔案只為瀏覽此網站之用。在此情況下，曲奇檔案將不會收集你的任何個人資料。你可選擇不接受曲奇檔案，但你若不接受曲奇檔案的話，你可能無法使用本網站某些功能。 <a class="td-underline" href="/bibleConference/footer-content/copy-right#statement-privacy-policy">了解更多</a></p>
+		<button class="cookie-btn">接受</button>
+		<button class="cookie-btn cookie-btn-disable">不接受</button>
+	</div>
+</div>
+
+<div class="modal" id="searchbox" tabindex="-1" aria-labelledby="網站工具:搜尋表格">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form id="siteSearchForm" action="/site/search" method="GET">
+					<div class="input-group mb-3">
+						<input type="text" class="form-control" placeholder="搜尋關鍵字" aria-label="搜尋關鍵字" aria-describedby="請輸入搜尋關鍵字" name="keyword">
+						<button class="btn btn-outline-secondary" type="submit" id="button-addon2">搜尋</button>
+						<div class="invalid-feedback msg-keyword">請輸入欲搜尋的關鍵字</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+<script src="/assets/fd094f65/jquery.js"></script>
+<script src="/assets/fb2ec025/yii.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/scrolldown.js"></script>
+<script src="/js/all.js"></script>
+<script src="/js/aos.js"></script>
+<script src="/js/masonry.pkgd.min.js"></script>
+<script src="/js/jquery.cookie.js"></script>
+<script src="/js/imagesloaded.pkgd.min.js"></script>
+<script src="/js/slick/slick.min.js"></script>
+<script src="/js/changefontsize.js"></script>
+<script src="/js/changeColorMode.js"></script>
+<script src="/js/lightbox/index.bundle.min.js"></script>
+<script src="/js/plyr.js"></script>
+<script src="/js/cookieDisable.js"></script>
+<script src="/js/platform.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-video.min.js"></script>
+<script src="/js/lightgallery/plugins/lg-zoom.min.js"></script>
+<script src="/js/jquery.color.2.1.2.min.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script src="https://vjs.zencdn.net/7.21.1/video.min.js"></script>
+<script src="/js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+<script src="/assets/fb2ec025/yii.validation.js"></script>
+<script src="/assets/fb2ec025/yii.activeForm.js"></script>
+<script>
+	
+
+		//AOS.init();
+
+		AOS.init({
+			duration: 800, // values from 0 to 3000, with step 50ms
+			startEvent: "load",
+			once: false,
+		});
+		
+
+		var myModal = document.getElementById("searchbox")
+		var myInput = document.getElementById("myInput")
+
+		myModal.addEventListener("shown.bs.modal", function () {
+			myInput.focus()
+		})
+		
+
+		$(document).ready(function(){
+			$(".slick1").slick({
+				dots: true
+			});
+		});
+		
+
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll("[data-bs-toggle=\"tooltip\"]"));
+		var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+			return new bootstrap.Tooltip(tooltipTriggerEl);
+		});
+
+		var btn = $("#button");
+
+		$(window).scroll(function() {
+			if ($(window).scrollTop() > 300) {
+				btn.addClass("show");
+			} else {
+				btn.removeClass("show");
+			}
+		});
+
+		btn.on("click", function(e) {
+			e.preventDefault();
+			$("html, body").animate({scrollTop:0}, "300");
+		});
+		
+
+		const player = new Plyr(".audioPlayer");
+		
+
+		$(function () {
+			$("[data-toggle=\"tooltip\"]").tooltip();
+		})
+		
+
+		var totalImages = 0;
+		// $(".photo-gallery img").length;
+		$(function(){
+			$(".photo-gallery a").imagesLoaded( function() {
+				// images have loaded
+				var msnry = new Masonry(".photo-gallery");
+				msnry.layout();
+			});
+			// $(".photo-gallery img").each(function(){
+			// 	$(this).load(function(){
+			// 		totalImages++;
+			// 		if (totalImages >= $(".photo-gallery img").length) {
+			// 		}
+			// 	});
+			// })
+			// var msnry = new Masonry(".photo-gallery");
+			// msnry.layout();
+		});
+		$("a.eapps-link").css("display","none");
+		
+		$("table.tb-responsive thead tr th").each(function(index,element){
+			index += 1;
+			$("tr td:nth-child(" + index + ")").attr("data-title", $(this).text());
+		});
+		</script>
+<script>jQuery(function ($) {
+
+	var xhr;
+	var blurXhr;
+	
+	$(window).bind("load resize", function() {
+		var isMobile = $(window).width() < 992;
+		var isHideScripture = !$("#section-scripture").hasClass("active");
+		$(".sermons-col-left").css("width", getSectionMainWidth(isMobile, isHideScripture));
+		$(".sermons-col-left").css("height", getSectionMainHeight(isMobile, isHideScripture));
+		$(".sermons-col-right").css("width", getSectionScriptureWidth(isMobile, isHideScripture));
+		$(".sermons-col-right").css("height", getSectionScriptureHeight(isMobile, isHideScripture));
+
+		if(isMobile) {
+			if($(".btn-show-notes").css("display") == "none" && $(".btn-show-scripture").css("display") == "none") {
+				showButtonByClassName("btn-show-notes");
+			}
+		}
+	});
+	
+	function loadScripture(element){
+		var scriptureData = getScriptureData(element);
+		var isMobile = $(window).width() < 992;
+		
+		showLoadingSpinner();
+		if (!$("#section-scripture").hasClass("active")){
+			$("#section-scripture").addClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, false),
+				height: getSectionMainHeight(isMobile, false),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, false),
+				height: getSectionScriptureHeight(isMobile, false),
+			});
+			if(isMobile) {
+				if($(".article-citation-magnifier").length && !$(".article-citation-magnifier").hasClass("h-100")){
+					$(".article-citation-magnifier").addClass("h-100");
+				}
+			}
+			$("#section-scripture .btn-close-scripture").attr("tabindex", "0");
+			$(".btn-show-scripture").hide();
+			if(isMobile){
+				showButtonByClassName("btn-show-notes");
+			}else {
+				// hideButtonByClassName("btn-show-notes");
+			}
+		}
+		else{
+			$("#section-scripture .article-citation-magnifier").animate({scrollTop: 0});
+		}
+		
+		if (xhr){
+			xhr.abort();
+		}
+		$("#section-scripture").data(scriptureData);
+		xhr = $.ajax("/site/get-scripture", {
+			dataType: "json",
+			data: scriptureData,
+			success: function(data){
+				if (data !== false){
+					var scriptureContainer = $("#section-scripture .magnifier-content");
+					if (scriptureContainer){
+						var scriptureHtml = getScriptureHtml(data);
+						if (scriptureHtml){
+							scriptureContainer.html(scriptureHtml);
+						}
+					}
+				}
+			}
+		}).always(function(){
+			xhr = null;
+			hideLoadingSpinner();
+		});
+	}
+	
+	function closeScripture(){
+		var isMobile = $(window).width() < 992;
+		if ($("#section-scripture").hasClass("active")){
+			$("#section-scripture .magnifier-content").html("");
+			$("#section-scripture").removeClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, true),
+				height: getSectionMainHeight(isMobile, true),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, true),
+				height: getSectionScriptureHeight(isMobile, true),
+			});
+			$("#section-scripture .btn-close-scripture").attr("tabindex", "-1");
+			$(".btn-show-scripture").show();
+			showButtonByClassName("btn-show-notes");
+		}
+		$("#section-scripture").data(getScriptureData());
+		hideLoadingSpinner();
+	}
+	
+	function getScriptureData(element){
+		var scriptureData = {};
+		scriptureData["book"] = element && element.data("book") ?
+			element.data("book") :
+			null;
+		scriptureData["start-chapter"] = element && element.data("start-chapter") ?
+			element.data("start-chapter") :
+			null;
+		scriptureData["end-chapter"] = element && element.data("end-chapter") ?
+			element.data("end-chapter") :
+			null;
+		scriptureData["start-verse"] = element && element.data("start-verse") ?
+			element.data("start-verse") :
+			null;
+		scriptureData["end-verse"] = element && element.data("end-verse") ?
+			element.data("end-verse") :
+			null;
+		return scriptureData;
+	}
+	
+	function getScriptureHtml(data){
+		var bookTemplate = "<h3 class=\"article-title mb-0 text-center\" data-book=\"{{book}}\">{{content}}</h3>";
+		var chapterTemplate = "<h4 class=\"mb-3\" data-chapter=\"{{chapter}}\">{{content}}</h4>";
+		var verseTemplate = "<p><sup class=\"text-danger me-2\">{{verse}}</sup>{{content}}</p>";
+		
+		var scriptureHtml = "";
+		if (data.books){
+			$.each(data.books, function(bookId, book){
+				//for each book
+				if (bookId && book && book.title){
+					scriptureHtml += bookTemplate.replace("{{book}}", bookId).replace("{{content}}", book.title);
+					if (book.chapters){
+						$.each(book.chapters, function(chapterId, chapter){
+							if (chapterId && chapter && chapter.title){
+								scriptureHtml += chapterTemplate.replace("{{chapter}}", chapterId).replace("{{content}}", chapter.title);
+								if (chapter.verses){
+									$.each(chapter.verses, function(verseId, verse){
+										if (verseId && verse){
+											scriptureHtml += verseTemplate.replace("{{verse}}", verseId).replace("{{content}}", verse);
+										}
+									});
+								}
+							}
+						});
+					}
+				}
+			});
+		}
+		return scriptureHtml;
+	}
+	
+	function showLoadingSpinner(){
+		$("#loadingSpinner").stop().fadeIn(300);
+	}
+	
+	function hideLoadingSpinner(){
+		$("#loadingSpinner").stop().fadeOut(300);
+	}
+	
+	function getSectionMainWidth(isMobile = false, isFull = true){
+		return isMobile ?
+			"100%" :
+			(isFull ?
+				"100%" :
+				"65%");
+	}
+	
+	function getSectionMainHeight(isMobile = false, isFull = true){
+		return (isMobile ?
+			(window.innerHeight - $("header").outerHeight() - 5) * (isFull ? 0.9 : 0.45) :
+			window.innerHeight - $("header").outerHeight()
+		) + "px";
+	}
+	
+	function getSectionScriptureWidth(isMobile = false, isHide = true){
+		return isMobile ?
+			"100%" :
+			(isHide ?
+				"0%" :
+				"35%");
+	}
+	
+	function getSectionScriptureHeight(isMobile = false, isHide = true){
+		return (isMobile ?
+			(window.innerHeight - $("header").outerHeight() - 5) * (isHide ? 0.0 : 0.45) :
+			window.innerHeight - $("header").outerHeight()
+		) + "px";
+	}
+
+	function hideButtonByClassName(className){
+		if($("."+className).length) {
+			$("."+className).hide(300);
+		}
+	}
+
+	function showButtonByClassName(className){
+		if($("."+className).length) {
+			$("."+className).show(300);
+		}
+	}
+
+	function showIframe(hideButton = true){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			$("#section-scripture").addClass("active");
+			$("#section-main").stop().animate({
+				width: getSectionMainWidth(isMobile, false),
+				height: getSectionMainHeight(isMobile, false),
+			});
+			$("#section-scripture").stop().animate({
+				width: getSectionScriptureWidth(isMobile, false),
+				height: getSectionScriptureHeight(isMobile, false),
+			});
+			if(hideButton) {
+				$("#section-scripture .btn-close-scripture").attr("tabindex", "0");
+				$(".btn-show-scripture").hide();
+			}
+		}
+		else{
+			$("#section-scripture .article-citation-magnifier").animate({scrollTop: 0});
+		}
+	}
+
+	function animateScripture(object = {height:0, padding:0, marginBottom: 0}, duration = 300) {
+		if($(".article-citation-magnifier").length) {
+			$(".article-citation-magnifier").stop().animate(object, {duration:duration});
+		}
+	}
+
+	function showNotes(){
+		if($(".article-myNotes").length > 0) {
+			$(".article-myNotes").addClass("h-100", 300);
+		}
+	}
+	
+	$("a.article-citation").click(function(){
+		if ($("#section-scripture").hasClass("active") && JSON.stringify(getScriptureData($("#section-scripture"))) == JSON.stringify(getScriptureData($(this)))){
+			closeScripture();
+		}
+		else{
+			loadScripture($(this));
+		}
+	});
+	
+	// $(".btn-show-scripture").click(function(){
+	// 	if (!$("#section-scripture").hasClass("active")){
+	// 		$("a.article-citation").first().click();
+	// 	}
+	// });
+	
+	// $("#section-scripture .btn-close-scripture").click(function(){
+	// 	if ($("#section-scripture").hasClass("active")){
+	// 		closeScripture();
+	// 	}
+	// });
+
+	$(".btn-show-scripture").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			animateScripture({padding:10, marginBottom:5}, 300);
+			if(!$(".article-citation-magnifier").hasClass("h-100")){
+				$(".article-citation-magnifier").addClass("h-100");
+			}
+			$("a.article-citation").first().click();
+		}else {
+			if($(".article-myNotes").length > 0 && $(".article-myNotes").hasClass("h-100")) {
+				let newHeight = $("#section-scripture").height() * 0.5 - 2.5;
+				loadScripture($("a.article-citation"));
+				animateScripture({height:newHeight, padding:10, marginBottom: 5}, 300);
+				if($(".article-myNotes").length > 0) {
+					$(".article-myNotes").removeClass("h-100", 300);
+				}
+				hideButtonByClassName("btn-show-scripture");
+			} 
+			if(isMobile) {
+				animateScripture({height:"100%", padding:10, marginBottom: 5}, 300);
+				showButtonByClassName("btn-show-notes");
+			}
+		}
+	});
+
+	$("#section-scripture .btn-close-scripture").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if($(".article-citation-magnifier").hasClass("h-100")) {
+			if ($("#section-scripture").hasClass("active")){
+				closeScripture();
+			}
+		}else {
+			if($(".article-myNotes").length > 0) {
+				if(isMobile){
+					$(".article-myNotes").removeClass("h-100");
+				}else {
+					$(".article-myNotes").addClass("h-100", 300);
+				}
+			}
+			if(isMobile){
+				closeScripture();
+			}else {
+				animateScripture();
+			}
+			showButtonByClassName("btn-show-scripture");
+		}
+	});
+
+	$("#section-scripture .btn-close-notes").click(function(){
+		if($(".article-citation-magnifier").height() == 0) {
+			if ($("#section-scripture").hasClass("active")){
+				closeScripture();
+			}
+		}
+		if(!$(".article-citation-magnifier").hasClass("h-100")) {
+			$(".article-citation-magnifier").addClass("h-100",300);
+			showButtonByClassName("btn-show-notes");
+		}
+	})
+
+	$(".btn-show-notes").click(function(){
+		var isMobile = $(window).width() < 992;
+
+		if (!$("#section-scripture").hasClass("active")){
+			if($(".article-myNotes").length > 0) {
+				$(".article-citation-magnifier").removeClass("h-100");
+				animateScripture();
+				$(".article-myNotes").addClass("h-100", 300);
+			}
+			$("#section-scripture .btn-close-notes").attr("tabindex", "0");
+			hideButtonByClassName("btn-show-notes");
+			showIframe(false);
+		}else {
+			if($(".article-citation-magnifier").hasClass("h-100")) {
+				$(".article-citation-magnifier").removeClass("h-100");
+			}
+			let newHeight = $("#section-scripture").height() * 0.5 - 2.5;
+			animateScripture({height:newHeight, padding:10, marginBottom: 5}, 300);
+			hideButtonByClassName("btn-show-notes");
+			if($(".article-myNotes").length && $(".article-myNotes").hasClass("h-100")){
+				$(".article-myNotes").removeClass("h-100");
+			}
+			if(isMobile){
+				animateScripture();
+				if($(".article-myNotes").length && !$(".article-myNotes").hasClass("h-100")){
+					$(".article-myNotes").addClass("h-100");
+				}
+				showButtonByClassName("btn-show-scripture");
+			}
+		}
+	})
+	
+	var backgroundColor = $("a.article-citation").css("background-color");
+	var fontColor = $("a.article-citation").css("color");
+	if ($("a.article-citation").length > 0){
+		$(".btn-show-scripture").show();
+		
+		$("a.article-citation").first()
+			.click()
+			.animate({
+				"background-color": "#c90000",
+				"color": "#FFFFFF",
+			}, 300)
+			.delay(100)
+			.animate({
+				"background-color": backgroundColor,
+				"color": fontColor,
+			}, 300);
+	}else if("") {
+		animateScripture();
+		showNotes();
+		setTimeout(showIframe, 300);
+	}
+
+	// save audio process
+	function ajaxCallSaveAudioProgress(time, model_id, model_name, title, duration){
+		if(model_id && model_name && title && Number.isInteger(time)) {
+			$.ajax({
+				method:"POST",
+				url:"/history/save-file-video-progress",
+				data: {
+					time,
+					url: "https://www.hkbibleconference.org/session-message/view/1578",
+					model_id,
+					model_name,
+					title,
+					duration,
+				},
+				success:function(result){
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}
+	}
+
+	$(function(){
+		let audioElement = $("audio");
+		let old_time = null;
+		let title = "第九講  走完路程";
+		if(audioElement.length) {
+			if(audioElement[0].dataset.currenttime) {
+				audioElement[0].currentTime = audioElement[0].dataset.currenttime;
+				old_time = audioElement[0].dataset.currenttime;
+			}
+			let model_id = audioElement[0].dataset.modelId;
+			let model_name = audioElement[0].dataset.model;
+			$(audioElement).off().on("timeupdate", function(event){
+				let now_time = parseInt(this.currentTime);
+				if(old_time === null || now_time - old_time >= 2 || now_time - old_time < 0) {
+					old_time = now_time;
+					ajaxCallSaveAudioProgress(now_time, model_id, model_name, title, parseInt(this.duration));
+				}
+			})
+		}
+	})
+	$("#myNotes").blur(function(){
+		if(blurXhr){
+			blurXhr.abort();
+		}
+		blurXhr = $.ajax("/notes/save-notes", {
+			dataType: "json",
+			method: "POST",
+			data: {
+				content: $("#myNotes").val(),
+				session_message_id: "1578",
+			},
+			success: function(data){
+				if(data.error) {
+					alert(data.message);
+				}
+			},
+			error: function(error){
+				alert(error);
+			}
+		}).always(function(){
+			blurXhr = null;
+		});
+	});
+	
+jQuery('#subscribe-form').yiiActiveForm([{"id":"subscribeform-email","name":"email","container":".field-subscribeform-email","input":"#subscribeform-email","error":".invalid-feedback","enableAjaxValidation":true,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"請輸入電郵"});yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"請輸入正確的電郵","enableIDN":false,"skipOnEmpty":1});yii.validation.string(value, messages, {"message":"電郵 必須為字串。","max":500,"tooLong":"電郵 只能包含最多 500 個字符。","skipOnEmpty":1});}}], {"errorSummary":".alert.alert-danger","errorCssClass":"is-invalid","successCssClass":"is-valid","validationStateOn":"input"});
+
+	$("#siteSearchForm").on("submit", function() {
+		var value = $(this).find("input[name=\"keyword\"]").val();
+		if (!value){
+			$(this).find(".msg-keyword").show();
+			return false;
+		}
+
+		return true;
+	});
+
+	$("#siteSearchForm input[name=\"keyword\"]").on("keyup", function (e) {
+		if ($("#siteSearchForm input[name=\"keyword\"]").val()){
+			$("#siteSearchForm .msg-keyword").hide();
+		}
+	});
+	
+	<!--Add to bookmark button-->
+	$(".bookmark").off().click(function() {
+		$(this).toggleClass("added");
+		let target = $(this)[0];
+		let targetModel = $(this)[0].dataset.model.replace(/\\/g, "\\\\");
+		let targetModelId = $(this)[0].dataset.modelId;
+		let otherElements = $(".bookmark[data-model-id=\""+ targetModelId +"\"][data-model=\""+ targetModel +"\"]");
+		if(otherElements.length) {
+			$(otherElements).each(function(index, element){
+				if(element != target) {
+					$(element).toggleClass("added");
+				}
+			})
+		}
+
+		if("") {
+			let addOrRemove = $(this).hasClass("added") ? "add" : "remove";
+			let model = $(this)[0].dataset.model;
+			let modelId = $(this)[0].dataset.modelId;
+			// console.log($(this)[0].dataset);
+			$.ajax({
+				method:"POST",
+				url:"/bookmark/add-or-remove-bookmark",
+				data: {
+					addOrRemove,
+					model,
+					modelId,
+				},
+				success:function(result){
+					console.log(result);
+				},
+				error:function(result){
+					console.log("error");
+					console.log(result);
+				}
+			});
+		}else{
+			let secondLayerId = null;
+			// console.log(1);
+			if(targetModel && targetModel.includes("SpeakerWording")){
+				let modal = $(this).parents(".modal");
+				if(modal.length){
+					secondLayerId = $(modal).attr("id");
+				}
+			}
+			let url = "https://www.hkbibleconference.org/site/member";
+			const queryString = window.location.search;
+			const urlParams = new URLSearchParams(queryString);
+			if(secondLayerId){
+				if(url.includes("?")){
+					url = urlParams.size ? (url + "&secondLayerId=" + secondLayerId) : (url + "secondLayerId=" + secondLayerId);
+				}else {
+					url =  url + "?secondLayerId=" + secondLayerId;
+				}
+			}
+			location.href = url;
+		}
+	});
+
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	if(urlParams.has("firstLayerId")){
+		let firstLayerId = urlParams.get("firstLayerId");
+		if($("#"+firstLayerId).length){
+			let btn = $("#"+firstLayerId);
+			$(btn)[0].scrollIntoView();
+			let relatedModalId = $(btn)[0].dataset.bsTarget;
+			new bootstrap.Modal(relatedModalId).show("#"+firstLayerId);
+		}
+		if(urlParams.has("secondLayerId")){
+			let secondLayerId = urlParams.get("secondLayerId");
+			setTimeout(function(){
+				new bootstrap.Modal("#" + secondLayerId).show();
+			},500);
+		}
+	}else if(urlParams.has("secondLayerId")){
+		let secondLayerId = urlParams.get("secondLayerId");
+		new bootstrap.Modal("#" + secondLayerId).show();
+	}
+	
+
+		$("a[download='']").each(function(){
+			$(this).click(function(){
+				downloadResource($(this).attr("href"));
+				return false;
+			});
+		});
+		
+		function forceDownload(blob, filename) {
+			var a = document.createElement("a");
+			a.download = filename;
+			a.href = blob;
+			document.body.appendChild(a);
+			a.click();
+			a.remove();
+		}
+
+		function downloadResource(url, filename) {
+			if (!filename) filename = url.split("\\").pop().split("/").pop();
+			console.log(location.origin);
+			fetch(url + "?_t=" + Date.now(), {
+				headers: new Headers({
+					"Origin": location.origin
+				}),
+				method: "GET",
+				mode: "cors"
+			})
+			.then(response => response.blob())
+			.then(blob => {
+				let blobUrl = window.URL.createObjectURL(blob);
+				forceDownload(blobUrl, filename);
+			})
+			.catch(e => console.error(e));
+		}
+		
+});</script><script>(function(){var js = "window['__CF$cv$params']={r:'83d8b32f7c6504e5',t:'MTcwMzkyMjcxMi41MTcwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+</html>
