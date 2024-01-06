@@ -1,6 +1,6 @@
 #!/bin/bash
 set +x
-for PROJECT_NAME in ACSMHK CBI CGST FVC JNG WWBS YFCX
+for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG WWBS YFCX
 do
   pushd ../whisper/$PROJECT_NAME
   bash i
