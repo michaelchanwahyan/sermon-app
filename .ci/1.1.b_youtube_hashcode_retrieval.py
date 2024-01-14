@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 with open('exlist.txt', 'r') as fp:
     ex_list = [_.strip() for _ in fp.readlines()]
 fp.close()
