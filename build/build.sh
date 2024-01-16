@@ -28,6 +28,7 @@ if   [ "$1" == "" ] ; then
     echo "               -  CBI                                               "
     echo "               -  CGST                                              "
     echo "               -  DSCCC                                             "
+    echo "               -  FLWC                                              "
     echo "               -  FVC                                               "
     echo "               -  HKBC                                              "
     echo "               -  JNG                                               "
@@ -54,6 +55,10 @@ if   [ "$1" == "" ] ; then
     echo "     DSCCC    Compile DSCCC sermon book.                            "
     echo "              DSCCC := Divinity School of Chung Chi College, CUHK   "
     echo "              香港中文大學崇基學院神學院                            "
+    echo "                                                                    "
+    echo "     FLWC     Compile FLWC sermon book.                             "
+    echo "              FLWC := Flow Church                                   "
+    echo "              流堂                                                  "
     echo "                                                                    "
     echo "     FVC      Compile FVC sermon book.                              "
     echo "              FVC := Fairview Church                                "
@@ -87,6 +92,7 @@ if   [ "$1" == "genall" ] ; then
     python3 convert_srt2txt.py ACSMHK
     python3 convert_srt2txt.py CBI
     python3 convert_srt2txt.py CGST
+    python3 convert_srt2txt.py FLWC
     python3 convert_srt2txt.py FVC
     python3 convert_srt2txt.py JNG
     python3 convert_srt2txt.py WWBS
@@ -105,6 +111,10 @@ if   [ "$1" == "genall" ] ; then
     python3 generate_sermonbook.py
     cd ..
     cd ./DSCCC
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
+    cd ./FLWC
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
     cd ..
@@ -135,6 +145,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh CBI
     ./build.sh CGST
     ./build.sh DSCCC
+    ./build.sh FLWC
     ./build.sh FVC
     ./build.sh HKBC
     ./build.sh JNG
@@ -145,6 +156,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh CBI     once
     ./build.sh CGST    once
     ./build.sh DSCCC   once
+    ./build.sh FLWC    once
     ./build.sh FVC     once
     ./build.sh HKBC    once
     ./build.sh JNG     once
@@ -186,6 +198,15 @@ elif [ "$1" == "DSCCC" ] ; then
     fi
     rm -f sermon_$1_2009-present.mtc*
     mv sermon_$1_2009-present.pdf ../../pdf/
+    cd ..
+elif [ "$1" == "FLWC" ] ; then
+    cd $1
+    xelatex sermon_$1_2020-present.tex
+    if [ "$2" != "once" ] ; then
+    xelatex sermon_$1_2020-present.tex
+    fi
+    rm -f sermon_$1_2020-present.mtc*
+    mv sermon_$1_2020-present.pdf ../../pdf/
     cd ..
 elif [ "$1" == "FVC" ] ; then
     cd $1
