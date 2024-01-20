@@ -12,6 +12,7 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 漢語聖經協會 講道講章 Chinese Bible International                            | ./pdf/sermon_CBI.pdf                      | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_CBI.pdf)                            |
 | 中國神學研究院 道講章 China Graduate School of Theology                      | ./pdf/sermon_CGST.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_CGST.pdf)                           |
 | 崇基神學院 崇拜講章 Div. Schl of Chung Chi College                           | ./pdf/sermon_DSCCC_2009-present.pdf       | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_DSCCC_2009-present.pdf)             |
+| 流堂 崇拜講章 Flow Church                                                    | ./pdf/sermon_FLWC_2021-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_FLWC_2021-present.pdf)              |
 | 宣道會錦繡堂 崇拜講章 Christian Missionary Alliance Fairview Church          | ./pdf/sermon_FVC_2017-present.pdf         | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_FVC_2017-present.pdf)               |
 | 港九培靈研經會講章 Hong Kong Bible Conference                                | ./pdf/sermon_HKBC_1928-2007.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_HKBC_1928-2007.pdf)                 |
 |                                                                              | ./pdf/sermon_HKBC_2008-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_HKBC_2008-present.pdf)              |
@@ -25,15 +26,16 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 ### Statistics Overview on this project
 sermon source | transcript total count | recent development activity
 ----|----|----
-ACSMHK | 6.7% ( 523 / 7820) | 6.6% ( 1770 / 26695)
-CBI | 0.1% ( 12 / 7820) | 0.5% ( 128 / 26695)
-CGST | 2.6% ( 203 / 7820) | 3.1% ( 825 / 26695)
-DSCCC | 8.7% ( 679 / 7820) | 0.5% ( 135 / 26695)
-FVC | 14.6% ( 1139 / 7820) | 14.2% ( 3785 / 26695)
-HKBC | 19.9% ( 1559 / 7820) | 0.4% ( 99 / 26695)
-JNG | 35.8% ( 2801 / 7820) | 63.0% ( 16811 / 26695)
-WWBS | 0.3% ( 23 / 7820) | 0.6% ( 164 / 26695)
-YFCX | 11.3% ( 881 / 7820) | 11.2% ( 2978 / 26695)
+ACSMHK | 7.0% ( 560 / 8052) | 9.4% ( 1899 / 20248)
+CBI | 0.2% ( 13 / 8052) | 0.7% ( 138 / 20248)
+CGST | 2.5% ( 203 / 8052) | 4.2% ( 862 / 20248)
+DSCCC | 8.5% ( 682 / 8052) | 0.7% ( 144 / 20248)
+FLWC | 1.5% ( 119 / 8052) | 2.0% ( 403 / 20248)
+FVC | 14.2% ( 1147 / 8052) | 18.9% ( 3838 / 20248)
+HKBC | 19.4% ( 1559 / 8052) | 0.5% ( 102 / 20248)
+JNG | 35.0% ( 2817 / 8052) | 47.1% ( 9533 / 20248)
+WWBS | 0.7% ( 55 / 8052) | 1.3% ( 271 / 20248)
+YFCX | 11.1% ( 897 / 8052) | 15.1% ( 3058 / 20248)
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
