@@ -219,12 +219,12 @@ elif [ "$1" == "FVC" ] ; then
     cd ..
 elif [ "$1" == "HKBC" ] ; then
     cd $1
-    xelatex sermon_$1_1928-2007.tex
-    if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_1928-2007.tex
-    fi
-    rm -f sermon_$1_1928-2007.mtc*
-    mv sermon_$1_1928-2007.pdf ../../pdf/
+    #    xelatex sermon_$1_1928-2007.tex
+    #    if [ "$2" != "once" ] ; then
+    #    xelatex sermon_$1_1928-2007.tex
+    #    fi
+    #    rm -f sermon_$1_1928-2007.mtc*
+    #    mv sermon_$1_1928-2007.pdf ../../pdf/
     cd ..
     cd $1
     xelatex sermon_$1_2008-present.tex
@@ -236,28 +236,28 @@ elif [ "$1" == "HKBC" ] ; then
     cd ..
 elif [ "$1" == "JNG" ] ; then
     cd $1
-    xelatex sermon_$1_2012-18.tex
-    if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2012-18.tex
-    fi
-    rm -f sermon_$1_2012-18.mtc*
-    mv sermon_$1_2012-18.pdf ../../pdf/
+    #    xelatex sermon_$1_2012-18.tex
+    #    if [ "$2" != "once" ] ; then
+    #    xelatex sermon_$1_2012-18.tex
+    #    fi
+    #    rm -f sermon_$1_2012-18.mtc*
+    #    mv sermon_$1_2012-18.pdf ../../pdf/
     cd ..
     cd $1
-    xelatex sermon_$1_2019-20.tex
-    if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2019-20.tex
-    fi
-    rm -f sermon_$1_2019-20.mtc*
-    mv sermon_$1_2019-20.pdf ../../pdf/
+    #    xelatex sermon_$1_2019-20.tex
+    #    if [ "$2" != "once" ] ; then
+    #    xelatex sermon_$1_2019-20.tex
+    #    fi
+    #    rm -f sermon_$1_2019-20.mtc*
+    #    mv sermon_$1_2019-20.pdf ../../pdf/
     cd ..
     cd $1
-    xelatex sermon_$1_2021-22.tex
-    if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2021-22.tex
-    fi
-    rm -f sermon_$1_2021-22.mtc*
-    mv sermon_$1_2021-22.pdf ../../pdf/
+    #    xelatex sermon_$1_2021-22.tex
+    #    if [ "$2" != "once" ] ; then
+    #    xelatex sermon_$1_2021-22.tex
+    #    fi
+    #    rm -f sermon_$1_2021-22.mtc*
+    #    mv sermon_$1_2021-22.pdf ../../pdf/
     cd ..
     cd $1
     xelatex sermon_$1_2023-24.tex
