@@ -340,6 +340,16 @@ for (c, b) in rdd2.map(lambda w: (w[2], w[1])) \
 
 
 
+'''### time : "t"
+c2t_dict : 1-to-1 dictionary from youtube code to time'''
+
+
+c2t_dict = {} # 1-to-1 dictionary
+for (c, t) in rdd2.map(lambda w: (w[2], w[-1])).collect():
+    c2t_dict[c] = t
+
+
+
 '''### verse : "v"
 c2v_dict : 1-to-1 dictionary from youtube code to chapter verse'''
 
@@ -376,6 +386,7 @@ c2ch_dict = {} # 1-to-1 dictionary
 for c in c2s_dict.keys():
     # recall: s := the sermon title
     titleStr = cleanse_punctuation(c2s_dict.get(c), '-')
+    titleStr = titleStr.replace(c2t_dict.get(c).replace('-', ''), '')
     # print(titleStr)
     m = re.search(r'(?<=[0-9])[:]', titleStr) # m := match
     if m is None:
@@ -405,16 +416,6 @@ for c in c2s_dict.keys():
     chStr = vStr.split(':')[0]
     if '-' not in chStr:
         c2ch_dict[c] = chStr
-
-
-
-'''### time : "t"
-c2t_dict : 1-to-1 dictionary from youtube code to time'''
-
-
-c2t_dict = {} # 1-to-1 dictionary
-for (c, t) in rdd2.map(lambda w: (w[2], w[-1])).collect():
-    c2t_dict[c] = t
 
 
 
