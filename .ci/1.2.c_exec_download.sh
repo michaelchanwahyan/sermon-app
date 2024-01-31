@@ -1,7 +1,7 @@
 #!/bin/bash
 set +x
 pushd ../projects
-  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG WWBS YFCX
+  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG PORCH WWBS YFCX YOS
   do
     pushd ./$PROJECT_NAME
       echo download new youtube sermon if any ...     $PROJECT_NAME

@@ -1,7 +1,7 @@
 #!/bin/bash
 set +x
 pushd ../projects
-  for PROJECT_NAME in ACSMHK CBI CGST FVC FLWC JNG WWBS YFCX
+  for PROJECT_NAME in ACSMHK CBI CGST FVC FLWC JNG PORCH WWBS YFCX YOS
   do
     pushd ./$PROJECT_NAME
       echo list out audio source directory of project $PROJECT_NAME
