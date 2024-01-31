@@ -1,10 +1,11 @@
 #!/bin/bash
 set +x
 pushd ../projects
-  for PROJECT_NAME in ACSMHK CBI CGST DSCCC FLWC FVC HKBC JNG WWBS YFCX
+  for PROJECT_NAME in ACSMHK CBI CGST DSCCC FLWC FVC HKBC JNG PORCH WWBS YFCX YOS
   do
     pushd ./$PROJECT_NAME
-      python3 generate_index.py
+      python3    ../func_ipynb_2_py.py    generate_index.ipynb
+      python3    generate_index.py
     popd # back to ./app/projects
   done
 popd # back to ./app/.ci

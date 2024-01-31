@@ -8,15 +8,18 @@ def ytcode_retrieval(infilename):
         print('non txt non srt file name input: ', infilename)
         return ''
     try:
-        yt_pos = re.search('[A-Za-z0-9_-]'*11, infilename).span(0)
-        if yt_pos[0] != 0 and infilename[yt_pos[0]-1] == '[':
-            # confirm to be new yt-dlp command output filename format
-            return infilename[yt_pos[0]:yt_pos[1]]
-        elif yt_pos[0] != 0 and infilename[yt_pos[1]+1] == '.':
-            # confirm to be old youtube-dl command output filename format
-            return infilename[yt_pos[0]+1:yt_pos[1]+1]
-        else:
-            return infilename[yt_pos[0]:yt_pos[1]]
+        #yt_pos = re.search('[A-Za-z0-9_-]'*11, infilename).span(0)
+        #if yt_pos[0] != 0 and infilename[yt_pos[0]-1] == '[':
+        #    # confirm to be new yt-dlp command output filename format
+        #    return infilename[yt_pos[0]:yt_pos[1]]
+        #elif yt_pos[0] != 0 and infilename[yt_pos[1]+1] == '.':
+        #    # confirm to be old youtube-dl command output filename format
+        #    return infilename[yt_pos[0]+1:yt_pos[1]+1]
+        #else:
+        #    return infilename[yt_pos[0]:yt_pos[1]]
+        ytc = re.search('[A-Za-z0-9_-]'*11, infilename[::-1]).group()
+        ytc = ytc[::-1]
+        return ytc
     except:
         print('ytcode pattern search fail for: ', infilename)
         return ''
@@ -27,7 +30,7 @@ with open('transcription_server_ip.txt', 'r') as fp:
 fp.close()
 transcription_server_ip = transcription_server_ip.strip()
  
-PROJECT_LIST = ['ACSMHK', 'CBI', 'CGST', 'FVC', 'JNG', 'WWBS', 'YFCX']
+PROJECT_LIST = ['ACSMHK', 'CBI', 'CGST', 'FLWC', 'FVC', 'JNG', 'PORCH', 'WWBS', 'YFCX', 'YOS']
 transfer_script_str = ''
 for PROJECT in PROJECT_LIST:
     # audio file list out
