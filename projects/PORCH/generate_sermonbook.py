@@ -104,7 +104,7 @@ with open(sermon_tex_filepath, "a") as fp:
             sermonCnt += 1
             bstr = c2b_dict.get(cc, ' ')
             vstr = c2v_dict.get(cc, ' ')
-            sstr = c2s_dict.get(cc, ' ')
+            sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
             tstr = c2t_dict.get(cc, ' ')
             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
@@ -154,7 +154,7 @@ for lineId, line in enumerate(lines):
             sectionNameStr += ' ' + ch if b is not None and ch is not None and v is None else ''
             fp.write("\n\n\\section{"+sectionNameStr+"}\n")
             fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
-            sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
+            sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
             fp.write("\\textbf{"+sstr+"}\n")
             fp.write("\\newline\n\\newline\n")
             fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ recording date: " + c2t_dict.get(cc) + " \n")
@@ -240,6 +240,7 @@ for lineId, line in enumerate(lines):
                     # dollar sign '$', it would probably bring up error
                     # over 95% of the situation is that there only has 1 '$' sign
                     textline = textline.replace('$', '\\$')
+                textline = textline.replace('_','\_').replace('&','\&').replace('#','\#')
                 fp.write(textline + "\n")
                 if _textrow_cnt % 40 == 0:
                     fp.write("\n")
