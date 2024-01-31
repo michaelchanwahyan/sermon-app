@@ -34,7 +34,7 @@ fp.close()
 
 
 with open('../rep_whisper_trailing.txt', 'r') as fp:
-    whisper_trailing_rep_list = _ in fp.readlines()
+    whisper_trailing_rep_list = fp.readlines()
 fp.close()
 
 
@@ -154,10 +154,7 @@ for lineId, line in enumerate(lines):
             sectionNameStr += ' ' + ch if b is not None and ch is not None and v is None else ''
             fp.write("\n\n\\section{"+sectionNameStr+"}\n")
             fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
-            sstr = yfcx_sermon_title_processing(cc)
-            sstr = cleanse_special_char(
-                c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
-            )
+            sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
             fp.write("\\textbf{"+sstr+"}\n")
             fp.write("\\newline\n\\newline\n")
             fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ recording date: " + c2t_dict.get(cc) + " \n")
