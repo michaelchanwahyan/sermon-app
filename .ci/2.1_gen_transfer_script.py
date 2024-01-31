@@ -30,7 +30,7 @@ with open('transcription_server_ip.txt', 'r') as fp:
 fp.close()
 transcription_server_ip = transcription_server_ip.strip()
  
-PROJECT_LIST = ['ACSMHK', 'CBI', 'CGST', 'FVC', 'JNG', 'WWBS', 'YFCX']
+PROJECT_LIST = ['ACSMHK', 'CBI', 'CGST', 'FLWC', 'FVC', 'JNG', 'PORCH', 'WWBS', 'YFCX', 'YOS']
 transfer_script_str = ''
 for PROJECT in PROJECT_LIST:
     # audio file list out
