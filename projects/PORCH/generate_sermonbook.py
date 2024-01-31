@@ -58,7 +58,7 @@ with open('./index_byt.csv', 'r') as fp:
     lines = fp.readlines()
 fp.close()
 
-sermon_tex_filepath = f"../../build/PORCH/sermon_FLWC_2020-present.tex"
+sermon_tex_filepath = f"../../build/PORCH/sermon_PORCH_2014-present.tex"
 # --------------------------------------
 # print the latex document : prefix
 # --------------------------------------
@@ -142,7 +142,7 @@ for lineId, line in enumerate(lines):
     cc = line.split(",")[0]
     cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
     cc_next = lines[(lineId+1)%len(lines)].split(",")[0]
-    if os.path.isfile(f'../../data/FLWC/{cc}.txt'):
+    if os.path.isfile(f'../../data/PORCH/{cc}.txt'):
         with open(sermon_tex_filepath, "a") as fp:
             #fp.write("\n\n\\section{"+c2s_dict.get(cc).replace('_','\\_')+"}\n")
             sectionNameStr = ''
