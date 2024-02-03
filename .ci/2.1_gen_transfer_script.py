@@ -33,6 +33,7 @@ transcription_server_ip = transcription_server_ip.strip()
 PROJECT_LIST = ['ACSMHK', 'CBI', 'CGST', 'FLWC', 'FVC', 'JNG', 'PORCH', 'WWBS', 'YFCX', 'YOS']
 transfer_script_str = ''
 for PROJECT in PROJECT_LIST:
+    print('on PROJECT :', PROJECT)
     # audio file list out
     proj_mp3_dir = '/Users/pikachu/TPPHC/SERMON/' + PROJECT + '/'
     mp3_list = os.listdir(proj_mp3_dir)
