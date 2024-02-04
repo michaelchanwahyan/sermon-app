@@ -22,20 +22,22 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 |                                                                              | ./pdf/sermon_JNG_2023-24.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_JNG_2023-24.pdf)                    |
 | 環球聖經公會 講道講章 Worldwide Bible Society                                | ./pdf/sermon_WWBS.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_WWBS.pdf)                           |
 | 播道會恩福堂 崇拜講章 Yan Fook Church & Youth                                | ./pdf/sermon_YFCX_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_YFCX_2020-present.pdf)              |
+| 中華宣道會友愛堂信培部 Yau Oi School                                         | ./pdf/sermon_YOS.pdf                      | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_YOS.pdf)                            |
 
 ### Statistics Overview on this project
 sermon source | transcript total count | recent development activity
 ----|----|----
-ACSMHK | 7.0% ( 560 / 8052) | 9.4% ( 1899 / 20248)
-CBI | 0.2% ( 13 / 8052) | 0.7% ( 138 / 20248)
-CGST | 2.5% ( 203 / 8052) | 4.2% ( 862 / 20248)
-DSCCC | 8.5% ( 682 / 8052) | 0.7% ( 144 / 20248)
-FLWC | 1.5% ( 119 / 8052) | 2.0% ( 403 / 20248)
-FVC | 14.2% ( 1147 / 8052) | 18.9% ( 3838 / 20248)
-HKBC | 19.4% ( 1559 / 8052) | 0.5% ( 102 / 20248)
-JNG | 35.0% ( 2817 / 8052) | 47.1% ( 9533 / 20248)
-WWBS | 0.7% ( 55 / 8052) | 1.3% ( 271 / 20248)
-YFCX | 11.1% ( 897 / 8052) | 15.1% ( 3058 / 20248)
+ACSMHK | 7.2% ( 593 / 8205) | 11.3% ( 2036 / 17967)
+CBI | 0.2% ( 14 / 8205) | 0.8% ( 147 / 17967)
+CGST | 2.5% ( 204 / 8205) | 4.8% ( 870 / 17967)
+DSCCC | 8.3% ( 684 / 8205) | 0.8% ( 144 / 17967)
+FLWC | 1.7% ( 137 / 8205) | 2.6% ( 472 / 17967)
+FVC | 14.1% ( 1158 / 8205) | 21.6% ( 3886 / 17967)
+HKBC | 19.0% ( 1559 / 8205) | 0.6% ( 106 / 17967)
+JNG | 34.6% ( 2839 / 8205) | 40.2% ( 7227 / 17967)
+WWBS | 0.7% ( 57 / 8205) | 1.6% ( 287 / 17967)
+YFCX | 11.3% ( 928 / 8205) | 14.9% ( 2676 / 17967)
+YOS | 0.4% ( 32 / 8205) | 0.6% ( 116 / 17967)
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites

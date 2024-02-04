@@ -20,7 +20,7 @@ the foldername here indicates a shortform of the sermon textual or audio source
 | YFCX        | Yan Fook Church Youth                       | 播道會恩福堂青年團         | [youtube channel](https://www.youtube.com/c/YanfookYouth)                                    |
 | YFCX        | Yan Fook Church                             | 播道會恩福堂               | [youtube channel](https://www.youtube.com/yanfookchurch)                                     |
 | ~~YOC~~     | ~~Yau Oi Church~~                           | ~~中華宣道會友愛堂~~       | [~~youtube channel~~](https://www.youtube.com/@yauoichurch1981)                              |
-| YOS         | Yau Oi School                               | 友愛堂信培部               | [youtube channel](https://www.youtube.com/@yauoischool/streams)                              |
+| YOS         | Yau Oi School                               | 中華宣道會友愛堂信培部     | [youtube channel](https://www.youtube.com/@yauoischool/streams)                              |
 
 the target source list shall integrate more as time goes by
 

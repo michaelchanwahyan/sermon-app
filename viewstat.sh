@@ -11,7 +11,8 @@ FN_HKBC=$(   ls -1 ./data/HKBC    | wc -l)
 FN_JNG=$(    ls -1 ./data/JNG     | wc -l)
 FN_WWBS=$(   ls -1 ./data/WWBS    | wc -l)
 FN_YFCX=$(   ls -1 ./data/YFCX    | wc -l)
-FN_TOTAL=$(echo $FN_ACSMHK + $FN_CBI + $FN_CGST + $FN_DSCCC + $FN_FLWC + $FN_FVC + $FN_HKBC + $FN_JNG + $FN_WWBS + $FN_YFCX | bc)
+FN_YOS=$(    ls -1 ./data/YOS     | wc -l)
+FN_TOTAL=$(echo $FN_ACSMHK + $FN_CBI + $FN_CGST + $FN_DSCCC + $FN_FLWC + $FN_FVC + $FN_HKBC + $FN_JNG + $FN_WWBS + $FN_YFCX + $FN_YOS | bc)
 
 echo sermon count in ACSMHK  : $FN_ACSMHK  / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_ACSMHK  / FN_TOTAL))e-2)% \)
 echo sermon count in CBI     : $FN_CBI     / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_CBI     / FN_TOTAL))e-2)% \)
@@ -23,6 +24,7 @@ echo sermon count in HKBC    : $FN_HKBC    / $FN_TOTAL \( $(printf "%.1f" $((10*
 echo sermon count in JNG     : $FN_JNG     / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_JNG     / FN_TOTAL))e-2)% \)
 echo sermon count in WWBS    : $FN_WWBS    / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_WWBS    / FN_TOTAL))e-2)% \)
 echo sermon count in YFCX    : $FN_YFCX    / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_YFCX    / FN_TOTAL))e-2)% \)
+echo sermon count in YOS     : $FN_YOS     / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_YOS     / FN_TOTAL))e-2)% \)
 
 echo
 echo DEVELOPMENT ACTIVE STATISTICS:
@@ -37,7 +39,8 @@ echo HKBC ...     ; CHNG_CNT_HKBC=$(   git --no-pager show --name-only --oneline
 echo JNG ...      ; CHNG_CNT_JNG=$(    git --no-pager show --name-only --oneline $OU | grep JNG     | wc -l) # for each hash count the file updates in specified sermon source
 echo WWBS ...     ; CHNG_CNT_WWBS=$(   git --no-pager show --name-only --oneline $OU | grep WWBS    | wc -l) # for each hash count the file updates in specified sermon source
 echo YFCX ...     ; CHNG_CNT_YFCX=$(   git --no-pager show --name-only --oneline $OU | grep YFCX    | wc -l) # for each hash count the file updates in specified sermon source
-CHNG_CNT_TOTAL=$(echo $CHNG_CNT_ACSMHK + $CHNG_CNT_CBI + $CHNG_CNT_CGST + $CHNG_CNT_DSCCC + $CHNG_CNT_FLWC + $CHNG_CNT_FVC + $CHNG_CNT_HKBC + $CHNG_CNT_JNG + $CHNG_CNT_WWBS + $CHNG_CNT_YFCX | bc)
+echo YOS ...      ; CHNG_CNT_YOS=$(    git --no-pager show --name-only --oneline $OU | grep YOS     | wc -l) # for each hash count the file updates in specified sermon source
+CHNG_CNT_TOTAL=$(echo $CHNG_CNT_ACSMHK + $CHNG_CNT_CBI + $CHNG_CNT_CGST + $CHNG_CNT_DSCCC + $CHNG_CNT_FLWC + $CHNG_CNT_FVC + $CHNG_CNT_HKBC + $CHNG_CNT_JNG + $CHNG_CNT_WWBS + $CHNG_CNT_YFCX + $CHNG_CNT_YOS | bc)
 
 echo activeness on ACSMHK  : $CHNG_CNT_ACSMHK  / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_ACSMHK  / CHNG_CNT_TOTAL))e-2)% \)
 echo activeness on CBI     : $CHNG_CNT_CBI     / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_CBI     / CHNG_CNT_TOTAL))e-2)% \)
@@ -49,6 +52,7 @@ echo activeness on HKBC    : $CHNG_CNT_HKBC    / $CHNG_CNT_TOTAL \( $(printf "%.
 echo activeness on JNG     : $CHNG_CNT_JNG     / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_JNG     / CHNG_CNT_TOTAL))e-2)% \)
 echo activeness on WWBS    : $CHNG_CNT_WWBS    / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_WWBS    / CHNG_CNT_TOTAL))e-2)% \)
 echo activeness on YFCX    : $CHNG_CNT_YFCX    / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_YFCX    / CHNG_CNT_TOTAL))e-2)% \)
+echo activeness on YOS     : $CHNG_CNT_YOS     / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_YOS     / CHNG_CNT_TOTAL))e-2)% \)
 
 echo
 echo sermon source \| transcript total count \| recent development activity
@@ -63,4 +67,5 @@ echo HKBC    \| $(printf "%.1f" $((10**4 * FN_HKBC    / FN_TOTAL))e-2)% \($FN_HK
 echo JNG     \| $(printf "%.1f" $((10**4 * FN_JNG     / FN_TOTAL))e-2)% \($FN_JNG     / $FN_TOTAL\) \| $(printf "%.1f" $((10**4 * CHNG_CNT_JNG     / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_JNG     / $CHNG_CNT_TOTAL\)
 echo WWBS    \| $(printf "%.1f" $((10**4 * FN_WWBS    / FN_TOTAL))e-2)% \($FN_WWBS    / $FN_TOTAL\) \| $(printf "%.1f" $((10**4 * CHNG_CNT_WWBS    / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_WWBS    / $CHNG_CNT_TOTAL\)
 echo YFCX    \| $(printf "%.1f" $((10**4 * FN_YFCX    / FN_TOTAL))e-2)% \($FN_YFCX    / $FN_TOTAL\) \| $(printf "%.1f" $((10**4 * CHNG_CNT_YFCX    / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_YFCX    / $CHNG_CNT_TOTAL\)
+echo YOS     \| $(printf "%.1f" $((10**4 * FN_YOS     / FN_TOTAL))e-2)% \($FN_YOS     / $FN_TOTAL\) \| $(printf "%.1f" $((10**4 * CHNG_CNT_YOS     / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_YOS     / $CHNG_CNT_TOTAL\)
 
