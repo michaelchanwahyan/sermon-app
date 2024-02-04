@@ -1,2 +1,2 @@
-build directory of FLWC
+LaTeX build directory of FLWC
 

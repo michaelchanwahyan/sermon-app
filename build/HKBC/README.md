@@ -1,2 +1,2 @@
-build directory of HKBC
+LaTeX build directory of HKBC
 

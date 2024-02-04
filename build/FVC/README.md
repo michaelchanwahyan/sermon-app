@@ -1,2 +1,2 @@
-build directory of FVC
+LaTeX build directory of FVC
 

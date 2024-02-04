@@ -1,2 +1,2 @@
-build directory of ACSMHK
+LaTeX build directory of ACSMHK
 

@@ -1,2 +1,2 @@
-build directory of JNG
+LaTeX build directory of JNG
 

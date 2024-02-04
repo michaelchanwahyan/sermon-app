@@ -1,2 +1,2 @@
-build directory of YOS
+LaTeX build directory of YOS
 

@@ -1,2 +1,2 @@
-build directory of CBI
+LaTeX build directory of CBI
 

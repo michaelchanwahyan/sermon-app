@@ -1,2 +1,2 @@
-build directory of WWBS
+LaTeX build directory of WWBS
 

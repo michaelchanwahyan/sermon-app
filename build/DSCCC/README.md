@@ -1,2 +1,2 @@
-build directory of DSCCC
+LaTeX build directory of DSCCC
 

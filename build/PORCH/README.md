@@ -1,2 +1,2 @@
-build directory of PORCH
+LaTeX build directory of PORCH
 

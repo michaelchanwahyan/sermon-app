@@ -1,2 +1,2 @@
-build directory of YFCX
+LaTeX build directory of YFCX
 

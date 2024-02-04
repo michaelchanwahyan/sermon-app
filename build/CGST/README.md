@@ -1,2 +1,2 @@
-build directory of CGST
+LaTeX build directory of CGST
 
