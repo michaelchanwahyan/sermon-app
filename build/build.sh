@@ -35,6 +35,7 @@ if   [ "$1" == "" ] ; then
     echo "               -  PORCH                                             "
     echo "               -  WWBS                                              "
     echo "               -  YFCX                                              "
+    echo "               -  YOS                                               "
     echo "              A common practice on every LaTeX build action in this "
     echo "              script is that every time the tex file is to be       "
     echo "              compiled twice, in order to get LaTeX toc files to    "
@@ -85,6 +86,10 @@ if   [ "$1" == "" ] ; then
     echo "              YFCX := Yan Fook Church & Yan Fook Church Youth       "
     echo "              播道會恩福堂 & 播道會恩福堂青年團                     "
     echo "                                                                    "
+    echo "     YOS      Compile YOS sermon book.                              "
+    echo "              YOS := yau Oi School                                  "
+    echo "              中華宣道會友愛堂信培部                                "
+    echo "                                                                    "
     echo "     The optional arguments are as follows:                         "
     echo "                                                                    "
     echo "     once     The explicit option used in 'buildall' or any         "
@@ -103,6 +108,7 @@ if   [ "$1" == "genall" ] ; then
     python3 convert_srt2txt.py PORCH
     python3 convert_srt2txt.py WWBS
     python3 convert_srt2txt.py YFCX
+    python3 convert_srt2txt.py YOS
     cd ../projects
     cd ./ACSMHK
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
@@ -148,6 +154,10 @@ if   [ "$1" == "genall" ] ; then
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
     cd ..
+    cd ./YOS
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
     cd ../build
 elif [ "$1" == "buildall" ] ; then
     if [ "$2" != "once" ] ; then
@@ -162,6 +172,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh PORCH
     ./build.sh WWBS
     ./build.sh YFCX
+    ./build.sh YOS
     else
     ./build.sh ACSMHK  once
     ./build.sh CBI     once
@@ -174,6 +185,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh PORCH   once
     ./build.sh WWBS    once
     ./build.sh YFCX    once
+    ./build.sh YOS     once
     fi
 elif [ "$1" == "ACSMHK" ] ; then
     cd $1
@@ -305,5 +317,14 @@ elif [ "$1" == "YFCX" ] ; then
     fi
     rm -f sermon_$1_2020-present.mtc*
     mv sermon_$1_2020-present.pdf ../../pdf/
+    cd ..
+elif [ "$1" == "YOS" ] ; then
+    cd $1
+    xelatex sermon_$1.tex
+    if [ "$2" != "once" ] ; then
+    xelatex sermon_$1.tex
+    fi
+    rm -f sermon_$1.mtc*
+    mv sermon_$1.pdf ../../pdf/
     cd ..
 fi
