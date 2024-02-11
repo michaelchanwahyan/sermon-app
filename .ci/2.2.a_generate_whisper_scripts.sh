@@ -11,7 +11,7 @@ do
   ls $MP3_SRC_PATH/$PROJECT_NAME > $DESTINATE_TMP_FOLDER/$NEW_SRC_LIST_FILENAME
   pushd $DESTINATE_TMP_FOLDER
     LANG=zh
-    if [ "$LANG" == "PORCH" ] ; then
+    if [ "$PROJECT_NAME" == "PORCH" ] ; then
       LANG=en
     fi
     echo $LANG
