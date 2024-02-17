@@ -51,8 +51,12 @@ with open(NEW_SRC_LIST, 'r') as fp:
     lines = [ _.strip() for _ in fp.readlines() ]
 fp.close()
 
-if len(lines[0]) == 0:
+if len(lines) == 0:
     print("Project %s has empty NEW_SRC_LIST !!!" % PROJECT_NAME)
+    print("Clean up content , preserve only default content !!!")
+    with open('i', 'w') as fp:
+        fp.write(w_text)
+    fp.close()
     print("EXIT !")
     exit()
 
