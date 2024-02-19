@@ -20,6 +20,7 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 |                                                                              | ./pdf/sermon_JNG_2019-20.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_JNG_2019-20.pdf)                    |
 |                                                                              | ./pdf/sermon_JNG_2021-22.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_JNG_2021-22.pdf)                    |
 |                                                                              | ./pdf/sermon_JNG_2023-24.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_JNG_2023-24.pdf)                    |
+| The Porch, Dallas, TX 75251                                                  | ./pdf/sermon_PORCH_2014-present.pdf       | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_PORCH_2014-present.pdf)             |
 | 環球聖經公會 講道講章 Worldwide Bible Society                                | ./pdf/sermon_WWBS.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_WWBS.pdf)                           |
 | 播道會恩福堂 崇拜講章 Yan Fook Church & Youth                                | ./pdf/sermon_YFCX_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_YFCX_2020-present.pdf)              |
 | 中華宣道會友愛堂信培部 Yau Oi School                                         | ./pdf/sermon_YOS.pdf                      | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_YOS.pdf)                            |
@@ -27,17 +28,18 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 ### Statistics Overview on this project
 sermon source | transcript total count | recent development activity
 ----|----|----
-ACSMHK | 7.2% ( 593 / 8205) | 11.3% ( 2036 / 17967)
-CBI | 0.2% ( 14 / 8205) | 0.8% ( 147 / 17967)
-CGST | 2.5% ( 204 / 8205) | 4.8% ( 870 / 17967)
-DSCCC | 8.3% ( 684 / 8205) | 0.8% ( 144 / 17967)
-FLWC | 1.7% ( 137 / 8205) | 2.6% ( 472 / 17967)
-FVC | 14.1% ( 1158 / 8205) | 21.6% ( 3886 / 17967)
-HKBC | 19.0% ( 1559 / 8205) | 0.6% ( 106 / 17967)
-JNG | 34.6% ( 2839 / 8205) | 40.2% ( 7227 / 17967)
-WWBS | 0.7% ( 57 / 8205) | 1.6% ( 287 / 17967)
-YFCX | 11.3% ( 928 / 8205) | 14.9% ( 2676 / 17967)
-YOS | 0.4% ( 32 / 8205) | 0.6% ( 116 / 17967)
+ACSMHK | 7.0% ( 609 / 8751) | 11.8% ( 2092 / 17698)
+CBI | 0.2% ( 18 / 8751) | 1.0% ( 172 / 17698)
+CGST | 2.3% ( 204 / 8751) | 4.9% ( 874 / 17698)
+DSCCC | 7.8% ( 684 / 8751) | 0.8% ( 144 / 17698)
+FLWC | 2.0% ( 178 / 8751) | 3.5% ( 618 / 17698)
+FVC | 13.3% ( 1161 / 8751) | 22.1% ( 3904 / 17698)
+HKBC | 17.8% ( 1559 / 8751) | 0.6% ( 106 / 17698)
+JNG | 32.5% ( 2845 / 8751) | 29.5% ( 5228 / 17698)
+PORCH | 5.3% ( 464 / 8751) | 8.1% ( 1431 / 17698)
+WWBS | 0.7% ( 58 / 8751) | 1.7% ( 298 / 17698)
+YFCX | 10.7% ( 936 / 8751) | 15.3% ( 2701 / 17698)
+YOS | 0.4% ( 35 / 8751) | 0.7% ( 130 / 17698)
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
