@@ -3,7 +3,7 @@ set +x
 pushd ../projects
   echo create ls.txt or lslogt.txt for each project
   # projects that require lslogt.txt
-  for PROJECT_NAME in ACSMHK CBI CGST FVC JNG PORCH WWBS YOS
+  for PROJECT_NAME in ACSMHK CBI CGST FVC JNG PORCH STBC WWBS YOS
   do
     pushd ./$PROJECT_NAME
       ORI_DIR=$(pwd)
