@@ -34,4 +34,5 @@ echo \`\`\` >> $WHISPER_PATH/README.md
 echo \#!/bin/bash >> $WHISPER_PATH/README.md
 echo \`\`\` >> $WHISPER_PATH/README.md
 git add $WHISPER_PATH/README.md
+echo 4 > $WHISPER_PATH/threadnum.txt
 
