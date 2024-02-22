@@ -200,152 +200,169 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh YOS     once
     fi
 elif [ "$1" == "ACSMHK" ] ; then
+    OUTFILENAME=sermon_$1
     cd $1
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "CBI" ] ; then
+    OUTFILENAME=sermon_$1
     cd $1
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "CGST" ] ; then
+    OUTFILENAME=sermon_$1
     cd $1
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "DSCCC" ] ; then
+    OUTFILENAME=sermon_$1_2009-present
     cd $1
-    xelatex sermon_$1_2009-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2009-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2009-present.mtc*
-    mv sermon_$1_2009-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "FLWC" ] ; then
+    OUTFILENAME=sermon_$1_2020-present
     cd $1
-    xelatex sermon_$1_2020-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2020-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2020-present.mtc*
-    mv sermon_$1_2020-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "FVC" ] ; then
+    OUTFILENAME=sermon_$1_2017-present
     cd $1
-    xelatex sermon_$1_2017-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2017-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2017-present.mtc*
-    mv sermon_$1_2017-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "HKBC" ] ; then
+    OUTFILENAME=sermon_$1_1928-2007
     cd $1
-    #    xelatex sermon_$1_1928-2007.tex
+    #    xelatex $OUTFILENAME.tex
     #    if [ "$2" != "once" ] ; then
-    #    xelatex sermon_$1_1928-2007.tex
+    #    xelatex $OUTFILENAME.tex
     #    fi
-    #    rm -f sermon_$1_1928-2007.mtc*
-    #    mv sermon_$1_1928-2007.pdf ../../pdf/
+    #    rm -f $OUTFILENAME.mtc*
+    #    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
+    OUTFILENAME=sermon_$1_2008-present
     cd $1
-    xelatex sermon_$1_2008-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2008-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2008-present.mtc*
-    mv sermon_$1_2008-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "JNG" ] ; then
+    OUTFILENAME=sermon_$1_2012-18
     cd $1
-    #    xelatex sermon_$1_2012-18.tex
+    #    xelatex $OUTFILENAME.tex
     #    if [ "$2" != "once" ] ; then
-    #    xelatex sermon_$1_2012-18.tex
+    #    xelatex $OUTFILENAME.tex
     #    fi
-    #    rm -f sermon_$1_2012-18.mtc*
-    #    mv sermon_$1_2012-18.pdf ../../pdf/
+    #    rm -f $OUTFILENAME.mtc*
+    #    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
+    OUTFILENAME=sermon_$1_2019-20
     cd $1
-    #    xelatex sermon_$1_2019-20.tex
+    #    xelatex $OUTFILENAME.tex
     #    if [ "$2" != "once" ] ; then
-    #    xelatex sermon_$1_2019-20.tex
+    #    xelatex $OUTFILENAME.tex
     #    fi
-    #    rm -f sermon_$1_2019-20.mtc*
-    #    mv sermon_$1_2019-20.pdf ../../pdf/
+    #    rm -f $OUTFILENAME.mtc*
+    #    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
+    OUTFILENAME=sermon_$1_2021-22
     cd $1
-    #    xelatex sermon_$1_2021-22.tex
+    #    xelatex $OUTFILENAME.tex
     #    if [ "$2" != "once" ] ; then
-    #    xelatex sermon_$1_2021-22.tex
+    #    xelatex $OUTFILENAME.tex
     #    fi
-    #    rm -f sermon_$1_2021-22.mtc*
-    #    mv sermon_$1_2021-22.pdf ../../pdf/
+    #    rm -f $OUTFILENAME.mtc*
+    #    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
+    OUTFILENAME=sermon_$1_2023-24
     cd $1
-    xelatex sermon_$1_2023-24.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2023-24.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2023-24.mtc*
-    mv sermon_$1_2023-24.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "PORCH" ] ; then
+    OUTFILENAME=sermon_$1_2014-present
     cd $1
-    xelatex sermon_$1_2014-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2014-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2014-present.mtc*
-    mv sermon_$1_2014-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "STBC" ] ; then
+    OUTFILENAME=sermon_$1_2020-present
     cd $1
-    xelatex sermon_$1_2020-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2020-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2020-present.mtc*
-    mv sermon_$1_2020-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "WWBS" ] ; then
+    OUTFILENAME=sermon_$1
     cd $1
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "YFCX" ] ; then
+    OUTFILENAME=sermon_$1_2020-present
     cd $1
-    xelatex sermon_$1_2020-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2020-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2020-present.mtc*
-    mv sermon_$1_2020-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "YOS" ] ; then
+    OUTFILENAME=sermon_$1
     cd $1
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 fi
