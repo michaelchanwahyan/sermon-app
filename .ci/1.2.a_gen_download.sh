@@ -27,7 +27,7 @@ pushd ../projects
       if test $PROJECT_NAME = FLWC
       then
           wget -O v1 https://www.youtube.com/@flowchurchhk/videos
-          wget -O v2 https://www.youtube.com/@flowchurchhk/videos
+          wget -O v2 https://www.youtube.com/@flowchurchhk/streams
           cat v1 v2 > videos
           rm -f v1 v2
       fi
