@@ -26,7 +26,10 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = FLWC
       then
-          wget https://www.youtube.com/@flowchurchhk/videos
+          wget -O v1 https://www.youtube.com/@flowchurchhk/videos
+          wget -O v2 https://www.youtube.com/@flowchurchhk/videos
+          cat v1 v2 > videos
+          rm -f v1 v2
       fi
       if test $PROJECT_NAME = FVC
       then
