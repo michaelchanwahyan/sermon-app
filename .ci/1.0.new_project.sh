@@ -1,4 +1,19 @@
 #!/bin/bash
+if   [ "$1" == "" ] ; then
+    echo "NAME                                                                "
+    echo "     1.0.new_project.sh - create new project template.              "
+    echo "                                                                    "
+    echo "SYNOPSIS                                                            "
+    echo "     1.0.new_project.sh    [project_name]                           "
+    echo "                                                                    "
+    echo "DESCRIPTION                                                         "
+    echo "     This script create the <project_name> according to sermon      "
+    echo "     project purpose. Folders like ./project/<project_name>,        "
+    echo "     ./data/<project_name>, ./whisper/<project_name>,               "
+    echo "     ./build/<project_name>, etc.                                   "
+    exit
+fi
+
 set -x
 echo $1
 
