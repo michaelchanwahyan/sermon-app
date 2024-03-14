@@ -32,7 +32,9 @@ if   [ "$1" == "" ] ; then
     echo "               -  FVC                                               "
     echo "               -  HKBC                                              "
     echo "               -  JNG                                               "
+    echo "               -  KFC                                               "
     echo "               -  PORCH                                             "
+    echo "               -  STBC                                              "
     echo "               -  WWBS                                              "
     echo "               -  YFCX                                              "
     echo "               -  YOS                                               "
@@ -74,9 +76,17 @@ if   [ "$1" == "" ] ; then
     echo "              JNG := Channel of Johnson Ng                          "
     echo "              Johnson Ng 我愛聽主道                                 "
     echo "                                                                    "
+    echo "     KFC      Compile KFC sermon book.                              "
+    echo "              KFC := EFCC Kong Fok Church                           "
+    echo "              播道會港福堂                                          "
+    echo "                                                                    "
     echo "     PORCH    Compile PORCH sermon book.                            "
     echo "              PORCH := The Porch, LBJFWY 7540, Dallas, TX 75251     "
     echo "              Podcast of Tuesday night in Watermark Community Church"
+    echo "                                                                    "
+    echo "     STBC     Compile STBC sermon book.                             "
+    echo "              STBC := Shatin Baptist Church                         "
+    echo "              沙田浸信會                                            "
     echo "                                                                    "
     echo "     WWBS     Compile WWBS sermon book.                             "
     echo "              WWBS := Worldwide Bible Society                       "
@@ -105,7 +115,9 @@ if   [ "$1" == "genall" ] ; then
     python3 convert_srt2txt.py FLWC
     python3 convert_srt2txt.py FVC
     python3 convert_srt2txt.py JNG
+    python3 convert_srt2txt.py KFC
     python3 convert_srt2txt.py PORCH
+    python3 convert_srt2txt.py STBC
     python3 convert_srt2txt.py WWBS
     python3 convert_srt2txt.py YFCX
     python3 convert_srt2txt.py YOS
@@ -142,7 +154,15 @@ if   [ "$1" == "genall" ] ; then
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
     cd ..
+    cd ./KFC
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
     cd ./PORCH
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
+    cd ./STBC
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
     cd ..
@@ -169,7 +189,9 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh FVC
     ./build.sh HKBC
     ./build.sh JNG
+    ./build.sh KFC
     ./build.sh PORCH
+    ./build.sh STBC
     ./build.sh WWBS
     ./build.sh YFCX
     ./build.sh YOS
@@ -182,149 +204,187 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh FVC     once
     ./build.sh HKBC    once
     ./build.sh JNG     once
+    ./build.sh KFC     once
     ./build.sh PORCH   once
+    ./build.sh STBC    once
     ./build.sh WWBS    once
     ./build.sh YFCX    once
     ./build.sh YOS     once
     fi
 elif [ "$1" == "ACSMHK" ] ; then
+    OUTFILENAME=sermon_$1
     cd $1
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "CBI" ] ; then
+    OUTFILENAME=sermon_$1
     cd $1
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "CGST" ] ; then
+    OUTFILENAME=sermon_$1
     cd $1
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "DSCCC" ] ; then
+    OUTFILENAME=sermon_$1_2009-present
     cd $1
-    xelatex sermon_$1_2009-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2009-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2009-present.mtc*
-    mv sermon_$1_2009-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "FLWC" ] ; then
+    OUTFILENAME=sermon_$1_2020-present
     cd $1
-    xelatex sermon_$1_2020-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2020-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2020-present.mtc*
-    mv sermon_$1_2020-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "FVC" ] ; then
+    OUTFILENAME=sermon_$1_2017-present
     cd $1
-    xelatex sermon_$1_2017-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2017-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2017-present.mtc*
-    mv sermon_$1_2017-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "HKBC" ] ; then
+    OUTFILENAME=sermon_$1_1928-2007
     cd $1
-    #    xelatex sermon_$1_1928-2007.tex
+    #    xelatex $OUTFILENAME.tex
     #    if [ "$2" != "once" ] ; then
-    #    xelatex sermon_$1_1928-2007.tex
+    #    xelatex $OUTFILENAME.tex
     #    fi
-    #    rm -f sermon_$1_1928-2007.mtc*
-    #    mv sermon_$1_1928-2007.pdf ../../pdf/
+    #    rm -f $OUTFILENAME.mtc*
+    #    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
+    OUTFILENAME=sermon_$1_2008-present
     cd $1
-    xelatex sermon_$1_2008-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2008-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2008-present.mtc*
-    mv sermon_$1_2008-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "JNG" ] ; then
+    OUTFILENAME=sermon_$1_2012-18
     cd $1
-    #    xelatex sermon_$1_2012-18.tex
+    #    xelatex $OUTFILENAME.tex
     #    if [ "$2" != "once" ] ; then
-    #    xelatex sermon_$1_2012-18.tex
+    #    xelatex $OUTFILENAME.tex
     #    fi
-    #    rm -f sermon_$1_2012-18.mtc*
-    #    mv sermon_$1_2012-18.pdf ../../pdf/
+    #    rm -f $OUTFILENAME.mtc*
+    #    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
+    OUTFILENAME=sermon_$1_2019-20
     cd $1
-    #    xelatex sermon_$1_2019-20.tex
+    #    xelatex $OUTFILENAME.tex
     #    if [ "$2" != "once" ] ; then
-    #    xelatex sermon_$1_2019-20.tex
+    #    xelatex $OUTFILENAME.tex
     #    fi
-    #    rm -f sermon_$1_2019-20.mtc*
-    #    mv sermon_$1_2019-20.pdf ../../pdf/
+    #    rm -f $OUTFILENAME.mtc*
+    #    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
+    OUTFILENAME=sermon_$1_2021-22
     cd $1
-    #    xelatex sermon_$1_2021-22.tex
+    #    xelatex $OUTFILENAME.tex
     #    if [ "$2" != "once" ] ; then
-    #    xelatex sermon_$1_2021-22.tex
+    #    xelatex $OUTFILENAME.tex
     #    fi
-    #    rm -f sermon_$1_2021-22.mtc*
-    #    mv sermon_$1_2021-22.pdf ../../pdf/
+    #    rm -f $OUTFILENAME.mtc*
+    #    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
+    OUTFILENAME=sermon_$1_2023-24
     cd $1
-    xelatex sermon_$1_2023-24.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2023-24.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2023-24.mtc*
-    mv sermon_$1_2023-24.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+elif [ "$1" == "KFC" ] ; then
+    OUTFILENAME=sermon_$1_2020-present
+    cd $1
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "PORCH" ] ; then
+    OUTFILENAME=sermon_$1_2014-present
     cd $1
-    xelatex sermon_$1_2014-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2014-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2014-present.mtc*
-    mv sermon_$1_2014-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+elif [ "$1" == "STBC" ] ; then
+    OUTFILENAME=sermon_$1_2020-present
+    cd $1
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "WWBS" ] ; then
+    OUTFILENAME=sermon_$1
     cd $1
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "YFCX" ] ; then
+    OUTFILENAME=sermon_$1_2020-present
     cd $1
-    xelatex sermon_$1_2020-present.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1_2020-present.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1_2020-present.mtc*
-    mv sermon_$1_2020-present.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "YOS" ] ; then
+    OUTFILENAME=sermon_$1
     cd $1
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
-    xelatex sermon_$1.tex
+    xelatex $OUTFILENAME.tex
     fi
-    rm -f sermon_$1.mtc*
-    mv sermon_$1.pdf ../../pdf/
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 fi

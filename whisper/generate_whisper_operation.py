@@ -2,6 +2,7 @@
 
 
 import sys
+import re
 
 
 if len(sys.argv) > 1:
@@ -60,14 +61,17 @@ if len(lines) == 0:
     print("EXIT !")
     exit()
 
-lines = [ line[-16:-5] for line in lines ]
-for line in lines:
-    if len(line) == 11:
+for ytcode, line in zip([ line[-16:-5] for line in lines ], lines):
+    if len(ytcode) == 11:
         w_text += " if [ -f stop.txt ] ; then exit ; fi ;"
-        w_text += " FN=%s; THREAD_NUM=$(cat threadnum.txt) ;" % line
+        w_text += " FN=%s; THREAD_NUM=$(cat threadnum.txt) ;" % ytcode
         w_text += " yes | ffmpeg -i ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3 -ar 16000 -ac 1 -c:a pcm_s16le ./$FN.wav ;"
         w_text += " ~/SOURCE/whisper.cpp/main --model ~/SOURCE/whisper.cpp/models/ggml-large.bin"
-        w_text += " --output-srt --language $LANG --threads $THREAD_NUM --processors 1"
+        w_text += " --output-srt --threads $THREAD_NUM --processors 1"
+        if len(re.findall(r'[A-Za-z]', line)): # in case file name contains a lot of Eng char
+            w_text += " --language en"
+        else:
+            w_text += " --language $LANG"
         w_text += " --file ./$FN.wav > ./$FN.whisper.log ;"
         w_text += " mv ./$FN.wav.srt ./$FN.srt ; rm -f ./$FN.wav ;"
         w_text += " rm -f ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3"
