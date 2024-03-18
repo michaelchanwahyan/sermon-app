@@ -2,7 +2,7 @@
 set +x
 pushd ../projects
   echo wget youtube videos / streams files to each project
-  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG PORCH STBC WWBS YFCX YOS
+  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG KFC PORCH STBC WWBS YFCX YOS
   do
     pushd ./$PROJECT_NAME
       if [ -f videos ]
@@ -39,6 +39,15 @@ pushd ../projects
       then
           wget https://www.youtube.com/Johnson_Ng/videos
       fi
+      if test $PROJECT_NAME = KFC
+      then
+          wget -O kfc.discipleship https://www.youtube.com/playlist?list=PLMn1FowxfKJef1i_XtERUXp9nORakIb2-
+          wget -O kfc.youth        https://www.youtube.com/playlist?list=PLMn1FowxfKJdv90VS5x2WPkFSluO0M5zk
+          wget -O kfc.mandarin     https://www.youtube.com/playlist?list=PLMn1FowxfKJeJsIgrm8FiD6nKK8H9pd7x
+          wget -O kfc.english      https://www.youtube.com/playlist?list=PLMn1FowxfKJfJWaNUNgz8eiO8a1RpJlzI
+          cat kfc.discipleship  kfc.youth  kfc.mandarin  kfc.english > videos
+          rm -f kfc.*
+      fi
       if test $PROJECT_NAME = PORCH
       then
           wget https://www.youtube.com/@ThePorch/videos
@@ -66,7 +75,7 @@ pushd ../projects
   done
   echo make union on rejection_list
   find . -name "rejection_list.txt" -exec cat {} \; > rejection_list_all.txt
-  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG PORCH STBC WWBS YFCX YOS
+  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG KFC PORCH STBC WWBS YFCX YOS
   do
     pushd ./$PROJECT_NAME
       if [ -f download.sh ]

@@ -30,7 +30,7 @@ with open('transcription_server_ip.txt', 'r') as fp:
 fp.close()
 transcription_server_ip = transcription_server_ip.strip()
  
-PROJECT_LIST = ['ACSMHK', 'CBI', 'CGST', 'FLWC', 'FVC', 'JNG', 'PORCH', 'STBC', 'WWBS', 'YFCX', 'YOS']
+PROJECT_LIST = ['ACSMHK', 'CBI', 'CGST', 'FLWC', 'FVC', 'JNG', 'KFC', 'PORCH', 'STBC', 'WWBS', 'YFCX', 'YOS']
 transfer_script_str = ''
 for PROJECT in PROJECT_LIST:
     print('on PROJECT :', PROJECT)
@@ -49,7 +49,7 @@ for PROJECT in PROJECT_LIST:
         if ytcode not in srt_list:
             fcnt += 1
             # print(f'{fcnt}: find untranscribed file in project {PROJECT}: {ytcode}')
-            cmdstr = f'scp {proj_mp3_dir}*{ytcode}*.mp3 {transcription_server_ip}:{proj_mp3_dir}'
+            cmdstr = f'scp -p {proj_mp3_dir}*{ytcode}*.mp3 {transcription_server_ip}:{proj_mp3_dir}'
             print(cmdstr)
             transfer_script_str += cmdstr + '\n'
 if len(transfer_script_str):
