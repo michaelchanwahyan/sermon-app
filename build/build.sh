@@ -274,12 +274,12 @@ elif [ "$1" == "FVC" ] ; then
 elif [ "$1" == "HKBC" ] ; then
     OUTFILENAME=sermon_$1_1928-2007
     cd $1
-    #    xelatex $OUTFILENAME.tex
-    #    if [ "$2" != "once" ] ; then
-    #    xelatex $OUTFILENAME.tex
-    #    fi
-    #    rm -f $OUTFILENAME.mtc*
-    #    mv $OUTFILENAME.pdf ../../pdf/
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
     OUTFILENAME=sermon_$1_2008-present
     cd $1
@@ -293,30 +293,30 @@ elif [ "$1" == "HKBC" ] ; then
 elif [ "$1" == "JNG" ] ; then
     OUTFILENAME=sermon_$1_2012-18
     cd $1
-    #    xelatex $OUTFILENAME.tex
-    #    if [ "$2" != "once" ] ; then
-    #    xelatex $OUTFILENAME.tex
-    #    fi
-    #    rm -f $OUTFILENAME.mtc*
-    #    mv $OUTFILENAME.pdf ../../pdf/
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
     OUTFILENAME=sermon_$1_2019-20
     cd $1
-    #    xelatex $OUTFILENAME.tex
-    #    if [ "$2" != "once" ] ; then
-    #    xelatex $OUTFILENAME.tex
-    #    fi
-    #    rm -f $OUTFILENAME.mtc*
-    #    mv $OUTFILENAME.pdf ../../pdf/
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
     OUTFILENAME=sermon_$1_2021-22
     cd $1
-    #    xelatex $OUTFILENAME.tex
-    #    if [ "$2" != "once" ] ; then
-    #    xelatex $OUTFILENAME.tex
-    #    fi
-    #    rm -f $OUTFILENAME.mtc*
-    #    mv $OUTFILENAME.pdf ../../pdf/
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
     cd ..
     OUTFILENAME=sermon_$1_2023-24
     cd $1
