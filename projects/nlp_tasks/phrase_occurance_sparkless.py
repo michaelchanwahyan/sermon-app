@@ -184,31 +184,14 @@ if __name__ == '__main__':
         print('%s    phrase_list_total size: %d' % (datetime.now(), qSize))
 
 
-    # with open('phrase_list_total.pkl', 'wb') as fp:
-    #     pkl.dump(phrase_list_total, fp)
-    # fp.close()
-
-
-    # MAX_PHID = len(phrase_list_total)
-    # print('phrase token total count: %d' % MAX_PHID)
-
-
-    # _idx = -1
-    # for _ in range(0, len(phrase_list_total), 16):
-    #     _idx += 1
-    #     mystr = ''
-    #     for __ in range(16):
-    #         mystr += phrase_list_total[_idx*16+__] + ' '
-    #     print(mystr)
-
-    # dict_phid2ph = {} # dictionary mapping of phrase-id to phrase
-    # for phid, ph in enumerate(phrase_list_total):
-    #     dict_phid2ph[phid] = ph
-    # print('phrase dictionary size: %d' % len(dict_phid2ph.keys()))
-
-
-
-
-
+    print('%s    prepare append phrase list total' % datetime.now())
+    phrase_list_total = []
+    for i in range(THREAD_NUM):
+        phrase_arr_curr = phrase_list_totalQueue[i].get()
+        phrase_list_total.append(phrase_arr_curr)
+    with open('phrase_list_total.pkl', 'wb') as fp:
+        pkl.dump(phrase_list_total, fp)
+    fp.close()
+    print('%s    finish append phrase list total' % datetime.now())
 
 
