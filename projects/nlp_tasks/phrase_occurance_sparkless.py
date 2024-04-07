@@ -134,23 +134,29 @@ def sermon_tokenize(pid, intext, q, CI_curr):
     N = len(intext)
     # bi gram
     for i in range(N-1):
-        # if i % 8000 == 0:
-        #     print('CI no. %d :    %d / %d' % (pid, i, N))
         phr_curr = intext[i : i+2]
         if phr_curr in phrase_list_total:
             continue
         elif phr_curr in CI_curr:
             phrase_list_total.append(phr_curr)
             CI_curr.remove(phr_curr)
-    # # tri gram
-    # for i in range(N-2):
-    #     phrase_list.append(intext[i : i+3])
-    # # tetra gram
-    # for i in range(N-3):
-    #     phrase_list.append(intext[i : i+4])
-    # # penta gram
-    # for i in range(N-4):
-    #     phrase_list.append(intext[i : i+5])
+    # tri gram
+    for i in range(N-2):
+        phr_curr = intext[i : i+3]
+        if phr_curr in phrase_list_total:
+            continue
+        elif phr_curr in CI_curr:
+            phrase_list_total.append(phr_curr)
+            CI_curr.remove(phr_curr)
+    # tetra gram
+    for i in range(N-3):
+        phr_curr = intext[i : i+4]
+        if phr_curr in phrase_list_total:
+            continue
+        elif phr_curr in CI_curr:
+            phrase_list_total.append(phr_curr)
+            CI_curr.remove(phr_curr)
+    # end of 2- 3- 4- gram
     q.put(phrase_list_total)
 
 
@@ -173,8 +179,10 @@ if __name__ == '__main__':
         if sid % 1 == 0:
             print('%s    progress: %d / %d' % (str(datetime.now()), sid, MAX_SID))
         if dict_sid2spfn.get(sid) in already_extracted_spfn_list:
+            print('%s  already in extracted spfn list.    SKIP' % dict_sid2spfn.get(sid))
             continue
         else:
+            print('%s  in progress ...' % dict_sid2spfn.get(sid))
             already_extracted_spfn_list.append(dict_sid2spfn.get(sid))
             dict_sid2s[sid] = symbol_removal(
                 cleanse_special_char(
@@ -219,10 +227,14 @@ if __name__ == '__main__':
     # ================================================
     # OLD EXISTING FILE INTEGRATION
     if os.path.exists('phrase_list_total.pkl'):
-        with open('phrase_list_total', 'rb') as fp:
+        print('existing file     phrase_list_total.pkl    is found !')
+        print('read in and append in operation')
+        with open('phrase_list_total.pkl', 'rb') as fp:
             phrase_list_total = pkl.load(fp)
         fp.close()
     else:
+        print('file     phrase_list_total.pkl    is not found !')
+        print('create and append in operation')
         phrase_list_total = []
     for i in range(THREAD_NUM):
         phrase_arr_curr = phrase_list_totalQueue[i].get()
