@@ -1,17 +1,6 @@
 #!/usr/local/bin/python3
 
 
-
-from subprocess import Popen, PIPE
-def execute_commands(commands):
-    p = Popen(commands, shell=True, stdout=PIPE, stderr=PIPE)
-    out, err = p.communicate()
-    print(out)
-    print()
-    print(err)
-    return out, err
-
-
 import os
 
 import itertools
@@ -31,15 +20,18 @@ with open('CORPUS/ci.pkl', 'rb') as fp:
     CI = pkl.load(fp)
 fp.close()
 
-CI_ = [None] * 8
-CI_[0] = CI[0::8]
-CI_[1] = CI[1::8]
-CI_[2] = CI[2::8]
-CI_[3] = CI[3::8]
-CI_[4] = CI[4::8]
-CI_[5] = CI[5::8]
-CI_[6] = CI[6::8]
-CI_[7] = CI[7::8]
+THREAD_NUM = 8
+CI_ = [None] * THREAD_NUM
+for THR in range(THREAD_NUM):
+    CI_[THR] = CI[THR::THREAD_NUM]
+#CI_[0] = CI[0::8]
+#CI_[1] = CI[1::8]
+#CI_[2] = CI[2::8]
+#CI_[3] = CI[3::8]
+#CI_[4] = CI[4::8]
+#CI_[5] = CI[5::8]
+#CI_[6] = CI[6::8]
+#CI_[7] = CI[7::8]
 
 
 # print('size of CI series:')
@@ -74,6 +66,32 @@ for sid, sermonpathfilename in enumerate(sermonpathfilelist):
 
 MAX_SID = sid
 # print('maximum sermon-id : %d' % MAX_SID)
+
+
+def get_already_extracted_spfn_list():
+    already_list_fname = 'already_extracted_spfn_list.txt'
+    if os.path.exists(already_list_fname):
+        with open(already_list_fname, 'r') as fp:
+            lines = fp.readlines()
+        fp.close()
+        lines = [ line.strip() for line in lines ]
+        lines = [ line for line in lines if len(line) ]
+        return lines
+    else:
+        return []
+
+
+def overwrite_already_extracted_spfn_list(inlist):
+    with open('already_extracted_spfn_list.txt', 'w') as fp:
+        for _ in inlist:
+            _ = _.strip()
+            if len(_) == 0:
+                continue
+            else:
+                fp.write(_)
+                fp.write('\n')
+        fp.close()
+    return
 
 
 def get_sermontext(insid):
@@ -138,10 +156,13 @@ def sermon_tokenize(pid, intext, q, CI_curr):
 
 if __name__ == '__main__':
 
+    # ================================================
+    # OLD EXISTING FILE INTEGRATION
+    already_extracted_spfn_list = get_already_extracted_spfn_list()
+
     dict_sid2s = {} # dictionary mapping of sermon-id to sermon text (cleansed)
     # ===========================
     # threading manipulaion
-    THREAD_NUM = 8
     phrase_list_totalQueue = [None] * THREAD_NUM
     for i in range(THREAD_NUM):
         phrase_list_totalQueue[i] = multiprocessing.Queue()
@@ -151,41 +172,58 @@ if __name__ == '__main__':
     for sid in range(0, MAX_SID + 1):
         if sid % 1 == 0:
             print('%s    progress: %d / %d' % (str(datetime.now()), sid, MAX_SID))
-        dict_sid2s[sid] = symbol_removal(
-            cleanse_special_char(
-                get_sermontext(
-                    sid
+        if dict_sid2spfn.get(sid) in already_extracted_spfn_list:
+            continue
+        else:
+            already_extracted_spfn_list.append(dict_sid2spfn.get(sid))
+            dict_sid2s[sid] = symbol_removal(
+                cleanse_special_char(
+                    get_sermontext(
+                        sid
+                    )
                 )
             )
-        )
-        # ===========================
-        # threading manipulaion
-        p = [None] * THREAD_NUM
-        for i in range(THREAD_NUM):
-            p[i] = multiprocessing.Process(
-                target=sermon_tokenize,
-                args=(
-                    i,
-                    dict_sid2s[sid],
-                    phrase_list_totalQueue[i],
-                    CI_[i]
+            # ===========================
+            # threading manipulaion
+            p = [None] * THREAD_NUM
+            for i in range(THREAD_NUM):
+                p[i] = multiprocessing.Process(
+                    target=sermon_tokenize,
+                    args=(
+                        i,
+                        dict_sid2s[sid],
+                        phrase_list_totalQueue[i],
+                        CI_[i]
+                    )
                 )
-            )
-            p[i].start()
-        for i in range(THREAD_NUM):
-            p[i].join()
-        # END threading manipulaion
-        # ===========================
-        qSize = 0
-        for i in range(THREAD_NUM):
-            phrase_arr_curr = phrase_list_totalQueue[i].get()
-            qSize += len(phrase_arr_curr)
-            phrase_list_totalQueue[i].put(phrase_arr_curr)
-        print('%s    phrase_list_total size: %d' % (datetime.now(), qSize))
+                p[i].start()
+            for i in range(THREAD_NUM):
+                p[i].join()
+            # END threading manipulaion
+            # ===========================
+            qSize = 0
+            for i in range(THREAD_NUM):
+                phrase_arr_curr = phrase_list_totalQueue[i].get()
+                qSize += len(phrase_arr_curr)
+                phrase_list_totalQueue[i].put(phrase_arr_curr)
+            print('%s    phrase_list_total size: %d' % (datetime.now(), qSize))
+        # END OF if dict_sid2spfn.get(sid) in already_extracted_spfn_list:
 
 
     print('%s    prepare append phrase list total' % datetime.now())
-    phrase_list_total = []
+
+
+
+
+
+    # ================================================
+    # OLD EXISTING FILE INTEGRATION
+    if os.path.exists('phrase_list_total.pkl'):
+        with open('phrase_list_total', 'rb') as fp:
+            phrase_list_total = pkl.load(fp)
+        fp.close()
+    else:
+        phrase_list_total = []
     for i in range(THREAD_NUM):
         phrase_arr_curr = phrase_list_totalQueue[i].get()
         phrase_list_total.append(phrase_arr_curr)
@@ -193,5 +231,10 @@ if __name__ == '__main__':
         pkl.dump(phrase_list_total, fp)
     fp.close()
     print('%s    finish append phrase list total' % datetime.now())
+
+
+    # ================================================
+    # OLD EXISTING FILE INTEGRATION
+    overwrite_already_extracted_spfn_list(already_extracted_spfn_list)
 
 
