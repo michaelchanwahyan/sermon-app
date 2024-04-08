@@ -239,7 +239,8 @@ if __name__ == '__main__':
         phrase_list_total = []
     for i in range(THREAD_NUM):
         phrase_arr_curr = phrase_list_totalQueue[i].get()
-        phrase_list_total.append(phrase_arr_curr)
+        phrase_list_total.extend(phrase_arr_curr)
+    phrase_list_total = list(set(phrase_list_total))
     with open('phrase_list_total.pkl', 'wb') as fp:
         pkl.dump(phrase_list_total, fp)
     fp.close()
