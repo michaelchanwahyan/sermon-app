@@ -57,6 +57,7 @@ sermonpathfilelist = []
 for PROJ_NAME in PROJ_NAME_LIST:
     data_dir_name_curr = '../../data/' + PROJ_NAME + '/'
     sermonpathfilelist += [ data_dir_name_curr + _ for _ in os.listdir(data_dir_name_curr) ]
+sermonpathfilelist = sorted(sermonpathfilelist)
 
 
 dict_sid2spfn = {} # dictionary mapping of sermon-id to sermon-pathfilename
