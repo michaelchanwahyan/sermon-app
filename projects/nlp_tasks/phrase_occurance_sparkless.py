@@ -247,6 +247,7 @@ if __name__ == '__main__':
 
     # ================================================
     # OLD EXISTING FILE INTEGRATION
+    already_extracted_spfn_list = sorted(already_extracted_spfn_list)
     overwrite_already_extracted_spfn_list(already_extracted_spfn_list)
 
 
