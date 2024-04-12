@@ -43,8 +43,10 @@ PROJ_NAME_LIST = [
     'ACSMHK',
     'CBI',
     'CGST',
+    'DSCCC'
     'FLWC',
     'FVC',
+    'HKBC',
     'JNG',
     'KFC',
     'STBC',
