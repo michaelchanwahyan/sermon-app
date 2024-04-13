@@ -15,10 +15,12 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = CBI
       then
-          wget -O v1 https://www.youtube.com/@CBI_HK/videos
-          wget -O v2 https://www.youtube.com/@CBI_HK/streams
-          cat v1 v2 > videos
-          rm -f v1 v2
+          rm -f cbi.videos
+          wget -O cbi.videos https://www.youtube.com/@CBI_HK/videos
+          rm -f cbi.streams
+          wget -O cbi.streams https://www.youtube.com/@CBI_HK/streams
+          cat cbi.videos cbi.streams > videos
+          rm -f cbi.*
       fi
       if test $PROJECT_NAME = CGST
       then
