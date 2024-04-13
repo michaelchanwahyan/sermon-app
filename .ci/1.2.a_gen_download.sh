@@ -50,10 +50,14 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = KFC
       then
-          wget -O kfc.discipleship https://www.youtube.com/playlist?list=PLMn1FowxfKJef1i_XtERUXp9nORakIb2-
-          wget -O kfc.youth        https://www.youtube.com/playlist?list=PLMn1FowxfKJdv90VS5x2WPkFSluO0M5zk
-          wget -O kfc.mandarin     https://www.youtube.com/playlist?list=PLMn1FowxfKJeJsIgrm8FiD6nKK8H9pd7x
-          wget -O kfc.english      https://www.youtube.com/playlist?list=PLMn1FowxfKJfJWaNUNgz8eiO8a1RpJlzI
+          rm -f kfc.discipleship
+          wget -O kfc.discipleship    https://www.youtube.com/playlist?list=PLMn1FowxfKJef1i_XtERUXp9nORakIb2-
+          rm -f kfc.youth
+          wget -O kfc.youth           https://www.youtube.com/playlist?list=PLMn1FowxfKJdv90VS5x2WPkFSluO0M5zk
+          rm -f kfc.mandarin
+          wget -O kfc.mandarin        https://www.youtube.com/playlist?list=PLMn1FowxfKJeJsIgrm8FiD6nKK8H9pd7x
+          rm -f kfc.english
+          wget -O kfc.english         https://www.youtube.com/playlist?list=PLMn1FowxfKJfJWaNUNgz8eiO8a1RpJlzI
           cat kfc.discipleship  kfc.youth  kfc.mandarin  kfc.english > videos
           rm -f kfc.*
       fi
