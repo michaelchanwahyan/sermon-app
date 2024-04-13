@@ -24,7 +24,12 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = CGST
       then
-          wget https://www.youtube.com/@cgstedu/videos
+          rm -f cgst.videos
+          wget -O cgst.videos https://www.youtube.com/@cgstedu/videos
+          rm -f cgst.streams
+          wget -O cgst.streams https://www.youtube.com/@cgstedu/streams
+          cat cgst.videos cgst.streams > videos
+          rm -f cgst.*
       fi
       if test $PROJECT_NAME = FLWC
       then
