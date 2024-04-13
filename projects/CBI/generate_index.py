@@ -43,11 +43,12 @@ print('done !')
 
 # note: streams contains live streams during covid pandemic
 import os
-_ = os.system("rm -f videos")
-_ = os.system("wget -O v1 https://www.youtube.com/@CBI_HK/videos")
-_ = os.system("wget -O v2 https://www.youtube.com/@CBI_HK/streams")
-_ = os.system("cat v1 v2 > videos")
-_ = os.system("rm -f v1 v2")
+_ = os.system("rm -f cbi.videos")
+_ = os.system("wget -O cbi.videos https://www.youtube.com/@CBI_HK/videos")
+_ = os.system("rm -f cbi.streams")
+_ = os.system("wget -O cbi.streams https://www.youtube.com/@CBI_HK/streams")
+_ = os.system("cat cbi.videos cbi.streams > videos")
+_ = os.system("rm -f cbi.*")
 
 
 # read in the html source of the webpage

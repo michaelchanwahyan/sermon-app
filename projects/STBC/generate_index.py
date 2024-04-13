@@ -43,12 +43,12 @@ print('done !')
 
 # note: streams contains live streams during covid pandemic
 import os
-_ = os.system("rm -f streams.stbc")
-_ = os.system("wget -O streams.stbc https://www.youtube.com/@stbc1977/streams")
-_ = os.system("rm -f videos.stbc")
-_ = os.system("wget -O videos.stbc https://www.youtube.com/@stbc1977/videos")
-_ = os.system("cat streams.stbc videos.stbc > videos")
-_ = os.system("rm -f *.stbc")
+_ = os.system("rm -f stbc.streams")
+_ = os.system("wget -O stbc.streams https://www.youtube.com/@stbc1977/streams")
+_ = os.system("rm -f stbc.videos")
+_ = os.system("wget -O stbc.videos https://www.youtube.com/@stbc1977/videos")
+_ = os.system("cat stbc.streams stbc.videos > videos")
+_ = os.system("rm -f stbc.*")
 
 
 # read in the html source of the webpage

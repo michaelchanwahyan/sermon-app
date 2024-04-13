@@ -15,21 +15,30 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = CBI
       then
-          wget -O v1 https://www.youtube.com/@CBI_HK/videos
-          wget -O v2 https://www.youtube.com/@CBI_HK/streams
-          cat v1 v2 > videos
-          rm -f v1 v2
+          rm -f cbi.videos
+          wget -O cbi.videos https://www.youtube.com/@CBI_HK/videos
+          rm -f cbi.streams
+          wget -O cbi.streams https://www.youtube.com/@CBI_HK/streams
+          cat cbi.videos cbi.streams > videos
+          rm -f cbi.*
       fi
       if test $PROJECT_NAME = CGST
       then
-          wget https://www.youtube.com/@cgstedu/videos
+          rm -f cgst.videos
+          wget -O cgst.videos https://www.youtube.com/@cgstedu/videos
+          rm -f cgst.streams
+          wget -O cgst.streams https://www.youtube.com/@cgstedu/streams
+          cat cgst.videos cgst.streams > videos
+          rm -f cgst.*
       fi
       if test $PROJECT_NAME = FLWC
       then
-          wget -O v1 https://www.youtube.com/@flowchurchhk/videos
-          wget -O v2 https://www.youtube.com/@flowchurchhk/streams
-          cat v1 v2 > videos
-          rm -f v1 v2
+          rm -f flwc.videos
+          wget -O flwc.videos https://www.youtube.com/@flowchurchhk/videos
+          rm -f flwc.streams
+          wget -O flwc.streams https://www.youtube.com/@flowchurchhk/streams
+          cat flwc.videos flwc.streams > videos
+          rm -f flwc.*
       fi
       if test $PROJECT_NAME = FVC
       then
@@ -41,10 +50,14 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = KFC
       then
-          wget -O kfc.discipleship https://www.youtube.com/playlist?list=PLMn1FowxfKJef1i_XtERUXp9nORakIb2-
-          wget -O kfc.youth        https://www.youtube.com/playlist?list=PLMn1FowxfKJdv90VS5x2WPkFSluO0M5zk
-          wget -O kfc.mandarin     https://www.youtube.com/playlist?list=PLMn1FowxfKJeJsIgrm8FiD6nKK8H9pd7x
-          wget -O kfc.english      https://www.youtube.com/playlist?list=PLMn1FowxfKJfJWaNUNgz8eiO8a1RpJlzI
+          rm -f kfc.discipleship
+          wget -O kfc.discipleship    https://www.youtube.com/playlist?list=PLMn1FowxfKJef1i_XtERUXp9nORakIb2-
+          rm -f kfc.youth
+          wget -O kfc.youth           https://www.youtube.com/playlist?list=PLMn1FowxfKJdv90VS5x2WPkFSluO0M5zk
+          rm -f kfc.mandarin
+          wget -O kfc.mandarin        https://www.youtube.com/playlist?list=PLMn1FowxfKJeJsIgrm8FiD6nKK8H9pd7x
+          rm -f kfc.english
+          wget -O kfc.english         https://www.youtube.com/playlist?list=PLMn1FowxfKJfJWaNUNgz8eiO8a1RpJlzI
           cat kfc.discipleship  kfc.youth  kfc.mandarin  kfc.english > videos
           rm -f kfc.*
       fi
@@ -54,7 +67,12 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = STBC
       then
-          wget https://www.youtube.com/@stbc1977/videos
+          rm -f stbc.streams
+          wget -O stbc.streams https://www.youtube.com/@stbc1977/streams
+          rm -f stbc.videos
+          wget -O stbc.videos https://www.youtube.com/@stbc1977/videos
+          cat stbc.streams stbc.videos > videos
+          rm -f stbc.*
       fi
       if test $PROJECT_NAME = WWBS
       then
@@ -62,10 +80,12 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = YFCX
       then
-          wget -O streams.yfcy https://www.youtube.com/YanfookYouth/streams
-          wget -O streams.yfc https://www.youtube.com/yanfookchurch/streams
-          cat streams.yfcy streams.yfc > videos
-          rm -f streams.*
+          rm -f yfcy.streams
+          wget -O yfcy.streams https://www.youtube.com/YanfookYouth/streams
+          rm -f yfc.streams
+          wget -O yfc.streams https://www.youtube.com/yanfookchurch/streams
+          cat yfcy.streams yfc.streams > videos
+          rm -f yfc*.*
       fi
       if test $PROJECT_NAME = YOS
       then

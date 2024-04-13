@@ -43,8 +43,12 @@ print('done !')
 
 # note: streams contains live streams during covid pandemic
 import os
-_ = os.system("rm -f videos")
-_ = os.system("wget https://www.youtube.com/@cgstedu/videos")
+_ = os.system("rm -f cgst.videos")
+_ = os.system("wget -O cgst.videos https://www.youtube.com/@cgstedu/videos")
+_ = os.system("rm -f cgst.streams")
+_ = os.system("wget -O cgst.streams https://www.youtube.com/@cgstedu/streams")
+_ = os.system("cat cgst.videos cgst.streams > videos")
+_ = os.system("rm -f cgst.*")
 
 
 # read in the html source of the webpage
