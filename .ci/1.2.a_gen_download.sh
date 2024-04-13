@@ -67,7 +67,12 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = STBC
       then
-          wget https://www.youtube.com/@stbc1977/videos
+          rm -f stbc.streams
+          wget -O stbc.streams https://www.youtube.com/@stbc1977/streams
+          rm -f stbc.videos
+          wget -O stbc.videos https://www.youtube.com/@stbc1977/videos
+          cat stbc.streams stbc.videos > videos
+          rm -f stbc.*
       fi
       if test $PROJECT_NAME = WWBS
       then
