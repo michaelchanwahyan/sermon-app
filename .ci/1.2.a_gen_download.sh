@@ -80,10 +80,12 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = YFCX
       then
-          wget -O streams.yfcy https://www.youtube.com/YanfookYouth/streams
-          wget -O streams.yfc https://www.youtube.com/yanfookchurch/streams
-          cat streams.yfcy streams.yfc > videos
-          rm -f streams.*
+          rm -f yfcy.streams
+          wget -O yfcy.streams https://www.youtube.com/YanfookYouth/streams
+          rm -f yfc.streams
+          wget -O yfc.streams https://www.youtube.com/yanfookchurch/streams
+          cat yfcy.streams yfc.streams > videos
+          rm -f yfc*.*
       fi
       if test $PROJECT_NAME = YOS
       then
