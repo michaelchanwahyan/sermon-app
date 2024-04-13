@@ -24,19 +24,6 @@ THREAD_NUM = 8
 CI_ = [None] * THREAD_NUM
 for THR in range(THREAD_NUM):
     CI_[THR] = CI[THR::THREAD_NUM]
-#CI_[0] = CI[0::8]
-#CI_[1] = CI[1::8]
-#CI_[2] = CI[2::8]
-#CI_[3] = CI[3::8]
-#CI_[4] = CI[4::8]
-#CI_[5] = CI[5::8]
-#CI_[6] = CI[6::8]
-#CI_[7] = CI[7::8]
-
-
-# print('size of CI series:')
-# print('  CI0      |  CI1      |  CI2      |  CI3      |  CI4      |  CI5      |  CI6      |  CI7')
-# print('  %07d  |  %07d  |  %07d  |  %07d  |  %07d  |  %07d  |  %07d  |  %07d' % (len(CI_[0]),len(CI_[1]),len(CI_[2]),len(CI_[3]),len(CI_[4]),len(CI_[5]),len(CI_[6]),len(CI_[7])))
 
 
 PROJ_NAME_LIST = [
@@ -253,5 +240,11 @@ if __name__ == '__main__':
     # OLD EXISTING FILE INTEGRATION
     already_extracted_spfn_list = sorted(already_extracted_spfn_list)
     overwrite_already_extracted_spfn_list(already_extracted_spfn_list)
+
+
+    with open('phrase_list_total.txt', 'w') as fp:
+        for p_curr in sorted(phrase_list_total):
+            fp.write(p_curr + '\n')
+    fp.close()
 
 
