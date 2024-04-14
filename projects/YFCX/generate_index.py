@@ -43,12 +43,12 @@ print('done !')
 
 # note: streams contains live streams during covid pandemic
 import os
-_ = os.system("rm -f streams.yfcy")
-_ = os.system("wget -O streams.yfcy https://www.youtube.com/YanfookYouth/streams")
-_ = os.system("rm -f streams.yfc")
-_ = os.system("wget -O streams.yfc https://www.youtube.com/yanfookchurch/streams")
-_ = os.system("cat streams.yfcy streams.yfc > videos")
-_ = os.system("rm -f streams.*")
+_ = os.system("rm -f yfcy.streams")
+_ = os.system("wget -O yfcy.streams https://www.youtube.com/YanfookYouth/streams")
+_ = os.system("rm -f yfc.streams")
+_ = os.system("wget -O yfc.streams https://www.youtube.com/yanfookchurch/streams")
+_ = os.system("cat yfcy.streams yfc.streams > videos")
+_ = os.system("rm -f yfc*.*")
 
 
 # read in the html source of the webpage

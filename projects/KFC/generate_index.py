@@ -43,16 +43,18 @@ print('done !')
 
 # note: streams contains live streams during covid pandemic
 import os
-_ = os.system("rm -f videos")
-_ = os.system("rm -f kfc.*")
 # download from playlist link @ 播道會港福堂 EFCC Kong Fok Church 粵語崇拜門訓系列
-_ = os.system("wget -O kfc.discipleship https://www.youtube.com/playlist?list=PLMn1FowxfKJef1i_XtERUXp9nORakIb2-")
+_ = os.system("rm -f kfc.discipleship")
+_ = os.system("wget -O kfc.discipleship    https://www.youtube.com/playlist?list=PLMn1FowxfKJef1i_XtERUXp9nORakIb2-")
 # download from playlist link @ 播道會港福堂 EFCC Kong Fok Church 學青崇拜
-_ = os.system("wget -O kfc.youth        https://www.youtube.com/playlist?list=PLMn1FowxfKJdv90VS5x2WPkFSluO0M5zk")
+_ = os.system("rm -f kfc.youth")
+_ = os.system("wget -O kfc.youth           https://www.youtube.com/playlist?list=PLMn1FowxfKJdv90VS5x2WPkFSluO0M5zk")
 # downlaod from playlist link @ 播道會港福堂 EFCC Kong Fok Church 普通話崇拜
-_ = os.system("wget -O kfc.mandarin     https://www.youtube.com/playlist?list=PLMn1FowxfKJeJsIgrm8FiD6nKK8H9pd7x")
+_ = os.system("rm -f kfc.mandarin")
+_ = os.system("wget -O kfc.mandarin        https://www.youtube.com/playlist?list=PLMn1FowxfKJeJsIgrm8FiD6nKK8H9pd7x")
 # downlaod from playlist link @ 播道會港福堂 EFCC Kong Fok Church English Service
-_ = os.system("wget -O kfc.english      https://www.youtube.com/playlist?list=PLMn1FowxfKJfJWaNUNgz8eiO8a1RpJlzI")
+_ = os.system("rm -f kfc.english")
+_ = os.system("wget -O kfc.english         https://www.youtube.com/playlist?list=PLMn1FowxfKJfJWaNUNgz8eiO8a1RpJlzI")
 _ = os.system("cat kfc.discipleship  kfc.youth  kfc.mandarin  kfc.english > videos")
 _ = os.system("rm -f kfc.*")
 
