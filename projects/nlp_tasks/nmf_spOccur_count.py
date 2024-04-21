@@ -10,14 +10,14 @@ import time
 THREAD_NUM = 2
 
 
-with open('./phrase_list_total.txt', 'r') as fp:
-    phrase_list_total = fp.read().split('\n')
+with open('./phrDict.txt', 'r') as fp:
+    phrDict = fp.read().split('\n')
 fp.close()
-phrase_list_total = [ _ for _ in phrase_list_total if len(_) ]
+phrDict = [ _ for _ in phrDict if len(_) ]
 
 
-MAX_PID = len(phrase_list_total) - 1
-print('total size of phrase_list_total:', MAX_PID+1)
+MAX_PID = len(phrDict) - 1
+print('total size of phrDict:', MAX_PID+1)
 
 
 PROJ_NAME_LIST = [
@@ -115,13 +115,13 @@ def scan_through(sid_init, q):
             )
         )
     # q.put(square)
-    for pid, p_curr in enumerate(phrase_list_total):
-            s_curr = dict_sid2s[sid]
-            if p_curr in s_curr:
+    for pid, phr_curr in enumerate(phrDict):
+            sermon_curr = dict_sid2s[sid]
+            if phr_curr in sermon_curr:
                 # pass
-                n_ = len(re.findall(p_curr, s_curr))
+                n_ = len(re.findall(phr_curr, sermon_curr))
                 if n_: # if non-zero n)
-                    # sparse_tuple_total_list.append((sid, pid, n_))
+                    # spOcurr_list.append((sid, pid, n_))
                     q.put((sid, pid, n_))
 
 if __name__ == "__main__":
@@ -132,8 +132,8 @@ if __name__ == "__main__":
     # to record the index of non-zero sparse element
     # expected data structure: [ (sid_1,pid_1,n1), (sid2,pid2,n2), ... ]
 
-    sparse_tuple_list = []
-    sparse_tuple_Queue = multiprocessing.Queue()
+    spOcurr_list = []
+    spOccur_Queue = multiprocessing.Queue()
     # END threading manipulaion
     # ===========================
 
@@ -146,7 +146,7 @@ if __name__ == "__main__":
                 target=scan_through,
                 args=(
                     sid_init + i,
-                    sparse_tuple_Queue
+                    spOccur_Queue
                 )
             )
             process.start()
@@ -157,11 +157,11 @@ if __name__ == "__main__":
             process.join()
 
         # Collect results from the queue
-        while not sparse_tuple_Queue.empty():
-            sparse_tuple = sparse_tuple_Queue.get()
-            sparse_tuple_list.append(sparse_tuple)
+        while not spOccur_Queue.empty():
+            spOccur = spOccur_Queue.get()
+            spOcurr_list.append(spOccur)
 
-        print("progress: sparse_tuple_list length: %d" % len(sparse_tuple_list))
+        print("progress: spOcurr_list length: %d" % len(spOcurr_list))
         sid_init += scanBatchSize
 
-    print("Computed sparse tuple pairs:", sparse_tuple_list)
+    print("Computed spOccur count:", len(spOcurr_list))
