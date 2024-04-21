@@ -120,34 +120,34 @@ def symbol_removal(inputText):
 
 
 def sermon_tokenize(pid, intext, q, CI_curr):
-    phrase_list_total = q.get()
+    phrDict = q.get()
     N = len(intext)
     # bi gram
     for i in range(N-1):
         phr_curr = intext[i : i+2]
-        if phr_curr in phrase_list_total:
+        if phr_curr in phrDict:
             continue
         elif phr_curr in CI_curr:
-            phrase_list_total.append(phr_curr)
+            phrDict.append(phr_curr)
             CI_curr.remove(phr_curr)
     # tri gram
     for i in range(N-2):
         phr_curr = intext[i : i+3]
-        if phr_curr in phrase_list_total:
+        if phr_curr in phrDict:
             continue
         elif phr_curr in CI_curr:
-            phrase_list_total.append(phr_curr)
+            phrDict.append(phr_curr)
             CI_curr.remove(phr_curr)
     # tetra gram
     for i in range(N-3):
         phr_curr = intext[i : i+4]
-        if phr_curr in phrase_list_total:
+        if phr_curr in phrDict:
             continue
         elif phr_curr in CI_curr:
-            phrase_list_total.append(phr_curr)
+            phrDict.append(phr_curr)
             CI_curr.remove(phr_curr)
     # end of 2- 3- 4- gram
-    q.put(phrase_list_total)
+    q.put(phrDict)
 
 
 if __name__ == '__main__':
@@ -159,10 +159,10 @@ if __name__ == '__main__':
     dict_sid2s = {} # dictionary mapping of sermon-id to sermon text (cleansed)
     # ===========================
     # threading manipulaion
-    phrase_list_totalQueue = [None] * THREAD_NUM
+    phrDictQueue = [None] * THREAD_NUM
     for i in range(THREAD_NUM):
-        phrase_list_totalQueue[i] = multiprocessing.Queue()
-        phrase_list_totalQueue[i].put([])
+        phrDictQueue[i] = multiprocessing.Queue()
+        phrDictQueue[i].put([])
     # END threading manipulaion
     # ===========================
     for sid in range(0, MAX_SID + 1):
@@ -183,32 +183,32 @@ if __name__ == '__main__':
             )
             # ===========================
             # threading manipulaion
-            p = [None] * THREAD_NUM
+            proc = [None] * THREAD_NUM
             for i in range(THREAD_NUM):
-                p[i] = multiprocessing.Process(
+                proc[i] = multiprocessing.Process(
                     target=sermon_tokenize,
                     args=(
                         i,
                         dict_sid2s[sid],
-                        phrase_list_totalQueue[i],
+                        phrDictQueue[i],
                         CI_[i]
                     )
                 )
-                p[i].start()
+                proc[i].start()
             for i in range(THREAD_NUM):
-                p[i].join()
+                proc[i].join()
             # END threading manipulaion
             # ===========================
             qSize = 0
             for i in range(THREAD_NUM):
-                phrase_arr_curr = phrase_list_totalQueue[i].get()
-                qSize += len(phrase_arr_curr)
-                phrase_list_totalQueue[i].put(phrase_arr_curr)
-            print('%s    phrase_list_total size: %d' % (datetime.now(), qSize))
+                phrDict_curr = phrDictQueue[i].get()
+                qSize += len(phrDict_curr)
+                phrDictQueue[i].put(phrDict_curr)
+            print('%s    phrDict size: %d' % (datetime.now(), qSize))
         # END OF if dict_sid2spfn.get(sid) in already_extracted_spfn_list:
 
 
-    print('%s    prepare append phrase list total' % datetime.now())
+    print('%s    prepare append phrDict' % datetime.now())
 
 
 
@@ -216,24 +216,24 @@ if __name__ == '__main__':
 
     # ================================================
     # OLD EXISTING FILE INTEGRATION
-    if os.path.exists('phrase_list_total.pkl'):
-        print('existing file     phrase_list_total.pkl    is found !')
+    if os.path.exists('phrDict.pkl'):
+        print('existing file     phrDict.pkl    is found !')
         print('read in and append in operation')
-        with open('phrase_list_total.pkl', 'rb') as fp:
-            phrase_list_total = pkl.load(fp)
+        with open('phrDict.pkl', 'rb') as fp:
+            phrDict = pkl.load(fp)
         fp.close()
     else:
-        print('file     phrase_list_total.pkl    is not found !')
+        print('file     phrDict.pkl    is not found !')
         print('create and append in operation')
-        phrase_list_total = []
+        phrDict = []
     for i in range(THREAD_NUM):
-        phrase_arr_curr = phrase_list_totalQueue[i].get()
-        phrase_list_total.extend(phrase_arr_curr)
-    phrase_list_total = list(set(phrase_list_total))
-    with open('phrase_list_total.pkl', 'wb') as fp:
-        pkl.dump(phrase_list_total, fp)
+        phrDict_curr = phrDictQueue[i].get()
+        phrDict.extend(phrDict_curr)
+    phrDict = list(set(phrDict))
+    with open('phrDict.pkl', 'wb') as fp:
+        pkl.dump(phrDict, fp)
     fp.close()
-    print('%s    finish append phrase list total' % datetime.now())
+    print('%s    finish append phrDict' % datetime.now())
 
 
     # ================================================
@@ -242,9 +242,9 @@ if __name__ == '__main__':
     overwrite_already_extracted_spfn_list(already_extracted_spfn_list)
 
 
-    with open('phrase_list_total.txt', 'w') as fp:
-        for p_curr in sorted(phrase_list_total):
-            fp.write(p_curr + '\n')
+    with open('phrDict.txt', 'w') as fp:
+        for phr_curr in sorted(phrDict):
+            fp.write(phr_curr + '\n')
     fp.close()
 
 
