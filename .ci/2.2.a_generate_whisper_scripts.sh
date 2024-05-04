@@ -10,6 +10,7 @@ do
   rm -f $DESTINATE_TMP_FOLDER/$NEW_SRC_LIST_FILENAME
   ls $MP3_SRC_PATH/$PROJECT_NAME > $DESTINATE_TMP_FOLDER/$NEW_SRC_LIST_FILENAME
   pushd $DESTINATE_TMP_FOLDER
+    rm -f i i1 i2 i3 i4 j j1 j2 j3 j4 ij ijk
     LANG=zh
     if [ "$PROJECT_NAME" == "PORCH" ] ; then
       LANG=en
