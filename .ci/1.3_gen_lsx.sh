@@ -13,7 +13,7 @@ pushd ../projects
     popd # back to ./app/projects
   done
   # projects that require ls.txt
-  for PROJECT_NAME in FLWC YFCX
+  for PROJECT_NAME in FLWC VINE YFCX
   do
     pushd ./$PROJECT_NAME
       ORI_DIR=$(pwd)

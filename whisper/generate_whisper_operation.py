@@ -70,6 +70,8 @@ for ytcode, line in zip([ line[-16:-5] for line in lines ], lines):
         w_text += " --output-srt --threads $THREAD_NUM --processors 1"
         if len(re.findall(r'[A-Za-z]', line)) > 30: # in case file name contains a lot of Eng char
             w_text += " --language en"
+        elif PROJECT_NAME == "VINE" and "廣東話" in line: # cather VINE sermon language handling
+            w_text += " --language zh"
         else:
             w_text += " --language $LANG"
         w_text += " --file ./$FN.wav > ./$FN.whisper.log ;"

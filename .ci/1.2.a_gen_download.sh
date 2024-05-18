@@ -2,7 +2,7 @@
 set +x
 pushd ../projects
   echo wget youtube videos / streams files to each project
-  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG KFC PORCH STBC WWBS YFCX YOS
+  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG KFC PORCH STBC VINE WWBS YFCX YOS
   do
     pushd ./$PROJECT_NAME
       if [ -f videos ]
@@ -74,6 +74,19 @@ pushd ../projects
           cat stbc.streams stbc.videos > videos
           rm -f stbc.*
       fi
+      if test $PROJECT_NAME = VINE
+      then
+          rm -f vinehk.videos
+          wget -O vinehk.videos https://www.youtube.com/@thevinehk/videos
+          rm -f vinehk.streams
+          wget -O vinehk.streams https://www.youtube.com/@thevinehk/streams
+          rm -f vineyl.videos
+          wget -O vineyl.videos https://www.youtube.com/@thevine_yl/videos
+          rm -f vineyl.streams
+          wget -O vineyl.streams https://www.youtube.com/@thevine_yl/streams
+          cat vinehk.videos vinehk.streams vineyl.videos vineyl.streams > videos
+          rm -f vine*.*
+      fi
       if test $PROJECT_NAME = WWBS
       then
           wget https://youtube.com/@WorldwideBibleSociety/videos
@@ -95,7 +108,7 @@ pushd ../projects
   done
   echo make union on rejection_list
   find . -name "rejection_list.txt" -exec cat {} \; > rejection_list_all.txt
-  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG KFC PORCH STBC WWBS YFCX YOS
+  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC JNG KFC PORCH STBC VINE WWBS YFCX YOS
   do
     pushd ./$PROJECT_NAME
       if [ -f download.sh ]
