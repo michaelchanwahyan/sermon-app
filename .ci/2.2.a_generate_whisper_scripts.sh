@@ -15,6 +15,9 @@ do
     if [ "$PROJECT_NAME" == "PORCH" ] ; then
       LANG=en
     fi
+    if [ "$PROJECT_NAME" == "VINE" ] ; then
+      LANG=en
+    fi
     echo $LANG
     python3  ../generate_whisper_operation.py  $PROJECT_NAME  $LANG  $NEW_SRC_LIST_FILENAME
     rm -f $NEW_SRC_LIST_FILENAME
