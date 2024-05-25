@@ -166,5 +166,5 @@ if __name__ == "__main__":
 
     print("Computed spOccur count:", len(spOcurr_list))
     with open("var_sparse_tuple_list.pkl", "wb") as fp:
-        pkl.dump(fp, spOcurr_list)
+        pkl.dump(spOcurr_list, fp)
     fp.close()
