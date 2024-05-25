@@ -10,7 +10,7 @@ import time
 THREAD_NUM = 2
 
 
-with open('./phrDict.txt', 'r') as fp:
+with open('./var_phrDict.txt', 'r') as fp:
     phrDict = fp.read().split('\n')
 fp.close()
 phrDict = [ _ for _ in phrDict if len(_) ]
@@ -165,3 +165,6 @@ if __name__ == "__main__":
         sid_init += scanBatchSize
 
     print("Computed spOccur count:", len(spOcurr_list))
+    with open("var_sparse_tuple_list.pkl", "wb") as fp:
+        pkl.dump(fp, spOcurr_list)
+    fp.close()
