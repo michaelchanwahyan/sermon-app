@@ -40,8 +40,8 @@ PROJ_NAME_LIST = [
 sermonpathfilelist = []
 for PROJ_NAME in PROJ_NAME_LIST:
     data_dir_name_curr = '../../data/' + PROJ_NAME + '/'
-    sermonpathfilelist += [ 
-        data_dir_name_curr + _ 
+    sermonpathfilelist += [
+        data_dir_name_curr + _
         for _ in os.listdir(data_dir_name_curr)
     ]
 sermonpathfilelist = sorted(sermonpathfilelist)
@@ -125,7 +125,7 @@ def scan_through(sid_init, q):
                     q.put((sid, pid, n_))
 
 if __name__ == "__main__":
-    
+
     # ===========================
     # threading manipulaion
 
@@ -167,4 +167,13 @@ if __name__ == "__main__":
     print("Computed spOccur count:", len(spOccur_list))
     with open("var_sparse_tuple_list.pkl", "wb") as fp:
         pkl.dump(spOccur_list, fp)
+    fp.close()
+
+    with open("var_sermonDict.pkl", "wb") as fp:
+        pkl.dump(dict_sid2spfn, fp)
+    fp.close()
+
+    with open('var_sermonDict.txt', 'w') as fp:
+        for sid_ in dict_sid2spfn.keys():
+            fp.write(dict_sid2spfn.get(sid_).strip() + '\n')
     fp.close()
