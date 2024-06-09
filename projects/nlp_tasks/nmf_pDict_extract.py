@@ -230,6 +230,7 @@ if __name__ == '__main__':
         phrDict_curr = phrDictQueue[i].get()
         phrDict.extend(phrDict_curr)
     phrDict = list(set(phrDict))
+    phrDict = sorted(phrDict)
     with open('var_phrDict.pkl', 'wb') as fp:
         pkl.dump(phrDict, fp)
     fp.close()
