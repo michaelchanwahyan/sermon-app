@@ -121,7 +121,7 @@ def scan_through(sid_init, q):
                 # pass
                 n_ = len(re.findall(phr_curr, sermon_curr))
                 if n_: # if non-zero n)
-                    # spOcurr_list.append((sid, pid, n_))
+                    # spOccur_list.append((sid, pid, n_))
                     q.put((sid, pid, n_))
 
 if __name__ == "__main__":
@@ -132,7 +132,7 @@ if __name__ == "__main__":
     # to record the index of non-zero sparse element
     # expected data structure: [ (sid_1,pid_1,n1), (sid2,pid2,n2), ... ]
 
-    spOcurr_list = []
+    spOccur_list = []
     spOccur_Queue = multiprocessing.Queue()
     # END threading manipulaion
     # ===========================
@@ -159,12 +159,12 @@ if __name__ == "__main__":
         # Collect results from the queue
         while not spOccur_Queue.empty():
             spOccur = spOccur_Queue.get()
-            spOcurr_list.append(spOccur)
+            spOccur_list.append(spOccur)
 
-        print("progress: spOcurr_list length: %d" % len(spOcurr_list))
+        print("progress: spOccur_list length: %d" % len(spOccur_list))
         sid_init += scanBatchSize
 
-    print("Computed spOccur count:", len(spOcurr_list))
+    print("Computed spOccur count:", len(spOccur_list))
     with open("var_sparse_tuple_list.pkl", "wb") as fp:
-        pkl.dump(spOcurr_list, fp)
+        pkl.dump(spOccur_list, fp)
     fp.close()
