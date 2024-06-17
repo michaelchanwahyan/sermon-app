@@ -16,6 +16,8 @@ the foldername here indicates a shortform of the sermon textual or audio source
 | JNG         | Channel of Johnson Ng                       | Johnson Ng 我愛聽主道      | [youtube channel](https://www.youtube.com/JohnsonNg)                                         |
 | PORCH       | The Porch, Dallas, TX 75251                 | The Porch, Dallas, TX 75251| [youtube channel](https://www.youtube.com/@ThePorch)                                         |
 | STBC        | Shatin Baptist Church                       | 沙田浸信會                 | [youtube channel](https://www.youtube.com/@stbc1977)                                         |
+| VINE        | The Vine Church, Hong Kong                  | The Vine Church HK         | [youtube channel](https://www.youtube.com/@thevinehk)                                        |
+| VINE        | The Vine Church, Yuen Long                  | The Vine Church YL         | [youtube channel](https://www.youtube.com/@thevine_yl)                                       |
 | WWBS        | Worldwide Bible Society                     | 環球聖經公會               | [youtube channel](https://youtube.com/@WorldwideBibleSociety)                                |
 | YFCX        | Yan Fook Church Youth                       | 播道會恩福堂青年團         | [youtube channel](https://www.youtube.com/c/YanfookYouth)                                    |
 | YFCX        | Yan Fook Church                             | 播道會恩福堂               | [youtube channel](https://www.youtube.com/yanfookchurch)                                     |

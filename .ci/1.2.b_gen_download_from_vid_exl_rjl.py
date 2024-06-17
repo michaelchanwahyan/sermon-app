@@ -80,7 +80,7 @@ if not os.path.isfile('download.sh'):
         for needed_code in needed_list:
             fp.write('echo ; echo ; date ; ')
             fp.write('echo ; echo ; echo %d / %d ; ' % (cnt, N))
-            fp.write('echo ; echo ; yt-dlp -x --audio-format mp3 ')
+            fp.write('echo ; echo $(pwd) ; echo ; yt-dlp -x --audio-format mp3 ')
             fp.write('https://youtube.com/watch?v=%s\n' % needed_code)
             cnt += 1
     fp.close()
