@@ -6,6 +6,8 @@ import re
 import multiprocessing
 import time
 
+from queue import Queue
+
 
 THREAD_NUM = 2
 
@@ -43,6 +45,7 @@ for PROJ_NAME in PROJ_NAME_LIST:
     sermonpathfilelist += [
         data_dir_name_curr + _
         for _ in os.listdir(data_dir_name_curr)
+        if 'txt' in _[-4:]
     ]
 sermonpathfilelist = sorted(sermonpathfilelist)
 
@@ -95,16 +98,13 @@ def symbol_removal(inputText):
 # MAX_SID x MAX_PID
 
 
-scanBatchSize = 40
-
+# scanBatchSize = 40
 
 dict_sid2s = {}
 
 
 def scan_through(sid_init, q):
-    square = sid_init * sid_init
-    # print(f'for sid in range({sid_init}, {MAX_SID + 1}, {THREAD_NUM})')
-    for sid in range(sid_init, min(sid_init+scanBatchSize, MAX_SID + 1), THREAD_NUM):
+    for sid in range(sid_init, MAX_SID):
         if sid % 10 == 0:
             print('%s    progress %d / %d ...' % (str(datetime.now()), sid, MAX_SID))
         dict_sid2s[sid] = symbol_removal(
@@ -114,8 +114,7 @@ def scan_through(sid_init, q):
                 )
             )
         )
-    # q.put(square)
-    for pid, phr_curr in enumerate(phrDict):
+        for pid, phr_curr in enumerate(phrDict):
             sermon_curr = dict_sid2s[sid]
             if phr_curr in sermon_curr:
                 # pass
@@ -126,45 +125,64 @@ def scan_through(sid_init, q):
 
 if __name__ == "__main__":
 
-    # ===========================
-    # threading manipulaion
-
-    # to record the index of non-zero sparse element
-    # expected data structure: [ (sid_1,pid_1,n1), (sid2,pid2,n2), ... ]
-
     spOccur_list = []
-    spOccur_Queue = multiprocessing.Queue()
-    # END threading manipulaion
-    # ===========================
+    spOccur_queue = Queue()
+#     # ===========================
+#     # threading manipulaion
+
+#     # to record the index of non-zero sparse element
+#     # expected data structure: [ (sid_1,pid_1,n1), (sid2,pid2,n2), ... ]
+
+#     spOccur_list = []
+#     spOccur_Queue_list = []
+#     spOccur_Queue_list.append(multiprocessing.Queue())
+#     spOccur_Queue_list.append(multiprocessing.Queue())
+#     # END threading manipulaion
+#     # ===========================
 
     sid_init = 0
     while sid_init < MAX_SID + 1:
+        scan_through(sid_init, spOccur_queue)
         # Create subprocesses to compute occurance
-        processes = []
-        for i in range(THREAD_NUM):
-            process = multiprocessing.Process(
-                target=scan_through,
-                args=(
-                    sid_init + i,
-                    spOccur_Queue
-                )
-            )
-            process.start()
-            processes.append(process)
+#         processes = []
+#         for i in range(THREAD_NUM):
+#             process = multiprocessing.Process(
+#                 target=scan_through,
+#                 args=(
+#                     sid_init + i,
+#                     spOccur_Queue_list[i]
+#                 )
+#             )
+#             process.start()
+#             processes.append(process)
 
-        # Wait for all subprocesses to finish
-        for process in processes:
-            process.join()
+#         # Wait for all subprocesses to finish
+#         for process in processes:
+#             process.join()
 
         # Collect results from the queue
-        while not spOccur_Queue.empty():
-            spOccur = spOccur_Queue.get()
+        while not spOccur_queue.empty():
+            spOccur = spOccur_queue.get()
             spOccur_list.append(spOccur)
+#         while not spOccur_Queue_list[0].empty():
+#             spOccur = spOccur_Queue_list[0].get()
+#             spOccur_list.append(spOccur)
+#         while not spOccur_Queue_list[1].empty():
+#             spOccur = spOccur_Queue_list[1].get()
+#             spOccur_list.append(spOccur)
 
         print("progress: spOccur_list length: %d" % len(spOccur_list))
-        sid_init += scanBatchSize
+#         sid_init += scanBatchSize
 
     print("Computed spOccur count:", len(spOccur_list))
+    with open("var_sparse_tuple_list.txt", "w") as fp:
+        for i_, spc_ in enumerate(spOccur_list):
+            if i_ == 0:
+                fp.write("%d,%d,%d" % (spc_[0], spc_[1], spc_[2]))
+            else:
+                fp.write("\n%d,%d,%d" % (spc_[0], spc_[1], spc_[2]))
+    fp.close()
+
     with open("var_sparse_tuple_list.pkl", "wb") as fp:
         pkl.dump(spOccur_list, fp)
     fp.close()
