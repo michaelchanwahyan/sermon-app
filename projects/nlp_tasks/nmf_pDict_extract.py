@@ -45,7 +45,11 @@ PROJ_NAME_LIST = [
 sermonpathfilelist = []
 for PROJ_NAME in PROJ_NAME_LIST:
     data_dir_name_curr = '../../data/' + PROJ_NAME + '/'
-    sermonpathfilelist += [ data_dir_name_curr + _ for _ in os.listdir(data_dir_name_curr) ]
+    sermonpathfilelist += [
+        data_dir_name_curr + _
+        for _ in os.listdir(data_dir_name_curr)
+        if 'txt' in _[-4:]
+    ]
 sermonpathfilelist = sorted(sermonpathfilelist)
 
 
