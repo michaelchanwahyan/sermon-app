@@ -45,10 +45,22 @@ PROJ_NAME_LIST = [
 sermonpathfilelist = []
 for PROJ_NAME in PROJ_NAME_LIST:
     data_dir_name_curr = '../../data/' + PROJ_NAME + '/'
+    # sermon path file criteria:
+    # i) txt file extension, or
+    # ii) pure numberic char for the last two chars (HKBC satisfies this only)
     sermonpathfilelist += [
         data_dir_name_curr + _
         for _ in os.listdir(data_dir_name_curr)
-        if 'txt' in _[-4:]
+        if                           \
+            _[-3:] == 'txt'          \
+            or                       \
+            (                        \
+               len(_) > 2            \
+               and                   \
+               _[-1] in '0123456789' \
+               and                   \
+               _[-2] in '0123456789'
+            )
     ]
 sermonpathfilelist = sorted(sermonpathfilelist)
 
