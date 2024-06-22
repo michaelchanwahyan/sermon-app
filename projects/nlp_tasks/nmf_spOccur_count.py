@@ -152,7 +152,7 @@ if __name__ == "__main__":
     sid_init = 0
     while sid_init < MAX_SID + 1:
         scan_through(sid_init, spOccur_queue)
-        # Create subprocesses to compute occurance
+#         # Create subprocesses to compute occurance
 #         processes = []
 #         for i in range(THREAD_NUM):
 #             process = multiprocessing.Process(
@@ -182,6 +182,7 @@ if __name__ == "__main__":
 
         print("progress: spOccur_list length: %d" % len(spOccur_list))
 #         sid_init += scanBatchSize
+        break
 
     print("Computed spOccur count:", len(spOccur_list))
     with open("var_sparse_tuple_list.txt", "w") as fp:
