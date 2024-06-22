@@ -45,7 +45,16 @@ for PROJ_NAME in PROJ_NAME_LIST:
     sermonpathfilelist += [
         data_dir_name_curr + _
         for _ in os.listdir(data_dir_name_curr)
-        if 'txt' in _[-4:]
+        if                           \
+            _[-3:] == 'txt'          \
+            or                       \
+            (                        \
+               len(_) > 2            \
+               and                   \
+               _[-1] in '0123456789' \
+               and                   \
+               _[-2] in '0123456789'
+            )
     ]
 sermonpathfilelist = sorted(sermonpathfilelist)
 
