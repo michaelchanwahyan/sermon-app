@@ -113,7 +113,7 @@ sermon_tex_filepath = f"../../build/VINE/sermon_VINE_2020-present.tex"
 # --------------------------------------
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: printing out prefixing")
-_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/The Vine Church Sermon/' | sed 's/Youtube Channel:/Youtube Channel: thevine hk, thevine yl/' > " + sermon_tex_filepath)
+_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/The Vine Church Sermon 葡萄藤教會講道/' | sed 's/Youtube Channel:/Youtube Channel: thevine hk, thevine yl/' > " + sermon_tex_filepath)
 
 
 
