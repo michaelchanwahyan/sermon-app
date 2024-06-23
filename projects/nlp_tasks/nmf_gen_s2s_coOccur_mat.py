@@ -1,13 +1,45 @@
+#!/usr/local/bin/python3
+
+
+
+from subprocess import Popen, PIPE
+def execute_commands(commands):
+    p = Popen(commands, shell=True, stdout=PIPE, stderr=PIPE)
+    out, err = p.communicate()
+    print(out)
+    print()
+    print(err)
+    return out, err
+
+
 import os
 from datetime import datetime
 import pickle as pkl
 import numpy as np
 
+# PySpark and create Spark context
+if not 'sc' in locals():
+    import pyspark
+    sc = pyspark.SparkContext()
+
+print('done !')
+
+
 with open('./var_sparse_tuple_list.pkl', 'rb') as fp:
     spOccur_list = pkl.load(fp)
 fp.close()
 
-# data structure of spOccur_list
+
+print("type of spOccur_list: ", type(spOccur_list))
+
+
+print("entry count of spOccur_list: ", len(spOccur_list))
+
+
+
+'''# data structure of spOccur_list'''
+
+
 # list of triples 
 # [
 #      ( < sermon-id > , < phrase-id > , < occurance count > )
@@ -17,23 +49,55 @@ fp.close()
 #      ( < sermon-id > , < phrase-id > , < occurance count > )
 # ]
 
-with open('./var_phrDict.pkl', 'rb') as fp:
-    phrDict = pkl.load(fp) # the phrase dictionary is in sorted order
-    dict_pid2phr = {}
-    pid = 0
-    for phr_ in phrDict:
-        dict_pid2phr[pid] = phr_
-        pid += 1
-fp.close()
 
-with open('./var_sermonDict.pkl', 'rb') as fp:
-    sermonDict = pkl.load(fp) # the sermon spfn dictionary is in sorted order
-    dict_sid2spfn = {}
-    sid = 0
-    for spfn_ in sermonDict:
-        dict_sid2spfn[sid] = spfn_
-        sid += 1
-fp.close()
+for i, spc in enumerate(spOccur_list):
+    print(spc)
+    if i > 10:
+        break
+
+
+
+
+
+
+
+
+# with open('./var_phrDict.txt', 'r') as fp:
+#     phrDict = fp.read().split('\n') # the phrase dictionary is in sorted order
+# fp.close()
+# phrDict = [ _ for _ in phrDict if len(_) ]
+
+
+# dict_pid2phr = {}
+# pid = 0
+# for phr_ in phrDict:
+#     dict_pid2phr[pid] = phr_
+#     pid += 1
+
+
+# print("type of phrDict: ", type(phrDict))
+# print("type of dict_pid2phr: ", type(dict_pid2phr))
+
+
+# print("entry count of phrDict: ", len(phrDict))
+# print("entry count of dict_pid2phr: ", len(dict_pid2phr.keys()))
+
+
+
+
+
+
+
+
+
+'''# s2s matrix outlook'''
+
+
+
+
+
+
+
 
 #       0  1  2  3  ...
 #     --------------------------
@@ -44,9 +108,154 @@ fp.close()
 #  . |     .
 #  . |     .
 
+
+
+
+
+
+
+
+# -------------------
+# sermon-to-phrase
+# -------------------
+
+# for i, spc in enumerate(spOccur_list):
+#     if spc[2] <30:
+#         continue
+#     print(f"record {i}    spc: {spc}")
+#     if i >= 10000:
+#         break
+
+
+rdd = sc.parallelize(spOccur_list)
+
+
+for spc_ in rdd.take(20):
+    print(spc_)
+
+
+# rdd :: (sid, pid, cnt)
+
+rdd2 = rdd \
+    .map(lambda w: (w[1], (w[0], w[2])))
+
+# rdd2 :: (pid, (sid, cnt))
+
+
+rdd_keyBy_pid = rdd2 \
+    .groupByKey() \
+    .mapValues(list) \
+    .filter(lambda w: len(w[1]) > 100)
+# rdd_keyBy_pid :: (pid, [(sid, cnt), (sid, cnt), ... ])
+
+
+RDD_KEYBY_PID = rdd_keyBy_pid.collect()
+
+
+print(f"entry count in RDD_KEYBY_PID: {len(RDD_KEYBY_PID)}")
+# RDD_KEYBY_PID :: (pid, [(sid, cnt), (sid, cnt), ... ])
+
+
+for (pid_in_RDD, _) in sorted(RDD_KEYBY_PID):
+    if pid_in_RDD % 1000 == 0:
+        # print(pid_in_RDD, dict_pid2phr.get(pid_in_RDD))
+        print(pid_in_RDD)
+        print(f"[{_[0]}, {_[1]}, {_[2]}, ...]")
+    else:
+        continue
+
+
+dict_p2sc = {}
+for (pid_in_RDD, sc_list) in RDD_KEYBY_PID:
+    dict_p2sc[pid_in_RDD] = sc_list
+
+
+
+
+
+
+
+
+
+'''# s2s matrix generation'''
+
+
+with open('./var_sermonDict.txt', 'r') as fp:
+    sermonDict = fp.read().split('\n') # the sermon spfn dictionary is in sorted order
+fp.close()
+sermonDict = [ _ for _ in sermonDict if len(_) ]
+
+
+dict_sid2spfn = {}
+sid = 0
+for spfn_ in sermonDict:
+    dict_sid2spfn[sid] = spfn_
+    sid += 1
+
+
+print("type of sermonDict: ", type(sermonDict))
+print("type of dict_sid2spfn: ", type(dict_sid2spfn))
+
+
+print("entry count of sermonDict: ", len(sermonDict))
+print("entry count of dict_sid2spfn: ", len(dict_sid2spfn.keys()))
+
+
+# (s1, p1, a)
+# (s1, p2, b)
+
+# (s2, p1, p)
+# (s2, p2, q)
+
+# algorithm flow:
+# 1. iterate each sermon
+#    S_1
+#     1.2) check in current sermon S_1 which phrases have occurance
+#     1.3) form these phrases in a list
+#     1.4) iterate each (other) sermon
+#          S_2
+#           a) list out phrases occurred in current sermon S_2
+#           b) check coocurring phrase
+
+
+
+
+
 # -----------------------
 # counting criteria 1 :
 # -----------------------
 #     total phrasal co-occurance from all found phrase
+#     phrase occurance frequency is hard-coded to 1
+
 MAX_SID = len(dict_sid2spfn.keys())
+
+
 MAT_S2S_COOCCUR = np.zeros((MAX_SID, MAX_SID))
+print("MAT_S2S_COOCCUR shape:", MAT_S2S_COOCCUR.shape)
+for i, (s_, p_, c_) in enumerate(spOccur_list):
+    if i % 10000 == 0:
+        print(f"{str(datetime.now())} progress: {i} / {len(spOccur_list)}")
+    # p_ as the phrase id with c_ occurance
+    sc_list = dict_p2sc.get(p_)
+    if sc_list is None:
+        continue
+    for (s__, c__) in sc_list:
+        MAT_S2S_COOCCUR[ s_ , s__ ] += c_ * c__
+    # if i > 10:
+    #     break
+
+
+with open("var_MAT_S2S_COOCCUR.pkl", "wb") as fp:
+    pkl.dump(MAT_S2S_COOCCUR, fp)
+fp.close()
+
+
+print("finish generate s2s matrix")
+
+
+
+
+
+
+
+
