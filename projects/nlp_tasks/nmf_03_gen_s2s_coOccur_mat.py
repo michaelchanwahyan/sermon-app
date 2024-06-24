@@ -25,7 +25,7 @@ if not 'sc' in locals():
 print('done !')
 
 
-with open('./var_sparse_tuple_list.pkl', 'rb') as fp:
+with open('./var_02_sparse_tuple_list.pkl', 'rb') as fp:
     spOccur_list = pkl.load(fp)
 fp.close()
 
@@ -50,37 +50,11 @@ print("entry count of spOccur_list: ", len(spOccur_list))
 # ]
 
 
+print(f"{str(datetime.now())} try print out spOccur_list samples:")
 for i, spc in enumerate(spOccur_list):
     print(spc)
     if i > 10:
         break
-
-
-
-
-
-
-
-
-# with open('./var_phrDict.txt', 'r') as fp:
-#     phrDict = fp.read().split('\n') # the phrase dictionary is in sorted order
-# fp.close()
-# phrDict = [ _ for _ in phrDict if len(_) ]
-
-
-# dict_pid2phr = {}
-# pid = 0
-# for phr_ in phrDict:
-#     dict_pid2phr[pid] = phr_
-#     pid += 1
-
-
-# print("type of phrDict: ", type(phrDict))
-# print("type of dict_pid2phr: ", type(dict_pid2phr))
-
-
-# print("entry count of phrDict: ", len(phrDict))
-# print("entry count of dict_pid2phr: ", len(dict_pid2phr.keys()))
 
 
 
@@ -130,6 +104,7 @@ for i, spc in enumerate(spOccur_list):
 rdd = sc.parallelize(spOccur_list)
 
 
+print(f"{str(datetime.now())} parallelized spOccur_list, try take 20 samples:")
 for spc_ in rdd.take(20):
     print(spc_)
 
@@ -149,10 +124,11 @@ rdd_keyBy_pid = rdd2 \
 # rdd_keyBy_pid :: (pid, [(sid, cnt), (sid, cnt), ... ])
 
 
+print(f"{str(datetime.now())} RDD_KEYBY_PID collect():")
 RDD_KEYBY_PID = rdd_keyBy_pid.collect()
 
 
-print(f"entry count in RDD_KEYBY_PID: {len(RDD_KEYBY_PID)}")
+print(f"{str(datetime.now())} entry count in RDD_KEYBY_PID: {len(RDD_KEYBY_PID)}")
 # RDD_KEYBY_PID :: (pid, [(sid, cnt), (sid, cnt), ... ])
 
 
@@ -170,6 +146,13 @@ for (pid_in_RDD, sc_list) in RDD_KEYBY_PID:
     dict_p2sc[pid_in_RDD] = sc_list
 
 
+print(f"{str(datetime.now())} save var_03_dict_p2sc.pkl")
+with open("var_03_dict_p2sc.pkl", "wb") as fp:
+    pkl.dump(dict_p2sc, fp)
+fp.close()
+print(f"{str(datetime.now())} done !")
+
+
 
 
 
@@ -180,7 +163,7 @@ for (pid_in_RDD, sc_list) in RDD_KEYBY_PID:
 '''# s2s matrix generation'''
 
 
-with open('./var_sermonDict.txt', 'r') as fp:
+with open('./var_02_sermonDict.txt', 'r') as fp:
     sermonDict = fp.read().split('\n') # the sermon spfn dictionary is in sorted order
 fp.close()
 sermonDict = [ _ for _ in sermonDict if len(_) ]
@@ -221,6 +204,17 @@ print("entry count of dict_sid2spfn: ", len(dict_sid2spfn.keys()))
 
 
 
+print(f"spOccur_list length b4 in-RDD_KEYBY_PID filter: {len(spOccur_list)}")
+spOccur_list = [ spn_ for spn_ in spOccur_list if spn_[1] in dict_p2sc ]
+print(f"spOccur_list length af in-RDD_KEYBY_PID filter: {len(spOccur_list)}")
+
+
+
+
+
+
+
+
 # -----------------------
 # counting criteria 1 :
 # -----------------------
@@ -232,20 +226,23 @@ MAX_SID = len(dict_sid2spfn.keys())
 
 MAT_S2S_COOCCUR = np.zeros((MAX_SID, MAX_SID))
 print("MAT_S2S_COOCCUR shape:", MAT_S2S_COOCCUR.shape)
-for i, (s_, p_, c_) in enumerate(spOccur_list):
-    if i % 10000 == 0:
-        print(f"{str(datetime.now())} progress: {i} / {len(spOccur_list)}")
-    # p_ as the phrase id with c_ occurance
-    sc_list = dict_p2sc.get(p_)
-    if sc_list is None:
-        continue
-    for (s__, c__) in sc_list:
-        MAT_S2S_COOCCUR[ s_ , s__ ] += c_ * c__
-    # if i > 10:
-    #     break
+
+# s2s subprocess num
+#     defining the spOccur_list portion
+#     20 subprocess in total
+for N_s2s_subproc in range(20):
+    for i, (s_, p_, c_) in enumerate(spOccur_list[ N_s2s_subproc :: 20 ]):
+        if i % 1000 == 0:
+            print(f"{str(datetime.now())} progress: N_s2s_subproc = {N_s2s_subproc} : {i} / {len(spOccur_list) / 20}")
+        # p_ as the phrase id with c_ occurance
+        sc_list = dict_p2sc.get(p_)
+        if sc_list is None:
+            continue
+        for (s__, c__) in sc_list:
+            MAT_S2S_COOCCUR[ s_ , s__ ] += c_ * c__
 
 
-with open("var_MAT_S2S_COOCCUR.pkl", "wb") as fp:
+with open("var_03_MAT_S2S_COOCCUR.pkl", "wb") as fp:
     pkl.dump(MAT_S2S_COOCCUR, fp)
 fp.close()
 
