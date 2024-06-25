@@ -87,7 +87,7 @@ for N_s2s_subproc in range(10):
         for (s__, c__) in sc_list:
             MAT_S2S_COOCCUR[ s_ , s__ ] += c_ * c__
 
-with open("var_03_MAT_S2S_COOCCUR.pkl", "wb") as fp:
+with open("var_04_MAT_S2S_COOCCUR.pkl", "wb") as fp:
     pkl.dump(MAT_S2S_COOCCUR, fp)
 fp.close()
 print("finish generate s2s matrix")
