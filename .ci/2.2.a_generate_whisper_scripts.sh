@@ -23,4 +23,5 @@ do
     rm -f $NEW_SRC_LIST_FILENAME
   popd # back to ./app/.ci
 done
+find ../whisper -name "stop.txt" -exec rm -f {} \;
 
