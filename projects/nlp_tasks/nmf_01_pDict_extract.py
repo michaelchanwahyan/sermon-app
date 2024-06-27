@@ -167,6 +167,7 @@ def sermon_tokenize(pid, intext, q, CI_curr):
 
 
 if __name__ == '__main__':
+    __main__filename = 'nmf_01_pDict_extract()'
 
     # ================================================
     # OLD EXISTING FILE INTEGRATION
@@ -183,12 +184,12 @@ if __name__ == '__main__':
     # ===========================
     for sid in range(0, MAX_SID + 1):
         if sid % 1 == 0:
-            print('%s    progress: %d / %d' % (str(datetime.now()), sid, MAX_SID))
+            print(f'[{str(datetime.now())} @ {__main__filename}]    progress: {sid} / {MAX_SID}')
         if dict_sid2spfn.get(sid) in already_extracted_spfn_list:
-            print('%s  already in extracted spfn list.    SKIP' % dict_sid2spfn.get(sid))
+            print(f'[{str(datetime.now())} @ {__main__filename}]    {dict_sid2spfn.get(sid)}  already in extracted spfn list.    SKIP')
             continue
         else:
-            print('%s  in progress ...' % dict_sid2spfn.get(sid))
+            print(f'[{str(datetime.now())} @ {__main__filename}]    {dict_sid2spfn.get(sid)}  in progress ...')
             already_extracted_spfn_list.append(dict_sid2spfn.get(sid))
             dict_sid2s[sid] = symbol_removal(
                 cleanse_special_char(
@@ -220,11 +221,11 @@ if __name__ == '__main__':
                 phrDict_curr = phrDictQueue[i].get()
                 qSize += len(phrDict_curr)
                 phrDictQueue[i].put(phrDict_curr)
-            print('%s    phrDict size: %d' % (datetime.now(), qSize))
+            print(f'[{str(datetime.now())} @ {__main__filename}]    phrDict size: {qSize}')
         # END OF if dict_sid2spfn.get(sid) in already_extracted_spfn_list:
 
 
-    print('%s    prepare append phrDict' % datetime.now())
+    print(f'[{str(datetime.now())} @ {__main__filename}]    prepare append phrDict')
 
 
 
@@ -233,14 +234,14 @@ if __name__ == '__main__':
     # ================================================
     # OLD EXISTING FILE INTEGRATION
     if os.path.exists('var_01_phrDict.pkl'):
-        print('existing file    var_01_phrDict.pkl    is found !')
-        print('read in and append in operation')
+        print(f'[{str(datetime.now())} @ {__main__filename}]    existing file    var_01_phrDict.pkl    is found !')
+        print(f'[{str(datetime.now())} @ {__main__filename}]    read in and append in operation')
         with open('var_01_phrDict.pkl', 'rb') as fp:
             phrDict = pkl.load(fp)
         fp.close()
     else:
-        print('file    var_01_phrDict.pkl    is not found !')
-        print('create and append in operation')
+        print(f'[{str(datetime.now())} @ {__main__filename}]    file    var_01_phrDict.pkl    is not found !')
+        print(f'[{str(datetime.now())} @ {__main__filename}]    create and append in operation')
         phrDict = []
     for i in range(THREAD_NUM):
         phrDict_curr = phrDictQueue[i].get()
@@ -250,7 +251,7 @@ if __name__ == '__main__':
     with open('var_01_phrDict.pkl', 'wb') as fp:
         pkl.dump(phrDict, fp)
     fp.close()
-    print('%s    finish append var_01_phrDict' % datetime.now())
+    print(f'[{str(datetime.now())} @ {__main__filename}]    finish append var_01_phrDict')
 
 
     # ================================================

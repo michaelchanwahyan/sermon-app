@@ -25,15 +25,18 @@ if not 'sc' in locals():
 print('done !')
 
 
+__main__filename = 'nmf_03_p2sc()'
+
+
 with open('./var_02_sparse_tuple_list.pkl', 'rb') as fp:
     spOccur_list = pkl.load(fp)
 fp.close()
 
 
-print("type of spOccur_list: ", type(spOccur_list))
+print(f'[{str(datetime.now())} @ {__main__filename}]    type of spOccur_list: {type(spOccur_list)}')
 
 
-print("entry count of spOccur_list: ", len(spOccur_list))
+print(f'[{str(datetime.now())} @ {__main__filename}]    entry count of spOccur_list: {len(spOccur_list)}')
 
 
 
@@ -50,7 +53,7 @@ print("entry count of spOccur_list: ", len(spOccur_list))
 # ]
 
 
-print(f"{str(datetime.now())} try print out spOccur_list samples:")
+print(f'[{str(datetime.now())} @ {__main__filename}]    try print out spOccur_list samples:')
 for i, spc in enumerate(spOccur_list):
     print(spc)
     if i > 10:
@@ -104,7 +107,7 @@ for i, spc in enumerate(spOccur_list):
 rdd = sc.parallelize(spOccur_list)
 
 
-print(f"{str(datetime.now())} parallelized spOccur_list, try take 20 samples:")
+print(f'[{str(datetime.now())} @ {__main__filename}]    parallelized spOccur_list, try take 20 samples:')
 for spc_ in rdd.take(20):
     print(spc_)
 
@@ -124,11 +127,11 @@ rdd_keyBy_pid = rdd2 \
 # rdd_keyBy_pid :: (pid, [(sid, cnt), (sid, cnt), ... ])
 
 
-print(f"{str(datetime.now())} RDD_KEYBY_PID collect():")
+print(f'[{str(datetime.now())} @ {__main__filename}]    RDD_KEYBY_PID collect():')
 RDD_KEYBY_PID = rdd_keyBy_pid.collect()
 
 
-print(f"{str(datetime.now())} entry count in RDD_KEYBY_PID: {len(RDD_KEYBY_PID)}")
+print(f'[{str(datetime.now())} @ {__main__filename}]    entry count in RDD_KEYBY_PID: {len(RDD_KEYBY_PID)}')
 # RDD_KEYBY_PID :: (pid, [(sid, cnt), (sid, cnt), ... ])
 
 
@@ -146,11 +149,11 @@ for (pid_in_RDD, sc_list) in RDD_KEYBY_PID:
     dict_p2sc[pid_in_RDD] = sc_list
 
 
-print(f"{str(datetime.now())} save var_03_dict_p2sc.pkl")
+print(f'[{str(datetime.now())} @ {__main__filename}]    save var_03_dict_p2sc.pkl')
 with open("var_03_dict_p2sc.pkl", "wb") as fp:
     pkl.dump(dict_p2sc, fp)
 fp.close()
-print(f"{str(datetime.now())} done !")
+print(f'[{str(datetime.now())} @ {__main__filename}]    done !')
 
 
 

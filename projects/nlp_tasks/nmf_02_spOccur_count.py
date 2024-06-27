@@ -133,6 +133,7 @@ def scan_through(sid_init, q):
                     q.put((sid, pid, n_))
 
 if __name__ == "__main__":
+    __main__filename = 'nmf_02_spOccur_count()'
 
     spOccur_list = []
     spOccur_queue = Queue()
@@ -180,11 +181,11 @@ if __name__ == "__main__":
 #             spOccur = spOccur_Queue_list[1].get()
 #             spOccur_list.append(spOccur)
 
-        print("progress: spOccur_list length: %d" % len(spOccur_list))
+        print(f'[{str(datetime.now())} @ {__main__filename}]    progress: spOccur_list length: {len(spOccur_list)}')
 #         sid_init += scanBatchSize
         break
 
-    print("Computed spOccur count:", len(spOccur_list))
+    print(f'[{str(datetime.now())} @ {__main__filename}]    Computed spOccur count: {len(spOccur_list)}')
     with open("var_02_sparse_tuple_list.txt", "w") as fp:
         for i_, spc_ in enumerate(spOccur_list):
             if i_ == 0:
