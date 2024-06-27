@@ -45,7 +45,23 @@ PROJ_NAME_LIST = [
 sermonpathfilelist = []
 for PROJ_NAME in PROJ_NAME_LIST:
     data_dir_name_curr = '../../data/' + PROJ_NAME + '/'
-    sermonpathfilelist += [ data_dir_name_curr + _ for _ in os.listdir(data_dir_name_curr) ]
+    # sermon path file criteria:
+    # i) txt file extension, or
+    # ii) pure numberic char for the last two chars (HKBC satisfies this only)
+    sermonpathfilelist += [
+        data_dir_name_curr + _
+        for _ in os.listdir(data_dir_name_curr)
+        if                           \
+            _[-3:] == 'txt'          \
+            or                       \
+            (                        \
+               len(_) > 2            \
+               and                   \
+               _[-1] in '0123456789' \
+               and                   \
+               _[-2] in '0123456789'
+            )
+    ]
 sermonpathfilelist = sorted(sermonpathfilelist)
 
 
@@ -216,24 +232,25 @@ if __name__ == '__main__':
 
     # ================================================
     # OLD EXISTING FILE INTEGRATION
-    if os.path.exists('phrDict.pkl'):
-        print('existing file     phrDict.pkl    is found !')
+    if os.path.exists('var_01_phrDict.pkl'):
+        print('existing file    var_01_phrDict.pkl    is found !')
         print('read in and append in operation')
-        with open('phrDict.pkl', 'rb') as fp:
+        with open('var_01_phrDict.pkl', 'rb') as fp:
             phrDict = pkl.load(fp)
         fp.close()
     else:
-        print('file     phrDict.pkl    is not found !')
+        print('file    var_01_phrDict.pkl    is not found !')
         print('create and append in operation')
         phrDict = []
     for i in range(THREAD_NUM):
         phrDict_curr = phrDictQueue[i].get()
         phrDict.extend(phrDict_curr)
     phrDict = list(set(phrDict))
-    with open('phrDict.pkl', 'wb') as fp:
+    phrDict = sorted(phrDict)
+    with open('var_01_phrDict.pkl', 'wb') as fp:
         pkl.dump(phrDict, fp)
     fp.close()
-    print('%s    finish append phrDict' % datetime.now())
+    print('%s    finish append var_01_phrDict' % datetime.now())
 
 
     # ================================================
@@ -242,7 +259,7 @@ if __name__ == '__main__':
     overwrite_already_extracted_spfn_list(already_extracted_spfn_list)
 
 
-    with open('phrDict.txt', 'w') as fp:
+    with open('var_01_phrDict.txt', 'w') as fp:
         for phr_curr in sorted(phrDict):
             fp.write(phr_curr + '\n')
     fp.close()
