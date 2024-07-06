@@ -1,4 +1,5 @@
-from datetime import datetime
+import os
+from datetime import datetime as datetime
 import pickle as pkl
 import numpy as np
 
@@ -133,7 +134,7 @@ def symnmf( V , opt ) :
             objVal.append( symnmf_froNormSquare( V , P_curr ) )
             objChng = abs( objVal[k+1] - objVal[k] ) / objVal[k+1]
             if( k % verboseIntvl == 0 ) :
-                print( str(datetime.datetime.now()) + "it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
+                print( str(datetime.now()) + " it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
             if objChng < convThresh or objVal[k+1] < 1e-6 :
                 return P_curr , objVal
                 break
@@ -163,7 +164,7 @@ def symnmf( V , opt ) :
                     print( "beta - SNNMF renewObj : %f" % objVal[k+1] )
             objChng = abs( objVal[k+1] - objVal[k] ) / objVal[k+1]
             if( k % verboseIntvl == 0 ) :
-                print( str(datetime.datetime.now()) + "it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
+                print( str(datetime.now()) + " it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
             if objChng < convThresh or objVal[k+1] < 1e-6  :
                 return P_curr , objVal
                 break
@@ -194,7 +195,7 @@ def symnmf( V , opt ) :
             objVal.append( symnmf_froNormSquare( V , P_curr , Q_curr , lambdaVal ) )
             objChng = abs( objVal[k+1] - objVal[k] ) / objVal[k+1]
             if( k % verboseIntvl == 0 ) :
-                print( str(datetime.datetime.now()) + "it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
+                print( str(datetime.now()) + " it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
             if objChng < convThresh or objVal[k+1] < 1e-6  :
                 print( "average error between P and Qt : %f" % np.divide( np.sum(np.abs(P_curr-Q_curr.T)) , P_curr.size ) )
                 return P_curr , Q_curr , objVal
@@ -228,7 +229,7 @@ def symnmf( V , opt ) :
             objVal.append( symnmf_froNormSquare( V , P_curr , Q_curr , lambdaVal ) )
             objChng = abs( objVal[k+1] - objVal[k] ) / objVal[k+1]
             if( k % verboseIntvl == 0 ) :
-                print( str(datetime.datetime.now()) + "it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
+                print( str(datetime.now()) + " it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
             if objChng < convThresh or objVal[k+1] < 1e-6  :
                 print( "average error between P and Qt : %f" % np.divide( np.sum(np.abs(P_curr-Q_curr.T)) , P_curr.size ) )
                 return P_curr , Q_curr , objVal
@@ -267,7 +268,7 @@ def symnmf( V , opt ) :
             objVal.append( symnmf_froNormSquare( V , P_curr.dot( W_PSD_curr ) , Q_curr , lambdaVal ) )
             objChng = abs( objVal[k+1] - objVal[k] ) / objVal[k+1]
             if( k % verboseIntvl == 0 ) :
-                print( str(datetime.datetime.now()) + "it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
+                print( str(datetime.now()) + " it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
             if objChng < convThresh or objVal[k+1] < 1e-6  :
                 print( "average error between P and Qt : %f" % np.divide( np.sum(np.abs(P_curr-Q_curr.T)) , P_curr.size ) )
                 return P_curr , W_PSD_curr , Q_curr , objVal
@@ -306,7 +307,7 @@ def symnmf( V , opt ) :
             objVal.append( symnmf_froNormSquare( V , P_curr.dot( W_PSD_curr ) , Q_curr , lambdaVal ) )
             objChng = abs( objVal[k+1] - objVal[k] ) / objVal[k+1]
             if( k % verboseIntvl == 0 ) :
-                print( str(datetime.datetime.now()) + "it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
+                print( str(datetime.now()) + " it : %d objChng : %1.6e objVal : %1.6e" % ( k , objChng , objVal[k+1] ) )
             if objChng < convThresh or objVal[k+1] < 1e-6  :
                 print( "average error between P and Qt : %f" % np.divide( np.sum(np.abs(P_curr-Q_curr.T)) , P_curr.size ) )
                 return P_curr , W_PSD_curr , Q_curr , objVal
@@ -405,7 +406,7 @@ if __name__ == '__main__':
     opt_symnmf[ 'maxIteraNum'   ] = int(1e4)
     opt_symnmf[ 'convThresh'    ] = 1e-6
     opt_symnmf[ 'beta'          ] = 0.99
-    opt_symnmf[ 'verboseIntvl'  ] = int(5e2)
+    opt_symnmf[ 'verboseIntvl'  ] = 1 # int(5e2)
     P , objVal = symnmf( C , opt_symnmf )
     P[ P < 1e-12 ] = 0
     print(f'[{str(datetime.now())} @ {__main__filename}]    saving sym-nmf results ...')
