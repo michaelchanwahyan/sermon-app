@@ -405,7 +405,7 @@ if __name__ == '__main__':
     opt_symnmf[ 'method'        ] = 'BETA-BLAS-PARALLEL-MU'
     opt_symnmf[ 'maxIteraNum'   ] = int(1e4)
     opt_symnmf[ 'convThresh'    ] = 1e-6
-    opt_symnmf[ 'beta'          ] = 0.99
+    opt_symnmf[ 'beta'          ] = 0.01
     opt_symnmf[ 'verboseIntvl'  ] = 1 # int(5e2)
     P , objVal = symnmf( C , opt_symnmf )
     P[ P < 1e-12 ] = 0
