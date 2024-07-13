@@ -19,8 +19,8 @@ if __name__ == '__main__':
         spOccur_list = pkl.load(fp)
     fp.close()
 
-    print(f'[{str(datetime.now()} @ {__main__filename}]    type of spOccur_list: {type(spOccur_list)}')
-    print(f'[{str(datetime.now()} @ {__main__filename}]    entry count of spOccur_list: {len(spOccur_list)}')
+    print(f'[{str(datetime.now())} @ {__main__filename}]    type of spOccur_list: {type(spOccur_list)}')
+    print(f'[{str(datetime.now())} @ {__main__filename}]    entry count of spOccur_list: {len(spOccur_list)}')
 
     with open('./var_02_sermonDict.txt', 'r') as fp:
         sermonDict = fp.read().split('\n') # the sermon spfn dictionary is in sorted order
@@ -32,11 +32,11 @@ if __name__ == '__main__':
         dict_sid2spfn[sid] = spfn_
         sid += 1
 
-    print(f'[{str(datetime.now()} @ {__main__filename}]    type of sermonDict: {type(sermonDict)}')
-    print(f'[{str(datetime.now()} @ {__main__filename}]    type of dict_sid2spfn: {type(dict_sid2spfn)}')
+    print(f'[{str(datetime.now())} @ {__main__filename}]    type of sermonDict: {type(sermonDict)}')
+    print(f'[{str(datetime.now())} @ {__main__filename}]    type of dict_sid2spfn: {type(dict_sid2spfn)}')
 
-    print(f'[{str(datetime.now()} @ {__main__filename}]    entry count of sermonDict: {len(sermonDict)}')
-    print(f'[{str(datetime.now()} @ {__main__filename}]    entry count of dict_sid2spfn: {len(dict_sid2spfn.keys())}')
+    print(f'[{str(datetime.now())} @ {__main__filename}]    entry count of sermonDict: {len(sermonDict)}')
+    print(f'[{str(datetime.now())} @ {__main__filename}]    entry count of dict_sid2spfn: {len(dict_sid2spfn.keys())}')
 
 
     # (s1, p1, a)
@@ -59,9 +59,9 @@ if __name__ == '__main__':
         dict_p2sc = pkl.load(fp)
     fp.close()
 
-    print(f"[{str(datetime.now()} @ {__main__filename}]    spOccur_list length b4 in-RDD_KEYBY_PID filter: {len(spOccur_list)}")
+    print(f"[{str(datetime.now())} @ {__main__filename}]    spOccur_list length b4 in-RDD_KEYBY_PID filter: {len(spOccur_list)}")
     spOccur_list = [ spn_ for spn_ in spOccur_list if spn_[1] in dict_p2sc ]
-    print(f"[{str(datetime.now()} @ {__main__filename}]    spOccur_list length af in-RDD_KEYBY_PID filter: {len(spOccur_list)}")
+    print(f"[{str(datetime.now())} @ {__main__filename}]    spOccur_list length af in-RDD_KEYBY_PID filter: {len(spOccur_list)}")
 
     # -----------------------
     # counting criteria 1 :
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     MAX_SID = len(dict_sid2spfn.keys())
 
     MAT_S2S_COOCCUR = np.zeros((MAX_SID, MAX_SID))
-    print(f'[{str(datetime.now()} @ {__main__filename}]    MAT_S2S_COOCCUR shape: {MAT_S2S_COOCCUR.shape}')
+    print(f'[{str(datetime.now())} @ {__main__filename}]    MAT_S2S_COOCCUR shape: {MAT_S2S_COOCCUR.shape}')
 
     # s2s subprocess num
     #     defining the spOccur_list portion
@@ -80,7 +80,7 @@ if __name__ == '__main__':
     N_s2s_subproc = int(SUBPROC_NUM)
     for i, (s_, p_, c_) in enumerate(spOccur_list[ N_s2s_subproc :: 10 ]):
         if i % 5000 == 0:
-            print(f'[{str(datetime.now()} @ {__main__filename}]    progress: N_s2s_subproc = {N_s2s_subproc} : {i} / {len(spOccur_list) / 10}')
+            print(f'[{str(datetime.now())} @ {__main__filename}]    progress: N_s2s_subproc = {N_s2s_subproc} : {i} / {len(spOccur_list) / 10}')
         # p_ as the phrase id with c_ occurance
         sc_list = dict_p2sc.get(p_)
         if sc_list is None:
@@ -91,4 +91,4 @@ if __name__ == '__main__':
     with open(f"var_04_MAT_S2S_COOCCUR_subproc{SUBPROC_NUM}.pkl", "wb") as fp:
         pkl.dump(MAT_S2S_COOCCUR, fp)
     fp.close()
-    print(f'[{str(datetime.now()} @ {__main__filename}]    finish generate s2s matrix')
+    print(f'[{str(datetime.now())} @ {__main__filename}]    finish generate s2s matrix')
