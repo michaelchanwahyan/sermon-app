@@ -19,10 +19,12 @@ if __name__ == '__main__':
 
     print(f'[{str(datetime.now())} @ {__main__filename}]    type of sermonDict: {type(sermonDict)}')
     print(f'[{str(datetime.now())} @ {__main__filename}]    type of dict_sid2spfn: {type(dict_sid2spfn)}')
+    print(f'[{str(datetime.now())} @ {__main__filename}]    total size of dict_sid2spfn: {len(dict_sid2spfn)}')
 
     p_matrix_fname = 'var_06_P.txt'
     print(f'[{str(datetime.now())} @ {__main__filename}]    loading P ...')
     P = np.loadtxt(p_matrix_fname)
     print(f'[{str(datetime.now())} @ {__main__filename}]    done loading P !')
+    print(f'[{str(datetime.now())} @ {__main__filename}]    shape of P: {P.shape}')
     
     
