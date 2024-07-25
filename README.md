@@ -25,27 +25,28 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 沙田浸信會 Shatin Baptist Church                                             | ./pdf/sermon_STBC_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_STBC_2020-present.pdf)              |
 | 葡萄藤教會 The Vine Church                                                   | ./pdf/sermon_VINE_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_VINE_2020-present.pdf)              |
 | 環球聖經公會 講道講章 Worldwide Bible Society                                | ./pdf/sermon_WWBS.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_WWBS.pdf)                           |
-| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth                                | ./pdf/sermon_YFCX_2020-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_YFCX_2020-present.pdf)              |
+| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth                                | ./pdf/sermon_YFCX_2020-2023.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_YFCX_2020-2023.pdf)                 |
+|                                                                              | ./pdf/sermon_YFCX_2024-2027.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_YFCX_2024-2027.pdf)                 |
 | 中華宣道會友愛堂信培部 Yau Oi School                                         | ./pdf/sermon_YOS.pdf                      | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_YOS.pdf)                            |
 
 ### Statistics Overview on this project
 sermon source | transcript total count | recent development activity
 ----|----|----
-ACSMHK | 7.9% ( 835 / 10560) | 18.4% ( 521 / 2823)
-CBI | 0.2% ( 27 / 10560) | 2.1% ( 59 / 2823)
-CGST | 2.1% ( 218 / 10560) | 2.3% ( 64 / 2823)
-DSCCC | 6.6% ( 702 / 10560) | 0.9% ( 25 / 2823)
-FLWC | 1.9% ( 201 / 10560) | 3.1% ( 87 / 2823)
-FVC | 11.6% ( 1224 / 10560) | 6.5% ( 184 / 2823)
-HKBC | 14.8% ( 1559 / 10560) | 0.2% ( 7 / 2823)
-JNG | 28.0% ( 2958 / 10560) | 10.5% ( 296 / 2823)
-KFC | 7.3% ( 775 / 10560) | 7.6% ( 214 / 2823)
-PORCH | 4.5% ( 481 / 10560) | 2.4% ( 68 / 2823)
-STBC | 2.0% ( 212 / 10560) | 5.0% ( 140 / 2823)
-VINE | 1.9% ( 204 / 10560) | 28.2% ( 796 / 2823)
-WWBS | 0.6% ( 65 / 10560) | 1.4% ( 40 / 2823)
-YFCX | 10.1% ( 1062 / 10560) | 11.2% ( 316 / 2823)
-YOS | 0.3% ( 37 / 10560) | 0.2% ( 6 / 2823)
+ACSMHK | 8.2% ( 876 / 10746) | 18.1% ( 520 / 2872)
+CBI | 0.2% ( 27 / 10746) | 1.8% ( 53 / 2872)
+CGST | 2.0% ( 218 / 10746) | 1.0% ( 28 / 2872)
+DSCCC | 6.5% ( 702 / 10746) | 0.8% ( 24 / 2872)
+FLWC | 1.9% ( 206 / 10746) | 3.0% ( 86 / 2872)
+FVC | 11.4% ( 1227 / 10746) | 5.2% ( 150 / 2872)
+HKBC | 14.5% ( 1559 / 10746) | 0.1% ( 3 / 2872)
+JNG | 27.7% ( 2974 / 10746) | 9.1% ( 260 / 2872)
+KFC | 7.4% ( 792 / 10746) | 8.2% ( 237 / 2872)
+PORCH | 4.5% ( 486 / 10746) | 2.4% ( 68 / 2872)
+STBC | 2.0% ( 218 / 10746) | 3.4% ( 99 / 2872)
+VINE | 2.4% ( 261 / 10746) | 34.0% ( 977 / 2872)
+WWBS | 0.6% ( 66 / 10746) | 1.0% ( 30 / 2872)
+YFCX | 10.2% ( 1097 / 10746) | 11.7% ( 337 / 2872)
+YOS | 0.3% ( 37 / 10746) | 0.0% ( 0 / 2872)
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
