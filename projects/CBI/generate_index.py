@@ -236,7 +236,9 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
 
 
 def retrieve_yfcy_date(inname):
-    datestr = re.findall( r'[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]', inname)
+    datestr = re.findall( r'[0-9][0-9][0-9][0-9][.-][0-9][0-9][.-][0-9][0-9]', inname)
+    if not datestr: # check if datestr becomes an empty list
+        print(f"datestr = [] with {inname} !!!")
     return datestr[0].replace('.', '-')
 
 
