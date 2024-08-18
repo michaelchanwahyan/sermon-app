@@ -253,7 +253,7 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
 '''
 cd ~/TPPHC/SERMON/KFC/
 
-ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/KFC/lslogt.txt
+ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}' > ~/SOURCE/sermon-app/projects/KFC/lslogt.txt
 '''
 
 
@@ -280,7 +280,7 @@ for _ in rdd_eng.take(3):
     print(_)
 
 
-rdd_chi1 = rdd_chi.map(lambda w: (w[38:-18].strip(), w[-16:-5], w[25:38])) \
+rdd_chi1 = rdd_chi.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
@@ -291,7 +291,7 @@ for _ in rdd_chi1.take(10):
     print(_)
 
 
-rdd_eng1 = rdd_eng.map(lambda w: (w[38:-18].strip(), w[-16:-5], w[25:38])) \
+rdd_eng1 = rdd_eng.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
     .map(lambda w: (w[0], w[1], w[0], w[2])) \
     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
