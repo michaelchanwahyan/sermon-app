@@ -573,8 +573,7 @@ number of sermons by each preacher'''
 
 
 
-rdd_time = rdd.map(lambda w: w[25:38]) \
-   .map(unixLsDatetime_to_datetime) \
+rdd_time = rdd2.map(lambda w: w[4]) \
    .map(lambda w: [int(_) for _ in w.split('-')]) \
    .map(lambda w: w[0]*365 + w[1]*30 + w[2])
 
