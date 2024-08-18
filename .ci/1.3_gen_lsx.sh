@@ -8,7 +8,7 @@ pushd ../projects
     pushd ./$PROJECT_NAME
       ORI_DIR=$(pwd)
       pushd ~/TPPHC/SERMON/$PROJECT_NAME
-        ls -logtD '%b %d  %Y' *.mp3 > $ORI_DIR/lslogt.txt
+        ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}' > $ORI_DIR/lslogt.txt
       popd # back to ./app/projects/$PROJECT_NAME
     popd # back to ./app/projects
   done
