@@ -9,3 +9,4 @@ pushd ../projects
     popd # back to ./app/projects
   done
 popd # back to ./app/.ci
+./1.2.d_gen_fs_date_record.sh

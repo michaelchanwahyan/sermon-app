@@ -245,7 +245,7 @@ def retrieve_yfcy_date(inname):
 '''
 cd ~/TPPHC/SERMON/FVC/
 
-ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/FVC/lslogt.txt
+ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}' > ~/SOURCE/sermon-app/projects/FVC/lslogt.txt
 '''
 
 
@@ -259,7 +259,7 @@ rdd = rdd \
     .map(lambda w: re.sub(r'(20[1-9][0-9])([01][0-9])([0-3][0-9])', r'\1-\2-\3 ', w))
 # END OF FVC specific
 
-rdd1 = rdd.map(lambda w: (w[38:-18].strip(), w[-16:-5], w[25:38])) \
+rdd1 = rdd.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], '-'.join(w[0][0:3])))

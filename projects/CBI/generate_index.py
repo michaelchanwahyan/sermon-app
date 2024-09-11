@@ -249,13 +249,13 @@ def retrieve_yfcy_date(inname):
 '''
 cd ~/TPPHC/SERMON/CBI/
 
-ls -logtD '%b %d  %Y' *.mp3 > ~/SOURCE/sermon-app/projects/CBI/lslogt.txt
+ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}d > ~/SOURCE/sermon-app/projects/CBI/lslogt.txt
 '''
 
 
 # from full catalog file obtain required info
 rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w)
-rdd1 = rdd.map(lambda w: (w[38:-18].strip(), w[-16:-5], w[25:38])) \
+rdd1 = rdd.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
     .map(lambda w: (w[0].strip().split(' '), w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
 

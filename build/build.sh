@@ -274,7 +274,16 @@ elif [ "$1" == "FLWC" ] ; then
     mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "FVC" ] ; then
-    OUTFILENAME=sermon_$1_2017-present
+    OUTFILENAME=sermon_$1_2017-22
+    cd $1
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    OUTFILENAME=sermon_$1_2023-28
     cd $1
     xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
