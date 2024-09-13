@@ -14,6 +14,7 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 崇基神學院 崇拜講章 Div. Schl of Chung Chi College                           | ./pdf/sermon_DSCCC_2009-present.pdf       | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_DSCCC_2009-present.pdf)             |
 | 流堂 崇拜講章 Flow Church                                                    | ./pdf/sermon_FLWC_2021-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_FLWC_2021-present.pdf)              |
 | 宣道會錦繡堂 崇拜講章 Christian Missionary Alliance Fairview Church          | ./pdf/sermon_FVC_2017-present.pdf         | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_FVC_2017-present.pdf)               |
+| 宣道會洪恩堂 崇拜講章 Christian Missionary Alliance Graceflow Church         | ./pdf/sermon_GFC_2020-present.pdf         | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_GFC_2020-present.pdf)               |
 | 港九培靈研經會講章 Hong Kong Bible Conference                                | ./pdf/sermon_HKBC_1928-2007.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_HKBC_1928-2007.pdf)                 |
 |                                                                              | ./pdf/sermon_HKBC_2008-present.pdf        | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_HKBC_2008-present.pdf)              |
 | JohnsonNg Youtube Channel                                                    | ./pdf/sermon_JNG_2012-18.pdf              | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_JNG_2012-18.pdf)                    |
@@ -32,21 +33,22 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 ### Statistics Overview on this project
 sermon source | transcript total count | recent development activity
 ----|----|----
-ACSMHK | 8.6% ( 948 / 10976) | 21.7% ( 564 / 2602)
-CBI | 0.2% ( 27 / 10976) | 1.6% ( 42 / 2602)
-CGST | 2.0% ( 218 / 10976) | 0.9% ( 24 / 2602)
-DSCCC | 6.5% ( 713 / 10976) | 1.1% ( 30 / 2602)
-FLWC | 1.9% ( 212 / 10976) | 3.3% ( 85 / 2602)
-FVC | 11.2% ( 1231 / 10976) | 4.2% ( 110 / 2602)
-HKBC | 14.2% ( 1559 / 10976) | 0.1% ( 3 / 2602)
-JNG | 27.3% ( 2997 / 10976) | 9.3% ( 243 / 2602)
-KFC | 7.4% ( 816 / 10976) | 9.1% ( 238 / 2602)
-PORCH | 4.5% ( 493 / 10976) | 3.3% ( 85 / 2602)
-STBC | 2.1% ( 234 / 10976) | 6.9% ( 180 / 2602)
-VINE | 2.6% ( 284 / 10976) | 23.5% ( 611 / 2602)
-WWBS | 0.6% ( 68 / 10976) | 1.3% ( 34 / 2602)
-YFCX | 10.4% ( 1139 / 10976) | 13.2% ( 344 / 2602)
-YOS | 0.3% ( 37 / 10976) | 0.3% ( 9 / 2602)
+ACSMHK | 8.6% ( 971 / 11257) | 17.8% ( 557 / 3123)
+CBI | 0.2% ( 29 / 11257) | 1.3% ( 41 / 3123)
+CGST | 1.9% ( 218 / 11257) | 0.8% ( 24 / 3123)
+DSCCC | 6.3% ( 713 / 11257) | 1.0% ( 30 / 3123)
+FLWC | 1.9% ( 214 / 11257) | 2.8% ( 89 / 3123)
+FVC | 10.9% ( 1231 / 11257) | 3.0% ( 93 / 3123)
+GFC | 1.9% ( 211 / 11257) | 20.9% ( 652 / 3123)
+HKBC | 13.8% ( 1559 / 11257) | 0.1% ( 3 / 3123)
+JNG | 26.7% ( 3007 / 11257) | 7.6% ( 238 / 3123)
+KFC | 7.3% ( 824 / 11257) | 7.5% ( 235 / 3123)
+PORCH | 4.4% ( 495 / 11257) | 2.7% ( 85 / 3123)
+STBC | 2.1% ( 237 / 11257) | 6.1% ( 191 / 3123)
+VINE | 2.6% ( 291 / 11257) | 15.0% ( 470 / 3123)
+WWBS | 0.6% ( 70 / 11257) | 1.1% ( 33 / 3123)
+YFCX | 10.2% ( 1150 / 11257) | 11.9% ( 373 / 3123)
+YOS | 0.3% ( 37 / 11257) | 0.3% ( 9 / 3123)
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
