@@ -129,7 +129,7 @@ mv \*.mp3 ~/TPPHC/SERMON/GFC/'''
 
 
 # the initial of different kind of preacher
-preacherTitle_list = ['博士','牧師','傳道','老師','先生','教授','弟兄','社長','醫生','姑娘']
+preacherTitle_list = ['博士','牧師','傳道','老師','先生','教授','弟兄','社長','醫生','姑娘','宣教士','宣教師','導師','院長']
 
 
 # the bible books
