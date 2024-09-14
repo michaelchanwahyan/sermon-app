@@ -46,7 +46,7 @@ pushd ../projects
       fi
       if test $PROJECT_NAME = GFC
       then
-          wget https://www.youtube.com/@graceflowchurch/videos
+          wget https://www.youtube.com/@graceflowchurch6874/videos
       fi
       if test $PROJECT_NAME = JNG
       then
