@@ -713,7 +713,8 @@ with open('x2code_dictionary.pkl', 'wb') as f:
 
 df.chapter = pd.to_numeric(df.chapter, errors='coerce')
 #df = df.sort_values(['preacher', 'bkno', 'chapter', 'verse', 'title'])
-df = df.sort_values(['preacher', 'bkno', 'chapter', 'headerVerse', 'title']) # use headerVerse for verse-wise sorting
+# df = df.sort_values(['preacher', 'bkno', 'chapter', 'headerVerse', 'title']) # use headerVerse for verse-wise sorting
+df = df.sort_values(['date', 'title']) # use headerVerse for verse-wise sorting
 df = df.drop(columns='headerVerse') # throw away headerVerse column as it is not included in final df
 # df.chapter = df.chapter
 # df.chapter = df.chapter.apply(str)
@@ -758,7 +759,7 @@ for index, row in df.iterrows():
 
 
 
-df.to_csv('./index_byp.csv', index=False)
+df.to_csv('./index_byt.csv', index=False)
 
 
 
