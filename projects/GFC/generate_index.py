@@ -768,6 +768,62 @@ df.to_csv('./index_byt.csv', index=False)
 
 
 
+df = pd.DataFrame(
+    [
+        [c,
+         c2p_dict.get(c, ''),
+         bk2bkorder_dict.get(c2b_dict.get(c), 67),
+         c2b_dict.get(c, ''),
+         c2ch_dict.get(c, '0'),
+         c2v_dict.get(c, ''),
+         get_headerVerseVal(c2v_dict.get(c, '')),
+         c2s_dict.get(c, ''),
+         c2t_dict.get(c, '')] for c in c2s_dict.keys()
+    ],
+    columns = [
+        'code',
+        'preacher',
+        'bkno',
+        'book',
+        'chapter',
+        'verse',
+        'headerVerse',
+        'title',
+        'date'
+    ]
+)
+
+
+df.chapter = pd.to_numeric(df.chapter, errors='coerce')
+df = df.sort_values(['bkno', 'chapter', 'headerVerse', 'title']) # use headerVerse for verse-wise sorting
+df = df.drop(columns='headerVerse') # throw away headerVerse column as it is not included in final df
+
+
+
+
+
+
+
+
+for index, row in df.iterrows():
+    print(row['code'], row['preacher'], row['book'], row['chapter'], row['verse'], row['title'], row['date'])
+
+
+
+
+
+
+
+
+df.to_csv('./index_byb.csv', index=False)
+
+
+
+
+
+
+
+
 _ = os.system('rm -f videos download.sh')
 
 
