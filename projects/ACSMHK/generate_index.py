@@ -775,7 +775,33 @@ for index, row in df.iterrows():
 
 
 
-df.to_csv('./index_byp.csv', index=False)
+df.chapter = pd.to_numeric(df.chapter, errors='coerce')
+#df = df.sort_values(['preacher', 'bkno', 'chapter', 'verse', 'title'])
+df = df.sort_values(['bkno', 'chapter', 'title'])
+
+
+
+
+
+
+
+
+for index, row in df.iterrows():
+    if row['chapter'] == 0:
+        print(row['code'], row['preacher'], row['book'], row['chapter'], row['verse'], row['title'], row['date'])
+
+
+for index, row in df.iterrows():
+    print(row['code'], row['preacher'], row['book'], row['chapter'], row['verse'], row['title'], row['date'])
+
+
+
+
+
+
+
+
+df.to_csv('./index_byb.csv', index=False)
 
 
 
