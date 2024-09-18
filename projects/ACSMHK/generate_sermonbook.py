@@ -176,8 +176,8 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     print(f"Step {progressStepCnt}: writing TOC in chronic order")
     with open(sermon_tex_filepath, "a") as fp:
         sermonCnt = 0
-        fp.write("\\section{目錄}\n")
-        fp.write("\\label{sec:index}\n")
+        fp.write("\\section{目錄\\small{(順題)}}\n")
+        fp.write("\\label{sec:index_chronic}\n")
         fp.write("{ \\scriptsize\n")
         # --------------------------------------
         # start of TOC table
@@ -237,8 +237,8 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     print(f"Step {progressStepCnt}: writing TOC in scriptual order")
     with open(sermon_tex_filepath, "a") as fp:
         sermonCnt = 0
-        fp.write("\\section{目錄\\small{(順卷)}}\n")
-        fp.write("\\label{sec:index_scriptual}\n")
+        fp.write("\\section{目錄\\small{(順仕)}}\n")
+        fp.write("\\label{sec:index_preacher}\n")
         fp.write("{ \\scriptsize\n")
         # --------------------------------------
         # start of TOC table
@@ -378,7 +378,11 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 fp.write("\\newline\n\\newline\n")
                 fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{\\small{< < < PREV SERMON < < <}}\n")
                 fp.write("~\n")
-                fp.write("\\hyperref[sec:index]{\\small{[返主目錄]}}\n")
+                fp.write("\\hyperref[sec:index_chronic]{\\small{[返順題目]}}\n")
+                fp.write("~\n")
+                fp.write("\\hyperref[sec:index_preacher]{\\small{[返順仕目]}}\n")
+                fp.write("~\n")
+                fp.write("\\hyperref[sec:index_scriptual]{\\small{[返順卷目]}}\n")
                 fp.write("~\n")
                 fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{\\small{> > > NEXT SERMON > > >}}\n")
                 fp.write("\\newline\n\\newline\n")
