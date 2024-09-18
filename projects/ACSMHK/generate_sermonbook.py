@@ -260,7 +260,6 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 bstr = c2b_dict.get(cc, ' ')
                 vstr = c2v_dict.get(cc, ' ')
                 sstr = c2s_dict.get(cc, ' ')
-                sstr = yfcx_sermon_title_processing(cc)
                 sstr = cleanse_special_char(
                     c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
                 )
@@ -310,7 +309,6 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 bstr = c2b_dict.get(cc, ' ')
                 vstr = c2v_dict.get(cc, ' ')
                 sstr = c2s_dict.get(cc, ' ')
-                sstr = yfcx_sermon_title_processing(cc)
                 sstr = cleanse_special_char(
                     c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
                 )
