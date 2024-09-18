@@ -179,59 +179,59 @@ fp.close()
 '''## generate index in scriptual order'''
 
 
-# progressStepCnt += 1
-# print(f"Step {progressStepCnt}: generate index in scriptual order")
-# with open("./index_byb.csv", "r") as fp:
-#     lines = fp.readlines()
-# fp.close()
-# # --------------------------------------
-# # index table sorted by scriptual order
-# # --------------------------------------
-# progressStepCnt += 1
-# print(f"Step {progressStepCnt}: writing TOC in scriptual order")
-# with open(sermon_tex_filepath, "a") as fp:
-#     sermonCnt = 0
-#     fp.write("\\section{目錄\\small{(順卷)}}\n")
-#     fp.write("\\label{sec:index_scriptual}\n")
-#     fp.write("{ \\scriptsize\n")
-#     # --------------------------------------
-#     # start of TOC table
-#     # --------------------------------------
-#     fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
-#     fp.write("\\hline\n")
-#     # --------------------------------------
-#     # lines is the line content in index_byb
-#     # --------------------------------------
-#     for lineId, line in enumerate(lines):
-#         cc = line.split(",")[0]
-#         # --------------------------------------
-#         # only include this code cc if it is
-#         # ready in the transcription folder
-#         # --------------------------------------
-#         if os.path.isfile(f'../../data/GFC/{cc}.txt'):
-#             sermonCnt += 1
-#             bstr = c2b_dict.get(cc, ' ')
-#             vstr = c2v_dict.get(cc, ' ')
-#             sstr = c2s_dict.get(cc, ' ')
-#             sstr = yfcx_sermon_title_processing(cc)
-#             sstr = cleanse_special_char(
-#                 c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
-#             )
-#             tstr = c2t_dict.get(cc, ' ')
-#             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
-#             fp.write(bstr + ' ' + vstr + " & " \
-#                      + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
-#                      + tstr + " & " \
-#                      + ystr \
-#                      + " \\\\\n")
-#     fp.write("\\end{xltabular}\n")
-#     # --------------------------------------
-#     # end of table sorted by scriptual order
-#     # --------------------------------------
-#     fp.write("}\n")
-#     print('sermon count in current book: %d' % sermonCnt)
-#     fp.write("\\newpage\n\n")
-# fp.close()
+progressStepCnt += 1
+print(f"Step {progressStepCnt}: generate index in scriptual order")
+with open("./index_byb.csv", "r") as fp:
+    lines = fp.readlines()
+fp.close()
+# --------------------------------------
+# index table sorted by scriptual order
+# --------------------------------------
+progressStepCnt += 1
+print(f"Step {progressStepCnt}: writing TOC in scriptual order")
+with open(sermon_tex_filepath, "a") as fp:
+    sermonCnt = 0
+    fp.write("\\section{目錄\\small{(順卷)}}\n")
+    fp.write("\\label{sec:index_scriptual}\n")
+    fp.write("{ \\scriptsize\n")
+    # --------------------------------------
+    # start of TOC table
+    # --------------------------------------
+    fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
+    fp.write("\\hline\n")
+    # --------------------------------------
+    # lines is the line content in index_byb
+    # --------------------------------------
+    for lineId, line in enumerate(lines):
+        cc = line.split(",")[0]
+        # --------------------------------------
+        # only include this code cc if it is
+        # ready in the transcription folder
+        # --------------------------------------
+        if os.path.isfile(f'../../data/GFC/{cc}.txt'):
+            sermonCnt += 1
+            bstr = c2b_dict.get(cc, ' ')
+            vstr = c2v_dict.get(cc, ' ')
+            sstr = c2s_dict.get(cc, ' ')
+            sstr = yfcx_sermon_title_processing(cc)
+            sstr = cleanse_special_char(
+                c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
+            )
+            tstr = c2t_dict.get(cc, ' ')
+            ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+            fp.write(bstr + ' ' + vstr + " & " \
+                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                     + tstr + " & " \
+                     + ystr \
+                     + " \\\\\n")
+    fp.write("\\end{xltabular}\n")
+    # --------------------------------------
+    # end of table sorted by scriptual order
+    # --------------------------------------
+    fp.write("}\n")
+    print('sermon count in current book: %d' % sermonCnt)
+    fp.write("\\newpage\n\n")
+fp.close()
 
 
 
