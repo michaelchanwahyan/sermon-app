@@ -232,9 +232,6 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
     return yr + '-' + mon + '-' + day
 
 
-# unixLsDatetime_to_datetime('Mar 30  2016 ')
-
-
 def datesearch(inname):
     # try:
     res = re.search(r'20[0-9][0-9][0-1][0-9][0-3][0-9]', inname)
@@ -323,9 +320,6 @@ c2b_dict : 1-to-1 dictionary from youtube code to book
 b2c_dict : 1-to-N dictionary from book to [ list of youtube code ]'''
 
 
-# rdd2.take(10)
-
-
 rdd2.map(lambda w: (w[2], w[1])).take(3)
 
 
@@ -356,33 +350,6 @@ for (c, t) in rdd2.map(lambda w: (w[2], w[-1])).collect():
 
 '''### verse : "v"
 c2v_dict : 1-to-1 dictionary from youtube code to chapter verse'''
-
-
-# teststr = '一次得救, 永遠得救 (希伯來書6:4-8) - 蘇穎睿牧師-7R7NYKsnIQo'
-
-# m = re.search(r'(?<=[0-9])[:]', teststr)
-# print(m)
-
-# [i, j] = m.span()
-
-# teststr[i]
-
-
-# verseStr = ''
-# for ii in range(i, 1, -1):
-#     if teststr[ii] in '0123456789-:':
-#         print(ii, teststr[ii])
-#         verseStr += teststr[ii]
-#     else:
-#         break
-# verseStr = verseStr[::-1]
-# for ii in range(i+1, len(teststr)):
-#     if teststr[ii] in '0123456789-:':
-#         print(ii, teststr[ii])
-#         verseStr += teststr[ii]
-#     else:
-#         break
-# print(verseStr)
 
 
 c2v_dict = {} # 1-to-1 dictionary
@@ -575,9 +542,6 @@ rdd_time = rdd2.map(lambda w: w[4]) \
    .map(lambda w: w[0]*365 + w[1]*30 + w[2])
 
 
-rdd2.take(3)
-
-
 t_ = sorted(rdd_time.collect())
 
 
@@ -649,15 +613,8 @@ with open('x2code_dictionary.pkl', 'wb') as f:
 
 
 df.chapter = pd.to_numeric(df.chapter, errors='coerce')
-#df = df.sort_values(['preacher', 'bkno', 'chapter', 'verse', 'title'])
 df = df.sort_values(['date', 'title'])
 df = df.drop(columns='headerVerse') # throw away headerVerse column as it is not included in final df
-
-
-
-
-
-
 
 
 for index, row in df.iterrows():
@@ -667,12 +624,6 @@ for index, row in df.iterrows():
 
 for index, row in df.iterrows():
     print(row['code'], row['book'], row['chapter'], row['verse'], row['title'], row['date'])
-
-
-
-
-
-
 
 
 df.to_csv('./index_byt.csv', index=False)
@@ -709,25 +660,12 @@ df = pd.DataFrame(
 
 
 df.chapter = pd.to_numeric(df.chapter, errors='coerce')
-#df = df.sort_values(['preacher', 'bkno', 'chapter', 'verse', 'title'])
 df = df.sort_values(['bkno', 'chapter', 'headerVerse', 'title']) # use headerVerse for verse-wise sorting
 df = df.drop(columns='headerVerse') # throw away headerVerse column as it is not included in final df
 
 
-
-
-
-
-
-
 for index, row in df.iterrows():
     print(row['code'], row['book'], row['chapter'], row['verse'], row['title'], row['date'])
-
-
-
-
-
-
 
 
 df.to_csv('./index_byb.csv', index=False)

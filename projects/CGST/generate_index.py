@@ -232,9 +232,6 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
     return yr + '-' + mon + '-' + day
 
 
-# unixLsDatetime_to_datetime('Mar 30  2016 ')
-
-
 
 '''### Run By Your Host System if new audio files are included'''
 
@@ -294,13 +291,6 @@ rdd2 = rdd1.map(
 
 print('w[0]= preacher ; w[1]= book; w[2]= youtube code ; w[3]= original name ; w[4]= date')
 rdd2.take(250)
-
-
-# def remove_preacher_title(preacher_with_title, title_list):
-#     for title in title_list:
-#         if title in preacher_with_title:
-#             x = preacher_with_title.find(title)
-#             return preacher_with_title[:x]
 
 
 # data engineering work 3: removing the initials of preacher
@@ -373,9 +363,6 @@ c2b_dict : 1-to-1 dictionary from youtube code to book
 b2c_dict : 1-to-N dictionary from book to [ list of youtube code ]'''
 
 
-# rdd2.take(10)
-
-
 rdd2.map(lambda w: (w[2], w[1])).take(3)
 
 
@@ -396,33 +383,6 @@ for (c, b) in rdd2.map(lambda w: (w[2], w[1])) \
 
 '''### verse : "v"
 c2v_dict : 1-to-1 dictionary from youtube code to chapter verse'''
-
-
-# teststr = '一次得救, 永遠得救 (希伯來書6:4-8) - 蘇穎睿牧師-7R7NYKsnIQo'
-
-# m = re.search(r'(?<=[0-9])[:]', teststr)
-# print(m)
-
-# [i, j] = m.span()
-
-# teststr[i]
-
-
-# verseStr = ''
-# for ii in range(i, 1, -1):
-#     if teststr[ii] in '0123456789-:':
-#         print(ii, teststr[ii])
-#         verseStr += teststr[ii]
-#     else:
-#         break
-# verseStr = verseStr[::-1]
-# for ii in range(i+1, len(teststr)):
-#     if teststr[ii] in '0123456789-:':
-#         print(ii, teststr[ii])
-#         verseStr += teststr[ii]
-#     else:
-#         break
-# print(verseStr)
 
 
 c2v_dict = {} # 1-to-1 dictionary
@@ -710,25 +670,12 @@ with open('x2code_dictionary.pkl', 'wb') as f:
 
 
 df.chapter = pd.to_numeric(df.chapter, errors='coerce')
-#df = df.sort_values(['preacher', 'bkno', 'chapter', 'verse', 'title'])
 df = df.sort_values(['title', 'date'])
 df = df.drop(columns='headerVerse') # throw away headerVerse column as it is not included in final df
 
 
-
-
-
-
-
-
 for index, row in df.iterrows():
     print(row['code'], row['preacher'], row['book'], row['chapter'], row['verse'], row['title'], row['date'])
-
-
-
-
-
-
 
 
 df.to_csv('./index_byn.csv', index=False)

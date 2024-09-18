@@ -228,9 +228,6 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
     return yr + '-' + mon + '-' + day
 
 
-# unixLsDatetime_to_datetime('Mar 30  2016 ')
-
-
 def retrieve_yfcy_date(inname):
     datestr = re.findall( r'[0-9][0-9][0-9][0-9][.-][0-9][0-9][.-][0-9][0-9]', inname)
     if not datestr: # check if datestr becomes an empty list
@@ -269,14 +266,6 @@ print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= da
 rdd1.take(10)
 
 
-# w0 = ['生命比生活更重要 (出埃及記13_21-22) - 余德淳博士']
-# w0 = ['知足與上進 (腓立比書4_11-13) - 余德淳博士']
-# w0 = ['(1)告別平庸 - 從《撒迦利亞書》的異象看神的心意 (撒迦利亞書1_7-17) - 溫偉耀博士']
-# w0 = [cleanse_punctuation('(1)告別平庸 - 從《撒迦利亞書》的異象看神的心意 (撒迦利亞書1_7-17) - 溫偉耀博士', ' ')]
-# w0 = ['當家人遇上抑鬱 (約翰一書5_4-5) - 余德淳博士']
-# list(set([i for i in book_list for j in w0 if i in j]))
-
-
 # data engineering work 1: one-to-many detection
 # ideally none are detected
 from operator import add
@@ -311,13 +300,6 @@ rdd2 = rdd1.map(
 
 print('w[0]= preacher ; w[1]= book; w[2]= youtube code ; w[3]= original name ; w[4]= date')
 rdd2.take(40)
-
-
-# def remove_preacher_title(preacher_with_title, title_list):
-#     for title in title_list:
-#         if title in preacher_with_title:
-#             x = preacher_with_title.find(title)
-#             return preacher_with_title[:x]
 
 
 # data engineering work 3: removing the initials of preacher
@@ -387,9 +369,6 @@ c2b_dict : 1-to-1 dictionary from youtube code to book
 b2c_dict : 1-to-N dictionary from book to [ list of youtube code ]'''
 
 
-# rdd2.take(10)
-
-
 rdd2.map(lambda w: (w[2], w[1])).take(3)
 
 
@@ -410,33 +389,6 @@ for (c, b) in rdd2.map(lambda w: (w[2], w[1])) \
 
 '''### verse : "v"
 c2v_dict : 1-to-1 dictionary from youtube code to chapter verse'''
-
-
-# teststr = '一次得救, 永遠得救 (希伯來書6:4-8) - 蘇穎睿牧師-7R7NYKsnIQo'
-
-# m = re.search(r'(?<=[0-9])[:]', teststr)
-# print(m)
-
-# [i, j] = m.span()
-
-# teststr[i]
-
-
-# verseStr = ''
-# for ii in range(i, 1, -1):
-#     if teststr[ii] in '0123456789-:':
-#         print(ii, teststr[ii])
-#         verseStr += teststr[ii]
-#     else:
-#         break
-# verseStr = verseStr[::-1]
-# for ii in range(i+1, len(teststr)):
-#     if teststr[ii] in '0123456789-:':
-#         print(ii, teststr[ii])
-#         verseStr += teststr[ii]
-#     else:
-#         break
-# print(verseStr)
 
 
 c2v_dict = {} # 1-to-1 dictionary
@@ -724,15 +676,8 @@ with open('x2code_dictionary.pkl', 'wb') as f:
 
 
 df.chapter = pd.to_numeric(df.chapter, errors='coerce')
-#df = df.sort_values(['preacher', 'bkno', 'chapter', 'verse', 'title'])
 df = df.sort_values(['date', 'title'])
 df = df.drop(columns='headerVerse') # throw away headerVerse column as it is not included in final df
-
-
-
-
-
-
 
 
 for index, row in df.iterrows():
@@ -742,12 +687,6 @@ for index, row in df.iterrows():
 
 for index, row in df.iterrows():
     print(row['code'], row['preacher'], row['book'], row['chapter'], row['verse'], row['title'], row['date'])
-
-
-
-
-
-
 
 
 df.to_csv('./index_byt.csv', index=False)
@@ -786,25 +725,12 @@ df = pd.DataFrame(
 
 
 df.chapter = pd.to_numeric(df.chapter, errors='coerce')
-#df = df.sort_values(['preacher', 'bkno', 'chapter', 'verse', 'title'])
 df = df.sort_values(['bkno', 'chapter', 'headerVerse', 'title']) # use headerVerse for verse-wise sorting
 df = df.drop(columns='headerVerse') # throw away headerVerse column as it is not included in final df
 
 
-
-
-
-
-
-
 for index, row in df.iterrows():
     print(row['code'], row['preacher'], row['book'], row['chapter'], row['verse'], row['title'], row['date'])
-
-
-
-
-
-
 
 
 df.to_csv('./index_byb.csv', index=False)

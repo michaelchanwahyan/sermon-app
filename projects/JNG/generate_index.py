@@ -227,9 +227,6 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
     return yr + '-' + mon + '-' + day
 
 
-# unixLsDatetime_to_datetime('Mar 30  2016 ')
-
-
 
 '''### Run By Your Host System if new audio files are included'''
 
@@ -255,14 +252,6 @@ rdd1 = rdd.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
 rdd1.take(10)
-
-
-# w0 = ['生命比生活更重要 (出埃及記13_21-22) - 余德淳博士']
-# w0 = ['知足與上進 (腓立比書4_11-13) - 余德淳博士']
-# w0 = ['(1)告別平庸 - 從《撒迦利亞書》的異象看神的心意 (撒迦利亞書1_7-17) - 溫偉耀博士']
-# w0 = [cleanse_punctuation('(1)告別平庸 - 從《撒迦利亞書》的異象看神的心意 (撒迦利亞書1_7-17) - 溫偉耀博士', ' ')]
-# w0 = ['當家人遇上抑鬱 (約翰一書5_4-5) - 余德淳博士']
-# list(set([i for i in book_list for j in w0 if i in j]))
 
 
 # data engineering work 1: one-to-many detection
@@ -369,9 +358,6 @@ c2b_dict : 1-to-1 dictionary from youtube code to book
 b2c_dict : 1-to-N dictionary from book to [ list of youtube code ]'''
 
 
-# rdd2.take(10)
-
-
 rdd2.map(lambda w: (w[2], w[1])).take(3)
 
 
@@ -389,39 +375,9 @@ for (c, b) in rdd2.map(lambda w: (w[2], w[1])) \
         b2c_dict[b] = [c]
 
 
-rdd2.take(10)
-
-
 
 '''### verse : "v"
 c2v_dict : 1-to-1 dictionary from youtube code to chapter verse'''
-
-
-# teststr = '一次得救, 永遠得救 (希伯來書6:4-8) - 蘇穎睿牧師-7R7NYKsnIQo'
-
-# m = re.search(r'(?<=[0-9])[:]', teststr)
-# print(m)
-
-# [i, j] = m.span()
-
-# teststr[i]
-
-
-# verseStr = ''
-# for ii in range(i, 1, -1):
-#     if teststr[ii] in '0123456789-:':
-#         print(ii, teststr[ii])
-#         verseStr += teststr[ii]
-#     else:
-#         break
-# verseStr = verseStr[::-1]
-# for ii in range(i+1, len(teststr)):
-#     if teststr[ii] in '0123456789-:':
-#         print(ii, teststr[ii])
-#         verseStr += teststr[ii]
-#     else:
-#         break
-# print(verseStr)
 
 
 c2v_dict = {} # 1-to-1 dictionary
@@ -706,50 +662,12 @@ with open('x2code_dictionary.pkl', 'wb') as f:
 
 
 df.chapter = pd.to_numeric(df.chapter, errors='coerce')
-#df = df.sort_values(['preacher', 'bkno', 'chapter', 'verse', 'title'])
 df = df.sort_values(['preacher', 'bkno', 'chapter', 'headerVerse', 'title']) # use headerVerse for verse-wise sorting
 df = df.drop(columns='headerVerse') # throw away headerVerse column as it is not included in final df
-# df.chapter = df.chapter
-# df.chapter = df.chapter.apply(str)
-
-
-# # generate
-# preacher 1
-#  --------------------------------
-# | Book  Ch:Vs  Theme  Date  Code
-# |--------------------------------
-# |  .
-# |  .
-# |  .
-# |
-#  --------------------------------
-#
-# preacher 2
-#  --------------------------------
-# | Book  Ch:Vs  Theme  Date  Code
-# |--------------------------------
-# |  .
-# |  .
-# |  .
-# |
-#  --------------------------------
-#
-
-
-
-
-
-
 
 
 for index, row in df.iterrows():
     print(row['code'], row['preacher'], row['book'], row['chapter'], row['verse'], row['title'], row['date'])
-
-
-
-
-
-
 
 
 df.to_csv('./index_byp.csv', index=False)
