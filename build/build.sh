@@ -236,7 +236,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh YOS     once
     fi
 elif [ "$1" == "ACSMHK" ] ; then
-    OUTFILENAME=sermon_$1
+    OUTFILENAME=sermon_$1_2022-24
     cd $1
     xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
