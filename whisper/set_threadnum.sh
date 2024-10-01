@@ -17,7 +17,7 @@ fi
 
 # check if input argument is number
 re='^[0-9]+$'
-if ! [[ $yournumber =~ $re ]] ; then
+if ! [[ $1 =~ $re ]] ; then
    echo "Error: input argument is not a number !" >&2; exit 1
 fi
 
