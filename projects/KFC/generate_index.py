@@ -292,7 +292,7 @@ for lines in fsdate_lines:
 #     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
 #     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
 #     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
-rdd_chi1 = rdd_chi.map(lambda w: (cleanse_punctuation(w, ' '), w[-16:-5], w)) \
+rdd_chi1 = rdd_chi.map(lambda w: (cleanse_punctuation(w[:-18].strip(), ' '), w[-16:-5], w[:-18])) \
     .map(lambda w: (w[0].split(' '), w[1], w[2], cc2dt.get(w[1]))) \
     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[2], w[3]))
 
@@ -306,7 +306,7 @@ for _ in rdd_chi1.take(10):
 #     .map(lambda w: (w[0], w[1], w[0], w[2])) \
 #     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
 #     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
-rdd_eng1 = rdd_eng.map(lambda w: (w.strip(), w[-16:-5], w)) \
+rdd_eng1 = rdd_eng.map(lambda w: (w[:-18].strip(), w[-16:-5], w[:-18])) \
     .map(lambda w: (w[0].split(' '), w[1], w[2], cc2dt.get(w[1]))) \
     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[2], w[3]))
 
