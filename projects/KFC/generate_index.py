@@ -250,12 +250,13 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
 '''
 cd ~/TPPHC/SERMON/KFC/
 
-ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}' > ~/SOURCE/sermon-app/projects/KFC/lslogt.txt
+ls > ~/SOURCE/sermon-app/projects/KFC/ls.txt
 '''
 
 
 # from full catalog file obtain required info
-rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w)
+# rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w)
+rdd = sc.textFile('ls.txt')
 
 
 for _ in rdd.take(3):
@@ -277,10 +278,23 @@ for _ in rdd_eng.take(3):
     print(_)
 
 
-rdd_chi1 = rdd_chi.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
-    .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
-    .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
-    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
+# read youtube code to fsdate library
+with open('../sermon_fs_date_record.txt', 'r') as fp:
+    fsdate_lines = [ _.strip() for _ in fp.readlines() ]
+fp.close()
+cc2dt = {}
+for lines in fsdate_lines:
+    res = lines.split(' ')
+    cc2dt[res[1]] = res[0]
+
+
+# rdd_chi1 = rdd_chi.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
+#     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
+#     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
+#     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
+rdd_chi1 = rdd_chi.map(lambda w: (cleanse_punctuation(w[:-18].strip(), ' '), w[-16:-5], w[:-18])) \
+    .map(lambda w: (w[0].split(' '), w[1], w[2], cc2dt.get(w[1]))) \
+    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[2], w[3]))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
@@ -288,10 +302,13 @@ for _ in rdd_chi1.take(10):
     print(_)
 
 
-rdd_eng1 = rdd_eng.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
-    .map(lambda w: (w[0], w[1], w[0], w[2])) \
-    .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
-    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
+# rdd_eng1 = rdd_eng.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
+#     .map(lambda w: (w[0], w[1], w[0], w[2])) \
+#     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
+#     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
+rdd_eng1 = rdd_eng.map(lambda w: (w[:-18].strip(), w[-16:-5], w[:-18])) \
+    .map(lambda w: (w[0].split(' '), w[1], w[2], cc2dt.get(w[1]))) \
+    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[2], w[3]))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
