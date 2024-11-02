@@ -3,7 +3,7 @@ set +x
 pushd ../projects
   echo create ls.txt or lslogt.txt for each project
   # projects that require lslogt.txt
-  for PROJECT_NAME in ACSMHK CBI CGST FVC JNG KFC PORCH STBC WWBS YOS
+  for PROJECT_NAME in ACSMHK CBI CGST FVC JNG PORCH STBC WWBS YOS
   do
     pushd ./$PROJECT_NAME
       ORI_DIR=$(pwd)
@@ -13,7 +13,7 @@ pushd ../projects
     popd # back to ./app/projects
   done
   # projects that require ls.txt
-  for PROJECT_NAME in FLWC GFC VINE YFCX
+  for PROJECT_NAME in FLWC GFC KFC VINE YFCX
   do
     pushd ./$PROJECT_NAME
       ORI_DIR=$(pwd)
