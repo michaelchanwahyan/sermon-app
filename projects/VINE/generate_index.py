@@ -246,16 +246,22 @@ ls *.mp3 > ~/SOURCE/sermon-app/projects/VINE/ls.txt
 '''
 
 
-# from full catalog file obtain required info
-rdd = sc.textFile('ls.txt') \
-    .map(lambda w: w if w[-16] != '-' else w[:-16]+' ['+w[-15:-4]+'].mp3')
-# due to historical reason, JNG sermon file name contains 2 format:
-# <name>-ytcode.mp3 and <name> [ytcode].mp3
+# read youtube code to fsdate library
+with open('../sermon_fs_date_record.txt', 'r') as fp:
+    fsdate_lines = [ _.strip() for _ in fp.readlines() ]
+fp.close()
+cc2dt = {}
+for lines in fsdate_lines:
+    res = lines.split(' ')
+    cc2dt[res[1]] = res[0]
 
+
+# from full catalog file obtain required info
+rdd = sc.textFile('ls.txt')
 rdd1 = rdd.map(lambda w: (w, w[-16:-5], w[:10])) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
-    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], w[-1]))
+    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2][:-18], cc2dt[w[1]]))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
@@ -540,9 +546,9 @@ number of sermons by each preacher'''
 
 
 
-rdd_time = rdd.map(lambda w: w[:10]) \
-   .map(lambda w: [int(_) for _ in w.split('-')]) \
-   .map(lambda w: w[0]*365 + w[1]*30 + w[2])
+rdd_time = rdd1.map(lambda w: cc2dt[w[1]]) \
+    .map(lambda w: [ int(_) for _ in w.split('-') ]) \
+    .map(lambda w: w[0]*365 + w[1]*30 + w[2])
 
 
 t_ = sorted(rdd_time.collect())
