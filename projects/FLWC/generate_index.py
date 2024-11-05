@@ -260,7 +260,7 @@ rdd = sc.textFile('ls.txt')
 rdd1 = rdd.map(lambda w: w.replace('｜', '｜').replace('︱', '｜').replace('|','｜'))\
     .map(lambda w: (w[:-4], w[:-18].strip(), w[-16:-5])) \
     .map(lambda w: (w[0], cleanse_punctuation(w[1], '｜'), w[2])) \
-    .map(lambda w: ([ _.strip() for _ in w[1].split('｜') ], w[2], w[0], datesearch(w[0])))
+    .map(lambda w: ([ _.strip() for _ in w[1].split('｜') ], w[2], w[0][:-14], datesearch(w[0])))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
