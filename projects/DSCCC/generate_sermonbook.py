@@ -175,6 +175,7 @@ with open(sermon_tex_filepath, "a") as fp:
             dt_ += sermondt[6]
         dt_ += sermondt[7] + '日'
         toc_tex_str += dt_ + " & "
+        print(preacher)
         toc_tex_str += cleanse_special_char(preacher) + " & "
         toc_tex_str += bv + " & "
         toc_tex_str += "\hyperref[sec:"+str(index)+"]{"+cleanse_special_char(titlestr)+"} \\\\\n"
