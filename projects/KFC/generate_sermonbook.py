@@ -166,7 +166,6 @@ with open(sermon_tex_filepath, "a") as fp:
             bstr = c2b_dict.get(cc, ' ')
             vstr = c2v_dict.get(cc, ' ')
             sstr = c2s_dict.get(cc, ' ')
-            sstr = yfcx_sermon_title_processing(cc)
             tstr = c2t_dict.get(cc, ' ')
             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
