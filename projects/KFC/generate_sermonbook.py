@@ -162,17 +162,16 @@ with open(sermon_tex_filepath, "a") as fp:
         # --------------------------------------
         if os.path.isfile(f'../../data/KFC/{cc}.txt'):
             sermonCnt += 1
-            pstr = c2p_dict.get(cc, ' ')
             bstr = c2b_dict.get(cc, ' ')
             vstr = c2v_dict.get(cc, ' ')
-            sstr = c2s_dict.get(cc, ' ')
+            sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
             tstr = c2t_dict.get(cc, ' ')
             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
-                    + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
-                    + tstr + " & " \
-                    + ystr \
-                    + " \\\\\n")
+                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                     + tstr + " & " \
+                     + ystr \
+                     + " \\\\\n")
     fp.write("\\end{xltabular}\n")
     # --------------------------------------
     # end of table sorted by scriptual order
