@@ -8,6 +8,7 @@ texts from audio sources are generated from raw recording using speech-to-text e
 the outcome of this repo compiled from generate LaTeX source are listed below
 | sermon book series                                                           | file path in this repo                    | link                                                                                                             |
 |------------------------------------------------------------------------------|-------------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| 建道神學院加拿大建道中心 Alliance Bible Seminary Centre of Canada            |                                           |                                                                                                                  |
 | 宣道傳意 講道講章 Alliance Communications Ministry                           | ./pdf/sermon_ACSMHK_2022-24.pdf           | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_ACSMHK_2022-24.pdf)                 |
 | 漢語聖經協會 講道講章 Chinese Bible International                            | ./pdf/sermon_CBI.pdf                      | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_CBI.pdf)                            |
 | 中國神學研究院 道講章 China Graduate School of Theology                      | ./pdf/sermon_CGST.pdf                     | [link](https://github.com/michaelchanwahyan/sermon-app/raw/master/pdf/sermon_CGST.pdf)                           |
@@ -34,6 +35,7 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 ### Statistics Overview on this project
 sermon source | transcript total count | recent development activity
 ----|----|----
+ABSCC |  |
 ACSMHK | 9.2% ( 1065 / 11581) | 18.6% ( 567 / 3051)
 CBI | 0.3% ( 35 / 11581) | 1.8% ( 55 / 3051)
 CGST | 1.9% ( 222 / 11581) | 1.1% ( 33 / 3051)
@@ -147,7 +149,9 @@ as from 2023 [OpenAI/whisper model](https://github.com/openai/whisper) became av
 
 also thanks to [ggerganov/whisper.cpp](https://github.com/ggerganov/whisper.cpp) who contributes on cpp porting for Apple Silicon integration, whisper runs very fast now.
 
-currently whisper model size used is medium.  ggerganov's [ggml-medium.bin](https://huggingface.co/ggerganov/whisper.cpp/blob/main/ggml-medium.bin) model file together with other sizes could be found from [ggerganov's HaggingFace page](https://huggingface.co/ggerganov/whisper.cpp/tree/main).
+currently whisper model size used is large.  ggerganov's [ggml-large.bin, later renamed to ggml-large-v1.bin](https://huggingface.co/ggerganov/whisper.cpp/blob/main/ggml-large-v1.bin) model file together with other sizes could be found from [ggerganov's HaggingFace page](https://huggingface.co/ggerganov/whisper.cpp/tree/main).
+
+In case transcription runs into error or totally incorrect text output, medium version of the model [ggml-medium.bin](https://huggingface.co/ggerganov/whisper.cpp/blob/main/ggml-medium.bin) could be considered to use.
 
 ### 5. Compile the sermon texts into a single book source (by host/container)
 

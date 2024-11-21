@@ -83,7 +83,7 @@ progressStepCnt += 1
 print(f"Step {progressStepCnt}: writing TOC in chronic order")
 with open(sermon_tex_filepath, "a") as fp:
     sermonCnt = 0
-    fp.write("\\section{Index\\small{(chronic)}}\n")
+    fp.write("\\section{目錄\\small{(順時)}}\n")
     fp.write("\\label{sec:index_chronic}\n")
     fp.write("{ \\scriptsize\n")
     # --------------------------------------
@@ -123,12 +123,78 @@ fp.close()
 
 
 
+'''## generate index table in scriptual order'''
+
+
+# --------------------------------------
+# read the index table and only take
+# into account within desired year range
+# --------------------------------------
+progressStepCnt += 1
+print(f"Step {progressStepCnt}: reading in full index file")
+with open('./index_byb.csv', 'r') as fp:
+    lines = fp.readlines()
+fp.close()
+
+# --------------------------------------
+# index table sorted by scriptual order
+# --------------------------------------
+progressStepCnt += 1
+print(f"Step {progressStepCnt}: writing TOC in scriptual order")
+with open(sermon_tex_filepath, "a") as fp:
+    sermonCnt = 0
+    fp.write("\\section{目錄\\small{(順卷)}}\n")
+    fp.write("\\label{sec:index_scriptual}\n")
+    fp.write("{ \\scriptsize\n")
+    # --------------------------------------
+    # start of TOC table
+    # --------------------------------------
+    fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
+    fp.write("\\hline\n")
+    # --------------------------------------
+    # lines is the line content in index_byb
+    # --------------------------------------
+    for lineId, line in enumerate(lines):
+        cc = line.split(",")[0]
+        # --------------------------------------
+        # only include this code cc if it is
+        # ready in the transcription folder
+        # --------------------------------------
+        if os.path.isfile(f'../../data/KFC/{cc}.txt'):
+            sermonCnt += 1
+            bstr = c2b_dict.get(cc, ' ')
+            vstr = c2v_dict.get(cc, ' ')
+            sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
+            tstr = c2t_dict.get(cc, ' ')
+            ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+            fp.write(bstr + ' ' + vstr + " & " \
+                     + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                     + tstr + " & " \
+                     + ystr \
+                     + " \\\\\n")
+    fp.write("\\end{xltabular}\n")
+    # --------------------------------------
+    # end of table sorted by scriptual order
+    # --------------------------------------
+    fp.write("}\n")
+    print('sermon count in current book: %d' % sermonCnt)
+    fp.write("\\newpage\n\n")
+fp.close()
+
+
+
 '''## generate main content'''
 
+
+# --------------------------------------
+# re-reading it index table sorted by
+# chronic order
+# --------------------------------------
 
 with open("./index_byt.csv", "r") as fp:
     lines = fp.readlines()
 fp.close()
+
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: generate main content")
 cc_prev = ''
@@ -161,7 +227,9 @@ for lineId, line in enumerate(lines):
             fp.write("\\newline\n\\newline\n")
             fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{\\small{< < < PREV SERMON < < <}}\n")
             fp.write("~\n")
-            fp.write("\\hyperref[sec:index_chronic]{\\small{[back to index]}}\n")
+            fp.write("\\hyperref[sec:index_chronic]{\\small{[返順時目]}}\n")
+            fp.write("~\n")
+            fp.write("\\hyperref[sec:index_scriptual]{\\small{[返順卷目]}}\n")
             fp.write("~\n")
             fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{\\small{> > > NEXT SERMON > > >}}\n")
             fp.write("\\newline\n\\newline\n")
@@ -178,7 +246,7 @@ for lineId, line in enumerate(lines):
                 fp.write("\\newline\n")
                 fp.write("\\begin{longtable}{cl}\n")
                 fp.write("\\hline\n\\hline\n")
-                fp.write("verse & scripture (version)\\\\\n")
+                fp.write("章節 & 經文 (和合本修訂版)\\\\\n")
                 fp.write("\\hline\n")
                 for bvc_line in bvc_curr[1:]:
                     bvc_line = bvc_line.strip()
