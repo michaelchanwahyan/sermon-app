@@ -201,6 +201,10 @@ if   [ "$1" == "genall" ] ; then
     cd ../build
 elif [ "$1" == "buildall" ] ; then
     if [ "$2" != "once" ] ; then
+    echo
+    echo sermon TeX build once takes roughly 12 - 15 minutes ...
+    echo
+    sleep 10
     ./build.sh ACSMHK
     ./build.sh CBI
     ./build.sh CGST
@@ -218,6 +222,10 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh YFCX
     ./build.sh YOS
     else
+    echo
+    echo sermon TeX build twice takes roughly 25 - 30 minutes ...
+    echo
+    sleep 10
     ./build.sh ACSMHK  once
     ./build.sh CBI     once
     ./build.sh CGST    once
