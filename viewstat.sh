@@ -39,25 +39,25 @@ echo sermon count in YFCX    : $FN_YFCX    / $FN_TOTAL \( $(printf "%.1f" $((10*
 echo sermon count in YOS     : $FN_YOS     / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_YOS     / FN_TOTAL))e-2)% \)
 
 echo
-echo DEVELOPMENT ACTIVE STATISTICS:
+echo COUNT RECENT DEVELOPMENT ACTIVE STATISTICS:
 OU=$(git --no-pager log --oneline --since=$(date -v-90d '+%Y-%m-%d') --pretty=format:"%h") # gather the git hash within the past 90 day period
-echo ABSCC ...    ; CHNG_CNT_ABSCC=$(  git --no-pager show --name-only --oneline $OU | grep ABSCC   | wc -l) # for each hash count the file updates in specified sermon source
-echo ACSMHK ...   ; CHNG_CNT_ACSMHK=$( git --no-pager show --name-only --oneline $OU | grep ACSMHK  | wc -l) # for each hash count the file updates in specified sermon source
-echo CBI ...      ; CHNG_CNT_CBI=$(    git --no-pager show --name-only --oneline $OU | grep CBI     | wc -l) # for each hash count the file updates in specified sermon source
-echo CGST ...     ; CHNG_CNT_CGST=$(   git --no-pager show --name-only --oneline $OU | grep CGST    | wc -l) # for each hash count the file updates in specified sermon source
-echo DSCCC ...    ; CHNG_CNT_DSCCC=$(  git --no-pager show --name-only --oneline $OU | grep DSCCC   | wc -l) # for each hash count the file updates in specified sermon source
-echo FLWC ...     ; CHNG_CNT_FLWC=$(   git --no-pager show --name-only --oneline $OU | grep FLWC    | wc -l) # for each hash count the file updates in specified sermon source
-echo FVC ...      ; CHNG_CNT_FVC=$(    git --no-pager show --name-only --oneline $OU | grep FVC     | wc -l) # for each hash count the file updates in specified sermon source
-echo GFC ...      ; CHNG_CNT_GFC=$(    git --no-pager show --name-only --oneline $OU | grep GFC     | wc -l) # for each hash count the file updates in specified sermon source
-echo HKBC ...     ; CHNG_CNT_HKBC=$(   git --no-pager show --name-only --oneline $OU | grep HKBC    | wc -l) # for each hash count the file updates in specified sermon source
-echo JNG ...      ; CHNG_CNT_JNG=$(    git --no-pager show --name-only --oneline $OU | grep JNG     | wc -l) # for each hash count the file updates in specified sermon source
-echo KFC ...      ; CHNG_CNT_KFC=$(    git --no-pager show --name-only --oneline $OU | grep KFC     | wc -l) # for each hash count the file updates in specified sermon source
-echo PORCH ...    ; CHNG_CNT_PORCH=$(  git --no-pager show --name-only --oneline $OU | grep PORCH   | wc -l) # for each hash count the file updates in specified sermon source
-echo STBC ...     ; CHNG_CNT_STBC=$(   git --no-pager show --name-only --oneline $OU | grep STBC    | wc -l) # for each hash count the file updates in specified sermon source
-echo VINE ...     ; CHNG_CNT_VINE=$(   git --no-pager show --name-only --oneline $OU | grep VINE    | wc -l) # for each hash count the file updates in specified sermon source
-echo WWBS ...     ; CHNG_CNT_WWBS=$(   git --no-pager show --name-only --oneline $OU | grep WWBS    | wc -l) # for each hash count the file updates in specified sermon source
-echo YFCX ...     ; CHNG_CNT_YFCX=$(   git --no-pager show --name-only --oneline $OU | grep YFCX    | wc -l) # for each hash count the file updates in specified sermon source
-echo YOS ...      ; CHNG_CNT_YOS=$(    git --no-pager show --name-only --oneline $OU | grep YOS     | wc -l) # for each hash count the file updates in specified sermon source
+echo on ABSCC ...    ; CHNG_CNT_ABSCC=$(  git --no-pager show --name-only --oneline $OU | grep ABSCC   | wc -l) # for each hash count the file updates in specified sermon source
+echo on ACSMHK ...   ; CHNG_CNT_ACSMHK=$( git --no-pager show --name-only --oneline $OU | grep ACSMHK  | wc -l) # for each hash count the file updates in specified sermon source
+echo on CBI ...      ; CHNG_CNT_CBI=$(    git --no-pager show --name-only --oneline $OU | grep CBI     | wc -l) # for each hash count the file updates in specified sermon source
+echo on CGST ...     ; CHNG_CNT_CGST=$(   git --no-pager show --name-only --oneline $OU | grep CGST    | wc -l) # for each hash count the file updates in specified sermon source
+echo on DSCCC ...    ; CHNG_CNT_DSCCC=$(  git --no-pager show --name-only --oneline $OU | grep DSCCC   | wc -l) # for each hash count the file updates in specified sermon source
+echo on FLWC ...     ; CHNG_CNT_FLWC=$(   git --no-pager show --name-only --oneline $OU | grep FLWC    | wc -l) # for each hash count the file updates in specified sermon source
+echo on FVC ...      ; CHNG_CNT_FVC=$(    git --no-pager show --name-only --oneline $OU | grep FVC     | wc -l) # for each hash count the file updates in specified sermon source
+echo on GFC ...      ; CHNG_CNT_GFC=$(    git --no-pager show --name-only --oneline $OU | grep GFC     | wc -l) # for each hash count the file updates in specified sermon source
+echo on HKBC ...     ; CHNG_CNT_HKBC=$(   git --no-pager show --name-only --oneline $OU | grep HKBC    | wc -l) # for each hash count the file updates in specified sermon source
+echo on JNG ...      ; CHNG_CNT_JNG=$(    git --no-pager show --name-only --oneline $OU | grep JNG     | wc -l) # for each hash count the file updates in specified sermon source
+echo on KFC ...      ; CHNG_CNT_KFC=$(    git --no-pager show --name-only --oneline $OU | grep KFC     | wc -l) # for each hash count the file updates in specified sermon source
+echo on PORCH ...    ; CHNG_CNT_PORCH=$(  git --no-pager show --name-only --oneline $OU | grep PORCH   | wc -l) # for each hash count the file updates in specified sermon source
+echo on STBC ...     ; CHNG_CNT_STBC=$(   git --no-pager show --name-only --oneline $OU | grep STBC    | wc -l) # for each hash count the file updates in specified sermon source
+echo on VINE ...     ; CHNG_CNT_VINE=$(   git --no-pager show --name-only --oneline $OU | grep VINE    | wc -l) # for each hash count the file updates in specified sermon source
+echo on WWBS ...     ; CHNG_CNT_WWBS=$(   git --no-pager show --name-only --oneline $OU | grep WWBS    | wc -l) # for each hash count the file updates in specified sermon source
+echo on YFCX ...     ; CHNG_CNT_YFCX=$(   git --no-pager show --name-only --oneline $OU | grep YFCX    | wc -l) # for each hash count the file updates in specified sermon source
+echo on YOS ...      ; CHNG_CNT_YOS=$(    git --no-pager show --name-only --oneline $OU | grep YOS     | wc -l) # for each hash count the file updates in specified sermon source
 CHNG_CNT_TOTAL=$(echo $CHNG_CNT_ABSCC + $CHNG_CNT_ACSMHK + $CHNG_CNT_CBI + $CHNG_CNT_CGST + $CHNG_CNT_DSCCC + $CHNG_CNT_FLWC + $CHNG_CNT_FVC + $CHNG_CNT_GFC + $CHNG_CNT_HKBC + $CHNG_CNT_JNG + $CHNG_CNT_KFC + $CHNG_CNT_PORCH + $CHNG_CNT_STBC + $CHNG_CNT_VINE + $CHNG_CNT_WWBS + $CHNG_CNT_YFCX + $CHNG_CNT_YOS | bc)
 
 echo activeness on ABSCC   : $CHNG_CNT_ABSCC   / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_ABSCC   / CHNG_CNT_TOTAL))e-2)% \)
