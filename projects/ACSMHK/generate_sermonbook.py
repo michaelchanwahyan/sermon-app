@@ -136,9 +136,18 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # yyyy_start : starting year, e.g. 2012
     # yyyy_end.  : ending year, e.g. 2018
     progressStepCnt = 0
+    sermon_tex_filepath = f"../../build/ACSMHK/sermon_ACSMHK_{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
     # --------------------------------------
-    # read the index table and only take
-    # into account within desired year range
+    # print the latex document : prefix
+    # --------------------------------------
+    progressStepCnt += 1
+    print(f"Step {progressStepCnt}: printing out prefixing")
+    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/宣道傳意及出版事工 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel:  Alliance Communications Ministry/' > " + sermon_tex_filepath)
+
+    # --------------------------------------
+    # index table sorted by name order
+    # only take into account
+    # within desired year range
     # --------------------------------------
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: reading in full index file")
@@ -152,26 +161,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                          [yyyy_start,yyyy_end]
                      )
             ]
-    sermon_tex_filepath = f"../../build/ACSMHK/sermon_ACSMHK_{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
-    # --------------------------------------
-    # print the latex document : prefix
-    # --------------------------------------
-    progressStepCnt += 1
-    print(f"Step {progressStepCnt}: printing out prefixing")
-    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/宣道傳意及出版事工 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel:  Alliance Communications Ministry/' > " + sermon_tex_filepath)
 
-    # --------------------------------------
-    # index table partitioned by titles
-    # --------------------------------------
-
-    progressStepCnt += 1
-    print(f"Step {progressStepCnt}: generate index in name order")
-    with open("./index_byn.csv", "r") as fp:
-        lines = fp.readlines()
-    fp.close()
-    # --------------------------------------
-    # index table sorted by name order
-    # --------------------------------------
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: writing TOC in chronic order")
     with open(sermon_tex_filepath, "a") as fp:
@@ -209,17 +199,23 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                          + ystr \
                          + " \\\\\n")
         fp.write("\\end{xltabular}\n")
-        # --------------------------------------
-        # end of table sorted by name order
-        # --------------------------------------
         fp.write("}\n")
-        print('sermon count in current book: %d' % sermonCnt)
         fp.write("\\newpage\n\n")
     fp.close()
+    # --------------------------------------
+    # end of table sorted by name order
+    # --------------------------------------
 
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: generate index in scriptual order")
-    with open("./index_byp.csv", "r") as fp:
+    # --------------------------------------
+    # index table sorted by book order
+    # only take into account
+    # within desired year range
+    # --------------------------------------
+    progressStepCnt += 1
+    print(f"Step {progressStepCnt}: reading in full index file")
+    with open('./index_byb.csv', 'r') as fp:
         lines = fp.readlines()
     fp.close()
     lines = [ line \
@@ -230,9 +226,6 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                      )
             ]
 
-    # --------------------------------------
-    # index table sorted by preacher order
-    # --------------------------------------
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: writing TOC in scriptual order")
     with open(sermon_tex_filepath, "a") as fp:
@@ -271,17 +264,32 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                          + ystr \
                          + " \\\\\n")
         fp.write("\\end{xltabular}\n")
-        # --------------------------------------
-        # end of table sorted by preacher order
-        # --------------------------------------
         fp.write("}\n")
         print('sermon count in current book: %d' % sermonCnt)
         fp.write("\\newpage\n\n")
     fp.close()
+    # --------------------------------------
+    # end of table sorted by book order
+    # --------------------------------------
 
     # --------------------------------------
-    # index table sorted by scriptual order
+    # index table sorted by preacher order
+    # only take into account
+    # within desired year range
     # --------------------------------------
+    progressStepCnt += 1
+    print(f"Step {progressStepCnt}: reading in full index file")
+    with open('./index_byp.csv', 'r') as fp:
+        lines = fp.readlines()
+    fp.close()
+    lines = [ line \
+                 for line in lines \
+                     if check_in_year_range(
+                         line.split(',')[-1],
+                         [yyyy_start,yyyy_end]
+                     )
+            ]
+
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: writing TOC in scriptual order")
     with open(sermon_tex_filepath, "a") as fp:
@@ -320,19 +328,18 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                          + ystr \
                          + " \\\\\n")
         fp.write("\\end{xltabular}\n")
-        # --------------------------------------
-        # end of table sorted by scriptual order
-        # --------------------------------------
         fp.write("}\n")
         print('sermon count in current book: %d' % sermonCnt)
         fp.write("\\newpage\n\n")
     fp.close()
+    # --------------------------------------
+    # end of table sorted by preacher order
+    # --------------------------------------
 
     # --------------------------------------
     # re-reading it index table sorted by
     # name order
     # --------------------------------------
-
     with open("./index_byn.csv", "r") as fp:
         lines = fp.readlines()
     fp.close()
