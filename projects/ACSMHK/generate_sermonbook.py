@@ -215,7 +215,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # --------------------------------------
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: reading in full index file")
-    with open('./index_byb.csv', 'r') as fp:
+    with open('./index_byp.csv', 'r') as fp:
         lines = fp.readlines()
     fp.close()
     lines = [ line \
@@ -279,7 +279,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # --------------------------------------
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: reading in full index file")
-    with open('./index_byp.csv', 'r') as fp:
+    with open('./index_byb.csv', 'r') as fp:
         lines = fp.readlines()
     fp.close()
     lines = [ line \
