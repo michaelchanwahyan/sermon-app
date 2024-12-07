@@ -227,7 +227,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
             ]
 
     progressStepCnt += 1
-    print(f"Step {progressStepCnt}: writing TOC in scriptual order")
+    print(f"Step {progressStepCnt}: writing TOC in preacher order")
     with open(sermon_tex_filepath, "a") as fp:
         sermonCnt = 0
         fp.write("\\section{目錄\\small{(順仕)}}\n")
