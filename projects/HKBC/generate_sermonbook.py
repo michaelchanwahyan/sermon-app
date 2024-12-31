@@ -426,7 +426,7 @@ sermon_tex_from_generation(confno_start, confno_end)
 
 
 confno_start = 81
-confno_end = 95
+confno_end = 96
 sermon_tex_from_generation(confno_start, confno_end)
 
 
