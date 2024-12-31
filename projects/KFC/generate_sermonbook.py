@@ -33,6 +33,29 @@ fp.close()
 '''### print the latex document : sermon content'''
 
 
+with open('../rep_common.txt', 'r') as fp:
+    rep_list = [ _.strip() for _ in fp.readlines() ]
+fp.close()
+rep_list = [ _.split(", '", 1) for _ in rep_list ]
+rep_list = [ [_[0], _[1][:-1]] for _ in rep_list ]
+
+
+# compile regular expression rgx to cater math symbol '^'
+rgx = re.compile(r'([A-Za-z0-9=+\-]+)\^([A-Za-z0-9=+\-]+)')
+print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^-2\')" :', rgx.sub(r'$\1^\2$', 'E=MC^-2'))
+
+
+def cleanse_special_char(inputText):
+    txt2 = inputText
+    txt2 = txt2.replace('$','\$') # preserve this here since its higher priority than in html arguments
+    txt2 = rgx.sub(r'$\1^\2$', txt2)
+    for rep_ in rep_list:
+        txt2 = txt2.replace(rep_[0], rep_[1])
+    txt2 = txt2.replace('&', ' and ') # preserve this here since its lower priority than in html arguments
+    txt2 = txt2.strip()
+    return txt2
+
+
 with open('../rep_whisper_trailing.txt', 'r') as fp:
     whisper_trailing_rep_list = fp.readlines()
 fp.close()
@@ -104,7 +127,9 @@ with open(sermon_tex_filepath, "a") as fp:
             sermonCnt += 1
             bstr = c2b_dict.get(cc, ' ')
             vstr = c2v_dict.get(cc, ' ')
-            sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
+            sstr = cleanse_special_char(
+                c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
+            )
             tstr = c2t_dict.get(cc, ' ')
             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
@@ -164,7 +189,9 @@ with open(sermon_tex_filepath, "a") as fp:
             sermonCnt += 1
             bstr = c2b_dict.get(cc, ' ')
             vstr = c2v_dict.get(cc, ' ')
-            sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
+            sstr = cleanse_special_char(
+                c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
+            )
             tstr = c2t_dict.get(cc, ' ')
             ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
@@ -220,7 +247,9 @@ for lineId, line in enumerate(lines):
             sectionNameStr += ' ' + ch if b is not None and ch is not None and v is None else ''
             fp.write("\n\n\\section{"+sectionNameStr+"}\n")
             fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
-            sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
+            sstr = cleanse_special_char(
+                c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
+            )
             fp.write("\\textbf{"+sstr+"}\n")
             fp.write("\\newline\n\\newline\n")
             fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ recording date: " + c2t_dict.get(cc) + " \n")
@@ -269,7 +298,9 @@ for lineId, line in enumerate(lines):
             # ----------------------
             # add the sermon part
             with open("../../data/KFC/"+cc+".txt", "r") as fp_:
-                the_sermon_text = fp_.read()
+                the_sermon_text = cleanse_special_char(
+                    fp_.read()
+                )
             fp_.close()
             the_sermon_text = the_sermon_text.replace("\\n\\n","\\n")
             textlines = the_sermon_text.split("\n")
