@@ -334,9 +334,6 @@ for lineId, line in enumerate(lines):
                 _textrow_cnt += 1
                 if _textrow_cnt % 40 == 1:
                     fp.write("$^{%d}$" % _textrow_cnt)
-                # if the text line contains dollar sign '$',
-                # it would probably bring up error
-                textline = textline.replace('_','\_').replace('&','\&').replace('#','\#') #.replace('$', '\$')
                 fp.write(textline + "\n")
                 if _textrow_cnt % 40 == 0:
                     fp.write("\n")
