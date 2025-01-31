@@ -52,8 +52,8 @@ for PROJECT in PROJECT_LIST:
             cmdstr = f'scp -p {proj_mp3_dir}*{ytcode}*.mp3 {transcription_server_ip}:{proj_mp3_dir}'
             print(cmdstr)
             transfer_script_str += cmdstr + '\n'
-if len(transfer_script_str):
-    with open('transfer.sh', 'w') as fp:
-        fp.write(transfer_script_str)
-    fp.close()
+
+with open('transfer.sh', 'w') as fp:
+    fp.write(transfer_script_str)
+fp.close()
 
