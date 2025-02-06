@@ -186,7 +186,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # --------------------------------------
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: printing out prefixing")
-    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel: JohnsonNg/' > " + sermon_tex_filepath)
+    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/J. Ng 頻道輯錄 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel: JohnsonNg/' > " + sermon_tex_filepath)
 
     # --------------------------------------
     # index table partitioned by preachers

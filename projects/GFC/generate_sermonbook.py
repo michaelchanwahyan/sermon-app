@@ -113,7 +113,7 @@ sermon_tex_filepath = f"../../build/GFC/sermon_GFC_2020-present.tex"
 # --------------------------------------
 progressStepCnt += 1
 print(f"Step {progressStepCnt}: printing out prefixing")
-_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/粵語講道逐字稿 2020-present/' | sed 's/Youtube Channel:/Youtube Channel: 宣道會洪恩堂 Graceflow Church/' > " + sermon_tex_filepath)
+_ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/宣道會洪恩堂 粵語講道逐字稿 2020-present/' | sed 's/Youtube Channel:/Youtube Channel: Graceflow Church/' > " + sermon_tex_filepath)
 
 
 
