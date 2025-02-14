@@ -302,7 +302,6 @@ def sermon_tex():
 '''## generate main content'''
 
 
-
 sermon_tex()
 
 
