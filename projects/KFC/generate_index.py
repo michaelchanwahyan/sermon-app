@@ -712,13 +712,56 @@ c2p_dict
 
 
 
+print('chinese title datetime glance:')
+rdd_chi_time_raw = rdd_chi2.map(lambda w: [w[2], w[4]])
+C2DT_RAW_CHI = rdd_chi_time_raw.collect() # C2DT : code to date-time
+
+
+for C2DT_curr in C2DT_RAW_CHI:
+    # print(C2DT_curr)
+    if C2DT_curr[1] is None:
+        print(f'abnormal datetime ! code = {C2DT_curr[0]} and dt is NONE !')
+        print('suggest to check if record is missed from sermon_fs_datetime.txt')
+    elif len(C2DT_curr[1]) != 10:
+        print(f'abnormal datetime char num ! code = {C2DT_curr[0]} and dt is: {C2DT_curr[1]}')
+        print('suggest to check if record is wrong in sermon_fs_datetime.txt')
+
+
 rdd_chi_time = rdd_chi2.map(lambda w: w[4]) \
    .map(lambda w: [int(_) for _ in w.split('-')]) \
    .map(lambda w: w[0]*365 + w[1]*30 + w[2])
 
+
+
+
+
+
+
+
+print('english title datetime glance:')
+rdd_eng_time_raw = rdd_eng2.map(lambda w: [w[2], w[4]])
+C2DT_RAW_ENG = rdd_eng_time_raw.collect() # C2DT : code to date-time
+
+
+for C2DT_curr in C2DT_RAW_ENG:
+    # print(C2DT_curr)
+    if C2DT_curr[1] is None:
+        print(f'abnormal datetime ! code = {C2DT_curr[0]} and dt is NONE !')
+        print('suggest to check if record is missed from sermon_fs_datetime.txt')
+    elif len(C2DT_curr[1]) != 10:
+        print(f'abnormal datetime char num ! code = {C2DT_curr[0]} and dt is: {C2DT_curr[1]}')
+        print('suggest to check if record is wrong in sermon_fs_datetime.txt')
+
+
 rdd_eng_time = rdd_eng2.map(lambda w: w[4]) \
    .map(lambda w: [int(_) for _ in w.split('-')]) \
    .map(lambda w: w[0]*365 + w[1]*30 + w[2])
+
+
+
+
+
+
 
 
 t_ = sorted(rdd_chi_time.collect() + rdd_eng_time.collect())
