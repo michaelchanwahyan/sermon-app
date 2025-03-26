@@ -81,7 +81,7 @@ print('sermon count:', len(lines))
 rgx_bv = re.compile(r'(?<=\d)[_](?=\d)')
 
 
-def youtube_online_sermon_title_processing(cc):
+def flwc_title_processing(cc):
     sstr = c2s_dict.get(cc, ' ')
     sstr = re.sub(r'[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]', '', sstr) # remove date from title
     sstr = rgx_bv.sub(':', sstr) # adjust bible verse , use ':' to replace '_'
@@ -139,12 +139,12 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, progressStepCnt):
                 bstr = c2b_dict.get(cc, ' ')
                 vstr = c2v_dict.get(cc, ' ')
                 sstr = c2s_dict.get(cc, ' ')
-                sstr = youtube_online_sermon_title_processing(cc)
+                sstr = flwc_title_processing(cc)
                 sstr = cleanse_special_char(
                     c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
                 )
                 tstr = c2t_dict.get(cc, ' ')
-                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
                         + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                         + tstr + " & " \
@@ -154,7 +154,7 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, progressStepCnt):
         fp.write("}\n")
         fp.write("\\newpage\n\n")
         # --------------------------------------
-        # end of table sorted by chronic order
+        # end of table sorted by toc_type
         # --------------------------------------
     return progressStepCnt
 
@@ -267,13 +267,8 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
 
 
 def generate_main_content(sermon_tex_filepath, index_file, progressStepCnt):
-    # --------------------------------------
-    # re-reading it index table sorted by
-    # chronic order
-    # --------------------------------------    
     with open(index_file, "r") as fp:
         lines = fp.readlines()
-
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: generate main content")
     for lineId, line in enumerate(lines):

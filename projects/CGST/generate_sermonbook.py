@@ -135,7 +135,7 @@ def generate_toc(sermon_tex_filepath, index_file, progressStepCnt):
                     c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
                 )
                 tstr = c2t_dict.get(cc, ' ')
-                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
                         + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                         + tstr + " & " \
@@ -145,7 +145,7 @@ def generate_toc(sermon_tex_filepath, index_file, progressStepCnt):
         fp.write("}\n")
         fp.write("\\newpage\n\n")
         # --------------------------------------
-        # end of table sorted by chronic order
+        # end of table sorted by title order
         # --------------------------------------
     return progressStepCnt
 
@@ -250,114 +250,9 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
         fp.write("\\newpage\n\n")
 
 
-def write_scripture_part(fp,cc):
-    # ----------------------
-    # add the scripture part if not None
-    bvc_curr = c2bvc_dict.get(cc)
-    if bvc_curr is not None:
-        bvc_curr = bvc_curr.split("\n")
-        # first row shall be book + verse info
-        fp.write(bvc_curr[0].strip() + "\n")
-        fp.write("\\newline\n")
-        fp.write("\\begin{longtable}{cl}\n")
-        fp.write("\\hline\n\\hline\n")
-        fp.write("章節 & 經文 (和合本修訂版)\\\\\n")
-        fp.write("\\hline\n")
-        for bvc_line in bvc_curr[1:]:
-            bvc_line = bvc_line.strip()
-            if len(bvc_line) > 0:
-                if bvc_line != [_.strip() for _ in bvc_curr if len(_.strip())][-1]:
-                    bvc_line += " \\\\ \\\\ \\relax\n"
-                else:
-                    bvc_line += " \\\\ \\\\\n"
-                si = bvc_line.find(" ")
-                if si == -1:
-                    bvc_line = "& " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line + " \\end{tabularx}"
-                else:
-                    bvc_line = bvc_line[:si].replace(".",":") +  " & " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line[si+1:]
-                    nli = bvc_line.find(" \\\\")
-                    bvc_line = bvc_line[:nli] + " \\end{tabularx}" + bvc_line[nli:]
-                fp.write(bvc_line)
-        fp.write("[1ex]\n")
-        fp.write("\\hline\n\\hline\n")
-        fp.write("\\end{longtable}\n")
-
-
-def write_sermon_text(fp, cc):
-    with open("../../data/CGST/"+cc+".txt", "r") as fp_:
-        the_sermon_text = fp_.read()
-    fp_.close()
-    the_sermon_text = cleanse_special_char(the_sermon_text).replace("\\n\\n","\\n")
-    textlines = the_sermon_text.split("\n")
-    _textrow_cnt = 0
-    textline_prev = ''
-    for textline in textlines:
-        # ----------------------------------------------------------------------
-        # check if whisper_trailing_rep_list any 2 match
-        iterator = iter(whisper_trailing_rep_list)
-        matchCnt = 0
-        # Use the next function to retrieve the elements of the iterator
-        try:
-            while True:
-                ele = next(iterator)
-                if ele in textline:
-                    matchCnt += 1
-        except StopIteration:
-            pass
-        whisper_trailing_pattern_match = matchCnt >= 2
-        # END OF check if whisper_trailing_rep_list any 2 match
-        # ----------------------------------------------------------------------
-        if textline == textline_prev:
-            textline_prev = textline
-            continue
-        elif re.sub(r'[()]', '', textline.strip()) in whisper_trailing_rep_list:
-            continue
-        elif whisper_trailing_pattern_match:
-            continue
-        else:
-            textline_prev = textline
-        _textrow_cnt += 1
-        if _textrow_cnt % 40 == 1:
-            fp.write("$^{%d}$" % _textrow_cnt)
-        if textline.count('$') == 1:
-            # if the text line contains odd number of
-            # dollar sign '$', it would probably bring up error
-            # over 95% of the situation is that there only has 1 '$' sign
-            textline = textline.replace('$', '\\$')
-        fp.write(textline + "\n")
-        if _textrow_cnt % 40 == 0:
-            fp.write("\n")
-
-
-def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
-    with open(sermon_tex_filepath, "a") as fp:
-        sectionNameStr = f"{c2b_dict.get(cc, '')} {c2v_dict.get(cc, '')} {c2ch_dict.get(cc, '')}".strip()
-        fp.write("\n\n\\section{"+sectionNameStr+"}\n")
-        fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
-        sstr = cleanse_special_char(c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&'))
-        fp.write("\\textbf{"+sstr+"}\n")
-        fp.write("\\newline\n\\newline\n")
-        fp.write(f"連結: \\href{{https://youtube.com/watch?v={cc}}}{{\\texttt{{ https://youtube.com/watch?v={cc.replace('_','\_')} }}}} ~~~~ 語音日期: {c2t_dict.get(cc)}\n")
-        fp.write("\\newline\n\\newline\n")
-        fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{\\small{< < < PREV SERMON < < <}}\n")
-        fp.write("~\n")
-        fp.write("\\hyperref[sec:index]{\\small{[返主目錄]}}\n")
-        fp.write("~\n")
-        fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{\\small{> > > NEXT SERMON > > >}}\n")
-        fp.write("\\newline\n\\newline\n")
-        write_scripture_part(fp, cc)
-        write_sermon_text(fp, cc)
-        fp.write("\\newpage\n\n")
-
-
-def generate_main_content(sermon_tex_filepath, index_file, progressStepCnt):
-    # --------------------------------------
-    # re-reading it index table sorted by
-    # name order
-    # --------------------------------------    
+def generate_main_content(sermon_tex_filepath, index_file, progressStepCnt): 
     with open(index_file, "r") as fp:
         lines = fp.readlines()
-
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: generate main content")
     for lineId, line in enumerate(lines):
@@ -384,9 +279,6 @@ def sermon_tex():
     # --------------------------------------
     progressStepCnt = print_prefix(sermon_tex_filepath, progressStepCnt)
     # --------------------------------------
-    # index table sorted by name order
-    # only take into account
-    # within desired year range
     # --------------------------------------
     progressStepCnt = generate_toc(sermon_tex_filepath, './index_byn.csv', progressStepCnt)
     progressStepCnt = generate_main_content(sermon_tex_filepath, './index_byn.csv', progressStepCnt)

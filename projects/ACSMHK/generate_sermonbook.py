@@ -94,11 +94,6 @@ p_list = list(p2c_dict.keys())
 print(p_list)
 
 
-with open("./index_byn.csv", "r") as fp:
-    lines = fp.readlines()
-fp.close()
-
-
 def check_in_year_range(code, year_range=[2012,2018]):
     # tstr = c2t_dict.get(code, ' ')
     # # print(tstr)
@@ -144,7 +139,13 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end
     print(f"Step {progressStepCnt}: reading in full index file")
     with open(index_file, 'r') as fp:
         lines = fp.readlines()
-    lines = [line for line in lines if check_in_year_range(line.split(',')[-1], [yyyy_start, yyyy_end])]
+    lines = [ line \
+                 for line in lines \
+                     if check_in_year_range(
+                         line.split(',')[-1],
+                         [yyyy_start, yyyy_end]
+                     )
+            ]
 
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: writing TOC in {toc_type} order")
@@ -180,7 +181,7 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end
                     c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
                 )
                 tstr = c2t_dict.get(cc, ' ')
-                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
                 fp.write(bstr + ' ' + vstr + " & "
                          + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & "
                          + tstr + " & "
@@ -298,10 +299,6 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
 
 
 def generate_main_content(sermon_tex_filepath, index_file, yyyy_start, yyyy_end, progressStepCnt):
-    # --------------------------------------
-    # re-reading it index table sorted by
-    # name order
-    # --------------------------------------    
     with open(index_file, "r") as fp:
         lines = fp.readlines()
     lines = [ line \
@@ -311,7 +308,6 @@ def generate_main_content(sermon_tex_filepath, index_file, yyyy_start, yyyy_end,
                     [yyyy_start,yyyy_end]
                 )
         ]
-
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: generate main content")
     for lineId, line in enumerate(lines):
@@ -340,8 +336,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # --------------------------------------
     progressStepCnt = print_prefix(sermon_tex_filepath, yyyy_start, yyyy_end, progressStepCnt)
     # --------------------------------------
-    # index table sorted by name order
-    # only take into account
+    # only take into account index table
     # within desired year range
     # --------------------------------------
     progressStepCnt = generate_toc(sermon_tex_filepath, './index_byn.csv', 'title', yyyy_start, yyyy_end, progressStepCnt)

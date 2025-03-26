@@ -135,7 +135,7 @@ def generate_toc(sermon_tex_filepath, index_file, progressStepCnt):
                     c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
                 )
                 tstr = c2t_dict.get(cc, ' ')
-                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
                         + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                         + tstr + " & " \
@@ -145,7 +145,7 @@ def generate_toc(sermon_tex_filepath, index_file, progressStepCnt):
         fp.write("}\n")
         fp.write("\\newpage\n\n")
         # --------------------------------------
-        # end of table sorted by chronic order
+        # end of table sorted by title order
         # --------------------------------------
     return progressStepCnt
 
@@ -251,13 +251,8 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
 
 
 def generate_main_content(sermon_tex_filepath, index_file, progressStepCnt):
-    # --------------------------------------
-    # re-reading it index table sorted by
-    # name order
-    # --------------------------------------    
     with open(index_file, "r") as fp:
         lines = fp.readlines()
-
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: generate main content")
     for lineId, line in enumerate(lines):
@@ -284,9 +279,6 @@ def sermon_tex():
     # --------------------------------------
     progressStepCnt = print_prefix(sermon_tex_filepath, progressStepCnt)
     # --------------------------------------
-    # index table sorted by name order
-    # only take into account
-    # within desired year range
     # --------------------------------------
     progressStepCnt = generate_toc(sermon_tex_filepath, './index_byn.csv', progressStepCnt)
     progressStepCnt = generate_main_content(sermon_tex_filepath, './index_byn.csv', progressStepCnt)
