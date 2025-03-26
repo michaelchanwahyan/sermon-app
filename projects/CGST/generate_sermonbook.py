@@ -237,7 +237,7 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
         sstr = cleanse_special_char(c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&'))
         fp.write(f"\\textbf{{{sstr}}}\n")
         fp.write("\\newline\n\\newline\n")
-        fp.write(f"連結: \\href{{https://youtube.com/watch?v={cc}}}{{\\texttt{{ https://youtube.com/watch?v={cc.replace('_','\_')} }}}} ~~~~ 語音日期: {c2t_dict.get(cc)}\n")
+        fp.write(f"連結: \\href{{https://youtube.com/watch?v={cc}}}{{\\texttt{{https://youtube.com/watch?v={cc.replace('_','\_')}}}}} ~~~~ 語音日期: {c2t_dict.get(cc)}\n")
         fp.write("\\newline\n\\newline\n")
         fp.write(f"\\hyperref[sec:{cc_prev.replace('-','_')}]{{\\small{{< < < PREV SERMON < < <}}}}\n")
         fp.write("~\n")
