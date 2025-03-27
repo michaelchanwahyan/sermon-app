@@ -194,7 +194,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 sstr = c2s_dict.get(cc, ' ')
                 sstr = yfcx_sermon_title_processing(cc)
                 tstr = c2t_dict.get(cc, ' ')
-                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
                         + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                         + tstr + " & " \
@@ -258,7 +258,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 sstr = c2s_dict.get(cc, ' ')
                 sstr = yfcx_sermon_title_processing(cc)
                 tstr = c2t_dict.get(cc, ' ')
-                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
                         + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                         + tstr + " & " \
@@ -318,7 +318,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
                 sstr = yfcx_sermon_title_processing(cc)
                 fp.write("\\textbf{"+sstr+"}\n")
                 fp.write("\\newline\n\\newline\n")
-                fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + " \n")
+                fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + " \n")
                 fp.write("\\newline\n\\newline\n")
                 fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{\\small{< < < PREV SERMON < < <}}\n")
                 fp.write("~\n")

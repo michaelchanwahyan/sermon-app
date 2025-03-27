@@ -131,7 +131,7 @@ with open(sermon_tex_filepath, "a") as fp:
                 c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
             )
             tstr = c2t_dict.get(cc, ' ')
-            ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+            ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
                      + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                      + tstr + " & " \
@@ -193,7 +193,7 @@ with open(sermon_tex_filepath, "a") as fp:
                 c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
             )
             tstr = c2t_dict.get(cc, ' ')
-            ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ " + cc.replace('_','\_') + "}}"
+            ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
                      + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                      + tstr + " & " \
@@ -252,7 +252,7 @@ for lineId, line in enumerate(lines):
             )
             fp.write("\\textbf{"+sstr+"}\n")
             fp.write("\\newline\n\\newline\n")
-            fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{ https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ recording date: " + c2t_dict.get(cc) + " \n")
+            fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ recording date: " + c2t_dict.get(cc) + " \n")
             fp.write("\\newline\n\\newline\n")
             fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{\\small{< < < PREV SERMON < < <}}\n")
             fp.write("~\n")
