@@ -305,7 +305,7 @@ def sermon_tex():
     # print the latex document : afterword and postfix
     # --------------------------------------
     generate_afterword_and_postfix(sermon_tex_filepath)
-    
+
     print("done !")
 
 

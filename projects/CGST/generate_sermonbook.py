@@ -250,7 +250,7 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
         fp.write("\\newpage\n\n")
 
 
-def generate_main_content(sermon_tex_filepath, index_file, progressStepCnt): 
+def generate_main_content(sermon_tex_filepath, index_file, progressStepCnt):
     with open(index_file, "r") as fp:
         lines = fp.readlines()
     progressStepCnt += 1
