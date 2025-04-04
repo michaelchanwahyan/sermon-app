@@ -231,7 +231,7 @@ def write_sermon_text(fp, cc):
 
 def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
     with open(sermon_tex_filepath, "a") as fp:
-        sectionNameStr = f"{c2b_dict.get(cc, '')} {c2v_dict.get(cc, '')} {c2ch_dict.get(cc, '')}".strip()
+        sectionNameStr = f"{c2b_dict.get(cc, '')}".strip()
         fp.write(f"\n\n\\section{{{sectionNameStr}}}\n")
         fp.write(f"\\label{{sec:{cc.replace('-','_')}}}\n")
         sstr = cleanse_special_char(c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&'))
