@@ -264,7 +264,7 @@ def sermon_tex():
     progressStepCnt = print_prefix(sermon_tex_filepath, progressStepCnt)
     # --------------------------------------
     # --------------------------------------
-    progressStepCnt = generate_toc(sermon_tex_filepath, './index_byt.csv', 'chronical', progressStepCnt)
+    progressStepCnt = generate_toc(sermon_tex_filepath, './index_byt.csv', 'chronic', progressStepCnt)
     progressStepCnt = generate_toc(sermon_tex_filepath, './index_byb.csv', 'scriptual', progressStepCnt)
     progressStepCnt = generate_main_content(sermon_tex_filepath, './index_byt.csv', progressStepCnt)
     # --------------------------------------
