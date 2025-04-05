@@ -359,6 +359,13 @@ sermon_tex_from_year(2022, 2024)
 
 
 
+'''## 2025-2026 Sermons'''
+
+
+sermon_tex_from_year(2025, 2026)
+
+
+
 
 
 
