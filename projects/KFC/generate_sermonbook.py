@@ -201,11 +201,6 @@ def write_sermon_text(fp, cc):
         _textrow_cnt += 1
         if _textrow_cnt % 40 == 1:
             fp.write("$^{%d}$" % _textrow_cnt)
-        if textline.count('$') == 1:
-            # if the text line contains odd number of
-            # dollar sign '$', it would probably bring up error
-            # over 95% of the situation is that there only has 1 '$' sign
-            textline = textline.replace('$', '\\$')
         fp.write(textline + "\n")
         if _textrow_cnt % 40 == 0:
             fp.write("\n")
