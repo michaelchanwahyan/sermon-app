@@ -218,7 +218,7 @@ def sermon_tex_from_generation(confno_start, confno_end):
         fp.write("\n\n\\begin{xltabular}{\\textwidth}" + \
                  "{|p{0.08\\textwidth} p{0.07\\textwidth} p{0.25\\textwidth}|p{0.15\\textwidth} p{0.35\\textwidth}|}\n")
         # lllr: |Conference No.  Lecture No. | bk+v | Preacher| Title |
-        #        0.08            0.07          0.25   0.15      0.45 
+        #        0.08            0.07          0.25   0.15      0.45
         fp.write("\\hline\n")
         fp.write("屆別 & 講號 & 經卷參照 & 講員 & 講題 \\\\\n")
         conf_no_prev = ''
