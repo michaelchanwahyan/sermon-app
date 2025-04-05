@@ -10,6 +10,7 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 |------------------------------------------------------------------------------|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
 | 建道神學院加拿大建道中心 Alliance Bible Seminary Centre of Canada            |                              |                                                                                                                                             |
 | 宣道傳意 講道講章 Alliance Communications Ministry                           | sermon_ACSMHK_2022-24        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbF-wP66vEZKgkv0GS0HhMQBxcXod_Xr-abiNQxjE6y2Jg?e=1nDjg7) |
+|                                                                              | sermon_ACSMHK_2025-26        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EfVYTqIf6dlDtA46o5jPEDQB8hPNbiKvnjGfx8IEcUP19Q?e=txo6ah) |
 | 漢語聖經協會 講道講章 Chinese Bible International                            | sermon_CBI                   | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EexN9xolxGlBvEegnAAjw4cBLME6Ue52Vj3wkCsqzSSqpg?e=9tFbKT) |
 | 中國神學研究院 道講章 China Graduate School of Theology                      | sermon_CGST                  | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/Efm7f5p3N99LvP1cE2UZjIEBGfJj-SkE02GtoasjDnzGkw?e=P8jz2x) |
 | 崇基神學院 崇拜講章 Div. Schl of Chung Chi College                           | sermon_DSCCC_2009-present    | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbVa0FIwrGVFg5NsFWxfS9YBVmiu1LkRfPWCZX26Vi7C6g?e=AtBOgP) |
@@ -34,25 +35,25 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 中華宣道會友愛堂信培部 Yau Oi School                                         | sermon_YOS                   | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/Eey3JZdDE7pIlWlJEZCLYV8B6YGLDs77gvvYfXWhzZKQjA?e=zGYW9k) |
 
 ### Statistics Overview on this project
-sermon source | transcript total count | recent development activity
+source | sermon no. (out of 12470) | amount of dev. activity (out of 1929)
 ----|----|----
-ABSCC | 0.0% ( 0 / 12396) | 0.0% ( 0 / 4530)
-ACSMHK | 10.5% ( 1299 / 12396) | 12.0% ( 542 / 4530)
-CBI | 0.3% ( 43 / 12396) | 0.5% ( 23 / 4530)
-CGST | 1.8% ( 222 / 12396) | 0.2% ( 11 / 4530)
-DSCCC | 6.0% ( 739 / 12396) | 0.9% ( 42 / 4530)
-FLWC | 2.0% ( 244 / 12396) | 2.0% ( 90 / 4530)
-FVC | 10.1% ( 1247 / 12396) | 1.4% ( 66 / 4530)
-GFC | 1.9% ( 237 / 12396) | 1.5% ( 68 / 4530)
-HKBC | 12.8% ( 1587 / 12396) | 0.9% ( 43 / 4530)
-JNG | 25.2% ( 3125 / 12396) | 59.4% ( 2689 / 4530)
-KFC | 7.4% ( 916 / 12396) | 4.0% ( 181 / 4530)
-PORCH | 4.2% ( 518 / 12396) | 0.8% ( 37 / 4530)
-STBC | 2.3% ( 284 / 12396) | 1.9% ( 88 / 4530)
-VINE | 3.5% ( 435 / 12396) | 5.0% ( 229 / 4530)
-WWBS | 0.7% ( 83 / 12396) | 0.4% ( 17 / 4530)
-YFCX | 11.1% ( 1377 / 12396) | 8.8% ( 399 / 4530)
-YOS | 0.3% ( 40 / 12396) | 0.1% ( 5 / 4530)
+ABSCC | 0.0% ( 0 ) | 0.0% ( 0 )
+ACSMHK | 10.6% ( 1325 ) | 29.0% ( 560 )
+CBI | 0.3% ( 44 ) | 1.8% ( 35 )
+CGST | 1.8% ( 222 ) | 0.8% ( 15 )
+DSCCC | 5.9% ( 739 ) | 0.6% ( 11 )
+FLWC | 2.0% ( 246 ) | 4.7% ( 91 )
+FVC | 10.0% ( 1248 ) | 3.1% ( 60 )
+GFC | 1.9% ( 238 ) | 3.1% ( 60 )
+HKBC | 12.7% ( 1587 ) | 0.1% ( 2 )
+JNG | 25.1% ( 3133 ) | 10.7% ( 207 )
+KFC | 7.4% ( 923 ) | 9.0% ( 173 )
+PORCH | 4.2% ( 520 ) | 2.5% ( 49 )
+STBC | 2.3% ( 288 ) | 4.3% ( 83 )
+VINE | 3.5% ( 442 ) | 10.2% ( 196 )
+WWBS | 0.7% ( 83 ) | 0.5% ( 9 )
+YFCX | 11.2% ( 1392 ) | 19.3% ( 372 )
+YOS | 0.3% ( 40 ) | 0.3% ( 6 )
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
