@@ -187,7 +187,7 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end
                     c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
                 )
                 tstr = c2t_dict.get(cc, ' ')
-                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt\{" + cc.replace('_','\_') + "}}"
+                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
                          + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
                          + tstr + " & " \
