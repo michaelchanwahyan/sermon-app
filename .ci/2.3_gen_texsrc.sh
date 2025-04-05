@@ -67,3 +67,16 @@ else
     echo tex src line num change: $(expr $LN_af - $LN_b4) lines more "( $LN_b4 '->' $LN_af )"
 fi
 
+echo ''
+echo ''
+echo '--------------------------------------------------------------------------'
+echo '  note:'
+echo '    if tex src line number does not increase,'
+echo '    this implies either one of the following:'
+echo '        i. no new data source since last update'
+echo '       ii. the ls file in project folder is not renewed'
+echo '      iii. the project index is not updated due to generation error'
+echo '--------------------------------------------------------------------------'
+echo ''
+echo ''
+
