@@ -1,5 +1,8 @@
 #!/bin/bash
 set +x
+
+source COMMON_RC
+
 if   [ "$1" == "" ] ; then
     echo
     echo generate sermon tex source: ALL
@@ -8,23 +11,28 @@ if   [ "$1" == "" ] ; then
     echo
     sleep 10
 
-    pushd ../projects
+    pushd $PROJECT_PATH
       TEX_SRC_PROJ_NAME_ARR=()
       TEX_LINE_NUM_PREV_ARR=()
       TEX_LINE_NUM_CURR_ARR=()
-      for PROJECT_NAME in ACSMHK CBI CGST DSCCC FLWC FVC GFC HKBC JNG KFC PORCH STBC VINE WWBS YFCX YOS
+      # ------------------------------------------------------
+      # generate LaTeX source for each project
+      # START WHILE
+      while IFS="" read -r PROJECT_NAME || [ -n "$PROJECT_NAME" ]
       do
         TEX_SRC_PROJ_NAME_ARR+=($PROJECT_NAME)
-        TEX_LINE_NUM_PREV=$(wc -l ../build/$PROJECT_NAME/sermon_*.tex | tail -1 | awk '{print $1}')
+        TEX_LINE_NUM_PREV=$(wc -l $BUILD_PATH/$PROJECT_NAME/sermon_*.tex | tail -1 | awk '{print $1}')
         TEX_LINE_NUM_PREV_ARR+=($TEX_LINE_NUM_PREV)
         pushd ./$PROJECT_NAME
           python3    ../func_ipynb_2_py.py    generate_sermonbook.ipynb
           python3    generate_sermonbook.py
-        popd # back to ./app/projects
-        TEX_LINE_NUM_CURR=$(wc -l ../build/$PROJECT_NAME/sermon_*.tex | tail -1 | awk '{print $1}')
+        popd # back to $PROJECT_PATH
+        TEX_LINE_NUM_CURR=$(wc -l $BUILD_PATH/$PROJECT_NAME/sermon_*.tex | tail -1 | awk '{print $1}')
         TEX_LINE_NUM_CURR_ARR+=($TEX_LINE_NUM_CURR)
-      done
-    popd # back to ./app/.ci
+      done < $CI_PATH/PROJECT_LIST
+      # END WHILE
+      # ------------------------------------------------------
+    popd # back to $CI_PATH
 
     echo
     echo '-------------------------------------'
@@ -47,14 +55,14 @@ else
     echo
     sleep 10
 
-    pushd ../projects
-      TEX_LINE_NUM_PREV=$(wc -l ../build/$PROJECT_NAME/sermon_*.tex | tail -1 | awk '{print $1}')
+    pushd $PROJECT_PATH
+      TEX_LINE_NUM_PREV=$(wc -l $BUILD_PATH/$PROJECT_NAME/sermon_*.tex | tail -1 | awk '{print $1}')
       pushd ./$PROJECT_NAME
         python3    ../func_ipynb_2_py.py    generate_sermonbook.ipynb
         python3    generate_sermonbook.py
-      popd # back to ./app/projects
+      popd # back to $PROJECT_PATH
       TEX_LINE_NUM_CURR=$(wc -l ../build/$PROJECT_NAME/sermon_*.tex | tail -1 | awk '{print $1}')
-    popd # back to ./app/.ci
+    popd # back to $CI_PATH
 
     echo
     echo '-------------------------------------'

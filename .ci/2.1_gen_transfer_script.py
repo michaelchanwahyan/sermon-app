@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import os
 import re
+import pathlib
 
 
 def ytcode_retrieval(infilename):
@@ -29,12 +30,28 @@ with open('transcription_server_ip.txt', 'r') as fp:
     transcription_server_ip = fp.read()
 transcription_server_ip = transcription_server_ip.strip()
  
-PROJECT_LIST = ['ACSMHK', 'CBI', 'CGST', 'FLWC', 'FVC', 'GFC', 'JNG', 'KFC', 'PORCH', 'STBC', 'VINE', 'WWBS', 'YFCX', 'YOS']
+PROJECT_LIST = [ \
+        'ABSCC', \
+        'ACSMHK', \
+        'CBI', \
+        'CGST', \
+        'FLWC', \
+        'FVC', \
+        'GFC', \
+        'JNG', \
+        'KFC', \
+        'PORCH', \
+        'STBC', \
+        'VINE', \
+        'WWBS', \
+        'YFCX', \
+        'YOS' \
+    ]
 transfer_script_str = ''
 for PROJECT in PROJECT_LIST:
     print('on PROJECT :', PROJECT)
     # audio file list out
-    proj_mp3_dir = '/Users/pikachu/TPPHC/SERMON/' + PROJECT + '/'
+    proj_mp3_dir = str(pathlib.Path.home()) + '/' + PROJECT + '/'
     mp3_list = os.listdir(proj_mp3_dir)
     mp3_list = [ ytcode_retrieval(_) for _ in mp3_list ]
     mp3_list = [ _ for _ in mp3_list if len(_) ]

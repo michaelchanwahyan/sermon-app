@@ -1,6 +1,9 @@
 #!/bin/bash
 set +x
-pushd ../build
+
+source COMMON_RC
+
+pushd $BUILD_PATH
   if [ "$1" != "once" ] ; then
   echo
   echo sermon TeX build once takes roughly 12 - 15 minutes ...
@@ -14,4 +17,4 @@ pushd ../build
   sleep 10
   bash build.sh buildall once
   fi
-popd # back to ./app/.ci
+popd # back to $CI_PATH

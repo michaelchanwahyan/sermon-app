@@ -15,39 +15,39 @@ if   [ "$1" == "" ] ; then
 fi
 
 set -x
-echo $1
+
+source COMMON_RC
+
+PROJECT_NAME=$1
+echo $PROJECT_NAME
 
 cd ..
 
-BUILD_PATH=build/$1
-mkdir -p $BUILD_PATH
-echo LaTeX build directory of $1 > $BUILD_PATH/README.md
-echo >> $BUILD_PATH/README.md
-git add $BUILD_PATH/README.md
+mkdir -p $BUILD_PATH/$PROJECT_NAME
+echo LaTeX build directory of $1 > $BUILD_PATH/$PROJECT_NAME/README.md
+echo >> $BUILD_PATH/$PROJECT_NAME/README.md
+git add $BUILD_PATH/$PROJECT_NAME/README.md
 
-DATA_PATH=data/$1
-mkdir -p $DATA_PATH
-echo data folder of $1 > $DATA_PATH/README.md
-echo >> $DATA_PATH/README.md
-git add $DATA_PATH/README.md
+mkdir -p $DATA_PATH/$PROJECT_NAME
+echo data folder of $1 > $DATA_PATH/$PROJECT_NAME/README.md
+echo >> $DATA_PATH/$PROJECT_NAME/README.md
+git add $DATA_PATH/$PROJECT_NAME/README.md
 
-PROJECTS_PATH=projects/$1
-mkdir -p $PROJECTS_PATH
-echo project folder of $1 > $PROJECTS_PATH/README.md
-echo >> $PROJECTS_PATH/README.md
-touch $PROJECTS_PATH/exlist.txt
-touch $PROJECTS_PATH/rejection_list.txt
-git add $PROJECTS_PATH/README.md
-git add -f $PROJECTS_PATH/rejection_list.txt
+mkdir -p $PROJECT_PATH/$PROJECT_NAME
+echo project folder of $1 > $PROJECT_PATH/$PROJECT_NAME/README.md
+echo >> $PROJECT_PATH/$PROJECT_NAME/README.md
+touch $PROJECT_PATH/$PROJECT_NAME/exlist.txt
+touch $PROJECT_PATH/$PROJECT_NAME/rejection_list.txt
+git add $PROJECT_PATH/$PROJECT_NAME/README.md
+git add -f $PROJECT_PATH/$PROJECT_NAME/rejection_list.txt
 
-WHISPER_PATH=whisper/$1
-mkdir -p $WHISPER_PATH
-echo this is the directory path of whisper for $1 project > $WHISPER_PATH/README.md
-echo >> $WHISPER_PATH/README.md
-echo reference whisper cpp execution be like >> $WHISPER_PATH/README.md
-echo \`\`\` >> $WHISPER_PATH/README.md
-echo \#!/bin/bash >> $WHISPER_PATH/README.md
-echo \`\`\` >> $WHISPER_PATH/README.md
-git add $WHISPER_PATH/README.md
-echo 4 > $WHISPER_PATH/threadnum.txt
+mkdir -p $WHISPER_PATH/$PROJECT_NAME
+echo this is the directory path of whisper for $1 project > $WHISPER_PATH/$PROJECT_NAME/README.md
+echo >> $WHISPER_PATH/$PROJECT_NAME/README.md
+echo reference whisper cpp execution be like >> $WHISPER_PATH/$PROJECT_NAME/README.md
+echo \`\`\` >> $WHISPER_PATH/$PROJECT_NAME/README.md
+echo \#!/bin/bash >> $WHISPER_PATH/$PROJECT_NAME/README.md
+echo \`\`\` >> $WHISPER_PATH/$PROJECT_NAME/README.md
+git add $WHISPER_PATH/$PROJECT_NAME/README.md
+echo 4 > $WHISPER_PATH/$PROJECT_NAME/threadnum.txt
 
