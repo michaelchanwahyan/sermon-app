@@ -7,7 +7,7 @@ pushd ../projects
     pushd ./$PROJECT_NAME
       if [ -f videos ]
       then
-          rm -f videos
+          rm -f videos # remove existing youtube account videos page html
       fi
       if test $PROJECT_NAME = ACSMHK
       then
