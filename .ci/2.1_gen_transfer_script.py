@@ -27,7 +27,6 @@ def ytcode_retrieval(infilename):
 
 with open('transcription_server_ip.txt', 'r') as fp:
     transcription_server_ip = fp.read()
-fp.close()
 transcription_server_ip = transcription_server_ip.strip()
  
 PROJECT_LIST = ['ACSMHK', 'CBI', 'CGST', 'FLWC', 'FVC', 'GFC', 'JNG', 'KFC', 'PORCH', 'STBC', 'VINE', 'WWBS', 'YFCX', 'YOS']
@@ -55,5 +54,4 @@ for PROJECT in PROJECT_LIST:
 
 with open('transfer.sh', 'w') as fp:
     fp.write(transfer_script_str)
-fp.close()
 
