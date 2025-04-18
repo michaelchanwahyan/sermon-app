@@ -246,7 +246,7 @@ def retrieve_yfcy_date(inname):
 '''
 cd ~/TPPHC/SERMON/CBI/
 
-ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}d > ~/SOURCE/sermon-app/projects/CBI/lslogt.txt
+ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}' > ~/SOURCE/sermon-app/projects/CBI/lslogt.txt
 '''
 
 
