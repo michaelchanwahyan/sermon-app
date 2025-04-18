@@ -29,7 +29,6 @@ rjlist_fname = sys.argv[3]
 print('read in the html source of the webpage')
 with open(videos_fname, 'r') as fp:
     vtext = fp.read()
-fp.close()
 
 print('\n\n')
 
@@ -37,7 +36,6 @@ print('\n\n')
 print('refetch the list of existing audio files')
 with open(exlist_fname, 'r') as fp:
     ex_list = fp.readlines()
-fp.close()
 ex_list = [ _.strip() for _ in ex_list if len(_.strip()) ]
 print('existing list contains %d' % len(ex_list))
 
@@ -46,7 +44,6 @@ print('\n\n')
 
 with open(rjlist_fname, 'r') as fp:
     rj_list = fp.readlines()
-fp.close()
 rj_list = [ _.strip() for _ in rj_list if len(_.strip()) ]
 print('rejection list contains %d' % len(rj_list))
 
@@ -83,7 +80,6 @@ if not os.path.isfile('download.sh'):
             fp.write('echo ; echo $(pwd) ; echo ; yt-dlp -x --audio-format mp3 ')
             fp.write('https://youtube.com/watch?v=%s\n' % needed_code)
             cnt += 1
-    fp.close()
 else:
     print('download.sh is already found ! error exit !')
     exit()

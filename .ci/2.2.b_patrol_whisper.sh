@@ -1,9 +1,21 @@
 #!/bin/bash
 set +x
-for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC GFC JNG KFC PORCH STBC VINE WWBS YFCX YOS
+
+source COMMON_RC
+
+# ------------------------------------------------------
+# execute whisper speech-to-text for each project
+# START WHILE
+while IFS="" read -r PROJECT_NAME || [ -n "$PROJECT_NAME" ]
 do
-  pushd ../whisper/$PROJECT_NAME
+  if test $PROJECT_NAME = DSCCC || test $PROJECT_NAME = HKBC
+  then
+      continue
+  fi
+  pushd $WHISPER_PATH/$PROJECT_NAME
   bash i
   popd # back to ./app/.ci
   sleep 10
-done
+done < $CI_PATH/PROJECT_LIST
+# END WHILE
+# ------------------------------------------------------

@@ -1,13 +1,23 @@
 #!/bin/bash
 set +x
-pushd ../projects
+
+source COMMON_RC
+
+pushd $PROJECT_PATH
   echo wget youtube videos / streams files to each project
-  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC GFC JNG KFC PORCH STBC VINE WWBS YFCX YOS
+  # ------------------------------------------------------
+  # retrieve youtube channel videos html source
+  # START WHILE
+  while IFS="" read -r PROJECT_NAME || [ -n "$PROJECT_NAME" ]
   do
     pushd ./$PROJECT_NAME
       if [ -f videos ]
       then
-          rm -f videos
+          rm -f videos # remove existing youtube account videos page html
+      fi
+      if test $PROJECT_NAME = ABSCC
+      then
+          wget https://www.youtube.com/@abscc3245/videos
       fi
       if test $PROJECT_NAME = ACSMHK
       then
@@ -108,25 +118,37 @@ pushd ../projects
       then
           wget -O videos https://www.youtube.com/@yauoischool/streams
       fi
-    popd # back to ./app/projects
-  done
+    popd # back to $PROJECT_PATH
+  done < $CI_PATH/PROJECT_LIST
+  # END WHILE
+  # ------------------------------------------------------
   echo make union on rejection_list
   find . -name "rejection_list.txt" -exec cat {} \; > rejection_list_all.txt
-  for PROJECT_NAME in ACSMHK CBI CGST FLWC FVC GFC JNG KFC PORCH STBC VINE WWBS YFCX YOS
+  echo generate download script according to project videos and rejection union
+  # ------------------------------------------------------
+  # generate download script for each project
+  # START WHILE
+  while IFS="" read -r PROJECT_NAME || [ -n "$PROJECT_NAME" ]
   do
+    if test $PROJECT_NAME = DSCCC || test $PROJECT_NAME = HKBC
+    then
+        continue
+    fi
     pushd ./$PROJECT_NAME
       if [ -f download.sh ]
       then
           rm -f download.sh
       fi
-      python3    ../../.ci/1.2.b_gen_download_from_vid_exl_rjl.py    \
+      python3    $CI_PATH/1.2.b_gen_download_from_vid_exl_rjl.py    \
           videos    \
           exlist.txt    \
           ../rejection_list_all.txt
-    popd # back to ./app/projects
-  done
+    popd # back to $PROJECT_PATH
+  done < $CI_PATH/PROJECT_LIST
+  # END WHILE
+  # ------------------------------------------------------
   if [ -f rejection_list_all.txt ]
   then
       rm -f rejection_list_all.txt
   fi
-popd # back to ./app/.ci
+popd # back to $CI_PATH

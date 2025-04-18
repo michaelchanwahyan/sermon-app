@@ -6,52 +6,54 @@ texts from audio sources are generated from raw recording using speech-to-text e
 
 ### Immediately available sermon books
 the outcome of this repo compiled from generate LaTeX source are listed below
-| sermon book series                                                           | file path in this repo                    | link                                                                                                                                        |
-|------------------------------------------------------------------------------|-------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| 建道神學院加拿大建道中心 Alliance Bible Seminary Centre of Canada            |                                           |                                                                                                                                             |
-| 宣道傳意 講道講章 Alliance Communications Ministry                           | ./pdf/sermon_ACSMHK_2022-24.pdf           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbF-wP66vEZKgkv0GS0HhMQBxcXod_Xr-abiNQxjE6y2Jg?e=1nDjg7) |
-| 漢語聖經協會 講道講章 Chinese Bible International                            | ./pdf/sermon_CBI.pdf                      | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EexN9xolxGlBvEegnAAjw4cBLME6Ue52Vj3wkCsqzSSqpg?e=9tFbKT) |
-| 中國神學研究院 道講章 China Graduate School of Theology                      | ./pdf/sermon_CGST.pdf                     | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/Efm7f5p3N99LvP1cE2UZjIEBGfJj-SkE02GtoasjDnzGkw?e=P8jz2x) |
-| 崇基神學院 崇拜講章 Div. Schl of Chung Chi College                           | ./pdf/sermon_DSCCC_2009-present.pdf       | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbVa0FIwrGVFg5NsFWxfS9YBVmiu1LkRfPWCZX26Vi7C6g?e=AtBOgP) |
-| 流堂 崇拜講章 Flow Church                                                    | ./pdf/sermon_FLWC_2020-present.pdf        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EVnH4QasLDdJg8KPkJaIMOwBpAS_QTYhRGdUaKJcjoX1eQ?e=5YkTAt) |
-| 宣道會錦繡堂 崇拜講章 Christian Missionary Alliance Fairview Church          | ./pdf/sermon_FVC_2017-22.pdf              | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EaNzWm1WZKFDmpSA-piTqBgB6GcpXvzCFc9m1EmgkVL27w?e=gGEgOT) |
-|                                                                              | ./pdf/sermon_FVC_2023-28.pdf              | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EfdU4MLn9ZpEurHV3t0dkvAB7DltkRjxZoejKnwozPubqg?e=COLI19) |
-| 宣道會洪恩堂 崇拜講章 Christian Missionary Alliance Graceflow Church         | ./pdf/sermon_GFC_2020-present.pdf         | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EW_AhWZ27gdNiXkqlCXQ_7MB_N9u6bg-Y3tUJlMAYMZvow?e=xObMIU) |
-| 港九培靈研經會講章 Hong Kong Bible Conference                                | ./pdf/sermon_HKBC_1928-2007.pdf           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbI8nvf4MMNGkoqGUE2hje8BNrTrkl8T2EQuZQGCJ9IuCg?e=EZmvlp) |
-|                                                                              | ./pdf/sermon_HKBC_2008-present.pdf        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EYEdCkwnt-hAqw41PmGxZWkBtmLNoSZCKwP7FvanDchRdQ?e=nfOYhx) |
-| JohnsonNg Youtube Channel                                                    | ./pdf/sermon_JNG_2012-18.pdf              | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/ETgYxe-drOFNhIZSIbz6AHgBP5ZuLKVsOTOKqrOLBZ5rAg?e=gdbULO) |
-|                                                                              | ./pdf/sermon_JNG_2019-20.pdf              | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EVqwsOaGDvZApQD2dkAYLkEBCthGc7gR6JtUGLOFqGf6mg?e=GUoOXW) |
-|                                                                              | ./pdf/sermon_JNG_2021-22.pdf              | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EWUK3pmGjTxKlUylr4f3rTIBo6mOhyFEnIX4AgdKClMOBA?e=mT4P0P) |
-|                                                                              | ./pdf/sermon_JNG_2023-24.pdf              | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EYILCIGDpgRBusxBprnvmUUBf4zbL0xwTHJEtGmpcAQ6AA?e=kofFQe) |
-| 播道會港福堂 崇拜講章 EFCC Kong Fok Church                                   | ./pdf/sermon_KFC_2020-present.pdf         | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EXjczoPvWhhNpaHYBJ1V3_cBlZLiHPYE-bc5PWvycw__Aw?e=W0sbp7) |
-| The Porch, Dallas, TX 75251                                                  | ./pdf/sermon_PORCH_2014-present.pdf       | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EXe-vY7FJWpLm-Sz8N5Z-fgB_6DFwFcxDSbCpxmTdIO9MA?e=FmnW29) |
-| 沙田浸信會 Shatin Baptist Church                                             | ./pdf/sermon_STBC_2020-present.pdf        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EU3ibL98TuFCnUT5gRydePUB_egKGhp63F5Vmf66NppPyw?e=eMCZZ7) |
-| 葡萄藤教會 The Vine Church                                                   | ./pdf/sermon_VINE_2020-present.pdf        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EYGlZBMMvKlArP3GllgSTr4Bmpc2yjy_Cd-uKXl8CILMpQ?e=scdy1k) |
-| 環球聖經公會 講道講章 Worldwide Bible Society                                | ./pdf/sermon_WWBS.pdf                     | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/Ec1TxFcHqlhOjjugY5tSPsgB7E2fIPebv9Ze_7EMruHPlA?e=nTBR8n) |
-| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth                                | ./pdf/sermon_YFCX_2020-2023.pdf           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EXQxdBKzl_ZFr3VuxJaiT9UBwzVztGh2eAS22O2xLKdMVg?e=jbENWT) |
-|                                                                              | ./pdf/sermon_YFCX_2024-2027.pdf           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/ESO_Cn-5VJFKugJca3A6Uv0Byn11H5RhDwuQALPNXlgr7w?e=NEXCoZ) |
-| 中華宣道會友愛堂信培部 Yau Oi School                                         | ./pdf/sermon_YOS.pdf                      | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/Eey3JZdDE7pIlWlJEZCLYV8B6YGLDs77gvvYfXWhzZKQjA?e=zGYW9k) |
+| sermon book series                                                           | file path in this repo       | link                                                                                                                                        |
+|------------------------------------------------------------------------------|------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| 建道神學院加拿大建道中心 Alliance Bible Seminary Centre of Canada            |                              |                                                                                                                                             |
+| 宣道傳意 講道講章 Alliance Communications Ministry                           | sermon_ACSMHK_2022-24        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbF-wP66vEZKgkv0GS0HhMQBxcXod_Xr-abiNQxjE6y2Jg?e=1nDjg7) |
+|                                                                              | sermon_ACSMHK_2025-26        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EfVYTqIf6dlDtA46o5jPEDQB8hPNbiKvnjGfx8IEcUP19Q?e=txo6ah) |
+| 漢語聖經協會 講道講章 Chinese Bible International                            | sermon_CBI                   | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EexN9xolxGlBvEegnAAjw4cBLME6Ue52Vj3wkCsqzSSqpg?e=9tFbKT) |
+| 中國神學研究院 道講章 China Graduate School of Theology                      | sermon_CGST                  | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/Efm7f5p3N99LvP1cE2UZjIEBGfJj-SkE02GtoasjDnzGkw?e=P8jz2x) |
+| 崇基神學院 崇拜講章 Div. Schl of Chung Chi College                           | sermon_DSCCC_2009-present    | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbVa0FIwrGVFg5NsFWxfS9YBVmiu1LkRfPWCZX26Vi7C6g?e=AtBOgP) |
+| 流堂 崇拜講章 Flow Church                                                    | sermon_FLWC_2020-present     | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EVnH4QasLDdJg8KPkJaIMOwBpAS_QTYhRGdUaKJcjoX1eQ?e=5YkTAt) |
+| 宣道會錦繡堂 崇拜講章 Christian Missionary Alliance Fairview Church          | sermon_FVC_2017-22           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EaNzWm1WZKFDmpSA-piTqBgB6GcpXvzCFc9m1EmgkVL27w?e=gGEgOT) |
+|                                                                              | sermon_FVC_2023-28           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EfdU4MLn9ZpEurHV3t0dkvAB7DltkRjxZoejKnwozPubqg?e=COLI19) |
+| 宣道會洪恩堂 崇拜講章 Christian Missionary Alliance Graceflow Church         | sermon_GFC_2020-present      | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EW_AhWZ27gdNiXkqlCXQ_7MB_N9u6bg-Y3tUJlMAYMZvow?e=xObMIU) |
+| 港九培靈研經會講章 Hong Kong Bible Conference                                | sermon_HKBC_1928-2007        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbI8nvf4MMNGkoqGUE2hje8BNrTrkl8T2EQuZQGCJ9IuCg?e=EZmvlp) |
+|                                                                              | sermon_HKBC_2008-present     | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EYEdCkwnt-hAqw41PmGxZWkBtmLNoSZCKwP7FvanDchRdQ?e=nfOYhx) |
+| JohnsonNg Youtube Channel                                                    | sermon_JNG_2012-18           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/ETgYxe-drOFNhIZSIbz6AHgBP5ZuLKVsOTOKqrOLBZ5rAg?e=gdbULO) |
+|                                                                              | sermon_JNG_2019-20           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EVqwsOaGDvZApQD2dkAYLkEBCthGc7gR6JtUGLOFqGf6mg?e=GUoOXW) |
+|                                                                              | sermon_JNG_2021-22           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EWUK3pmGjTxKlUylr4f3rTIBo6mOhyFEnIX4AgdKClMOBA?e=mT4P0P) |
+|                                                                              | sermon_JNG_2023-24           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EYILCIGDpgRBusxBprnvmUUBf4zbL0xwTHJEtGmpcAQ6AA?e=kofFQe) |
+|                                                                              | sermon_JNG_2025-26           | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EWELovuNELZIozdsaMR1zfgB8OsYK7hoClH1YqbhtekUew?e=jqmphh) |
+| 播道會港福堂 崇拜講章 EFCC Kong Fok Church                                   | sermon_KFC_2020-present      | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EXjczoPvWhhNpaHYBJ1V3_cBlZLiHPYE-bc5PWvycw__Aw?e=W0sbp7) |
+| The Porch, Dallas, TX 75251                                                  | sermon_PORCH_2014-present    | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EXe-vY7FJWpLm-Sz8N5Z-fgB_6DFwFcxDSbCpxmTdIO9MA?e=FmnW29) |
+| 沙田浸信會 Shatin Baptist Church                                             | sermon_STBC_2020-present     | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EU3ibL98TuFCnUT5gRydePUB_egKGhp63F5Vmf66NppPyw?e=eMCZZ7) |
+| 葡萄藤教會 The Vine Church                                                   | sermon_VINE_2020-present     | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EYGlZBMMvKlArP3GllgSTr4Bmpc2yjy_Cd-uKXl8CILMpQ?e=scdy1k) |
+| 環球聖經公會 講道講章 Worldwide Bible Society                                | sermon_WWBS                  | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/Ec1TxFcHqlhOjjugY5tSPsgB7E2fIPebv9Ze_7EMruHPlA?e=nTBR8n) |
+| 播道會恩福堂 崇拜講章 Yan Fook Church & Youth                                | sermon_YFCX_2020-2023        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EXQxdBKzl_ZFr3VuxJaiT9UBwzVztGh2eAS22O2xLKdMVg?e=jbENWT) |
+|                                                                              | sermon_YFCX_2024-2027        | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/ESO_Cn-5VJFKugJca3A6Uv0Byn11H5RhDwuQALPNXlgr7w?e=NEXCoZ) |
+| 中華宣道會友愛堂信培部 Yau Oi School                                         | sermon_YOS                   | [link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/Eey3JZdDE7pIlWlJEZCLYV8B6YGLDs77gvvYfXWhzZKQjA?e=zGYW9k) |
 
 ### Statistics Overview on this project
-sermon source | transcript total count | recent development activity
+source | sermon no. (out of 12470) | amount of dev. activity (out of 1929)
 ----|----|----
-ABSCC | 0.0% ( 0 / 11941) | 0.1% ( 8 / 5185)
-ACSMHK | 9.6% ( 1151 / 11941) | 11.1% ( 573 / 5185)
-CBI | 0.3% ( 40 / 11941) | 1.0% ( 52 / 5185)
-CGST | 1.9% ( 222 / 11941) | 0.5% ( 27 / 5185)
-DSCCC | 6.1% ( 731 / 11941) | 2.2% ( 116 / 5185)
-FLWC | 1.9% ( 231 / 11941) | 2.1% ( 110 / 5185)
-FVC | 10.4% ( 1238 / 11941) | 1.4% ( 73 / 5185)
-GFC | 1.9% ( 226 / 11941) | 1.8% ( 91 / 5185)
-HKBC | 13.3% ( 1587 / 11941) | 0.9% ( 45 / 5185)
-JNG | 25.8% ( 3076 / 11941) | 52.6% ( 2727 / 5185)
-KFC | 7.3% ( 878 / 11941) | 7.0% ( 364 / 5185)
-PORCH | 4.3% ( 509 / 11941) | 1.2% ( 65 / 5185)
-STBC | 2.2% ( 267 / 11941) | 2.7% ( 139 / 5185)
-VINE | 3.2% ( 383 / 11941) | 5.5% ( 286 / 5185)
-WWBS | 0.7% ( 83 / 11941) | 1.3% ( 66 / 5185)
-YFCX | 10.7% ( 1279 / 11941) | 7.9% ( 409 / 5185)
-YOS | 0.3% ( 40 / 11941) | 0.7% ( 34 / 5185)
+ABSCC | 0.0% ( 0 ) | 0.0% ( 0 )
+ACSMHK | 10.6% ( 1325 ) | 29.0% ( 560 )
+CBI | 0.3% ( 44 ) | 1.8% ( 35 )
+CGST | 1.8% ( 222 ) | 0.8% ( 15 )
+DSCCC | 5.9% ( 739 ) | 0.6% ( 11 )
+FLWC | 2.0% ( 246 ) | 4.7% ( 91 )
+FVC | 10.0% ( 1248 ) | 3.1% ( 60 )
+GFC | 1.9% ( 238 ) | 3.1% ( 60 )
+HKBC | 12.7% ( 1587 ) | 0.1% ( 2 )
+JNG | 25.1% ( 3133 ) | 10.7% ( 207 )
+KFC | 7.4% ( 923 ) | 9.0% ( 173 )
+PORCH | 4.2% ( 520 ) | 2.5% ( 49 )
+STBC | 2.3% ( 288 ) | 4.3% ( 83 )
+VINE | 3.5% ( 442 ) | 10.2% ( 196 )
+WWBS | 0.7% ( 83 ) | 0.5% ( 9 )
+YFCX | 11.2% ( 1392 ) | 19.3% ( 372 )
+YOS | 0.3% ( 40 ) | 0.3% ( 6 )
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites

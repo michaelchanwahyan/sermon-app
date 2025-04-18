@@ -253,6 +253,15 @@ elif [ "$1" == "ACSMHK" ] ; then
     rm -f $OUTFILENAME.mtc*
     mv $OUTFILENAME.pdf ../../pdf/
     cd ..
+    OUTFILENAME=sermon_$1_2025-26
+    cd $1
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
 elif [ "$1" == "CBI" ] ; then
     OUTFILENAME=sermon_$1
     cd $1
@@ -370,6 +379,15 @@ elif [ "$1" == "JNG" ] ; then
     mv $OUTFILENAME.pdf ../../pdf/
     cd ..
     OUTFILENAME=sermon_$1_2023-24
+    cd $1
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    OUTFILENAME=sermon_$1_2025-26
     cd $1
     xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then

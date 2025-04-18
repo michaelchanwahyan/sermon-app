@@ -235,6 +235,9 @@ def unixLsDatetime_to_datetime(unixLsDatetime):
 def datesearch(inname):
     # try:
     res = re.search(r'20[0-9][0-9][0-1][0-9][0-3][0-9]', inname)
+    if res is None:
+        print('ERROR: input re search no valid date found !')
+        print(f'ERROR: given inname: {inname}')
     datestr = inname[res.start():res.end()]
     # except:
     #     datestr = '--------'
