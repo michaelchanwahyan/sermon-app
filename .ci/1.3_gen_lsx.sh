@@ -19,7 +19,8 @@ pushd $PROJECT_PATH
       pushd $HOME/TPPHC/SERMON/$PROJECT_NAME
       # projects that require lslogt.txt
       if \
-             test $PROJECT_NAME = ACSMHK \
+             test $PROJECT_NAME = ABSCC \
+          || test $PROJECT_NAME = ACSMHK \
           || test $PROJECT_NAME = CBI \
           || test $PROJECT_NAME = CGST \
           || test $PROJECT_NAME = FVC \

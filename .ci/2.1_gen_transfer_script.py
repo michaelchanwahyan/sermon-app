@@ -51,7 +51,7 @@ transfer_script_str = ''
 for PROJECT in PROJECT_LIST:
     print('on PROJECT :', PROJECT)
     # audio file list out
-    proj_mp3_dir = str(pathlib.Path.home()) + '/' + PROJECT + '/'
+    proj_mp3_dir = str(pathlib.Path.home()) + '/TPPHC/SERMON/' + PROJECT + '/'
     mp3_list = os.listdir(proj_mp3_dir)
     mp3_list = [ ytcode_retrieval(_) for _ in mp3_list ]
     mp3_list = [ _ for _ in mp3_list if len(_) ]
