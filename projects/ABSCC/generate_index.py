@@ -653,7 +653,7 @@ for fname in filelist:
             except:
                 break
     fp.close()
-    rid2dtptcv_dict[record_id] = [dt, title, p, cv_text]
+    rid2dtptcv_dict[str(record_id)] = [dt, title, p, cv_text]
     # print(rid2dtptcv_dict[record_id])
     record_id += 1
 
@@ -745,7 +745,7 @@ for rid in rid2dtptcv_dict.keys():
 
 df_from_general = pd.DataFrame(
     [
-        [rid,
+        [str(rid),
          c2p_dict.get(rid),
          67, # bkno
          '', # book

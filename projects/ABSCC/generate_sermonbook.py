@@ -108,7 +108,7 @@ def generate_toc(sermon_tex_filepath, index_file, progressStepCnt):
         lines = fp.readlines()
 
     progressStepCnt += 1
-    print(f"Step {progressStepCnt}: writing TOC in {"title"} order")
+    print(f"Step {progressStepCnt}: writing TOC in title order")
     with open(sermon_tex_filepath, "a") as fp:
         fp.write("\\section{目錄}\n")
         fp.write("\\label{sec:index}\n")
@@ -123,6 +123,8 @@ def generate_toc(sermon_tex_filepath, index_file, progressStepCnt):
         # --------------------------------------
         for lineId, line in enumerate(lines):
             cc = line.split(",")[0]
+            if cc == 'code':
+                continue
             # --------------------------------------
             # only include this code cc if it is
             # ready in the transcription folder
@@ -140,6 +142,18 @@ def generate_toc(sermon_tex_filepath, index_file, progressStepCnt):
                         + "\\hyperref[sec:"+cc.replace('-', '_')+"]{"+sstr+"}" + " & " \
                         + tstr + " & " \
                         + ystr \
+                        + " \\\\\n")
+            elif os.path.isfile('../../data/ABSCC/' + c2t_dict.get(cc, '').replace('-', '') + '_' + c2s_dict.get(cc, '') + '.txt'):
+                pstr = c2p_dict.get(cc, ' ')
+                bstr = c2b_dict.get(cc, ' ')
+                vstr = c2v_dict.get(cc, ' ')
+                sstr = cleanse_special_char(
+                    c2s_dict.get(cc, ' ').replace('_', '\\_').replace('&', '\\&')
+                )
+                tstr = c2t_dict.get(cc, ' ')
+                fp.write(bstr + ' ' + vstr + " & " \
+                        + "\\hyperref[sec:"+cc.replace('-', '_')+"]{"+sstr+"}" + " & " \
+                        + tstr + " & " \
                         + " \\\\\n")
         fp.write("\\end{xltabular}\n")
         fp.write("}\n")
@@ -184,9 +198,14 @@ def write_scripture_part(fp, cc):
 
 
 def write_sermon_text(fp, cc):
-    with open("../../data/ABSCC/"+cc+".txt", "r") as fp_:
-        the_sermon_text = fp_.read()
-    fp_.close()
+    if os.path.isfile(f'../../data/ABSCC/{cc}.txt'):
+        with open("../../data/ABSCC/"+cc+".txt", "r") as fp_:
+            the_sermon_text = fp_.read()
+        fp_.close()
+    elif os.path.isfile('../../data/ABSCC/' + c2t_dict.get(cc).replace('-', '') + '_' + c2s_dict.get(cc) + '.txt'):
+        with open('../../data/ABSCC/' + c2t_dict.get(cc).replace('-', '') + '_' + c2s_dict.get(cc) + '.txt') as fp_:
+            the_sermon_text = fp_.read()
+        fp_.close()
     the_sermon_text = cleanse_special_char(the_sermon_text).replace("\\n\\n", "\\n")
     textlines = the_sermon_text.split("\n")
     _textrow_cnt = 0
@@ -238,7 +257,10 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
         fp.write(f"\\textbf{{{sstr}}}\n")
         fp.write("\\newline\n\\newline\n")
         cc_ud_protect = cc.replace('_', '\\_')
-        fp.write(f"連結: \\href{{https://youtube.com/watch?v={cc}}}{{\\texttt{{https://youtube.com/watch?v={cc_ud_protect}}}}} ~~~~ 語音日期: {c2t_dict.get(cc)}\n")
+        if not str.isdigit(cc_ud_protect):
+            fp.write(f"連結: \\href{{https://youtube.com/watch?v={cc}}}{{\\texttt{{https://youtube.com/watch?v={cc_ud_protect}}}}} ~~~~ 語音日期: {c2t_dict.get(cc)}\n")
+        else:
+            fp.write(f"~~~~ 日期: {c2t_dict.get(cc)}\n")
         fp.write("\\newline\n\\newline\n")
         fp.write(f"\\hyperref[sec:{cc_prev.replace('-', '_')}]{{\\small{{< < < PREV SERMON < < <}}}}\n")
         fp.write("~\n")
@@ -263,6 +285,8 @@ def generate_main_content(sermon_tex_filepath, index_file, progressStepCnt):
         cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
         cc_next = lines[(lineId+1)%len(lines)].split(",")[0]
         if os.path.isfile(f'../../data/ABSCC/{cc}.txt'):
+            write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next)
+        elif os.path.isfile('../../data/ABSCC/' + c2t_dict.get(cc, '').replace('-', '') + '_' + c2s_dict.get(cc, '') + '.txt'):
             write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next)
     return progressStepCnt
 
