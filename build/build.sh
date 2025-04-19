@@ -24,6 +24,7 @@ if   [ "$1" == "" ] ; then
     echo "                                                                    "
     echo "     buildall Compile the LaTeX source files of all sermon projects."
     echo "              Available sermon projects include:                    "
+    echo "               -  ABSCC                                             "
     echo "               -  ACSMHK                                            "
     echo "               -  CBI                                               "
     echo "               -  CGST                                              "
@@ -45,6 +46,10 @@ if   [ "$1" == "" ] ; then
     echo "              compiled twice, in order to get LaTeX toc files to    "
     echo "              converge. An explicit option 'once' could be provided "
     echo "              if the second compilation is intended to be skipped.  "
+    echo "                                                                    "
+    echo "     ABSCC    Compile ABSCC sermon book.                            "
+    echo "              ABSCC := Alliance Bible Seminary Center of Canada     "
+    echo "              建道神學院加拿大建道中心                              "
     echo "                                                                    "
     echo "     ACSMHK   Compile ACSMHK sermon book.                           "
     echo "              ACSMHK := Alliance Communications Ministry            "
@@ -134,6 +139,9 @@ if   [ "$1" == "genall" ] ; then
     python3 convert_srt2txt.py YFCX
     python3 convert_srt2txt.py YOS
     cd ../projects
+    cd ./ABSCC
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    cd ..
     cd ./ACSMHK
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
@@ -205,6 +213,7 @@ elif [ "$1" == "buildall" ] ; then
     echo sermon TeX build once takes roughly 12 - 15 minutes ...
     echo
     sleep 10
+    ./build.sh ABSCC
     ./build.sh ACSMHK
     ./build.sh CBI
     ./build.sh CGST
@@ -226,6 +235,7 @@ elif [ "$1" == "buildall" ] ; then
     echo sermon TeX build twice takes roughly 25 - 30 minutes ...
     echo
     sleep 10
+    ./build.sh ABSCC   once
     ./build.sh ACSMHK  once
     ./build.sh CBI     once
     ./build.sh CGST    once
@@ -243,6 +253,16 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh YFCX    once
     ./build.sh YOS     once
     fi
+elif [ "$1" == "ABSCC" ] ; then
+    OUTFILENAME=sermon_$1
+    cd $1
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
 elif [ "$1" == "ACSMHK" ] ; then
     OUTFILENAME=sermon_$1_2022-24
     cd $1
