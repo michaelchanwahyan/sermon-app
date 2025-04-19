@@ -588,6 +588,82 @@ c2p_dict
 
 
 
+# obtain the online genral source of ABSCC
+abscc_general_path = '../../data/ABSCC/'
+filelist = sorted(
+    [ _ for _ in os.listdir(abscc_general_path) \
+        if _[0:3] == '202' and _[8] == '_' ]
+)
+
+
+# cannot use datetime as the key
+# because there can have multiple sermon
+# marked on the same date
+# dt2t_dict = {} # datetime-to-title dict
+# dt2p_dict = {} # datetime-to-preacher dict
+rid2dtptcv_dict = {} # record_id to datetime, preacher, title, and bible chapter-verse dictionary
+# {rid: [dt, p, t]}
+record_id = 0
+for fname in filelist:
+    if '.txt' not in fname:
+        continue
+    _ = fname.split('_')
+    dt = _[0] # datetime
+    title = _[1].replace('.txt', '') # title
+    with open(abscc_general_path + fname, 'r') as fp:
+        # to obtain the preacher name
+        row1st = fp.readline()
+        # print(row1st)
+        if '-' in row1st:
+            _ = row1st.split('-')
+        else:
+            _ = row1st.split('–')
+        p = _[0].strip() # preacher
+        # to obtain bible chapter and verse coverage
+        cv_text = ''
+        lines = fp.readlines()
+        for line in lines:
+            try:
+                remaining_text = line
+                if '經文：' in remaining_text[:3] \
+                or '讀經：' in remaining_text[:3] \
+                or '經課：' in remaining_text[:3]:
+                    cv_text = remaining_text.split('：')[1].strip()
+                    cv_text = cv_text \
+                        .replace('：', ':') \
+                        .replace('章', ':') \
+                        .replace('節', '') \
+                        .replace('至', '-') \
+                        .replace('，', ',') \
+                        .replace('；', ';') \
+                        .replace(' ', '') \
+                        .replace('"', '') \
+                        .strip()
+                    # cv_text description rules:
+                    #     if multiple number of books are included
+                    #     there is a ';' serving as a delimiter
+                    #     if multiple verses / chapters / chapter-verses are included
+                    #     from the same book, a ',' serves as a delimiter
+                    # if ',' in cv_text or ';' in cv_text:
+                    #     print(dt, title)
+                    #     print(cv_text)
+                    break
+                else:
+                    continue
+            except:
+                break
+    fp.close()
+    rid2dtptcv_dict[record_id] = [dt, title, p, cv_text]
+    # print(rid2dtptcv_dict[record_id])
+    record_id += 1
+
+
+
+
+
+
+
+
 rdd_time = rdd2.map(lambda w: w[4]) \
    .map(lambda w: [int(_) for _ in w.split('-')]) \
    .map(lambda w: w[0]*365 + w[1]*30 + w[2])
@@ -653,6 +729,50 @@ df = pd.DataFrame(
 )
 
 
+# recall: structure of rid2dtptcv_dict
+# rid2dtptcv_dict = {rid: [dt, title, p, cv_text]}
+# rid2dtptcv_dict[rid][0] = dt
+# rid2dtptcv_dict[rid][1] = title
+# rid2dtptcv_dict[rid][2] = preacher
+# rid2dtptcv_dict[rid][3] = cv_text
+# rid2dtptcv_dict[rid][4] = bible chapter-verse coverage
+for rid in rid2dtptcv_dict.keys():
+    c2s_dict[rid] = rid2dtptcv_dict.get(rid)[1]
+    c2p_dict[rid] = rid2dtptcv_dict.get(rid)[2]
+    dt_curr = rid2dtptcv_dict.get(rid)[0]
+    c2t_dict[rid] = dt_curr[0:4] + '-' + dt_curr[4:6] + '-' + dt_curr[6:8]
+
+
+df_from_general = pd.DataFrame(
+    [
+        [rid,
+         c2p_dict.get(rid),
+         67, # bkno
+         '', # book
+         0, # chapter
+         0, # verse
+         0, # headerVerse
+         c2s_dict.get(rid),
+         c2t_dict.get(rid),
+        ] for rid in rid2dtptcv_dict.keys()
+    ],
+    columns = [
+        'code',
+        'preacher',
+        'bkno',
+        'book',
+        'chapter',
+        'verse',
+        'headerVerse',
+        'title',
+        'date'
+    ]
+)
+
+
+df = pd.concat([df, df_from_general])
+
+
 
 '''### save the dictionary series'''
 
@@ -666,7 +786,7 @@ with open('x2code_dictionary.pkl', 'wb') as f:
 
 
 df.chapter = pd.to_numeric(df.chapter, errors='coerce')
-df = df.sort_values(['title'])
+df = df.sort_values(['date'])
 df = df.drop(columns='headerVerse') # throw away headerVerse column as it is not included in final df
 
 
@@ -674,7 +794,7 @@ for index, row in df.iterrows():
     print(row['code'], row['preacher'], row['book'], row['chapter'], row['verse'], row['title'], row['date'])
 
 
-df.to_csv('./index_byn.csv', index=False)
+df.to_csv('./index_byt.csv', index=False)
 
 
 
