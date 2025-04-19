@@ -76,7 +76,7 @@ print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^-2\')" :', rgx.sub(r'$\1^\2$'
 
 def cleanse_special_char(inputText):
     txt2 = inputText
-    txt2 = txt2.replace('$','\$') # preserve this here since its higher priority than in html arguments
+    txt2 = txt2.replace('$', '\\$') # preserve this here since its higher priority than in html arguments
     txt2 = rgx.sub(r'$\1^\2$', txt2)
     for rep_ in rep_list:
         txt2 = txt2.replace(rep_[0], rep_[1])
@@ -215,12 +215,12 @@ def write_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end, p
                 bstr = c2b_dict.get(cc, ' ')
                 vstr = c2v_dict.get(cc, ' ')
                 sstr = cleanse_special_char(
-                    c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&')
+                    c2s_dict.get(cc, ' ').replace('_', '\\_').replace('&', '\\&')
                 )
                 tstr = c2t_dict.get(cc, ' ')
-                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
+                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_', '\\_') + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
-                         + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                         + "\\hyperref[sec:"+cc.replace('-', '_')+"]{"+sstr+"}" + " & " \
                          + tstr + " & " \
                          + ystr \
                          + " \\\\\n")
@@ -254,12 +254,12 @@ def write_preacher_toc(fp, p_id, p_curr, lines):
             bstr = c2b_dict.get(cc_, ' ')
             vstr = c2v_dict.get(cc_, ' ')
             sstr = cleanse_special_char(
-                c2s_dict.get(cc_, ' ').replace('_','\_').replace('&','\&')
+                c2s_dict.get(cc_, ' ').replace('_', '\\_').replace('&', '\&')
             )
             tstr = c2t_dict.get(cc_, ' ')
-            ystr = "\\href{https://youtube.com/watch?v=" + cc_ +"}{\\texttt{" + cc_.replace('_','\_') + "}}"
+            ystr = "\\href{https://youtube.com/watch?v=" + cc_ +"}{\\texttt{" + cc_.replace('_', '\\_') + "}}"
             fp.write(bstr + ' ' + vstr + " & " \
-                        + "\\hyperref[sec:"+cc_.replace('-','_')+"]{"+sstr+"}" + " & " \
+                        + "\\hyperref[sec:"+cc_.replace('-', '_')+"]{"+sstr+"}" + " & " \
                         + tstr + " & " \
                         + ystr \
                         + " \\\\\n")
@@ -280,21 +280,21 @@ def add_section_title(fp, cc_prev, cc, cc_next, p_id):
     ch = c2ch_dict.get(cc)
     sectionNameStr += ' ' + ch if b is not None and ch is not None and v is None else ''
     fp.write("\n\n\\section{"+sectionNameStr+"}\n")
-    fp.write("\\label{sec:"+cc.replace('-','_')+"}\n")
+    fp.write("\\label{sec:"+cc.replace('-', '_')+"}\n")
     sstr = cleanse_special_char(
-        c2s_dict.get(cc).replace('_','\_').replace('&','\&')
+        c2s_dict.get(cc).replace('_', '\\_').replace('&', '\\&')
     )
     fp.write("\\textbf{"+sstr+"}\n")
     fp.write("\\newline\n\\newline\n")
-    fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + "\n")
+    fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{https://youtube.com/watch?v=" + cc.replace('_', '\\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + "\n")
     fp.write("\\newline\n\\newline\n")
-    fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{< < < PREV SERMON < < <}\n")
+    fp.write("\\hyperref[sec:"+cc_prev.replace('-', '_')+"]{< < < PREV SERMON < < <}\n")
     fp.write("~\n")
     fp.write("\\hyperlink{toc}{[返主目錄]}\n")
     fp.write("~\n")
     fp.write("\\hyperref[ch:preacher"+str(p_id)+"]{[返講員目錄]}\n")
     fp.write("~\n")
-    fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{> > > NEXT SERMON > > >}\n")
+    fp.write("\\hyperref[sec:"+cc_next.replace('-', '_')+"]{> > > NEXT SERMON > > >}\n")
     fp.write("\\newline\n\\newline\n")
 
 
@@ -323,7 +323,7 @@ def add_scripture_text(fp, cc):
                 if si == -1:
                     bvc_line = "& " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line + " \\end{tabularx}"
                 else:
-                    bvc_line = bvc_line[:si].replace(".",":") +  " & " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line[si+1:]
+                    bvc_line = bvc_line[:si].replace(".", ":") + " & " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line[si+1:]
                     nli = bvc_line.find(" \\\\") # newline char index
                     bvc_line = bvc_line[:nli] + " \\end{tabularx}" + bvc_line[nli:]
                 fp.write(bvc_line)
@@ -339,7 +339,7 @@ def add_sermon_text(fp, cc):
         the_sermon_text = fp_.read()
     fp_.close()
     the_sermon_text = cleanse_special_char(the_sermon_text)
-    the_sermon_text = the_sermon_text.replace("\\n\\n","\\n")
+    the_sermon_text = the_sermon_text.replace("\\n\\n", "\\n")
     textlines = the_sermon_text.split("\n")
     _textrow_cnt = 0
     textline_prev = ''

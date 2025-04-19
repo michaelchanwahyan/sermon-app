@@ -62,7 +62,7 @@ print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^-2\')" :', rgx.sub(r'$\1^\2$'
 
 def cleanse_special_char(inputText):
     txt2 = inputText
-    txt2 = txt2.replace('$','\$') # preserve this here since its higher priority than in html arguments
+    txt2 = txt2.replace('$', '\\$') # preserve this here since its higher priority than in html arguments
     txt2 = rgx.sub(r'$\1^\2$', txt2)
     for rep_ in rep_list:
         txt2 = txt2.replace(rep_[0], rep_[1])
@@ -449,7 +449,7 @@ for index, row in df.iterrows():
                             if si == -1:
                                 bvc_line = "& " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line + " \\end{tabularx}"
                             else:
-                                bvc_line = bvc_line[:si].replace(".",":") +  " & " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line[si+1:]
+                                bvc_line = bvc_line[:si].replace(".", ":") + " & " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line[si+1:]
                                 nli = bvc_line.find(" \\\\") # newline char index
                                 bvc_line = bvc_line[:nli] + " \\end{tabularx}" + bvc_line[nli:]
                             fp.write(bvc_line)

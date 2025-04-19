@@ -51,7 +51,7 @@ print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^-2\')" :', rgx.sub(r'$\1^\2$'
 
 def cleanse_special_char(inputText):
     txt2 = inputText
-    txt2 = txt2.replace('$','\$') # preserve this here since its higher priority than in html arguments
+    txt2 = txt2.replace('$', '\\$') # preserve this here since its higher priority than in html arguments
     txt2 = rgx.sub(r'$\1^\2$', txt2)
     for rep_ in rep_list:
         txt2 = txt2.replace(rep_[0], rep_[1])
@@ -329,8 +329,8 @@ def sermon_tex_from_generation(confno_start, confno_end):
                 fp.close()
                 v_n = line_contents[7].strip() # verse number
                 # assumed format is c1:v1-c2:c2
-                c1v1 = v_n.split('-')[0].replace(':','.')
-                c2v2 = v_n.split('-')[1].replace(':','.')
+                c1v1 = v_n.split('-')[0].replace(':', '.')
+                c2v2 = v_n.split('-')[1].replace(':', '.')
                 bvc = []
                 c1v1_reached = False
                 c2v2_reached = False
@@ -368,7 +368,7 @@ def sermon_tex_from_generation(confno_start, confno_end):
                                         + bvc_line \
                                         + " \\end{tabularx}"
                                 else:
-                                    bvc_line = bvc_line[:si].replace(".",":") \
+                                    bvc_line = bvc_line[:si].replace(".", ":") \
                                         +  " & " \
                                         + "\\begin{tabularx}{0.7\\textwidth}{X} " \
                                         + bvc_line[si+1:]

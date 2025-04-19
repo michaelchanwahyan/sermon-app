@@ -82,11 +82,11 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, progressStepCnt):
             if os.path.isfile(f'../../data/PORCH/{cc}.txt'):
                 bstr = c2b_dict.get(cc, ' ')
                 vstr = c2v_dict.get(cc, ' ')
-                sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
+                sstr = c2s_dict.get(cc, ' ').replace('_', '\\_').replace('&', '\\&').replace('#', '\\#')
                 tstr = c2t_dict.get(cc, ' ')
-                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_','\_') + "}}"
+                ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_', '\\_') + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
-                        + "\\hyperref[sec:"+cc.replace('-','_')+"]{"+sstr+"}" + " & " \
+                        + "\\hyperref[sec:"+cc.replace('-', '_')+"]{"+sstr+"}" + " & " \
                         + tstr + " & " \
                         + ystr \
                         + " \\\\\n")
@@ -106,7 +106,7 @@ def write_scripture_part(fp, cc):
 def write_sermon_text(fp, cc):
     with open("../../data/PORCH/"+cc+".txt", "r") as fp_:
         the_sermon_text = fp_.read()
-    the_sermon_text = the_sermon_text.replace("\\n\\n","\\n")
+    the_sermon_text = the_sermon_text.replace("\\n\\n", "\\n")
     textlines = the_sermon_text.split("\n")
     _textrow_cnt = 0
     textline_prev = ''
@@ -140,7 +140,7 @@ def write_sermon_text(fp, cc):
             fp.write("$^{%d}$" % _textrow_cnt)
         # if the text line contains dollar sign '$',
         # it would probably bring up error
-        textline = textline.replace('_','\_').replace('&','\&').replace('#','\#').replace('$', '\$')
+        textline = textline.replace('_', '\\_').replace('&', '\\&').replace('#','\\#').replace('$', '\\$')
         fp.write(textline + "\n")
         if _textrow_cnt % 40 == 0:
             fp.write("\n")
@@ -151,17 +151,17 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
     with open(sermon_tex_filepath, "a") as fp:
         sectionNameStr = f"{c2b_dict.get(cc, '')}".strip()
         fp.write(f"\n\n\\section{{{sectionNameStr}}}\n")
-        fp.write(f"\\label{{sec:{cc.replace('-','_')}}}\n")
-        sstr = c2s_dict.get(cc, ' ').replace('_','\_').replace('&','\&').replace('#','\#')
+        fp.write(f"\\label{{sec:{cc.replace('-', '_')}}}\n")
+        sstr = c2s_dict.get(cc, ' ').replace('_', '\\_').replace('&', '\\&').replace('#', '\\#')
         fp.write("\\textbf{"+sstr+"}\n")
         fp.write("\\newline\n\\newline\n")
-        fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{https://youtube.com/watch?v=" + cc.replace('_','\_') + "}} ~~~~ recording date: " + c2t_dict.get(cc) + "\n")
+        fp.write("link: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{https://youtube.com/watch?v=" + cc.replace('_', '\\_') + "}} ~~~~ recording date: " + c2t_dict.get(cc) + "\n")
         fp.write("\\newline\n\\newline\n")
-        fp.write("\\hyperref[sec:"+cc_prev.replace('-','_')+"]{\\small{< < < PREV SERMON < < <}}\n")
+        fp.write("\\hyperref[sec:"+cc_prev.replace('-', '_')+"]{\\small{< < < PREV SERMON < < <}}\n")
         fp.write("~\n")
         fp.write("\\hyperref[sec:index_chronic]{\\small{[back to index]}}\n")
         fp.write("~\n")
-        fp.write("\\hyperref[sec:"+cc_next.replace('-','_')+"]{\\small{> > > NEXT SERMON > > >}}\n")
+        fp.write("\\hyperref[sec:"+cc_next.replace('-', '_')+"]{\\small{> > > NEXT SERMON > > >}}\n")
         fp.write("\\newline\n\\newline\n")
         write_scripture_part(fp, cc)
         write_sermon_text(fp, cc)
