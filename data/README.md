@@ -4,7 +4,7 @@ the foldername here indicates a shortform of the sermon textual or audio source
 
 | folder name | description                                 | chinese description        | link                                                                                         |
 | ----------- | ------------------------------------------- | -------------------------- | -------------------------------------------------------------------------------------------- |
-| ABSCC       | ABS Centre of Canada                        | 建道神學院加拿大建道中心   | [youtube channel](https://www.youtube.com/@abscc3245)                                        |
+| ABSCC       | Alliance Bible Seminary Center of Canada    | 建道神學院加拿大建道中心   | [youtube channel](https://www.youtube.com/@abscc3245)                                        |
 |             |                                             |                            | [official site](https://abscc.org)                                                           |
 | ACSMHK      | Alliance Communications Ministry            | 宣道傳意及出版事工         | [youtube channel](https://www.youtube.com/@acsmhk)                                           |
 | CBI         | Chinese Bible International                 | 漢語聖經協會               | [youtube channel](https://www.youtube.com/CBIsupport)                                        |
