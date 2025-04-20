@@ -35,25 +35,25 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 中華宣道會友愛堂信培部 Yau Oi School                                         | sermon_YOS                   | [OneDrive link](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/Eey3JZdDE7pIlWlJEZCLYV8B6YGLDs77gvvYfXWhzZKQjA?e=zGYW9k) |
 
 ### Statistics Overview on this project
-source | sermon no. (out of 12470) | amount of dev. activity (out of 1929)
+source | sermon no. (out of 12568) | amount of dev. activity (out of 2199)
 ----|----|----
-ABSCC | 0.0% ( 0 ) | 0.0% ( 0 )
-ACSMHK | 10.6% ( 1325 ) | 29.0% ( 560 )
-CBI | 0.3% ( 44 ) | 1.8% ( 35 )
-CGST | 1.8% ( 222 ) | 0.8% ( 15 )
-DSCCC | 5.9% ( 739 ) | 0.6% ( 11 )
-FLWC | 2.0% ( 246 ) | 4.7% ( 91 )
-FVC | 10.0% ( 1248 ) | 3.1% ( 60 )
-GFC | 1.9% ( 238 ) | 3.1% ( 60 )
-HKBC | 12.7% ( 1587 ) | 0.1% ( 2 )
-JNG | 25.1% ( 3133 ) | 10.7% ( 207 )
-KFC | 7.4% ( 923 ) | 9.0% ( 173 )
-PORCH | 4.2% ( 520 ) | 2.5% ( 49 )
-STBC | 2.3% ( 288 ) | 4.3% ( 83 )
-VINE | 3.5% ( 442 ) | 10.2% ( 196 )
-WWBS | 0.7% ( 83 ) | 0.5% ( 9 )
-YFCX | 11.2% ( 1392 ) | 19.3% ( 372 )
-YOS | 0.3% ( 40 ) | 0.3% ( 6 )
+ABSCC | 0.2% ( 32 ) | 4.7% ( 103 )
+ACSMHK | 10.7% ( 1340 ) | 25.1% ( 553 )
+CBI | 0.3% ( 45 ) | 2.3% ( 50 )
+CGST | 1.8% ( 222 ) | 1.0% ( 23 )
+DSCCC | 5.9% ( 744 ) | 1.0% ( 22 )
+FLWC | 2.0% ( 248 ) | 4.6% ( 102 )
+FVC | 9.9% ( 1249 ) | 3.2% ( 70 )
+GFC | 1.9% ( 240 ) | 3.3% ( 72 )
+HKBC | 12.6% ( 1587 ) | 0.5% ( 10 )
+JNG | 25.0% ( 3142 ) | 11.1% ( 243 )
+KFC | 7.4% ( 933 ) | 8.9% ( 196 )
+PORCH | 4.1% ( 521 ) | 2.9% ( 63 )
+STBC | 2.3% ( 292 ) | 4.5% ( 99 )
+VINE | 3.5% ( 446 ) | 8.5% ( 187 )
+WWBS | 0.7% ( 83 ) | 0.8% ( 17 )
+YFCX | 11.2% ( 1404 ) | 17.1% ( 376 )
+YOS | 0.3% ( 40 ) | 0.6% ( 13 )
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
