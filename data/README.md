@@ -7,6 +7,7 @@ the foldername here indicates a shortform of the sermon textual or audio source
 | ABSCC       | Alliance Bible Seminary Center of Canada    | 建道神學院加拿大建道中心   | [youtube channel](https://www.youtube.com/@abscc3245)                                        |
 |             |                                             |                            | [official site](https://abscc.org)                                                           |
 | ACSMHK      | Alliance Communications Ministry            | 宣道傳意及出版事工         | [youtube channel](https://www.youtube.com/@acsmhk)                                           |
+| CABIG       | ConnectAll Bible Institute Global           | 聯宇聖經學院               | [youtube channel](https://www.youtube.com/@CBIGlobal)                                        |
 | CBI         | Chinese Bible International                 | 漢語聖經協會               | [youtube channel](https://www.youtube.com/CBIsupport)                                        |
 | CGST        | China Graduate School of Theology           | 中國神學研究院             | [youtube channel](https://www.youtube.com/cgstedu)                                           |
 | DSCCC       | Divinity School of Chung Chi College, CUHK  | 香港中文大學崇基學院神學院 | [chaplaincy site](https://www.ccc.cuhk.edu.hk/tc/content.php?wid=739)                        |
@@ -18,8 +19,10 @@ the foldername here indicates a shortform of the sermon textual or audio source
 | JNG         | Channel of Johnson Ng                       | Johnson Ng 我愛聽主道      | [youtube channel](https://www.youtube.com/JohnsonNg)                                         |
 | KFC         | Kong Fook Church                            | 播道會港福堂               | [youtube channel](https://www.youtube.com/@EFCCKongFokChurch)                                |
 | ~~KMH~~     | ~~Ko Ming Him~~                             | ~~高銘謙~~                 | [~~youtube channel~~](https://www.youtube.com/@lawrenceko5206)                               |
+| MKBC        | MongKok Baptist Church                      | 旺角浸信會                 | [youtube channel](https://www.youtube.com/@MKBC)                                             |
 | PORCH       | The Porch, Dallas, TX 75251                 | The Porch, Dallas, TX 75251| [youtube channel](https://www.youtube.com/@ThePorch)                                         |
 | STBC        | Shatin Baptist Church                       | 沙田浸信會                 | [youtube channel](https://www.youtube.com/@stbc1977)                                         |
+| TCCC        | Toronto Christian Community Church          | 多倫多華人基督教會         | [youtube channel](https://www.youtube.com/@TorontoCCC)                                       |
 | VINE        | The Vine Church, Hong Kong                  | 葡萄藤教會(灣仔)           | [youtube channel](https://www.youtube.com/@thevinehk)                                        |
 | VINE        | The Vine Church, Yuen Long                  | 葡萄藤教會(元朗)           | [youtube channel](https://www.youtube.com/@thevine_yl)                                       |
 | WWBS        | Worldwide Bible Society                     | 環球聖經公會               | [youtube channel](https://youtube.com/@WorldwideBibleSociety)                                |
