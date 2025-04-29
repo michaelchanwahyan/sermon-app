@@ -25,6 +25,7 @@ pushd $PROJECT_PATH
           || test $PROJECT_NAME = CGST \
           || test $PROJECT_NAME = FVC \
           || test $PROJECT_NAME = JNG \
+          || test $PROJECT_NAME = MKBC \
           || test $PROJECT_NAME = PORCH \
           || test $PROJECT_NAME = STBC \
           || test $PROJECT_NAME = WWBS \
