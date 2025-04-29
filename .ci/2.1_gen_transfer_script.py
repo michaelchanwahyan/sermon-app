@@ -30,23 +30,9 @@ with open('transcription_server_ip.txt', 'r') as fp:
     transcription_server_ip = fp.read()
 transcription_server_ip = transcription_server_ip.strip()
  
-PROJECT_LIST = [ \
-        'ABSCC', \
-        'ACSMHK', \
-        'CBI', \
-        'CGST', \
-        'FLWC', \
-        'FVC', \
-        'GFC', \
-        'JNG', \
-        'KFC', \
-        'PORCH', \
-        'STBC', \
-        'VINE', \
-        'WWBS', \
-        'YFCX', \
-        'YOS' \
-    ]
+with open('PROJECT_LIST', 'r') as fp:
+    PROJECT_LIST = [ _.strip() for _ in fp.readlines() if len(_) ]
+
 transfer_script_str = ''
 for PROJECT in PROJECT_LIST:
     print('on PROJECT :', PROJECT)
