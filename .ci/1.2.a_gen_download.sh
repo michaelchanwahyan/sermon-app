@@ -75,6 +75,10 @@ pushd $PROJECT_PATH
           cat kfc.discipleship  kfc.youth  kfc.mandarin  kfc.english > videos
           rm -f kfc.*
       fi
+      if test $PROJECT_NAME = MKBC
+      then
+          wget -O videos https://www.youtube.com/@MKBC/streams
+      fi
       if test $PROJECT_NAME = PORCH
       then
           wget https://www.youtube.com/@ThePorch/videos
