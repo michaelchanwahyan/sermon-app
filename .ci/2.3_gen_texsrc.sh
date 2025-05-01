@@ -61,7 +61,7 @@ else
         python3    ../func_ipynb_2_py.py    generate_sermonbook.ipynb
         python3    generate_sermonbook.py
       popd # back to $PROJECT_PATH
-      TEX_LINE_NUM_CURR=$(wc -l ../build/$PROJECT_NAME/sermon_*.tex | tail -1 | awk '{print $1}')
+      TEX_LINE_NUM_CURR=$(wc -l $BUILD_PATH/$PROJECT_NAME/sermon_*.tex | tail -1 | awk '{print $1}')
     popd # back to $CI_PATH
 
     echo

@@ -34,6 +34,7 @@ if   [ "$1" == "" ] ; then
     echo "               -  HKBC                                              "
     echo "               -  JNG                                               "
     echo "               -  KFC                                               "
+    echo "               -  MKBC                                              "
     echo "               -  PORCH                                             "
     echo "               -  STBC                                              "
     echo "               -  VINE                                              "
@@ -86,6 +87,10 @@ if   [ "$1" == "" ] ; then
     echo "              KFC := EFCC Kong Fok Church                           "
     echo "              播道會港福堂                                          "
     echo "                                                                    "
+    echo "     MKBC     Compile MKBC sermon book.                             "
+    echo "              MKBC := Mongkok Baptist Church                        "
+    echo "              旺角浸信會                                            "
+    echo "                                                                    "
     echo "     PORCH    Compile PORCH sermon book.                            "
     echo "              PORCH := The Porch, LBJFWY 7540, Dallas, TX 75251     "
     echo "              Podcast of Tuesday night in Watermark Community Church"
@@ -127,6 +132,7 @@ if   [ "$1" == "genall" ] ; then
     python3 convert_srt2txt.py GFC
     python3 convert_srt2txt.py JNG
     python3 convert_srt2txt.py KFC
+    python3 convert_srt2txt.py MKBC
     python3 convert_srt2txt.py PORCH
     python3 convert_srt2txt.py STBC
     python3 convert_srt2txt.py VINE
@@ -174,6 +180,10 @@ if   [ "$1" == "genall" ] ; then
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
     cd ..
+    cd ./MKBC
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
     cd ./PORCH
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
@@ -215,6 +225,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh HKBC
     ./build.sh JNG
     ./build.sh KFC
+    ./build.sh MKBC
     ./build.sh PORCH
     ./build.sh STBC
     ./build.sh VINE
@@ -236,6 +247,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh HKBC    once
     ./build.sh JNG     once
     ./build.sh KFC     once
+    ./build.sh MKBC    once
     ./build.sh PORCH   once
     ./build.sh STBC    once
     ./build.sh VINE    once
