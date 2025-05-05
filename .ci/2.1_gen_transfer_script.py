@@ -36,6 +36,10 @@ with open('PROJECT_LIST', 'r') as fp:
 transfer_script_str = ''
 for PROJECT in PROJECT_LIST:
     print('on PROJECT :', PROJECT)
+    if  PROJECT == 'DSCCC' or \
+        PROJECT == 'HKBC' :
+        print(f'skipped {PROJECT}!')
+        continue
     # audio file list out
     proj_mp3_dir = str(pathlib.Path.home()) + '/TPPHC/SERMON/' + PROJECT + '/'
     mp3_list = os.listdir(proj_mp3_dir)
