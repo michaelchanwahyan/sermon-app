@@ -9,15 +9,21 @@ def ytcode_retrieval(infilename):
         print('non txt non srt file name input: ', infilename)
         return ''
     try:
-        #yt_pos = re.search('[A-Za-z0-9_-]'*11, infilename).span(0)
-        #if yt_pos[0] != 0 and infilename[yt_pos[0]-1] == '[':
-        #    # confirm to be new yt-dlp command output filename format
-        #    return infilename[yt_pos[0]:yt_pos[1]]
-        #elif yt_pos[0] != 0 and infilename[yt_pos[1]+1] == '.':
-        #    # confirm to be old youtube-dl command output filename format
-        #    return infilename[yt_pos[0]+1:yt_pos[1]+1]
-        #else:
-        #    return infilename[yt_pos[0]:yt_pos[1]]
+        # the following regex search approach applys to whisper folder
+        # which contains
+        #   1. xxxxxxxxxxx.whisper.log
+        #   2. xxxxxxxxxxx.srt
+        #   3. README.md
+        #   4. i j ij ijk ii jj ... etc.
+        # in order to retrieve the desired xxxxxxxxxxx pattern,
+        # file names are reversed first, followed by regex search
+        # of consecutive A-Za-z0-9_- pattern search.
+        # note: '.' is not included so that reversed '.whisper.log'
+        # and '.srt' pattern are not involved.  'README.md' is also
+        # excluded.  i j ... files are too short to be included
+        # it is expected that the output srt_list would have each
+        # ytc doubled because a pair of *.whisper.log and *.srt
+        # files are associated to each ytc.
         ytc = re.search('[A-Za-z0-9_-]'*11, infilename[::-1]).group()
         ytc = ytc[::-1]
         return ytc

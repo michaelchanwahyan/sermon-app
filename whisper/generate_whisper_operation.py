@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 
+import os
 import sys
 import re
 
@@ -32,9 +33,9 @@ w_text = ""
 w_text += "#!/bin/bash"
 w_text += "\n"
 
-w_text += "PROJ_NAME=%s    ;" % PROJECT_NAME
-w_text += " LANG=%s    ;" % LANG
-w_text += " source ~/SOURCE/sermon-app/.venv/bin/activate"
+w_text += "PROJ_NAME=%s" % PROJECT_NAME
+w_text += "\n"
+w_text += "LANG=%s" % LANG
 w_text += "\n"
 
 w_text += "#if [ -f stop.txt ] ; then exit ; fi ;"
@@ -55,13 +56,17 @@ fp.close()
 if len(lines) == 0:
     print("Project %s has empty NEW_SRC_LIST !!!" % PROJECT_NAME)
     print("Clean up content , preserve only default content !!!")
-    with open('i', 'w') as fp:
+    with open(PROJECT + '/i', 'w') as fp:
         fp.write(w_text)
     fp.close()
     print("EXIT !")
     exit()
 
+srt_list = [ _ for _ in os.listdir(PROJECT_NAME) if _[-4:] == ".srt" ]
+srt_list = [ _.replace(".srt", "") for _ in srt_list ]
 for ytcode, line in zip([ line[-16:-5] for line in lines ], lines):
+    if ytcode in srt_list:
+        continue
     if len(ytcode) == 11:
         w_text += " if [ -f stop.txt ] ; then exit ; fi ;"
         w_text += " FN=%s; THREAD_NUM=$(cat threadnum.txt) ;" % ytcode
@@ -80,7 +85,7 @@ for ytcode, line in zip([ line[-16:-5] for line in lines ], lines):
         w_text += "\n"
 
 
-with open('i', 'w') as fp:
+with open(PROJECT_NAME + '/i', 'w') as fp:
     fp.write(w_text)
 fp.close()
 

@@ -21,7 +21,9 @@ do
       LANG=en
     fi
     echo $LANG
-    python3  $WHISPER_PATH/generate_whisper_operation.py  $PROJECT_NAME  $LANG  $NEW_SRC_LIST_FILENAME
+    pushd $WHISPER_PATH
+      python3  generate_whisper_operation.py  $PROJECT_NAME  $LANG  $DESTINATE_TMP_FOLDER/$NEW_SRC_LIST_FILENAME
+    popd
     rm -f $NEW_SRC_LIST_FILENAME
   popd # back to $CI_PATH
 done
