@@ -1,2 +1,2 @@
-sermon_HKBC_1928-2007.pdf OneDrive link: [https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbI8nvf4MMNGkoqGUE2hje8BNrTrkl8T2EQuZQGCJ9IuCg?e=EZmvlp](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbI8nvf4MMNGkoqGUE2hje8BNrTrkl8T2EQuZQGCJ9IuCg?e=EZmvlp)
+sermon_HKBC_1928-2007.pdf Dropbox link: [https://www.dropbox.com/scl/fi/gy475ozahgyswvp6da9lg/sermon_HKBC_1928-2007.pdf?rlkey=mngdp4lfb4amsaj0erk0ys6ia&st=n71s4znf&dl=0](https://www.dropbox.com/scl/fi/gy475ozahgyswvp6da9lg/sermon_HKBC_1928-2007.pdf?rlkey=mngdp4lfb4amsaj0erk0ys6ia&st=n71s4znf&dl=0)
 

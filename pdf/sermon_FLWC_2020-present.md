@@ -1,2 +1,2 @@
-sermon_FLWC_2020-present.pdf OneDrive link: [https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EVnH4QasLDdJg8KPkJaIMOwBpAS_QTYhRGdUaKJcjoX1eQ?e=5YkTAt](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EVnH4QasLDdJg8KPkJaIMOwBpAS_QTYhRGdUaKJcjoX1eQ?e=5YkTAt)
+sermon_FLWC_2020-present.pdf Dropbox link: [https://www.dropbox.com/scl/fi/hlm0r2vn6jfd99rxwosfr/sermon_FLWC_2020-present.pdf?rlkey=35e5f6pqnab08yqbh6skcyxy0&st=7ea7hw55&dl=0](https://www.dropbox.com/scl/fi/hlm0r2vn6jfd99rxwosfr/sermon_FLWC_2020-present.pdf?rlkey=35e5f6pqnab08yqbh6skcyxy0&st=7ea7hw55&dl=0)
 

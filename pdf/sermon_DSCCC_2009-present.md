@@ -1,2 +1,2 @@
-sermon_DSCCC_2009-present.pdf OneDrive link: [https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbVa0FIwrGVFg5NsFWxfS9YBVmiu1LkRfPWCZX26Vi7C6g?e=AtBOgP](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbVa0FIwrGVFg5NsFWxfS9YBVmiu1LkRfPWCZX26Vi7C6g?e=AtBOgP)
+sermon_DSCCC_2009-present.pdf Dropbox link: [https://www.dropbox.com/scl/fi/i3zi3taibm4x3c4cypjtz/sermon_DSCCC_2009-present.pdf?rlkey=ndybxo4pxxaj8xk9ix6c9diq4&st=f2o5p1xx&dl=0](https://www.dropbox.com/scl/fi/i3zi3taibm4x3c4cypjtz/sermon_DSCCC_2009-present.pdf?rlkey=ndybxo4pxxaj8xk9ix6c9diq4&st=f2o5p1xx&dl=0)
 

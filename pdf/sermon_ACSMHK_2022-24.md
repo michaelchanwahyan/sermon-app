@@ -1,2 +1,2 @@
-sermon_ACSMHK_2022-24.pdf OneDrive link: [https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbF-wP66vEZKgkv0GS0HhMQBxcXod_Xr-abiNQxjE6y2Jg?e=1nDjg7](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EbF-wP66vEZKgkv0GS0HhMQBxcXod_Xr-abiNQxjE6y2Jg?e=1nDjg7)
+sermon_ACSMHK_2022-24.pdf Dropbox link: [https://www.dropbox.com/scl/fi/8ryvn7ulfd0rr3u4aauzg/sermon_ACSMHK_2022-24.pdf?rlkey=1i4h6ipgk6e58vxmi62eq7yt7&st=mi40c76p&dl=0](https://www.dropbox.com/scl/fi/8ryvn7ulfd0rr3u4aauzg/sermon_ACSMHK_2022-24.pdf?rlkey=1i4h6ipgk6e58vxmi62eq7yt7&st=mi40c76p&dl=0)
 

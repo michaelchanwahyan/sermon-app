@@ -1,2 +1,2 @@
-sermon_STBC_2020-present.pdf OneDrive link: [https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EU3ibL98TuFCnUT5gRydePUB_egKGhp63F5Vmf66NppPyw?e=eMCZZ7](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EU3ibL98TuFCnUT5gRydePUB_egKGhp63F5Vmf66NppPyw?e=eMCZZ7)
+sermon_STBC_2020-present.pdf Dropbox link: [https://www.dropbox.com/scl/fi/pg6c7h8sj9dajz9l9283q/sermon_STBC_2020-present.pdf?rlkey=u83166iscihnh9gjy138cgyb5&st=zq516qem&dl=0](https://www.dropbox.com/scl/fi/pg6c7h8sj9dajz9l9283q/sermon_STBC_2020-present.pdf?rlkey=u83166iscihnh9gjy138cgyb5&st=zq516qem&dl=0)
 

@@ -1,2 +1,2 @@
-sermon_JNG_2019-20.pdf OneDrive link: [https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EVqwsOaGDvZApQD2dkAYLkEBCthGc7gR6JtUGLOFqGf6mg?e=GUoOXW](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EVqwsOaGDvZApQD2dkAYLkEBCthGc7gR6JtUGLOFqGf6mg?e=GUoOXW)
+sermon_JNG_2019-20.pdf Dropbox link: [https://www.dropbox.com/scl/fi/vmxmnmz4c7z47uyyvji7o/sermon_JNG_2019-20.pdf?rlkey=a5b1gcijqr0fk7blqyk8nahdp&st=t5f6c0uz&dl=0](https://www.dropbox.com/scl/fi/vmxmnmz4c7z47uyyvji7o/sermon_JNG_2019-20.pdf?rlkey=a5b1gcijqr0fk7blqyk8nahdp&st=t5f6c0uz&dl=0)
 

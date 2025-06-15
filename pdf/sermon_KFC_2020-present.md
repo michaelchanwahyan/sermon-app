@@ -1,2 +1,2 @@
-sermon_KFC_2020-present.pdf OneDrive link: [https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EXjczoPvWhhNpaHYBJ1V3_cBlZLiHPYE-bc5PWvycw__Aw?e=W0sbp7](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EXjczoPvWhhNpaHYBJ1V3_cBlZLiHPYE-bc5PWvycw__Aw?e=W0sbp7)
+sermon_KFC_2020-present.pdf Dropbox link: [https://www.dropbox.com/scl/fi/56w19qca9z33psnmg5wnr/sermon_KFC_2020-present.pdf?rlkey=7uv3hoqb6ne3n7dsthrv1onbd&st=7artfn9s&dl=0](https://www.dropbox.com/scl/fi/56w19qca9z33psnmg5wnr/sermon_KFC_2020-present.pdf?rlkey=7uv3hoqb6ne3n7dsthrv1onbd&st=7artfn9s&dl=0)
 

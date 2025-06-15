@@ -1,2 +1,2 @@
-sermon_FVC_2017-22.pdf OneDrive link: [https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EaNzWm1WZKFDmpSA-piTqBgB6GcpXvzCFc9m1EmgkVL27w?e=gGEgOT](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EaNzWm1WZKFDmpSA-piTqBgB6GcpXvzCFc9m1EmgkVL27w?e=gGEgOT)
+sermon_FVC_2017-22.pdf Dropbox link: [https://www.dropbox.com/scl/fi/i5jlzacawmlwskwz20w6g/sermon_FVC_2017-22.pdf?rlkey=8da9p796i2px78p7yg6bm34vb&st=1rwj409f&dl=0](https://www.dropbox.com/scl/fi/i5jlzacawmlwskwz20w6g/sermon_FVC_2017-22.pdf?rlkey=8da9p796i2px78p7yg6bm34vb&st=1rwj409f&dl=0)
 

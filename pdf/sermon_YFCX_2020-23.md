@@ -1,2 +1,2 @@
-sermon_YFCX_2020-23.pdf OneDrive link: [https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EXQxdBKzl_ZFr3VuxJaiT9UBwzVztGh2eAS22O2xLKdMVg?e=jbENWT](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EXQxdBKzl_ZFr3VuxJaiT9UBwzVztGh2eAS22O2xLKdMVg?e=jbENWT)
+sermon_YFCX_2020-23.pdf Dropbox link: [https://www.dropbox.com/scl/fi/jmb7ddpbzoafvr92aecvj/sermon_YFCX_2020-23.pdf?rlkey=vuqpv0ddtmk19cqps45hoak6a&st=5xve5yah&dl=0](https://www.dropbox.com/scl/fi/jmb7ddpbzoafvr92aecvj/sermon_YFCX_2020-23.pdf?rlkey=vuqpv0ddtmk19cqps45hoak6a&st=5xve5yah&dl=0)
 

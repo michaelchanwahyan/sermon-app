@@ -1,2 +1,2 @@
-sermon_JNG_2023-24.pdf OneDrive link: [https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EYILCIGDpgRBusxBprnvmUUBf4zbL0xwTHJEtGmpcAQ6AA?e=kofFQe](https://mycuhk-my.sharepoint.com/:b:/g/personal/1155002927_link_cuhk_edu_hk/EYILCIGDpgRBusxBprnvmUUBf4zbL0xwTHJEtGmpcAQ6AA?e=kofFQe)
+sermon_JNG_2023-24.pdf Dropbox link: [https://www.dropbox.com/scl/fi/6aiod4iwos9kchxa8s9bz/sermon_JNG_2023-24.pdf?rlkey=see55hvomd7uaqqquqssuifg8&st=ach9kxbk&dl=0](https://www.dropbox.com/scl/fi/6aiod4iwos9kchxa8s9bz/sermon_JNG_2023-24.pdf?rlkey=see55hvomd7uaqqquqssuifg8&st=ach9kxbk&dl=0)
 
