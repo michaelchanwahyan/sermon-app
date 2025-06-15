@@ -266,7 +266,7 @@ def sermon_tex_from_generation(confno_start, confno_end):
         if lineId == 0:
             continue
         if (lineId+1) % 100 == 0:
-            print(f"{lineId+1} of {len(lines)}")
+            print(f"{lineId+1} of {len(lines)} in {sermon_tex_filepath}")
         line_contents = line.split(",")
         s_curr = line_contents[0]
         s_prev = lines[(lineId-1)%len(lines)].split(",")[0]

@@ -237,7 +237,7 @@ def generate_main_content(sermon_tex_filepath, index_file, progressStepCnt):
     print(f"Step {progressStepCnt}: generate main content")
     for lineId, line in enumerate(lines):
         if (lineId+1) % 100 == 0:
-            print(f"{lineId+1} of {len(lines)}")
+            print(f"{lineId+1} of {len(lines)} in {sermon_tex_filepath}")
         cc = line.split(",")[0]
         cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
         cc_next = lines[(lineId+1)%len(lines)].split(",")[0]

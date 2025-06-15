@@ -407,7 +407,7 @@ def generate_preacher_sections(sermon_tex_filepath, index_file, toc_type, yyyy_s
     # --------------------------------------
     for lineId, line in enumerate(lines):
         if (lineId+1) % 100 == 0:
-            print(f"{lineId+1} of {len(lines)}")
+            print(f"{lineId+1} of {len(lines)} in {sermon_tex_filepath}")
         cc = line.split(",")[0]
         cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
         cc_next = lines[(lineId+1)%len(lines)].split(",")[0]
