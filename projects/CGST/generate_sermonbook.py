@@ -108,7 +108,7 @@ def generate_toc(sermon_tex_filepath, index_file, progressStepCnt):
         lines = fp.readlines()
 
     progressStepCnt += 1
-    print(f"Step {progressStepCnt}: writing TOC in {"title"} order")
+    print(f"Step {progressStepCnt}: writing TOC in title order")
     with open(sermon_tex_filepath, "a") as fp:
         fp.write("\\section{目錄}\n")
         fp.write("\\label{sec:index}\n")
