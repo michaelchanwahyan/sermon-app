@@ -209,7 +209,7 @@ def cleanse_punctuation(inputText, textReplacement):
 
 '''
 cd ~/TPPHC/SERMON/ACSMHK/
-ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}' > ~/SOURCE/sermon-app/projects/ACSMHK/lslogt.txt
+ls *.mp3 > ~/SOURCE/sermon-app/projects/ACSMHK/ls.txt
 '''
 
 
@@ -224,7 +224,7 @@ for line in lines:
 
 
 # from full catalog file obtain required info
-rdd = sc.textFile('ls.txt').filter(lambda w: 'total' not in w)
+rdd = sc.textFile('ls.txt')
 rdd1 = rdd.map(lambda w: (w[:-18].strip(), w[-16:-5])) \
     .map(lambda w: (w[0], w[1], fs_c2t_dict.get(w[1]))) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \

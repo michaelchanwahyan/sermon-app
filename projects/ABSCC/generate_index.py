@@ -209,7 +209,6 @@ def cleanse_punctuation(inputText, textReplacement):
 
 '''
 cd ~/TPPHC/SERMON/ABSCC/
-
 ls *.mp3 > ~/SOURCE/sermon-app/projects/ABSCC/ls.txt
 '''
 
@@ -229,7 +228,8 @@ rdd = sc.textFile('ls.txt')
 rdd1 = rdd.map(lambda w: (w[:-18].strip(), w[-16:-5])) \
     .map(lambda w: (w[0], w[1], fs_c2t_dict.get(w[1]))) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
-    .map(lambda w: (w[0].strip().split(' '), w[1], w[-2], w[-1]))
+    .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
+    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], w[-1]))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
