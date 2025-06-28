@@ -578,6 +578,17 @@ c2p_dict
 
 
 
+rdd_no_fstime_record = rdd2.filter(lambda w: w[4] is None)
+print(f'number of sermon without fsdate record: {rdd_no_fstime_record.count()}')
+print(rdd_no_fstime_record.collect())
+
+
+
+
+
+
+
+
 rdd_time = rdd2.map(lambda w: w[4]) \
    .map(lambda w: [int(_) for _ in w.split('-')]) \
    .map(lambda w: w[0]*365 + w[1]*30 + w[2])
