@@ -19,8 +19,7 @@ pushd $PROJECT_PATH
       pushd $HOME/TPPHC/SERMON/$PROJECT_NAME
       # projects that require lslogt.txt
       if \
-             test $PROJECT_NAME = PORCH \
-          || test $PROJECT_NAME = STBC \
+             test $PROJECT_NAME = STBC \
           || test $PROJECT_NAME = WWBS \
           || test $PROJECT_NAME = YOS
       then
@@ -38,6 +37,7 @@ pushd $PROJECT_PATH
           || test $PROJECT_NAME = JNG \
           || test $PROJECT_NAME = KFC \
           || test $PROJECT_NAME = MKBC \
+          || test $PROJECT_NAME = PORCH \
           || test $PROJECT_NAME = VINE \
           || test $PROJECT_NAME = YFCX
       then
