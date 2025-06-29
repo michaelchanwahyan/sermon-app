@@ -64,15 +64,7 @@ ls *.mp3 > ~/SOURCE/sermon-app/projects/JNG/exlist.txt
 with open("exlist.txt", "r") as fp:
     ex_list = fp.readlines()
 fp.close()
-ex_list_2 = []
-for ex in ex_list:
-    ex = ex.strip()
-    if ex[-5] == ']':
-        ex = ex[-16:-5]
-    else:
-        ex = ex[-15:-4]
-    ex_list_2.append(ex)
-ex_list = ex_list_2
+ex_list = [ _.strip() for _ in ex_list ]
 print('existing list contains %d' % len(ex_list))
 
 
@@ -202,52 +194,33 @@ def cleanse_punctuation(inputText, textReplacement):
     return txt3
 
 
-def unixLsDatetime_to_datetime(unixLsDatetime):
-    tstr = [ _ for _ in unixLsDatetime.split(' ') if len(_) > 0 ]
-    mon = tstr[0]
-    mon = '01' if mon == 'Jan' else mon
-    mon = '02' if mon == 'Feb' else mon
-    mon = '03' if mon == 'Mar' else mon
-    mon = '04' if mon == 'Apr' else mon
-    mon = '05' if mon == 'May' else mon
-    mon = '06' if mon == 'Jun' else mon
-    mon = '07' if mon == 'Jul' else mon
-    mon = '08' if mon == 'Aug' else mon
-    mon = '09' if mon == 'Sep' else mon
-    mon = '10' if mon == 'Oct' else mon
-    mon = '11' if mon == 'Nov' else mon
-    mon = '12' if mon == 'Dec' else mon
-    day = tstr[1]
-    if len(day) == 1:
-        day = '0' + day
-    if ':' in tstr[2]:
-        yr = str(datetime.now())[0:4]
-    else:
-        yr = tstr[2]
-    return yr + '-' + mon + '-' + day
-
-
 
 '''### Run By Your Host System if new audio files are included'''
 
 
 '''
 cd ~/TPPHC/SERMON/JNG/
-
-ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}' > ~/SOURCE/sermon-app/projects/JNG/lslogt.txt
+ls *.mp3 > ~/SOURCE/sermon-app/projects/JNG/ls.txt
 '''
 
 
-# from full catalog file obtain required info
-rdd = sc.textFile('lslogt.txt').filter(lambda w: 'total' not in w) \
-    .map(lambda w: w if w[-16] != '-' else w[:-16]+' ['+w[-15:-4]+'].mp3')
-# due to historical reason, JNG sermon file name contains 2 format:
-# <name>-ytcode.mp3 and <name> [ytcode].mp3
+with open("../sermon_fs_date_record.txt", "r") as fp:
+    lines = [ _.strip() for _ in fp.readlines() ]
 
-rdd1 = rdd.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
+fs_c2t_dict = {}
+for line in lines:
+    if len(line) == 22: # fs date record line format: yyyy-mm-dd xxxxxxxxxxx
+        _ = line.split(' ')
+        fs_c2t_dict[_[1]] = _[0]
+
+
+# from full catalog file obtain required info
+rdd = sc.textFile('ls.txt')
+rdd1 = rdd.map(lambda w: (w[:-18].strip(), w[-16:-5])) \
+    .map(lambda w: (w[0], w[1], fs_c2t_dict.get(w[1]))) \
     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
-    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
+    .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], w[-1]))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
@@ -286,7 +259,7 @@ rdd2 = rdd1.map(
 
 
 print('w[0]= preacher ; w[1]= book; w[2]= youtube code ; w[3]= original name ; w[4]= date')
-# rdd2.take(3)
+rdd2.take(3)
 
 
 def remove_preacher_title(preacher_with_title, title_list):
@@ -306,6 +279,9 @@ preacher_list = rdd2.map(lambda w: w[0]) \
 
 
 print('preacher count: %d' % len(preacher_list))
+
+
+sorted(preacher_list)
 
 
 # count the number of preacher found
@@ -576,6 +552,17 @@ number of sermons by each preacher'''
 
 for preacher in sorted(p2c_dict.keys()):
     print('%s : %d' % (preacher, len(p2c_dict.get(preacher))))
+
+
+
+
+
+
+
+
+rdd_no_fstime_record = rdd2.filter(lambda w: w[4] is None)
+print(f'number of sermon without fsdate record: {rdd_no_fstime_record.count()}')
+print(rdd_no_fstime_record.collect())
 
 
 

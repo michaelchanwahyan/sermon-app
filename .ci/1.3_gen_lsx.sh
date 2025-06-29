@@ -20,7 +20,6 @@ pushd $PROJECT_PATH
       # projects that require lslogt.txt
       if \
              test $PROJECT_NAME = FVC \
-          || test $PROJECT_NAME = JNG \
           || test $PROJECT_NAME = PORCH \
           || test $PROJECT_NAME = STBC \
           || test $PROJECT_NAME = WWBS \
@@ -36,6 +35,7 @@ pushd $PROJECT_PATH
           || test $PROJECT_NAME = CGST \
           || test $PROJECT_NAME = FLWC \
           || test $PROJECT_NAME = GFC \
+          || test $PROJECT_NAME = JNG \
           || test $PROJECT_NAME = KFC \
           || test $PROJECT_NAME = MKBC \
           || test $PROJECT_NAME = VINE \
