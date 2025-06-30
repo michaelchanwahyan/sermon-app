@@ -17,12 +17,12 @@ pushd $PROJECT_PATH
     pushd ./$PROJECT_NAME
       ORI_DIR=$(pwd)
       pushd $HOME/TPPHC/SERMON/$PROJECT_NAME
-      # projects that require lslogt.txt
-      if \
-             test $PROJECT_NAME = YOS
-      then
-        ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}' > $ORI_DIR/lslogt.txt
-      fi
+      # # projects that require lslogt.txt
+      # if \
+      #
+      # then
+      #   ls -logtD '%b %d  %Y' *.mp3 | awk '{print substr($0,index($0,$4))}' > $ORI_DIR/lslogt.txt
+      # fi
       # projects that require ls.txt
       if \
              test $PROJECT_NAME = ABSCC \
@@ -39,7 +39,8 @@ pushd $PROJECT_PATH
           || test $PROJECT_NAME = STBC \
           || test $PROJECT_NAME = VINE \
           || test $PROJECT_NAME = WWBS \
-          || test $PROJECT_NAME = YFCX
+          || test $PROJECT_NAME = YFCX \
+          || test $PROJECT_NAME = YOS
       then
         ls *.mp3 > $ORI_DIR/ls.txt
       fi
