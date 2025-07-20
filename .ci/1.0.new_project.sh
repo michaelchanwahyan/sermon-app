@@ -36,9 +36,11 @@ git add $DATA_PATH/$PROJECT_NAME/README.md
 mkdir -p $PROJECT_PATH/$PROJECT_NAME
 echo project folder of $1 > $PROJECT_PATH/$PROJECT_NAME/README.md
 echo >> $PROJECT_PATH/$PROJECT_NAME/README.md
+touch $PROJECT_PATH/$PROJECT_NAME/ls.txt
 touch $PROJECT_PATH/$PROJECT_NAME/exlist.txt
 touch $PROJECT_PATH/$PROJECT_NAME/rejection_list.txt
 git add $PROJECT_PATH/$PROJECT_NAME/README.md
+git add -f $PROJECT_PATH/$PROJECT_NAME/ls.txt
 git add -f $PROJECT_PATH/$PROJECT_NAME/rejection_list.txt
 
 mkdir -p $WHISPER_PATH/$PROJECT_NAME
