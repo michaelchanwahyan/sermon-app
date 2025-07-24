@@ -39,6 +39,7 @@ if not 'sc' in locals():
 print('done !')
 
 
+_ = os.system("touch videos")
 # obtain the whole webpage of the sermon videos uploaded by FlowChurch
 
 # note: streams contains live streams during covid pandemic
@@ -199,6 +200,7 @@ bkorder2bk_dict = {
 
 
 rgx = recompile(r'(?<=\d)[_](?=\d)')
+rgx_ = recompile(r'20[0-9][0-9][01][0-9][0-3][0-9]')
 
 
 def cleanse_punctuation(inputText, textReplacement):
@@ -207,44 +209,14 @@ def cleanse_punctuation(inputText, textReplacement):
     return txt3
 
 
-def unixLsDatetime_to_datetime(unixLsDatetime):
-    tstr = [ _ for _ in unixLsDatetime.split(' ') if len(_) > 0 ]
-    mon = tstr[0]
-    mon = '01' if mon == 'Jan' else mon
-    mon = '02' if mon == 'Feb' else mon
-    mon = '03' if mon == 'Mar' else mon
-    mon = '04' if mon == 'Apr' else mon
-    mon = '05' if mon == 'May' else mon
-    mon = '06' if mon == 'Jun' else mon
-    mon = '07' if mon == 'Jul' else mon
-    mon = '08' if mon == 'Aug' else mon
-    mon = '09' if mon == 'Sep' else mon
-    mon = '10' if mon == 'Oct' else mon
-    mon = '11' if mon == 'Nov' else mon
-    mon = '12' if mon == 'Dec' else mon
-    day = tstr[1]
-    if len(day) == 1:
-        day = '0' + day
-    if ':' in tstr[2]:
-        yr = str(datetime.now())[0:4]
-    else:
-        yr = tstr[2]
-    return yr + '-' + mon + '-' + day
+with open("../sermon_fs_date_record.txt", "r") as fp:
+    lines = [ _.strip() for _ in fp.readlines() ]
 
-
-def datesearch(inname):
-    # try:
-    res = re.search(r'20[0-9][0-9][0-1][0-9][0-3][0-9]', inname)
-    if res is None:
-        print('ERROR: input re search no valid date found !')
-        print(f'ERROR: given inname: {inname}')
-    datestr = inname[res.start():res.end()]
-    # except:
-    #     datestr = '--------'
-    return datestr[0:4] + '-' + datestr[4:6] + '-' + datestr[6:8]
-
-
-datesearch('【流堂崇拜】演員的自我修養｜哥林多前書4_1-16｜20230211 [KAnMTZ32Dag].mp3')
+fs_c2t_dict = {}
+for line in lines:
+    if len(line) == 22: # fs date record line format: yyyy-mm-dd xxxxxxxxxxx
+        _ = line.split(' ')
+        fs_c2t_dict[_[1]] = _[0]
 
 
 
@@ -253,7 +225,6 @@ datesearch('【流堂崇拜】演員的自我修養｜哥林多前書4_1-16｜20
 
 '''
 cd ~/TPPHC/SERMON/FLWC/
-
 ls *.mp3 > ~/SOURCE/sermon-app/projects/FLWC/ls.txt
 '''
 
@@ -263,7 +234,7 @@ rdd = sc.textFile('ls.txt')
 rdd1 = rdd.map(lambda w: w.replace('｜', '｜').replace('︱', '｜').replace('|','｜'))\
     .map(lambda w: (w[:-4], w[:-18].strip(), w[-16:-5])) \
     .map(lambda w: (w[0], cleanse_punctuation(w[1], '｜'), w[2])) \
-    .map(lambda w: ([ _.strip() for _ in w[1].split('｜') ], w[2], w[0][:-14], datesearch(w[0])))
+    .map(lambda w: ([ _.strip() for _ in w[1].split('｜') ], w[2], w[0][:-14], fs_c2t_dict.get(w[-1])))
 
 
 print('w[0]= name segments ; w[1]= youtube code ; w[2]= original name ; w[3]= date')
@@ -360,6 +331,7 @@ c2ch_dict = {} # 1-to-1 dictionary
 for c in c2s_dict.keys():
     # recall: s := the sermon title
     titleStr = cleanse_punctuation(c2s_dict.get(c), '-')
+    titleStr = rgx_.sub('', titleStr)
     titleStr = titleStr.replace(c2t_dict.get(c).replace('-', ''), '')
     # print(titleStr)
     m = re.search(r'(?<=[0-9])[:]', titleStr) # m := match
@@ -538,6 +510,17 @@ for c in list(c2s_dict.keys()):
 
 '''## rough overview on statistics
 number of sermons by each preacher'''
+
+
+rdd_no_fstime_record = rdd2.filter(lambda w: w[4] is None)
+print(f'number of sermon without fsdate record: {rdd_no_fstime_record.count()}')
+print(rdd_no_fstime_record.collect())
+
+
+
+
+
+
 
 
 rdd_time = rdd2.map(lambda w: w[4]) \

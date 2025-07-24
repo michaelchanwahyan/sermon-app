@@ -218,40 +218,24 @@ def cleanse_punctuation(inputText, textReplacement):
     return txt3
 
 
-def unixLsDatetime_to_datetime(unixLsDatetime):
-    tstr = [ _ for _ in unixLsDatetime.split(' ') if len(_) > 0 ]
-    mon = tstr[0]
-    mon = '01' if mon == 'Jan' else mon
-    mon = '02' if mon == 'Feb' else mon
-    mon = '03' if mon == 'Mar' else mon
-    mon = '04' if mon == 'Apr' else mon
-    mon = '05' if mon == 'May' else mon
-    mon = '06' if mon == 'Jun' else mon
-    mon = '07' if mon == 'Jul' else mon
-    mon = '08' if mon == 'Aug' else mon
-    mon = '09' if mon == 'Sep' else mon
-    mon = '10' if mon == 'Oct' else mon
-    mon = '11' if mon == 'Nov' else mon
-    mon = '12' if mon == 'Dec' else mon
-    day = tstr[1]
-    if len(day) == 1:
-        day = '0' + day
-    if ':' in tstr[2]:
-        yr = str(datetime.now())[0:4]
-    else:
-        yr = tstr[2]
-    return yr + '-' + mon + '-' + day
-
-
 
 '''### Run By Your Host System if new audio files are included'''
 
 
 '''
 cd ~/TPPHC/SERMON/KFC/
-
 ls > ~/SOURCE/sermon-app/projects/KFC/ls.txt
 '''
+
+
+with open("../sermon_fs_date_record.txt", "r") as fp:
+    lines = [ _.strip() for _ in fp.readlines() ]
+
+fs_c2t_dict = {}
+for line in lines:
+    if len(line) == 22: # fs date record line format: yyyy-mm-dd xxxxxxxxxxx
+        _ = line.split(' ')
+        fs_c2t_dict[_[1]] = _[0]
 
 
 # from full catalog file obtain required info
@@ -278,22 +262,12 @@ for _ in rdd_eng.take(3):
     print(_)
 
 
-# read youtube code to fsdate library
-with open('../sermon_fs_date_record.txt', 'r') as fp:
-    fsdate_lines = [ _.strip() for _ in fp.readlines() ]
-fp.close()
-cc2dt = {}
-for lines in fsdate_lines:
-    res = lines.split(' ')
-    cc2dt[res[1]] = res[0]
-
-
 # rdd_chi1 = rdd_chi.map(lambda w: (w[13:-18].strip(), w[-16:-5], w[:13])) \
 #     .map(lambda w: (cleanse_punctuation(w[0], ' '), w[1], w[0], w[2])) \
 #     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
 #     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
 rdd_chi1 = rdd_chi.map(lambda w: (cleanse_punctuation(w[:-18].strip(), ' '), w[-16:-5], w[:-18])) \
-    .map(lambda w: (w[0].split(' '), w[1], w[2], cc2dt.get(w[1]))) \
+    .map(lambda w: (w[0].split(' '), w[1], w[2], fs_c2t_dict.get(w[1]))) \
     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[2], w[3]))
 
 
@@ -307,7 +281,7 @@ for _ in rdd_chi1.take(10):
 #     .map(lambda w: (w[0].split(' '), w[1], w[-2], w[-1])) \
 #     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[-2], unixLsDatetime_to_datetime(w[-1])))
 rdd_eng1 = rdd_eng.map(lambda w: (w[:-18].strip(), w[-16:-5], w[:-18])) \
-    .map(lambda w: (w[0].split(' '), w[1], w[2], cc2dt.get(w[1]))) \
+    .map(lambda w: (w[0].split(' '), w[1], w[2], fs_c2t_dict.get(w[1]))) \
     .map(lambda w: ([_ for _ in w[0] if len(_) > 0], w[1], w[2], w[3]))
 
 
