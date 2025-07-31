@@ -107,10 +107,10 @@ c2bvc_dict = {}
 df = pd.read_csv('index_byt.csv')
 for d in df.iterrows():
     df_row = d[1]
-    c2p_dict[df_row['code']]  = df_row['preacher'] if not pd.isna(df_row['preacher']) else ' '
-    c2b_dict[df_row['code']]  = df_row['book']     if not pd.isna(df_row['book']) else ' '
-    c2ch_dict[df_row['code']] = df_row['chapter']  if not pd.isna(df_row['chapter']) else ' '
-    c2v_dict[df_row['code']]  = df_row['verse']    if not pd.isna(df_row['verse']) else ' '
+    c2p_dict[df_row['code']]  = df_row['preacher'] if not pd.isna(df_row['preacher']) else ''
+    c2b_dict[df_row['code']]  = df_row['book']     if not pd.isna(df_row['book']) else ''
+    c2ch_dict[df_row['code']] = df_row['chapter']  if not pd.isna(df_row['chapter']) else ''
+    c2v_dict[df_row['code']]  = df_row['verse']    if not pd.isna(df_row['verse']) else ''
     c2s_dict[df_row['code']]  = df_row['title']
     c2t_dict[df_row['code']]  = df_row['date']
     c = df_row['code']
