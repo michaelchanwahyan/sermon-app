@@ -740,7 +740,7 @@ df_from_general = pd.DataFrame(
          67, # bkno
          '', # book
          0, # chapter
-         0, # verse
+         '', # verse
          0, # headerVerse
          c2s_dict.get(rid),
          c2t_dict.get(rid),
