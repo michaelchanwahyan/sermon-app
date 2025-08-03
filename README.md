@@ -29,6 +29,7 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 旺角浸信會 崇拜講章 Mongkok Baptist Church                                   | sermon_MKBC_2020-present     | [Dropbox link](https://www.dropbox.com/scl/fi/kijr8c7k741j5gnd928o7/sermon_MKBC_2020-present.pdf?rlkey=bi0aamjejvf75oiymdf7enqx8&st=q4fivytf&dl=0  ) |
 | The Porch, Dallas, TX 75251                                                  | sermon_PORCH_2014-present    | [Dropbox link](https://www.dropbox.com/scl/fi/0u87t49t4null5zdnzr4z/sermon_PORCH_2014-present.pdf?rlkey=iyt02hpvq8i1yryh5waag83bh&st=u41vufkv&dl=0 ) |
 | 沙田浸信會 Shatin Baptist Church                                             | sermon_STBC_2020-present     | [Dropbox link](https://www.dropbox.com/scl/fi/pg6c7h8sj9dajz9l9283q/sermon_STBC_2020-present.pdf?rlkey=u83166iscihnh9gjy138cgyb5&st=zq516qem&dl=0  ) |
+| 城滙社區教會 Urban Voice Community Church                                    |                              |                                                                                                                                                      |
 | 葡萄藤教會 The Vine Church                                                   | sermon_VINE_2020-present     | [Dropbox link](https://www.dropbox.com/scl/fi/5y14d6av5m8cy5m9s3qdq/sermon_VINE_2020-present.pdf?rlkey=apmi1j2ozeouuikhunykt06jz&st=kz6zlj13&dl=0  ) |
 | 環球聖經公會 講道講章 Worldwide Bible Society                                | sermon_WWBS                  | [Dropbox link](https://www.dropbox.com/scl/fi/pjwwfgjhdropdlyar3i89/sermon_WWBS.pdf?rlkey=rowv5dtpix7wwkhmavhnzwls2&st=n4yvpr3s&dl=0               ) |
 | 播道會恩福堂 崇拜講章 Yan Fook Church & Youth                                | sermon_YFCX_2020-2023        | [Dropbox link](https://www.dropbox.com/scl/fi/jmb7ddpbzoafvr92aecvj/sermon_YFCX_2020-23.pdf?rlkey=vuqpv0ddtmk19cqps45hoak6a&st=5xve5yah&dl=0       ) |
@@ -36,26 +37,27 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 中華宣道會友愛堂信培部 Yau Oi School                                         | sermon_YOS                   | [Dropbox link](https://www.dropbox.com/scl/fi/0gssb757sah0luha38jlv/sermon_YOS.pdf?rlkey=cvcisn4hq0g7ybv8jcmfm55lt&st=f1ozdavh&dl=0                ) |
                                                                                                                
 ### Statistics Overview on this project
-source | sermon no. (out of 13147) | amount of dev. activity (out of 3199)
+source | sermon no. (out of 13809) | amount of dev. activity (out of 4056)
 ----|----|----
-ABSCC | 0.2% ( 32 ) | 3.8% ( 122 )
-ACSMHK | 11.2% ( 1485 ) | 17.4% ( 553 )
-CBI | 0.4% ( 53 ) | 2.3% ( 72 )
-CGST | 1.7% ( 222 ) | 0.8% ( 26 )
-DSCCC | 5.7% ( 753 ) | 0.8% ( 26 )
-FLWC | 2.0% ( 263 ) | 3.3% ( 104 )
-FVC | 9.5% ( 1260 ) | 2.9% ( 92 )
-GFC | 1.9% ( 251 ) | 2.5% ( 81 )
-HKBC | 11.9% ( 1587 ) | 0.4% ( 13 )
-JNG | 24.1% ( 3203 ) | 8.4% ( 266 )
-KFC | 7.4% ( 985 ) | 7.1% ( 225 )
-MKBC | 1.7% ( 226 ) | 23.3% ( 740 )
-PORCH | 4.0% ( 534 ) | 2.6% ( 83 )
-STBC | 2.4% ( 314 ) | 3.8% ( 121 )
-VINE | 3.8% ( 499 ) | 6.4% ( 203 )
-WWBS | 0.6% ( 83 ) | 0.8% ( 24 )
-YFCX | 11.3% ( 1509 ) | 12.9% ( 409 )
-YOS | 0.3% ( 40 ) | 0.6% ( 19 )
+ABSCC | 0.2% ( 32 ) | 0.7% ( 28 )
+ACSMHK | 11.0% ( 1514 ) | 14.2% ( 578 )
+CBI | 0.4% ( 56 ) | 1.9% ( 76 )
+CGST | 1.6% ( 222 ) | 0.6% ( 25 )
+DSCCC | 5.5% ( 753 ) | 0.4% ( 16 )
+FLWC | 1.9% ( 266 ) | 2.5% ( 101 )
+FVC | 9.1% ( 1261 ) | 2.1% ( 87 )
+GFC | 1.8% ( 253 ) | 2.0% ( 83 )
+HKBC | 11.5% ( 1587 ) | 0.2% ( 7 )
+JNG | 23.3% ( 3217 ) | 6.7% ( 272 )
+KFC | 7.2% ( 997 ) | 5.7% ( 232 )
+MKBC | 1.6% ( 229 ) | 11.5% ( 466 )
+PORCH | 3.9% ( 537 ) | 2.1% ( 86 )
+STBC | 2.3% ( 322 ) | 3.2% ( 130 )
+UVC | 3.0% ( 413 ) | 30.9% ( 1254 )
+VINE | 3.6% ( 505 ) | 4.7% ( 192 )
+WWBS | 0.6% ( 83 ) | 0.6% ( 26 )
+YFCX | 11.0% ( 1522 ) | 9.3% ( 378 )
+YOS | 0.3% ( 40 ) | 0.5% ( 19 )
 
 ### Steps to compile the books from scratch _(painful !)_
 #### Pre-requisites
