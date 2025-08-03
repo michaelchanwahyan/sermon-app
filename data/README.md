@@ -23,6 +23,7 @@ the foldername here indicates a shortform of the sermon textual or audio source
 | PORCH       | The Porch, Dallas, TX 75251                 | The Porch, Dallas, TX 75251| [youtube channel](https://www.youtube.com/@ThePorch)                                         |
 | STBC        | Shatin Baptist Church                       | 沙田浸信會                 | [youtube channel](https://www.youtube.com/@stbc1977)                                         |
 | TCCC        | Toronto Christian Community Church          | 多倫多華人基督教會         | [youtube channel](https://www.youtube.com/@TorontoCCC)                                       |
+| UVC         | Urban Voice Community Church                | 城滙社區教會               | [youtube channel](https://www.youtube.com/@UrbanVoice)                                       |
 | VINE        | The Vine Church, Hong Kong                  | 葡萄藤教會(灣仔)           | [youtube channel](https://www.youtube.com/@thevinehk)                                        |
 | VINE        | The Vine Church, Yuen Long                  | 葡萄藤教會(元朗)           | [youtube channel](https://www.youtube.com/@thevine_yl)                                       |
 | WWBS        | Worldwide Bible Society                     | 環球聖經公會               | [youtube channel](https://youtube.com/@WorldwideBibleSociety)                                |
