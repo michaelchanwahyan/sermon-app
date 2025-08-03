@@ -38,6 +38,7 @@ if   [ "$1" == "" ] ; then
     echo "               -  MKBC                                              "
     echo "               -  PORCH                                             "
     echo "               -  STBC                                              "
+    echo "               -  UVC                                               "
     echo "               -  VINE                                              "
     echo "               -  WWBS                                              "
     echo "               -  YFCX                                              "
@@ -104,6 +105,10 @@ if   [ "$1" == "" ] ; then
     echo "              STBC := Shatin Baptist Church                         "
     echo "              沙田浸信會                                            "
     echo "                                                                    "
+    echo "     UVC      Compile UVC sermon book.                              "
+    echo "              UVC := Urban Voice Community Church                   "
+    echo "              城滙社區教會                                          "
+    echo "                                                                    "
     echo "     VINE     Compile VINE sermon book.                             "
     echo "              VINE := The Vine Church (HK | YL)                     "
     echo "              Vine Church located at WanChai | YuenLong             "
@@ -140,6 +145,7 @@ if   [ "$1" == "genall" ] ; then
     python3 convert_srt2txt.py MKBC
     python3 convert_srt2txt.py PORCH
     python3 convert_srt2txt.py STBC
+    python3 convert_srt2txt.py UVC
     python3 convert_srt2txt.py VINE
     python3 convert_srt2txt.py WWBS
     python3 convert_srt2txt.py YFCX
@@ -200,6 +206,10 @@ if   [ "$1" == "genall" ] ; then
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
     cd ..
+    cd ./UVC
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
     cd ./VINE
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
@@ -237,6 +247,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh MKBC
     ./build.sh PORCH
     ./build.sh STBC
+    ./build.sh UVC
     ./build.sh VINE
     ./build.sh WWBS
     ./build.sh YFCX
@@ -260,6 +271,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh MKBC    once
     ./build.sh PORCH   once
     ./build.sh STBC    once
+    ./build.sh UVC     once
     ./build.sh VINE    once
     ./build.sh WWBS    once
     ./build.sh YFCX    once
