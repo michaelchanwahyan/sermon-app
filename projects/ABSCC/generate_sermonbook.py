@@ -227,7 +227,7 @@ for d in df.iterrows():
             bvc = bk + ' ' + v + '\n\n' + bvc
             c2bvc_dict[c] = bvc
 
-p_list = sorted([ _ for _ in list(set(list(df['preacher']))) if not pd.isna(_) ])       
+p_list = sorted([ _ for _ in list(set(list(df['preacher']))) if not pd.isna(_) ])
 print(sorted(p_list))
 
 
