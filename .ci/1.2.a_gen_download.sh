@@ -92,6 +92,11 @@ pushd $PROJECT_PATH
           cat stbc.streams stbc.videos > videos
           rm -f stbc.*
       fi
+      if test $PROJECT_NAME = UVC
+      then
+          rm -f videos
+          wget https://www.youtube.com/@UrbanVoice/videos
+      fi
       if test $PROJECT_NAME = VINE
       then
           rm -f vinehk.videos
