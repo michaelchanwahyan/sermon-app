@@ -18,7 +18,7 @@ import json
 import os.path
 import logging
 import argparse
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_pdf import PdfPages
 import pandas as pd
@@ -605,7 +605,7 @@ rdd_time = rdd2.map(lambda w: w[4]) \
 t_ = sorted(rdd_time.collect())
 
 
-_ = plt.plot(t_)
+# _ = plt.plot(t_)
 
 
 print('sermons upload date spans %0.2f years' % round((max(t_) - min(t_)) / 365, 2))
