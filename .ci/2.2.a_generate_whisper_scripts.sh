@@ -5,6 +5,9 @@ source COMMON_RC
 
 echo $MP3_SRC_PATH
 ls -1 $MP3_SRC_PATH
+# the reason for using    MP3_SRC_PATH    instead of    PROJECT_LIST
+# is that MP3_SRC_PATH contains folder where sermon sources are audio
+# while PROJECT_LIST contains other sermons that are from textual source
 for PROJECT_NAME in $(ls -1 $MP3_SRC_PATH)
 do
   DESTINATE_TMP_FOLDER=$WHISPER_PATH/$PROJECT_NAME
