@@ -280,61 +280,21 @@ with open('../rep_whisper_trailing.txt', 'r') as fp:
 fp.close()
 
 
-def check_in_year_range(code, year_range=[2018,2025]):
-    # tstr = c2t_dict.get(code, ' ')
-    # # print(tstr)
-    in_range = False
-    for yr in range(year_range[0], year_range[1] + 1):
-        # if str(yr) in tstr:
-        if str(yr) in code:
-            in_range = True
-            break
-    return in_range
-
-
-with open("./index_byt.csv", "r") as fp:
-    lines = fp.readlines()
-fp.close()
-
-
-print('2018-2025 sermon count:',
-    len(   [ line \
-                 for line in lines \
-                     if check_in_year_range(
-                         line.split(',')[-1],
-                         [2018,2025]
-                     )
-            ] )
-     )
-
-
-# print('2023-2028 sermon count:',
-#     len(   [ line \
-#                  for line in lines \
-#                      if check_in_year_range(
-#                          line.split(',')[-1],
-#                          [2023,2028]
-#                      )
-#             ] )
-#      )
-
-
 rgx_bv = re.compile(r'(?<=\d)[_](?=\d)')
 
 
-def print_prefix(sermon_tex_filepath, yyyy_start, yyyy_end, progressStepCnt):
+def print_prefix(sermon_tex_filepath, progressStepCnt):
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: printing out prefixing")
-    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/城聯社區教會 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel: Urban Voice Community Church/' > " + sermon_tex_filepath)
+    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/城聯社區教會 粵語講道逐字稿 2018-present/' | sed 's/Youtube Channel:/Youtube Channel: Urban Voice Community Church/' > " + sermon_tex_filepath)
     return progressStepCnt
 
 
-def fvc_sermon_title_processing(cc):
+def uvc_sermon_title_processing(cc):
     sstr = c2s_dict.get(cc, ' ')
-    sstr = re.sub(r'[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]', '', sstr) # remove date from title
+    sstr = re.sub(r'[0-9]*⧸[0-9]*⧸[0-9][0-9]', '', sstr) # remove date from title
     sstr = rgx_bv.sub(':', sstr) # adjust bible verse , use ':' to replace '_'
     sstr = sstr[:-13] # remove trailing youtube code
-    sstr = sstr.replace('網上直播', '')
     sstr = cleanse_special_char(
         sstr.replace('_', '\\_').replace('&', '\\&')
     )
@@ -342,19 +302,11 @@ def fvc_sermon_title_processing(cc):
     return sstr
 
 
-def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end, progressStepCnt):
+def generate_toc(sermon_tex_filepath, index_file, toc_type, progressStepCnt):
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: reading in full index file")
-    with open('./index_byt.csv', 'r') as fp:
+    with open(index_file, 'r') as fp:
         lines = fp.readlines()
-    fp.close()
-    lines = [ line \
-                 for line in lines \
-                     if check_in_year_range(
-                         line.split(',')[-1],
-                         [yyyy_start,yyyy_end]
-                     )
-            ]
 
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: writing TOC in {toc_type} order")
@@ -388,7 +340,7 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end
                 bstr = c2b_dict.get(cc, ' ')
                 vstr = c2v_dict.get(cc, ' ')
                 sstr = c2s_dict.get(cc, ' ')
-                sstr = fvc_sermon_title_processing(cc)
+                sstr = uvc_sermon_title_processing(cc)
                 sstr = cleanse_special_char(
                     c2s_dict.get(cc, ' ').replace('_', '\\_').replace('&', '\\&')
                 )
@@ -511,16 +463,9 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
         fp.write("\\newpage\n\n")
 
 
-def generate_main_content(sermon_tex_filepath, index_file, yyyy_start, yyyy_end, progressStepCnt):
+def generate_main_content(sermon_tex_filepath, index_file, progressStepCnt):
     with open(index_file, "r") as fp:
         lines = fp.readlines()
-    lines = [ line \
-            for line in lines \
-                if check_in_year_range(
-                    line.split(',')[-1],
-                    [yyyy_start,yyyy_end]
-                )
-        ]
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: generate main content")
     for lineId, line in enumerate(lines):
@@ -539,22 +484,19 @@ def generate_afterword_and_postfix(sermon_tex_filepath):
     _ = os.system("cat ../postfix.tex >> " + sermon_tex_filepath)
 
 
-def sermon_tex_from_year(yyyy_start, yyyy_end):
-    # yyyy_start : starting year, e.g. 2012
-    # yyyy_end.  : ending year, e.g. 2018
+def sermon_tex():
     progressStepCnt = 0
-    sermon_tex_filepath = f"../../build/UVC/sermon_UVC_{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
+    sermon_tex_filepath = f"../../build/UVC/sermon_UVC_2018-present.tex"
     # --------------------------------------
     # print the latex document : prefix
     # --------------------------------------
-    progressStepCnt = print_prefix(sermon_tex_filepath, yyyy_start, yyyy_end, progressStepCnt)
+    progressStepCnt = print_prefix(sermon_tex_filepath, progressStepCnt)
     # --------------------------------------
     # only take into account index table
     # within desired year range
     # --------------------------------------
-    progressStepCnt = generate_toc(sermon_tex_filepath, './index_byb.csv', 'chronic', yyyy_start, yyyy_end, progressStepCnt)
-    progressStepCnt = generate_toc(sermon_tex_filepath, './index_byt.csv', 'scriptual', yyyy_start, yyyy_end, progressStepCnt)
-    progressStepCnt = generate_main_content(sermon_tex_filepath, './index_byt.csv', yyyy_start, yyyy_end, progressStepCnt)
+    progressStepCnt = generate_toc(sermon_tex_filepath, './index_byt.csv', 'chronic', progressStepCnt)
+    progressStepCnt = generate_main_content(sermon_tex_filepath, './index_byt.csv', progressStepCnt)
 
     # --------------------------------------
     # print the latex document : afterword and postfix
@@ -565,10 +507,10 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
 
 
 
-'''## 2018-2025 Sermons'''
+'''## generate main content'''
 
 
-sermon_tex_from_year(2018, 2025)
+sermon_tex()
 
 
 
