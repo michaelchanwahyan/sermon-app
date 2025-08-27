@@ -529,7 +529,7 @@ def generate_main_content(sermon_tex_filepath, index_file, yyyy_start, yyyy_end,
         cc = line.split(",")[0]
         cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
         cc_next = lines[(lineId+1)%len(lines)].split(",")[0]
-        if os.path.isfile(f'../../data/FVC/{cc}.txt'):
+        if os.path.isfile(f'../../data/UVC/{cc}.txt'):
             write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next)
     return progressStepCnt
 
@@ -543,7 +543,7 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # yyyy_start : starting year, e.g. 2012
     # yyyy_end.  : ending year, e.g. 2018
     progressStepCnt = 0
-    sermon_tex_filepath = f"../../build/FVC/sermon_FVC_{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
+    sermon_tex_filepath = f"../../build/UVC/sermon_UVC_{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
     # --------------------------------------
     # print the latex document : prefix
     # --------------------------------------
