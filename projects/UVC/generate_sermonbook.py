@@ -266,7 +266,7 @@ print('checking of "rgx.sub(r\'$\\1^\\2$\', \'E=MC^-2\')" :', rgx.sub(r'$\1^\2$'
 
 def cleanse_special_char(inputText):
     txt2 = inputText
-    txt2 = txt2.replace('$', '\\$') # preserve this here since its higher priority than in html arguments
+    # txt2 = txt2.replace('$', '\$') # preserve this here since its higher priority than in html arguments
     txt2 = rgx.sub(r'$\1^\2$', txt2)
     for rep_ in rep_list:
         txt2 = txt2.replace(rep_[0], rep_[1])
@@ -433,7 +433,7 @@ def write_sermon_text(fp, cc):
             # if the text line contains odd number of
             # dollar sign '$', it would probably bring up error
             # over 95% of the situation is that there only has 1 '$' sign
-            textline = textline.replace('$', '\\$')
+            textline = textline.replace('$', '\$')
         fp.write(textline + "\n")
         if _textrow_cnt % 40 == 0:
             fp.write("\n")
