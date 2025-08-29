@@ -480,6 +480,16 @@ elif [ "$1" == "STBC" ] ; then
     rm -f $OUTFILENAME.mtc*
     mv $OUTFILENAME.pdf ../../pdf/
     cd ..
+elif [ "$1" == "UVC" ] ; then
+    OUTFILENAME=sermon_$1_2018-present
+    cd $1
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
 elif [ "$1" == "VINE" ] ; then
     OUTFILENAME=sermon_$1_2020-present
     cd $1
