@@ -66,6 +66,12 @@ srt_list = [ _ for _ in os.listdir(PROJECT_NAME) if _[-4:] == ".srt" ]
 srt_list = [ _.replace(".srt", "") for _ in srt_list ]
 for ytcode, line in zip([ line[-16:-5] for line in lines ], lines):
     if ytcode in srt_list:
+        print(f"audio file *{ytcode}* transcription already exists !")
+        print(f"remove audio file *{ytcode}*")
+        w_text += " if [ -f stop.txt ] ; then exit ; fi ;"
+        w_text += " FN=%s;" % ytcode
+        w_text += " rm -f ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3"
+        w_text += "\n"
         continue
     if len(ytcode) == 11:
         w_text += " if [ -f stop.txt ] ; then exit ; fi ;"
