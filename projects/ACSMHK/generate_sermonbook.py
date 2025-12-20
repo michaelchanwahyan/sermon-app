@@ -104,7 +104,7 @@ c2s_dict   = {}
 c2t_dict   = {}
 c2bvc_dict = {}
 
-df = pd.read_csv('index_byn.csv')
+df = pd.read_csv('index_byp.csv')
 for d in df.iterrows():
     df_row = d[1]
     c2p_dict[df_row['code']]  = df_row['preacher'] if not pd.isna(df_row['preacher']) else ''
@@ -319,15 +319,48 @@ fp.close()
 
 print('all time sermon count:',
     len( lines )
-)
+     )
 
 
-print('2022-2024 sermon count:',
+print('2012-2018 sermon count:',
     len(   [ line \
                  for line in lines \
                      if check_in_year_range(
                          line.split(',')[-1],
-                         [2022,2024]
+                         [2012,2018]
+                     )
+            ] )
+     )
+
+
+print('2019-2020 sermon count:',
+    len(   [ line \
+                 for line in lines \
+                     if check_in_year_range(
+                         line.split(',')[-1],
+                         [2019,2020]
+                     )
+            ] )
+     )
+
+
+print('2021-2022 sermon count:',
+    len(   [ line \
+                 for line in lines \
+                     if check_in_year_range(
+                         line.split(',')[-1],
+                         [2021,2022]
+                     )
+            ] )
+     )
+
+
+print('2023-2024 sermon count:',
+    len(   [ line \
+                 for line in lines \
+                     if check_in_year_range(
+                         line.split(',')[-1],
+                         [2023,2024]
                      )
             ] )
      )
@@ -336,11 +369,11 @@ print('2022-2024 sermon count:',
 def print_prefix(sermon_tex_filepath, yyyy_start, yyyy_end, progressStepCnt):
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: printing out prefixing")
-    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/宣道傳意及出版事工 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel:  Alliance Communications Ministry/' > " + sermon_tex_filepath)
+    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/宣道傳意及出版事工 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel: JohnsonNg/' > " + sermon_tex_filepath)
     return progressStepCnt
 
 
-def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end, progressStepCnt):
+def write_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end, progressStepCnt):
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: reading in full index file")
     with open(index_file, 'r') as fp:
@@ -354,33 +387,37 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end
             ]
 
     progressStepCnt += 1
-    print(f"Step {progressStepCnt}: writing TOC in {toc_type} order")
+    print(f"Step {progressStepCnt}: writing TOC which gathers up all preachers")
     with open(sermon_tex_filepath, "a") as fp:
-        if   toc_type == 'title':
-            fp.write(f"\\section{{目錄\\small{{(順題)}}}}\n")
-        elif toc_type == 'chronic':
-            fp.write(f"\\section{{目錄\\small{{(順時)}}}}\n")
-        elif toc_type == 'preacher':
-            fp.write(f"\\section{{目錄\\small{{(順仕)}}}}\n")
-        elif toc_type == 'scriptual':
-            fp.write(f"\\section{{目錄\\small{{(順卷)}}}}\n")
-        fp.write(f"\\label{{sec:index_{toc_type}}}\n")
+        sermonCnt = 0
+        p_prev = ''
+        p_curr = ''
+        p_id = 0
         fp.write("{ \\scriptsize\n")
         # --------------------------------------
-        # start of TOC table
+        # start of partitioned-by-preachers table
         # --------------------------------------
-        fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n")
+        fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
         fp.write("\\hline\n")
         # --------------------------------------
-        # lines is the line content in index_{toc_type}
+        # lines is the line content in index_byp
         # --------------------------------------
-        for line in lines:
+        for lineId, line in enumerate(lines):
             cc = line.split(",")[0]
             # --------------------------------------
             # only include this code cc if it is
             # ready in the transcription folder
             # --------------------------------------
             if os.path.isfile(f'../../data/ACSMHK/{cc}.txt'):
+                sermonCnt += 1
+                p_prev = p_curr
+                p_curr = c2p_dict.get(cc)
+                if p_prev != p_curr:
+                    p_id += 1
+                    fp.write("\\multicolumn{4}{c}{} \\\\\n")
+                    fp.write("\\multicolumn{4}{c}{\\hyperref[ch:preacher"+str(p_id)+"]{"+p_curr+"}} \\\\\n") # <----------- this defines the column num
+                    fp.write("\\multicolumn{4}{c}{} \\\\\n")
+                    fp.write("\\hline\n")
                 bstr = c2b_dict.get(cc, ' ')
                 vstr = c2v_dict.get(cc, ' ')
                 sstr = cleanse_special_char(
@@ -388,27 +425,94 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end
                 )
                 tstr = c2t_dict.get(cc, ' ')
                 ystr = "\\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{" + cc.replace('_', '\\_') + "}}"
-                fp.write(bstr + ' ' + vstr + " & "
-                         + "\\hyperref[sec:"+cc.replace('-', '_')+"]{"+sstr+"}" + " & "
-                         + tstr + " & "
-                         + ystr + " \\\\\n")
+                fp.write(bstr + ' ' + vstr + " & " \
+                         + "\\hyperref[sec:"+cc.replace('-', '_')+"]{"+sstr+"}" + " & " \
+                         + tstr + " & " \
+                         + ystr \
+                         + " \\\\\n")
         fp.write("\\end{xltabular}\n")
+        # --------------------------------------
+        # end of partitioned-by-preachers table
+        # --------------------------------------
         fp.write("}\n")
-        fp.write("\\newpage\n\n")
-    # --------------------------------------
-    # end of table sorted by toc_type
-    # --------------------------------------
+        print('sermon count in current book: %d' % sermonCnt)
     return progressStepCnt
 
 
-def write_scripture_part(fp, cc):
+def write_preacher_toc(fp, p_id, p_curr, lines):
+    # ------------------------------------
+    # chapter toc
+    fp.write("\n\n\\chapter{"+p_curr+"}")
+    fp.write("\label{ch:preacher"+str(p_id)+"}\n")
+    fp.write("\\begin{multicols}{3}\n")
+    fp.write("\\minitoc\n")
+    fp.write("\\end{multicols}\n")
+    # END OF chapter toc
+    # ------------------------------------
+    # ------------------------------------
+    # chapter tabular-toc with sermon title
+    fp.write("{ \\scriptsize\n")
+    fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
+    fp.write("\\hline\n")
+    for lineId_, line_ in enumerate(lines):
+        cc_ = line_.split(",")[0]
+        if os.path.isfile(f'../../data/ACSMHK/{cc_}.txt') and p_curr == c2p_dict.get(cc_):
+            bstr = c2b_dict.get(cc_, ' ')
+            vstr = c2v_dict.get(cc_, ' ')
+            sstr = cleanse_special_char(
+                c2s_dict.get(cc_, ' ').replace('_', '\\_').replace('&', '\&')
+            )
+            tstr = c2t_dict.get(cc_, ' ')
+            ystr = "\\href{https://youtube.com/watch?v=" + cc_ +"}{\\texttt{" + cc_.replace('_', '\\_') + "}}"
+            fp.write(bstr + ' ' + vstr + " & " \
+                        + "\\hyperref[sec:"+cc_.replace('-', '_')+"]{"+sstr+"}" + " & " \
+                        + tstr + " & " \
+                        + ystr \
+                        + " \\\\\n")
+    fp.write("\\hline\n")
+    fp.write("\\end{xltabular}\n")
+    fp.write("}\n")
+    # END OF chapter tabular-toc with sermon title
+    # ------------------------------------
+    fp.write("\\newpage\n\n")
+
+
+def add_section_title(fp, cc_prev, cc, cc_next, p_id):
+    sectionNameStr = ''
+    b = c2b_dict.get(cc)
+    sectionNameStr += b if b is not None else ''
+    v = c2v_dict.get(cc)
+    sectionNameStr += ' ' + v if b is not None and v is not None else ''
+    ch = c2ch_dict.get(cc)
+    sectionNameStr += ' ' + ch if b is not None and ch is not None and v is None else ''
+    fp.write("\n\n\\section{"+sectionNameStr+"}\n")
+    fp.write("\\label{sec:"+cc.replace('-', '_')+"}\n")
+    sstr = cleanse_special_char(
+        c2s_dict.get(cc).replace('_', '\\_').replace('&', '\\&')
+    )
+    fp.write("\\textbf{"+sstr+"}\n")
+    fp.write("\\newline\n\\newline\n")
+    fp.write("連結: \\href{https://youtube.com/watch?v=" + cc +"}{\\texttt{https://youtube.com/watch?v=" + cc.replace('_', '\\_') + "}} ~~~~ 語音日期: " + c2t_dict.get(cc) + "\n")
+    fp.write("\\newline\n\\newline\n")
+    fp.write("\\hyperref[sec:"+cc_prev.replace('-', '_')+"]{< < < PREV SERMON < < <}\n")
+    fp.write("~\n")
+    fp.write("\\hyperlink{toc}{[返主目錄]}\n")
+    fp.write("~\n")
+    fp.write("\\hyperref[ch:preacher"+str(p_id)+"]{[返講員目錄]}\n")
+    fp.write("~\n")
+    fp.write("\\hyperref[sec:"+cc_next.replace('-', '_')+"]{> > > NEXT SERMON > > >}\n")
+    fp.write("\\newline\n\\newline\n")
+
+
+def add_scripture_text(fp, cc):
     # ----------------------
     # add the scripture part if not None
     bvc_curr = c2bvc_dict.get(cc)
     if bvc_curr is not None:
         bvc_curr = bvc_curr.split("\n")
         # first row shall be book + verse info
-        fp.write(bvc_curr[0].strip() + "\n")
+        bvc_line = bvc_curr[0].strip() + "\n"
+        fp.write(bvc_line)
         fp.write("\\newline\n")
         fp.write("\\begin{longtable}{cl}\n")
         fp.write("\\hline\n\\hline\n")
@@ -417,7 +521,7 @@ def write_scripture_part(fp, cc):
         for bvc_line in bvc_curr[1:]:
             bvc_line = bvc_line.strip()
             if len(bvc_line) > 0:
-                if bvc_line != [_.strip() for _ in bvc_curr if len(_.strip())][-1]:
+                if bvc_line != [ _.strip() for _ in bvc_curr if len(_.strip()) ][-1]:
                     bvc_line += " \\\\ \\\\ \\relax\n"
                 else:
                     bvc_line += " \\\\ \\\\\n"
@@ -426,7 +530,7 @@ def write_scripture_part(fp, cc):
                     bvc_line = "& " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line + " \\end{tabularx}"
                 else:
                     bvc_line = bvc_line[:si].replace(".", ":") + " & " + "\\begin{tabularx}{0.7\\textwidth}{X} " + bvc_line[si+1:]
-                    nli = bvc_line.find(" \\\\")
+                    nli = bvc_line.find(" \\\\") # newline char index
                     bvc_line = bvc_line[:nli] + " \\end{tabularx}" + bvc_line[nli:]
                 fp.write(bvc_line)
         fp.write("[1ex]\n")
@@ -434,10 +538,14 @@ def write_scripture_part(fp, cc):
         fp.write("\\end{longtable}\n")
 
 
-def write_sermon_text(fp, cc):
-    with open(f"../../data/ACSMHK/{cc}.txt", "r") as fp_:
+def add_sermon_text(fp, cc):
+    # ----------------------
+    # add the sermon part
+    with open("../../data/ACSMHK/"+cc+".txt", "r") as fp_:
         the_sermon_text = fp_.read()
-    the_sermon_text = cleanse_special_char(the_sermon_text).replace("\\n\\n", "\\n")
+    fp_.close()
+    the_sermon_text = cleanse_special_char(the_sermon_text)
+    the_sermon_text = the_sermon_text.replace("\\n\\n", "\\n")
     textlines = the_sermon_text.split("\n")
     _textrow_cnt = 0
     textline_prev = ''
@@ -477,46 +585,32 @@ def write_sermon_text(fp, cc):
         fp.write(textline + "\n")
         if _textrow_cnt % 40 == 0:
             fp.write("\n")
+    fp.write("\\newpage\n\n")
 
 
-def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
-    with open(sermon_tex_filepath, "a") as fp:
-        sectionNameStr = f"{c2b_dict.get(cc, '')} {c2v_dict.get(cc, '')} {c2ch_dict.get(cc, '')}".strip()
-        fp.write(f"\n\n\\section{{{sectionNameStr}}}\n")
-        fp.write(f"\\label{{sec:{cc.replace('-', '_')}}}\n")
-        sstr = cleanse_special_char(c2s_dict.get(cc, ' ').replace('_', '\\_').replace('&', '\\&'))
-        fp.write(f"\\textbf{{{sstr}}}\n")
-        fp.write("\\newline\n\\newline\n")
-        cc_ud_protected = cc.replace('_', '\\_')
-        fp.write(f"連結: \\href{{https://youtube.com/watch?v={cc}}}{{\\texttt{{https://youtube.com/watch?v={cc_ud_protected}}}}} ~~~~ 語音日期: {c2t_dict.get(cc)}\n")
-        fp.write("\\newline\n\\newline\n")
-        fp.write(f"\\hyperref[sec:{cc_prev.replace('-', '_')}]{{\\small{{< < < PREV SERMON < < <}}}}\n")
-        fp.write("~\n")
-        fp.write("\\hyperref[sec:index_title]{\\small{[返順題目]}}\n")
-        fp.write("~\n")
-        fp.write("\\hyperref[sec:index_preacher]{\\small{[返順仕目]}}\n")
-        fp.write("~\n")
-        fp.write("\\hyperref[sec:index_scriptual]{\\small{[返順卷目]}}\n")
-        fp.write("~\n")
-        fp.write(f"\\hyperref[sec:{cc_next.replace('-', '_')}]{{\\small{{> > > NEXT SERMON > > >}}}}\n")
-        fp.write("\\newline\n\\newline\n")
-        write_scripture_part(fp, cc)
-        write_sermon_text(fp, cc)
-        fp.write("\\newpage\n\n")
-
-
-def generate_main_content(sermon_tex_filepath, index_file, yyyy_start, yyyy_end, progressStepCnt):
-    with open(index_file, "r") as fp:
+def generate_preacher_sections(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end, progressStepCnt):
+    progressStepCnt += 1
+    print(f"Step {progressStepCnt}: reading in full index file")
+    with open(index_file, 'r') as fp:
         lines = fp.readlines()
     lines = [ line \
-            for line in lines \
-                if check_in_year_range(
-                    line.split(',')[-1],
-                    [yyyy_start,yyyy_end]
-                )
-        ]
+                 for line in lines \
+                     if check_in_year_range(
+                         line.split(',')[-1],
+                         [yyyy_start, yyyy_end]
+                     )
+            ]
+
     progressStepCnt += 1
-    print(f"Step {progressStepCnt}: generate main content")
+    print(f"Step {progressStepCnt}: generate per-preacher TOC for each preacher section")
+    p_prev = ''
+    p_curr = ''
+    p_id = 0
+    cc_prev = ''
+    cc_next = ''
+    # --------------------------------------
+    # lines is the line content in index_byp
+    # --------------------------------------
     for lineId, line in enumerate(lines):
         if (lineId+1) % 100 == 0:
             print(f"{lineId+1} of {len(lines)} in {sermon_tex_filepath}")
@@ -524,52 +618,58 @@ def generate_main_content(sermon_tex_filepath, index_file, yyyy_start, yyyy_end,
         cc_prev = lines[(lineId-1)%len(lines)].split(",")[0]
         cc_next = lines[(lineId+1)%len(lines)].split(",")[0]
         if os.path.isfile(f'../../data/ACSMHK/{cc}.txt'):
-            write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next)
+            p_prev = p_curr
+            p_curr = c2p_dict.get(cc)
+            if p_prev != p_curr:
+                progressStepCnt += 1
+                print(f"Step {progressStepCnt}: a new preacher {p_curr} is reached !")
+                p_id += 1
+                with open(sermon_tex_filepath, "a") as fp:
+                    write_preacher_toc(fp, p_id, p_curr, lines)
+            with open(sermon_tex_filepath, "a") as fp:
+                add_section_title(fp, cc_prev, cc, cc_next, p_id)
+                add_scripture_text(fp, cc)
+                add_sermon_text(fp, cc)
     return progressStepCnt
 
 
-def generate_afterword_and_postfix(sermon_tex_filepath):
-    _ = os.system("cat ../afterword.tex >> " + sermon_tex_filepath)
-    _ = os.system("cat ../postfix.tex >> " + sermon_tex_filepath)
+def add_afterword_and_postfix(sermon_tex_filepath):
+    """Adds the afterword and postfix to the LaTeX file."""
+    os.system("cat ../afterword.tex >> " + sermon_tex_filepath)
+    os.system("cat ../postfix.tex >> " + sermon_tex_filepath)
 
 
 def sermon_tex_from_year(yyyy_start, yyyy_end):
-    # yyyy_start : starting year, e.g. 2012
-    # yyyy_end.  : ending year, e.g. 2018
-    progressStepCnt = 0
     sermon_tex_filepath = f"../../build/ACSMHK/sermon_ACSMHK_{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
-    # --------------------------------------
-    # print the latex document : prefix
-    # --------------------------------------
-    progressStepCnt = print_prefix(sermon_tex_filepath, yyyy_start, yyyy_end, progressStepCnt)
-    # --------------------------------------
-    # only take into account index table
-    # within desired year range
-    # --------------------------------------
-    progressStepCnt = generate_toc(sermon_tex_filepath, './index_byn.csv', 'title', yyyy_start, yyyy_end, progressStepCnt)
-    progressStepCnt = generate_toc(sermon_tex_filepath, './index_byp.csv', 'preacher', yyyy_start, yyyy_end, progressStepCnt)
-    progressStepCnt = generate_toc(sermon_tex_filepath, './index_byb.csv', 'scriptual', yyyy_start, yyyy_end, progressStepCnt)
-    progressStepCnt = generate_main_content(sermon_tex_filepath, './index_byn.csv', yyyy_start, yyyy_end, progressStepCnt)
-    # --------------------------------------
-    # print the latex document : afterword and postfix
-    # --------------------------------------
-    generate_afterword_and_postfix(sermon_tex_filepath)
+    progressStepCnt = 0
 
-    print("done !")
+    # Step 1: Print LaTeX prefix
+    progressStepCnt = print_prefix(sermon_tex_filepath, yyyy_start, yyyy_end, progressStepCnt)
+
+    # Step 2: Write Table of Contents (TOC)
+    progressStepCnt = write_toc(sermon_tex_filepath, './index_byp.csv', 'preacher', yyyy_start, yyyy_end, progressStepCnt)
+
+    # Step 3: Generate per-preacher TOC and sermon content
+    progressStepCnt = generate_preacher_sections(sermon_tex_filepath, './index_byp.csv', 'preacher', yyyy_start, yyyy_end, progressStepCnt)
+
+    # Step 4: Add afterward and postfix
+    add_afterword_and_postfix(sermon_tex_filepath)
+
+    print("done!")
 
 
 
 '''## 2022-2024 Sermons'''
 
 
-sermon_tex_from_year(2022, 2024)
+sermon_tex_from_year(2022,2024)
 
 
 
 '''## 2025-2026 Sermons'''
 
 
-sermon_tex_from_year(2025, 2026)
+sermon_tex_from_year(2025,2026)
 
 
 
