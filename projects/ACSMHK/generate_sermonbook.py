@@ -369,7 +369,7 @@ print('2023-2024 sermon count:',
 def print_prefix(sermon_tex_filepath, yyyy_start, yyyy_end, progressStepCnt):
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: printing out prefixing")
-    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/宣道傳意及出版事工 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel: JohnsonNg/' > " + sermon_tex_filepath)
+    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/宣道傳意及出版事工 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/Youtube Channel: Alliance Communications Ministry/' > " + sermon_tex_filepath)
     return progressStepCnt
 
 
