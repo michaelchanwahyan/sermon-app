@@ -40,6 +40,7 @@ with open('PROJECT_LIST', 'r') as fp:
     PROJECT_LIST = [ _.strip() for _ in fp.readlines() if len(_) ]
 
 transfer_script_str = ''
+transfer_script_str += '#!/bin/bash' + '\n'
 for PROJECT in PROJECT_LIST:
     print('on PROJECT :', PROJECT)
     if  PROJECT == 'DSCCC' or \
