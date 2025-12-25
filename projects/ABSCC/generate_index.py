@@ -18,9 +18,9 @@ import json
 import os.path
 import logging
 import argparse
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.backends.backend_pdf import PdfPages
+# from matplotlib.backends.backend_pdf import PdfPages
 import pandas as pd
 
 import itertools
@@ -39,18 +39,21 @@ if not 'sc' in locals():
 print('done !')
 
 
+'''
 # obtain the whole webpage of the sermon videos uploaded by Yan Fook Church - Youth
 
 # note: streams contains live streams during covid pandemic
 import os
 _ = os.system("rm -f videos")
 _ = os.system("wget https://www.youtube.com/@ABSCC/videos")
+'''
 
 
+'''
 # read in the html source of the webpage
 with open("videos", "r") as fp:
     vtext = fp.read()
-fp.close()
+'''
 
 
 
@@ -62,27 +65,32 @@ ls > ~/SOURCE/sermon-app/projects/ABSCC/exlist.txt
 vim ~/SOURCE/sermon-app/projects/ABSCC/exlist.txt # edit to only preserve the 11-character hash code'''
 
 
+'''
 # refetch the list of existing audio files
 with open("exlist.txt", "r") as fp:
     ex_list = fp.readlines()
-fp.close()
 ex_list = [ _.strip() for _ in ex_list ]
 print('existing list contains %d' % len(ex_list))
+'''
 
 
+'''
 with open("rejection_list.txt", "r") as fp:
     rj_list = fp.readlines()
-fp.close()
 rj_list = [ _.strip() for _ in rj_list ]
 print('rejection list contains %d' % len(rj_list))
+'''
 
 
+'''
 # use regular expression to find all the occurance of video
 # by the youtube code pattern
 _list = re.findall( r'watch\?v=(...........)', vtext)
 print('The Alliance Bible Seminary Centre of Canada completed list contains %d' % len(_list))
+'''
 
 
+'''
 # for newly found youtube videos in webpage html but
 # not yet in the list of audio files, we identify them
 # and pack them into 'needed_list'
@@ -90,8 +98,10 @@ needed_list =  [_ for _ in _list if _ not in ex_list and _ not in rj_list ]
 needed_list = list(set(needed_list))
 N = len(needed_list)
 print('total count of new recording contents: %d' % N)
+'''
 
 
+'''
 # generate download script
 _ = os.system("rm -f download.sh")
 cnt = 1
@@ -104,7 +114,7 @@ if not os.path.isfile("download.sh"):
             fp.write('echo ; echo ; yt-dlp -x --audio-format mp3 ')
             fp.write('https://youtube.com/watch?v=%s\n' % needed_code)
             cnt += 1
-    fp.close()
+'''
 
 
 
@@ -662,7 +672,7 @@ rdd_time = rdd2.map(lambda w: w[4]) \
 t_ = sorted(rdd_time.collect())
 
 
-_ = plt.plot(t_)
+# _ = plt.plot(t_)
 
 
 print('sermons upload date spans %0.2f years' % round((max(t_) - min(t_)) / 365, 2))
@@ -740,7 +750,7 @@ df_from_general = pd.DataFrame(
          67, # bkno
          '', # book
          0, # chapter
-         0, # verse
+         '', # verse
          0, # headerVerse
          c2s_dict.get(rid),
          c2t_dict.get(rid),
