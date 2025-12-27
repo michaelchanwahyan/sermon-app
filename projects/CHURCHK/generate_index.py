@@ -181,6 +181,17 @@ files_in_curr_dir = os.listdir(churchk_src_dir)
 files_in_curr_dir.sort()
 
 
+html_file_found = False
+for filename in files_in_curr_dir:
+    if ".html" in filename:
+        html_file_found = True
+        break
+if not html_file_found:
+    print("no new html file found !")
+    print("exit() !")
+    exit()
+
+
 new_html_results = []
 for filename in files_in_curr_dir:
     if ".html" in filename:
@@ -683,7 +694,10 @@ integrate_to_existing_index_file(df)
 _ = os.system("rm -f index_output_latest.csv")
 
 
-_ = os.system('rm -f videos download.sh')
+_ = os.system("rm -f videos download.sh")
+
+
+_ = os.system("rm -f " + churchk_src_dir + "*.html")
 
 
 
