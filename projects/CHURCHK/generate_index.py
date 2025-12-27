@@ -201,7 +201,9 @@ for filename in files_in_curr_dir:
         titlestr = None
         preacherstr = None
         scripturestr = None
-        bookstr = None
+        bookstr = []
+        chapterstr = None
+        versestr = None
         datestr = None
         # ==========================
         code_curr = filename.replace(".html", "")
@@ -239,13 +241,14 @@ for filename in files_in_curr_dir:
             # obtain book
             # ==========================
             try:
-                bookstr = []
                 for bk in book_list:
                     if bk in scripturestr:
                         bookstr.append(bk)
                 if len(bookstr): # there has matched book name
                     bookstr = list(set(bookstr)) # deduplicate
                     bookstr = bookstr[0]
+                else:
+                    bookstr = None
             except:
                 bookstr = None
             if bookstr is None:
@@ -363,11 +366,11 @@ for new_html_entry in new_html_results:
     # 1-to-1 dictionary
     c2b_dict[new_html_entry[0]] = new_html_entry[2]
     print(new_html_entry[0], new_html_entry[2])
-    # 1-to-N dictionary
-    if new_html_entry[2] in b2c_dict:
-        b2c_dict.get(new_html_entry[2]).append(new_html_entry[0])
-    else:
-        b2c_dict[new_html_entry[2]] = [new_html_entry[0]]
+    # # 1-to-N dictionary
+    # if new_html_entry[2] in b2c_dict:
+    #     b2c_dict.get(new_html_entry[2]).append(new_html_entry[0])
+    # else:
+    #     b2c_dict[new_html_entry[2]] = [new_html_entry[0]]
 
 
 
@@ -586,6 +589,9 @@ c - p - b - v - s'''
 
 
 def get_headerVerseVal(inVerse):
+    if inVerse is None:
+        vH = 0
+        return vH
     if ':' in inVerse:
         v = inVerse.split(':')[1]
     else:
@@ -596,6 +602,9 @@ def get_headerVerseVal(inVerse):
     else:
         vH = int(v)
     return vH
+
+
+[ c2b_dict.get(c) for c in c2s_dict.keys() ]
 
 
 df = pd.DataFrame(
@@ -625,6 +634,9 @@ df = pd.DataFrame(
 
 
 print(df)
+
+
+df
 
 
 
