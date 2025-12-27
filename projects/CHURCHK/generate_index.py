@@ -574,17 +574,17 @@ c2p_dict
 c - p - b - v - s'''
 
 
-# def get_headerVerseVal(inVerse):
-#     if ':' in inVerse:
-#         v = inVerse.split(':')[1]
-#     else:
-#         vH = 0
-#         return vH
-#     if '-' in v:
-#         vH = int(v.split('-')[0])
-#     else:
-#         vH = int(v)
-#     return vH
+def get_headerVerseVal(inVerse):
+    if ':' in inVerse:
+        v = inVerse.split(':')[1]
+    else:
+        vH = 0
+        return vH
+    if '-' in v:
+        vH = int(v.split('-')[0])
+    else:
+        vH = int(v)
+    return vH
 
 
 df = pd.DataFrame(
@@ -595,7 +595,7 @@ df = pd.DataFrame(
          c2b_dict.get(c, ''),
          c2ch_dict.get(c, '0'),
          c2v_dict.get(c, ''),
-#          get_headerVerseVal(c2v_dict.get(c, '')),
+         get_headerVerseVal(c2v_dict.get(c, '')),
          c2s_dict.get(c, ''),
          c2t_dict.get(c, '')] for c in c2s_dict.keys()
     ],
@@ -606,7 +606,7 @@ df = pd.DataFrame(
         'book',
         'chapter',
         'verse',
-#         'headerVerse',
+        'headerVerse',
         'title',
         'date'
     ]
