@@ -680,6 +680,9 @@ integrate_to_existing_index_file(df)
 
 
 
+_ = os.system("rm -f index_output_latest.csv")
+
+
 _ = os.system('rm -f videos download.sh')
 
 
