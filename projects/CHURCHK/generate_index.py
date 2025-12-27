@@ -671,6 +671,15 @@ def integrate_to_existing_index_file(indf):
 
 
 
+integrate_to_existing_index_file(df)
+
+
+
+
+
+
+
+
 _ = os.system('rm -f videos download.sh')
 
 
