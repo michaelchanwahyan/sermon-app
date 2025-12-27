@@ -646,7 +646,7 @@ print(df)
 def integrate_to_existing_index_file(indf):
     existing_filename = "index_byc.csv"
     latest_filename = "index_output_latest.csv"
-    df.to_csv(latest_filename, index=False)
+    indf.to_csv(latest_filename, index=False)
     
     if os.path.exists(existing_filename):
         headerline = ""
@@ -657,12 +657,12 @@ def integrate_to_existing_index_file(indf):
         with open(latest_filename, "r") as fp:
             indexlines_latest = [ _.strip() for _ in fp.readlines() if len(_.strip()) ]
         indexlines_latest = indexlines_latest[1:]
-        indexlines_total = headerline + indexlines + indexlines_latest
+        indexlines_total = [ headerline ] + sorted(list(set(indexlines + indexlines_latest)))
         with open(existing_filename, "w") as fp:
             for line in indexlines_total:
                 fp.write(line + "\n")
     else:
-        df.to_csv(existing_filename, index=False)
+        indf.to_csv(existing_filename, index=False)
 
 
 
