@@ -209,6 +209,7 @@ for filename in files_in_curr_dir:
         code_curr = filename.replace(".html", "")
         with open(churchk_src_dir+filename, "r") as fp:
             hlines = [ _.strip() for _ in fp.readlines() ]
+            hlines = [ _.replace("列王紀", "列王記") for _ in hlines ]
         # ==========================
         # obtain title
         # ==========================
