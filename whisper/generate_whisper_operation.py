@@ -78,7 +78,6 @@ for ytcode, line in zip([ line[code_pos_start:code_pos_end] for line in lines ],
         w_text += " rm -f ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3"
         w_text += "\n"
         continue
-    print(len(ytcode))
     if len(ytcode) == 11: # youtube downloaded audio src with 11-char code
         w_text += " if [ -f stop.txt ] ; then exit ; fi ;"
         w_text += " FN=%s; THREAD_NUM=$(cat threadnum.txt) ;" % ytcode
