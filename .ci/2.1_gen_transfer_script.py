@@ -50,14 +50,22 @@ for PROJECT in PROJECT_LIST:
     # audio file list out
     proj_mp3_dir = str(pathlib.Path.home()) + '/TPPHC/SERMON/' + PROJECT + '/'
     mp3_list = os.listdir(proj_mp3_dir)
-    mp3_list = [ ytcode_retrieval(_) for _ in mp3_list ]
-    mp3_list = [ _ for _ in mp3_list if len(_) ]
+    if  PROJECT == 'CHURCHK':
+        print("INCHURCHK")
+        mp3_list = [ _.replace(".mp3", "") for _ in mp3_list if len(_) > 5 ] # 6-digit + '.mp3', 5 is a sufficient threshold
+    else:
+        mp3_list = [ ytcode_retrieval(_) for _ in mp3_list ]
+        mp3_list = [ _ for _ in mp3_list if len(_) ]
     # srt transcribed file list out
     proj_srt_dir = '../whisper/' + PROJECT + '/'
     srt_list = os.listdir(proj_srt_dir)
-    srt_list = [ ytcode_retrieval(_) for _ in srt_list ]
-    srt_list = [ _ for _ in srt_list if len(_) ]
+    if  PROJECT == 'CHURCHK':
+        srt_list = [ _ for _ in srt_list if len(_) > 5 ] # 6-digit + '.mp3', 5 is a sufficient threshold
+    else:
+        srt_list = [ ytcode_retrieval(_) for _ in srt_list ]
+        srt_list = [ _ for _ in srt_list if len(_) ]
     fcnt = 0
+    print(mp3_list)
     for ytcode in mp3_list:
         if ytcode not in srt_list:
             fcnt += 1
