@@ -41,6 +41,10 @@ pushd $PROJECT_PATH
           cat cgst.videos cgst.streams > videos
           rm -f cgst.*
       fi
+      if test $PROJECT_NAME = CHURCHK
+      then
+          wget -O videos "https://www.church.com.hk/acms/content.asp?site=cdc&op=search&type=product&field=@topmostrecent"
+      fi
       if test $PROJECT_NAME = FLWC
       then
           rm -f flwc.videos
@@ -144,6 +148,16 @@ pushd $PROJECT_PATH
         continue
     fi
     pushd ./$PROJECT_NAME
+      if test $PROJECT_NAME = CHURCHK
+      then
+          if [ -f download.sh ]
+          then
+              rm -f download.sh
+          fi
+          python3    gen_download_from_church.com.hk_ftp_server.py \
+              videos    \
+              exlist.txt
+      fi
       if [ -f download.sh ]
       then
           rm -f download.sh

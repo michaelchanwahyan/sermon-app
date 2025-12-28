@@ -13,7 +13,7 @@ pushd $PROJECT_PATH
   # START WHILE
   while IFS="" read -r PROJECT_NAME || [ -n "$PROJECT_NAME" ]
   do
-    if test $PROJECT_NAME = DSCCC || test $PROJECT_NAME = HKBC
+    if text $PROJECT_NAME = CHURCHK || test $PROJECT_NAME = DSCCC || test $PROJECT_NAME = HKBC
     then
         continue
     fi
