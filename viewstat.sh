@@ -5,6 +5,7 @@ FN_ABSCC=$(  ls -1 ./data/ABSCC/*.txt   | wc -l)
 FN_ACSMHK=$( ls -1 ./data/ACSMHK/*.txt  | wc -l)
 FN_CBI=$(    ls -1 ./data/CBI/*.txt     | wc -l)
 FN_CGST=$(   ls -1 ./data/CGST/*.txt    | wc -l)
+FN_CHURCHK=$(ls -1 ./data/CHURCHK/*.txt | wc -l)
 FN_DSCCC=$(  ls -1 ./data/DSCCC/*.txt   | wc -l)
 FN_FLWC=$(   ls -1 ./data/FLWC/*.txt    | wc -l)
 FN_FVC=$(    ls -1 ./data/FVC/*.txt     | wc -l)
@@ -20,12 +21,13 @@ FN_VINE=$(   ls -1 ./data/VINE/*.txt    | wc -l)
 FN_WWBS=$(   ls -1 ./data/WWBS/*.txt    | wc -l)
 FN_YFCX=$(   ls -1 ./data/YFCX/*.txt    | wc -l)
 FN_YOS=$(    ls -1 ./data/YOS/*.txt     | wc -l)
-FN_TOTAL=$(echo $FN_ABSCC + $FN_ACSMHK + $FN_CBI + $FN_CGST + $FN_DSCCC + $FN_FLWC + $FN_FVC + $FN_GFC + $FN_HKBC + $FN_JNG + $FN_KFC + $FN_MKBC + $FN_PORCH + $FN_STBC + $FN_UVC + $FN_VINE + $FN_WWBS + $FN_YFCX + $FN_YOS | bc)
+FN_TOTAL=$(echo $FN_ABSCC + $FN_ACSMHK + $FN_CBI + $FN_CGST + $FN_CHURCHK + $FN_DSCCC + $FN_FLWC + $FN_FVC + $FN_GFC + $FN_HKBC + $FN_JNG + $FN_KFC + $FN_MKBC + $FN_PORCH + $FN_STBC + $FN_UVC + $FN_VINE + $FN_WWBS + $FN_YFCX + $FN_YOS | bc)
 
 echo sermon count in ABSCC   : $FN_ABSCC   / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_ABSCC   / FN_TOTAL))e-2)% \)
 echo sermon count in ACSMHK  : $FN_ACSMHK  / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_ACSMHK  / FN_TOTAL))e-2)% \)
 echo sermon count in CBI     : $FN_CBI     / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_CBI     / FN_TOTAL))e-2)% \)
 echo sermon count in CGST    : $FN_CGST    / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_CGST    / FN_TOTAL))e-2)% \)
+echo sermon count in CHURCHK : $FN_CHURCHK / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_CHURCHK / FN_TOTAL))e-2)% \)
 echo sermon count in DSCCC   : $FN_DSCCC   / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_DSCCC   / FN_TOTAL))e-2)% \)
 echo sermon count in FLWC    : $FN_FLWC    / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_FLWC    / FN_TOTAL))e-2)% \)
 echo sermon count in FVC     : $FN_FVC     / $FN_TOTAL \( $(printf "%.1f" $((10**4 * FN_FVC     / FN_TOTAL))e-2)% \)
@@ -49,6 +51,7 @@ echo on ABSCC ...    ; CHNG_CNT_ABSCC=$(  git --no-pager show --name-only --onel
 echo on ACSMHK ...   ; CHNG_CNT_ACSMHK=$( git --no-pager show --name-only --oneline $OU | grep ACSMHK  | wc -l) # for each hash count the file updates in specified sermon source
 echo on CBI ...      ; CHNG_CNT_CBI=$(    git --no-pager show --name-only --oneline $OU | grep CBI     | wc -l) # for each hash count the file updates in specified sermon source
 echo on CGST ...     ; CHNG_CNT_CGST=$(   git --no-pager show --name-only --oneline $OU | grep CGST    | wc -l) # for each hash count the file updates in specified sermon source
+echo on CHURCHK ...  ; CHNG_CNT_CHURCHK=$(git --no-pager show --name-only --oneline $OU | grep CHURCHK | wc -l) # for each hash count the file updates in specified sermon source
 echo on DSCCC ...    ; CHNG_CNT_DSCCC=$(  git --no-pager show --name-only --oneline $OU | grep DSCCC   | wc -l) # for each hash count the file updates in specified sermon source
 echo on FLWC ...     ; CHNG_CNT_FLWC=$(   git --no-pager show --name-only --oneline $OU | grep FLWC    | wc -l) # for each hash count the file updates in specified sermon source
 echo on FVC ...      ; CHNG_CNT_FVC=$(    git --no-pager show --name-only --oneline $OU | grep FVC     | wc -l) # for each hash count the file updates in specified sermon source
@@ -64,12 +67,13 @@ echo on VINE ...     ; CHNG_CNT_VINE=$(   git --no-pager show --name-only --onel
 echo on WWBS ...     ; CHNG_CNT_WWBS=$(   git --no-pager show --name-only --oneline $OU | grep WWBS    | wc -l) # for each hash count the file updates in specified sermon source
 echo on YFCX ...     ; CHNG_CNT_YFCX=$(   git --no-pager show --name-only --oneline $OU | grep YFCX    | wc -l) # for each hash count the file updates in specified sermon source
 echo on YOS ...      ; CHNG_CNT_YOS=$(    git --no-pager show --name-only --oneline $OU | grep YOS     | wc -l) # for each hash count the file updates in specified sermon source
-CHNG_CNT_TOTAL=$(echo $CHNG_CNT_ABSCC + $CHNG_CNT_ACSMHK + $CHNG_CNT_CBI + $CHNG_CNT_CGST + $CHNG_CNT_DSCCC + $CHNG_CNT_FLWC + $CHNG_CNT_FVC + $CHNG_CNT_GFC + $CHNG_CNT_HKBC + $CHNG_CNT_JNG + $CHNG_CNT_KFC + $CHNG_CNT_MKBC + $CHNG_CNT_PORCH + $CHNG_CNT_STBC + $CHNG_CNT_UVC + $CHNG_CNT_VINE + $CHNG_CNT_WWBS + $CHNG_CNT_YFCX + $CHNG_CNT_YOS | bc)
+CHNG_CNT_TOTAL=$(echo $CHNG_CNT_ABSCC + $CHNG_CNT_ACSMHK + $CHNG_CNT_CBI + $CHNG_CNT_CGST + $CHNG_CNT_CHURCHK + $CHNG_CNT_DSCCC + $CHNG_CNT_FLWC + $CHNG_CNT_FVC + $CHNG_CNT_GFC + $CHNG_CNT_HKBC + $CHNG_CNT_JNG + $CHNG_CNT_KFC + $CHNG_CNT_MKBC + $CHNG_CNT_PORCH + $CHNG_CNT_STBC + $CHNG_CNT_UVC + $CHNG_CNT_VINE + $CHNG_CNT_WWBS + $CHNG_CNT_YFCX + $CHNG_CNT_YOS | bc)
 
 echo activeness on ABSCC   : $CHNG_CNT_ABSCC   / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_ABSCC   / CHNG_CNT_TOTAL))e-2)% \)
 echo activeness on ACSMHK  : $CHNG_CNT_ACSMHK  / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_ACSMHK  / CHNG_CNT_TOTAL))e-2)% \)
 echo activeness on CBI     : $CHNG_CNT_CBI     / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_CBI     / CHNG_CNT_TOTAL))e-2)% \)
 echo activeness on CGST    : $CHNG_CNT_CGST    / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_CGST    / CHNG_CNT_TOTAL))e-2)% \)
+echo activeness on CHURCHK : $CHNG_CNT_CHURCHK / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_CHURCHK / CHNG_CNT_TOTAL))e-2)% \)
 echo activeness on DSCCC   : $CHNG_CNT_DSCCC   / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_DSCCC   / CHNG_CNT_TOTAL))e-2)% \)
 echo activeness on FLWC    : $CHNG_CNT_FLWC    / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_FLWC    / CHNG_CNT_TOTAL))e-2)% \)
 echo activeness on FVC     : $CHNG_CNT_FVC     / $CHNG_CNT_TOTAL \( $(printf "%.1f" $((10**4 * CHNG_CNT_FVC     / CHNG_CNT_TOTAL))e-2)% \)
@@ -93,6 +97,7 @@ echo ABSCC   \| $(printf "%.1f" $((10**4 * FN_ABSCC   / FN_TOTAL))e-2)% \($FN_AB
 echo ACSMHK  \| $(printf "%.1f" $((10**4 * FN_ACSMHK  / FN_TOTAL))e-2)% \($FN_ACSMHK  \) \| $(printf "%.1f" $((10**4 * CHNG_CNT_ACSMHK  / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_ACSMHK  \)
 echo CBI     \| $(printf "%.1f" $((10**4 * FN_CBI     / FN_TOTAL))e-2)% \($FN_CBI     \) \| $(printf "%.1f" $((10**4 * CHNG_CNT_CBI     / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_CBI     \)
 echo CGST    \| $(printf "%.1f" $((10**4 * FN_CGST    / FN_TOTAL))e-2)% \($FN_CGST    \) \| $(printf "%.1f" $((10**4 * CHNG_CNT_CGST    / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_CGST    \)
+echo CHURCHK \| $(printf "%.1f" $((10**4 * FN_CHURCHK / FN_TOTAL))e-2)% \($FN_CHURCHK \) \| $(printf "%.1f" $((10**4 * CHNG_CNT_CHURCHK / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_CHURCHK \)
 echo DSCCC   \| $(printf "%.1f" $((10**4 * FN_DSCCC   / FN_TOTAL))e-2)% \($FN_DSCCC   \) \| $(printf "%.1f" $((10**4 * CHNG_CNT_DSCCC   / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_DSCCC   \)
 echo FLWC    \| $(printf "%.1f" $((10**4 * FN_FLWC    / FN_TOTAL))e-2)% \($FN_FLWC    \) \| $(printf "%.1f" $((10**4 * CHNG_CNT_FLWC    / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_FLWC    \)
 echo FVC     \| $(printf "%.1f" $((10**4 * FN_FVC     / FN_TOTAL))e-2)% \($FN_FVC     \) \| $(printf "%.1f" $((10**4 * CHNG_CNT_FVC     / CHNG_CNT_TOTAL))e-2)% \($CHNG_CNT_FVC     \)
