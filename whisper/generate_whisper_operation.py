@@ -64,7 +64,12 @@ if len(lines) == 0:
 
 srt_list = [ _ for _ in os.listdir(PROJECT_NAME) if _[-4:] == ".srt" ]
 srt_list = [ _.replace(".srt", "") for _ in srt_list ]
-for ytcode, line in zip([ line[-16:-5] for line in lines ], lines):
+code_pos_start = -16
+code_pos_end = -5
+if PROJECT_NAME == "CHURCHK":
+    code_pos_start = 0
+    code_pos_end = 6
+for ytcode, line in zip([ line[code_pos_start:code_pos_end] for line in lines ], lines):
     if ytcode in srt_list:
         print(f"audio file *{ytcode}* transcription already exists !")
         print(f"remove audio file *{ytcode}*")
@@ -73,7 +78,7 @@ for ytcode, line in zip([ line[-16:-5] for line in lines ], lines):
         w_text += " rm -f ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3"
         w_text += "\n"
         continue
-    if len(ytcode) == 11:
+    if len(ytcode) == 11: # youtube downloaded audio src with 11-char code
         w_text += " if [ -f stop.txt ] ; then exit ; fi ;"
         w_text += " FN=%s; THREAD_NUM=$(cat threadnum.txt) ;" % ytcode
         w_text += " yes | ffmpeg -i ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3 -ar 16000 -ac 1 -c:a pcm_s16le ./$FN.wav ;"
@@ -89,6 +94,19 @@ for ytcode, line in zip([ line[-16:-5] for line in lines ], lines):
         w_text += " mv ./$FN.wav.srt ./$FN.srt ; rm -f ./$FN.wav ;"
         w_text += " rm -f ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3"
         w_text += "\n"
+    elif len(ytcode) == 6: # possibly church.com.hk download audio src with 6 digit
+        w_text += " if [ -f stop.txt ] ; then exit ; fi ;"
+        w_text += " FN=%s; THREAD_NUM=$(cat threadnum.txt) ;" % ytcode
+        w_text += " yes | ffmpeg -i ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3 -ar 16000 -ac 1 -c:a pcm_s16le ./$FN.wav ;"
+        w_text += " ~/SOURCE/whisper.cpp/main --model ~/SOURCE/whisper.cpp/models/ggml-large.bin"
+        w_text += " --output-srt --threads $THREAD_NUM --processors 1"
+        w_text += " --language $LANG"
+        w_text += " --file ./$FN.wav > ./$FN.whisper.log ;"
+        w_text += " mv ./$FN.wav.srt ./$FN.srt ; rm -f ./$FN.wav ;"
+        w_text += " rm -f ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3"
+        w_text += "\n"
+    else:
+        print("unrecognized number of digit in ytcode")
 
 
 with open(PROJECT_NAME + '/i', 'w') as fp:
