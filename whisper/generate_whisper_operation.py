@@ -41,7 +41,7 @@ w_text += "\n"
 w_text += "#if [ -f stop.txt ] ; then exit ; fi ;"
 w_text += " FN=...........; THREAD_NUM=$(cat threadnum.txt) ;"
 w_text += " yes | ffmpeg -i ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3 -ar 16000 -ac 1 -c:a pcm_s16le ./$FN.wav ;"
-w_text += " ~/SOURCE/whisper.cpp/main --model ~/SOURCE/whisper.cpp/models/ggml-large.bin"
+w_text += " ~/SOURCE/whisper.cpp/build/bin/whisper-cli --model ~/SOURCE/whisper.cpp/models/ggml-large-v1.bin"
 w_text += " --output-srt --language $LANG --threads $THREAD_NUM --processors 1"
 w_text += " --file ./$FN.wav > ./$FN.whisper.log ;"
 w_text += " mv ./$FN.wav.srt ./$FN.srt ; rm -f ./$FN.wav ;"
@@ -82,7 +82,7 @@ for ytcode, line in zip([ line[code_pos_start:code_pos_end] for line in lines ],
         w_text += " if [ -f stop.txt ] ; then exit ; fi ;"
         w_text += " FN=%s; THREAD_NUM=$(cat threadnum.txt) ;" % ytcode
         w_text += " yes | ffmpeg -i ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3 -ar 16000 -ac 1 -c:a pcm_s16le ./$FN.wav ;"
-        w_text += " ~/SOURCE/whisper.cpp/main --model ~/SOURCE/whisper.cpp/models/ggml-large.bin"
+        w_text += " ~/SOURCE/whisper.cpp/build/bin/whisper-cli --model ~/SOURCE/whisper.cpp/models/ggml-large-v1.bin"
         w_text += " --output-srt --threads $THREAD_NUM --processors 1"
         if PROJECT_NAME == "VINE" and "廣東話" in line: # cather VINE sermon language handling
             w_text += " --language zh"
@@ -98,7 +98,7 @@ for ytcode, line in zip([ line[code_pos_start:code_pos_end] for line in lines ],
         w_text += " if [ -f stop.txt ] ; then exit ; fi ;"
         w_text += " FN=%s; THREAD_NUM=$(cat threadnum.txt) ;" % ytcode
         w_text += " yes | ffmpeg -i ~/TPPHC/SERMON/$PROJ_NAME/*$FN*.mp3 -ar 16000 -ac 1 -c:a pcm_s16le ./$FN.wav ;"
-        w_text += " ~/SOURCE/whisper.cpp/main --model ~/SOURCE/whisper.cpp/models/ggml-large.bin"
+        w_text += " ~/SOURCE/whisper.cpp/build/bin/whisper-cli --model ~/SOURCE/whisper.cpp/models/ggml-large-v1.bin"
         w_text += " --output-srt --threads $THREAD_NUM --processors 1"
         w_text += " --language $LANG"
         w_text += " --file ./$FN.wav > ./$FN.whisper.log ;"
