@@ -91,7 +91,7 @@ if not os.path.isfile("download.sh"):
                     + sermon_src_webpage_url \
                     + "\"\n")
             sermon_mp3_ftp_url = "https://www.church.com.hk/ftp/mp3/"
-            ftp_foldername = str(int(int((needed_code-1)) / 1000) * 1000)
+            ftp_foldername = str(int((int(needed_code)-1) / 1000) * 1000)
             sermon_mp3_ftp_url += ftp_foldername + "/"
             sermon_mp3_ftp_url += needed_code + ".mp3"
             fp.write(\
