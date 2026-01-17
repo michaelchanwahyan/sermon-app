@@ -85,7 +85,7 @@ if not os.path.isfile("download.sh"):
             sermon_src_webpage_url += needed_code
             sermon_src_webpage_url += "&layout=sermon"
             fp.write(\
-                    "wget -O " \
+                    "wget -O ./church.com.hk.html/" \
                     + needed_code + ".html" \
                     + " \"" \
                     + sermon_src_webpage_url \
