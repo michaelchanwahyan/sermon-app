@@ -530,6 +530,12 @@ number of sermons by each preacher'''
 
 
 
+# # to check if sermon_fs_date_record.txt is complete
+# for itm in rdd1.map(lambda w: w[1]).collect():
+#     if itm not in fs_c2t_dict:
+#         print(itm)
+
+
 rdd_time = rdd1.map(lambda w: fs_c2t_dict.get(w[1])) \
     .map(lambda w: [ int(_) for _ in w.split('-') ]) \
     .map(lambda w: w[0]*365 + w[1]*30 + w[2])
