@@ -107,13 +107,16 @@ c2bvc_dict = {}
 df = pd.read_csv('index_byc.csv')
 for d in df.iterrows():
     df_row = d[1]
-    c2p_dict[df_row['code']]  = df_row['preacher'] if not pd.isna(df_row['preacher']) else ''
-    c2b_dict[df_row['code']]  = df_row['book']     if not pd.isna(df_row['book']) else ''
-    c2ch_dict[df_row['code']] = df_row['chapter']  if not pd.isna(df_row['chapter']) else ''
-    c2v_dict[df_row['code']]  = df_row['verse']    if not pd.isna(df_row['verse']) else ''
-    c2s_dict[df_row['code']]  = df_row['title']
-    c2t_dict[df_row['code']]  = df_row['date']
     c = df_row['code']
+    c = str(c)
+    if len(c) == 5:
+        c = '0' + c
+    c2p_dict[c]  = df_row['preacher'] if not pd.isna(df_row['preacher']) else ''
+    c2b_dict[c]  = df_row['book']     if not pd.isna(df_row['book']) else ''
+    c2ch_dict[c] = df_row['chapter']  if not pd.isna(df_row['chapter']) else ''
+    c2v_dict[c]  = df_row['verse']    if not pd.isna(df_row['verse']) else ''
+    c2s_dict[c]  = df_row['title']
+    c2t_dict[c]  = df_row['date']
     bvc = ''
     bk = c2b_dict.get(c)
     if bk is not None:
@@ -390,7 +393,7 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end
                     c2s_dict.get(cc, ' ').replace('_', '\\_').replace('&', '\\&')
                 )
                 tstr = c2t_dict.get(cc, ' ')
-                ystr = "\\href{http://www.church.com.hk/acms/content.asp?site=cdc&op=show&type=product&code=" + cc + "&layout=sermon}{\\texttt{" + "}}"
+                ystr = "\\href{http://www.church.com.hk/acms/content.asp?site=cdc\\&op=show\\&type=product\\&code=" + cc + "\\&layout=sermon}{\\texttt{" + cc + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
                          + "\\hyperref[sec:"+cc+"]{"+sstr+"}" + " & " \
                          + tstr + " & " \
