@@ -339,7 +339,10 @@ rgx_bv = re.compile(r'(?<=\d)[_](?=\d)')
 def print_prefix(sermon_tex_filepath, yyyy_start, yyyy_end, progressStepCnt):
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: printing out prefixing")
-    _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/華人教會網絡 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/church.com.hk/' > " + sermon_tex_filepath)
+    if yyyy_start != yyyy_end:
+        _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/華人教會網絡 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/church.com.hk/' > " + sermon_tex_filepath)
+    else:
+        _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/華人教會網絡 粵語講道逐字稿 {str(yyyy_start)}/' | sed 's/Youtube Channel:/church.com.hk/' > " + sermon_tex_filepath)
     return progressStepCnt
 
 
