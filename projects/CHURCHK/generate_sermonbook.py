@@ -567,38 +567,10 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
 
 
 
-'''## 2012-2014 Sermons'''
+'''## 2012 Sermons'''
 
 
-sermon_tex_from_year(2012, 2014)
-
-
-
-'''## 2015-2017 Sermons'''
-
-
-sermon_tex_from_year(2015, 2017)
-
-
-
-'''## 2018-2020 Sermons'''
-
-
-sermon_tex_from_year(2018, 2020)
-
-
-
-'''## 2021-2023 Sermons'''
-
-
-sermon_tex_from_year(2021, 2023)
-
-
-
-'''## 2024-2026 Sermons'''
-
-
-sermon_tex_from_year(2024, 2026)
+sermon_tex_from_year(2012, 2012)
 
 
 
