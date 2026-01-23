@@ -546,7 +546,10 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     # yyyy_start : starting year, e.g. 2012
     # yyyy_end.  : ending year, e.g. 2018
     progressStepCnt = 0
-    sermon_tex_filepath = f"../../build/CHURCHK/sermon_CHURCHK_{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
+    if yyyy_start != yyyy_end:
+        sermon_tex_filepath = f"../../build/CHURCHK/sermon_CHURCHK_{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
+    else:
+        sermon_tex_filepath = f"../../build/CHURCHK/sermon_CHURCHK_{str(yyyy_start)}.tex"
     # --------------------------------------
     # print the latex document : prefix
     # --------------------------------------
