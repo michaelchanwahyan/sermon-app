@@ -28,6 +28,7 @@ if   [ "$1" == "" ] ; then
     echo "               -  ACSMHK                                            "
     echo "               -  CBI                                               "
     echo "               -  CGST                                              "
+    echo "               -  CHURCHK                                           "
     echo "               -  DSCCC                                             "
     echo "               -  FLWC                                              "
     echo "               -  FVC                                               "
@@ -64,6 +65,10 @@ if   [ "$1" == "" ] ; then
     echo "     CGST     Compile CGST sermon book.                             "
     echo "              CGST := China Graduate School of Theology             "
     echo "              中國神學研究院                                        "
+    echo "                                                                    "
+    echo "     CHURCHK  Compile CHURCHK sermon book.                          "
+    echo "              CHURCHK := church.com.hk                              "
+    echo "              華人教會網絡                                          "
     echo "                                                                    "
     echo "     DSCCC    Compile DSCCC sermon book.                            "
     echo "              DSCCC := Divinity School of Chung Chi College, CUHK   "
@@ -137,6 +142,7 @@ if   [ "$1" == "genall" ] ; then
     python3 convert_srt2txt.py ACSMHK
     python3 convert_srt2txt.py CBI
     python3 convert_srt2txt.py CGST
+    python3 convert_srt2txt.py CHURCHK
     python3 convert_srt2txt.py FLWC
     python3 convert_srt2txt.py FVC
     python3 convert_srt2txt.py GFC
@@ -163,6 +169,10 @@ if   [ "$1" == "genall" ] ; then
     python3 generate_sermonbook.py
     cd ..
     cd ./CGST
+    python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
+    python3 generate_sermonbook.py
+    cd ..
+    cd ./CHURCHK
     python3 ../func_ipynb_2_py.py generate_sermonbook.ipynb
     python3 generate_sermonbook.py
     cd ..
@@ -237,6 +247,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh ACSMHK
     ./build.sh CBI
     ./build.sh CGST
+    ./build.sh CHURCHK
     ./build.sh DSCCC
     ./build.sh FLWC
     ./build.sh FVC
@@ -261,6 +272,7 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh ACSMHK  once
     ./build.sh CBI     once
     ./build.sh CGST    once
+    ./build.sh CHURCHK once
     ./build.sh DSCCC   once
     ./build.sh FLWC    once
     ./build.sh FVC     once
@@ -318,6 +330,16 @@ elif [ "$1" == "CBI" ] ; then
     cd ..
 elif [ "$1" == "CGST" ] ; then
     OUTFILENAME=sermon_$1
+    cd $1
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+elif [ "$1" == "CHURCHK" ] ; then
+    OUTFILENAME=sermon_$1_2012
     cd $1
     xelatex $OUTFILENAME.tex
     if [ "$2" != "once" ] ; then
