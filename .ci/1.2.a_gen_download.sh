@@ -157,6 +157,7 @@ pushd $PROJECT_PATH
           python3    gen_download_from_church.com.hk_ftp_server.py \
               videos    \
               exlist.txt
+          popd
           continue
       fi
       if [ -f download.sh ]
