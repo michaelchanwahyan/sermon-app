@@ -32,6 +32,24 @@ def ytcode_retrieval(infilename):
         return ''
 
 
+def churchkcode_retrieval(infilename):
+    if '.mp3' not in infilename and '.txt' not in infilename and '.srt' not in infilename and '.whisper.log' not in infilename:
+        print('non txt non srt file name input: ', infilename)
+        return ''
+    try:
+        # the following regex search approach applys to whisper folder
+        # which contains
+        #   1. xxxxxx.whisper.log
+        #   2. xxxxxx.srt
+        #   3. README.md
+        #   4. i j ij ijk ii jj ... etc.
+        churchkc = re.search('[0-9]'*6, infilename).group()
+        return churchkc
+    except:
+        print('churchkcode pattern search fail for: ', infilename)
+        return ''
+
+
 with open('transcription_server_ip.txt', 'r') as fp:
     transcription_server_ip = fp.read()
 transcription_server_ip = transcription_server_ip.strip()
@@ -60,10 +78,10 @@ for PROJECT in PROJECT_LIST:
     proj_srt_dir = '../whisper/' + PROJECT + '/'
     srt_list = os.listdir(proj_srt_dir)
     if  PROJECT == 'CHURCHK':
-        srt_list = [ _ for _ in srt_list if len(_) > 5 ] # 6-digit + '.mp3', 5 is a sufficient threshold
+        srt_list = [ churchkcode_retrieval(_) for _ in srt_list if len(_) > 5 ] # 6-digit + '.mp3', 5 is a sufficient threshold
     else:
         srt_list = [ ytcode_retrieval(_) for _ in srt_list ]
-        srt_list = [ _ for _ in srt_list if len(_) ]
+    srt_list = [ _ for _ in srt_list if len(_) ]
     fcnt = 0
     print(mp3_list)
     for ytcode in mp3_list:
