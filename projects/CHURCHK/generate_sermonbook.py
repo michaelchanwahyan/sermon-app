@@ -376,7 +376,7 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end
         # --------------------------------------
         # start of TOC table
         # --------------------------------------
-        fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.6\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
+        fp.write("\n\n\\begin{xltabular}{\\textwidth}{|p{0.15\\textwidth} p{0.15\\textwidth} p{0.45\\textwidth}|p{0.07\\textwidth} p{0.1\\textwidth}|}\n") # lllr: bk+v/ch, theme, date, youtube-code
         fp.write("\\hline\n")
         # --------------------------------------
         # lines is the line content in index_{toc_type}
@@ -398,6 +398,7 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end
                 tstr = c2t_dict.get(cc, ' ')
                 ystr = "\\href{http://www.church.com.hk/acms/content.asp?site=cdc\\&op=show\\&type=product\\&code=" + cc + "\\&layout=sermon}{\\texttt{" + cc + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
+                         + pstr + " & "\
                          + "\\hyperref[sec:"+cc+"]{"+sstr+"}" + " & " \
                          + tstr + " & " \
                          + ystr \
@@ -496,7 +497,8 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
         fp.write(f"\n\n\\section{{{sectionNameStr}}}\n")
         fp.write(f"\\label{{sec:{cc}}}\n")
         sstr = cleanse_special_char(c2s_dict.get(cc, ' ').replace('_', '\\_').replace('&', '\\&'))
-        fp.write(f"\\textbf{{{sstr}}}\n")
+        pstr = c2p_dict.get(cc, ' ')
+        fp.write(f"\\textbf{{{sstr}}}~~~~{pstr}\n")
         fp.write("\\newline\n\\newline\n")
         cc_ud_protect = cc
         fp.write(f"連結: \\href{{http://www.church.com.hk/acms/content.asp?site=cdc\\&op=show\\&type=product\\&code={cc_ud_protect}\\&layout=sermon}}{{\\texttt{{{cc_ud_protect}}}}} ~~~~ 語音日期: {c2t_dict.get(cc)}\n")
