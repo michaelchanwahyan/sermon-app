@@ -569,11 +569,8 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     print("done !")
 
 
-
-'''## 2012 Sermons'''
-
-
-sermon_tex_from_year(2012, 2012)
+for yr in range(2012,2019):
+    sermon_tex_from_year(yr, yr)
 
 
 
