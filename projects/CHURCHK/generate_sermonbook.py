@@ -300,63 +300,73 @@ with open("./index_byc.csv", "r") as fp:
 fp.close()
 
 
-print('2012-2018 sermon count:',
-    len(   [ line \
-                 for line in lines \
-                     if check_in_year_range(
-                         line.split(',')[-1],
-                         [2012,2018]
-                     )
-            ] )
-     )
+yr__ = 2012
+sermon_cnt_all_year = 0
+while True:
+    sermon_cnt_in_year = len(
+        [line for line in lines
+         if check_in_year_range(line.split(',')[-1],[yr__,yr__+1])
+        ]
+    )
+    sermon_cnt_all_year += sermon_cnt_in_year
+    if sermon_cnt_in_year == 0:
+        break
+    print(f'{yr__} sermon count:', sermon_cnt_in_year)
+    yr__ += 1
 
 
-print('2019-2025 sermon count:',
-    len(   [ line \
-                 for line in lines \
-                     if check_in_year_range(
-                         line.split(',')[-1],
-                         [2019,2025]
-                     )
-            ] )
-     )
 
 
-print('2026-2032 sermon count:',
-    len(   [ line \
-                 for line in lines \
-                     if check_in_year_range(
-                         line.split(',')[-1],
-                         [2025,2032]
-                     )
-            ] )
-     )
+
+
+
+
+def check_in_code_range(incode, code_range):
+    incode_int = int(incode)
+    code_lowbnd = code_range[0]
+    code_uppbnd = code_range[1]
+    in_range = False
+    for code in range(code_range[0], code_range[1] + 1):
+        if incode_int >= code_lowbnd and\
+           incode_int <= code_uppbnd:
+            in_range = True
+            break
+    return in_range
+
+
+
+
+
+
 
 
 rgx_bv = re.compile(r'(?<=\d)[_](?=\d)')
 
 
-def print_prefix(sermon_tex_filepath, yyyy_start, yyyy_end, progressStepCnt):
+def print_prefix(sermon_tex_filepath, code_start, code_end, vol_cnt, progressStepCnt):
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: printing out prefixing")
-    if yyyy_start != yyyy_end:
-        _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/華人教會網絡 粵語講道逐字稿 {str(yyyy_start)}-{str(yyyy_end)[-2:]}/' | sed 's/Youtube Channel:/church.com.hk/' > " + sermon_tex_filepath)
+    if code_start != code_end:
+        _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/華人教會網絡 粵語講道逐字稿 第{vol_cnt}卷/' | sed 's/Youtube Channel:/church.com.hk/' > " + sermon_tex_filepath)
     else:
-        _ = os.system(f"cat ../prefix.tex | sed 's/粵語講道逐字稿/華人教會網絡 粵語講道逐字稿 {str(yyyy_start)}/' | sed 's/Youtube Channel:/church.com.hk/' > " + sermon_tex_filepath)
+        print(f"ERROR @ print_prefix(): code_start {code_start} equals code_end {code_end}!!!")
+        print("error exit")
+        exit()
     return progressStepCnt
 
 
-def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end, progressStepCnt):
+def generate_toc(sermon_tex_filepath, index_file, toc_type, code_start, code_end, progressStepCnt):
     progressStepCnt += 1
     print(f"Step {progressStepCnt}: reading in full index file")
     with open('./index_byc.csv', 'r') as fp:
         lines = fp.readlines()
     fp.close()
+    # lines[0] is csv header, skip it
     lines = [ line \
-                 for line in lines \
-                     if check_in_year_range(
-                         line.split(',')[-1],
-                         [yyyy_start,yyyy_end]
+                 for line in lines[1:] \
+                     if check_in_code_range(
+                         int(line.split(',')[0]),
+                         [code_start,code_end]
                      )
             ]
 
@@ -389,13 +399,21 @@ def generate_toc(sermon_tex_filepath, index_file, toc_type, yyyy_start, yyyy_end
             # --------------------------------------
             if os.path.isfile(f'../../data/CHURCHK/{cc}.txt'):
                 pstr = c2p_dict.get(cc, ' ')
+                if pstr != pstr: # to check if preacher is nan
+                    pstr = ' '
                 bstr = c2b_dict.get(cc, ' ')
+                if bstr != bstr: # to check if book is nan
+                    bstr = ' '
                 vstr = c2v_dict.get(cc, ' ')
+                if vstr != vstr: # to check if verse is nan
+                    vstr = ' '
                 sstr = c2s_dict.get(cc, ' ')
                 sstr = cleanse_special_char(
                     c2s_dict.get(cc, ' ').replace('_', '\\_').replace('&', '\\&')
                 )
                 tstr = c2t_dict.get(cc, ' ')
+                if tstr != tstr: # to check if time is nan
+                    tstr = ' '
                 ystr = "\\href{http://www.church.com.hk/acms/content.asp?site=cdc\\&op=show\\&type=product\\&code=" + cc + "\\&layout=sermon}{\\texttt{" + cc + "}}"
                 fp.write(bstr + ' ' + vstr + " & " \
                          + pstr + " & "\
@@ -514,14 +532,15 @@ def write_sermon_section(sermon_tex_filepath, cc, cc_prev, cc_next):
         fp.write("\\newpage\n\n")
 
 
-def generate_main_content(sermon_tex_filepath, index_file, yyyy_start, yyyy_end, progressStepCnt):
+def generate_main_content(sermon_tex_filepath, index_file, code_start, code_end, progressStepCnt):
     with open(index_file, "r") as fp:
         lines = fp.readlines()
+    # lines[0] is csv header, skip it
     lines = [ line \
-            for line in lines \
-                if check_in_year_range(
-                    line.split(',')[-1],
-                    [yyyy_start,yyyy_end]
+            for line in lines[1:] \
+                if check_in_code_range(
+                    line.split(',')[0],
+                    [code_start,code_end]
                 )
         ]
     progressStepCnt += 1
@@ -542,24 +561,28 @@ def generate_afterword_and_postfix(sermon_tex_filepath):
     _ = os.system("cat ../postfix.tex >> " + sermon_tex_filepath)
 
 
-def sermon_tex_from_year(yyyy_start, yyyy_end):
-    # yyyy_start : starting year, e.g. 2012
-    # yyyy_end.  : ending year, e.g. 2018
+def sermon_tex_between_code(code_start, code_end, vol_cnt):
+    # code_start : starting code, e.g. 12001
+    # code_end   : ending code, e.g. 13000
+    # vol_cnt    : the Volume index of the scroll.
     progressStepCnt = 0
-    if yyyy_start != yyyy_end:
-        sermon_tex_filepath = f"../../build/CHURCHK/sermon_CHURCHK_{str(yyyy_start)}-{str(yyyy_end)[-2:]}.tex"
+    vol_index_str = "%03d" % vol_cnt
+    if code_start != code_end:
+        sermon_tex_filepath = f"../../build/CHURCHK/sermon_CHURCHK_vol{vol_index_str}.tex"
     else:
-        sermon_tex_filepath = f"../../build/CHURCHK/sermon_CHURCHK_{str(yyyy_start)}.tex"
+        print(f"ERROR @ sermon_tex_between_code(): code_start {code_start} equals code_end {code_end}!!!")
+        print("error exit")
+        exit()
     # --------------------------------------
     # print the latex document : prefix
     # --------------------------------------
-    progressStepCnt = print_prefix(sermon_tex_filepath, yyyy_start, yyyy_end, progressStepCnt)
+    progressStepCnt = print_prefix(sermon_tex_filepath, code_start, code_end, vol_cnt, progressStepCnt)
     # --------------------------------------
     # only take into account index table
     # within desired year range
     # --------------------------------------
-    progressStepCnt = generate_toc(sermon_tex_filepath, './index_byc.csv', 'chronic', yyyy_start, yyyy_end, progressStepCnt)
-    progressStepCnt = generate_main_content(sermon_tex_filepath, './index_byc.csv', yyyy_start, yyyy_end, progressStepCnt)
+    progressStepCnt = generate_toc(sermon_tex_filepath, './index_byc.csv', 'chronic', code_start, code_end, progressStepCnt)
+    progressStepCnt = generate_main_content(sermon_tex_filepath, './index_byc.csv', code_start, code_end, progressStepCnt)
 
     # --------------------------------------
     # print the latex document : afterword and postfix
@@ -569,8 +592,21 @@ def sermon_tex_from_year(yyyy_start, yyyy_end):
     print("done !")
 
 
-for yr in range(2012,2019):
-    sermon_tex_from_year(yr, yr)
+# because CHURCHK sermon amount exceed xelatex tex src limit,
+# the sermon book partitioning is performed on fixed sermon
+# count basis
+
+
+vol_cnt = 0
+code_start = 10001
+code_end = code_start
+termination_criteria_of_code_end = code_start + sermon_cnt_all_year
+sermon_no_per_vol = 1200
+while code_end < termination_criteria_of_code_end:
+    vol_cnt += 1
+    code_end = code_start + sermon_no_per_vol
+    sermon_tex_between_code(code_start, code_end, vol_cnt)
+    code_start += sermon_no_per_vol
 
 
 
