@@ -339,15 +339,17 @@ elif [ "$1" == "CGST" ] ; then
     mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "CHURCHK" ] ; then
-    OUTFILENAME=sermon_$1_2012
-    cd $1
-    xelatex $OUTFILENAME.tex
-    if [ "$2" != "once" ] ; then
-    xelatex $OUTFILENAME.tex
-    fi
-    rm -f $OUTFILENAME.mtc*
-    mv $OUTFILENAME.pdf ../../pdf/
-    cd ..
+    for VOLNUM in {1..10} ; do
+      OUTFILENAME=$(printf "sermon_$1_vol_%03d" $VOLNUM)
+      cd $1
+      xelatex $OUTFILENAME.tex
+      if [ "$2" != "once" ] ; then
+      xelatex $OUTFILENAME.tex
+      fi
+      rm -f $OUTFILENAME.mtc*
+      mv $OUTFILENAME.pdf ../../pdf/
+      cd ..
+    done
 elif [ "$1" == "DSCCC" ] ; then
     OUTFILENAME=sermon_$1_2009-present
     cd $1
