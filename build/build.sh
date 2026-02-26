@@ -340,7 +340,7 @@ elif [ "$1" == "CGST" ] ; then
     cd ..
 elif [ "$1" == "CHURCHK" ] ; then
     for VOLNUM in {1..10} ; do
-      OUTFILENAME=$(printf "sermon_$1_vol_%03d" $VOLNUM)
+      OUTFILENAME=$(printf "sermon_$1_vol%03d" $VOLNUM)
       cd $1
       xelatex $OUTFILENAME.tex
       if [ "$2" != "once" ] ; then
