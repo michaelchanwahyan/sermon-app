@@ -326,9 +326,9 @@ def check_in_code_range(incode, code_range):
     code_lowbnd = code_range[0]
     code_uppbnd = code_range[1]
     in_range = False
-    for code in range(code_range[0], code_range[1] + 1):
+    for code in range(code_range[0], code_range[1]):
         if incode_int >= code_lowbnd and\
-           incode_int <= code_uppbnd:
+           incode_int < code_uppbnd:
             in_range = True
             break
     return in_range
