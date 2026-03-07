@@ -283,16 +283,14 @@ with open('../rep_whisper_trailing.txt', 'r') as fp:
 fp.close()
 
 
-def check_in_year_range(code, year_range=[2012,2018]):
+def check_in_year(code, year_=2012):
     # tstr = c2t_dict.get(code, ' ')
     # # print(tstr)
-    in_range = False
-    for yr in range(year_range[0], year_range[1] + 1):
-        # if str(yr) in tstr:
-        if str(yr) in code:
-            in_range = True
-            break
-    return in_range
+    in_year = False
+    # if str(yr) in tstr:
+    if str(year_) in code:
+        in_year = True
+    return in_year
 
 
 with open("./index_byc.csv", "r") as fp:
@@ -305,7 +303,7 @@ sermon_cnt_all_year = 0
 while True:
     sermon_cnt_in_year = len(
         [line for line in lines
-         if check_in_year_range(line.split(',')[-1],[yr__,yr__+1])
+         if check_in_year(line.split(',')[-1],yr__)
         ]
     )
     sermon_cnt_all_year += sermon_cnt_in_year
@@ -567,6 +565,8 @@ def sermon_tex_between_code(code_start, code_end, vol_cnt):
     # vol_cnt    : the Volume index of the scroll.
     progressStepCnt = 0
     vol_index_str = "%03d" % vol_cnt
+    progressStepCnt += 1
+    print(f"@ sermon_tex_between_code() Step {progressStepCnt}: volume : {vol_index_str}")
     if code_start != code_end:
         sermon_tex_filepath = f"../../build/CHURCHK/sermon_CHURCHK_vol{vol_index_str}.tex"
     else:
@@ -576,6 +576,8 @@ def sermon_tex_between_code(code_start, code_end, vol_cnt):
     # --------------------------------------
     # print the latex document : prefix
     # --------------------------------------
+    progressStepCnt += 1
+    print(f"@ sermon_tex_between_code() Step {progressStepCnt}: this volume code range: {code_start} - {code_end}")
     progressStepCnt = print_prefix(sermon_tex_filepath, code_start, code_end, vol_cnt, progressStepCnt)
     # --------------------------------------
     # only take into account index table
