@@ -12,7 +12,7 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 宣道傳意 講道講章        </br> Alliance Communications Ministry               | [ACSMHK 2022-24](https://www.dropbox.com/scl/fi/8ryvn7ulfd0rr3u4aauzg/sermon_ACSMHK_2022-24.pdf?rlkey=1i4h6ipgk6e58vxmi62eq7yt7&st=mi40c76p&dl=0) </br> [ACSMHK 2025-26](https://www.dropbox.com/scl/fi/aa0mw6xitqeg9i085erty/sermon_ACSMHK_2025-26.pdf?rlkey=l8rsna372paovl8nr5yb8t1hr&st=7rwji54f&dl=0) |
 | 漢語聖經協會 講道講章    </br> Chinese Bible International                    | [CBI](https://www.dropbox.com/scl/fi/kri87524l6odxord50oz6/sermon_CBI.pdf?rlkey=uc49459whnh3jubwl6okukia0&st=nz04gybw&dl=0) |
 | 中國神學研究院 講道講章  </br> China Graduate School of Theology              | [CGST](https://www.dropbox.com/scl/fi/ime14zaa9on3cmx3if0ea/sermon_CGST.pdf?rlkey=pdg3pse45b8vqnhgkawk3bk7n&st=ra559fvd&dl=0) |
-| 華人教會網絡             </br> church.com.hk                                  | CHURCHK [1](https://www.dropbox.com/scl/fi/l2elm9f6crwssbdujkav0/sermon_CHURCHK_vol001.pdf?rlkey=0z4gd3a3x94g3mewvz4wnz6qq&st=6fn865iq&dl=0) [2](https://www.dropbox.com/scl/fi/f4vpfbykw3wg1t020chpi/sermon_CHURCHK_vol002.pdf?rlkey=6dgryoryzoakk6ktk6pdt2274&st=o27v6or5&dl=0) [3](https://www.dropbox.com/scl/fi/y9wec78e6re58k7z0djbo/sermon_CHURCHK_vol003.pdf?rlkey=9rdjjd8b3yhmz8aabfh84vbie&st=jfxvqniw&dl=0) [4](https://www.dropbox.com/scl/fi/6kl3glkg51inzexvxp0kq/sermon_CHURCHK_vol004.pdf?rlkey=ususjyqayy3zn2ynfo6vgmykq&st=afdc31uc&dl=0) [5](https://www.dropbox.com/scl/fi/28ia0mfhne0k9hjqc2dtc/sermon_CHURCHK_vol005.pdf?rlkey=3yuppimy7lj1889b5hxdg2gxn&st=2xhwnqi9&dl=0) [6](https://www.dropbox.com/scl/fi/jye73ft9xz4as398yo58z/sermon_CHURCHK_vol006.pdf?rlkey=qbwvg71sxpj32sisbcz92gy8q&st=ab3chp21&dl=0) [7](https://www.dropbox.com/scl/fi/mfsqrvh9of8ihf86rysfu/sermon_CHURCHK_vol007.pdf?rlkey=yd734tfmld8d01ja003ymlpkm&st=ohxdcxd7&dl=0) </br> [8](https://www.dropbox.com/scl/fi/02uzgohlpq5h8yv4uf18t/sermon_CHURCHK_vol008.pdf?rlkey=bbngxp29natnmvklzmlzjvqnc&st=9miuyoeg&dl=0) [9](https://www.dropbox.com/scl/fi/dfu116eh2jleodlz93oox/sermon_CHURCHK_vol009.pdf?rlkey=4laoqqvb06u5hc6xp2gllqxxc&st=lpevp8pw&dl=0) [10](https://www.dropbox.com/scl/fi/7hj0hek93it0hcwspjjfu/sermon_CHURCHK_vol010.pdf?rlkey=64twjzw64jhhunnzepb6ehncw&st=xf0hrlee&dl=0) |
+| 華人教會網絡             </br> church.com.hk                                  | CHURCHK [1](https://www.dropbox.com/scl/fi/l2elm9f6crwssbdujkav0/sermon_CHURCHK_vol001.pdf?rlkey=0z4gd3a3x94g3mewvz4wnz6qq&st=6fn865iq&dl=0) [2](https://www.dropbox.com/scl/fi/f4vpfbykw3wg1t020chpi/sermon_CHURCHK_vol002.pdf?rlkey=6dgryoryzoakk6ktk6pdt2274&st=o27v6or5&dl=0) [3](https://www.dropbox.com/scl/fi/y9wec78e6re58k7z0djbo/sermon_CHURCHK_vol003.pdf?rlkey=9rdjjd8b3yhmz8aabfh84vbie&st=jfxvqniw&dl=0) [4](https://www.dropbox.com/scl/fi/6kl3glkg51inzexvxp0kq/sermon_CHURCHK_vol004.pdf?rlkey=ususjyqayy3zn2ynfo6vgmykq&st=afdc31uc&dl=0) [5](https://www.dropbox.com/scl/fi/28ia0mfhne0k9hjqc2dtc/sermon_CHURCHK_vol005.pdf?rlkey=3yuppimy7lj1889b5hxdg2gxn&st=2xhwnqi9&dl=0) [6](https://www.dropbox.com/scl/fi/jye73ft9xz4as398yo58z/sermon_CHURCHK_vol006.pdf?rlkey=qbwvg71sxpj32sisbcz92gy8q&st=ab3chp21&dl=0) [7](https://www.dropbox.com/scl/fi/mfsqrvh9of8ihf86rysfu/sermon_CHURCHK_vol007.pdf?rlkey=yd734tfmld8d01ja003ymlpkm&st=ohxdcxd7&dl=0) </br> [8](https://www.dropbox.com/scl/fi/02uzgohlpq5h8yv4uf18t/sermon_CHURCHK_vol008.pdf?rlkey=bbngxp29natnmvklzmlzjvqnc&st=9miuyoeg&dl=0) [9](https://www.dropbox.com/scl/fi/dfu116eh2jleodlz93oox/sermon_CHURCHK_vol009.pdf?rlkey=4laoqqvb06u5hc6xp2gllqxxc&st=lpevp8pw&dl=0) [10](https://www.dropbox.com/scl/fi/7hj0hek93it0hcwspjjfu/sermon_CHURCHK_vol010.pdf?rlkey=64twjzw64jhhunnzepb6ehncw&st=xf0hrlee&dl=0) [11](https://www.dropbox.com/scl/fi/4yswaxxniv5tu5du9ednd/sermon_CHURCHK_vol011.pdf?rlkey=fiy4r87w7o0ke0lx3qjairhzq&st=rqpxc5p7&dl=0) [12](https://www.dropbox.com/scl/fi/38hykdqnzt2dfvhjtte62/sermon_CHURCHK_vol012.pdf?rlkey=l7mpyp1v8x8hjq9zf08mt2sro&st=lfl37n33&dl=0) [13](https://www.dropbox.com/scl/fi/x6j8zhgg788j02fq7t50m/sermon_CHURCHK_vol013.pdf?rlkey=rlo950u55lxpzat3q1p5bdpue&st=hcf3q9y8&dl=0) [14](https://www.dropbox.com/scl/fi/3i6ydw7f7gknjizemptsm/sermon_CHURCHK_vol014.pdf?rlkey=0ptkjs1tkv6aog5uouftob9dn&st=mwwbyif7&dl=0) [15](https://www.dropbox.com/scl/fi/v3kxqmmmhbfaxy3ye0isu/sermon_CHURCHK_vol015.pdf?rlkey=52savqdv2qjsosj12etslka7j&st=cmkcro0x&dl=0) [16](https://www.dropbox.com/scl/fi/xriqtdcehhgoqntpx4vnu/sermon_CHURCHK_vol016.pdf?rlkey=6vmjxbak9fcm65dcb8w21alud&st=f05hw0qv&dl=0) [17](https://www.dropbox.com/scl/fi/1wuf9e7j60td93xzcjx4g/sermon_CHURCHK_vol017.pdf?rlkey=ddmnrazah5co5jet225z0cttn&st=qd8hwtk7&dl=0) |
 | 崇基神學院 崇拜講章      </br> Div. Schl of Chung Chi College                 | [DSCCC 2009-present](https://www.dropbox.com/scl/fi/i3zi3taibm4x3c4cypjtz/sermon_DSCCC_2009-present.pdf?rlkey=ndybxo4pxxaj8xk9ix6c9diq4&st=f2o5p1xx&dl=0) |
 | 流堂 崇拜講章            </br> Flow Church                                    | [FLWC 2020-present](https://www.dropbox.com/scl/fi/hlm0r2vn6jfd99rxwosfr/sermon_FLWC_2020-present.pdf?rlkey=35e5f6pqnab08yqbh6skcyxy0&st=7ea7hw55&dl=0) |
 | 宣道會錦繡堂 崇拜講章    </br> Christian Missionary Alliance Fairview Church  | [FVC 2017-22](https://www.dropbox.com/scl/fi/i5jlzacawmlwskwz20w6g/sermon_FVC_2017-22.pdf?rlkey=8da9p796i2px78p7yg6bm34vb&st=1rwj409f&dl=0) </br> [FVC 2023-28](https://www.dropbox.com/scl/fi/1r0cx106e0087r2lstiy3/sermon_FVC_2023-28.pdf?rlkey=ehlycvpqx5lbq3rrk112tpbra&st=i7cqqm6p&dl=0) |
@@ -30,27 +30,27 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 中華宣道會友愛堂信培部   </br> Yau Oi School                                  | [YOS](https://www.dropbox.com/scl/fi/0gssb757sah0luha38jlv/sermon_YOS.pdf?rlkey=cvcisn4hq0g7ybv8jcmfm55lt&st=f1ozdavh&dl=0) |
                                                                                                                
 ### Statistics Overview on this project
-source | sermon no. (out of 33506) | amount of dev. activity (out of 57575)
+source | sermon no. (out of 37022) | amount of dev. activity (out of 67821)
 ----|----|----
 ABSCC | 0.1% ( 32 ) | 0.0% ( 3 )
-ACSMHK | 5.2% ( 1751 ) | 0.7% ( 418 )
-CBI | 0.2% ( 64 ) | 0.0% ( 8 )
-CGST | 0.7% ( 240 ) | 0.1% ( 74 )
-CHURCHK | 54.6% ( 18309 ) | 95.8% ( 55160 )
-DSCCC | 2.3% ( 781 ) | 0.0% ( 28 )
-FLWC | 0.9% ( 299 ) | 0.2% ( 94 )
-FVC | 3.8% ( 1282 ) | 0.2% ( 96 )
-GFC | 0.8% ( 281 ) | 0.1% ( 75 )
-HKBC | 4.8% ( 1609 ) | 0.0% ( 2 )
-JNG | 10.0% ( 3363 ) | 0.7% ( 377 )
-KFC | 3.3% ( 1112 ) | 0.3% ( 203 )
-MKBC | 0.8% ( 260 ) | 0.1% ( 86 )
-PORCH | 1.7% ( 562 ) | 0.1% ( 34 )
-STBC | 1.1% ( 379 ) | 0.2% ( 105 )
-UVC | 1.9% ( 651 ) | 0.2% ( 116 )
-VINE | 1.9% ( 630 ) | 0.4% ( 224 )
-WWBS | 0.3% ( 97 ) | 0.1% ( 47 )
-YFCX | 5.3% ( 1764 ) | 0.7% ( 420 )
+ACSMHK | 4.8% ( 1767 ) | 0.6% ( 402 )
+CBI | 0.2% ( 64 ) | 0.0% ( 9 )
+CGST | 0.7% ( 241 ) | 0.1% ( 61 )
+CHURCHK | 58.7% ( 21749 ) | 96.6% ( 65548 )
+DSCCC | 2.1% ( 789 ) | 0.0% ( 23 )
+FLWC | 0.8% ( 300 ) | 0.1% ( 87 )
+FVC | 3.5% ( 1282 ) | 0.1% ( 87 )
+GFC | 0.8% ( 282 ) | 0.1% ( 69 )
+HKBC | 4.3% ( 1609 ) | 0.0% ( 2 )
+JNG | 9.1% ( 3372 ) | 0.5% ( 362 )
+KFC | 3.0% ( 1120 ) | 0.3% ( 201 )
+MKBC | 0.7% ( 261 ) | 0.1% ( 78 )
+PORCH | 1.5% ( 564 ) | 0.1% ( 35 )
+STBC | 1.0% ( 383 ) | 0.1% ( 103 )
+UVC | 1.8% ( 653 ) | 0.1% ( 108 )
+VINE | 1.7% ( 638 ) | 0.3% ( 212 )
+WWBS | 0.3% ( 98 ) | 0.1% ( 37 )
+YFCX | 4.8% ( 1778 ) | 0.6% ( 389 )
 YOS | 0.1% ( 40 ) | 0.0% ( 5 )
 
 ### Steps to compile the books from scratch _(painful !)_
