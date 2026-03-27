@@ -6,6 +6,8 @@ texts from audio sources are generated from raw recording using speech-to-text e
 
 ### Immediately available sermon books
 the outcome of this repo compiled from generate LaTeX source are listed below
+
+:warning: : ceased update and support
 | sermon book series | sermon file cloud link |
 |-----|-----|
 | 建道神學院加拿大建道中心 </br> Alliance Bible Seminary Centre of Canada       | [ABSCC](https://www.dropbox.com/scl/fi/19vx8vaclognefpbo71wk/sermon_ABSCC.pdf?rlkey=v6lc4fi6s3mywoas8qodh07tz&st=aaunegub&dl=0) |
@@ -22,9 +24,9 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 播道會港福堂 崇拜講章    </br> EFCC Kong Fok Church                           | [KFC 2020-present](https://www.dropbox.com/scl/fi/56w19qca9z33psnmg5wnr/sermon_KFC_2020-present.pdf?rlkey=7uv3hoqb6ne3n7dsthrv1onbd&st=7artfn9s&dl=0) |
 | 旺角浸信會 崇拜講章      </br> Mongkok Baptist Church                         | [MKBC 2020-present](https://www.dropbox.com/scl/fi/kijr8c7k741j5gnd928o7/sermon_MKBC_2020-present.pdf?rlkey=bi0aamjejvf75oiymdf7enqx8&st=q4fivytf&dl=0) |
 | The Porch, Dallas, TX 75251                                                   | [PORCH 2014-present](https://www.dropbox.com/scl/fi/0u87t49t4null5zdnzr4z/sermon_PORCH_2014-present.pdf?rlkey=iyt02hpvq8i1yryh5waag83bh&st=u41vufkv&dl=0) |
-| 沙田浸信會               </br> Shatin Baptist Church                          | [STBC 2020-present](https://www.dropbox.com/scl/fi/pg6c7h8sj9dajz9l9283q/sermon_STBC_2020-present.pdf?rlkey=u83166iscihnh9gjy138cgyb5&st=zq516qem&dl=0) |
+| :warning: 沙田浸信會     </br> :warning: Shatin Baptist Church                | :warning: [STBC 2020-present](https://www.dropbox.com/scl/fi/pg6c7h8sj9dajz9l9283q/sermon_STBC_2020-present.pdf?rlkey=u83166iscihnh9gjy138cgyb5&st=zq516qem&dl=0) |
 | 城滙社區教會             </br> Urban Voice Community Church                   | [UVC 2018-present](https://www.dropbox.com/scl/fi/dvrsugdx6zn9et7z7y21n/sermon_UVC_2018-present.pdf?rlkey=du4hxbztm0k5c783wewouv6bj&st=x2a7pvft&dl=0) |
-| 葡萄藤教會               </br> The Vine Church                                | [VINE 2020-present](https://www.dropbox.com/scl/fi/5y14d6av5m8cy5m9s3qdq/sermon_VINE_2020-present.pdf?rlkey=apmi1j2ozeouuikhunykt06jz&st=kz6zlj13&dl=0) |
+| :warning: 葡萄藤教會     </br> :warning: The Vine Church                      | :warning: [VINE 2020-present](https://www.dropbox.com/scl/fi/5y14d6av5m8cy5m9s3qdq/sermon_VINE_2020-present.pdf?rlkey=apmi1j2ozeouuikhunykt06jz&st=kz6zlj13&dl=0) |
 | 環球聖經公會 講道講章    </br> Worldwide Bible Society                        | [WWBS](https://www.dropbox.com/scl/fi/pjwwfgjhdropdlyar3i89/sermon_WWBS.pdf?rlkey=rowv5dtpix7wwkhmavhnzwls2&st=n4yvpr3s&dl=0) |
 | 播道會恩福堂 崇拜講章    </br> Yan Fook Church & Youth                        | [YFCX 2020-2023](https://www.dropbox.com/scl/fi/jmb7ddpbzoafvr92aecvj/sermon_YFCX_2020-23.pdf?rlkey=vuqpv0ddtmk19cqps45hoak6a&st=5xve5yah&dl=0) </br> [YFCX 2024-2027](https://www.dropbox.com/scl/fi/6n81qydnxu8jniaqqh59n/sermon_YFCX_2024-27.pdf?rlkey=mc0enlv3zbwv8xffv5q4jt36c&st=6w1b922y&dl=0) |
 | 中華宣道會友愛堂信培部   </br> Yau Oi School                                  | [YOS](https://www.dropbox.com/scl/fi/0gssb757sah0luha38jlv/sermon_YOS.pdf?rlkey=cvcisn4hq0g7ybv8jcmfm55lt&st=f1ozdavh&dl=0) |
