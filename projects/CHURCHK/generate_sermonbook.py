@@ -602,7 +602,7 @@ def sermon_tex_between_code(code_start, code_end, vol_cnt):
 vol_cnt = 0
 code_start = 10001
 code_end = code_start
-termination_criteria_of_code_end = code_start + sermon_cnt_all_year
+termination_criteria_of_code_end = code_start + int(1.5 * sermon_cnt_all_year)
 sermon_no_per_vol = 1200
 while code_end < termination_criteria_of_code_end:
     vol_cnt += 1
