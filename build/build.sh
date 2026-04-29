@@ -339,7 +339,7 @@ elif [ "$1" == "CGST" ] ; then
     mv $OUTFILENAME.pdf ../../pdf/
     cd ..
 elif [ "$1" == "CHURCHK" ] ; then
-    for VOLNUM in {1..17} ; do
+    for VOLNUM in {1..19} ; do
       OUTFILENAME=$(printf "sermon_$1_vol%03d" $VOLNUM)
       cd $1
       xelatex $OUTFILENAME.tex
