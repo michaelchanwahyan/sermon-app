@@ -591,6 +591,18 @@ def sermon_tex_between_code(code_start, code_end, vol_cnt):
     # --------------------------------------
     generate_afterword_and_postfix(sermon_tex_filepath)
 
+    # --------------------------------------
+    # checking: if the file does not have
+    # sermon content, delete it
+    # --------------------------------------
+    # count the line number of the generated sermon tex file,
+    # if it is sermonless, it should contain about 258 lines
+    with open(sermon_tex_filepath, 'r') as fp:
+        line_count = len(fp.readlines())
+    if line_count < 300: # if the file has less than 300 lines,
+        _ = os.remove(sermon_tex_filepath)
+        print(f"sermon tex file {sermon_tex_filepath} has less than 300 lines, deleted !")
+
     print("done !")
 
 
