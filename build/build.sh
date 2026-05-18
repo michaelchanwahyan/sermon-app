@@ -50,6 +50,14 @@ if   [ "$1" == "" ] ; then
     echo "              converge. An explicit option 'once' could be provided "
     echo "              if the second compilation is intended to be skipped.  "
     echo "                                                                    "
+    echo "     buildlatest Compile only the latest sermon tex file from each  "
+    echo "              project folder. This option processes all available   "
+    echo "              sermon projects and compiles only the most recent tex "
+    echo "              file in each project directory, identified. This is   "
+    echo "              useful for faster builds when you only need to        "
+    echo "              rebuild the latest sermon. An explicit option 'once'  "
+    echo "              could be provided.                                    "
+    echo "                                                                    "
     echo "     ABSCC    Compile ABSCC sermon book.                            "
     echo "              ABSCC := Alliance Bible Seminary Center of Canada     "
     echo "              建道神學院加拿大建道中心                              "
@@ -289,6 +297,178 @@ elif [ "$1" == "buildall" ] ; then
     ./build.sh YFCX    once
     ./build.sh YOS     once
     fi
+elif [ "$1" == "buildlatest" ] ; then
+    if [ "$2" != "once" ] ; then
+    echo
+    echo Building only the latest sermon tex file from each project ...
+    echo
+    else
+    echo
+    echo Building only the latest sermon tex file from each project \(once mode\) ...
+    echo
+    fi
+    cd ABSCC
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd ACSMHK
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd CBI
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd CGST
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd CHURCHK
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd DSCCC
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd FLWC
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd FVC
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd GFC
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd HKBC
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd JNG
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd KFC
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd MKBC
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd PORCH
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd UVC
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd WWBS
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd YFCX
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
+    cd YOS
+    OUTFILENAME=$(ls ./*.tex | tail -1 | xargs basename -s .tex)
+    xelatex $OUTFILENAME.tex
+    if [ "$2" != "once" ] ; then
+    xelatex $OUTFILENAME.tex
+    fi
+    rm -f $OUTFILENAME.mtc*
+    mv $OUTFILENAME.pdf ../../pdf/
+    cd ..
 elif [ "$1" == "ABSCC" ] ; then
     OUTFILENAME=sermon_$1
     cd $1
