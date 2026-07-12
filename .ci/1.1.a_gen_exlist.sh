@@ -11,7 +11,7 @@ pushd $PROJECT_PATH
   do
     echo $PROJECT_NAME
     pushd ./$PROJECT_NAME
-      AUDIO_SRC_PATH=$HOME/TPPHC/SERMON/$PROJECT_NAME
+      AUDIO_SRC_PATH=$MP3_SRC_PATH/$PROJECT_NAME
       mkdir -p $AUDIO_SRC_PATH # this is to protect if no audio folder exist during new projection
       echo list out audio source directory of project $PROJECT_NAME
       pushd $AUDIO_SRC_PATH

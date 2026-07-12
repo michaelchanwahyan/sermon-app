@@ -57,6 +57,9 @@ transcription_server_ip = transcription_server_ip.strip()
 with open('PROJECT_LIST', 'r') as fp:
     PROJECT_LIST = [ _.strip() for _ in fp.readlines() if len(_) ]
 
+with open('COMMON_RC', 'r') as fp:
+    MP3_SRC_PATH = [ _.strip().split('=')[1] for _ in fp.readlines() if 'MP3_SRC_PATH' in _ ]
+
 transfer_script_str = ''
 transfer_script_str += '#!/bin/bash' + '\n'
 for PROJECT in PROJECT_LIST:
@@ -66,7 +69,7 @@ for PROJECT in PROJECT_LIST:
         print(f'skipped {PROJECT}!')
         continue
     # audio file list out
-    proj_mp3_dir = str(pathlib.Path.home()) + '/TPPHC/SERMON/' + PROJECT + '/'
+    proj_mp3_dir = MP3_SRC_PATH + '/TPPHC/SERMON/' + PROJECT + '/'
     mp3_list = os.listdir(proj_mp3_dir)
     if  PROJECT == 'CHURCHK':
         print("INCHURCHK")

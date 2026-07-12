@@ -16,7 +16,7 @@ pushd $PROJECT_PATH
     fi
     pushd ./$PROJECT_NAME
       ORI_DIR=$(pwd)
-      pushd $HOME/TPPHC/SERMON/$PROJECT_NAME
+      pushd $MP3_SRC_PATH/$PROJECT_NAME
       # # projects that require lslogt.txt
       # if \
       #
