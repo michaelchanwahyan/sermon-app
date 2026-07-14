@@ -155,11 +155,32 @@ currently whisper model size used is large.  ggerganov's [ggml-large.bin, later 
 
 In case transcription runs into error or totally incorrect text output, medium version of the model [ggml-medium.bin](https://huggingface.co/ggerganov/whisper.cpp/blob/main/ggml-medium.bin) could be considered to use.
 
-### 5. Compile the sermon texts into a single book source (by host/container)
+### 5. Clone / obtain git submodule  'bible source' text for before generating index and sermon books
+
+```bash
+brew install git-lfs
+git lfs install # you shall see 'Git LFS initialized.' if this is the first time
+
+git submodule init
+# you will see console print out saying:
+# Submodule 'data/bible_src' (https://github.com/michaelchanwahyan/bible_src) registered for path 'data/bible_src'
+
+git submodule update
+# you will see console print out saying:
+# Cloning into '/Users/pikachu/SOURCE/sermon-app/data/bible_src'...
+# Submodule path 'data/bible_src': checked out <some-hash-code>
+```
+
+in /app/data, perform
+```bash
+git clone https://github.com/michaelchanwahyan/bible_src
+```
+
+### 6. Compile the sermon texts into a single book source (by host/container)
 
 in /app/projects/JNG, run the python script [generate_sermonbook.py](/projects/JNG/generate_sermonbook.py) to generate the LaTeX source file under build/ folder
 
-### 6. Compile the sermon texts into a single book pdf (by host, where LaTeX is required)
+### 7. Compile the sermon texts into a single book pdf (by host, where LaTeX is required)
 
 (LaTeX installation: see [their page](https://www.latex-project.org/get/))
 
