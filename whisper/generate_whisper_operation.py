@@ -56,7 +56,7 @@ fp.close()
 if len(lines) == 0:
     print("Project %s has empty NEW_SRC_LIST !!!" % PROJECT_NAME)
     print("Clean up content , preserve only default content !!!")
-    with open(PROJECT + '/i', 'w') as fp:
+    with open(PROJECT_NAME + '/i', 'w') as fp:
         fp.write(w_text)
     fp.close()
     print("EXIT !")
