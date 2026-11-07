@@ -32,19 +32,19 @@ the outcome of this repo compiled from generate LaTeX source are listed below
 | 中華宣道會友愛堂信培部   </br> Yau Oi School                                  | [YOS](https://www.dropbox.com/scl/fi/0gssb757sah0luha38jlv/sermon_YOS.pdf?rlkey=cvcisn4hq0g7ybv8jcmfm55lt&st=f1ozdavh&dl=0) |
                                                                                                                
 ### Statistics Overview on this project
-source | sermon no. (out of 39259) | amount of dev. activity (out of 3002)
+source | sermon no. (out of 39259) | amount of dev. activity (out of 3012)
 ----|----|----
 ABSCC | 0.1% ( 32 ) | 0.1% ( 4 )
 ACSMHK | 5.1% ( 2009 ) | 9.4% ( 283 )
 CBI | 0.2% ( 68 ) | 0.4% ( 13 )
 CGST | 0.6% ( 247 ) | 0.9% ( 26 )
-CHURCHK | 58.6% ( 23029 ) | 49.8% ( 1494 )
-DSCCC | 2.1% ( 819 ) | 1.0% ( 29 )
+CHURCHK | 58.6% ( 23029 ) | 49.6% ( 1494 )
+DSCCC | 2.1% ( 819 ) | 1.1% ( 34 )
 FLWC | 0.8% ( 335 ) | 2.4% ( 72 )
 FVC | 3.3% ( 1302 ) | 1.9% ( 57 )
 GFC | 0.8% ( 315 ) | 1.9% ( 58 )
 HKBC | 4.1% ( 1609 ) | 0.0% ( 0 )
-JNG | 9.0% ( 3524 ) | 6.5% ( 194 )
+JNG | 9.0% ( 3524 ) | 6.4% ( 194 )
 KFC | 2.9% ( 1121 ) | 4.2% ( 125 )
 MKBC | 0.8% ( 297 ) | 2.1% ( 63 )
 PORCH | 1.5% ( 607 ) | 3.0% ( 90 )
@@ -52,7 +52,7 @@ STBC | 1.0% ( 383 ) | 0.0% ( 1 )
 UVC | 1.8% ( 722 ) | 3.4% ( 103 )
 VINE | 1.6% ( 638 ) | 0.0% ( 1 )
 WWBS | 0.3% ( 116 ) | 1.3% ( 39 )
-YFCX | 5.2% ( 2046 ) | 11.6% ( 347 )
+YFCX | 5.2% ( 2046 ) | 11.7% ( 352 )
 YOS | 0.1% ( 40 ) | 0.1% ( 3 )
 
 ### Steps to compile the books from scratch _(painful !)_
